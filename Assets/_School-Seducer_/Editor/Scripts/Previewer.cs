@@ -1,8 +1,14 @@
-﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+﻿using System;
+using System.Collections.Generic;
+using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.Chat;
 using DialogueEditor;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UltEvents;
+using UnityEngine.Events;
 using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts
@@ -14,7 +20,6 @@ namespace _School_Seducer_.Editor.Scripts
         
         [Header("UI Data")] 
         [SerializeField] private GameObject previewerPanel;
-        [SerializeField] private Text moneyText;
         [SerializeField] private Image selectedGirlImage;
         [SerializeField] private Image _emote;
         [SerializeField] private TextMeshProUGUI greetingsText;
@@ -22,28 +27,39 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField] private Button addMoneyByMiniGameButton;
         [SerializeField] private Button closePreviewerPanel;
 
-        [Header("Data")] 
+	    [Header("Data")] 
+	    [SerializeField] private Chat.Chat _chat;
         [SerializeField] private LevelChecker levelChecker;
         [SerializeField] private MiniGameInitializer miniGameInitializer;
         [SerializeField] private Map map;
         [SerializeField] private PlayerConfig playerConfig;
         [SerializeField] private Character[] _characters;
 
+        [Header("Options")] 
+        [SerializeField] private bool showDebugParameters;
+
         private Character _currentCharacter;
-        private NPCConversation _currentConversation;
+        private СonversationData _currentConversation;
         private SwitcherInDialogue _switcher;
+
+        private int _selectedNodeID;
 
         private Sprite _initialSprite;
         private Sprite _initialEmote;
+
+        public void Initialize(Chat.Chat chat)
+        {
+            foreach (var character in _characters)
+            {
+                character.Initialize(chat);
+            }
+        }
 
         private void Awake()
         {
             _switcher = GetComponent<SwitcherInDialogue>();
             
-            _eventManager.ChangeValueMoneyEvent += UpdateMoneyText;
-            _eventManager.UpdateTextMoneyEvent += UpdateUI;
             addMoneyByMiniGameButton.AddListener(miniGameInitializer.StartMiniGame);
-            
             closePreviewerPanel.AddListener(previewerPanel.Deactivate);
             
             RegisterCharacters();
@@ -57,22 +73,17 @@ namespace _School_Seducer_.Editor.Scripts
             SetInitialSpriteAndEmote();
         }
 
-        private void OnDisable()
-        {
-            startDialogueButton.onClick.RemoveAllListeners();
-        }
-
         private void OnDestroy()
         {
-            _eventManager.ChangeValueMoneyEvent -= UpdateMoneyText;
-            _eventManager.UpdateTextMoneyEvent -= UpdateUI;
             addMoneyByMiniGameButton.RemoveListener(miniGameInitializer.StartMiniGame);
-            
+
             closePreviewerPanel.RemoveListener(previewerPanel.Deactivate);
             startDialogueButton.RemoveAllListeners();
 
+            UnRegisterStartDialogue();
             UnRegisterConversation();
             UnRegisterCharacters();
+            ResetCharacter();
 
             _switcher.Reset();
         }
@@ -80,11 +91,15 @@ namespace _School_Seducer_.Editor.Scripts
         private void OnCharacterSelected(Character character)
         {
             previewerPanel.Activate();
-            
+
             _currentCharacter = character;
-            _currentConversation = _currentCharacter.Dialogue;
-            RegisterStartDialogue();
-            RegisterConversation();
+	        _currentConversation = _currentCharacter.Conversation;
+            
+	        if (_currentCharacter == null) 
+	        	Debug.LogError("current character is null on selected");
+
+            Invoke(nameof(RegisterConversation), 0.2f);
+            Invoke(nameof(RegisterStartDialogue), 0.3f);
             if (!CheckLevelPlayer())
             {
                 Debug.Log("Check for level is invoked");
@@ -92,19 +107,17 @@ namespace _School_Seducer_.Editor.Scripts
             }
 
             _switcher.Initialize(_emote, selectedGirlImage);
+            //Invoke(nameof(SetCurrentNodeID), 3f);
 
-            map.CloseMap();
+	        map.CloseMap();
+	        _chat.InstallCurrentConversation(_currentConversation);
 
-            UpdateUI();
+            //UpdateUI();
         }
 
         public void SkipDialog()
         {
-            if (ConversationManager.Instance.IsConversationActive)
-            {
-                ConversationManager.Instance.SetBool("skip", true);
-                Debug.Log("Skip: " + ConversationManager.Instance.GetBool("skip"));    
-            }
+            
         }
 
         private bool CheckLevelPlayer()
@@ -114,20 +127,11 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void ShadowOutPreviewer()
         {
+            if (previewerPanel.activeSelf == false) return;
+            
             if (_emote.gameObject.activeSelf && _emote != null) _emote.gameObject.Deactivate();
             
             previewerPanel.Deactivate();
-        }
-
-        private void StartDialogueDueMoney()
-        {
-            if (_bank.Money >= playerConfig.CostChooseOption)
-                _eventManager.ChangeValueMoney(-playerConfig.CostChooseOption);
-            else
-            {
-                //Invoke("ShadowOutPreviewer", 5f);
-                Debug.Log("Not enough money!");
-            }
         }
 
         private void SetInitialSpriteAndEmote()
@@ -136,30 +140,25 @@ namespace _School_Seducer_.Editor.Scripts
             _emote.sprite = _initialEmote;
         }
 
+        private void RegisterConversation()
+        {
+            //ConversationManager.OnButtonClicked += UpdateUI;
+        }
+
+        private void UnRegisterConversation()
+        {
+            //ConversationManager.OnButtonClicked -= UpdateUI;
+        }
+
         private void RegisterStartDialogue()
         {
             if (_currentCharacter == null)
             {
                 Debug.LogWarning("Character is null, cannot register options");
-                return;
+                //return;
             }
             
             startDialogueButton.AddListener(_currentCharacter.StartConversation);
-            startDialogueButton.AddListener(StartDialogueDueMoney);
-        }
-
-        private void RegisterConversation()
-        {
-            ConversationManager.OnConversationStarted += RegisterStartDialogue;
-            ConversationManager.OnConversationEnded += UnRegisterStartDialogue;
-            ConversationManager.OnConversationEnded += ShadowOutPreviewer;
-        }
-
-        private void UnRegisterConversation()
-        {
-            ConversationManager.OnConversationStarted -= RegisterStartDialogue;
-            ConversationManager.OnConversationEnded -= UnRegisterStartDialogue;
-            ConversationManager.OnConversationEnded -= ShadowOutPreviewer; 
         }
 
         private void UnRegisterStartDialogue()
@@ -171,27 +170,40 @@ namespace _School_Seducer_.Editor.Scripts
             }
             
             startDialogueButton.RemoveListener(_currentCharacter.StartConversation);
-            startDialogueButton.RemoveListener(StartDialogueDueMoney);
+        }
+
+        public void CheckMoneyPlayer()
+        {
+            if (_bank.Money >= 1)
+            {
+                _bank.ChangeValueMoney(-playerConfig.CostNextNode);
+            }  
+            else
+            {
+                _currentCharacter.EndConversation();
+            }
+        }       
+
+        public void AddDiamondOnConversationEnd()
+        {
+            _bank.ChangeValueDiamonds(1);
         }
 
         private void UpdateUI()
         {
             greetingsText.text = "Hello, " + _currentCharacter.name;
-            moneyText.text = "Money: " + _bank.Money;
             selectedGirlImage.sprite = _currentCharacter.SpriteRenderer.sprite;
         }
-        
-        private void UpdateMoneyText(int moneyValue)
+
+        public void AddLoyalty(int n)
         {
-            moneyText.text = "Money: " + moneyValue;
+            _currentCharacter.Data.ChangeLoyalty(n);
         }
 
         private void ResetCharacter()
         {
             _currentCharacter = null;
             _currentConversation = null;
-            
-            previewerPanel.Deactivate();
         }
 
         private void RegisterCharacters()

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c02e60a16db440309b5136ce842ccc83, type: 3}
   m_Name: Player Config
   m_EditorClassIdentifier: 
-  level: 2
-  money: 400
-  costChooseOption: 50
-  addMoneyAtClick: 50
+  level: 5
+  diamonds: 70
+  money: 40
+  showParameters: 0
+  showDebugParameters: 0
+  costNextNode: 1
+  addMoneyAtClick: 3

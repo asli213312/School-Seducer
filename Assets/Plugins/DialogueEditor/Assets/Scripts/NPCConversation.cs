@@ -45,8 +45,8 @@ namespace DialogueEditor
         // Runtime vars
         public UnityEngine.Events.UnityEvent Event;
         public List<EditableParameter> ParameterList; // Serialized into the json string
-
         
+        public List<NodeEventHolder> NodeSerializedDataListRuntime => NodeSerializedDataList;
 
 
         //--------------------------------------
@@ -208,7 +208,6 @@ namespace DialogueEditor
                 {
                     // Construct Connections from the OptionUIDs and SpeechUIDs (which are now deprecated)
                     // This supports upgrading from V1.03 +
-
                     allNodes[i].Connections = new List<EditableConnection>();
                     allNodes[i].ParamActions = new List<EditableSetParamAction>();
 

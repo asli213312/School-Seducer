@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DialogueEditor
 {
@@ -10,10 +11,10 @@ namespace DialogueEditor
     public class NodeEventHolder : MonoBehaviour
     {
         [SerializeField] public UnityEngine.Events.UnityEvent Event;
-
         [SerializeField] public int NodeID;
         [SerializeField] public TMPro.TMP_FontAsset TMPFont;
         [SerializeField] public Sprite Icon;
         [SerializeField] public AudioClip Audio;
+        [SerializeField] public bool isCompleted;
     }
 }

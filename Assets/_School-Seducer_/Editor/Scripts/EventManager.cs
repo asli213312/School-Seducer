@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using UnityEngine;
 
 namespace _School_Seducer_.Editor.Scripts
@@ -11,13 +12,26 @@ namespace _School_Seducer_.Editor.Scripts
         public event Action<Location> LocationSelectedEvent;
         public event Action<Character> CharacterSelectedEvent;
         public event Action<int> ChangeValueMoneyEvent;
+        public event Action<int> ChangeValueDiamondsEvent;
 
         public event Action UpdateTextMoneyEvent;
+        public event Action UpdateTextDiamondsEvent;
 
         public void ChangeValueMoney(int value)
         {
             ChangeValueMoneyEvent?.Invoke(value);
-            UpdateTextMoney();
+            UpdateTextMoneyEvent?.Invoke();
+        }
+        
+        public void ChangeValueDiamonds(int value)
+        {
+            ChangeValueDiamondsEvent?.Invoke(value);
+            UpdateTextDiamondsEvent?.Invoke();
+        }
+
+        public void UpdateTextDiamonds()
+        {
+            UpdateTextDiamondsEvent?.Invoke();
         }
 
         public void UpdateTextMoney()

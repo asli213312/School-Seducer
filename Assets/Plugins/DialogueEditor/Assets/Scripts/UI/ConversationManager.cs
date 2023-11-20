@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -28,6 +30,7 @@ namespace DialogueEditor
 
         public static ConversationStartEvent OnConversationStarted;
         public static ConversationEndEvent OnConversationEnded;
+        public static event Action OnButtonClicked; 
 
         // User-Facing options
         // Drawn by custom inspector
@@ -80,6 +83,9 @@ namespace DialogueEditor
         // Selection options
         private List<UIConversationButton> m_uiOptions;
         private int m_currentSelectedIndex;
+
+        public SpeechNode CurrentSpeech {get => m_currentSpeech; set => m_currentSpeech = value;}
+        public int CurrentSelectedIndex => m_currentSelectedIndex;
 
 
         //--------------------------------------
@@ -149,7 +155,16 @@ namespace DialogueEditor
 
             TurnOnUI();
             m_currentSpeech = m_conversation.Root;
+            Debug.Log("current speech all connections" + m_currentSpeech.Connections.Count);
             SetState(eState.TransitioningDialogueBoxOn);
+        }
+
+        public void DebugSelectedIndex()
+        {
+            //Debug.Log("current speech all connections" + m_currentSpeech.Connections);
+            List<Connection> connections = m_currentSpeech.Connections;
+            connections.ForEach(connection => Debug.Log(connection.Conditions.Count));
+            Debug.Log("current speech: " + m_currentSpeech);
         }
 
         public void EndConversation()
@@ -558,6 +573,7 @@ namespace DialogueEditor
         public void SpeechSelected(SpeechNode speech)
         {
             SetupSpeech(speech);
+            OnButtonClicked?.Invoke();
         }
 
         public void OptionSelected(OptionNode option)
@@ -567,6 +583,7 @@ namespace DialogueEditor
             if (option.Event != null)
                 option.Event.Invoke();
             SetState(eState.TransitioningOptionsOff);
+            OnButtonClicked?.Invoke();
         }
 
         public void EndButtonSelected()

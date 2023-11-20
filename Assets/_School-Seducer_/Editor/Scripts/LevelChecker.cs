@@ -25,7 +25,7 @@ namespace _School_Seducer_.Editor.Scripts
 
         public void Enter(Character character)
         {
-            gameObject.Activate();
+	        gameObject.Activate();
 
             transform.position = character.transform.position + new Vector3(_offset, 0);
             _levelText.text = "Level " + character.Data.RequiredLevel;

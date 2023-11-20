@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa0b87652814f9f8f6930844a64884a, type: 3}
+  m_Name: Branch_2
+  m_EditorClassIdentifier: 
+  BranchName: In this branch you can to try hard new branch, his name is Branch2
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+    Msg: 
+    optionalData:
+      PictureInsteadMsg: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
+    Msg: 
+    optionalData:
+      PictureInsteadMsg: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    Msg: 
+    optionalData:
+      PictureInsteadMsg: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []

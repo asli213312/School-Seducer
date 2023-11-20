@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Nurse Girl
   m_EditorClassIdentifier: 
   requiredLevel: 5
+  loyalty: 2
+  maxLoyalty: 0
+  showDebugParameters: 0

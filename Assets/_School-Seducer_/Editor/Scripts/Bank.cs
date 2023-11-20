@@ -9,8 +9,8 @@ namespace _School_Seducer_.Editor.Scripts
         [Inject] private EventManager _eventManager;
         [SerializeField] private PlayerConfig playerConfig;
         
-        private const int INITIAL_MONEY = 500;
-        private int _money;
+        public int _money;
+        public int _diamonds;
 
         public int Money
         {
@@ -22,25 +22,56 @@ namespace _School_Seducer_.Editor.Scripts
                 _eventManager.UpdateTextMoney();
             }
         }
+        
+        public int Diamonds
+        {
+            get { return _diamonds; }
+            set
+            {
+                playerConfig.Diamonds = value;
+                _diamonds = playerConfig.Diamonds;
+                _eventManager.UpdateTextDiamonds();
+            }
+        }
 
         private void Awake()
         {
             Money = playerConfig.Money;
-            Money = INITIAL_MONEY;
+            Diamonds = playerConfig.Diamonds;
             _eventManager.ChangeValueMoneyEvent += ChangeValueMoney;
+            _eventManager.ChangeValueDiamondsEvent += ChangeValueDiamonds;
         }
 
         private void OnDestroy()
         {
+            _eventManager.ChangeValueDiamondsEvent -= ChangeValueDiamonds;
             _eventManager.ChangeValueMoneyEvent -= ChangeValueMoney;
         }
 
         public void ChangeValueMoney(int value)
         {
             if (Money + value >= 0)
+            {
                 Money += value;
+                playerConfig.Money = Money;
+            }
             else
                 Debug.LogWarning("Not enough money: " + Money);
+            
+            _eventManager.UpdateTextMoney();
         }
+        
+        public void ChangeValueDiamonds(int amount)
+        {
+            if (Diamonds + amount >= 0)
+            {
+                Diamonds += amount;
+                playerConfig.Diamonds = Diamonds;
+            }
+            else
+                Debug.LogWarning("You can't have negative diamonds" + _diamonds);
+            
+            _eventManager.UpdateTextDiamonds();
+        } 
     }
 }
