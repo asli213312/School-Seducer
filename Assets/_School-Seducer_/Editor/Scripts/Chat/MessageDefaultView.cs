@@ -15,12 +15,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             OptionButtons = optionButtons;
         }
 
-        public void RenderGeneralData(MessageData data, Sprite actorLeft, Sprite actorRight, Sprite storyTeller)
+        public void RenderGeneralData(MessageData data, Sprite actorLeft, Sprite actorRight, Sprite storyTeller, bool needIconStoryTeller)
         {
-            SetSenderMsg(actorRight, actorLeft, storyTeller, data);
-            
+            SetSenderMsg(actorRight, actorLeft, storyTeller, data, needIconStoryTeller);
             SetOptions(data);
             Debug.Log("Options were installed");
+        }
+
+        public void SetNameActors(string leftActor, string rightActor, string storyTeller)
+        {
+            SetName(leftActor, rightActor, storyTeller);
         }
 
         private void SetOptions(MessageData data)
@@ -37,10 +41,5 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 }
             }
         }
-        
-	    public void SetNameActors(string leftActor, string rightActor, string storyTeller)
-	    {
-		    SetName(leftActor, rightActor, storyTeller);
-	    }
     }
 }

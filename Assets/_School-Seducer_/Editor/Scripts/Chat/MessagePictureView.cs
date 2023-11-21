@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
-    public class MessagePictureView : MessageViewBase, IMessage
+    public class MessagePictureView : MessageViewBase, IMessage, IMessageName
     {
         [SerializeField] private Image msgWidePicture;
         [SerializeField] private Image msgSquarePicture;
         
+        public string MsgNameText { get; set; }
         public bool PictureInstalled { get; private set; }
         private float _durationSendingPicture;
 
@@ -24,13 +25,18 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _durationSendingPicture = durationSendingPicture;
         }
 
-        public void RenderGeneralData(MessageData data, Sprite actorLeft, Sprite actorRight, Sprite storyTeller)
+        public void RenderGeneralData(MessageData data, Sprite actorLeft, Sprite actorRight, Sprite storyTeller, bool needIconStoryTeller)
         {
-            Sender = data.Sender;
-            SetSenderMsg(actorRight, actorLeft, storyTeller, data);
+            SetSenderMsg(actorRight, actorLeft, storyTeller, data, needIconStoryTeller);
             InvokeSendingPicture(data);
             
             Debug.Log("Options were installed");
+        }
+
+        public void SetNameActors(string leftActor, string rightActor, string storyTeller)
+        {
+            string newName = SetName(leftActor, rightActor, storyTeller);
+            MsgNameText = newName;
         }
 
         private void InvokeSendingPicture(MessageData data)
@@ -40,7 +46,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private IEnumerator SendingPicture(MessageData data)
         {
-            msgText.text = $"{msgNameText.text} sending picture...";
+            msgText.text = $"Sending picture...";
             StartCoroutine(AnimateDots(msgText));
             
             yield return new WaitForSeconds(_durationSendingPicture);
@@ -48,7 +54,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             SetPicture(data);
             PictureInstalled = true;
         }
-        
+
         private void SetOptions(MessageData data)
         {
             for (int i = 0; i < OptionButtons.Length && i < data.optionalData.Branches.Length; i++)
@@ -61,7 +67,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 }
             }
         }
-        
+
         private void SetPicture(MessageData data)
         {
             Sprite picture = null;
@@ -77,13 +83,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 msgSquarePicture.sprite = picture;
                 msgSquarePicture.gameObject.Activate();
             }
-            
             Debug.Log("Picture installed");
-        }
-
-	    public void SetNameActors(string leftActor, string rightActor, string storyTeller)
-        {
-            SetName(leftActor, rightActor, storyTeller);
         }
 
         private IEnumerator AnimateDots(Text text)

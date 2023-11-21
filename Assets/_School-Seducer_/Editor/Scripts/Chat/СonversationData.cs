@@ -35,6 +35,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     
                     Array.Resize(ref Messages, i + 1);
                     Array.Copy(newArray, Messages, i + 1);
+                    Debug.LogWarning("Messages after installed branches were removed");
                 }
             }
             _isFalse = true;

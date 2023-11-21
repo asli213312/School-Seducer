@@ -23,6 +23,7 @@ MonoBehaviour:
       m_Calls: []
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   StoryTellerName: Storyteller
+  NeedIconStoryTeller: 1
   MainHeight: 100
   OneOptionWidth: 800
   TwoOptionsWidth: 400

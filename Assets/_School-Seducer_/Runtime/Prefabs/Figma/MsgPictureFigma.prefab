@@ -554,6 +554,7 @@ MonoBehaviour:
   msgText: {fileID: 8858184060608212147}
   leftBorderActor: {fileID: 2886682803606455557}
   rightBorderActor: {fileID: 7275503413445896245}
+  containerMsg: {fileID: 8858184060640931555}
   backMsg: {fileID: 8858184060640931555}
   msgWidePicture: {fileID: 266862805}
   msgSquarePicture: {fileID: 7842612791604369180}

@@ -15,6 +15,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [Header("Data")] 
         [ShowAssetPreview(32, 32)] public Sprite StoryTellerSprite;
         public string StoryTellerName;
+        public bool NeedIconStoryTeller;
         
 
         [Header("Options")] 

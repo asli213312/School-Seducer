@@ -105,23 +105,18 @@ namespace Editor
         
 	    private void AddNewElement()
 	    {
-		    // Получаем целевой объект (ScriptableObject)
-		    BranchData scriptableObject = (BranchData)target;
-
-		    // Создаем временный массив с увеличенным размером
+            BranchData scriptableObject = (BranchData)target;
+            
 		    MessageData[] newArray = new MessageData[scriptableObject.Messages.Length + 1];
-
-		    // Копируем существующие элементы в новый массив
+            
 		    for (int i = 0; i < scriptableObject.Messages.Length; i++)
 		    {
 			    newArray[i] = scriptableObject.Messages[i];
 		    }
-
-		    // Создаем новый элемент и добавляем его в конец массива
+            
 		    MessageData newElement = new MessageData();
 		    newArray[newArray.Length - 1] = newElement;
-
-		    // Присваиваем новый массив свойству Messages
+            
 		    scriptableObject.Messages = newArray;
 	    }
 

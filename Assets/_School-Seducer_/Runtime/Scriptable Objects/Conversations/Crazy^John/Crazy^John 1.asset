@@ -15,25 +15,34 @@ MonoBehaviour:
   <Config>k__BackingField: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   ActorLeftName: Crazy
   <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-  ActorRightName: Johnnn
+  ActorRightName: John
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
   Messages:
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
-    Msg: grgr
+    Msg: Once upon a time...
     optionalData:
-      PictureInsteadMsg: {fileID: 21300000, guid: b15f8502d7f0bcf4c92edd56f2aa80e2, type: 3}
+      PictureInsteadMsg: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
-    Msg: 
+    Msg: "\u043A\u043F\u043A\u043F\u043A\u043F\u043Agrgrgrfed"
     optionalData:
       PictureInsteadMsg: {fileID: 21300000, guid: b15f8502d7f0bcf4c92edd56f2aa80e2, type: 3}
       Animation: {fileID: 0}
       Branches: []
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: 
+    Msg: "I'm okay. \nMaybe you want to go with me \nand my friends or to go with
+      me \ngo to bar, would you think? \nand maybe you want to go fly with me? nt
+      to go fly with me? nt to go fly with me? Maybe you want to go. I'm okay.. I'm
+      okay....... Maybe you want to go with me and my friend"
     optionalData:
       PictureInsteadMsg: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+    Msg: square picture
+    optionalData:
+      PictureInsteadMsg: {fileID: 21300000, guid: ac0ccd57c00acea4492670e14be1507d, type: 3}
       Animation: {fileID: 0}
       Branches:
       - {fileID: 11400000, guid: 84697a5d927912e4598e97270511f91c, type: 2}

@@ -29,6 +29,6 @@ MonoBehaviour:
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: 
     optionalData:
-      PictureInsteadMsg: {fileID: 0}
+      PictureInsteadMsg: {fileID: 21300000, guid: b15f8502d7f0bcf4c92edd56f2aa80e2, type: 3}
       Animation: {fileID: 0}
       Branches: []

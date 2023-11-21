@@ -74,16 +74,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
                 newMsg.Initialize(optionButtons);
 
-	            SetNameSender(newMsg);
-	            RenderMsgData(messages, newMsg, i);
-	            SetNameSender(newMsg);
+                RenderMsgData(messages, newMsg, i);
+                SetNameSender(newMsg);
 
                 Debug.Log("Render completed");
 
 	            config.OnMessageReceived?.Invoke();
-	            
-	            SetNameSender(newMsg);
-                
+
                 CheckOptionsIsLastSibling();
 
                 yield return new WaitForSeconds(config.DelayBtwMessage);
@@ -162,7 +159,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             newMsg.RenderGeneralData(messages[i],
 	            _currentConversation.ActorLeftSprite,
 	            _currentConversation.ActorRightSprite,
-                config.StoryTellerSprite);
+                config.StoryTellerSprite,
+                config.NeedIconStoryTeller);
         }
 
         private void InstallOptions(MessageData msgData)

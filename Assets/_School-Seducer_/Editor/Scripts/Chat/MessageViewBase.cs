@@ -1,5 +1,6 @@
 ﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
@@ -16,9 +17,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         protected OptionButton[] OptionButtons;
         protected MessageSender Sender;
 
-        protected void SetSenderMsg(Sprite actorRight, Sprite actorLeft, Sprite storyTeller, MessageData data)
+        private float _maxWidth;
+
+        protected void SetSenderMsg(Sprite actorRight, Sprite actorLeft, Sprite storyTeller, MessageData data, bool needIconStoryTeller)
         {
             Data = data;
+            Sender = data.Sender;
             switch (data.Sender)
             {
             case MessageSender.ActorRight:
@@ -30,8 +34,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     rightBorderActor.gameObject.Activate();
                     Image rightIcon = rightBorderActor.transform.GetChild(0).GetComponent<Image>();
                     rightIcon.sprite = actorRight;
-
                     leftBorderActor.gameObject.Deactivate();
+                    Debug.Log("Right actor installed");
                     break;
                 
                 case MessageSender.ActorLeft:
@@ -42,22 +46,63 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     break;
                 
                 case MessageSender.StoryTeller:
-                    msgNameText.alignment = TextAnchor.MiddleCenter;
+                    msgNameText.alignment = TextAnchor.UpperCenter;
                     msgText.text = data.Msg;
 
-                    backMsg.Translate(Vector2.right * 0.5f, Space.Self);
+                    //backMsg.Translate(Vector2.right * 0.5f, Space.Self);
+
+                    Vector2 newSize; 
+                    if (data.optionalData.PictureInsteadMsg != null)
+                    {
+                        newSize = new Vector2(50, 60);
+                        backMsg.sizeDelta = newSize;   
+                    }
+                    else
+                    {
+                        backMsg.sizeDelta = new Vector2(250, 50);
+                    }
 
                     rightBorderActor.gameObject.Deactivate();
                     Image storyTellerIcon = leftBorderActor.transform.GetChild(0).GetComponent<Image>();
                     storyTellerIcon.sprite = storyTeller;
-
-                    leftBorderActor.gameObject.Activate();
+                    SetIconStoryTeller(needIconStoryTeller);
+                    Debug.Log("StoryTeller installed");
                     break;
             }
-            Debug.Log("Right actor installed");
+
+            if (Data.optionalData.PictureInsteadMsg != null && Sender != MessageSender.StoryTeller)
+            {
+                Vector2 offsetY = new Vector2(0, 30);
+                backMsg.sizeDelta = new Vector2(backMsg.sizeDelta.x, msgText.preferredHeight);
+                backMsg.sizeDelta += offsetY;
+            }
+            else if (Sender != MessageSender.StoryTeller)
+            {
+                msgText.alignment = TextAnchor.UpperLeft;
+                
+                RectTransform msgRect = msgText.GetComponent<RectTransform>();
+                RectTransform backMsgRect = backMsg.GetComponent<RectTransform>();
+                RectTransform baseRect = gameObject.GetComponent<RectTransform>();
+
+                RectTransform actorRect = leftBorderActor.GetComponent<RectTransform>();
+
+                if (msgText.preferredHeight > backMsgRect.sizeDelta.y)
+                {
+                    float heightDifference = msgText.preferredHeight - backMsgRect.sizeDelta.y;
+
+                    // Увеличиваем высоту backMsg
+                    backMsgRect.sizeDelta = new Vector2(backMsgRect.sizeDelta.x, backMsgRect.sizeDelta.y + heightDifference - 65);
+
+                    Vector2 originalSizeDelta = actorRect.sizeDelta;
+                    baseRect.sizeDelta = new Vector2(baseRect.sizeDelta.x, baseRect.sizeDelta.y + heightDifference - 65);
+                    msgRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, backMsgRect.sizeDelta.y);
+                    
+                    //actorRect.sizeDelta -= new Vector2(0, heightDifference - 110);
+                }
+            }
         }
-        
-	    protected void SetName(string actorLeft, string actorRight, string storyTeller)
+
+        protected string SetName(string actorLeft, string actorRight, string storyTeller)
         {
             string nameActor = "";
             switch (Sender)
@@ -74,6 +119,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
 
             msgNameText.text = nameActor;
+            return nameActor;
+        }
+
+        private void SetIconStoryTeller(bool needIcon)
+        {
+            leftBorderActor.gameObject.SetActive(needIcon);
         }
     }
 }
