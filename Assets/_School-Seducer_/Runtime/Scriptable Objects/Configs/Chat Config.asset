@@ -30,3 +30,4 @@ MonoBehaviour:
   ThreeOptionsWidth: 250
   DelayBtwMessage: 1
   DurationSendingPicture: 5
+  CoinsForMessage: 1

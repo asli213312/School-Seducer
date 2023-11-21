@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UltEvents;
+using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
@@ -27,5 +28,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [Header("Messages")]
         public float DelayBtwMessage;
         public float DurationSendingPicture;
+        [Range(1, 10)] public int CoinsForMessage;
     }
 }

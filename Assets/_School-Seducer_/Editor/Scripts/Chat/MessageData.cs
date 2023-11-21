@@ -10,7 +10,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [ResizableTextArea] [HideIf("IsPictureMsg")] public string Msg;
         public OptionalMsgData optionalData;
 
+        private bool _isBigMessage;
         public MessageSender Sender { get; set; }
+
+        public bool IsBigMessage() => _isBigMessage;
+
+        public void SetBigMessage()
+        {
+            _isBigMessage = true;
+        }
 
         private bool IsPictureMsg() => optionalData.PictureInsteadMsg != null;
     }

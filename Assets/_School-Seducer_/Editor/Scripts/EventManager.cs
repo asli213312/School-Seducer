@@ -13,6 +13,10 @@ namespace _School_Seducer_.Editor.Scripts
         public event Action<Character> CharacterSelectedEvent;
         public event Action<int> ChangeValueMoneyEvent;
         public event Action<int> ChangeValueDiamondsEvent;
+        public event Action ChatConversationEnded;
+        public event Action ChatMessagesIsEnded;
+        public event Action ChatMessagesIsStarted;
+        public event Action ChatMessageReceived;
 
         public event Action UpdateTextMoneyEvent;
         public event Action UpdateTextDiamondsEvent;
@@ -27,6 +31,26 @@ namespace _School_Seducer_.Editor.Scripts
         {
             ChangeValueDiamondsEvent?.Invoke(value);
             UpdateTextDiamondsEvent?.Invoke();
+        }
+
+        public void ConversationEnded()
+        {
+            ChatConversationEnded?.Invoke();
+        }
+
+        public void MessageReceived()
+        {
+            ChatMessageReceived?.Invoke();
+        }
+
+        public void ChatMessagesStarted()
+        {
+            ChatMessagesIsStarted?.Invoke();
+        }
+
+        public void ChatMessagesEnded()
+        {
+            ChatMessagesIsEnded?.Invoke();
         }
 
         public void UpdateTextDiamonds()

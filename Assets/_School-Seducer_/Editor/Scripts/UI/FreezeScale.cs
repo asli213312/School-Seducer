@@ -2,12 +2,13 @@
 
 namespace _School_Seducer_.Editor.Scripts.UI
 {
-    public class FreezeSizeDelta : MonoBehaviour
+    public class FreezeScale : MonoBehaviour
     {
         private RectTransform rectTransform;
         [SerializeField] public Vector2 originalSizeDelta;
         [SerializeField] private Vector2 anchorMin;
         [SerializeField] private Vector2 anchorMax;
+        public Vector2 AnchorMin { get => anchorMin; set => anchorMin = value; }
 
         private void Start()
         {

@@ -61,7 +61,7 @@ namespace _School_Seducer_.Editor.Scripts
             
             addMoneyByMiniGameButton.AddListener(miniGameInitializer.StartMiniGame);
             closePreviewerPanel.AddListener(previewerPanel.Deactivate);
-            
+
             RegisterCharacters();
 
             _initialSprite = selectedGirlImage.sprite;
@@ -128,9 +128,6 @@ namespace _School_Seducer_.Editor.Scripts
         private void ShadowOutPreviewer()
         {
             if (previewerPanel.activeSelf == false) return;
-            
-            if (_emote.gameObject.activeSelf && _emote != null) _emote.gameObject.Deactivate();
-            
             previewerPanel.Deactivate();
         }
 
@@ -172,15 +169,17 @@ namespace _School_Seducer_.Editor.Scripts
             startDialogueButton.RemoveListener(_currentCharacter.StartConversation);
         }
 
-        public void CheckMoneyPlayer()
+        public void ReduceMoneyPlayer()
         {
-            if (_bank.Money >= 1)
+            if (_bank.Money >= _chat.Config.CoinsForMessage)
             {
-                _bank.ChangeValueMoney(-playerConfig.CostNextNode);
+                _bank.ChangeValueMoney(-_chat.Config.CoinsForMessage);
             }  
             else
             {
                 _currentCharacter.EndConversation();
+                Debug.Log("Money doesn't enough to continue...");
+                ShadowOutPreviewer();
             }
         }       
 

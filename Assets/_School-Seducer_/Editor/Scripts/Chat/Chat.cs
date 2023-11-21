@@ -5,11 +5,14 @@ using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
     public class Chat : MonoBehaviour
     {
+        [Inject] private EventManager _eventManager;
+        
         [SerializeField] private Transform contentMsgs;
         [SerializeField] private Previewer previewer;
         [SerializeField] private OptionButton[] optionButtons;
@@ -18,7 +21,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private ChatConfig config;
         [SerializeField] private MessageDefaultView msgDefaultPrefab;
         [SerializeField] private MessagePictureView msgPicturePrefab;
-	    private СonversationData _currentConversation;
+        [SerializeField] private RectTransform paddingPrefab;
+	    public СonversationData CurrentConversation { get; private set; }
+        public bool IsMessagesEnded { get; private set; }
+        public ChatConfig Config => config;
 
         public OptionButton[] OptionButtons => optionButtons;
         private bool _isStartConversation;
@@ -26,7 +32,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void Awake()
         {
             config.OnConversationEnd.AddListener(previewer.AddDiamondOnConversationEnd);
-            
+            config.OnMessageReceived.AddListener(previewer.ReduceMoneyPlayer);
+
             RegisterOptions();
             previewer.Initialize(this);
         }
@@ -34,13 +41,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void OnDestroy()
         {
             config.OnConversationEnd.RemoveListener(previewer.AddDiamondOnConversationEnd);
-            
-            UnRegisterOptions();
-        }
+            config.OnMessageReceived.RemoveListener(previewer.ReduceMoneyPlayer);
 
-        private void Start()
-        {
-            //StartCoroutine(LoadMessages());
+            UnRegisterOptions();
         }
 
         public void LoadBranch(BranchData branchData)
@@ -56,7 +59,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
 	    public void InstallCurrentConversation(СonversationData data) 
 	    {
-	    	_currentConversation = data;
+	    	CurrentConversation = data;
 	    }
 
         private IEnumerator LoadMessages(MessageData[] messages = null)
@@ -64,13 +67,37 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             messages = CheckIsBranch(messages);
             bool lastMessage = false;
 
+            MessagesStarted();
             StartConversation();
 
             for (int i = 0; i < messages.Length; i++)
             {
                 CheckOptionsIsLastSibling();
-                
+
+                yield return new WaitUntil(CheckTap);
+
+                var paddingBack = CreatePadding();
+                paddingBack.gameObject.Deactivate();
+
                 var newMsg = InstallPrefabMsg(messages, i, out var pictureMsgProxy);
+
+                var paddingForward = CreatePadding();
+                paddingForward.gameObject.Deactivate();
+
+                if (newMsg is MessageDefaultView)
+                {
+                    MessageDefaultView defaultMsg = newMsg as MessageDefaultView;
+                    if (defaultMsg.CheckBigMessage())
+                    {
+                        paddingBack.gameObject.Activate();
+                        paddingForward.gameObject.Activate();
+                    }
+                }
+                else
+                {
+                    paddingBack.gameObject.Destroy();
+                    paddingForward.gameObject.Destroy();
+                }
 
                 newMsg.Initialize(optionButtons);
 
@@ -82,19 +109,25 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 	            config.OnMessageReceived?.Invoke();
 
                 CheckOptionsIsLastSibling();
+                yield return new WaitForSeconds(2f);
 
                 yield return new WaitForSeconds(config.DelayBtwMessage);
+
+                if (messages[i] == messages[^1])
+                {
+                    MessagesEnded();
+                }
                 
                 if (MsgHasBranches(messages, i))
                 {
                     Debug.Log("options installed in MsgHasBranches");
-                    
+
                     if (pictureMsgProxy != null)
                     {
                         yield return new WaitUntil(() => pictureMsgProxy.PictureInstalled);
                         InstallOptions(messages[i]);
                     }
-                    
+
                     InstallOptions(messages[i]);
                     break;
                 }
@@ -107,7 +140,42 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 }
             }
 
-            IsEndConversation(lastMessage);
+            EndConversation(lastMessage);
+            MessagesEnded();
+        }
+
+        private bool CheckTap()
+        {
+            while (true)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+        private void MessagesEnded()
+        {
+            IsMessagesEnded = true;
+            _eventManager.ChatMessagesEnded();
+        }
+
+        private void MessagesStarted()
+        {
+            IsMessagesEnded = false;
+            _eventManager.ChatMessagesStarted();
+        }
+
+        private void EndConversation(bool isLastMessage = false)
+        {
+            if (isLastMessage)
+            {
+                config.OnConversationEnd?.Invoke();
+                IsMessagesEnded = true;
+            }
         }
 
         private void CheckOptionsIsLastSibling()
@@ -130,14 +198,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private bool CheckLastMessage(MessageData[] messages, int i, bool lastMessage)
         {
             if (i == messages.Length - 1)
+            {
                 lastMessage = true;
+            }
+            
             return lastMessage;
-        }
-
-        private void IsEndConversation(bool lastMessage)
-        {
-            if (lastMessage)
-                config.OnConversationEnd?.Invoke();
         }
 
         private bool MsgHasBranches(MessageData[] messages, int i)
@@ -157,8 +222,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void RenderMsgData(MessageData[] messages, IMessage newMsg, int i)
         {
             newMsg.RenderGeneralData(messages[i],
-	            _currentConversation.ActorLeftSprite,
-	            _currentConversation.ActorRightSprite,
+	            CurrentConversation.ActorLeftSprite,
+	            CurrentConversation.ActorRightSprite,
                 config.StoryTellerSprite,
                 config.NeedIconStoryTeller);
         }
@@ -208,15 +273,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
         private void SetNameSender(IMessage newMsg)
         {
-	        string leftActor = _currentConversation.ActorLeftName;
-	        string rightActor = _currentConversation.ActorRightName;
+	        string leftActor = CurrentConversation.ActorLeftName;
+	        string rightActor = CurrentConversation.ActorRightName;
             string storyTeller = config.StoryTellerName;
 	        newMsg.SetNameActors(leftActor, rightActor, storyTeller);
         }
 
         private MessageData[] CheckIsBranch(MessageData[] messages)
         {
-	        if (messages == null) messages = _currentConversation.Messages;
+	        if (messages == null) messages = CurrentConversation.Messages;
             Debug.Log("messages found");
             return messages;
         }
@@ -227,7 +292,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 ? msgPicturePrefab
                 : msgDefaultPrefab;
 
-            Debug.Log("choosed prefab");
+            Debug.Log("chosen prefab");
 
             IMessage newMsg = Instantiate((MonoBehaviour) chosenPrefab, contentMsgs).GetComponent<IMessage>();
 
@@ -240,6 +305,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
 
             return newMsg;
+        }
+
+        private RectTransform CreatePadding()
+        {
+            return Instantiate(paddingPrefab, contentMsgs);
         }
 
         private void RegisterOptions()

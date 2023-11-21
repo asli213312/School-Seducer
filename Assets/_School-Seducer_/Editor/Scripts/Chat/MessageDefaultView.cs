@@ -27,6 +27,28 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             SetName(leftActor, rightActor, storyTeller);
         }
 
+        public bool CheckBigMessage()
+        {
+            RectTransform msgRect = msgText.GetComponent<RectTransform>();
+            RectTransform backMsgRect = backMsg.GetComponent<RectTransform>();
+            if (msgText.preferredHeight > backMsg.GetComponent<RectTransform>().sizeDelta.y)
+            {
+                float heightDifference = msgText.preferredHeight - backMsgRect.sizeDelta.y;
+
+                // Увеличиваем высоту backMsg
+                backMsgRect.sizeDelta = new Vector2(backMsgRect.sizeDelta.x,
+                    backMsgRect.sizeDelta.y + heightDifference / 1.1f);
+
+                //Vector3 initActorSize = actorRect.localScale;
+                //Vector2 initBaseSize = baseRect.sizeDelta;
+                //baseRect.sizeDelta = new Vector2(baseRect.sizeDelta.x, baseRect.sizeDelta.y + heightDifference / 1.3f);
+                msgRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, backMsgRect.sizeDelta.y);
+                return true;
+            }
+
+            return false;
+        }
+
         private void SetOptions(MessageData data)
         {
             for (int i = 0; i < OptionButtons.Length && i < data.optionalData.Branches.Length; i++)

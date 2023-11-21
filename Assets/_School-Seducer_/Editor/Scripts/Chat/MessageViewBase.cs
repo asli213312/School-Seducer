@@ -1,4 +1,5 @@
 ﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.UI;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -18,6 +19,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         protected MessageSender Sender;
 
         private float _maxWidth;
+        protected bool IsBigMessage;
 
         protected void SetSenderMsg(Sprite actorRight, Sprite actorLeft, Sprite storyTeller, MessageData data, bool needIconStoryTeller)
         {
@@ -81,23 +83,41 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 msgText.alignment = TextAnchor.UpperLeft;
                 
                 RectTransform msgRect = msgText.GetComponent<RectTransform>();
+                RectTransform nameMsgRect = msgNameText.GetComponent<RectTransform>();
                 RectTransform backMsgRect = backMsg.GetComponent<RectTransform>();
                 RectTransform baseRect = gameObject.GetComponent<RectTransform>();
-
                 RectTransform actorRect = leftBorderActor.GetComponent<RectTransform>();
+
+                FreezeScale leftBorderFreeze = leftBorderActor.GetComponent<FreezeScale>();
+                Image initialLeftBorder = leftBorderActor.GetComponent<Image>();
 
                 if (msgText.preferredHeight > backMsgRect.sizeDelta.y)
                 {
+                    IsBigMessage = true;
                     float heightDifference = msgText.preferredHeight - backMsgRect.sizeDelta.y;
 
                     // Увеличиваем высоту backMsg
-                    backMsgRect.sizeDelta = new Vector2(backMsgRect.sizeDelta.x, backMsgRect.sizeDelta.y + heightDifference - 65);
+                    backMsgRect.sizeDelta = new Vector2(backMsgRect.sizeDelta.x, backMsgRect.sizeDelta.y + heightDifference / 1.1f);
 
-                    Vector2 originalSizeDelta = actorRect.sizeDelta;
-                    baseRect.sizeDelta = new Vector2(baseRect.sizeDelta.x, baseRect.sizeDelta.y + heightDifference - 65);
+                    Vector3 initActorSize = actorRect.localScale;
+                    Vector2 initBaseSize = baseRect.sizeDelta;
+                    baseRect.sizeDelta = new Vector2(baseRect.sizeDelta.x, baseRect.sizeDelta.y + heightDifference / 1.3f);
                     msgRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, backMsgRect.sizeDelta.y);
                     
-                    //actorRect.sizeDelta -= new Vector2(0, heightDifference - 110);
+                    //nameMsgRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, (heightDifference - 65) / 3.5f);
+
+                    Vector2 scaleFactor = new Vector2(
+                        baseRect.sizeDelta.x != 0 ? (baseRect.sizeDelta.x / initBaseSize.x): 1f,
+                        baseRect.sizeDelta.y != 0 ? (baseRect.sizeDelta.y / initBaseSize.y) * 0.78f : 1f
+                    );
+                    
+                    actorRect.localScale = new Vector3(
+                        initActorSize.x / scaleFactor.x,
+                        initActorSize.y / scaleFactor.y,
+                        initActorSize.z
+                    );
+
+                    //leftBorderFreeze.AnchorMin = new Vector2(actorRect.anchorMin.x, actorRect.anchorMin.y * 1.9f);
                 }
             }
         }

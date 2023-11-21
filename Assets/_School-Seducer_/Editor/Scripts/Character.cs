@@ -3,9 +3,12 @@ using _School_Seducer_.Editor.Scripts;
 using _School_Seducer_.Editor.Scripts.Chat;
 using UnityEngine;
 using DialogueEditor;
+using Zenject;
 
 public class Character : MonoBehaviour
 {
+    [Inject] private EventManager _eventManager; 
+    
     [SerializeField] private CharacterData characterData;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -55,6 +58,6 @@ public class Character : MonoBehaviour
 
     public void EndConversation()
     {
-        //OnEndConversation?.Invoke(conversation);
+        _eventManager.ConversationEnded();
     }
 }
