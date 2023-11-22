@@ -109,7 +109,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 	            config.OnMessageReceived?.Invoke();
 
                 CheckOptionsIsLastSibling();
-                yield return new WaitForSeconds(2f);
 
                 yield return new WaitForSeconds(config.DelayBtwMessage);
 

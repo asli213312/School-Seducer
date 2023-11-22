@@ -15,79 +15,99 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private Chat _chat;
         private ScrollRect _scrollRect;
         private bool _isAutoScrolling;
-        private bool _isCoroutineRunning;
+	    private bool _isCoroutineRunning;
+	    
+	    private void Awake() 
+	    {
+	    	//_eventManager.ChatMessagesIsEnded += DisableAutoScrolling;
+	    }
+        
+	    private void OnValidate() 
+	    {
+	    	_scrollRect ??= GetComponent<ScrollRect>();
+	    	_chat ??= GetComponent<Chat>();
+	    }
 
-        private void Awake()
-        {
-            _eventManager.ChatMessagesIsStarted += StartOrStopCoroutine;
-        }
+	    private void Start()
+	    {
+		    if (_scrollRect != null)
+		    {
+			    _scrollRect.onValueChanged.AddListener(OnScrollValueChanged);
+		    }
+	    }
 
-        private void OnDestroy()
-        {
-            _eventManager.ChatMessagesIsStarted -= StartOrStopCoroutine;
-        }
+	    private void OnDestroy()
+	    {
+		    if (_scrollRect != null)
+		    {
+			    _scrollRect.onValueChanged.RemoveListener(OnScrollValueChanged);
+		    }
+		    
+		    //_eventManager.ChatMessagesIsStarted -= DisableAutoScrolling;
+	    }
 
-        private void OnValidate()
-        {
-            _chat ??= GetComponent<Chat>();
-            _scrollRect ??= GetComponent<ScrollRect>();
-        }
+	    private void OnScrollValueChanged(Vector2 value)
+	    {
+		    if (!_isAutoScrolling && !_chat.IsMessagesEnded && !_isCoroutineRunning && !IsScrollbarAtBottom())
+		    {
+			    StartCoroutine(AutoScrollCoroutine());
+		    }
+		    else if (_isAutoScrolling && _isCoroutineRunning && _chat.IsMessagesEnded) 
+		    {
+		    	StopCoroutine(AutoScrollCoroutine());
+		    	_isCoroutineRunning = false;
+		    }
+	    }
+	    
+	    private void StartOrStopCoroutine()
+	    {
+		    //if (!_chat.IsMessagesEnded && !_isCoroutineRunning && !IsScrollbarAtBottom())
+		    //{
+			//    StartCoroutine(AutoScrollCoroutine());
+		    //}
+		    //else if (_chat.IsMessagesEnded && _isCoroutineRunning)
+		    //{
+			//    StopCoroutine(AutoScrollCoroutine());
+			//    _isCoroutineRunning = false;
+		    //}
+	    }
 
-        private void StartOrStopCoroutine()
-        {
-            if (!_chat.IsMessagesEnded && !_isCoroutineRunning)
-            {
-                StartCoroutine(AutoScrollCoroutine());
-            }
-            else if (_chat.IsMessagesEnded && _isCoroutineRunning)
-            {
-                StopCoroutine(AutoScrollCoroutine());
-                _isCoroutineRunning = false;
-            }
-        }
+	    private IEnumerator AutoScrollCoroutine()
+	    {
+	    	_isCoroutineRunning = true;
+		    _isAutoScrolling = true;
+		    
+		    if (_isAutoScrolling) 
+		    {
+		    	float elapsedTime = 0f;
+			    float startValue = _scrollRect.verticalNormalizedPosition;
+			    float targetValue = 0.1f;
 
-        private IEnumerator AutoScrollCoroutine()
-        {
-            _isCoroutineRunning = true;
-            
-            while (_chat.IsMessagesEnded == false)
-            {
-                yield return new WaitForSeconds(1f); // Ждем 3 секунды перед каждым автоматическим скроллом
-                yield return new WaitForSeconds(1.5f);
+			    while (elapsedTime < scrollSpeed)
+			    {
+				    _scrollRect.verticalNormalizedPosition = Mathf.Lerp(startValue, targetValue, elapsedTime / scrollSpeed);
+				    elapsedTime += Time.deltaTime;
+				    yield return null;
+			    }
 
-                if (!_isAutoScrolling)
-                {
-                    float targetPosition = 0.1f;
-                    float duration = scrollSpeed; // Длительность прокрутки в секундах
+			    _scrollRect.verticalNormalizedPosition = targetValue;
+		    }
+	    	
+		    
+		    _isAutoScrolling = false;
+		    _isCoroutineRunning = false;
+	    }
+	    
+	    private void DisableAutoScrolling() => _isAutoScrolling = false;
 
-                    float startTime = Time.time;
-                    float startPosition = _scrollRect.verticalNormalizedPosition;
+	    private bool IsScrollbarAtBottom()
+	    {
+		    if (_scrollRect.verticalScrollbar)
+		    {
+			    return Mathf.Approximately(_scrollRect.verticalScrollbar.value, 0f);
+		    }
 
-                    while (Time.time < startTime + duration)
-                    {
-                        float t = (Time.time - startTime) / duration;
-                        _scrollRect.verticalNormalizedPosition = Mathf.Lerp(startPosition, targetPosition, t);
-                        yield return null;
-                    }
-
-                    // Устанавливаем конечную позицию, чтобы избежать небольших расхождений
-                    _scrollRect.verticalNormalizedPosition = targetPosition;
-                }
-            }
-
-            _isCoroutineRunning = false;
-        }
-
-        private bool IsScrollbarAtBottom()
-        {
-            if (_scrollRect.verticalScrollbar)
-            {
-                // Проверяем, находится ли ползунок в самом низу
-                return Mathf.Approximately(_scrollRect.verticalScrollbar.value, 0f);
-            }
-
-            // В случае, если вертикального скроллбара нет, считаем, что он всегда внизу
-            return true;
-        }
+		    return true;
+	    }
     }
 }
