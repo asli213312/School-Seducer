@@ -22,6 +22,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private MessageDefaultView msgDefaultPrefab;
         [SerializeField] private MessagePictureView msgPicturePrefab;
         [SerializeField] private RectTransform paddingPrefab;
+
+        public bool IsBigMessage { get; private set; }
+        public bool IsVeryBigMessage { get; private set; }
+        public Transform ContentMsgs => contentMsgs;
 	    public СonversationData CurrentConversation { get; private set; }
         public bool IsMessagesEnded { get; private set; }
         public ChatConfig Config => config;
@@ -48,7 +52,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void LoadBranch(BranchData branchData)
         {
-            ResetContent();
+            //ResetContent();
             StartCoroutine(LoadMessages(branchData.Messages));
         }
 
@@ -74,35 +78,51 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             {
                 CheckOptionsIsLastSibling();
 
-                yield return new WaitUntil(CheckTap);
+                yield return new WaitUntil(InputExtensions.CheckTap);
+                yield return new WaitForSeconds(0.5f);
 
+                IsVeryBigMessage = false;
+                IsBigMessage = false;
+                
                 var paddingBack = CreatePadding();
-                paddingBack.gameObject.Deactivate();
-
                 var newMsg = InstallPrefabMsg(messages, i, out var pictureMsgProxy);
-
                 var paddingForward = CreatePadding();
-                paddingForward.gameObject.Deactivate();
-
-                if (newMsg is MessageDefaultView)
-                {
-                    MessageDefaultView defaultMsg = newMsg as MessageDefaultView;
-                    if (defaultMsg.CheckBigMessage())
-                    {
-                        paddingBack.gameObject.Activate();
-                        paddingForward.gameObject.Activate();
-                    }
-                }
-                else
-                {
-                    paddingBack.gameObject.Destroy();
-                    paddingForward.gameObject.Destroy();
-                }
 
                 newMsg.Initialize(optionButtons);
 
                 RenderMsgData(messages, newMsg, i);
                 SetNameSender(newMsg);
+                
+                if (newMsg is MessageDefaultView)
+                {
+                    MessageDefaultView defaultMsg = newMsg as MessageDefaultView;
+                    bool needDestroy = false;
+                    if (defaultMsg.CheckIsVeryBigMessage())
+                    {
+                        IsVeryBigMessage = true;
+                        Debug.Log("IsVeryBigMessage in CHAT: " + IsVeryBigMessage);
+                        paddingBack.gameObject.Activate();
+                        paddingForward.gameObject.Activate();
+                    }
+                    else if (defaultMsg.CheckIsVeryBigMessage() == false)
+                    {
+                        IsBigMessage = true;
+                        Debug.Log("IsBigMessage in CHAT: " + IsBigMessage);
+                        paddingBack.gameObject.Activate();
+                        paddingForward.gameObject.Activate();
+                    }
+                    
+                    if (defaultMsg.CheckIsVeryBigMessage() == false && defaultMsg.IsBigMessageFalse())
+                    {
+                        needDestroy = true;
+                    }
+
+                    if (needDestroy)
+                    {
+                        paddingBack.gameObject.Destroy();
+                        paddingForward.gameObject.Destroy();
+                    }
+                }
 
                 Debug.Log("Render completed");
 
@@ -112,11 +132,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
                 yield return new WaitForSeconds(config.DelayBtwMessage);
 
-                if (messages[i] == messages[^1])
-                {
-                    MessagesEnded();
-                }
-                
                 if (MsgHasBranches(messages, i))
                 {
                     Debug.Log("options installed in MsgHasBranches");
@@ -130,6 +145,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     InstallOptions(messages[i]);
                     break;
                 }
+                
+                if (messages[i] == messages[^1])
+                {
+                    MessagesEnded();
+                }
 
                 lastMessage = CheckLastMessage(messages, i, lastMessage);
 
@@ -141,19 +161,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             EndConversation(lastMessage);
             MessagesEnded();
-        }
-
-        private bool CheckTap()
-        {
-            while (true)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    return true;
-                }
-
-                return false;
-            }
         }
 
         private void MessagesEnded()
@@ -306,10 +313,20 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             return newMsg;
         }
 
-        private RectTransform CreatePadding()
+        public RectTransform CreatePadding()
         {
             return Instantiate(paddingPrefab, contentMsgs);
         }
+        
+	    private bool IsOptionsActivated() 
+	    {
+	    	foreach (var option in optionButtons) 
+	    	{
+	    		return option.gameObject.activeSelf;
+	    	}
+	    	
+	    	return false;
+	    }
 
         private void RegisterOptions()
         {

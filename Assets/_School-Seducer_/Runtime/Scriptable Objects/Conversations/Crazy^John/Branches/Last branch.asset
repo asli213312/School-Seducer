@@ -21,14 +21,11 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
-    Msg: 
+    Msg: choose
     optionalData:
       PictureInsteadMsg: {fileID: 0}
       Animation: {fileID: 0}
-      Branches: []
-  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: jujuju
-    optionalData:
-      PictureInsteadMsg: {fileID: 0}
-      Animation: {fileID: 0}
-      Branches: []
+      Branches:
+      - {fileID: 11400000, guid: 84697a5d927912e4598e97270511f91c, type: 2}
+      - {fileID: 11400000, guid: 84697a5d927912e4598e97270511f91c, type: 2}
+      - {fileID: 11400000, guid: 84697a5d927912e4598e97270511f91c, type: 2}

@@ -25,7 +25,7 @@ MonoBehaviour:
   StoryTellerName: Storyteller
   NeedIconStoryTeller: 1
   MainHeight: 100
-  OneOptionWidth: 800
+  OneOptionWidth: 820
   TwoOptionsWidth: 400
   ThreeOptionsWidth: 250
   DelayBtwMessage: 1

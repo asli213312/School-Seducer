@@ -20,11 +20,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private float _maxWidth;
         protected bool IsBigMessage;
+        protected bool IsVeryBigMessage;
 
         protected void SetSenderMsg(Sprite actorRight, Sprite actorLeft, Sprite storyTeller, MessageData data, bool needIconStoryTeller)
         {
             Data = data;
             Sender = data.Sender;
+
             switch (data.Sender)
             {
             case MessageSender.ActorRight:
@@ -93,7 +95,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
                 if (msgText.preferredHeight > backMsgRect.sizeDelta.y)
                 {
-                    IsBigMessage = true;
+                    if (msgText.text.Length > 200)
+                    {
+                        IsVeryBigMessage = true;    
+                    }
+                    else if (msgText.text.Length > 100)
+                    {
+                        IsBigMessage = true;
+                    }
+                    
+                    Debug.Log("IsBigMessage in base: " + IsBigMessage);
                     float heightDifference = msgText.preferredHeight - backMsgRect.sizeDelta.y;
 
                     // Увеличиваем высоту backMsg
@@ -116,8 +127,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                         initActorSize.y / scaleFactor.y,
                         initActorSize.z
                     );
-
-                    //leftBorderFreeze.AnchorMin = new Vector2(actorRect.anchorMin.x, actorRect.anchorMin.y * 1.9f);
                 }
             }
         }

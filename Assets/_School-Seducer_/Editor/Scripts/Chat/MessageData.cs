@@ -9,9 +9,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [ShowAssetPreview(32, 32), SerializeField] public Sprite ActorIcon;
         [ResizableTextArea] [HideIf("IsPictureMsg")] public string Msg;
         public OptionalMsgData optionalData;
+        public MessageSender Sender { get; set; }
 
         private bool _isBigMessage;
-        public MessageSender Sender { get; set; }
 
         public bool IsBigMessage() => _isBigMessage;
 

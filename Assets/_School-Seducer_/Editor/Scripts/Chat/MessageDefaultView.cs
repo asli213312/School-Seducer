@@ -10,8 +10,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 {
     public class MessageDefaultView : MessageViewBase, IMessage
     {
+        public MessageSender MessageSender { get; set; }
+
         public void Initialize(OptionButton[] optionButtons)
         {
+            MessageSender = Sender;
             OptionButtons = optionButtons;
         }
 
@@ -27,26 +30,18 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             SetName(leftActor, rightActor, storyTeller);
         }
 
-        public bool CheckBigMessage()
+        public bool CheckIsVeryBigMessage()
         {
-            RectTransform msgRect = msgText.GetComponent<RectTransform>();
-            RectTransform backMsgRect = backMsg.GetComponent<RectTransform>();
-            if (msgText.preferredHeight > backMsg.GetComponent<RectTransform>().sizeDelta.y)
-            {
-                float heightDifference = msgText.preferredHeight - backMsgRect.sizeDelta.y;
+            Debug.Log("IsBigMessage: " + IsBigMessage);
+            Debug.Log("IsVeryBigMessage: " + IsVeryBigMessage);
+            Debug.Log("Message length: " + msgText.text.Length);
 
-                // Увеличиваем высоту backMsg
-                backMsgRect.sizeDelta = new Vector2(backMsgRect.sizeDelta.x,
-                    backMsgRect.sizeDelta.y + heightDifference / 1.1f);
+            return IsVeryBigMessage;
+        }
 
-                //Vector3 initActorSize = actorRect.localScale;
-                //Vector2 initBaseSize = baseRect.sizeDelta;
-                //baseRect.sizeDelta = new Vector2(baseRect.sizeDelta.x, baseRect.sizeDelta.y + heightDifference / 1.3f);
-                msgRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, backMsgRect.sizeDelta.y);
-                return true;
-            }
-
-            return false;
+        public bool IsBigMessageFalse()
+        {
+            return IsBigMessage == false;
         }
 
         private void SetOptions(MessageData data)

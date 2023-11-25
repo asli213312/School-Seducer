@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Last branch
   m_EditorClassIdentifier: 
   BranchName: In this branch you can to try hard new Branch3
-  messages:
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
     Msg: 
     optionalData:
       PictureInsteadMsg: {fileID: 0}
