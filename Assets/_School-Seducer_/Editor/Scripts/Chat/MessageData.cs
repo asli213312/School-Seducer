@@ -9,6 +9,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [ShowAssetPreview(32, 32), SerializeField] public Sprite ActorIcon;
         [ResizableTextArea] [HideIf("IsPictureMsg")] public string Msg;
         public OptionalMsgData optionalData;
+        [HideIf("IsPictureMsg"), SerializeField] public AudioClip AudioMsg;
+
         public MessageSender Sender { get; set; }
 
         private bool _isBigMessage;
@@ -20,6 +22,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _isBigMessage = true;
         }
 
-        private bool IsPictureMsg() => optionalData.PictureInsteadMsg != null;
+        public bool IsPictureMsg() => optionalData.GallerySlot != null;
     }
 }

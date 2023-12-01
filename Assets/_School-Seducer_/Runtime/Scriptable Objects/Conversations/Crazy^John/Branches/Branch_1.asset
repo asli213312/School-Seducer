@@ -12,38 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa0b87652814f9f8f6930844a64884a, type: 3}
   m_Name: Branch_1
   m_EditorClassIdentifier: 
-  BranchName: In this branch you can to try hard new branch, his name is Branch1
+  BranchName: BRANCH 1
   Messages:
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
     Msg: grfrfrfrg
     optionalData:
-      PictureInsteadMsg: {fileID: 0}
+      GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
     Msg: I'm okay. Maybe you want to go with me and my friends or to go with me go
       to bar, would you think? and maybe you want to go fly with me?
     optionalData:
-      PictureInsteadMsg: {fileID: 0}
+      GallerySlot: {fileID: 11400000, guid: 054760e400ceaf84bad41b737c73dcdc, type: 2}
       Animation: {fileID: 0}
       Branches: []
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
     Msg: "\u043B\u043B\u043B\u043B\u043B\u043B\u043B\u043B\u043B"
     optionalData:
-      PictureInsteadMsg: {fileID: 0}
+      GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
     Msg: grfrfrfrf
     optionalData:
-      PictureInsteadMsg: {fileID: 0}
+      GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
     Msg: What do you want at now?
     optionalData:
-      PictureInsteadMsg: {fileID: 0}
+      GallerySlot: {fileID: 11400000, guid: fd5f6318df67a0b4d8c8017d2a9be02a, type: 2}
       Animation: {fileID: 0}
       Branches:
-      - {fileID: 11400000, guid: 94f91937cf247c4419dc4a7d9b1072a7, type: 2}
       - {fileID: 11400000, guid: 94f91937cf247c4419dc4a7d9b1072a7, type: 2}

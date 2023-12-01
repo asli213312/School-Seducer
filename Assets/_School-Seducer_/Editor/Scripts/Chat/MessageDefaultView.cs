@@ -1,16 +1,19 @@
-﻿using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using System;
+using _BonGirl_.Editor.Scripts;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
-using NaughtyAttributes;
-using UnityEditor.Search;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
     public class MessageDefaultView : MessageViewBase, IMessage
     {
+        [SerializeField] private Button audioButton;
+        
         public MessageSender MessageSender { get; set; }
+
+        private SoundInvoker _soundInvoker;
 
         public void Initialize(OptionButton[] optionButtons)
         {
@@ -18,10 +21,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             OptionButtons = optionButtons;
         }
 
+        public void InitSoundInvoker(SoundInvoker soundInvoker)
+        {
+            _soundInvoker = soundInvoker;
+        }
+
         public void RenderGeneralData(MessageData data, Sprite actorLeft, Sprite actorRight, Sprite storyTeller, bool needIconStoryTeller)
         {
             SetSenderMsg(actorRight, actorLeft, storyTeller, data, needIconStoryTeller);
             SetOptions(data);
+            SetAudioButton();
             Debug.Log("Options were installed");
         }
 
@@ -44,6 +53,19 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             return IsBigMessage == false;
         }
 
+        private void SetAudioButton()
+        {
+            if (Data.IsPictureMsg() == false)
+            {
+                audioButton.onClick.AddListener(InvokeAudioMsg);
+            }
+        }
+
+        private void InvokeAudioMsg()
+        {
+            _soundInvoker.InvokeClip(Data.AudioMsg, audioButton.gameObject.Deactivate, 5f);
+        }
+
         private void SetOptions(MessageData data)
         {
             for (int i = 0; i < OptionButtons.Length && i < data.optionalData.Branches.Length; i++)
@@ -57,6 +79,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     textChildren.text = OptionButtons[i].BranchData.BranchName;
                 }
             }
+        }
+
+        private void OnDestroy()
+        {
+            if (Data.AudioMsg != null) audioButton.RemoveListener(InvokeAudioMsg);
         }
     }
 }

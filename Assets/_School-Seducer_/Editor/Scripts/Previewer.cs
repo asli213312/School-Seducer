@@ -42,10 +42,10 @@ namespace _School_Seducer_.Editor.Scripts
         private СonversationData _currentConversation;
         private SwitcherInDialogue _switcher;
 
-        private int _selectedNodeID;
-
         private Sprite _initialSprite;
         private Sprite _initialEmote;
+
+        private int _currentChatIndex;
 
         public void Initialize(Chat.Chat chat)
         {
@@ -94,8 +94,8 @@ namespace _School_Seducer_.Editor.Scripts
 
             _currentCharacter = character;
 	        _currentConversation = _currentCharacter.Conversation;
-            
-	        if (_currentCharacter == null) 
+
+            if (_currentCharacter == null) 
 	        	Debug.LogError("current character is null on selected");
 
             Invoke(nameof(RegisterConversation), 0.2f);

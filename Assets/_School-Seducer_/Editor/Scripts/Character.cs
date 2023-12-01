@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using _School_Seducer_.Editor.Scripts;
 using _School_Seducer_.Editor.Scripts.Chat;
 using UnityEngine;
@@ -19,8 +19,6 @@ public class Character : MonoBehaviour
     private BoxCollider2D _collider;
     public event Action<Character> CharacterSelected;
     public event Action<Character> CharacterEnter;
-    public event Action<СonversationData> OnStartConversation;
-    public event Action<СonversationData> OnEndConversation;
     public event Action CharacterExit;
 
     private Chat _chat;

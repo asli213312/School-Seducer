@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
   m_Name: Nurse Girl
   m_EditorClassIdentifier: 
+  conversation: {fileID: 11400000, guid: 70dcabdf9ceffaa4f8ed70313909f7aa, type: 2}
   requiredLevel: 5
-  loyalty: 2
+  loyalty: 0
   maxLoyalty: 0
   showDebugParameters: 0

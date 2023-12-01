@@ -56,7 +56,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     //backMsg.Translate(Vector2.right * 0.5f, Space.Self);
 
                     Vector2 newSize; 
-                    if (data.optionalData.PictureInsteadMsg != null)
+                    if (data.optionalData.GallerySlot != null)
                     {
                         newSize = new Vector2(50, 60);
                         backMsg.sizeDelta = newSize;   
@@ -74,7 +74,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     break;
             }
 
-            if (Data.optionalData.PictureInsteadMsg != null && Sender != MessageSender.StoryTeller)
+            if (Data.optionalData.GallerySlot != null && Sender != MessageSender.StoryTeller)
             {
                 Vector2 offsetY = new Vector2(0, 30);
                 backMsg.sizeDelta = new Vector2(backMsg.sizeDelta.x, msgText.preferredHeight);

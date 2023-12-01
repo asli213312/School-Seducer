@@ -56,6 +56,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             SetOptions(data);
             SetPicture(data);
             PictureInstalled = true;
+            Data.optionalData.GallerySlot.CheckNeedInGallery();
         }
 
         private void SetOptions(MessageData data)
@@ -74,9 +75,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void SetPicture(MessageData data)
         {
             Sprite picture = null;
-            if (data.optionalData.PictureInsteadMsg != null) picture = data.optionalData.PictureInsteadMsg;
+            if (data.optionalData.GallerySlot != null) picture = data.optionalData.GallerySlot.Sprite;
             
-            if (IsWidePicture(data.optionalData.PictureInsteadMsg))
+            if (IsWidePicture(data.optionalData.GallerySlot.Sprite))
             {
                 msgWidePicture.sprite = picture;
                 msgWidePicture.gameObject.Activate();   

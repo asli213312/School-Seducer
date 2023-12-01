@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _School_Seducer_.Editor.Scripts.Extensions;
+using _School_Seducer_.Editor.Scripts.UI;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     [CreateAssetMenu]
     public class СonversationData : ConversationBase, IСonversation
     {
+        public bool IsCompleted;
+        public int ConversationIndex;
         [field: SerializeField] public ChatConfig Config { get; set; }
 
         public string ActorLeftName;
@@ -18,13 +21,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public string ActorRightName;
         [field: ShowAssetPreview(), SerializeField] public Sprite ActorRightSprite { get; set; }
 
-        [SerializeField, ShowIf("IsFalse")] public MessageData[] Messages;
+        [SerializeField] public MessageData[] Messages;
 
-        private bool _isFalse;
-
-        private bool IsFalse() => _isFalse = true;
-
-        private void OnValidate()
+        /*private void OnValidate()
         {
             for (int i = 0; i < Messages.Length; i++)
             {
@@ -38,7 +37,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     Debug.LogWarning("Messages after installed branches were removed");
                 }
             }
-            _isFalse = true;
-        }
+        }*/
     }
 }

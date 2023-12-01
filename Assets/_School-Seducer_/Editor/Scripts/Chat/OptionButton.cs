@@ -2,6 +2,7 @@
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityFigmaBridge.Runtime.UI;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
@@ -16,6 +17,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public event Action OnClick;
         
         private RectTransform _parent;
+        private GameObject _backSibling;
+
+        public void InitializeChat(Chat chat)
+        {
+            _chat = chat;
+        }
 
         private void Awake()
         {
@@ -34,16 +41,21 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             OnClick -= CreateCopyInChat;
         }
 
-        public void InitializeChat(Chat chat)
-        {
-            _chat = chat;
-        }
-
-        public void CreateCopyInChat()
+        private void CreateCopyInChat()
         {
             GameObject newOptionParent = CreateOptionParent();
-            SetupOption(newOptionParent);
+            
+            _backSibling = _chat.ContentMsgs.GetChild(0).gameObject;
+            
+            GameObject option = SetupOption(newOptionParent);
             SetupPadding(newOptionParent);
+            
+            FigmaImage optionImage = option.GetComponent<FigmaImage>();
+            optionImage.StrokeColor = _backSibling.transform.Find("Background").GetComponent<FigmaImage>().StrokeColor;
+            optionImage.FillColor = _backSibling.transform.Find("Background").GetComponent<FigmaImage>().FillColor;
+            optionImage.FillGradient = _backSibling.transform.Find("Background").GetComponent<FigmaImage>().FillGradient;
+            optionImage.GradientHandlePositions = _backSibling.transform.Find("Background").GetComponent<FigmaImage>().GradientHandlePositions;
+            optionImage.Fill = FigmaImage.FillStyle.LinearGradient;
     
             Debug.Log("lastMessage:", _chat.ContentMsgs.GetChild(_chat.ContentMsgs.childCount - 2));
             Debug.Log("new option:", newOptionParent.gameObject);
@@ -56,7 +68,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             return newOptionParent;
         }
 
-        private void SetupOption(GameObject newOptionParent)
+        private GameObject SetupOption(GameObject newOptionParent)
         {
             GameObject newOption = newOptionParent.transform.GetChild(0).gameObject;
             RectTransform newOptionRect = newOption.GetComponent<RectTransform>();
@@ -69,8 +81,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             parentHorizontalLayout.childAlignment = TextAnchor.MiddleLeft;
             parentHorizontalLayout.padding.left = 200;
+            
+            //optionImage.StrokeColor = _backSibling.transform.Find("Background").GetComponent<FigmaImage>().StrokeColor;
 
             KeepOnlyOneSibling(newOptionParent, newOption.GetComponent<OptionButton>());
+
+            return newOption;
         }
 
         private void SetupPadding(GameObject newOptionParent)

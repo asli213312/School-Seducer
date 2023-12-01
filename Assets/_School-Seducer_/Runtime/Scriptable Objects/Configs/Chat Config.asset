@@ -24,6 +24,11 @@ MonoBehaviour:
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   StoryTellerName: Storyteller
   NeedIconStoryTeller: 1
+  ChatCompletedSprite: {fileID: 21300000, guid: 61570fe4a09b3644c95ed0c25fdc9ece, type: 3}
+  ChatUncompletedSprite: {fileID: 21300000, guid: e7950fd25b185d24f86759487e51c315, type: 3}
+  Chats:
+  - {fileID: 11400000, guid: 2d7ec7a146fc78844bab40be0177cbf1, type: 2}
+  - {fileID: 11400000, guid: 70dcabdf9ceffaa4f8ed70313909f7aa, type: 2}
   MainHeight: 100
   OneOptionWidth: 820
   TwoOptionsWidth: 400

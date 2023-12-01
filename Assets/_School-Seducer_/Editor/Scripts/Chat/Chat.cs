@@ -1,24 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _BonGirl_.Editor.Scripts;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Extensions;
+using _School_Seducer_.Editor.Scripts.UI;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
     public class Chat : MonoBehaviour
     {
+        [Inject] private SoundInvoker _soundInvoker;
         [Inject] private EventManager _eventManager;
         
         [SerializeField] private Transform contentMsgs;
+        [SerializeField] private Transform contentChats;
+        [SerializeField] private GalleryScreen gallery;
         [SerializeField] private Previewer previewer;
         [SerializeField] private OptionButton[] optionButtons;
 
         [Header("Data")] 
         [SerializeField] private ChatConfig config;
+        [SerializeField] private ChatStatusView chatStatusView;
         [SerializeField] private MessageDefaultView msgDefaultPrefab;
         [SerializeField] private MessagePictureView msgPicturePrefab;
         [SerializeField] private RectTransform paddingPrefab;
@@ -31,7 +36,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public ChatConfig Config => config;
 
         public OptionButton[] OptionButtons => optionButtons;
+
+        private List<MessageData> _messages = new();
+        public List<MessageData> CompletedMessages { get; private set; } = new();
+        private List<ChatStatusView> _chatStatusViews = new();
+        private ChatStatusView _currentStatusView;
+        private ConversationView _conversationView;
         private bool _isStartConversation;
+        private int _iteratedMessages;
 
         private void Awake()
         {
@@ -40,6 +52,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             RegisterOptions();
             previewer.Initialize(this);
+
+            _conversationView = new ConversationView();
+            //_conversationView.Initialize(config.ChatCompletedSprite, config.ChatUncompletedSprite);
         }
 
         private void OnDestroy()
@@ -50,9 +65,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             UnRegisterOptions();
         }
 
+        private void OnEnable()
+        {
+            InitializeChats();
+        }
+
         public void LoadBranch(BranchData branchData)
         {
-            //ResetContent();
             StartCoroutine(LoadMessages(branchData.Messages));
         }
 
@@ -64,7 +83,19 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 	    public void InstallCurrentConversation(СonversationData data) 
 	    {
 	    	CurrentConversation = data;
-	    }
+            _currentStatusView = _chatStatusViews[CurrentConversation.ConversationIndex];
+        }
+
+        private void InitializeChats()
+        {
+            for (int i = 0; i < config.Chats.Length; i++)
+            {
+                ChatStatusView chatStatus = Instantiate(chatStatusView, contentChats);
+                chatStatus.Render(config.Chats[i]);
+                chatStatus.SetStatus(config.ChatCompletedSprite, config.ChatUncompletedSprite);
+                _chatStatusViews.Add(chatStatus);
+            }
+        }
 
         private IEnumerator LoadMessages(MessageData[] messages = null)
 	    {
@@ -73,56 +104,34 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             MessagesStarted();
             StartConversation();
+            
+            _messages.AddRange(messages);
 
-            for (int i = 0; i < messages.Length; i++)
+            for (int i = 0; i < _messages.Count; i++)
             {
+                if (CompletedMessages.Contains(_messages[i]))
+                {
+                    continue;
+                }
+                
                 CheckOptionsIsLastSibling();
 
-                yield return new WaitUntil(InputExtensions.CheckTap);
+                yield return new WaitUntil(CheckTapBounds);
                 yield return new WaitForSeconds(0.5f);
 
                 IsVeryBigMessage = false;
                 IsBigMessage = false;
-                
+
                 var paddingBack = CreatePadding();
-                var newMsg = InstallPrefabMsg(messages, i, out var pictureMsgProxy);
+                var newMsg = InstallPrefabMsg(_messages.ToArray(), i, out var pictureMsgProxy);
                 var paddingForward = CreatePadding();
 
                 newMsg.Initialize(optionButtons);
 
-                RenderMsgData(messages, newMsg, i);
+                RenderMsgData(_messages.ToArray(), newMsg, i);
                 SetNameSender(newMsg);
                 
-                if (newMsg is MessageDefaultView)
-                {
-                    MessageDefaultView defaultMsg = newMsg as MessageDefaultView;
-                    bool needDestroy = false;
-                    if (defaultMsg.CheckIsVeryBigMessage())
-                    {
-                        IsVeryBigMessage = true;
-                        Debug.Log("IsVeryBigMessage in CHAT: " + IsVeryBigMessage);
-                        paddingBack.gameObject.Activate();
-                        paddingForward.gameObject.Activate();
-                    }
-                    else if (defaultMsg.CheckIsVeryBigMessage() == false)
-                    {
-                        IsBigMessage = true;
-                        Debug.Log("IsBigMessage in CHAT: " + IsBigMessage);
-                        paddingBack.gameObject.Activate();
-                        paddingForward.gameObject.Activate();
-                    }
-                    
-                    if (defaultMsg.CheckIsVeryBigMessage() == false && defaultMsg.IsBigMessageFalse())
-                    {
-                        needDestroy = true;
-                    }
-
-                    if (needDestroy)
-                    {
-                        paddingBack.gameObject.Destroy();
-                        paddingForward.gameObject.Destroy();
-                    }
-                }
+                CheckSizeMessage(newMsg, paddingBack, paddingForward);
 
                 Debug.Log("Render completed");
 
@@ -132,35 +141,100 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
                 yield return new WaitForSeconds(config.DelayBtwMessage);
 
-                if (MsgHasBranches(messages, i))
+                if (MsgHasBranches(_messages.ToArray(), i))
                 {
                     Debug.Log("options installed in MsgHasBranches");
 
                     if (pictureMsgProxy != null)
                     {
                         yield return new WaitUntil(() => pictureMsgProxy.PictureInstalled);
-                        InstallOptions(messages[i]);
+                        InstallOptions(_messages[i]);
                     }
 
-                    InstallOptions(messages[i]);
+                    InstallOptions(_messages[i]);
+                    
+                    _iteratedMessages++;
+                    
+                    CompletedMessages.Add(_messages[i]);
+                    _currentStatusView.CompletionChanged(i, _messages.ToArray());
+                    
+                    Debug.Log("iterated messages: " + _iteratedMessages);
                     break;
                 }
-                
-                if (messages[i] == messages[^1])
+
+                if (_messages[i] == _messages[^1])
                 {
                     MessagesEnded();
                 }
 
-                lastMessage = CheckLastMessage(messages, i, lastMessage);
+                lastMessage = CheckLastMessage(_messages.ToArray(), i, lastMessage);
 
                 while (pictureMsgProxy != null && !pictureMsgProxy.PictureInstalled)
                 {
                     yield return new WaitForSeconds(1f);   
                 }
+
+                if (CheckLastMessage(_messages.ToArray(), i, lastMessage))
+                {
+                    CurrentConversation.IsCompleted = true;
+                }
+
+                _iteratedMessages++;
+                _currentStatusView.CompletionChanged(i, _messages.ToArray());
+                CompletedMessages.Add(_messages[i]);
+                
+                Debug.Log("iterated messages: " + _iteratedMessages);
             }
 
             EndConversation(lastMessage);
             MessagesEnded();
+        }
+
+        private bool CheckTapBounds()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                
+                Collider2D collider = gameObject.GetComponent<Collider2D>();
+                return collider != null && collider.OverlapPoint(mousePosition);
+            }
+
+            return false;
+        }
+
+        private void CheckSizeMessage(IMessage newMsg, RectTransform paddingBack, RectTransform paddingForward)
+        {
+            if (newMsg is MessageDefaultView)
+            {
+                MessageDefaultView defaultMsg = newMsg as MessageDefaultView;
+                bool needDestroy = false;
+                if (defaultMsg.CheckIsVeryBigMessage())
+                {
+                    IsVeryBigMessage = true;
+                    Debug.Log("IsVeryBigMessage in CHAT: " + IsVeryBigMessage);
+                    paddingBack.gameObject.Activate();
+                    paddingForward.gameObject.Activate();
+                }
+                else if (defaultMsg.CheckIsVeryBigMessage() == false)
+                {
+                    IsBigMessage = true;
+                    Debug.Log("IsBigMessage in CHAT: " + IsBigMessage);
+                    paddingBack.gameObject.Activate();
+                    paddingForward.gameObject.Activate();
+                }
+
+                if (defaultMsg.CheckIsVeryBigMessage() == false && defaultMsg.IsBigMessageFalse())
+                {
+                    needDestroy = true;
+                }
+
+                if (needDestroy)
+                {
+                    paddingBack.gameObject.Destroy();
+                    paddingForward.gameObject.Destroy();
+                }
+            }
         }
 
         private void MessagesEnded()
@@ -294,7 +368,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private IMessage InstallPrefabMsg(MessageData[] messages, int i, out MessagePictureView pictureMsgProxy)
         {
-            IMessage chosenPrefab = messages[i].optionalData.PictureInsteadMsg != null
+            IMessage chosenPrefab = messages[i].optionalData.GallerySlot != null
                 ? msgPicturePrefab
                 : msgDefaultPrefab;
 
@@ -309,24 +383,24 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 pictureMsgProxy = pictureMsg;
                 pictureMsgProxy.SetDurationSendingPicture(config.DurationSendingPicture);
             }
+            else if (newMsg is MessageDefaultView)
+            {
+                MessageDefaultView defaultMsg = newMsg as MessageDefaultView;
+                defaultMsg.InitSoundInvoker(_soundInvoker);
+            }
 
             return newMsg;
+        }
+
+        public bool OptionWasClicked()
+        {
+            return true;
         }
 
         public RectTransform CreatePadding()
         {
             return Instantiate(paddingPrefab, contentMsgs);
         }
-        
-	    private bool IsOptionsActivated() 
-	    {
-	    	foreach (var option in optionButtons) 
-	    	{
-	    		return option.gameObject.activeSelf;
-	    	}
-	    	
-	    	return false;
-	    }
 
         private void RegisterOptions()
         {
@@ -360,6 +434,34 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 if (contentMsgs.GetChild(i) != contentMsgs.Find("Options"))
                     Destroy(contentMsgs.GetChild(i).gameObject);
             }
+        }
+    }
+
+    public class ConversationView
+    {
+        private ChatStatusView _chatStatusView;
+        private Sprite _completedChat, _unCompletedChat;
+
+        public void Initialize(Sprite completedChat, Sprite unCompletedChat)
+        {
+            _completedChat = completedChat;
+            _unCompletedChat = unCompletedChat;
+        }
+
+        public ChatStatusView InstallStatusView()
+        {
+            return _chatStatusView;
+        }
+
+        public void SetDataConversation(СonversationData chatData)
+        {
+            _chatStatusView.Render(chatData);
+            SetStatusChat();
+        }
+
+        private void SetStatusChat()
+        {
+            _chatStatusView.SetStatus(_completedChat, _unCompletedChat);
         }
     }
 }
