@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 192867764, guid: fe7dc24be04d6cc4c90baafda54f37b0, type: 3}
   m_Name: YTDS_FolderSettingsData
   m_EditorClassIdentifier: 
-  "\u8BED\u8A00": 0
+  "\u8BED\u8A00": 1
   "\u6298\u53E0\u63D0\u793A": 0
   "\u9ED8\u8BA4\u6587\u4EF6\u5939": 
   "\u663E\u793A\u8303\u56F4": 0

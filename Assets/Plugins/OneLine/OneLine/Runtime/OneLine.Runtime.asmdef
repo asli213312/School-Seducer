@@ -1,0 +1,16 @@
+{
+    "name": "st.one-line.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "st.rect-ex.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: School_Seducer
+  companyName: GhezziGames
+  productName: College Fucked Fest
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -668,7 +668,18 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: ONE_LINE_HORIZONTAL_SEPARATOR_DISABLE;ONE_LINE_EXPANDABLE_DISABLE;ONE_LINE_CUSTOM_DRAWER_DISABLE
+    Android: UNITY_VISUAL_SCRIPTING
+    EmbeddedLinux: UNITY_VISUAL_SCRIPTING
+    LinuxHeadlessSimulation: UNITY_VISUAL_SCRIPTING
+    Nintendo Switch: UNITY_VISUAL_SCRIPTING
+    PS4: UNITY_VISUAL_SCRIPTING
+    Server: UNITY_VISUAL_SCRIPTING
+    Standalone: UNITY_VISUAL_SCRIPTING;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;ONE_LINE_HORIZONTAL_SEPARATOR_DISABLE;ONE_LINE_EXPANDABLE_DISABLE;ONE_LINE_CUSTOM_DRAWER_DISABLE
+    WebGL: UNITY_VISUAL_SCRIPTING
+    Windows Store Apps: UNITY_VISUAL_SCRIPTING
+    XboxOne: UNITY_VISUAL_SCRIPTING
+    iPhone: UNITY_VISUAL_SCRIPTING
+    tvOS: UNITY_VISUAL_SCRIPTING
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa0b87652814f9f8f6930844a64884a, type: 3}
+  m_Name: Branch_1
+  m_EditorClassIdentifier: 
+  BranchName: BRANCH 1
+  audioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+    Msg: grfrfrfrg
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+    Msg: I'm okay. Maybe you want to go with me and my friends or to go with me go
+      to bar, would you think? and maybe you want to go fly with me?
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: 054760e400ceaf84bad41b737c73dcdc, type: 2}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+    Msg: "\u043B\u043B\u043B\u043B\u043B\u043B\u043B\u043B\u043B"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+    Msg: grfrfrfrf
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+    Msg: What do you want at now?
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: fd5f6318df67a0b4d8c8017d2a9be02a, type: 2}
+      Animation: {fileID: 0}
+      Branches:
+      - {fileID: 11400000, guid: 94f91937cf247c4419dc4a7d9b1072a7, type: 2}
+    AudioMsg: {fileID: 0}

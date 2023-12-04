@@ -3,15 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ChatArea
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Clickable
   - Water
   - UI
-  - 
+  - Unclickable
   - 
   - 
   - 

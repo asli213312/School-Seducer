@@ -1,0 +1,21 @@
+{
+    "name": "OneLine.Tests.Editor",
+    "rootNamespace": "",
+    "references": [
+        "st.one-line.Runtime",
+        "st.one-line.Editor",
+        "st.rect-ex.Runtime",
+        "RectEx"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
