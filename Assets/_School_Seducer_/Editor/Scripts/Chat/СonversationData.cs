@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "ConversationData", menuName = "Game/Data/Chat/ConversationData", order = 0)]
     public class СonversationData : ConversationBase, IСonversation
     {
         public bool IsCompleted;

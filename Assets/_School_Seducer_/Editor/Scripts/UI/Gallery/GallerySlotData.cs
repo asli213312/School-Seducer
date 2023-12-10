@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 namespace _School_Seducer_.Editor.Scripts.UI
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "GallerySlotData", menuName = "Game/Data/Gallery/Slot", order = 0)]
     public class GallerySlotData : ScriptableObject
     {
         [ShowAssetPreview(32, 32), ShowIf("CheckEmptyAnimation")] public Sprite Sprite;

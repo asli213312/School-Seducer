@@ -37,13 +37,13 @@ namespace _School_Seducer_.Editor.Scripts
             {
                 if (location.Data.CanUnlock(playerConfig.Level))
                 {
-                    location.Data.UnlockLocation();
+                    location.Data.Unlock();
                     location.AvailabilitySprite.sprite = locationsConfig.LocationIsUnLocked;
                 }
                 else
                 {
                     location.AvailabilitySprite.sprite = locationsConfig.LocationIsLocked;
-                    location.Data.LockLocation();
+                    location.Data.Lock();
                 }
                 
                 StartCoroutine(location.AvailabilitySprite.FadeOut(1f));

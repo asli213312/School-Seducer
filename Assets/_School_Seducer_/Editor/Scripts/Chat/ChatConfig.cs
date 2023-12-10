@@ -7,8 +7,7 @@ using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
-    [CreateAssetMenu]
-    public class ChatConfig : ScriptableObject
+	public class ChatConfig : ScriptableObject
 	{
 		[SerializeField] public UnityEvent OnMessageReceived;
 		[SerializeField] public UnityEvent OnConversationStart;

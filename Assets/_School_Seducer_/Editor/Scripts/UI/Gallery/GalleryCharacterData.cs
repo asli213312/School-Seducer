@@ -5,7 +5,7 @@ using System;
 
 namespace _School_Seducer_.Editor.Scripts.UI.Gallery
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "GalleryCharacterData", menuName = "Game/Data/Gallery/CharacterData", order = 0)]
     public class GalleryCharacterData : ScriptableObject
     {
         public List<GallerySlotData> AllSlots;

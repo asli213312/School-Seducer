@@ -26,51 +26,47 @@ MonoBehaviour:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
+    AudioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: small message
+    Msg: 
     optionalData:
-      GallerySlot: {fileID: 11400000, guid: a138e57702664dd40b4a78642376bc65, type: 2}
+      GallerySlot: {fileID: 11400000, guid: db43df0d568730b4fa749c8300762209, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: "I'm okay. \nMaybe you want to go with me \nand my friends or to go with
-      me \ngo to bar, would you think? \nand maybe you want to go fly with me? nt
-      to go fly with me? nt to go fly with me? Maybe you want to go. I'm okay.. I'm
-      okay....... Maybe you want to go with me and my friend"
+    Msg: little message
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 2abbd0420d837c24a9236065ecb7d08a, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
-    Msg: right actor message
+    Msg: you cool
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: small message + branches
+    Msg: almost last message
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+    Msg: 
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 2e4140e2d06a5d24988cd74cb84ef71d, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: small message + branches
-    optionalData:
-      GallerySlot: {fileID: 11400000, guid: db43df0d568730b4fa749c8300762209, type: 2}
-      Animation: {fileID: 0}
-      Branches: []
-    AudioMsg: {fileID: 0}
-  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
-    Msg: small message + branches
+    Msg: need message
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches:
       - {fileID: 11400000, guid: 84697a5d927912e4598e97270511f91c, type: 2}
-      - {fileID: 11400000, guid: 182848b7eea945140aca82bc48019f9f, type: 2}
     AudioMsg: {fileID: 0}

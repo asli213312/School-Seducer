@@ -2,7 +2,7 @@
 
 namespace _School_Seducer_.Editor.Scripts
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "LocationData", menuName = "Game/Data/Location Data", order = 0)]
     public class LocationData : ScriptableObject
     {
         [SerializeField] private int requiredLevel;
@@ -11,12 +11,12 @@ namespace _School_Seducer_.Editor.Scripts
         public int RequiredLevel => requiredLevel;
         public bool IsLocked => isLocked;
 
-        public void UnlockLocation()
+        public void Unlock()
         {
             isLocked = false;
         }
 
-        public void LockLocation()
+        public void Lock()
         {
             isLocked = true;
         }

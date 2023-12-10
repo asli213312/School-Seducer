@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "BranchData", menuName = "Game/Data/Chat/BranchData", order = 0)]
     public class BranchData : ConversationBase, IСonversation
     {
         [SerializeField] [ResizableTextArea] public string BranchName;

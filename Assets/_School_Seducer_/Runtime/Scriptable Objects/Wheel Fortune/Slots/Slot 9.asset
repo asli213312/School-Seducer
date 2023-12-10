@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ca1cd1e3654303aff5d941a90c197e, type: 3}
+  m_Name: Slot 9
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: e1651ff2aa90acf458f7f07fe7368cf8, type: 3}
+  slotType: 0
+  level: 3
+  chanceToGain: {x: 71, y: 80}
+  useTest: 0
+  iconTest: {fileID: 21300000, guid: 0f2219a80519c0f49b335fd08f6254c5, type: 3}
+  slotTypeTest: 0
+  levelTest: 1
+  chanceToGainTest: {x: 0, y: 0}

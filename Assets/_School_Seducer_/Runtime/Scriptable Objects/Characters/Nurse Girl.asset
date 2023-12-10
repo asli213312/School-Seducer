@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversation: {fileID: 11400000, guid: 70dcabdf9ceffaa4f8ed70313909f7aa, type: 2}
   requiredLevel: 5
-  loyalty: 0
-  maxLoyalty: 0
+  loyalty: 1
+  maxLoyalty: 1
   showDebugParameters: 0

@@ -5,7 +5,7 @@ using UltEvents;
 
 namespace _School_Seducer_.Editor.Scripts
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "CharacterData", menuName = "Game/Data/Character Data", order = 0)]
     public class CharacterData : ScriptableObject
     {
         [Header("Data")]
