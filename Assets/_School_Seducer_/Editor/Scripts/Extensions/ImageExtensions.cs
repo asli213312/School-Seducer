@@ -7,7 +7,7 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
     {
         private const float PRESSED = 0.5f;
         private const float NOT_PRESSED = 1f;
-        
+
         public static void SetNotPressed(this Image images)
         {
             SetVisible(images,NOT_PRESSED);
@@ -17,7 +17,7 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
         {
             SetVisible(images,PRESSED);
         }
-        
+
         private static void SetVisible(this Image images, float value)
         {
             if (images.GetComponentsInChildren<Image>() != null)

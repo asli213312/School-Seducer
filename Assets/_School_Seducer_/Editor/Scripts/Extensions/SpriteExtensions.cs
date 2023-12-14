@@ -7,6 +7,11 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
 {
     public static class SpriteExtensions
     {
+        public static bool IsWideSprite(this Sprite sprite)
+        {
+            return sprite.rect.width > sprite.rect.height;
+        }
+        
         public static void SetSortingOrderForAllChildrens(this SpriteRenderer sprite, int order)
         {
             foreach (var child in sprite.GetComponentsInChildren<SpriteRenderer>())

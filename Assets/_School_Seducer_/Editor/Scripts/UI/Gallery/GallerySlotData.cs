@@ -13,7 +13,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private bool CheckEmptyImage() => Sprite == null;
         private bool CheckEmptyAnimation() => Animation == null;
         
-        public GallerySlotType Type;
+        [FormerlySerializedAs("Type")] public GallerySlotType Section;
 
         [FormerlySerializedAs("AddedToGallery")] public bool NeedInGallery = true;
         public bool ShowDebugParameters; 

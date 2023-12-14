@@ -30,7 +30,7 @@ MonoBehaviour:
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
     Msg: 
     optionalData:
-      GallerySlot: {fileID: 11400000, guid: db43df0d568730b4fa749c8300762209, type: 2}
+      GallerySlot: {fileID: 11400000, guid: a138e57702664dd40b4a78642376bc65, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
     Msg: you cool
     optionalData:
-      GallerySlot: {fileID: 0}
+      GallerySlot: {fileID: 11400000, guid: 25ace05a8ac97604a9babb612e8d4506, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
@@ -56,6 +56,41 @@ MonoBehaviour:
       Branches: []
     AudioMsg: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+    Msg: 'almost last message almost last
+
+      almost last message
+
+      almost
+      last message
+
+      almost last message
+
+      almost last message
+
+      almost
+      last message almost last'
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+    Msg: need message
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+    Msg: 'almost last almost last almost last
+
+      almost last'
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
     Msg: 
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 2e4140e2d06a5d24988cd74cb84ef71d, type: 2}
@@ -63,7 +98,7 @@ MonoBehaviour:
       Branches: []
     AudioMsg: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: need message
+    Msg: branch
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}

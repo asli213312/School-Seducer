@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.UI.Gallery;
@@ -13,6 +15,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [Header("Data")]
         [SerializeField] private Chat.Chat chat;
         [SerializeField] private Transform galleryContent;
+        [SerializeField] private ContentScreen contentScreen;
         [SerializeField] private GallerySlotView slotPrefab;
         [FormerlySerializedAs("data")] [SerializeField] private GalleryCharacterData characterData;
         [SerializeField] private GallerySectionButton[] sectionButtons;
@@ -21,13 +24,17 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [SerializeField] private TextMeshProUGUI gamesCountText;
         [SerializeField] private TextMeshProUGUI videosCountText;
 
+        private GallerySlotType _currentType;
         private GallerySlotData _currentSlotData;
         private List<GallerySlotData> _foundedSlotsInConversation = new();
         private GallerySectionButton _currentActiveSectionButton;
 
+        public event Action SectionSelected;
+
         private void Awake()
         {
             RegisterSections();
+            RegisterContentScreen();
         }
 
         private void OnDestroy()
@@ -51,22 +58,27 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
             ResetContent();
 
+            _currentType = sectionButton.TypeSection;
+            contentScreen.InstallImagesBySection();
             SetSlotsByConversation(sectionButton.TypeSection);
             SetSlotsByData(sectionButton.TypeSection);
         }
 
-        private void SetSlotsByData(GallerySlotType typeSlot)
+        private void SetSlotsByData(GallerySlotType section)
         {
             for (int j = 0; j < characterData.AllSlots.Count; j++)
             {
                 GallerySlotData slotData = characterData.AllSlots[j];
 
-                if (slotData.Type == typeSlot)
+                if (slotData.Section == section)
                 {
                     GallerySlotView slotView = Instantiate(slotPrefab, galleryContent);
                     slotView.Render(slotData);
+                    slotView.
+                        GetComponent<OpenContent>().
+                        Initialize(contentScreen.GetContentFormat(slotData));
                     
-                    switch (typeSlot)
+                    switch (section)
                     {
                         case GallerySlotType.Photo:
                             int totalPhotosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Photo);
@@ -105,7 +117,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             }
         }
 
-        private void SetSlotsByConversation(GallerySlotType typeSlot)
+        private void SetSlotsByConversation(GallerySlotType section)
         {
             for (int j = 0; j < chat.CompletedMessages.Count; j++)
             {
@@ -113,12 +125,12 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 {
                     GallerySlotData slotData = chat.CompletedMessages[j].optionalData.GallerySlot;
 
-                    if (slotData.Type == typeSlot)
+                    if (slotData.Section == section)
                     {
                         GallerySlotView slotView = Instantiate(slotPrefab, galleryContent);
                         slotView.Render(slotData);
                         
-                        switch (typeSlot)
+                        switch (section)
                         {
                             case GallerySlotType.Photo:
                                 int totalPhotosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Photo);
@@ -157,7 +169,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             }
         }
 
-        private void CheckBranchesForSlots(MessageData branchMessage, GallerySlotType slotType, ref int countedSlotsByType, HashSet<MessageData> checkedMessages, HashSet<string> checkedBranches)
+        private void CheckBranchesForSlots(MessageData branchMessage, GallerySlotType section, ref int countedSlotsByType, HashSet<MessageData> checkedMessages, HashSet<string> checkedBranches)
         {
             if (checkedMessages.Contains(branchMessage))
             {
@@ -188,15 +200,15 @@ namespace _School_Seducer_.Editor.Scripts.UI
                     {
                         GallerySlotData branchSlotData = innerBranchMessage.optionalData.GallerySlot;
 
-                        if (branchSlotData.Type == slotType && branchSlotData.NeedInGallery)
+                        if (branchSlotData.Section == section && branchSlotData.NeedInGallery)
                         {
                             countedSlotsByType++;
                             _foundedSlotsInConversation.Add(branchSlotData);
-                            Debug.Log($"Found a slot of type {slotType} in branch {branch.BranchName} for message {innerBranchMessage.Msg}.");
+                            Debug.Log($"Found a slot of type {section} in branch {branch.BranchName} for message {innerBranchMessage.Msg}.");
                         }
                         else
                         {
-                            Debug.Log($"Slot type {branchSlotData.Type} in branch {branch.BranchName} for message {innerBranchMessage.Msg} does not match the desired type {slotType}.");
+                            Debug.Log($"Slot type {branchSlotData.Section} in branch {branch.BranchName} for message {innerBranchMessage.Msg} does not match the desired type {section}.");
                         }
                     }
                     else
@@ -204,7 +216,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
                         Debug.Log($"No slot found in branch {branch.BranchName} for message {innerBranchMessage.Msg}.");
                     }
                     
-                    CheckBranchesForSlots(innerBranchMessage, slotType, ref countedSlotsByType, checkedMessages, checkedBranches);
+                    CheckBranchesForSlots(innerBranchMessage, section, ref countedSlotsByType, checkedMessages, checkedBranches);
                 }
             }
         }
@@ -223,7 +235,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 {
                     GallerySlotData slotData = chat.CurrentConversation.Messages[i].optionalData.GallerySlot;
 
-                    if (slotData.Type == slotType && slotData.NeedInGallery)
+                    if (slotData.Section == slotType && slotData.NeedInGallery)
                     {
                         countedSlotsByType++;
                         _foundedSlotsInConversation.Add(slotData);
@@ -231,7 +243,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
                     }
                     else
                     {
-                        Debug.Log($"Slot type {slotData.Type} in main {i} message does not match the desired type {slotType}.");
+                        Debug.Log($"Slot type {slotData.Section} in main {i} message does not match the desired type {slotType}.");
                     }
                 }
                 else
@@ -268,13 +280,25 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 
                 GallerySlotData slotData = chat.CompletedMessages[i].optionalData.GallerySlot;
 
-                if (slotData.Type == typeSlot && slotData.AddedInGallery)
+                if (slotData.Section == typeSlot && slotData.AddedInGallery)
                 {
                     countedSlotsByType++;
                 }
             }
 
             return countedSlotsByType;
+        }
+
+        public GallerySlotData[] GetTotalSlotsInCurrentData()
+        {
+            GallerySlotData[] selectedSlots = Array.Empty<GallerySlotData>();
+            foreach (var slot in characterData.AllSlots)
+            {
+                if (slot.Section == _currentType)
+                    selectedSlots.ToList().Add(slot);
+            }
+
+            return selectedSlots;
         }
 
         private int GetTotalCountSlotsInDataByType(GallerySlotType typeSlot)
@@ -285,9 +309,9 @@ namespace _School_Seducer_.Editor.Scripts.UI
             {
                 GallerySlotData slotData = characterData.AllSlots[i];
                 
-                if (slotData.Type == typeSlot)
+                if (slotData.Section == typeSlot)
                 {
-                    if (slotData.Type == typeSlot)
+                    if (slotData.Section == typeSlot)
                         countedSlotsByType++;   
                 }
             }
@@ -301,6 +325,11 @@ namespace _School_Seducer_.Editor.Scripts.UI
             {
                 Destroy(galleryContent.GetChild(i).gameObject);
             }
+        }
+
+        private void RegisterContentScreen()
+        {
+            contentScreen.Initialize(characterData, this);
         }
 
         private void RegisterSections()

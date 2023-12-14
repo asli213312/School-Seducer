@@ -45,6 +45,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private ConversationView _conversationView;
         private bool _isStartConversation;
         private int _iteratedMessages;
+        private MessageDefaultView _currentDefaultMsg;
 
         private void Awake()
         {
@@ -135,9 +136,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 newMsg.Initialize(optionButtons);
 
                 RenderMsgData(_messages.ToArray(), newMsg, i);
-                SetNameSender(newMsg);
+                //SetNameSender(newMsg);
                 
-                CheckSizeMessage(newMsg, paddingBack, paddingForward);
+                SetPaddings(paddingBack, paddingForward);
 
                 Debug.Log("Render completed");
 
@@ -211,12 +212,18 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
                 CircleCollider2D circleCollider = gameObject.GetComponent<CircleCollider2D>();
 
-                if (circleCollider.OverlapPoint(mousePosition))
+                if (_currentDefaultMsg != null)
                 {
-                    Debug.Log("Clicked on Unclickable area!");
-                    return false;
+                    CircleCollider2D audioColLeftActor = _currentDefaultMsg.AudioButtonLeftActor.GetComponent<CircleCollider2D>();
+                    CircleCollider2D audioColRightActor = _currentDefaultMsg.AudioButtonRightActor.GetComponent<CircleCollider2D>();
+
+                    if (audioColLeftActor.OverlapPoint(mousePosition) || audioColRightActor.OverlapPoint(mousePosition))
+                    {
+                        Debug.Log("Clicked on Unclickable area!");
+                        return false;
+                    }
                 }
-                
+
                 if (collider.OverlapPoint(mousePosition))
                 {
                     Debug.Log("Clicked on Clickable area!");
@@ -227,38 +234,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             return false;
         }
 
-        private void CheckSizeMessage(IMessage newMsg, RectTransform paddingBack, RectTransform paddingForward)
+        private void SetPaddings(RectTransform paddingBack, RectTransform paddingForward)
         {
-            if (newMsg is MessageDefaultView)
-            {
-                MessageDefaultView defaultMsg = newMsg as MessageDefaultView;
-                bool needDestroy = false;
-                if (defaultMsg.CheckIsVeryBigMessage())
-                {
-                    IsVeryBigMessage = true;
-                    Debug.Log("IsVeryBigMessage in CHAT: " + IsVeryBigMessage);
-                    paddingBack.gameObject.Activate();
-                    paddingForward.gameObject.Activate();
-                }
-                else if (defaultMsg.CheckIsVeryBigMessage() == false)
-                {
-                    IsBigMessage = true;
-                    Debug.Log("IsBigMessage in CHAT: " + IsBigMessage);
-                    paddingBack.gameObject.Activate();
-                    paddingForward.gameObject.Activate();
-                }
-
-                if (defaultMsg.CheckIsVeryBigMessage() == false && defaultMsg.IsBigMessageFalse())
-                {
-                    needDestroy = true;
-                }
-
-                if (needDestroy)
-                {
-                    paddingBack.gameObject.Destroy();
-                    paddingForward.gameObject.Destroy();
-                }
-            }
+            paddingBack.gameObject.Activate();
+            paddingForward.gameObject.Activate();
         }
 
         private void MessagesEnded()
@@ -411,14 +390,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             {
                 MessageDefaultView defaultMsg = newMsg as MessageDefaultView;
                 defaultMsg.InitSoundInvoker(_soundInvoker);
+                defaultMsg.InitContentSpace(contentMsgs);
+                _currentDefaultMsg = defaultMsg;
             }
 
             return newMsg;
-        }
-
-        public bool OptionWasClicked()
-        {
-            return true;
         }
 
         public RectTransform CreatePadding()

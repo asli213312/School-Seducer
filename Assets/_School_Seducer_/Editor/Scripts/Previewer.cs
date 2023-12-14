@@ -23,10 +23,8 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField] private Image selectedGirlImage;
         [SerializeField] private Image _emote;
         [SerializeField] private TextMeshProUGUI greetingsText;
-        [SerializeField] private Button addMoneyByMiniGameButton;
-        [SerializeField] private Button closePreviewerPanel;
 
-	    [Header("Data")] 
+        [Header("Data")] 
 	    [SerializeField] private Chat.Chat _chat;
         [SerializeField] private LevelChecker levelChecker;
         [SerializeField] private MiniGameInitializer miniGameInitializer;
@@ -41,9 +39,6 @@ namespace _School_Seducer_.Editor.Scripts
         private СonversationData _currentConversation;
         private SwitcherInDialogue _switcher;
 
-        private Sprite _initialSprite;
-        private Sprite _initialEmote;
-
         private int _currentChatIndex;
 
         public void Initialize(Chat.Chat chat)
@@ -56,33 +51,14 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void Awake()
         {
-            _switcher = GetComponent<SwitcherInDialogue>();
-            
-            addMoneyByMiniGameButton.AddListener(miniGameInitializer.StartMiniGame);
-            closePreviewerPanel.AddListener(previewerPanel.Deactivate);
-
             RegisterCharacters();
-
-            _initialSprite = selectedGirlImage.sprite;
-            _initialEmote = _emote.sprite;
-        }
-
-        private void OnEnable()
-        {
-            SetInitialSpriteAndEmote();
         }
 
         private void OnDestroy()
         {
-            addMoneyByMiniGameButton.RemoveListener(miniGameInitializer.StartMiniGame);
-
-            closePreviewerPanel.RemoveListener(previewerPanel.Deactivate);
-
             UnRegisterStartDialogue();
             UnRegisterCharacters();
             ResetCharacter();
-
-            _switcher.Reset();
         }
 
         private void OnCharacterSelected(Character character)
@@ -102,7 +78,7 @@ namespace _School_Seducer_.Editor.Scripts
                 //startDialogueButton.AddListener(SkipDialog);
             }
 
-            _switcher.Initialize(_emote, selectedGirlImage);
+            //_switcher.Initialize(_emote, selectedGirlImage);
             //Invoke(nameof(SetCurrentNodeID), 3f);
 
 	        map.CloseMap();
@@ -119,18 +95,6 @@ namespace _School_Seducer_.Editor.Scripts
         private bool CheckLevelPlayer()
         {
             return playerConfig.Level >= _currentCharacter.Data.RequiredLevel;
-        }
-
-        private void ShadowOutPreviewer()
-        {
-            if (previewerPanel.activeSelf == false) return;
-            previewerPanel.Deactivate();
-        }
-
-        private void SetInitialSpriteAndEmote()
-        {
-            selectedGirlImage.sprite = _initialSprite;
-            _emote.sprite = _initialEmote;
         }
 
         private void RegisterStartDialogue()
@@ -163,7 +127,6 @@ namespace _School_Seducer_.Editor.Scripts
             {
                 _currentCharacter.EndConversation();
                 Debug.Log("Money doesn't enough to continue...");
-                ShadowOutPreviewer();
             }
         }       
 

@@ -19,5 +19,5 @@ MonoBehaviour:
   useTest: 0
   iconTest: {fileID: 0}
   slotTypeTest: 0
-  levelTest: 0
+  levelTest: 1
   chanceToGainTest: {x: 0, y: 0}

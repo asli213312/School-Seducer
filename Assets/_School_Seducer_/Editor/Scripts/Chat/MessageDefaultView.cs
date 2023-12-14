@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using _BonGirl_.Editor.Scripts;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using UnityEngine;
@@ -13,14 +13,23 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private Button audioButtonLeftActor;
         [SerializeField] private Button audioButtonRightActor;
 
+        public Button AudioButtonLeftActor => audioButtonLeftActor;
+        public Button AudioButtonRightActor => audioButtonRightActor;    
+            
         public MessageSender MessageSender { get; set; }
 
+        private Transform _content;
         private SoundInvoker _soundInvoker;
 
         public void Initialize(OptionButton[] optionButtons)
         {
             MessageSender = Sender;
             OptionButtons = optionButtons;
+        }
+
+        public void InitContentSpace(Transform content)
+        {
+            _content = content;
         }
 
         public void InitSoundInvoker(SoundInvoker soundInvoker)
@@ -31,6 +40,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public void RenderGeneralData(MessageData data, Sprite actorLeft, Sprite actorRight, Sprite storyTeller, bool needIconStoryTeller)
         {
             SetSenderMsg(actorRight, actorLeft, storyTeller, data, needIconStoryTeller);
+            SetParentActor();
             SetOptions(data);
             SetAudioButton();
             Debug.Log("Options were installed");
@@ -41,18 +51,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             SetName(leftActor, rightActor, storyTeller);
         }
 
-        public bool CheckIsVeryBigMessage()
+        private void SetParentActor()
         {
-            Debug.Log("IsBigMessage: " + IsBigMessage);
-            Debug.Log("IsVeryBigMessage: " + IsVeryBigMessage);
-            Debug.Log("Message length: " + msgText.text.Length);
-
-            return IsVeryBigMessage;
-        }
-
-        public bool IsBigMessageFalse()
-        {
-            return IsBigMessage == false;
+            AdjustRightActor(_content, Sender);
         }
 
         private void SetAudioButton()

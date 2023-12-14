@@ -49,7 +49,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             GameObject newOptionParent = CreateOptionParent();
             
-            _backSibling = _chat.ContentMsgs.GetChild(0).gameObject;
+            _backSibling = _chat.ContentMsgs.GetChild(1).gameObject;
             
             GameObject option = SetupOption(newOptionParent);
             SetupPadding(newOptionParent);
@@ -70,11 +70,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void SetupBackGroundImage(GameObject option)
         {
             FigmaImage optionImage = option.GetComponent<FigmaImage>();
-            optionImage.StrokeColor = _backSibling.transform.Find("Background").GetComponent<FigmaImage>().StrokeColor;
-            optionImage.FillColor = _backSibling.transform.Find("Background").GetComponent<FigmaImage>().FillColor;
-            optionImage.FillGradient = _backSibling.transform.Find("Background").GetComponent<FigmaImage>().FillGradient;
+            optionImage.StrokeColor = _backSibling.transform.GetComponent<FigmaImage>().StrokeColor;
+            optionImage.FillColor = _backSibling.transform.GetComponent<FigmaImage>().FillColor;
+            optionImage.FillGradient = _backSibling.GetComponent<FigmaImage>().FillGradient;
             optionImage.GradientHandlePositions =
-                _backSibling.transform.Find("Background").GetComponent<FigmaImage>().GradientHandlePositions;
+                _backSibling.transform.GetComponent<FigmaImage>().GradientHandlePositions;
             optionImage.Fill = FigmaImage.FillStyle.LinearGradient;
         }
 
@@ -97,7 +97,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             newOptionButton.interactable = false;
 
             parentHorizontalLayout.childAlignment = TextAnchor.MiddleLeft;
-            parentHorizontalLayout.padding.left = 200;
+            parentHorizontalLayout.padding.left = 73;
             
             //optionImage.StrokeColor = _backSibling.transform.Find("Background").GetComponent<FigmaImage>().StrokeColor;
 

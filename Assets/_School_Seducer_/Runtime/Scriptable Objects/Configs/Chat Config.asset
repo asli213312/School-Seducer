@@ -30,9 +30,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d7ec7a146fc78844bab40be0177cbf1, type: 2}
   - {fileID: 11400000, guid: 70dcabdf9ceffaa4f8ed70313909f7aa, type: 2}
   MainHeight: 100
-  OneOptionWidth: 820
+  OneOptionWidth: 824.63
   TwoOptionsWidth: 400
-  ThreeOptionsWidth: 250
+  ThreeOptionsWidth: 255.35
   delayAudioMsg: 2
   DelayBtwMessage: 1
   DurationSendingPicture: 5

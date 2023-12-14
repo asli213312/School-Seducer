@@ -8,6 +8,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 {
     public class MessagePictureView : MessageViewBase, IMessage, IMessageName
     {
+        [SerializeField] private RectTransform contentOffset;
         [SerializeField] private Image msgWidePicture;
         [SerializeField] private Image msgSquarePicture;
         
@@ -44,19 +45,25 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private void InvokeSendingPicture(MessageData data)
         {
-            StartCoroutine(SendingPicture(data));
+            SendingPicture(data);
         }
 
-        private IEnumerator SendingPicture(MessageData data)
+        private void SendingPicture(MessageData data)
+        {
+            //StartCoroutine(SetSendingAnimation());
+            SetOptions(data);
+            SetPicture(data);
+            AdjustRightActor();
+            PictureInstalled = true;
+            Data.optionalData.GallerySlot.CheckNeedInGallery();
+        }
+
+        private IEnumerator SetSendingAnimation()
         {
             msgText.text = $"Sending picture...";
             StartCoroutine(AnimateDots(msgText));
-            
+
             yield return new WaitForSeconds(_durationSendingPicture);
-            SetOptions(data);
-            SetPicture(data);
-            PictureInstalled = true;
-            Data.optionalData.GallerySlot.CheckNeedInGallery();
         }
 
         private void SetOptions(MessageData data)
@@ -77,7 +84,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             Sprite picture = null;
             if (data.optionalData.GallerySlot != null) picture = data.optionalData.GallerySlot.Sprite;
             
-            if (IsWidePicture(data.optionalData.GallerySlot.Sprite))
+            if (data.optionalData.GallerySlot.Sprite.IsWideSprite())
             {
                 msgWidePicture.sprite = picture;
                 msgWidePicture.gameObject.Activate();   
@@ -88,6 +95,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 msgSquarePicture.gameObject.Activate();
             }
             Debug.Log("Picture installed");
+        }
+
+        private void AdjustRightActor()
+        {
+            if (Sender == MessageSender.ActorRight)
+            {
+                contentOffset.Translate(Vector2.right * 0.568f);
+                msgSquarePicture.transform.position = rightBorderActor.transform.position;
+            }
         }
 
         private IEnumerator AnimateDots(Text text)
@@ -115,11 +131,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
                 yield return new WaitForSeconds(0.1f);
             }
-        }
-
-        private bool IsWidePicture(Sprite sprite)
-        {
-            return sprite.rect.width > sprite.rect.height;
         }
     }
 }

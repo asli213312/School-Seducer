@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27dd00748590468e9d21d563de25f324, type: 3}
   m_Name: Slot 4
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 753f230ce54f54148b834286f88f27f1, type: 3}
+  Sprite: {fileID: 21300000, guid: 1671f7be969f0a44d9d94cd4c2d27fb3, type: 3}
   Animation: {fileID: 0}
   Type: 0
   NeedInGallery: 1
   ShowDebugParameters: 0
-  AddedInGallery: 0
+  AddedInGallery: 1

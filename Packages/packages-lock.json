@@ -17,6 +17,12 @@
       },
       "hash": "df46de2babace2aaec76342666722a740041d10d"
     },
+    "com.singularitygroup.hotreload": {
+      "version": "file:com.singularitygroup.hotreload",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "7.0.12",
       "depth": 1,

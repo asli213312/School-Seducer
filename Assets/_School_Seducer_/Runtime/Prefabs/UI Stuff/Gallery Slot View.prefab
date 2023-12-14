@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 4944953113954779952}
   - component: {fileID: 8456324424911101806}
   - component: {fileID: 8827162735348344319}
+  - component: {fileID: 8262417464290450311}
   - component: {fileID: 5024198116881244697}
+  - component: {fileID: 2576637366278051991}
   m_Layer: 0
   m_Name: Gallery Slot View
   m_TagString: Untagged
@@ -107,7 +109,7 @@ MonoBehaviour:
   m_CornerRadius: {x: 20, y: 20, z: 20, w: 20}
   m_StrokePosition: 0
   m_Fill: 0
-  m_ImageScaleMode: 2
+  m_ImageScaleMode: 1
   m_EllipseInnerRadius: 1
   m_EllipseArcAngleRange: {x: 0, y: 6.2831855}
   m_ImageTransform:
@@ -162,6 +164,50 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.3}
   m_EffectDistance: {x: 3, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &8262417464290450311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099382088141052967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 8456324424911101806}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5024198116881244697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +222,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 8456324424911101806}
   animationPreview: {fileID: 2008957586135706849}
+--- !u!114 &2576637366278051991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099382088141052967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078ad1efc5dc46f0a699e9f30ba2b6af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeContent: 0
 --- !u!1 &7834662428186705201
 GameObject:
   m_ObjectHideFlags: 0

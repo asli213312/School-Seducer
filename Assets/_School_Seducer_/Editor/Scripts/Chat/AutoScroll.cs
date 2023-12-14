@@ -74,10 +74,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 		    Debug.Log("IsVeryBigMessage in AUTOSCROLL: " + _chat.IsVeryBigMessage);
 		    Debug.Log("IsBigMessage in AUTOSCROLL: " + _chat.IsBigMessage);
 		    
-		    if (_chat.IsVeryBigMessage)
-				yield return new WaitUntil(InputExtensions.CheckTap);
+		    //if (_chat.IsVeryBigMessage)
+				//yield return new WaitUntil(InputExtensions.CheckTap);
 		    
-		    yield return new WaitForSeconds(delayToBottomScroll);
+		    //yield return new WaitForSeconds(delayToBottomScroll);
 
 		    yield return AutoScrollAnimation(0f, scrollSpeed, true);
 
