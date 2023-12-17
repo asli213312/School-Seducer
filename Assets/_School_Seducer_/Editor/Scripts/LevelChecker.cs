@@ -1,6 +1,5 @@
 ﻿using System;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
-using DialogueEditor;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

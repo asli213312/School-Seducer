@@ -14,27 +14,34 @@ namespace _School_Seducer_.Editor.Scripts.UI
     {
         [Header("Data")]
         [SerializeField] private Chat.Chat chat;
-        [SerializeField] private Transform galleryContent;
         [SerializeField] private ContentScreen contentScreen;
+        [SerializeField] private Transform galleryContent;
+        [SerializeField] private GalleryData data;
         [SerializeField] private GallerySlotView slotPrefab;
-        [FormerlySerializedAs("data")] [SerializeField] private GalleryCharacterData characterData;
         [SerializeField] private GallerySectionButton[] sectionButtons;
+
         [Header("Counters")]
         [SerializeField] private TextMeshProUGUI photosCountText;
         [SerializeField] private TextMeshProUGUI gamesCountText;
         [SerializeField] private TextMeshProUGUI videosCountText;
 
+        public ContentScreen ContentScreen => contentScreen;
+        
         private GallerySlotType _currentType;
+        private GalleryCharacterData _currentGalleryData;
         private GallerySlotData _currentSlotData;
         private List<GallerySlotData> _foundedSlotsInConversation = new();
         private GallerySectionButton _currentActiveSectionButton;
 
-        public event Action SectionSelected;
+        public void SetCurrentData(GalleryCharacterData currentData)
+        {
+            _currentGalleryData = currentData;
+            data.dampedData = _currentGalleryData;
+        }
 
         private void Awake()
         {
             RegisterSections();
-            RegisterContentScreen();
         }
 
         private void OnDestroy()
@@ -59,25 +66,22 @@ namespace _School_Seducer_.Editor.Scripts.UI
             ResetContent();
 
             _currentType = sectionButton.TypeSection;
-            contentScreen.InstallImagesBySection();
             SetSlotsByConversation(sectionButton.TypeSection);
             SetSlotsByData(sectionButton.TypeSection);
         }
 
         private void SetSlotsByData(GallerySlotType section)
         {
-            for (int j = 0; j < characterData.AllSlots.Count; j++)
+            for (int j = 0; j < _currentGalleryData.AllSlots.Count; j++)
             {
-                GallerySlotData slotData = characterData.AllSlots[j];
+                GallerySlotData slotData = _currentGalleryData.AllSlots[j];
 
                 if (slotData.Section == section)
                 {
                     GallerySlotView slotView = Instantiate(slotPrefab, galleryContent);
                     slotView.Render(slotData);
-                    slotView.
-                        GetComponent<OpenContent>().
-                        Initialize(contentScreen.GetContentFormat(slotData));
-                    
+                    slotView.CheckCropWidePicture();
+
                     switch (section)
                     {
                         case GallerySlotType.Photo:
@@ -88,7 +92,6 @@ namespace _School_Seducer_.Editor.Scripts.UI
                             break;
                         
                         case GallerySlotType.Game:
-                            int currentGamesCountInConversationAdded = GetCountSlotsAddedByConversation(GallerySlotType.Game);
                             int totalGamesCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Game);
                             int totalGamesCountData = GetTotalCountSlotsInDataByType(GallerySlotType.Game);
                             
@@ -129,7 +132,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
                     {
                         GallerySlotView slotView = Instantiate(slotPrefab, galleryContent);
                         slotView.Render(slotData);
-                        
+                        slotView.CheckCropWidePicture();
+
                         switch (section)
                         {
                             case GallerySlotType.Photo:
@@ -157,10 +161,10 @@ namespace _School_Seducer_.Editor.Scripts.UI
                                 break;
                         }
                         
-                        if (slotData.AddedInGallery && characterData.IsOriginalData(slotData))
+                        if (slotData.AddedInGallery && _currentGalleryData.IsOriginalData(slotData))
                         {
                             slotView.gameObject.Destroy();
-                            characterData.AddSlotData(slotData);
+                            _currentGalleryData.AddSlotData(slotData);
                         }
                         else
                             slotView.gameObject.Destroy();
@@ -289,13 +293,15 @@ namespace _School_Seducer_.Editor.Scripts.UI
             return countedSlotsByType;
         }
 
-        public GallerySlotData[] GetTotalSlotsInCurrentData()
+        public List<GallerySlotView> GetTotalSlotsInContent()
         {
-            GallerySlotData[] selectedSlots = Array.Empty<GallerySlotData>();
-            foreach (var slot in characterData.AllSlots)
+            List<GallerySlotView> selectedSlots = new List<GallerySlotView>();
+
+            for (int i = 0; i < galleryContent.childCount; i++)
             {
-                if (slot.Section == _currentType)
-                    selectedSlots.ToList().Add(slot);
+                GallerySlotView slot = galleryContent.GetChild(i).GetComponent<GallerySlotView>();
+                selectedSlots.Add(slot);
+                Debug.Log($"Slot -- {slot.name} -- was added in current list data in gallery");
             }
 
             return selectedSlots;
@@ -305,9 +311,9 @@ namespace _School_Seducer_.Editor.Scripts.UI
         {
             int countedSlotsByType = 0;
             
-            for (int i = 0; i < characterData.AllSlots.Count; i++)
+            for (int i = 0; i < _currentGalleryData.AllSlots.Count; i++)
             {
-                GallerySlotData slotData = characterData.AllSlots[i];
+                GallerySlotData slotData = _currentGalleryData.AllSlots[i];
                 
                 if (slotData.Section == typeSlot)
                 {
@@ -325,11 +331,6 @@ namespace _School_Seducer_.Editor.Scripts.UI
             {
                 Destroy(galleryContent.GetChild(i).gameObject);
             }
-        }
-
-        private void RegisterContentScreen()
-        {
-            contentScreen.Initialize(characterData, this);
         }
 
         private void RegisterSections()

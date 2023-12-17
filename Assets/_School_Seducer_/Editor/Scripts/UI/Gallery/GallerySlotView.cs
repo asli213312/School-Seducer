@@ -1,4 +1,5 @@
-﻿using NaughtyAttributes;
+﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityFigmaBridge.Runtime.UI;
 
@@ -9,13 +10,19 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [SerializeField] private FigmaImage image;
         [SerializeField] private FigmaImage animationPreview;
         
-        private GallerySlotData _data;
+        public GallerySlotData Data { get; private set; }
         
         public void Render(GallerySlotData data)
         { 
-            _data = data;
+            Data = data;
 
             image.sprite = data.Sprite;
+        }
+
+        public void CheckCropWidePicture()
+        {
+            if (Data.Sprite.IsWideSprite())
+                image.ScaleMode = FigmaImage.ImageScaleMode.Fill;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Editor
     {
         private SerializedProperty _messagesProperty;
         private СonversationData _mainData;
-        
+
         private void OnEnable()
         {
             string selectedObjectPath = AssetDatabase.GetAssetPath(Selection.activeObject);
@@ -51,6 +51,11 @@ namespace Editor
             if (target is BranchData)
             {
                 _messagesProperty = serializedObject.FindProperty("Messages");
+                BranchData branchData = (BranchData)target;
+                branchData.ActorLeftSprite = _mainData.ActorLeftSprite;
+                branchData.ActorRightSprite = _mainData.ActorRightSprite;
+                branchData.Config = _mainData.Config;
+                branchData.StoryTellerSprite = _mainData.Config.StoryTellerSprite;
             }
             else
             {
@@ -73,13 +78,12 @@ namespace Editor
 
                     if (Event.current.type == EventType.MouseDown && Event.current.button == 1 && elementRect.Contains(Event.current.mousePosition))
                     {
-                        // Правая кнопка мыши была нажата над элементом массива
-                        HandleContextMenu(i);
-                        Event.current.Use(); // Помечаем событие как обработанное
+                        //HandleContextMenu(i);
+                        //Event.current.Use(); //
                     }
 
-                    EditorGUI.PropertyField(elementRect, messageProperty, true);
-	                EditorGUILayout.Space(170);
+                    //EditorGUI.PropertyField(elementRect, messageProperty, true);
+	                //EditorGUILayout.Space(170);
                 }
             }
 

@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
   m_Name: School Girl
   m_EditorClassIdentifier: 
+  conversation: {fileID: 11400000, guid: 70dcabdf9ceffaa4f8ed70313909f7aa, type: 2}
+  gallery: {fileID: 11400000, guid: 0ebffcf234a803245a142c4da8466a8b, type: 2}
   requiredLevel: 2
+  loyalty: 1
+  maxLoyalty: 3
+  showDebugParameters: 0

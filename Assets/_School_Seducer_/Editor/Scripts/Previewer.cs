@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
-using DialogueEditor;
-using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UltEvents;
-using UnityEngine.Events;
 using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts
@@ -49,6 +43,11 @@ namespace _School_Seducer_.Editor.Scripts
             }
         }
 
+        public CharacterData GetCurrentCharacterData()
+        {
+            return _currentCharacter.Data;
+        }
+
         private void Awake()
         {
             RegisterCharacters();
@@ -63,6 +62,12 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void OnCharacterSelected(Character character)
         {
+            if (_currentCharacter != null)
+            {
+                Debug.LogWarning("Current character: " + _currentCharacter.name);
+                return;
+            }
+            
             previewerPanel.Activate();
 
             _currentCharacter = character;

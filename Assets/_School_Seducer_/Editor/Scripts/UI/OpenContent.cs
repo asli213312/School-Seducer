@@ -1,23 +1,34 @@
-﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+﻿using System;
+using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.UI
 {
-    public class OpenContent : MonoBehaviour
+    public class OpenContent : MonoBehaviour, IPointerDownHandler
     {
         [SerializeField] private ModeContentEnum modeContent;
+
+        public Image Content { get; private set; }
         private Button _button;
-        private Image _backGround;
         private Sprite _spriteToSet;
 
         private IModeContent _modeContent;
 
-        public void Initialize(Image backGround)
+        public void OnPointerDown(PointerEventData eventData)
         {
-            _backGround = backGround;
+            ContentInstall(this);
+            Debug.Log("Was attempt to get content..." +  ContentScreen.CurrentData.name);
+        }
+
+        private void OnValidate()
+        {
+            _button = GetComponent<Button>();
+            _spriteToSet = GetComponent<Image>().sprite;
         }
 
         private void Start()
@@ -26,9 +37,17 @@ namespace _School_Seducer_.Editor.Scripts.UI
             InstallMode();
         }
 
+        private void OnDestroy()
+        {
+            if (_button == null) return;
+            
+            _button.RemoveListener(_modeContent.OnClick);
+        }
+
         private void InstallComponents()
         {
             _button = GetComponent<Button>();
+            Content = GetComponent<Image>();
             _spriteToSet = GetComponent<Image>().sprite;
         }
 
@@ -37,11 +56,16 @@ namespace _School_Seducer_.Editor.Scripts.UI
             switch (modeContent)
             {
                 case ModeContentEnum.FullScreen:
-                    _modeContent = new FullScreenMode(_spriteToSet, _backGround);
+                    _modeContent = new FullScreenMode(_spriteToSet, Content);
                     break;
             }
             
             _button.AddListener(_modeContent.OnClick);
+        }
+
+        private void ContentInstall(OpenContent content)
+        {
+            ContentScreen.CurrentData = content;
         }
     }
 }

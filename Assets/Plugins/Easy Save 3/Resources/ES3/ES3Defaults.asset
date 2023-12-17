@@ -32,7 +32,6 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
-    - Dialog.Editor
     - LottiePlugin.Runtime
     - LottiePlugin.Sample.SceneUI.Runtime
     - NaughtyAttributes.Core

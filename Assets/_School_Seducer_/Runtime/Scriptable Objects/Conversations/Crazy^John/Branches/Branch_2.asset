@@ -13,22 +13,29 @@ MonoBehaviour:
   m_Name: Branch_2
   m_EditorClassIdentifier: 
   BranchName: In this branch you can to try hard new branch, his name is Branch2
+  audioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
+  <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
   Messages:
-  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: 
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+    AudioMsg: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: 
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
+    AudioMsg: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: 
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 4498eac02cc9c1d42afe64d85f01ce7f, type: 2}
       Animation: {fileID: 0}
       Branches: []
+    AudioMsg: {fileID: 0}

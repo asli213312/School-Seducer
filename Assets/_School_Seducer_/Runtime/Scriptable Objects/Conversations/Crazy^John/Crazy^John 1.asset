@@ -15,10 +15,11 @@ MonoBehaviour:
   IsCompleted: 1
   ConversationIndex: 0
   <Config>k__BackingField: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   ActorLeftName: Crazy
-  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
   ActorRightName: John
-  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
   Messages:
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: Once upon a time...
@@ -27,36 +28,36 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
-  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: 
     optionalData:
       GallerySlot: {fileID: 11400000, guid: a138e57702664dd40b4a78642376bc65, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: little message
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
-  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: you cool
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 25ace05a8ac97604a9babb612e8d4506, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
-  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: almost last message
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
-    Msg: 'almost last message almost last
+  - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
+    Msg: 'almost last message almost last last las
 
       almost last message
 
@@ -74,14 +75,14 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: need message
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-  - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: 'almost last almost last almost last
 
       almost last'
@@ -90,18 +91,20 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: 
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 2e4140e2d06a5d24988cd74cb84ef71d, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-  - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: branch
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches:
       - {fileID: 11400000, guid: 84697a5d927912e4598e97270511f91c, type: 2}
+      - {fileID: 11400000, guid: 182848b7eea945140aca82bc48019f9f, type: 2}
+      - {fileID: 11400000, guid: 94f91937cf247c4419dc4a7d9b1072a7, type: 2}
     AudioMsg: {fileID: 0}

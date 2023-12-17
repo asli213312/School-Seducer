@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Reflection.Emit;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace _School_Seducer_.Editor.Scripts
     {
         [SerializeField] private PlayerConfig playerConfig;
         public PlayerConfig PlayerConfig => playerConfig;
+        private bool IsMessageReceived { get; set; }
 
         public event Action<Location> LocationSelectedEvent;
         public event Action<Character> CharacterSelectedEvent;
@@ -16,7 +18,7 @@ namespace _School_Seducer_.Editor.Scripts
         public event Action ChatConversationEnded;
         public event Action ChatMessagesIsEnded;
         public event Action ChatMessagesIsStarted;
-        public event Action ChatMessageReceived;
+        public event Action UpdateScrollEvent;
 
         public event Action UpdateTextMoneyEvent;
         public event Action UpdateTextDiamondsEvent;
@@ -33,14 +35,24 @@ namespace _School_Seducer_.Editor.Scripts
             UpdateTextDiamondsEvent?.Invoke();
         }
 
+        public bool IsChatMessageReceived()
+        {
+            return IsMessageReceived;
+        }
+
+        public void ChatMessageReceived(bool received)
+        { 
+            IsMessageReceived = received;
+        }
+
+        public void UpdateScrollChat()
+        {
+            UpdateScrollEvent?.Invoke();
+        }
+
         public void ConversationEnded()
         {
             ChatConversationEnded?.Invoke();
-        }
-
-        public void MessageReceived()
-        {
-            ChatMessageReceived?.Invoke();
         }
 
         public void ChatMessagesStarted()
@@ -71,6 +83,28 @@ namespace _School_Seducer_.Editor.Scripts
         public void SelectCharacter(Character character)
         {
             CharacterSelectedEvent?.Invoke(character);
+        }
+        
+        public void InvokeDelayedBoolAction(float delay, Action<bool> onComplete, bool boolParameter)
+        {
+            StartCoroutine(DelayToBoolAction(delay, onComplete, boolParameter));
+        }
+
+        public void InvokeDelayedVoidAction(float delay, Action onComplete)
+        {
+            StartCoroutine(DelayToVoidAction(delay, onComplete));
+        }
+        
+        private IEnumerator DelayToBoolAction(float delay, Action<bool> onComplete, bool boolParameter)
+        {
+            yield return new WaitForSeconds(delay);
+            onComplete?.Invoke(boolParameter);
+        }
+
+        private IEnumerator DelayToVoidAction(float delay, Action onComplete)
+        {
+            yield return new WaitForSeconds(delay);
+            onComplete?.Invoke();
         }
     }
 }

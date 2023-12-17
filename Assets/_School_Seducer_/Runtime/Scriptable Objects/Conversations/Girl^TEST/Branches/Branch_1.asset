@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: Branch_1
   m_EditorClassIdentifier: 
   BranchName: In this branch you can to try hard new branch, his name is Branch1
+  audioMsg: {fileID: 0}
+  <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
   Messages:
-  - ActorIcon: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
     Msg: 
     optionalData:
-      PictureInsteadMsg: {fileID: 0}
+      GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
+    AudioMsg: {fileID: 0}

@@ -17,6 +17,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
         {
             _spriteToSet = spriteToSet;
             _backGround = background;
+            
+            Debug.Log("background: " + _backGround.name);
         }
 
         public void OnClick()
@@ -24,11 +26,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
             if (Opened == false)
             {
                 _backGround.sprite = _spriteToSet;
-                _backGround.gameObject.Activate();
             }
-            else
-                _backGround.gameObject.Deactivate();
-            
+
             Debug.Log("Content installed");
         }
     }

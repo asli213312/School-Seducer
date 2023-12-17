@@ -1,4 +1,5 @@
 ﻿using _School_Seducer_.Editor.Scripts.Chat;
+using _School_Seducer_.Editor.Scripts.UI.Gallery;
 using UnityEngine;
 using NaughtyAttributes;
 using UltEvents;
@@ -10,6 +11,7 @@ namespace _School_Seducer_.Editor.Scripts
     {
         [Header("Data")]
         [SerializeField] public СonversationData conversation;
+        [SerializeField] public GalleryCharacterData gallery;
         
         [Header("Parameters")]
         [SerializeField] private int requiredLevel;

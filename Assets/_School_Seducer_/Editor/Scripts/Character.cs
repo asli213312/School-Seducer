@@ -1,8 +1,8 @@
 ﻿using System;
+using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts;
 using _School_Seducer_.Editor.Scripts.Chat;
 using UnityEngine;
-using DialogueEditor;
 using Zenject;
 
 public class Character : MonoBehaviour
@@ -37,6 +37,8 @@ public class Character : MonoBehaviour
     {
        Debug.Log("This character: " + gameObject.name);
        CharacterSelected?.Invoke(this);
+       
+       _chat.gameObject.SafeActivate();
     }
 
     public void OnMouseEnter()

@@ -13,18 +13,47 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public bool IsCompleted;
         public int ConversationIndex;
         [field: SerializeField] public ChatConfig Config { get; set; }
+        [field: ShowAssetPreview(32, 32), SerializeField] public Sprite StoryTellerSprite { get; set; }
 
         public string ActorLeftName;
-        [field: ShowAssetPreview(), SerializeField] public Sprite ActorLeftSprite { get; set; }
+        [field: ShowAssetPreview(32, 32), SerializeField] public Sprite ActorLeftSprite { get; set; }
         [Space(3)]
         
         public string ActorRightName;
-        [field: ShowAssetPreview(), SerializeField] public Sprite ActorRightSprite { get; set; }
+        [field: ShowAssetPreview(32, 32), SerializeField] public Sprite ActorRightSprite { get; set; }
 
         [SerializeField] public MessageData[] Messages;
 
         private void OnValidate()
         {
+            if (ActorLeftSprite == null || ActorRightSprite == null || StoryTellerSprite == null)
+            {
+                Debug.LogWarning("Set actor sprites in inspector!");
+            }
+            else
+            {
+                foreach (var msg in Messages)
+                {
+                    Sprite spriteToSet;
+                    if (msg.ActorIcon == ActorLeftSprite)
+                    {
+                        spriteToSet = ActorLeftSprite;
+                        msg.Sender = MessageSender.ActorLeft;
+                    }
+                    else if (msg.ActorIcon == ActorRightSprite)
+                    {
+                        spriteToSet = ActorRightSprite;
+                        msg.Sender = MessageSender.ActorRight;
+                    }
+                    else
+                    {
+                        spriteToSet = Config.StoryTellerSprite;
+                        msg.Sender = MessageSender.StoryTeller;
+                    }
+                    msg.ActorIcon = spriteToSet;
+                }
+            }
+            
             for (int i = 0; i < Messages.Length; i++)
             {
                 if (Messages[i].optionalData.Branches.Length > 0 && Messages[i] != Messages[^1])

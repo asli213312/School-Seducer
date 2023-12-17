@@ -11,57 +11,57 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     {
         [Inject] private EventManager _eventManager;
         
+        [SerializeField] private ScrollRect scrollRect;
+        [SerializeField] private Chat chat;
+        
         [SerializeField] private float scrollSpeed = 5f;
         [SerializeField] private float firstTargetValueAnim;
 
 	    //[InfoBox("This delay determine how long need wait to scroll at bottom of scrollView")]
-        [SerializeField] private float delayToBottomScroll = 0.7f;
-
-        private Chat _chat;
-        private ScrollRect _scrollRect;
+        //[SerializeField] private float delayToBottomScroll = 0.7f;
+        
         private bool _isAutoScrolling;
         private bool _isCoroutineRunning;
 
-        private void OnValidate() 
+        private void Start()
 	    {
-	    	_scrollRect ??= GetComponent<ScrollRect>();
-	    	_chat ??= GetComponent<Chat>();
-	    }
-
-	    private void Start()
-	    {
-		    if (_scrollRect != null)
+		    if (scrollRect != null)
 		    {
-			    _scrollRect.onValueChanged.AddListener(OnScrollValueChanged);
+			    _eventManager.UpdateScrollEvent += StartScroll;
+			    scrollRect.onValueChanged.AddListener(OnScrollValueChanged);
 		    }
 	    }
 
 	    private void OnDestroy()
 	    {
-		    if (_scrollRect != null)
+		    if (scrollRect != null)
 		    {
-			    _scrollRect.onValueChanged.RemoveListener(OnScrollValueChanged);
+			    _eventManager.UpdateScrollEvent -= StartScroll;
+			    scrollRect.onValueChanged.RemoveListener(OnScrollValueChanged);
 		    }
-		    
-		    //_eventManager.ChatMessagesIsStarted -= DisableAutoScrolling;
 	    }
 
 	    private void OnScrollValueChanged(Vector2 value)
 	    {
-		    if (!_isAutoScrolling && !_chat.IsMessagesEnded && !_isCoroutineRunning && !IsScrollbarAtBottom())
+		    if (!_isAutoScrolling && _eventManager.IsChatMessageReceived() && !_isCoroutineRunning && !IsScrollbarAtBottom())
 		    {
-			    StartCoroutine(AutoScrollCoroutine());
+			    StartScroll();
 		    }
 	    }
 
 	    private void StartOrStopCoroutine()
 	    {
-		    if (_isAutoScrolling && _isCoroutineRunning && _scrollRect.verticalNormalizedPosition <= 0f)
+		    if (_isAutoScrolling && _isCoroutineRunning && scrollRect.verticalNormalizedPosition <= 0f)
 		    {
 			    StopCoroutine(AutoScrollCoroutine());
 			    _isCoroutineRunning = false;
-			    _isAutoScrolling = false; // Дополнительно обнуляем флаг автопрокрутки
+			    _isAutoScrolling = false;
 		    }
+	    }
+
+	    private void StartScroll()
+	    {
+		    StartCoroutine(AutoScrollCoroutine());
 	    }
 
 	    private IEnumerator AutoScrollCoroutine()
@@ -70,14 +70,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 		    _isAutoScrolling = true;
 		    
 		    yield return AutoScrollAnimation(firstTargetValueAnim, scrollSpeed);
-		    
-		    Debug.Log("IsVeryBigMessage in AUTOSCROLL: " + _chat.IsVeryBigMessage);
-		    Debug.Log("IsBigMessage in AUTOSCROLL: " + _chat.IsBigMessage);
-		    
-		    //if (_chat.IsVeryBigMessage)
-				//yield return new WaitUntil(InputExtensions.CheckTap);
-		    
-		    //yield return new WaitForSeconds(delayToBottomScroll);
 
 		    yield return AutoScrollAnimation(0f, scrollSpeed, true);
 
@@ -88,14 +80,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 	    private IEnumerator AutoScrollAnimation(float targetValue, float animationSpeed, bool needToBottom = false)
 	    {
 		    float elapsedTime = 0f;
-		    float startValue = _scrollRect.verticalNormalizedPosition;
+		    float startValue = scrollRect.verticalNormalizedPosition;
 
 		    while (elapsedTime < animationSpeed)
 		    {
-			    _scrollRect.verticalNormalizedPosition = Mathf.Lerp(startValue, targetValue, elapsedTime / animationSpeed);
+			    scrollRect.verticalNormalizedPosition = Mathf.Lerp(startValue, targetValue, elapsedTime / animationSpeed);
 			    elapsedTime += Time.deltaTime;
 			    
-			    if (targetValue >= _scrollRect.verticalNormalizedPosition && needToBottom == false)
+			    if (targetValue >= scrollRect.verticalNormalizedPosition && needToBottom == false)
 			    {
 				    yield break;
 			    }
@@ -104,16 +96,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 		    }
 		    
 		    if (needToBottom)
-				_scrollRect.verticalNormalizedPosition = targetValue;
+			    scrollRect.verticalNormalizedPosition = targetValue;
 	    }
 	    
 	    private void DisableAutoScrolling() => _isAutoScrolling = false;
 
 	    private bool IsScrollbarAtBottom()
 	    {
-		    if (_scrollRect.verticalScrollbar)
+		    if (scrollRect.verticalScrollbar)
 		    {
-			    return Mathf.Approximately(_scrollRect.verticalScrollbar.value, 0f);
+			    return Mathf.Approximately(scrollRect.verticalScrollbar.value, 0f);
 		    }
 
 		    return true;

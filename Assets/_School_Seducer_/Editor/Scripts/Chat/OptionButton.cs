@@ -2,6 +2,7 @@
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityFigmaBridge.Runtime.UI;
 using Zenject;
 
@@ -11,7 +12,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     public class OptionButton : MonoBehaviour
     {
         [SerializeField] private ChatConfig _chatConfig;
-        [Inject] private SoundInvoker _soundInvoker;
+        [Inject] private SoundHandler _soundHandler;
+        [Inject] private EventManager _eventManager;
         
         public BranchData BranchData { get; set; }
         
@@ -56,6 +58,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             
             SetupBackGroundImage(option);
             SetupAudioMessage();
+            
+            _eventManager.UpdateScrollChat();
 
             Debug.Log("lastMessage:", _chat.ContentMsgs.GetChild(_chat.ContentMsgs.childCount - 2));
             Debug.Log("new option:", newOptionParent.gameObject);
@@ -63,8 +67,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private void SetupAudioMessage()
         {
-            AudioClip clip = BranchData.audioMsg;
-            _soundInvoker.InvokeClip(clip, null, _chatConfig.delayAudioMsg);
+            _soundHandler.InvokeClipAfterPlayback(InstallAudioMessage);
+        }
+
+        private void InstallAudioMessage()
+        {
+            _soundHandler.InvokeOneClip(BranchData.audioMsg, null, _chatConfig.delayAudioMsg);
         }
 
         private void SetupBackGroundImage(GameObject option)
@@ -82,6 +90,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             GameObject newOptionParent = Instantiate(_parent.gameObject, _chat.ContentMsgs);
             newOptionParent.transform.SetAsLastSibling();
+            _parent.gameObject.Deactivate();
             return newOptionParent;
         }
 

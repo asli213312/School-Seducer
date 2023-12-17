@@ -19,7 +19,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public MessageSender MessageSender { get; set; }
 
         private Transform _content;
-        private SoundInvoker _soundInvoker;
+        private SoundHandler _soundHandler;
 
         public void Initialize(OptionButton[] optionButtons)
         {
@@ -32,9 +32,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _content = content;
         }
 
-        public void InitSoundInvoker(SoundInvoker soundInvoker)
+        public void InitSoundInvoker(SoundHandler soundHandler)
         {
-            _soundInvoker = soundInvoker;
+            _soundHandler = soundHandler;
         }
 
         public void RenderGeneralData(MessageData data, Sprite actorLeft, Sprite actorRight, Sprite storyTeller, bool needIconStoryTeller)
@@ -84,7 +84,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private void InvokeAudioMsg()
         {
-            _soundInvoker.InvokeClip(Data.AudioMsg);
+            _soundHandler.AutoManagePlayback(Data.AudioMsg);   
         }
 
         private void SetOptions(MessageData data)

@@ -33,7 +33,7 @@ MonoBehaviour:
   OneOptionWidth: 824.63
   TwoOptionsWidth: 400
   ThreeOptionsWidth: 255.35
-  delayAudioMsg: 2
+  delayAudioMsg: 0
   DelayBtwMessage: 1
   DurationSendingPicture: 5
   CoinsForMessage: 1

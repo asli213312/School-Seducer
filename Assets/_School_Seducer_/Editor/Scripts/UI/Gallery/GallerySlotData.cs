@@ -16,8 +16,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [FormerlySerializedAs("Type")] public GallerySlotType Section;
 
         [FormerlySerializedAs("AddedToGallery")] public bool NeedInGallery = true;
-        public bool ShowDebugParameters; 
-        [ShowIf("ShowDebugParameters")] public bool AddedInGallery;
+        [SerializeField] public bool showDebugParameters; 
+        [Sirenix.OdinInspector.ShowIf("showDebugParameters")] public bool AddedInGallery;
 
         public void CheckNeedInGallery()
         {

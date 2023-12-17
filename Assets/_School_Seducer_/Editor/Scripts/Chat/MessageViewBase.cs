@@ -32,8 +32,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     msgNameText.alignment = TextAnchor.UpperRight;
                     msgText.text = data.Msg;
 
-                    //backMsg.Translate(Vector2.right * 1.65f, Space.Self);
-
                     rightBorderActor.gameObject.Activate();
                     Image rightIcon = rightBorderActor.transform.GetChild(0).GetComponent<Image>();
                     rightIcon.sprite = actorRight;
@@ -74,13 +72,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     Debug.Log("StoryTeller installed");
                     break;
             }
+        }
 
-            if (Data.optionalData.GallerySlot != null && Sender != MessageSender.StoryTeller)
-            {
-                Vector2 offsetY = new Vector2(0, 30);
-                //backMsg.sizeDelta = new Vector2(backMsg.sizeDelta.x, msgText.preferredHeight);
-                //backMsg.sizeDelta += offsetY;
-            }
+        protected void AdjustStoryTeller(Transform content)
+        {
+            GameObject parent = new GameObject("ParentStoryTeller");
+            parent.transform.SetParent(content);
+            gameObject.transform.SetParent(parent.transform);
         }
 
         protected void AdjustRightActor(Transform content, MessageSender sender)

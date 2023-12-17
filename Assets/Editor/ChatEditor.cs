@@ -1,5 +1,4 @@
 ﻿using _School_Seducer_.Editor.Scripts.Chat;
-using DialogueEditor;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,6 +14,8 @@ namespace Editor
             if (target is СonversationData)
             {
                 _messagesProperty = serializedObject.FindProperty("Messages");
+                СonversationData conversationData = (СonversationData)target;
+                conversationData.StoryTellerSprite = conversationData.Config.StoryTellerSprite;
             }
             else
             {
@@ -38,12 +39,12 @@ namespace Editor
                     if (Event.current.type == EventType.MouseDown && Event.current.button == 1 && elementRect.Contains(Event.current.mousePosition))
                     {
                         // Правая кнопка мыши была нажата над элементом массива
-                        HandleContextMenu(i);
+                        //HandleContextMenu(i);
                         Event.current.Use(); // Помечаем событие как обработанное
                     }
 
-                    EditorGUI.PropertyField(elementRect, messageProperty, true);
-	                EditorGUILayout.Space(170);
+                    //EditorGUI.PropertyField(elementRect, messageProperty, true);
+	                //EditorGUILayout.Space(170);
                 }
             }
 
