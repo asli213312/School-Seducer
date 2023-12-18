@@ -85,9 +85,11 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 Debug.Log("CurrentContent is null");
                 return;
             }
-            
+
             if (galleryScreen.gameObject.activeSelf)
                 InstallSlotsBySection();
+            else
+                _currentSlotsBySection = new();
 
             if (CurrentData.Content.sprite.IsWideSprite())
             {
@@ -105,6 +107,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             }
 
             _currentContent = CurrentData.Content;
+            _currentIndexInGallery = GetIndexForCurrentContent();
 
             _container.Activate();
         }
@@ -112,26 +115,26 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private void PreviousContent() 
         {
            if (_currentIndexInGallery > 0)
-                       {
-                           GallerySlotView nextSlot = _currentSlotsBySection[_currentIndexInGallery - 1];
-           
-                           if (nextSlot.Data.Sprite.IsWideSprite())
-                           {
-                               contentWide.sprite = nextSlot.Data.Sprite;
-                               contentWide.gameObject.Activate();
-                               contentSquare.gameObject.Deactivate();
-                           }
-                           else
-                           {
-                               contentSquare.sprite = nextSlot.Data.Sprite;
-                               contentSquare.gameObject.Activate();
-                               contentWide.gameObject.Deactivate();
-                           }
-           
-                           _currentContent = nextSlot.GetComponent<Image>();
-           
-                           _currentIndexInGallery--;
-                       }
+           {
+               GallerySlotView nextSlot = _currentSlotsBySection[_currentIndexInGallery - 1];
+
+               if (nextSlot.Data.Sprite.IsWideSprite())
+               {
+                   contentWide.sprite = nextSlot.Data.Sprite;
+                   contentWide.gameObject.Activate();
+                   contentSquare.gameObject.Deactivate();
+               }
+               else
+               {
+                   contentSquare.sprite = nextSlot.Data.Sprite;
+                   contentSquare.gameObject.Activate();
+                   contentWide.gameObject.Deactivate();
+               }
+
+               _currentContent = nextSlot.GetComponent<Image>();
+
+               _currentIndexInGallery--;
+           }
         }
         
         private void NextContent()
@@ -157,6 +160,23 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
                 _currentIndexInGallery++;
             }
+        }
+
+        private int GetIndexForCurrentContent()
+        {
+            if (_currentSlotsBySection == null) return 0;
+            
+            for (int i = 0; i < _currentSlotsBySection.Count; i++)
+            {
+                Image slotView = _currentSlotsBySection[i].GetComponent<Image>();
+                if (_currentContent.sprite == slotView.sprite)
+                {
+                    return i;
+                }
+            }
+            
+            Debug.LogWarning("Index not found for current content");
+            return 0;
         }
 
         private void RegisterIterateContent()
