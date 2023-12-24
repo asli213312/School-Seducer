@@ -4,6 +4,9 @@ using System.Linq;
 using _BonGirl_.Editor.Scripts;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.UI;
+using _School_Seducer_.Editor.Scripts.Utility;
+using _School_Seducer_.Editor.Scripts.Utility.Translation;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,8 +14,9 @@ using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
-    public class Chat : MonoBehaviour
+    public class Chat : MonoBehaviour, IObservableCustom<MonoBehaviour>
     {
+        [Inject] private LocalizedGlobalMonoBehaviour _localizer;
         [Inject] private SoundHandler _soundHandler;
         [Inject] private EventManager _eventManager;
         
@@ -37,12 +41,24 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private List<MessageData> _messages = new();
         private List<ChatStatusView> _chatStatusViews = new();
+        private List<MessageDefaultView> _defaultMessages = new();
         private ChatStatusView _currentStatusView;
         private ConversationView _conversationView;
         private bool _isStartConversation;
         private int _iteratedMessages;
         private MessageDefaultView _currentDefaultMsg;
         private MessagePictureView _currentPictureMsg;
+
+        [ContextMenu("Translate Messages")]
+        private void TranslateMessages()
+        {
+            if (_defaultMessages.Count < 0) return;
+
+            foreach (var msg in _defaultMessages)
+            {
+                msg.TranslateMessage(_localizer.GlobalLanguageCodeRuntime);
+            }
+        }
 
         private void Awake()
         {
@@ -53,6 +69,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             previewer.Initialize(this);
 
             _conversationView = new ConversationView();
+            _localizer.AddObserver(this);
             //_conversationView.Initialize(config.ChatCompletedSprite, config.ChatUncompletedSprite);
         }
 
@@ -67,6 +84,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void OnEnable()
         {
             InitializeChats();
+        }
+        
+        public void OnObservableUpdate()
+        {
+            if (_defaultMessages.Count < 0) return;
+
+            foreach (var msg in _defaultMessages)
+            {
+                msg.TranslateMessage(_localizer.GlobalLanguageCodeRuntime);
+            }
         }
 
         public void LoadBranch(BranchData branchData)
@@ -83,7 +110,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 	    {
 	    	CurrentConversation = data;
             gallery.SetCurrentData(previewer.GetCurrentCharacterData().gallery);
-            _currentStatusView = _chatStatusViews[CurrentConversation.ConversationIndex];
+            _currentStatusView = _chatStatusViews[CurrentConversation.conversationIndex];
         }
 
         public void StartDialogue(UnityAction onStarted)
@@ -105,7 +132,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private IEnumerator LoadMessages(MessageData[] messages = null)
 	    {
             messages = CheckIsBranch(messages);
-            bool lastMessage = false;
 
             MessagesStarted();
             StartConversation();
@@ -114,84 +140,88 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             for (int i = 0; i < _messages.Count; i++)
             {
-                _eventManager.ChatMessageReceived(false);
-                if (CompletedMessages.Contains(_messages[i]))
-                {
-                    continue;
-                }
-                
-                CheckOptionsIsLastSibling();
-
-                yield return new WaitUntil(CheckTapBounds);
-                yield return new WaitForSeconds(0.5f);
-
-                var paddingBack = CreatePadding();
-                var newMsg = InstallPrefabMsg(_messages.ToArray(), i, out var pictureMsgProxy);
-                var paddingForward = CreatePadding();
-
-                newMsg.Initialize(optionButtons);
-
-                RenderMsgData(_messages.ToArray(), newMsg, i);
-                //SetNameSender(newMsg);
-                
-                SetPaddings(paddingBack, paddingForward);
-
-                Debug.Log("Render completed");
-
-	            config.OnMessageReceived?.Invoke();
-                _eventManager.ChatMessageReceived(true);
-
-                CheckOptionsIsLastSibling();
-
-                yield return new WaitForSeconds(config.DelayBtwMessage);
-
-                if (MsgHasBranches(_messages.ToArray(), i))
-                {
-                    Debug.Log("options installed in MsgHasBranches");
-
-                    if (pictureMsgProxy != null)
-                    {
-                        yield return new WaitUntil(() => pictureMsgProxy.PictureInstalled);
-                        InstallOptions(_messages[i]);
-                    }
-
-                    InstallOptions(_messages[i]);
-                    
-                    _iteratedMessages++;
-                    
-                    CompletedMessages.Add(_messages[i]);
-                    _currentStatusView.CompletionChanged(i, _messages.ToArray());
-
-                    Debug.Log("iterated messages: " + _iteratedMessages);
-                    break;
-                }
-
-                if (_messages[i] == _messages[^1])
-                {
-                    MessagesEnded();
-                }
-
-                lastMessage = CheckLastMessage(_messages.ToArray(), i, lastMessage);
-
-                while (pictureMsgProxy != null && !pictureMsgProxy.PictureInstalled)
-                {
-                    yield return new WaitForSeconds(1f);   
-                }
-
-                if (CheckLastMessage(_messages.ToArray(), i, lastMessage))
-                {
-                    CurrentConversation.IsCompleted = true;
-                }
-
-                _iteratedMessages++;
-                _currentStatusView.CompletionChanged(i, _messages.ToArray());
-                CompletedMessages.Add(_messages[i]);
-
-                Debug.Log("iterated messages: " + _iteratedMessages);
+                yield return ProcessMessage(i);
             }
 
-            EndConversation(lastMessage);
+            EndConversation(CheckLastMessage(_messages.ToArray(), _messages.Count - 1, false));
             MessagesEnded();
+        }
+        
+        private IEnumerator ProcessMessage(int index)
+        {
+            _eventManager.ChatMessageReceived(false);
+            if (CompletedMessages.Contains(_messages[index]))
+            {
+                yield break;
+            }
+
+            CheckOptionsIsLastSibling();
+
+            yield return new WaitUntil(CheckTapBounds);
+            yield return new WaitForSeconds(0.5f);
+
+            var paddingBack = CreatePadding();
+            var newMsg = InstallPrefabMsg(_messages.ToArray(), index, out var pictureMsgProxy);
+            var paddingForward = CreatePadding();
+
+            newMsg.Initialize(optionButtons);
+            RenderMsgData(_messages.ToArray(), newMsg, index);
+
+            SetPaddings(paddingBack, paddingForward);
+
+            Debug.Log("Render completed");
+
+            config.OnMessageReceived?.Invoke();
+            _eventManager.ChatMessageReceived(true);
+
+            CheckOptionsIsLastSibling();
+
+            yield return new WaitForSeconds(config.DelayBtwMessage);
+
+            if (MsgHasBranches(_messages.ToArray(), index))
+            {
+                Debug.Log("options installed in MsgHasBranches");
+
+                if (pictureMsgProxy != null)
+                {
+                    yield return new WaitUntil(() => pictureMsgProxy.PictureInstalled);
+                    InstallOptions(_messages[index]);
+                }
+
+                InstallOptions(_messages[index]);
+
+                _iteratedMessages++;
+
+                CompletedMessages.Add(_messages[index]);
+                _currentStatusView.CompletionChanged(index, _messages.ToArray());
+
+                Debug.Log("iterated messages: " + _iteratedMessages);
+                yield break;
+            }
+
+            if (_messages[index] == _messages[^1])
+            {
+                MessagesEnded();
+            }
+
+            var lastMessage = CheckLastMessage(_messages.ToArray(), index, false);
+
+            while (pictureMsgProxy != null && !pictureMsgProxy.PictureInstalled)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+
+            if (lastMessage)
+            {
+                CurrentConversation.isCompleted = true;
+                _eventManager.ChatMessageReceived(false);
+            }
+
+            _iteratedMessages++;
+            _currentStatusView.CompletionChanged(index, _messages.ToArray());
+            CompletedMessages.Add(_messages[index]);
+
+            Debug.Log("iterated messages: " + _iteratedMessages);
         }
 
         private IEnumerator ChatTap(UnityAction onTapped)
@@ -380,9 +410,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
         private void SetNameSender(IMessage newMsg)
         {
-	        string leftActor = CurrentConversation.ActorLeftName;
-	        string rightActor = CurrentConversation.ActorRightName;
-            string storyTeller = config.StoryTellerName;
+	        string leftActor = CurrentConversation.actorLeftName;
+	        string rightActor = CurrentConversation.actorRightName;
+            string storyTeller = config.storyTellerName;
 	        newMsg.SetNameActors(leftActor, rightActor, storyTeller);
         }
 
@@ -417,6 +447,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 defaultMsg.InitSoundInvoker(_soundHandler);
                 defaultMsg.InitContentSpace(contentMsgs);
                 _currentDefaultMsg = defaultMsg;
+                _defaultMessages.Add(defaultMsg);
             }
 
             return newMsg;

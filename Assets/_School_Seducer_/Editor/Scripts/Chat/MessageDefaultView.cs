@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using _BonGirl_.Editor.Scripts;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.Utility;
+using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -12,6 +15,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     {
         [SerializeField] private Button audioButtonLeftActor;
         [SerializeField] private Button audioButtonRightActor;
+
+        private List<LocalizedScriptableObject.LocalizedData> _localizedData;
 
         public Button AudioButtonLeftActor => audioButtonLeftActor;
         public Button AudioButtonRightActor => audioButtonRightActor;    
@@ -49,6 +54,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public void SetNameActors(string leftActor, string rightActor, string storyTeller)
         {
             SetName(leftActor, rightActor, storyTeller);
+        }
+
+        public void TranslateMessage(string languageCode)
+        {
+            msgText.text = Data.TranslateMsg(languageCode);
         }
 
         private void SetParentActor()

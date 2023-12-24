@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Gallery Config
   m_EditorClassIdentifier: 
   dampedData: {fileID: 11400000, guid: a89aafde38b31494287819007f6ac54e, type: 2}
-  showDebugParameters: 1
+  showDebugParameters: 0

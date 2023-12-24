@@ -25,9 +25,13 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         public Image ContentWide => contentWide;
         public Image ContentSquare => contentSquare;
-        private List<GallerySlotView> _currentSlotsBySection;
         public GameObject Container => _container;
         
+        private const int NEXT = 1;
+        private const int PREVIOUS = -1;
+        
+        private List<GallerySlotView> _currentSlotsBySection;
+
         private Button _contentWideButton;
         private Button _contentSquareButton;
         
@@ -36,11 +40,6 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         private int _currentIndexInGallery;
         private bool _isSelected;
-
-        public void Initialize(GalleryScreen gallery)
-        {
-            galleryScreen = gallery;
-        }
 
         private void OnValidate()
         {
@@ -91,74 +90,53 @@ namespace _School_Seducer_.Editor.Scripts.UI
             else
                 _currentSlotsBySection = new();
 
-            if (CurrentData.Content.sprite.IsWideSprite())
-            {
-                contentWide.sprite = CurrentData.Content.sprite;
-                contentWide.gameObject.Activate();
-                contentSquare.gameObject.Deactivate();
-                Debug.Log("Content installed like WIDE");
-            }
-            else 
-            {
-                contentSquare.sprite = CurrentData.Content.sprite;
-                contentSquare.gameObject.Activate();
-                contentWide.gameObject.Deactivate();
-                Debug.Log("Content installed like SQUARE");
-            }
+            SetContent(CurrentData.Content.sprite);
 
             _currentContent = CurrentData.Content;
             _currentIndexInGallery = GetIndexForCurrentContent();
 
             _container.Activate();
         }
-        
-        private void PreviousContent() 
+
+        private void PreviousContent()
         {
-           if (_currentIndexInGallery > 0)
-           {
-               GallerySlotView nextSlot = _currentSlotsBySection[_currentIndexInGallery - 1];
-
-               if (nextSlot.Data.Sprite.IsWideSprite())
-               {
-                   contentWide.sprite = nextSlot.Data.Sprite;
-                   contentWide.gameObject.Activate();
-                   contentSquare.gameObject.Deactivate();
-               }
-               else
-               {
-                   contentSquare.sprite = nextSlot.Data.Sprite;
-                   contentSquare.gameObject.Activate();
-                   contentWide.gameObject.Deactivate();
-               }
-
-               _currentContent = nextSlot.GetComponent<Image>();
-
-               _currentIndexInGallery--;
-           }
+            SwitchContent(PREVIOUS);
         }
-        
+
         private void NextContent()
         {
-            if (_currentIndexInGallery < _currentSlotsBySection.Count - 1)
+            SwitchContent(NEXT);
+        }
+
+        private void SwitchContent(int indexOffset)
+        {
+            int newIndex = _currentIndexInGallery + indexOffset;
+
+            if (newIndex >= 0 && newIndex < _currentSlotsBySection.Count)
             {
-                GallerySlotView nextSlot = _currentSlotsBySection[_currentIndexInGallery + 1];
+                GallerySlotView nextSlot = _currentSlotsBySection[newIndex];
 
-                if (nextSlot.Data.Sprite.IsWideSprite())
-                {
-                    contentWide.sprite = nextSlot.Data.Sprite;
-                    contentWide.gameObject.Activate();
-                    contentSquare.gameObject.Deactivate();
-                }
-                else
-                {
-                    contentSquare.sprite = nextSlot.Data.Sprite;
-                    contentSquare.gameObject.Activate();
-                    contentWide.gameObject.Deactivate();
-                }
-
+                SetContent(nextSlot.Data.Sprite);
                 _currentContent = nextSlot.GetComponent<Image>();
+                _currentIndexInGallery = newIndex;
+            }
+        }
 
-                _currentIndexInGallery++;
+        private void SetContent(Sprite spriteInContent)
+        {
+            if (spriteInContent.IsWideSprite())
+            {
+                contentWide.sprite = spriteInContent;
+                contentWide.gameObject.Activate();
+                contentSquare.gameObject.Deactivate();
+                Debug.Log("Content installed like WIDE");
+            }
+            else
+            {
+                contentSquare.sprite = spriteInContent;
+                contentSquare.gameObject.Activate();
+                contentWide.gameObject.Deactivate();
+                Debug.Log("Content installed like SQUARE");
             }
         }
 

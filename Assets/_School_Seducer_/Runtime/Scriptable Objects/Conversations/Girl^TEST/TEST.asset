@@ -12,26 +12,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
   m_Name: TEST
   m_EditorClassIdentifier: 
-  IsCompleted: 1
-  ConversationIndex: 1
+  localizedFields:
+  - fieldLabel: <Language>k__BackingField
+    localizedDataList: []
+  - fieldLabel: actorLeftName
+    localizedDataList:
+    - languageCode: en
+      key: GirlEN
+    - languageCode: fr
+      key: GirlFR
+  - fieldLabel: actorRightName
+    localizedDataList:
+    - languageCode: 
+      key: 
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  localizator:
+    translationJson: {fileID: 4900000, guid: 2faa84450969ec54c958f0e35b416c52, type: 3}
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  conversationIndex: 1
   <Config>k__BackingField: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
-  ActorLeftName: GIRL
+  actorLeftName: GirlEN
   <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
-  ActorRightName: TEST
+  actorRightName: TEST
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
   Messages:
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
-    Msg: 
-    optionalData:
-      GallerySlot: {fileID: 11400000, guid: 5a16bd808823bf84482334d567ae747f, type: 2}
-      Animation: {fileID: 0}
-      Branches: []
-    AudioMsg: {fileID: 0}
-  - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
-    Msg: 
+  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
+    Msg: Hello, young man.
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData:
+    - languageCode: en
+      key: Hello, young man.
+    - languageCode: fr
+      key: Bonjour, fjeune homme.
+  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    Msg: Hello, it's a pleasure to see you.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedData:
+    - languageCode: en
+      key: Hello, it's a pleasure to see you.
+    - languageCode: fr
+      key: Bonjour, c'est un plaisir de vous voir.
+  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
+    Msg: What are you doing today?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedData:
+    - languageCode: en
+      key: What are you doing today?
+    - languageCode: fr
+      key: que faites-vous aujourd'hui ?
+  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    Msg: not translated
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches:
+      - {fileID: 11400000, guid: 0073a0138a0897a408726586fb1e6b62, type: 2}
+      - {fileID: 11400000, guid: c05b307d24ea806439d0192e47787a2f, type: 2}
+      - {fileID: 11400000, guid: 77a53c1380855cd43ba15e3238ff485e, type: 2}
+    AudioMsg: {fileID: 0}
+    localizedData: []

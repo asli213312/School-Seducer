@@ -12,19 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa0b87652814f9f8f6930844a64884a, type: 3}
   m_Name: Branch_1
   m_EditorClassIdentifier: 
-  BranchName: BRANCH 1
+  localizedFields:
+  - fieldLabel: BranchName
+    localizedDataList:
+    - languageCode: en
+      key: branch1111111
+    - languageCode: fr
+      key: Bonjour)
+  - fieldLabel: <LanguageCode>k__BackingField
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  localizator:
+    translationJson: {fileID: 0}
+  BranchName: branch1111111
   audioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
   <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
   Messages:
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
-    Msg: grfrfrfrg
+    Msg: grfrfrfrggt
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: I'm okay. Maybe you want to go with me and my friends or to go with me go
       to bar, would you think? and maybe you want to go fly with me?
@@ -33,6 +47,7 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: "\u043B\u043B\u043B\u043B\u043B\u043B\u043B\u043B\u043B"
     optionalData:
@@ -40,6 +55,7 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: grfrfrfrf
     optionalData:
@@ -47,6 +63,7 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: What do you want at now?
     optionalData:
@@ -54,4 +71,6 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches:
       - {fileID: 11400000, guid: 94f91937cf247c4419dc4a7d9b1072a7, type: 2}
+      - {fileID: 11400000, guid: 94f91937cf247c4419dc4a7d9b1072a7, type: 2}
     AudioMsg: {fileID: 0}
+    localizedData: []

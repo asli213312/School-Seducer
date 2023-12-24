@@ -56,6 +56,7 @@ namespace Editor
                 branchData.ActorRightSprite = _mainData.ActorRightSprite;
                 branchData.Config = _mainData.Config;
                 branchData.StoryTellerSprite = _mainData.Config.StoryTellerSprite;
+                //branchData.LanguageCode = _mainData.Language;
             }
             else
             {

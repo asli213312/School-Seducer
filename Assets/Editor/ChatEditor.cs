@@ -1,4 +1,8 @@
-﻿using _School_Seducer_.Editor.Scripts.Chat;
+﻿using System;
+using System.IO;
+using System.Reflection;
+using _School_Seducer_.Editor.Scripts.Chat;
+using _School_Seducer_.Editor.Scripts.Utility;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,9 +12,24 @@ namespace Editor
     public class ChatEditor : UnityEditor.Editor
     {
         private SerializedProperty _messagesProperty;
+        private GlobalSettings _globalSettings;
 
         private void OnEnable()
         {
+            string globalSettingsPath = Enums.Strings.GLOBAL_SETTINGS;
+            
+            GlobalSettings globalSettingsData = AssetDatabase.LoadAssetAtPath<GlobalSettings>(globalSettingsPath);
+
+            if (globalSettingsData != null)
+            {
+                _globalSettings = globalSettingsData;
+                Debug.Log("Global Settings loaded successfully.");
+            }
+            else
+            {
+                Debug.LogError("Failed to load Global Settings.");
+            }
+
             if (target is СonversationData)
             {
                 _messagesProperty = serializedObject.FindProperty("Messages");
@@ -38,9 +57,7 @@ namespace Editor
 
                     if (Event.current.type == EventType.MouseDown && Event.current.button == 1 && elementRect.Contains(Event.current.mousePosition))
                     {
-                        // Правая кнопка мыши была нажата над элементом массива
-                        //HandleContextMenu(i);
-                        Event.current.Use(); // Помечаем событие как обработанное
+                        Event.current.Use();
                     }
 
                     //EditorGUI.PropertyField(elementRect, messageProperty, true);
@@ -49,6 +66,12 @@ namespace Editor
             }
 
             serializedObject.ApplyModifiedProperties();
+        }
+        
+        private void EmptyMethodCallback()
+        {
+            // Пустой метод
+            Debug.Log("Empty Method Called");
         }
         
 	    private void AddNewElement()

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Editor
 {
-    public class EditorScript : UnityEditor.Editor
+    public class TestEditor : UnityEditor.Editor
     {
 	    //[MenuItem("MyMenu/Load Main ConversationData")]
         private static void LoadMainConversationData()

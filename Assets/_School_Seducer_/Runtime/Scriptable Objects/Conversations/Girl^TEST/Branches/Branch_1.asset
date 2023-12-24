@@ -12,16 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa0b87652814f9f8f6930844a64884a, type: 3}
   m_Name: Branch_1
   m_EditorClassIdentifier: 
-  BranchName: In this branch you can to try hard new branch, his name is Branch1
+  localizedFields:
+  - fieldLabel: BranchName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  localizator:
+    translationJson: {fileID: 4900000, guid: 8ed0b7f70768a784586590a3973cae06, type: 3}
+  BranchName: BRANCH 1
   audioMsg: {fileID: 0}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
   <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
   Messages:
   - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
-    Msg: 
+    Msg: Hello, young man.
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData:
+    - languageCode: en
+      key: Hello, young man.
+    - languageCode: fr
+      key: Bonjour, fjeune homme.
+  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
+    Msg: Hello, it's a pleasure to see you.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedData:
+    - languageCode: en
+      key: Hello, it's a pleasure to see you.
+    - languageCode: fr
+      key: Bonjour, c'est un plaisir de vous voir.

@@ -35,7 +35,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         public void SetStatus(Sprite completed, Sprite uncompleted)
         {
-            chatStatusImage.sprite = _chatData.IsCompleted ? completed : uncompleted;
+            chatStatusImage.sprite = _chatData.isCompleted ? completed : uncompleted;
         }
 
         public void CompletionChanged(int messageIndex, MessageData[] messages)

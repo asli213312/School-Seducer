@@ -12,19 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa0b87652814f9f8f6930844a64884a, type: 3}
   m_Name: Branch_2
   m_EditorClassIdentifier: 
-  BranchName: In this branch you can to try hard new branch, his name is Branch2
+  localizedFields:
+  - fieldLabel: BranchName
+    localizedDataList:
+    - languageCode: en
+      key: branch22222
+    - languageCode: fr
+      key: 1
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  localizator:
+    translationJson: {fileID: 0}
+  BranchName: branch22222
   audioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
   <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
   Messages:
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
-    Msg: 
+    Msg: thththt
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: 
     optionalData:
@@ -32,10 +44,12 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
-    Msg: 
+    Msg: 1
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 4498eac02cc9c1d42afe64d85f01ce7f, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData: []

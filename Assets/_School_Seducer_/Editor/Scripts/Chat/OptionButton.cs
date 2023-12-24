@@ -40,6 +40,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             OnClick += CreateCopyInChat;
         }
 
+        private void Start()
+        {
+            GetIndexSiblingAlongParent();
+        }
+
         private void OnDestroy()
         {
             _button.RemoveListener(LoadBranch);
@@ -50,9 +55,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void CreateCopyInChat()
         {
             GameObject newOptionParent = CreateOptionParent();
-            
+
             _backSibling = _chat.ContentMsgs.GetChild(1).gameObject;
-            
+
             GameObject option = SetupOption(newOptionParent);
             SetupPadding(newOptionParent);
             
@@ -96,7 +101,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private GameObject SetupOption(GameObject newOptionParent)
         {
-            GameObject newOption = newOptionParent.transform.GetChild(0).gameObject;
+            GameObject newOption = newOptionParent.transform.GetChild(GetIndexSiblingAlongParent()).gameObject;
             RectTransform newOptionRect = newOption.GetComponent<RectTransform>();
             Button newOptionButton = newOption.GetComponent<Button>();
             HorizontalLayoutGroup parentHorizontalLayout = newOptionParent.GetComponent<HorizontalLayoutGroup>();
@@ -123,6 +128,18 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             backPadding.SetSiblingIndex(newOptionParent.transform.GetSiblingIndex() - 1);
             backPadding.sizeDelta = new Vector2(backPadding.sizeDelta.x, backPadding.sizeDelta.y + 20);
             forwardPadding.SetSiblingIndex(newOptionParent.transform.GetSiblingIndex() + 1);
+        }
+
+        private int GetIndexSiblingAlongParent()
+        {
+            for (int i = 0; i < _parent.childCount; i++)
+            {
+                if (_parent.GetChild(i) == gameObject.transform)
+                    return i;
+            }
+
+            Debug.LogError("Couldn't find sibling along parent for option: " + name);
+            return 0;
         }
 
         private void KeepOnlyOneSibling(GameObject parent, OptionButton desiredSibling)

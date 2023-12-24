@@ -15,7 +15,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] protected Image leftBorderActor;
         [SerializeField] protected Image rightBorderActor;
 
-        protected MessageData Data;
+        public MessageData Data;
         protected OptionButton[] OptionButtons;
         protected MessageSender Sender;
 

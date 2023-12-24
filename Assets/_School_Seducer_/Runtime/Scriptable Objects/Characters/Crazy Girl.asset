@@ -15,6 +15,6 @@ MonoBehaviour:
   conversation: {fileID: 11400000, guid: 2d7ec7a146fc78844bab40be0177cbf1, type: 2}
   gallery: {fileID: 11400000, guid: a89aafde38b31494287819007f6ac54e, type: 2}
   requiredLevel: 3
-  loyalty: 10
-  maxLoyalty: 10
+  loyalty: 2
+  maxLoyalty: 6
   showDebugParameters: 0
