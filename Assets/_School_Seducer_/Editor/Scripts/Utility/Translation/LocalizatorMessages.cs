@@ -11,7 +11,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
     [Serializable]
     public class LocalizatorMessages : BaseLocalizator
     {
-        private Translator _translator;
+        [SerializeField, HideInInspector] private Translator _translator;
 
         public void ResetTranslations()
         {
@@ -44,6 +44,12 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
 
         public List<Translator.Languages> GetLanguages(int indexMessage)
         {
+            if (_translator.languages == null)
+            {
+                Debug.LogError("Languages is not initialized!");
+                return null;
+            }
+            
             if (_translator.languages.Count == 0)
             {
                 InitializeTranslation();

@@ -7,7 +7,6 @@ using UnityEngine.Serialization;
 
 namespace _School_Seducer_.Editor.Scripts.Utility
 {
-    [CreateAssetMenu]
     public class GlobalSettings : ScriptableObject, ILocalizedData
     {
         [SerializeField] private Enums.Language currentLanguage;

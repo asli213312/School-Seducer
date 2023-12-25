@@ -12,68 +12,91 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
   m_Name: Test conversation
   m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
   localizator:
-    translationJson: {fileID: 0}
-  <Language>k__BackingField: 
+    translationJson: {fileID: 4900000, guid: 2faa84450969ec54c958f0e35b416c52, type: 3}
+  <Language>k__BackingField: 0
   isCompleted: 0
   conversationIndex: 0
   <Config>k__BackingField: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
-  <StoryTellerSprite>k__BackingField: {fileID: 0}
+  <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: Crazy
   <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
   actorRightName: John
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
   Messages:
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
-    Msg: Once upon a time...
+    Msg: Hello, young man.
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
+    localizedData:
+    - languageCode: en
+      key: Hello, young man.
+    - languageCode: fr
+      key: Bonjour, fjeune homme.
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: small message
+    Msg: Hello, it's a pleasure to see you.
     optionalData:
       GallerySlot: {fileID: 11400000, guid: a138e57702664dd40b4a78642376bc65, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData:
+    - languageCode: en
+      key: Hello, it's a pleasure to see you.
+    - languageCode: fr
+      key: Bonjour, c'est un plaisir de vous voir.
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: "I'm okay. \nMaybe you want to go with me \nand my friends or to go with
-      me \ngo to bar, would you think? \nand maybe you want to go fly with me? nt
-      to go fly with me? nt to go fly with me? Maybe you want to go. I'm okay.. I'm
-      okay....... Maybe you want to go with me and my friend"
+    Msg: What are you doing today?
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 2abbd0420d837c24a9236065ecb7d08a, type: 3}
+    localizedData:
+    - languageCode: en
+      key: What are you doing today?
+    - languageCode: fr
+      key: que faites-vous aujourd'hui ?
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
-    Msg: right actor message
+    Msg: not translated
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: small message + branches
+    Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 2e4140e2d06a5d24988cd74cb84ef71d, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: db55da822b338804896595d06a606392, type: 3}
-    Msg: small message + branches
+    Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: db43df0d568730b4fa749c8300762209, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: 5e71f6a80f5216d41876ac8596d7bcec, type: 3}
-    Msg: small message + branches
+    Msg: not translated
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches:
       - {fileID: 11400000, guid: 84697a5d927912e4598e97270511f91c, type: 2}
     AudioMsg: {fileID: 0}
+    localizedData: []

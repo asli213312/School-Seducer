@@ -43,8 +43,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             {
                 Messages[i].SetLocalizedData(localizator.GetLanguages(i));
             }
-            
-            Debug.Log("Messages translated for conversation: " + name);
         }
         
         [ContextMenu("Translate Messages")]
@@ -54,7 +52,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             if (localizator.translationJson == null)
             {
-                Debug.LogError("Translation File is not assigned!");
+                Debug.LogWarning("Translation File is not assigned!");
                 return;
             }
 
@@ -69,8 +67,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [ContextMenu(nameof(ResetLanguageContainer))]
         private void ResetLanguageContainer()
         {
-            if (localizator.translationJson != null)
-                localizator.ResetTranslations();
+            localizator.ResetTranslations();
         }
 
         #endregion

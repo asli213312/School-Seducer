@@ -56,7 +56,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             SetName(leftActor, rightActor, storyTeller);
         }
 
-        public void TranslateMessage(string languageCode)
+        public void TranslateText(string languageCode)
         {
             msgText.text = Data.TranslateMsg(languageCode);
         }

@@ -22,7 +22,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
             
             _localizer.Notify();
             
-            LocalizedGlobalScriptableObject.UpdateLocalizedData();
+            //LocalizedGlobalScriptableObject.UpdateLocalizedData();
             Debug.Log("Selected language: " + _localizer.GlobalLanguageCodeRuntime);
         }
     }

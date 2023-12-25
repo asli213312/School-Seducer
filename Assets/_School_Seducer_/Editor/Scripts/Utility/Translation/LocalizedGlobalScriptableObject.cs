@@ -57,7 +57,10 @@ namespace _School_Seducer_.Editor.Scripts.Utility
 
             foreach (var localizedObject in LocalizedObjects)
             {
-                Debug.Log(localizedObject.name); 
+                if (localizedObject != null)
+                {
+                    Debug.Log(localizedObject.name);    
+                }
             }
             
             Debug.Log("Update localizedObjects was completed");

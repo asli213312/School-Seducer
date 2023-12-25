@@ -50,13 +50,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private MessagePictureView _currentPictureMsg;
 
         [ContextMenu("Translate Messages")]
-        private void TranslateMessages()
+        private void TranslateRenderedMessages()
         {
             if (_defaultMessages.Count < 0) return;
 
             foreach (var msg in _defaultMessages)
             {
-                msg.TranslateMessage(_localizer.GlobalLanguageCodeRuntime);
+                msg.TranslateText(_localizer.GlobalLanguageCodeRuntime);
             }
         }
 
@@ -88,12 +88,17 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
         public void OnObservableUpdate()
         {
-            if (_defaultMessages.Count < 0) return;
+            TranslateRenderedMessages();
+            
+            if (_messages.Count < 0) return;
 
-            foreach (var msg in _defaultMessages)
+            foreach (var msg in _messages)
             {
-                msg.TranslateMessage(_localizer.GlobalLanguageCodeRuntime);
+                msg.Msg = msg.TranslateMsg(_localizer.GlobalLanguageCodeRuntime);
             }
+            
+            var paddingBack = CreatePadding();
+            paddingBack.gameObject.Deactivate(0.1f);
         }
 
         public void LoadBranch(BranchData branchData)
@@ -137,6 +142,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             StartConversation();
             
             _messages.AddRange(messages);
+            
+            OnObservableUpdate();
 
             for (int i = 0; i < _messages.Count; i++)
             {
@@ -237,6 +244,20 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 
                 BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
+                
+                RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero, Mathf.Infinity);
+
+                foreach (var hit in hits)
+                {
+                    GameObject hitObject = hit.collider.gameObject;
+                    if (hitObject.gameObject.layer == LayerMask.NameToLayer("Unclickable"))
+                    {
+                        Debug.Log("Clicked on Unclickable area!");
+                        return false;
+                    }
+
+                    return true;
+                }
 
                 if (ContentScreen.CurrentData != null)
                 {

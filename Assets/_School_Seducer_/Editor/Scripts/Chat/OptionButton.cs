@@ -56,7 +56,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             GameObject newOptionParent = CreateOptionParent();
 
-            _backSibling = _chat.ContentMsgs.GetChild(1).gameObject;
+            _backSibling = _chat.ContentMsgs.GetChild(2).gameObject;
 
             GameObject option = SetupOption(newOptionParent);
             SetupPadding(newOptionParent);

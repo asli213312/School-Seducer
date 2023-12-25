@@ -29,6 +29,18 @@ MonoBehaviour:
     localizedDataList: []
   localizator:
     translationJson: {fileID: 4900000, guid: 2faa84450969ec54c958f0e35b416c52, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Hello, young man.
+        - key: Hello, it's a pleasure to see you.
+        - key: What are you doing today?
+      - languageCode: fr
+        messages:
+        - key: Bonjour, fjeune homme.
+        - key: Bonjour, c'est un plaisir de vous voir.
+        - key: que faites-vous aujourd'hui ?
   <Language>k__BackingField: 0
   isCompleted: 1
   conversationIndex: 1
