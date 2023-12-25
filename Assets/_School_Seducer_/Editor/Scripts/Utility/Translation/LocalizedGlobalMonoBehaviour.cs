@@ -33,6 +33,8 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
 
         public void RemoveObserver(IObservableCustom<MonoBehaviour> observable)
         {
+            if (observable is null) return;
+            
             _localizedObjects.Remove(observable);
         }
 

@@ -17,7 +17,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         [field: NaughtyAttributes.ReadOnly] public MessageSender Sender { get; set; }
         
-        [HideInEditorMode, SerializeField] private List<Translator.Languages> localizedData;
+        [HideInEditorMode, SerializeField, Sirenix.OdinInspector.ReadOnly] private List<Translator.Languages> localizedData;
 
         public List<Translator.Languages> SetLocalizedData(List<Translator.Languages> localizedDataList)
         {
@@ -26,6 +26,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public string TranslateMsg(string languageCode)
         {
+            string originalMsg = Msg;
+            
             for (int i = 0; i < localizedData.Count; i++)
             {
                 if (localizedData[i].languageCode == languageCode)
@@ -35,7 +37,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 }  
             }
 
-            return "not translated";
+            return originalMsg;
         }
 
         public bool IsPictureMsg() => optionalData.GallerySlot != null;

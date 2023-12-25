@@ -8,6 +8,7 @@ using OneLine;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {

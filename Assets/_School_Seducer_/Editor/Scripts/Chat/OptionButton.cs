@@ -1,5 +1,7 @@
 ﻿using System;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.Utility;
+using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,12 +11,14 @@ using Zenject;
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
     [RequireComponent(typeof(Button))]
-    public class OptionButton : MonoBehaviour
+    public class OptionButton : MonoBehaviour, IObservableCustom<MonoBehaviour>
     {
         [SerializeField] private ChatConfig _chatConfig;
         [Inject] private SoundHandler _soundHandler;
         [Inject] private EventManager _eventManager;
-        
+        [Inject] private LocalizedGlobalMonoBehaviour _localizer;
+
+        public LocalizedGlobalMonoBehaviour Localizer { get => _localizer; private set => _localizer = value; }
         public BranchData BranchData { get; set; }
         
         private Button _button;
@@ -28,6 +32,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public void InitializeChat(Chat chat)
         {
             _chat = chat;
+        }
+        
+        public void OnObservableUpdate()
+        {
+            //TranslateOption();
         }
 
         private void Awake()
@@ -64,6 +73,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             SetupBackGroundImage(option);
             SetupAudioMessage();
             
+            //Debug.Break();
+            
+            //_localizer = _parent.GetChild(0).GetComponent<OptionButton>().Localizer;
+            
+                // Debug.Break();
+
+                //TranslateOption();
+
             _eventManager.UpdateScrollChat();
 
             Debug.Log("lastMessage:", _chat.ContentMsgs.GetChild(_chat.ContentMsgs.childCount - 2));
@@ -78,6 +95,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void InstallAudioMessage()
         {
             _soundHandler.InvokeOneClip(BranchData.audioMsg, null, _chatConfig.delayAudioMsg);
+        }
+        
+        private void TranslateOption()
+        {
+            // LocalizedUIObject localizedComponent = GetComponent<LocalizedUIObject>();
+            // localizedComponent.SetLocalizator(_localizer);
+            // Text textComponent = GetComponentInChildren<Text>();
+            // Translator.Languages currentLanguage = localizedComponent.LocalizedData.Find(x => x.languageCode == _localizer.GlobalLanguageCodeRuntime);
+            // textComponent.text = currentLanguage.key;
         }
 
         private void SetupBackGroundImage(GameObject option)

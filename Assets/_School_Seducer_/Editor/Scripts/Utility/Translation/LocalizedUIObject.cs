@@ -12,29 +12,31 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
     {
         [Inject] private LocalizedGlobalMonoBehaviour _localizer;
 
+        [SerializeField] private Text text;
         [SerializeField] private TextMeshProUGUI textPro;
         [SerializeField] private List<Translator.Languages> localizedData;
-
-        private Text _text;
+        public List<Translator.Languages> LocalizedData => localizedData;
 
         private void Awake()
         {
-            _text = textPro == null ? GetComponent<Text>() : null;
-
-            _localizer.AddObserver(this);
+            if (_localizer != null) _localizer.AddObserver(this);
         }
 
         private void OnDestroy()
         {
-            _localizer.RemoveObserver(this);
+            _localizer?.RemoveObserver(this);
         }
 
+        public void SetLocalizator(LocalizedGlobalMonoBehaviour localizator) => _localizer = localizator;
         public void OnObservableUpdate()
         {
             Translator.Languages currentLanguage = localizedData.Find(x => x.languageCode == _localizer.GlobalLanguageCodeRuntime);
-            
-            if (_text != null) _text.text = currentLanguage.key;
-             else textPro.text = currentLanguage.key;
+
+            if (currentLanguage.key is not null)
+            {
+                if (text != null) text.text = currentLanguage.key;
+                else if (textPro != null) textPro.text = currentLanguage.key;    
+            }
         }
     }
 }

@@ -27,6 +27,8 @@ MonoBehaviour:
     localizedDataList: []
   localizator:
     translationJson: {fileID: 0}
+    _translator:
+      languages: []
   <Language>k__BackingField: 0
   isCompleted: 1
   conversationIndex: 0
@@ -38,7 +40,7 @@ MonoBehaviour:
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
   Messages:
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
-    Msg: Once upon a time...
+    Msg: Ones upon time...
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
@@ -46,7 +48,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
     localizedData: []
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
-    Msg: 
+    Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: a138e57702664dd40b4a78642376bc65, type: 2}
       Animation: {fileID: 0}
@@ -54,7 +56,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 0}
     localizedData: []
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
-    Msg: little message
+    Msg: Hello, Mary!
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
@@ -62,7 +64,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
     localizedData: []
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
-    Msg: you cool
+    Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 25ace05a8ac97604a9babb612e8d4506, type: 2}
       Animation: {fileID: 0}
@@ -70,7 +72,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
     localizedData: []
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
-    Msg: almost last message
+    Msg: "Hello, Jo\u043E\u043E\u043E\u043E\u043E\u043E\u043E\u043E\u043Ehn"
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
@@ -78,19 +80,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 0}
     localizedData: []
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
-    Msg: 'almost last message almost last last las
-
-      almost last message
-
-      almost
-      last message
-
-      almost last message
-
-      almost last message
-
-      almost
-      last message almost last'
+    Msg: What me need to do?
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
@@ -98,7 +88,9 @@ MonoBehaviour:
     AudioMsg: {fileID: 0}
     localizedData: []
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
-    Msg: need message
+    Msg: 'Just relaxiiiiiiiiiiiiiiiiiiiiiiiiiiii
+
+      iiiiiiiiiiiiiiiiiiiiiiiiiiiii'
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
@@ -106,9 +98,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 0}
     localizedData: []
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
-    Msg: 'almost last almost last almost last
-
-      almost last'
+    Msg: Okay)
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
@@ -116,7 +106,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 0}
     localizedData: []
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
-    Msg: 
+    Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 2e4140e2d06a5d24988cd74cb84ef71d, type: 2}
       Animation: {fileID: 0}
@@ -124,7 +114,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 0}
     localizedData: []
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
-    Msg: branch
+    Msg: Maybe let's play?
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}

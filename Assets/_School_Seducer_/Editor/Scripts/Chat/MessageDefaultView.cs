@@ -97,21 +97,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _soundHandler.AutoManagePlayback(Data.AudioMsg);   
         }
 
-        private void SetOptions(MessageData data)
-        {
-            for (int i = 0; i < OptionButtons.Length && i < data.optionalData.Branches.Length; i++)
-            {
-                if (data.optionalData.Branches[i] == null) break;
-
-                if (data.optionalData.Branches[i] != null)
-                {
-                    OptionButtons[i].BranchData = data.optionalData.Branches[i];
-                    Text textChildren = OptionButtons[i].GetComponentInChildren<Text>();
-                    textChildren.text = OptionButtons[i].BranchData.BranchName;
-                }
-            }
-        }
-
         private void OnDestroy()
         {
             if (Data.AudioMsg != null)

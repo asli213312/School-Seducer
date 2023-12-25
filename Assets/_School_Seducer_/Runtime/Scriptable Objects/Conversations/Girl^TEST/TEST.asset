@@ -28,7 +28,7 @@ MonoBehaviour:
   - fieldLabel: _currentLanguage
     localizedDataList: []
   localizator:
-    translationJson: {fileID: 4900000, guid: 2faa84450969ec54c958f0e35b416c52, type: 3}
+    translationJson: {fileID: 0}
     _translator:
       languages:
       - languageCode: en
@@ -64,7 +64,7 @@ MonoBehaviour:
     - languageCode: fr
       key: Bonjour, fjeune homme.
   - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
-    Msg: Hello, it's a pleasure to see you.
+    Msg: Hello, it's a pleasure to see you. Hello, it's a pleasure
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
@@ -92,9 +92,38 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
-      Branches:
-      - {fileID: 11400000, guid: 0073a0138a0897a408726586fb1e6b62, type: 2}
-      - {fileID: 11400000, guid: c05b307d24ea806439d0192e47787a2f, type: 2}
-      - {fileID: 11400000, guid: 77a53c1380855cd43ba15e3238ff485e, type: 2}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedData: []
+  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
+    Msg: not translated
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedData: []
+  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    Msg: not translated
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedData: []
+  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    Msg: not translated
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedData: []
+  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
+    Msg: not translated
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
     AudioMsg: {fileID: 0}
     localizedData: []

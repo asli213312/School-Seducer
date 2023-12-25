@@ -2,6 +2,7 @@
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.UI;
 using _School_Seducer_.Editor.Scripts.Utility;
+using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -84,26 +85,58 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         protected void AdjustRightActor(Transform content, MessageSender sender)
         {
             if (sender != MessageSender.ActorRight) return;
-            
-            Debug.Log("Parent for right actor installed");
-            GameObject parent = new GameObject("ParentRight");
-            GameObject contentRight = new GameObject("ContentRight");
-            parent.transform.SetParent(content);
-            contentRight.transform.SetParent(parent.transform);
 
+            Debug.Log("Parent for right actor installed");
+
+            GameObject parent = CreateParentObject("ParentRight", content);
+            GameObject contentRight = CreateChildObject("ContentRight", parent.transform);
+            GameObject paddingForward = CreateChildObject("Padding Forward", parent.transform);
+
+            SetSiblingIndexAlongParent(paddingForward.transform, content, parent.transform.GetSiblingIndex() + 1);
+
+            RectTransform parentRect = parent.AddComponent<RectTransform>();
+            contentRight.AddComponent<RectTransform>();
+            paddingForward.AddComponent<RectTransform>();
+
+            AlignSizeDelta alignMain = gameObject.AddComponent<AlignSizeDelta>();
+            alignMain.Initialize(parentRect, gameObject.GetComponent<RectTransform>(), msgText.text.Length);
+
+            SetPivotPosTopMode(leftBorderActor.GetComponent<RectTransform>());
+
+            AdjustSizesAndPositions(parent, contentRight, paddingForward);
+        }
+
+        private GameObject CreateParentObject(string name, Transform parent)
+        {
+            GameObject parentObject = new GameObject(name);
+            parentObject.transform.SetParent(parent);
+            return parentObject;
+        }
+
+        private GameObject CreateChildObject(string name, Transform parent)
+        {
+            GameObject childObject = new GameObject(name);
+            childObject.transform.SetParent(parent);
+            return childObject;
+        }
+
+        private void SetSiblingIndexAlongParent(Transform target, Transform parent, int index)
+        {
+            target.SetParent(parent);
+            target.SetSiblingIndex(index);
+        }
+
+        private void AdjustSizesAndPositions(GameObject parent, GameObject contentRight, GameObject paddingForward)
+        {
             RectTransform leftBorderRect = leftBorderActor.GetComponent<RectTransform>();
             RectTransform rightBorderRect = rightBorderActor.GetComponent<RectTransform>();
             RectTransform rectMain = gameObject.GetComponent<RectTransform>();
-            RectTransform contentRightRect = contentRight.AddComponent<RectTransform>();
-            RectTransform parentRect = parent.AddComponent<RectTransform>();
-            AlignSizeDelta alignMain = gameObject.AddComponent<AlignSizeDelta>();
-            alignMain.Initialize(parentRect, rectMain, msgText.text.Length);
 
             SetPivotPosTopMode(leftBorderRect);
 
-            parentRect.sizeDelta = rectMain.sizeDelta + new Vector2(0, leftBorderRect.sizeDelta.y / 24);
-            contentRightRect.sizeDelta = rectMain.sizeDelta;
-            //contentRightRect.localPosition = new Vector3(3, 0, contentRightRect.position.z);
+            parent.GetComponent<RectTransform>().sizeDelta = rectMain.sizeDelta + new Vector2(0, leftBorderRect.sizeDelta.y / 24);
+            contentRight.GetComponent<RectTransform>().sizeDelta = rectMain.sizeDelta;
+
             rightBorderActor.transform.SetParent(contentRight.transform);
             transform.SetParent(contentRight.transform);
             rightBorderActor.transform.position = parent.transform.position;
@@ -112,7 +145,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             rightBorderRect.Translate(-Vector2.left * 5.83f);
             rectMain.position = rightBorderRect.position;
 
-            SetStretchMode(contentRightRect);
+            SetStretchMode(contentRight.GetComponent<RectTransform>());
+
+            paddingForward.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0.7f);
         }
 
         private void SetPivotPosTopMode(RectTransform leftBorderRect)
@@ -131,6 +166,19 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             contentRightRect.anchorMax = new Vector2(0.5f, 1f);
 
             contentRightRect.pivot = new Vector2(0.5f, 1f);
+        }
+        
+        protected void SetOptions(MessageData data)
+        {
+            for (int i = 0; i < OptionButtons.Length && i < data.optionalData.Branches.Length; i++)
+            {
+                if (data.optionalData.Branches[i] != null)
+                {
+                    OptionButtons[i].BranchData = data.optionalData.Branches[i];
+                    Text textChildren = OptionButtons[i].GetComponentInChildren<Text>();
+                    textChildren.text = OptionButtons[i].BranchData.BranchName;
+                }
+            }
         }
 
         protected string SetName(string actorLeft, string actorRight, string storyTeller)

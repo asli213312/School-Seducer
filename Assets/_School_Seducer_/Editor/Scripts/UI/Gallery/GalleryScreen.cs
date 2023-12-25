@@ -231,13 +231,13 @@ namespace _School_Seducer_.Editor.Scripts.UI
             HashSet<MessageData> checkedMessages = new HashSet<MessageData>();
             HashSet<string> checkedBranches = new HashSet<string>();
 
-            for (int i = 0; i < chat.CurrentConversation.Messages.Length; i++)
+            for (int i = 0; i < chat.CurrentConversationData.Messages.Length; i++)
             {
                 Debug.Log($"Checking main message {i}");
 
-                if (chat.CurrentConversation.Messages[i].optionalData.GallerySlot != null)
+                if (chat.CurrentConversationData.Messages[i].optionalData.GallerySlot != null)
                 {
-                    GallerySlotData slotData = chat.CurrentConversation.Messages[i].optionalData.GallerySlot;
+                    GallerySlotData slotData = chat.CurrentConversationData.Messages[i].optionalData.GallerySlot;
 
                     if (slotData.Section == slotType && slotData.NeedInGallery)
                     {
@@ -255,10 +255,10 @@ namespace _School_Seducer_.Editor.Scripts.UI
                     Debug.Log($"No slot found in main {i} message.");
                 }
                 
-                if (chat.CurrentConversation.Messages[i].optionalData.Branches.Length > 0)
+                if (chat.CurrentConversationData.Messages[i].optionalData.Branches.Length > 0)
                 {
                     Debug.Log($"Main message {i} has branches.");
-                    foreach (var branch in chat.CurrentConversation.Messages[i].optionalData.Branches)
+                    foreach (var branch in chat.CurrentConversationData.Messages[i].optionalData.Branches)
                     {
                         Debug.Log($"Checking branch {branch.BranchName}");
                         foreach (var branchMessage in branch.Messages)
@@ -268,7 +268,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
                         }
                     }
                     
-                    CheckBranchesForSlots(chat.CurrentConversation.Messages[i], slotType, ref countedSlotsByType, checkedMessages, checkedBranches);
+                    CheckBranchesForSlots(chat.CurrentConversationData.Messages[i], slotType, ref countedSlotsByType, checkedMessages, checkedBranches);
                 }
             }
 

@@ -17,14 +17,16 @@ MonoBehaviour:
     localizedDataList:
     - languageCode: en
       key: branch1111111
-    - languageCode: fr
-      key: Bonjour)
+    - languageCode: 
+      key: 
   - fieldLabel: <LanguageCode>k__BackingField
     localizedDataList: []
   - fieldLabel: _currentLanguage
     localizedDataList: []
   localizator:
     translationJson: {fileID: 0}
+    _translator:
+      languages: []
   BranchName: branch1111111
   audioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}

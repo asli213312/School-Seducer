@@ -14,12 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localizedFields:
   - fieldLabel: BranchName
-    localizedDataList: []
+    localizedDataList:
+    - languageCode: en
+      key: Branch 1
+    - languageCode: fr
+      key: Franch 1
   - fieldLabel: _currentLanguage
     localizedDataList: []
   localizator:
     translationJson: {fileID: 4900000, guid: 8ed0b7f70768a784586590a3973cae06, type: 3}
-  BranchName: BRANCH 1
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Hello, young man.
+        - key: Hello, it's a pleasure to see you.
+        - key: What are you doing today?
+      - languageCode: fr
+        messages:
+        - key: Bonjour, fjeune homme.
+        - key: Bonjour, c'est un plaisir de vous voir.
+        - key: que faites-vous aujourd'hui ?
+  BranchName: Branch 1
   audioMsg: {fileID: 0}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}

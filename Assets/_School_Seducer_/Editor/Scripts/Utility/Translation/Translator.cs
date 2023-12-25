@@ -10,20 +10,13 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
     [Serializable]
     public class Translator
     {
-        public List<LanguagesMessage> languages;
+        [ReadOnly] public List<LanguagesMessage> languages;
 
         [Serializable]
         public class LanguagesMessage
         {
             public string languageCode;
             public List<SerializedMessage> messages;
-        }
-
-        [Serializable]
-        public class LanguagesUIObject
-        {
-            public string languageCode;
-            //public List<SerializedUIObject> objects;
         }
 
         [Serializable]

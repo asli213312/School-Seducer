@@ -34,7 +34,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private RectTransform paddingPrefab;
         
         public Transform ContentMsgs => contentMsgs;
-	    public СonversationData CurrentConversation { get; private set; }
+        public BranchData CurrentBranchData { get; private set; }
+	    public СonversationData CurrentConversationData { get; private set; }
         public bool IsMessagesEnded { get; private set; }
         public ChatConfig Config => config;
         public List<MessageData> CompletedMessages { get; private set; } = new();
@@ -79,6 +80,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             config.OnMessageReceived.RemoveListener(previewer.ReduceMoneyPlayer);
 
             UnRegisterOptions();
+            
+            _localizer.RemoveObserver(this);
         }
 
         private void OnEnable()
@@ -90,6 +93,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             TranslateRenderedMessages();
             
+
             if (_messages.Count < 0) return;
 
             foreach (var msg in _messages)
@@ -103,6 +107,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void LoadBranch(BranchData branchData)
         {
+            CurrentBranchData = branchData;
             StartCoroutine(LoadMessages(branchData.Messages));
         }
 
@@ -113,9 +118,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
 	    public void InstallCurrentConversation(СonversationData data) 
 	    {
-	    	CurrentConversation = data;
+	    	CurrentConversationData = data;
             gallery.SetCurrentData(previewer.GetCurrentCharacterData().gallery);
-            _currentStatusView = _chatStatusViews[CurrentConversation.conversationIndex];
+            _currentStatusView = _chatStatusViews[CurrentConversationData.conversationIndex];
         }
 
         public void StartDialogue(UnityAction onStarted)
@@ -162,7 +167,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 yield break;
             }
 
-            CheckOptionsIsLastSibling();
+            CheckOptionsParentIsLastSibling();
 
             yield return new WaitUntil(CheckTapBounds);
             yield return new WaitForSeconds(0.5f);
@@ -174,14 +179,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             newMsg.Initialize(optionButtons);
             RenderMsgData(_messages.ToArray(), newMsg, index);
 
-            SetPaddings(paddingBack, paddingForward);
+            ActivatePaddings(paddingBack, paddingForward);
 
             Debug.Log("Render completed");
 
             config.OnMessageReceived?.Invoke();
             _eventManager.ChatMessageReceived(true);
 
-            CheckOptionsIsLastSibling();
+            CheckOptionsParentIsLastSibling();
 
             yield return new WaitForSeconds(config.DelayBtwMessage);
 
@@ -220,7 +225,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             if (lastMessage)
             {
-                CurrentConversation.isCompleted = true;
+                CurrentConversationData.isCompleted = true;
                 _eventManager.ChatMessageReceived(false);
             }
 
@@ -245,7 +250,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 
                 BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
                 
-                RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero, Mathf.Infinity);
+                /*RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero, Mathf.Infinity);
 
                 foreach (var hit in hits)
                 {
@@ -257,7 +262,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     }
 
                     return true;
-                }
+                }*/
 
                 if (ContentScreen.CurrentData != null)
                 {
@@ -304,7 +309,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             return false;
         }
 
-        private void SetPaddings(RectTransform paddingBack, RectTransform paddingForward)
+        private void ActivatePaddings(RectTransform paddingBack, RectTransform paddingForward)
         {
             paddingBack.gameObject.Activate();
             paddingForward.gameObject.Activate();
@@ -331,7 +336,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
         }
 
-        private void CheckOptionsIsLastSibling()
+        private void CheckOptionsParentIsLastSibling()
         {
             Transform optionsTransform = contentMsgs.Find("Options");
 
@@ -375,14 +380,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void RenderMsgData(MessageData[] messages, IMessage newMsg, int i)
         {
             newMsg.RenderGeneralData(messages[i],
-	            CurrentConversation.ActorLeftSprite,
-	            CurrentConversation.ActorRightSprite,
+	            CurrentConversationData.ActorLeftSprite,
+	            CurrentConversationData.ActorRightSprite,
                 config.StoryTellerSprite,
                 config.NeedIconStoryTeller);
         }
 
         private void InstallOptions(MessageData msgData)
         {
+            InstallTranslationOptionsByLastMsg(msgData, optionButtons);
+            
             for (int i = 0; i < optionButtons.Length; i++)
             {
                 float mainHeight = config.MainHeight;
@@ -424,22 +431,65 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 
                 optionButtons[i].transform.parent.gameObject.Activate();
             }
-            
+
+            TranslateOptions(optionButtons, _localizer.GlobalLanguageCodeRuntime);
+
             _eventManager.InvokeDelayedBoolAction(1.5f, (boolParameter) => 
                 _eventManager.ChatMessageReceived(boolParameter), false);
         }
         
+        private void TranslateOptions(OptionButton[] options, string currentLanguageCode)
+        {
+            foreach (var option in options)
+            {
+                LocalizedUIObject localizedComponent = option.GetComponent<LocalizedUIObject>();
+                Text textComponentOption = option.GetComponentInChildren<Text>();
+                Translator.Languages neededTranslationData = localizedComponent.LocalizedData.Find(x => x.languageCode == currentLanguageCode);
+                textComponentOption.text = neededTranslationData.key;   
+            }
+        }
+        
+        private void InstallTranslationOptionsByLastMsg(MessageData lastMessage, OptionButton[] options)
+        {
+            if (lastMessage.optionalData.Branches.Length <= 0)
+            {
+                Debug.LogWarning("This message is not last in current conversation");
+            }
+            
+            for (int i = 0; i < lastMessage.optionalData.Branches.Length && i < options.Length; i++)
+            {
+                BranchData branch = lastMessage.optionalData.Branches[i];
+                OptionButton option = options[i];
+                
+                LocalizedUIObject localizedComponent = option.GetComponent<LocalizedUIObject>();
+
+                foreach (var localizedField in branch.LocalizedFields)
+                {
+                    foreach (var localizedData in localizedField.localizedDataList)
+                    {
+                        foreach (var localizedDataOption in localizedComponent.LocalizedData)
+                        {
+                            if (localizedDataOption.languageCode == localizedData.languageCode)
+                            {
+                                localizedDataOption.key = localizedData.key;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
         private void SetNameSender(IMessage newMsg)
         {
-	        string leftActor = CurrentConversation.actorLeftName;
-	        string rightActor = CurrentConversation.actorRightName;
+	        string leftActor = CurrentConversationData.actorLeftName;
+	        string rightActor = CurrentConversationData.actorRightName;
             string storyTeller = config.storyTellerName;
 	        newMsg.SetNameActors(leftActor, rightActor, storyTeller);
         }
 
         private MessageData[] CheckIsBranch(MessageData[] messages)
         {
-	        if (messages == null) messages = CurrentConversation.Messages;
+	        if (messages == null) messages = CurrentConversationData.Messages;
             Debug.Log("messages found");
             return messages;
         }

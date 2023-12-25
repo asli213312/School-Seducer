@@ -12,6 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa0b87652814f9f8f6930844a64884a, type: 3}
   m_Name: Last branch
   m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: BranchName
+    localizedDataList:
+    - languageCode: en
+      key: LAST BRANCH
+    - languageCode: fr
+      key: FLAST FLANCH
+  localizator:
+    translationJson: {fileID: 0}
+    _translator:
+      languages: []
   BranchName: LAST BRANCH
   audioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
@@ -25,6 +38,7 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    localizedData: []
   - ActorIcon: {fileID: 21300000, guid: b77b5113ab7c43d4abbbf5a8a5b60de3, type: 3}
     Msg: "\u0440\u0440\u0440\u0440\u0440\u0440\u0440\u0440\u0440\u0440\u0440\u0440\u0440\u0440\u0440\u0440"
     optionalData:
@@ -33,3 +47,4 @@ MonoBehaviour:
       Branches:
       - {fileID: 11400000, guid: 182848b7eea945140aca82bc48019f9f, type: 2}
     AudioMsg: {fileID: 0}
+    localizedData: []

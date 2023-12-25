@@ -14,7 +14,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         [SerializeField]
         private List<LocalizedField> localizedFields = new List<LocalizedField>();
 
-        public List<LocalizedField> LocalizedFields { get => localizedFields; set => localizedFields = value; }
+        public List<LocalizedField> LocalizedFields { get => localizedFields; private set => localizedFields = value; }
 
         [Serializable]
         public class LocalizedData
