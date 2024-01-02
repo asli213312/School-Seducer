@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using _BonGirl_.Editor.Scripts;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
@@ -48,12 +49,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             SetParentActor();
             SetOptions(data);
             SetAudioButton();
-            Debug.Log("Options were installed");
-        }
-
-        public void SetNameActors(string leftActor, string rightActor, string storyTeller)
-        {
-            SetName(leftActor, rightActor, storyTeller);
         }
 
         public void TranslateText(string languageCode)
@@ -61,9 +56,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             msgText.text = Data.TranslateMsg(languageCode);
         }
 
+        public void SetNameActors(string leftActor, string rightActor, string storyTeller)
+        {
+            SetName(leftActor, rightActor, storyTeller);
+        }
+
         private void SetParentActor()
         {
             AdjustRightActor(_content, Sender);
+            AdjustStoryTeller(_content, Sender);
         }
 
         private void SetAudioButton()
@@ -88,13 +89,19 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     RectTransform audioLeftRect = audioButtonLeftActor.GetComponent<RectTransform>();
                     audioLeftRect.Translate(Vector2.left * 6.2f);
                 }
-                InvokeAudioMsg();
+
+                _soundHandler.InvokeClipAfterExistClip(InvokeAudioMsg);
             }
         }
 
         private void InvokeAudioMsg()
         {
-            _soundHandler.AutoManagePlayback(Data.AudioMsg);   
+            //_soundHandler.AutoManagePlayback(Data.AudioMsg);
+            
+            if (_soundHandler.IsClipPlaying())
+                _soundHandler.StopClip();
+            else
+                _soundHandler.InvokeClipAfterPlayback(() =>_soundHandler.InvokeOneClip(Data.AudioMsg));
         }
 
         private void OnDestroy()

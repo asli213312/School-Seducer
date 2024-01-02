@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using NaughtyAttributes;
+using Newtonsoft.Json;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -12,9 +14,17 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
     public class LocalizatorMessages : BaseLocalizator
     {
         [SerializeField, HideInInspector] private Translator _translator;
+        [SerializeField] private List<AudioClip> audioClips;
+        
+        public List<AudioClip> AudioMessages {get => audioClips; set => audioClips = value; }
 
         public void ResetTranslations()
         {
+            if (audioClips.Count > 0)
+            {
+                audioClips.Clear();
+            }
+
             if (_translator.languages.Count > 0)
             {
                 _translator.languages.Clear();
@@ -81,9 +91,15 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
             if (translationJson != null)
             {
                 string json = translationJson.text;
-                Debug.Log("from json: " + json);
+                Debug.Log("Original JSON content: " + json);
                 
-                _translator = JsonUtility.FromJson<Translator>(json);
+                byte[] utf8Bytes = Encoding.UTF8.GetBytes(json);
+                
+                TextAsset newTranslationJson = new TextAsset(Encoding.UTF8.GetString(utf8Bytes));
+                
+                translationJson = newTranslationJson;
+                
+                _translator = JsonUtility.FromJson<Translator>(translationJson.text);
 
                 Debug.Log("JSON file installed");
             }

@@ -65,7 +65,6 @@ namespace _School_Seducer_.Editor.Scripts
             if (_currentCharacter != null)
             {
                 Debug.LogWarning("Current character: " + _currentCharacter.name);
-                return;
             }
             
             previewerPanel.Activate();

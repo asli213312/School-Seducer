@@ -293,9 +293,9 @@ namespace _School_Seducer_.Editor.Scripts.UI
             return countedSlotsByType;
         }
 
-        public List<GallerySlotView> GetTotalSlotsInContent()
+        public List<IContent> GetTotalSlotsInContent()
         {
-            List<GallerySlotView> selectedSlots = new List<GallerySlotView>();
+            List<IContent> selectedSlots = new List<IContent>();
 
             for (int i = 0; i < galleryContent.childCount; i++)
             {

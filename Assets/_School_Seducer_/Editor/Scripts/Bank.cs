@@ -14,7 +14,7 @@ namespace _School_Seducer_.Editor.Scripts
 
         public int Money
         {
-            get { return _money; }
+            get => _money;
             set
             {
                 playerConfig.Money = value;

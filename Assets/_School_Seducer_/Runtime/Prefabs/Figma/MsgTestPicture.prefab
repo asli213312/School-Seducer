@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8246050383148299806}
   - component: {fileID: 4146134188076246674}
   - component: {fileID: 5771915673748847103}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Wide Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 7423348679362343825}
   - component: {fileID: 8733330024831768184}
   - component: {fileID: 303827559673108912}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Square Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,6 +856,15 @@ MonoBehaviour:
   msgText: {fileID: 2523273328237839837}
   leftBorderActor: {fileID: 2886682803606455557}
   rightBorderActor: {fileID: 1164517637563829864}
+  Data:
+    ActorIcon: {fileID: 0}
+    Msg: 
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedData: []
   contentOffset: {fileID: 6017506477714006958}
   msgWidePicture: {fileID: 3012885183240154172}
   msgSquarePicture: {fileID: 1632109886475578398}

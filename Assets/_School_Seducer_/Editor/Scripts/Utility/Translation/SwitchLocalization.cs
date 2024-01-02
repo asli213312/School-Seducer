@@ -16,6 +16,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
             {
                 case "en": selectedLanguageCode = "en"; break;
                 case "fr": selectedLanguageCode = "fr"; break;
+                case "ru": selectedLanguageCode = "ru"; break;
             }
 
             _localizer.GlobalLanguageCodeRuntime = selectedLanguageCode;

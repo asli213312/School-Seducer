@@ -1,11 +1,12 @@
 ﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.Chat;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityFigmaBridge.Runtime.UI;
 
 namespace _School_Seducer_.Editor.Scripts.UI
 {
-    public class GallerySlotView : MonoBehaviour
+    public class GallerySlotView : MonoBehaviour, IContent
     {
         [SerializeField] private FigmaImage image;
         [SerializeField] private FigmaImage animationPreview;

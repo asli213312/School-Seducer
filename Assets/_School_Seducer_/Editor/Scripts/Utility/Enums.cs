@@ -6,7 +6,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
     {
         public enum Language
         {
-            EN, FR
+            EN, FR, RU
         }
         
         public struct Strings

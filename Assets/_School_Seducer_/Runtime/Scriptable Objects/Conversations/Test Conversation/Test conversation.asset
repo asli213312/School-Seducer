@@ -21,6 +21,8 @@ MonoBehaviour:
     localizedDataList: []
   localizator:
     translationJson: {fileID: 4900000, guid: 2faa84450969ec54c958f0e35b416c52, type: 3}
+    _translator:
+      languages: []
   <Language>k__BackingField: 0
   isCompleted: 0
   conversationIndex: 0
@@ -49,7 +51,7 @@ MonoBehaviour:
       GallerySlot: {fileID: 11400000, guid: a138e57702664dd40b4a78642376bc65, type: 2}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
     localizedData:
     - languageCode: en
       key: Hello, it's a pleasure to see you.
@@ -98,5 +100,5 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches:
       - {fileID: 11400000, guid: 84697a5d927912e4598e97270511f91c, type: 2}
-    AudioMsg: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
     localizedData: []

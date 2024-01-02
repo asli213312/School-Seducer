@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Player Config
   m_EditorClassIdentifier: 
   level: 5
-  diamonds: 99
-  money: 1444
+  diamonds: 113
+  money: 1291
   showParameters: 0
   showDebugParameters: 0
   costNextNode: 1

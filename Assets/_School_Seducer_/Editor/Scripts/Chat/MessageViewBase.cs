@@ -1,10 +1,6 @@
-﻿using System.Security.Claims;
-using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
-using _School_Seducer_.Editor.Scripts.UI;
+﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
-using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
@@ -75,10 +71,24 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
         }
 
-        protected void AdjustStoryTeller(Transform content)
+        protected void AdjustStoryTeller(Transform content, MessageSender sender)
         {
+            if (sender != MessageSender.StoryTeller) return;
+            
             GameObject parent = new GameObject("ParentStoryTeller");
             parent.transform.SetParent(content);
+
+            RectTransform rectParent = parent.AddComponent<RectTransform>();
+            
+            parent.transform.position = gameObject.transform.position;
+
+            rectParent.pivot = new Vector2(1, 0.5f);
+
+            rectParent.sizeDelta = new Vector2(4.4f, 0);
+
+            int indexMessage = gameObject.transform.GetSiblingIndex();
+            parent.transform.SetSiblingIndex(indexMessage - 1);
+
             gameObject.transform.SetParent(parent.transform);
         }
 

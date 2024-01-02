@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Attributes;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
@@ -13,7 +14,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     [CreateAssetMenu(fileName = "ConversationData", menuName = "Game/Data/Chat/ConversationData", order = 0)]
     public class СonversationData : LocalizedScriptableObject, IСonversation
     {
-        [FormerlySerializedAs("translator")] [SerializeField, OneLine] private LocalizatorMessages localizator;
+        [FormerlySerializedAs("translator")] [SerializeField] private LocalizatorMessages localizator;
         public LocalizatorMessages Localizator {get => localizator; set => localizator = value;}
         private string _currentLanguage;
         [field: SerializeField, HideInInspector, ExcludeFromLocalization] public Enums.Language Language { get; set; }
@@ -72,6 +73,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void ResetLanguageContainer()
         {
             localizator.ResetTranslations();
+
+            for (int i = 0; i < Messages.Length; i++)
+            {
+                localizator.AudioMessages.Add(null);
+            }
         }
 
         #endregion

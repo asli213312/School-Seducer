@@ -53,7 +53,10 @@ public class Character : MonoBehaviour
 
     public void StartConversation()
     {
+        _chat.ResetContent();
         _chat.InvokeStartConversation(characterData.conversation.Messages);
+        
+        Debug.Log("Conversation is started: " + characterData.conversation.name);
     }
 
     public void EndConversation()

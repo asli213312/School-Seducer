@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using _School_Seducer_.Editor.Scripts.Tests;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,10 +9,19 @@ using UnityEngine.Events;
         [SerializeField, Range(0, 1f)] private float volume = 1f;
 
         private AudioSource _audioSource;
+        private AudioClip _clipInQueue;
 
         private void Awake()
         {
             _audioSource ??= GetComponent<AudioSource>();
+        }
+
+        public bool TrySetQueueClip(AudioClip clipInQueue)
+        {
+            if (IsClipPlaying()) _clipInQueue = clipInQueue; return true;
+
+            Debug.LogWarning("SoundHandler: Can't set clip in queue because current clip is not playing");
+            return false;
         }
 
         public bool IsClipPlaying()
@@ -43,35 +53,37 @@ using UnityEngine.Events;
         
         public void UnpauseClip()
         {
-            if (_audioSource.clip == null)
-            {
-                Debug.LogWarning("Clip is null to stop!");
-                return;
-            }
+            if (IsClipNull("Clip is null to Unpause")) return;
             
             _audioSource.UnPause();
         }
 
         public void PauseClip()
         {
-            if (_audioSource.clip == null)
-            {
-                Debug.LogWarning("Clip is null to stop!");
-                return;
-            }
+            if (IsClipNull("Clip is null to Pause")) return;
             
             _audioSource.Pause();
+        }
+
+        public void StopClip()
+        {
+            if (IsClipNull("Clip is null to Stop")) return;
+            
+            _audioSource.Stop();
         }
         
         public void PlayClip()
         {
-            if (_audioSource.clip == null)
-            {
-                Debug.LogWarning("Clip is null to stop!");
-                return;
-            }
-            
+            if (IsClipNull("Clip is null to Play")) return;
+
             _audioSource.Play();
+        }
+
+        public void InvokeQueueClip(UnityAction onComplete = null, float delay = 0)
+        {
+            if (_clipInQueue == null) return;
+            
+            PlayOneShot(_clipInQueue, onComplete, delay);
         }
 
         public void InvokeOneClip(AudioClip clip, UnityAction onComplete = null, float delay = 0)
@@ -84,11 +96,22 @@ using UnityEngine.Events;
             StartCoroutine(WaitUntilPlaybackToInvoke(onComplete));
         }
 
+        public void InvokeClipAfterExistClip(UnityAction onComplete)
+        {
+            StartCoroutine(WaitPlayedClipToInvoke(onComplete));
+        }
+
         private void PlayOneShot(AudioClip clip, UnityAction onComplete = null, float delay = 0)
         {
             if (_audioSource == null) return;
 
             StartCoroutine(InstallClip(clip, onComplete, delay));
+        }
+        
+        private IEnumerator WaitPlayedClipToInvoke(UnityAction onComplete)
+        {
+            yield return new WaitWhile(IsClipPlaying);
+            onComplete?.Invoke();
         }
 
         private IEnumerator WaitUntilPlaybackToInvoke(UnityAction onComplete)
@@ -114,5 +137,12 @@ using UnityEngine.Events;
             }
             else
                 _audioSource.PlayOneShot(clip);
+        }
+
+        private bool IsClipNull(string warningMessage)
+        {
+            if (_audioSource.clip != null) return false;
+            Debug.LogWarning(warningMessage);
+            return true;
         }
     }

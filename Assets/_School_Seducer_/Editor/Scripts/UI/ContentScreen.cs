@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.Chat;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,6 +12,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
     public class ContentScreen : MonoBehaviour
     {
         [Header("Data")] 
+        [SerializeField] private Chat.Chat chat;
         [SerializeField] private GalleryData galleryData;
         [SerializeField] private GalleryScreen galleryScreen;
         
@@ -22,23 +24,20 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         public bool showDebugParameters;
         [ShowInInspector, ShowIf("showDebugParameters")] public static OpenContent CurrentData;
-
-        public Image ContentWide => contentWide;
-        public Image ContentSquare => contentSquare;
         public GameObject Container => _container;
         
         private const int NEXT = 1;
         private const int PREVIOUS = -1;
         
-        private List<GallerySlotView> _currentSlotsBySection;
+        [ShowInInspector] private List<IContent> _currentSlots;
 
         private Button _contentWideButton;
         private Button _contentSquareButton;
         
         private GameObject _container;
         private Image _currentContent;
-
-        private int _currentIndexInGallery;
+        
+        private int _currentIndexContent;
         private bool _isSelected;
 
         private void OnValidate()
@@ -69,9 +68,12 @@ namespace _School_Seducer_.Editor.Scripts.UI
             }
         }
 
-        private void InstallSlotsBySection()
+        private void InstallSlots()
         {
-            _currentSlotsBySection = galleryScreen.GetTotalSlotsInContent();
+            if (galleryScreen.gameObject.activeSelf)
+                _currentSlots = galleryScreen.GetTotalSlotsInContent();
+            else if (chat.gameObject.activeSelf)
+                _currentSlots = chat.PictureMessages;
         }
 
         private void ShowContent()
@@ -85,15 +87,13 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 return;
             }
 
-            if (galleryScreen.gameObject.activeSelf)
-                InstallSlotsBySection();
-            else
-                _currentSlotsBySection = new();
+            InstallSlots();
 
             SetContent(CurrentData.Content.sprite);
 
             _currentContent = CurrentData.Content;
-            _currentIndexInGallery = GetIndexForCurrentContent();
+
+            _currentIndexContent = GetIndexForCurrentContent();
 
             _container.Activate();
         }
@@ -110,15 +110,26 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         private void SwitchContent(int indexOffset)
         {
-            int newIndex = _currentIndexInGallery + indexOffset;
+            int newIndex = _currentIndexContent + indexOffset;
 
-            if (newIndex >= 0 && newIndex < _currentSlotsBySection.Count)
+            if (newIndex >= 0 && newIndex < _currentSlots.Count)
             {
-                GallerySlotView nextSlot = _currentSlotsBySection[newIndex];
+                IContent nextSlot = _currentSlots[newIndex];
 
-                SetContent(nextSlot.Data.Sprite);
-                _currentContent = nextSlot.GetComponent<Image>();
-                _currentIndexInGallery = newIndex;
+                if (nextSlot is GallerySlotView)
+                {
+                    GallerySlotView slotGallery = nextSlot as GallerySlotView;
+                    SetContent(slotGallery.Data.Sprite);
+                    _currentContent = slotGallery.GetComponent<Image>();
+                    _currentIndexContent = newIndex;    
+                }
+                else if (nextSlot is MessagePictureView)
+                {
+                    MessagePictureView slotChat = nextSlot as MessagePictureView;
+                    SetContent(slotChat.CurrentImage.sprite);
+                    _currentContent = slotChat.CurrentImage;
+                    _currentIndexContent = newIndex;
+                }
             }
         }
 
@@ -142,12 +153,35 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         private int GetIndexForCurrentContent()
         {
-            if (_currentSlotsBySection == null) return 0;
-            
-            for (int i = 0; i < _currentSlotsBySection.Count; i++)
+            Debug.Log("Current count slots of content: " + _currentSlots.Count);
+
+            foreach (var slot in _currentSlots)
             {
-                Image slotView = _currentSlotsBySection[i].GetComponent<Image>();
-                if (_currentContent.sprite == slotView.sprite)
+                MonoBehaviour monoSlot = slot as MonoBehaviour;
+                Debug.Log(monoSlot.name);
+            }
+            
+            if (_currentSlots == null) return 0;
+
+            for (int i = 0; i < _currentSlots.Count; i++)
+            {
+                MonoBehaviour slotGO = _currentSlots[i] as MonoBehaviour;
+                Image slotView = slotGO.GetComponent<Image>();
+
+                if (_currentSlots[i] is MessagePictureView)
+                {
+                    Debug.Log("Founded messagePictureView in content screen");
+                    
+                    MessagePictureView slotChat = _currentSlots[i] as MessagePictureView;
+                    Image pictureChat = slotChat.CurrentImage;
+                    
+                    Debug.Log("Sprite in pictureMessage: " + pictureChat.sprite.name);
+                    
+                    if (_currentContent.sprite == pictureChat.sprite)
+                        return i;
+                }
+
+                if (slotView != null && _currentContent.sprite == slotView.sprite)
                 {
                     return i;
                 }

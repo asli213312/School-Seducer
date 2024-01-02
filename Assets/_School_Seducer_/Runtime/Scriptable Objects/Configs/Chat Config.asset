@@ -16,9 +16,9 @@ MonoBehaviour:
   - fieldLabel: storyTellerName
     localizedDataList:
     - languageCode: en
-      key: ffrfrf
+      key: ffrfrfgtgtgtgtg
     - languageCode: fr
-      key: jyjgtgtgfrfr
+      key: jyjgtgtgfrfrgtg
   OnMessageReceived:
     m_PersistentCalls:
       m_Calls: []
@@ -29,7 +29,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
-  storyTellerName: ffrfrf
+  storyTellerName: ffrfrfgtgtgtgtg
   NeedIconStoryTeller: 0
   ChatCompletedSprite: {fileID: 21300000, guid: 61570fe4a09b3644c95ed0c25fdc9ece, type: 3}
   ChatUncompletedSprite: {fileID: 21300000, guid: e7950fd25b185d24f86759487e51c315, type: 3}

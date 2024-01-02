@@ -21,14 +21,11 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         {
             string languageCode = "";
             
-            switch (this.currentLanguage)
+            switch (currentLanguage)
             {
-                case Enums.Language.EN:
-                    languageCode = "en";
-                    break;
-                case Enums.Language.FR:
-                    languageCode = "fr";
-                    break;
+                case Enums.Language.EN: languageCode = "en"; break; 
+                case Enums.Language.FR: languageCode = "fr"; break;
+                case Enums.Language.RU: languageCode = "ru"; break;
             }
             
             GlobalCurrentLanguage = languageCode;

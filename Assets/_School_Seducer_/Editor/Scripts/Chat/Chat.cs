@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _BonGirl_.Editor.Scripts;
@@ -7,6 +8,7 @@ using _School_Seducer_.Editor.Scripts.UI;
 using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -32,10 +34,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private MessageDefaultView msgDefaultPrefab;
         [SerializeField] private MessagePictureView msgPicturePrefab;
         [SerializeField] private RectTransform paddingPrefab;
+        [ShowInInspector] public List<IContent> PictureMessages { get; private set; } = new();
         
         public Transform ContentMsgs => contentMsgs;
         public BranchData CurrentBranchData { get; private set; }
-	    public СonversationData CurrentConversationData { get; private set; }
+        public СonversationData CurrentConversationData { get; private set; }
         public bool IsMessagesEnded { get; private set; }
         public ChatConfig Config => config;
         public List<MessageData> CompletedMessages { get; private set; } = new();
@@ -92,7 +95,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public void OnObservableUpdate()
         {
             TranslateRenderedMessages();
-            
 
             if (_messages.Count < 0) return;
 
@@ -125,6 +127,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void StartDialogue(UnityAction onStarted)
         {
+            ResetContent();
             StartCoroutine(ChatTap(onStarted));
         }
 
@@ -152,6 +155,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             for (int i = 0; i < _messages.Count; i++)
             {
+                if (IsMessagesEnded) StopCoroutine(ProcessMessage(i));
+                    
                 yield return ProcessMessage(i);
             }
 
@@ -162,6 +167,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private IEnumerator ProcessMessage(int index)
         {
             _eventManager.ChatMessageReceived(false);
+            
+            if (CompletedMessages.Count <= 0) StopCoroutine(ProcessMessage(index));
+            
             if (CompletedMessages.Contains(_messages[index]))
             {
                 yield break;
@@ -175,6 +183,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             var paddingBack = CreatePadding();
             var newMsg = InstallPrefabMsg(_messages.ToArray(), index, out var pictureMsgProxy);
             var paddingForward = CreatePadding();
+            
+            if (newMsg == null) yield break;
 
             newMsg.Initialize(optionButtons);
             RenderMsgData(_messages.ToArray(), newMsg, index);
@@ -250,20 +260,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 
                 BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
                 
-                /*RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero, Mathf.Infinity);
-
-                foreach (var hit in hits)
-                {
-                    GameObject hitObject = hit.collider.gameObject;
-                    if (hitObject.gameObject.layer == LayerMask.NameToLayer("Unclickable"))
-                    {
-                        Debug.Log("Clicked on Unclickable area!");
-                        return false;
-                    }
-
-                    return true;
-                }*/
-
+                RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero, Mathf.Infinity);
+                
                 if (ContentScreen.CurrentData != null)
                 {
                     BoxCollider2D content = gallery.ContentScreen.Container.GetComponent<BoxCollider2D>();
@@ -275,33 +273,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     }
                 }
 
-                if (_currentDefaultMsg != null)
+                foreach (var hit in hits)
                 {
-                    CircleCollider2D audioColLeftActor = _currentDefaultMsg.AudioButtonLeftActor.GetComponent<CircleCollider2D>();
-                    CircleCollider2D audioColRightActor = _currentDefaultMsg.AudioButtonRightActor.GetComponent<CircleCollider2D>();
-
-                    if (audioColLeftActor.OverlapPoint(mousePosition) || audioColRightActor.OverlapPoint(mousePosition))
+                    GameObject hitObject = hit.collider.gameObject;
+                    if (hitObject.gameObject.layer == LayerMask.NameToLayer("Unclickable"))
                     {
                         Debug.Log("Clicked on Unclickable area!");
                         return false;
                     }
-                }
 
-                if (_currentPictureMsg != null)
-                {
-                    OpenContent content = _currentPictureMsg.GetComponentInChildren<OpenContent>();
-                    BoxCollider2D contentCol = content.GetComponent<BoxCollider2D>();
-
-                    if (contentCol.OverlapPoint(mousePosition))
-                    {
-                        Debug.Log("Clicked on Unclickable area!");
-                        return false;
-                    }
-                }
-
-                if (collider.OverlapPoint(mousePosition))
-                {
-                    Debug.Log("Clicked on Clickable area!");
                     return true;
                 }
             }
@@ -496,6 +476,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private IMessage InstallPrefabMsg(MessageData[] messages, int i, out MessagePictureView pictureMsgProxy)
         {
+            if (messages.Length <= 0)
+            {
+                pictureMsgProxy = null;
+                return null;
+            }
+
             IMessage chosenPrefab = messages[i].optionalData.GallerySlot != null
                 ? msgPicturePrefab
                 : msgDefaultPrefab;
@@ -511,6 +497,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 pictureMsgProxy = pictureMsg;
                 pictureMsgProxy.SetDurationSendingPicture(config.DurationSendingPicture);
                 _currentPictureMsg = pictureMsg;
+                PictureMessages.Add(pictureMsg);
             }
             else if (newMsg is MessageDefaultView)
             {
@@ -554,8 +541,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
         }
 
-        private void ResetContent()
+        public void ResetContent()
         {
+            if (contentMsgs.childCount <= 0) return;
+
+            if (_messages.Count > 0) _messages.Clear();
+            if (CompletedMessages.Count > 0) CompletedMessages.Clear();
+            
             for (int i = contentMsgs.childCount - 1; i >= 0; i--)
             {
                 if (contentMsgs.GetChild(i) != contentMsgs.Find("Options"))

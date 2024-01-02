@@ -26,17 +26,20 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
         {
             _localizer?.RemoveObserver(this);
         }
-
-        public void SetLocalizator(LocalizedGlobalMonoBehaviour localizator) => _localizer = localizator;
+        
         public void OnObservableUpdate()
         {
             Translator.Languages currentLanguage = localizedData.Find(x => x.languageCode == _localizer.GlobalLanguageCodeRuntime);
+
+            if (currentLanguage == null) return;    
 
             if (currentLanguage.key is not null)
             {
                 if (text != null) text.text = currentLanguage.key;
                 else if (textPro != null) textPro.text = currentLanguage.key;    
             }
+            else
+                Debug.LogError("Localized key not found: " + currentLanguage.key, gameObject);
         }
     }
 }

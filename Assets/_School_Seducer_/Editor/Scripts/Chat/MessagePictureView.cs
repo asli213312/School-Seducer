@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
-    public class MessagePictureView : MessageViewBase, IMessage, IMessageName
+    public class MessagePictureView : MessageViewBase, IMessage, IMessageName, IContent
     {
         [SerializeField] private RectTransform contentOffset;
         [SerializeField] private Image msgWidePicture;
         [SerializeField] private Image msgSquarePicture;
         
+        public Image CurrentImage { get; private set; }
         public string MsgNameText { get; set; }
         public bool PictureInstalled { get; private set; }
         public MessageSender MessageSender { get; set; }
@@ -73,12 +74,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (data.optionalData.GallerySlot.Sprite.IsWideSprite())
             {
                 msgWidePicture.sprite = picture;
-                msgWidePicture.gameObject.Activate();   
+                msgWidePicture.gameObject.Activate();
+
+                CurrentImage = msgWidePicture;
             }
             else
             {
                 msgSquarePicture.sprite = picture;
                 msgSquarePicture.gameObject.Activate();
+                
+                CurrentImage = msgSquarePicture;
             }
             Debug.Log("Picture installed");
         }

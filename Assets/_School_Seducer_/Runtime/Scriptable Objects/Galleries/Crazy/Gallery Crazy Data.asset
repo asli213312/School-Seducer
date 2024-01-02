@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d88bec5d267471ea4f2cdddfa4c0617, type: 3}
   m_Name: Gallery Crazy Data
   m_EditorClassIdentifier: 
-  AllSlots: []
+  AllSlots:
+  - {fileID: 11400000, guid: 25ace05a8ac97604a9babb612e8d4506, type: 2}
+  - {fileID: 11400000, guid: e1be4037a0d997b4289fa1f51f396142, type: 2}
+  - {fileID: 11400000, guid: 054760e400ceaf84bad41b737c73dcdc, type: 2}
+  - {fileID: 11400000, guid: fd5f6318df67a0b4d8c8017d2a9be02a, type: 2}
+  - {fileID: 11400000, guid: 8e15e41315536374ca27a5a11e12ce27, type: 2}
+  - {fileID: 11400000, guid: 4498eac02cc9c1d42afe64d85f01ce7f, type: 2}

@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 2141188818775527936}
   - component: {fileID: 8802609026311345131}
   - component: {fileID: 7885538446176004555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sound LeftActor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 5151865331124156637}
   - component: {fileID: 4760423974986806671}
   - component: {fileID: 1641012645369697947}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sound RightActor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,6 +1007,15 @@ MonoBehaviour:
   msgText: {fileID: 4754187146398012258}
   leftBorderActor: {fileID: 2886682803606455557}
   rightBorderActor: {fileID: 7452127010247960270}
+  Data:
+    ActorIcon: {fileID: 0}
+    Msg: 
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedData: []
   audioButtonLeftActor: {fileID: 8802609026311345131}
   audioButtonRightActor: {fileID: 4760423974986806671}
 --- !u!114 &5860805186204788297
