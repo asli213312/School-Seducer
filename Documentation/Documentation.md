@@ -13,11 +13,11 @@
 
 ## Иерархия проекта
 Далее все Prefabs и Scriptable Objects(SO) будут представлены в главной папке: *_School_Seducer_/Runtime/*
-- Глобальный конфиг по пути: SO/Runtime/Configs/Global Settings
-- Общая конфигурация чата по пути: SO/Runtime/Configs/Chat Config
-- Диалоги по пути: SO/Runtime/Conversations/*Выбираем папку диалога*/*Выбираем диалог*
-- Сообщения по пути: SO/Runtime/Conversations/*Выбираем папку диалога*/***Выбираем диалог*** -> Список сообщений в инспекторе выбранного диалога
-- Разветвления по пути: SO/Runtime/Conversations/*Выбираем папку диалога*/Branches
+- Глобальный конфиг по пути: Runtime/SO/Configs/Global Settings
+- Общая конфигурация чата по пути: Runtime/SO/Configs/Chat Config
+- Диалоги по пути: Runtime/SO/Conversations/*Выбираем папку диалога*/*Выбираем диалог*
+- Сообщения по пути: Runtime/SO/Conversations/*Выбираем папку диалога*/***Выбираем диалог*** -> Список сообщений в инспекторе выбранного диалога
+- Разветвления по пути: Runtime/SO/Conversations/*Выбираем папку диалога*/Branches
 - Скриншот ниже показывает как создавать SO всех возможных конфигураций, разложенных по полочкам  
 ![Alt text](howtoSO.png)
 
