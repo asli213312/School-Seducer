@@ -2,6 +2,6 @@
 {
     public enum WheelCategorySlotEnum
     {
-        Gift, Money
+        Gift, Money, Character
     }
 }

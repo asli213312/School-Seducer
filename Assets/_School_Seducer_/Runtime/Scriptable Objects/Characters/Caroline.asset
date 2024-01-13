@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
+  m_Name: Caroline
+  m_EditorClassIdentifier: 
+  currentConversation: {fileID: 11400000, guid: edbfb2d914a99f94086005fb8c9832e5, type: 2}
+  allConversations:
+  - {fileID: 11400000, guid: edbfb2d914a99f94086005fb8c9832e5, type: 2}
+  - {fileID: 11400000, guid: bafbb1cf884ebee4dbf77ea559b64c6b, type: 2}
+  - {fileID: 11400000, guid: 72cb469f2d4a5144fb26a02d091ff8c5, type: 2}
+  gallery: {fileID: 0}
+  requiredLevel: 5
+  loyalty: 1
+  maxLoyalty: 1
+  showDebugParameters: 0
+  experience: 36

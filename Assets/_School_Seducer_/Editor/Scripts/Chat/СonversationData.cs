@@ -1,28 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
 using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Attributes;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using NaughtyAttributes;
-using OneLine;
+using Newtonsoft.Json;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.TextCore.LowLevel;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
     [CreateAssetMenu(fileName = "ConversationData", menuName = "Game/Data/Chat/ConversationData", order = 0)]
     public class СonversationData : LocalizedScriptableObject, IСonversation
     {
-        [FormerlySerializedAs("translator")] [SerializeField] private LocalizatorMessages localizator;
+        [Header("Other")]
+        [SerializeField] public int costExp;
+        [SerializeField, OneLine.OneLine] private LocalizatorMessages localizator;
         public LocalizatorMessages Localizator {get => localizator; set => localizator = value;}
         private string _currentLanguage;
         [field: SerializeField, HideInInspector, ExcludeFromLocalization] public Enums.Language Language { get; set; }
-
+        
         public bool isCompleted;
-        [FormerlySerializedAs("ConversationIndex")] public int conversationIndex;
-        [field: SerializeField] public ChatConfig Config { get; set; }
-        [field: ShowAssetPreview(32, 32), SerializeField] public Sprite StoryTellerSprite { get; set; }
+        public bool isUnlocked;
+        public int conversationIndex;
+        [SerializeField, HideInInspector] public ChatConfig Config;
+
+        [ShowAssetPreview(32, 32), SerializeField, Space(50)] public Sprite StoryTellerSprite;
 
         [SerializeField] public string actorLeftName;
         [field: ShowAssetPreview(32, 32), SerializeField] public Sprite ActorLeftSprite { get; set; }
@@ -64,6 +67,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             for (int i = 0; i < Messages.Length; i++)
             {
                 Messages[i].Msg = localizator.GetTranslatedMessage(GlobalSettings.GlobalCurrentLanguage, i);
+
+                var (isTranslated, translatedAudioMsg) = Messages[i].TranslateAudioMsg(GlobalSettings.GlobalCurrentLanguage);
+                Messages[i].AudioMsg = translatedAudioMsg;
             }
             
             Debug.Log("Messages translated for conversation: " + name);
@@ -73,11 +79,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void ResetLanguageContainer()
         {
             localizator.ResetTranslations();
-
-            for (int i = 0; i < Messages.Length; i++)
-            {
-                localizator.AudioMessages.Add(null);
-            }
         }
 
         #endregion

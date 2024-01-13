@@ -14,17 +14,9 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
     public class LocalizatorMessages : BaseLocalizator
     {
         [SerializeField, HideInInspector] private Translator _translator;
-        [SerializeField] private List<AudioClip> audioClips;
-        
-        public List<AudioClip> AudioMessages {get => audioClips; set => audioClips = value; }
 
         public void ResetTranslations()
         {
-            if (audioClips.Count > 0)
-            {
-                audioClips.Clear();
-            }
-
             if (_translator.languages.Count > 0)
             {
                 _translator.languages.Clear();

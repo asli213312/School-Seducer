@@ -12,7 +12,7 @@ public class Character : MonoBehaviour
     [SerializeField] private CharacterData characterData;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
-    public СonversationData  Conversation => characterData.conversation;
+    public СonversationData  currentConversation => characterData.currentConversation;
     public CharacterData Data => characterData;
     public SpriteRenderer SpriteRenderer => spriteRenderer;
 
@@ -54,9 +54,9 @@ public class Character : MonoBehaviour
     public void StartConversation()
     {
         _chat.ResetContent();
-        _chat.InvokeStartConversation(characterData.conversation.Messages);
+        _chat.InvokeStartConversation(characterData.currentConversation.Messages);
         
-        Debug.Log("Conversation is started: " + characterData.conversation.name);
+        Debug.Log("Conversation is started: " + characterData.currentConversation.name);
     }
 
     public void EndConversation()

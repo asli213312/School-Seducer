@@ -12,7 +12,7 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField] private PlayerConfig playerConfig;
         [SerializeField] private Location[] locations;
         
-        private SpriteRenderer _renderer;
+        private SpriteRenderer _rendererr;
 
         private const int MIN_ORDER = 0;
 
@@ -21,7 +21,7 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void Awake()
         {
-            _renderer = GetComponent<SpriteRenderer>();
+            _rendererr = GetComponent<SpriteRenderer>();
 
             RegisterLocations();
         }
@@ -58,7 +58,7 @@ namespace _School_Seducer_.Editor.Scripts
 
         public void CloseMap()
         {
-            _renderer.SetSortingOrderForAllChildrens(MIN_ORDER);
+            _rendererr.SetSortingOrderForAllChildrens(MIN_ORDER);
         }
         
         private void RegisterLocations()

@@ -27,6 +27,11 @@ namespace _BonGirl_.Editor.Scripts
             Debug.Log("Selected language runtime: " + _localizer.GlobalLanguageCodeRuntime.ToUpper());
         }
 
+        private void Start()
+        {
+            Time.timeScale = 1;
+        }
+
         public void SafeOpenPanel(GameObject panel)
         {
             if (_currentPanel == null)

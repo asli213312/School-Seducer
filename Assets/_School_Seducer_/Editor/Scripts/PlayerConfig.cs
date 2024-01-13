@@ -11,6 +11,7 @@ namespace _School_Seducer_.Editor.Scripts
         [Header("Currencies")] 
         [SerializeField] private int diamonds;
         [SerializeField] private int money;
+        [SerializeField] private int experience; 
         
         [Header("Options")]
         [SerializeField] private bool showParameters;
@@ -20,6 +21,7 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField, ShowIf("showParameters")] private int costNextNode;
         [SerializeField, ShowIf("showParameters")] private int addMoneyAtClick;
 
+        public int Experience {get  => experience; set => experience = value; }
         public int Level {get  => level; set => level = value; }
         public int Money {get => money; set => money = value; }
         public int Diamonds {get => diamonds; set => diamonds = value; }

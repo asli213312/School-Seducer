@@ -1,57 +1,68 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts;
+using _School_Seducer_.Editor.Scripts.Mini_Games;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
-using Random = System.Random;
 
 public class MiniGameInitializer : MonoBehaviour
 {
     [Inject] private EventManager _eventManager;
-    [SerializeField] private List<GameObject> miniGames;
+    [Inject] private Bank _bank;
     
-    private PlayerConfig _playerConfig;
+    [SerializeField] private Button closeGameButton; 
+    [SerializeField] private MiniGamesConfig data;
+    [SerializeField] private List<GameObject> miniGames;
+
+    public GameObject CurrentMiniGame { get; private set; }
+    public MiniGamesConfig Data => data;
     public List<GameObject> MiniGames => miniGames;
+    
+    [field: SerializeField] public bool MiniGameAvailable { get; set; }
+
+    private PlayerConfig _playerConfig;
 
     private void Awake()
     {
         _playerConfig = _eventManager.PlayerConfig;
     }
-    
-    public void StartMiniGame()
+
+    public void TryActivateGame(GameObject currentGame)
     {
-        StartCoroutine(SpawnRandomMiniGame());
+        if (currentGame == null)
+        {
+            Debug.LogWarning("Current mini game is null!");
+            return;
+        }
+
+        if (MiniGameAvailable == false)
+        {
+            currentGame.Deactivate();
+        }
+        else
+        {
+            currentGame.Activate();
+            closeGameButton.gameObject.Activate();
+        }
     }
 
-    private IEnumerator SpawnRandomMiniGame()
+    public void ResetGameAvailability()
     {
-        bool miniGameResult = false;
+        MiniGameAvailable = false;
+        _bank.ChangeValueMoney(PuzzleGame.UserProgress.Current.Coins);
+        PuzzleGame.UserProgress.Current.Coins = 0;
+    }
 
-        GameObject ballInHolePrefab = miniGames[0];
+    public void StartMiniGame()
+    {
         
-        Vector3 offsetPositionPrefab = new Vector2(0, -2);
-        GameObject ballInHoleInstance = Instantiate(ballInHolePrefab, Vector3.down + offsetPositionPrefab, Quaternion.identity);
-        Debug.Log("this mini game: " + ballInHoleInstance.gameObject.name, ballInHoleInstance.gameObject);
-        
-        IMiniGame ballInHole = ballInHoleInstance.GetComponent<BallInHole>();
-        ballInHole.OnMiniGameFinished += result => miniGameResult = result;
-        
-        while (!miniGameResult)
-        {
-            yield return null;
-            if (ballInHole.IsGameFinished)
-                break;
-        }
+    }
 
-        if (miniGameResult)
-        {
-            Debug.Log("Mini game good result is: " + miniGameResult);
-            _eventManager.ChangeValueMoney(_playerConfig.AddMoneyAtClick);
-            _eventManager.UpdateTextMoney();
-        }
-                
-        Destroy(ballInHoleInstance);
+    private void SpawnRandomMiniGame()
+    {
+        //int randomMiniGame = RandomIndex();
+        //GameObject newMiniGame = Instantiate()
     }
 
     private int RandomIndex() => UnityEngine.Random.Range(0, MiniGames.Count);

@@ -38,6 +38,7 @@ MonoBehaviour:
     - NaughtyAttributes.Test
     - Plugins.Baedrick.ColoredHeaderCreator
     - Project.Editor
+    - PuzzleGames
     - SingularityGroup.HotReload.Runtime
     - SingularityGroup.HotReload.Runtime.Public
     - spine-csharp

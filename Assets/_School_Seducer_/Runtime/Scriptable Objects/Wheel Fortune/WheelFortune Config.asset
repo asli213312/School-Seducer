@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: WheelFortune Config
   m_EditorClassIdentifier: 
   iconMoney: {fileID: 21300000, guid: ba3e178d886f9804bb49533edad9815c, type: 3}
-  girlsSprites: []
-  moneyForSpin: 0
+  characters:
+  - {fileID: 11400000, guid: bb881d8f861fb2941b70d59ad3760a28, type: 2}
+  - {fileID: 11400000, guid: a53beec5e19f3fe48854d886f16cc00f, type: 2}
+  moneyForSpin: 5
   timeShowStopButton: 3
   rotationSpeed: 150
+  decelerationCharactersWheel: 100
   decelerationMin: 103
   decelerationMax: 130
   showDebugParameters: 0

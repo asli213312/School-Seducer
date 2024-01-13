@@ -53,13 +53,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             if (localizator.translationJson == null)
             {
-                Debug.LogWarning("Translation File is not assigned!");
+                Debug.LogError("Translation File is not assigned!");
                 return;
             }
 
             for (int i = 0; i < Messages.Length; i++)
             {
                 Messages[i].Msg = localizator.GetTranslatedMessage(GlobalSettings.GlobalCurrentLanguage, i);
+
+                var (isTranslated, translatedAudioMsg) = Messages[i].TranslateAudioMsg(GlobalSettings.GlobalCurrentLanguage);
+                Messages[i].AudioMsg = translatedAudioMsg;
             }
             
             Debug.Log("Messages translated for conversation: " + name);

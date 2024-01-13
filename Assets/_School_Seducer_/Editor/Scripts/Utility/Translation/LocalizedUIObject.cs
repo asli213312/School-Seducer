@@ -17,9 +17,17 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
         [SerializeField] private List<Translator.Languages> localizedData;
         public List<Translator.Languages> LocalizedData => localizedData;
 
+        public string CurrentText { get; private set; }
+        public Text Text { get; private set; }
+
         private void Awake()
         {
             if (_localizer != null) _localizer.AddObserver(this);
+        }
+
+        private void Start()
+        {
+            CurrentText = GetCurrentText();
         }
 
         private void OnDestroy()
@@ -36,10 +44,23 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
             if (currentLanguage.key is not null)
             {
                 if (text != null) text.text = currentLanguage.key;
-                else if (textPro != null) textPro.text = currentLanguage.key;    
+                else if (textPro != null) textPro.text = currentLanguage.key;
+
+                CurrentText = currentLanguage.key;
             }
             else
                 Debug.LogError("Localized key not found: " + currentLanguage.key, gameObject);
         }
+
+        private string GetCurrentText()
+        {
+            if (textPro is null)
+            {
+                Text = text; 
+                return text.text;
+            }
+            
+            return textPro.text;  
+        } 
     }
 }

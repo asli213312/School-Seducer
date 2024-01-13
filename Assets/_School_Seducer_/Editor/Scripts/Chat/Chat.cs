@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using _BonGirl_.Editor.Scripts;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.UI;
 using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using Sirenix.OdinInspector;
-using Sirenix.Serialization;
+using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -26,6 +23,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private Transform contentChats;
         [SerializeField] private GalleryScreen gallery;
         [SerializeField] private Previewer previewer;
+        [SerializeField] private StoryResolver storyResolver;
         [SerializeField] private OptionButton[] optionButtons;
 
         [Header("Data")] 
@@ -35,12 +33,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private MessagePictureView msgPicturePrefab;
         [SerializeField] private RectTransform paddingPrefab;
         [ShowInInspector] public List<IContent> PictureMessages { get; private set; } = new();
-        
+        [ShowInInspector] public List<IContent> DampedPictureMessages { get; private set; } = new();
+
+        public CharacterData CurrentCharacter { get; private set; }
         public Transform ContentMsgs => contentMsgs;
         public BranchData CurrentBranchData { get; private set; }
         public СonversationData CurrentConversationData { get; private set; }
         public bool IsMessagesEnded { get; private set; }
         public ChatConfig Config => config;
+        public List<MessageData> CompletedMessagesCurrentConversation { get; private set; } = new();
         public List<MessageData> CompletedMessages { get; private set; } = new();
 
         private List<MessageData> _messages = new();
@@ -48,10 +49,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private List<MessageDefaultView> _defaultMessages = new();
         private ChatStatusView _currentStatusView;
         private ConversationView _conversationView;
-        private bool _isStartConversation;
-        private int _iteratedMessages;
         private MessageDefaultView _currentDefaultMsg;
         private MessagePictureView _currentPictureMsg;
+        
+        private bool _isStartConversation;
+        private int _iteratedMessages;
 
         [ContextMenu("Translate Messages")]
         private void TranslateRenderedMessages()
@@ -61,6 +63,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             foreach (var msg in _defaultMessages)
             {
                 msg.TranslateText(_localizer.GlobalLanguageCodeRuntime);
+                msg.TranslateAudio(_localizer.GlobalLanguageCodeRuntime);
             }
         }
 
@@ -70,10 +73,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             config.OnMessageReceived.AddListener(previewer.ReduceMoneyPlayer);
 
             RegisterOptions();
-            previewer.Initialize(this);
 
             _conversationView = new ConversationView();
             _localizer.AddObserver(this);
+
+            _eventManager.UpdateExperienceTextEvent += storyResolver.UpdateStatusViews;
             //_conversationView.Initialize(config.ChatCompletedSprite, config.ChatUncompletedSprite);
         }
 
@@ -83,28 +87,54 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             config.OnMessageReceived.RemoveListener(previewer.ReduceMoneyPlayer);
 
             UnRegisterOptions();
-            
+
             _localizer.RemoveObserver(this);
+            
+            _eventManager.UpdateExperienceTextEvent -= storyResolver.UpdateStatusViews;
         }
 
         private void OnEnable()
         {
-            InitializeChats();
+            //Invoke(nameof(InitializeChats), 0.5f);
+            //storyResolver.UpdateStatusViews();
+        }
+
+        private void OnDisable()
+        {
+            UnRegisterStatusViews();
         }
         
         public void OnObservableUpdate()
         {
-            TranslateRenderedMessages();
-
             if (_messages.Count < 0) return;
+            
+            TranslateRenderedMessages();
 
             foreach (var msg in _messages)
             {
-                msg.Msg = msg.TranslateMsg(_localizer.GlobalLanguageCodeRuntime);
+                msg.Msg = msg.TranslateTextMsg(_localizer.GlobalLanguageCodeRuntime);
+                var translatedMsg = msg.TranslateAudioMsg(_localizer.GlobalLanguageCodeRuntime);
+                msg.AudioMsg = translatedMsg.translatedAudio;
             }
             
             var paddingBack = CreatePadding();
             paddingBack.gameObject.Deactivate(0.1f);
+        }
+
+        public void InstallCharacterData(CharacterData character)
+        {
+            DeactivateStatusViews();
+            CurrentCharacter = character;
+
+            if (_chatStatusViews.Count <= 0)
+            {
+                ResetStatusViews();
+                InitializeChats();
+            }
+
+            storyResolver.UpdateStatusViews();
+
+            Debug.Log("Character Data is installed");
         }
 
         public void LoadBranch(BranchData branchData)
@@ -117,29 +147,44 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             StartCoroutine(LoadMessages(messages));
         }
-        
-	    public void InstallCurrentConversation(СonversationData data) 
+
+        public void InstallCurrentStatusView(ChatStatusView statusView) => _currentStatusView = statusView;
+
+        private void InstallCurrentConversation(СonversationData data) 
 	    {
 	    	CurrentConversationData = data;
-            gallery.SetCurrentData(previewer.GetCurrentCharacterData().gallery);
-            _currentStatusView = _chatStatusViews[CurrentConversationData.conversationIndex];
+            CurrentCharacter.currentConversation = CurrentConversationData;
         }
 
-        public void StartDialogue(UnityAction onStarted)
+        private void StartDialogue()
         {
+            if (_currentStatusView != null && CurrentConversationData == _currentStatusView.Conversation && contentMsgs.childCount > 1)
+            {
+                Debug.LogWarning("Selected current conversation");
+                return;
+            }
+            
+            InstallCurrentConversation(_currentStatusView.Conversation);
+
             ResetContent();
-            StartCoroutine(ChatTap(onStarted));
+            StartCoroutine(ChatTap(() => InvokeStartConversation(_currentStatusView.Conversation.Messages)));
         }
 
         private void InitializeChats()
         {
-            for (int i = 0; i < config.Chats.Length; i++)
+            for (int i = 0; i < CurrentCharacter.allConversations.Count; i++)
             {
                 ChatStatusView chatStatus = Instantiate(chatStatusView, contentChats);
-                chatStatus.Render(config.Chats[i]);
+                chatStatus.Initialize(this);
+                chatStatus.Render(CurrentCharacter.allConversations[i]);
                 chatStatus.SetStatus(config.ChatCompletedSprite, config.ChatUncompletedSprite);
+                chatStatus.OnClick += StartDialogue;
                 _chatStatusViews.Add(chatStatus);
             }
+            
+            storyResolver.InitStatusViews(_chatStatusViews);
+            storyResolver.UpdateStatusViews();
+            gallery.SetCurrentData(previewer.GetCurrentCharacterData().gallery);
         }
 
         private IEnumerator LoadMessages(MessageData[] messages = null)
@@ -168,9 +213,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             _eventManager.ChatMessageReceived(false);
             
-            if (CompletedMessages.Count <= 0) StopCoroutine(ProcessMessage(index));
+            if (CompletedMessagesCurrentConversation.Count <= 0) StopCoroutine(ProcessMessage(index));
             
-            if (CompletedMessages.Contains(_messages[index]))
+            if (CompletedMessagesCurrentConversation.Contains(_messages[index]))
             {
                 yield break;
             }
@@ -214,6 +259,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
                 _iteratedMessages++;
 
+                CompletedMessagesCurrentConversation.Add(_messages[index]);
                 CompletedMessages.Add(_messages[index]);
                 _currentStatusView.CompletionChanged(index, _messages.ToArray());
 
@@ -241,6 +287,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             _iteratedMessages++;
             _currentStatusView.CompletionChanged(index, _messages.ToArray());
+            CompletedMessagesCurrentConversation.Add(_messages[index]);
             CompletedMessages.Add(_messages[index]);
 
             Debug.Log("iterated messages: " + _iteratedMessages);
@@ -498,12 +545,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 pictureMsgProxy.SetDurationSendingPicture(config.DurationSendingPicture);
                 _currentPictureMsg = pictureMsg;
                 PictureMessages.Add(pictureMsg);
+                DampedPictureMessages.Add(pictureMsg);
             }
             else if (newMsg is MessageDefaultView)
             {
                 MessageDefaultView defaultMsg = newMsg as MessageDefaultView;
                 defaultMsg.InitSoundInvoker(_soundHandler);
                 defaultMsg.InitContentSpace(contentMsgs);
+                defaultMsg.InstallLanguageCode(_localizer.GlobalLanguageCodeRuntime);
+                defaultMsg.InstallStatusTranslatedAudioButtons();
                 _currentDefaultMsg = defaultMsg;
                 _defaultMessages.Add(defaultMsg);
             }
@@ -514,6 +564,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public RectTransform CreatePadding()
         {
             return Instantiate(paddingPrefab, contentMsgs);
+        }
+
+        private void UnRegisterStatusViews()
+        {
+            foreach (var statusView in _chatStatusViews)
+            {
+                statusView.OnClick -= StartDialogue;
+            }
         }
 
         private void RegisterOptions()
@@ -541,13 +599,36 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
         }
 
+        public void DeactivateStatusViews()
+        {
+            if (_chatStatusViews.Count > 0) _chatStatusViews.ForEach(chat => chat.gameObject.Deactivate());
+        }
+
+        public void ResetStatusViews()
+        {
+            if (_chatStatusViews.Count > 0)
+                _chatStatusViews.Clear();
+        }
+
         public void ResetContent()
         {
             if (contentMsgs.childCount <= 0) return;
 
+            IsMessagesEnded = true;
+            StopAllCoroutines();
+
+            if (CompletedMessagesCurrentConversation.Count > 0) CompletedMessagesCurrentConversation.Clear();
             if (_messages.Count > 0) _messages.Clear();
-            if (CompletedMessages.Count > 0) CompletedMessages.Clear();
+
+            foreach (var pictureMsg in PictureMessages)
+            {
+                if (DampedPictureMessages.Contains(pictureMsg) == false) DampedPictureMessages.Add(pictureMsg);
+            }
             
+            if (PictureMessages.Count > 0) PictureMessages.Clear();
+            
+            if (DampedPictureMessages.Count > 0) DampedPictureMessages.Clear();
+
             for (int i = contentMsgs.childCount - 1; i >= 0; i--)
             {
                 if (contentMsgs.GetChild(i) != contentMsgs.Find("Options"))

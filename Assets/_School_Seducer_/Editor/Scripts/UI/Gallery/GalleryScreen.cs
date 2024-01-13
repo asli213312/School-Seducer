@@ -72,6 +72,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         private void SetSlotsByData(GallerySlotType section)
         {
+            if (_currentGalleryData.AllSlots.Count == 0) return;
+            
             for (int j = 0; j < _currentGalleryData.AllSlots.Count; j++)
             {
                 GallerySlotData slotData = _currentGalleryData.AllSlots[j];
@@ -231,44 +233,47 @@ namespace _School_Seducer_.Editor.Scripts.UI
             HashSet<MessageData> checkedMessages = new HashSet<MessageData>();
             HashSet<string> checkedBranches = new HashSet<string>();
 
-            for (int i = 0; i < chat.CurrentConversationData.Messages.Length; i++)
+            foreach (var conversation in chat.CurrentCharacter.allConversations)
             {
-                Debug.Log($"Checking main message {i}");
-
-                if (chat.CurrentConversationData.Messages[i].optionalData.GallerySlot != null)
+                for (int i = 0; i < conversation.Messages.Length; i++)
                 {
-                    GallerySlotData slotData = chat.CurrentConversationData.Messages[i].optionalData.GallerySlot;
+                    Debug.Log($"Checking main message {i}");
 
-                    if (slotData.Section == slotType && slotData.NeedInGallery)
+                    if (conversation.Messages[i].optionalData.GallerySlot != null)
                     {
-                        countedSlotsByType++;
-                        _foundedSlotsInConversation.Add(slotData);
-                        Debug.Log($"Found a slot of type {slotType} in main {i} message.");
+                        GallerySlotData slotData = conversation.Messages[i].optionalData.GallerySlot;
+
+                        if (slotData.Section == slotType && slotData.NeedInGallery)
+                        {
+                            countedSlotsByType++;
+                            _foundedSlotsInConversation.Add(slotData);
+                            Debug.Log($"Found a slot of type {slotType} in main {i} message.");
+                        }
+                        else
+                        {
+                            Debug.Log($"Slot type {slotData.Section} in main {i} message does not match the desired type {slotType}.");
+                        }
                     }
                     else
                     {
-                        Debug.Log($"Slot type {slotData.Section} in main {i} message does not match the desired type {slotType}.");
+                        Debug.Log($"No slot found in main {i} message.");
                     }
-                }
-                else
-                {
-                    Debug.Log($"No slot found in main {i} message.");
-                }
                 
-                if (chat.CurrentConversationData.Messages[i].optionalData.Branches.Length > 0)
-                {
-                    Debug.Log($"Main message {i} has branches.");
-                    foreach (var branch in chat.CurrentConversationData.Messages[i].optionalData.Branches)
+                    if (conversation.Messages[i].optionalData.Branches.Length > 0)
                     {
-                        Debug.Log($"Checking branch {branch.BranchName}");
-                        foreach (var branchMessage in branch.Messages)
+                        Debug.Log($"Main message {i} has branches.");
+                        foreach (var branch in conversation.Messages[i].optionalData.Branches)
                         {
-                            Debug.Log($"Checking message {branchMessage.Msg} in {branch.BranchName}");
-                            CheckBranchesForSlots(branchMessage, slotType, ref countedSlotsByType, checkedMessages, checkedBranches);
+                            Debug.Log($"Checking branch {branch.BranchName}");
+                            foreach (var branchMessage in branch.Messages)
+                            {
+                                Debug.Log($"Checking message {branchMessage.Msg} in {branch.BranchName}");
+                                CheckBranchesForSlots(branchMessage, slotType, ref countedSlotsByType, checkedMessages, checkedBranches);
+                            }
                         }
-                    }
                     
-                    CheckBranchesForSlots(chat.CurrentConversationData.Messages[i], slotType, ref countedSlotsByType, checkedMessages, checkedBranches);
+                        CheckBranchesForSlots(conversation.Messages[i], slotType, ref countedSlotsByType, checkedMessages, checkedBranches);
+                    }
                 }
             }
 
@@ -278,11 +283,11 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private int GetCountSlotsAddedByConversation(GallerySlotType typeSlot)
         {
             int countedSlotsByType = 0;
-            for (int i = 0; i < chat.CompletedMessages.Count; i++)
+            for (int i = 0; i < chat.CompletedMessagesCurrentConversation.Count; i++)
             {
-                if (chat.CompletedMessages[i].optionalData.GallerySlot == null) continue;
+                if (chat.CompletedMessagesCurrentConversation[i].optionalData.GallerySlot == null) continue;
                 
-                GallerySlotData slotData = chat.CompletedMessages[i].optionalData.GallerySlot;
+                GallerySlotData slotData = chat.CompletedMessagesCurrentConversation[i].optionalData.GallerySlot;
 
                 if (slotData.Section == typeSlot && slotData.AddedInGallery)
                 {

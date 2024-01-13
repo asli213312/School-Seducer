@@ -9,9 +9,10 @@ namespace _School_Seducer_.Editor.Scripts.Utility
             EN, FR, RU
         }
         
-        public struct Strings
+        public struct Paths
         {
             public const string GLOBAL_SETTINGS = "Assets/_School_Seducer_/Runtime/Scriptable Objects/Configs/Global Settings.asset";
+            public const string CHAT_CONFIG = "Assets/_School_Seducer_/Runtime/Scriptable Objects/Configs/Chat Config.asset";
         }
     }
 }

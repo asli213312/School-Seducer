@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts
@@ -8,24 +9,27 @@ namespace _School_Seducer_.Editor.Scripts
     {
         [Inject] private EventManager _eventManager;
         [SerializeField] private PlayerConfig playerConfig;
-        
-        public int _money;
+
+        public int experience;
+        public int money;
         public int _diamonds;
+
+        public PlayerConfig Data => playerConfig;
 
         public int Money
         {
-            get => _money;
+            get => money;
             set
             {
                 playerConfig.Money = value;
-                _money = playerConfig.Money;
+                money = playerConfig.Money;
                 _eventManager.UpdateTextMoney();
             }
         }
         
         public int Diamonds
         {
-            get { return _diamonds; }
+            get => _diamonds;
             set
             {
                 playerConfig.Diamonds = value;
@@ -33,19 +37,23 @@ namespace _School_Seducer_.Editor.Scripts
                 _eventManager.UpdateTextDiamonds();
             }
         }
+        
+        public int Experience
+        {
+            get => experience;
+            set
+            {
+                playerConfig.Experience = value;
+                experience = playerConfig.Experience;
+                _eventManager.UpdateTextExperience();
+            }
+        }
 
         private void Awake()
         {
+            Experience = playerConfig.Experience;
             Money = playerConfig.Money;
             Diamonds = playerConfig.Diamonds;
-            _eventManager.ChangeValueMoneyEvent += ChangeValueMoney;
-            _eventManager.ChangeValueDiamondsEvent += ChangeValueDiamonds;
-        }
-
-        private void OnDestroy()
-        {
-            _eventManager.ChangeValueDiamondsEvent -= ChangeValueDiamonds;
-            _eventManager.ChangeValueMoneyEvent -= ChangeValueMoney;
         }
 
         public void ChangeValueMoney(int value)
@@ -58,7 +66,7 @@ namespace _School_Seducer_.Editor.Scripts
             else
                 Debug.LogWarning("Not enough money: " + Money);
             
-            _eventManager.UpdateTextMoney();
+            _eventManager.MoneyWereChanged();
         }
         
         public void ChangeValueDiamonds(int amount)
@@ -69,9 +77,22 @@ namespace _School_Seducer_.Editor.Scripts
                 playerConfig.Diamonds = Diamonds;
             }
             else
-                Debug.LogWarning("You can't have negative diamonds" + _diamonds);
+                Debug.LogWarning("You can't have negative diamonds: " + Diamonds);
             
-            _eventManager.UpdateTextDiamonds();
-        } 
+            _eventManager.DiamondsWereChanged();
+        }
+        
+        public void ChangeValueExperience(int amount)
+        {
+            if (Experience + amount >= 0)
+            {
+                Experience += amount;
+                playerConfig.Experience = Experience;
+            }
+            else
+                Debug.LogWarning("You can't have negative experience: " + Experience);
+            
+            _eventManager.ExperienceWasChanged();
+        }
     }
 }

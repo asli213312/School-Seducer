@@ -16,9 +16,11 @@ namespace Editor
 
         private void OnEnable()
         {
-            string globalSettingsPath = Enums.Strings.GLOBAL_SETTINGS;
+            string globalSettingsPath = Enums.Paths.GLOBAL_SETTINGS;
+            string chatConfigPath = Enums.Paths.CHAT_CONFIG;
             
             GlobalSettings globalSettingsData = AssetDatabase.LoadAssetAtPath<GlobalSettings>(globalSettingsPath);
+            ChatConfig chatConfig = AssetDatabase.LoadAssetAtPath<ChatConfig>(chatConfigPath);
 
             if (globalSettingsData != null)
             {
@@ -34,6 +36,7 @@ namespace Editor
             {
                 _messagesProperty = serializedObject.FindProperty("Messages");
                 СonversationData conversationData = (СonversationData)target;
+                conversationData.Config = chatConfig;
                 conversationData.StoryTellerSprite = conversationData.Config.StoryTellerSprite;
             }
             else

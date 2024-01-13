@@ -16,28 +16,45 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [NaughtyAttributes.HideIf("IsPictureMsg"), Sirenix.OdinInspector.HideLabel] public AudioClip AudioMsg;
 
         [field: NaughtyAttributes.ReadOnly] public MessageSender Sender { get; set; }
-        
-        [HideInEditorMode, SerializeField, Sirenix.OdinInspector.ReadOnly] private List<Translator.Languages> localizedData;
+
+        [SerializeField] private List<Translator.LanguageAudioClip> localizedAudioClips;
+        private List<Translator.Languages> _localizedData;
 
         public List<Translator.Languages> SetLocalizedData(List<Translator.Languages> localizedDataList)
         {
-            return localizedData = localizedDataList;
+            return _localizedData = localizedDataList;
         }
 
-        public string TranslateMsg(string languageCode)
+        public (bool isTranslated, AudioClip translatedAudio) TranslateAudioMsg(string languageCode)
         {
-            string originalMsg = Msg;
+            if (localizedAudioClips.Count == 0) return (false, AudioMsg);
             
-            for (int i = 0; i < localizedData.Count; i++)
+            foreach (var localizedAudioClip in localizedAudioClips)
             {
-                if (localizedData[i].languageCode == languageCode)
+                if (localizedAudioClip.languageCode == languageCode)
                 {
-                    Translator.Languages currentLanguage = localizedData[i];
+                    Translator.LanguageAudioClip currentAudioClip = localizedAudioClip;
+                    return (true, currentAudioClip.key);
+                }
+            }
+
+            return (false, AudioMsg);
+        }
+
+        public string TranslateTextMsg(string languageCode)
+        {
+            if (_localizedData.Count == 0) return Msg;
+            
+            for (int i = 0; i < _localizedData.Count; i++)
+            {
+                if (_localizedData[i].languageCode == languageCode)
+                {
+                    Translator.Languages currentLanguage = _localizedData[i];
                     return currentLanguage.key;
                 }  
             }
 
-            return originalMsg;
+            return Msg;
         }
 
         public bool IsPictureMsg() => optionalData.GallerySlot != null;

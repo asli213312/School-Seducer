@@ -1,8 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.Extensions;
+using _School_Seducer_.Editor.Scripts.Utility;
+using Sirenix.Utilities;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
+using Zenject;
 using Random = UnityEngine.Random;
 
 namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
@@ -10,38 +16,58 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
     [SelectionBase]
     public class WheelFortune : MonoBehaviour
     {
-        [Header("Data")]
+        [Inject] private Bank _bank;
+        [Inject] private EventManager _eventManager;
+
+        [Header("Data")] 
+        [SerializeField] private Previewer previewer;
         [SerializeField] private WheelFortuneData data;
-        [SerializeField] private WheelSlot[] slots;
+        [SerializeField] private WheelSlot characterSlotPrefab;
+        [SerializeField] private List<WheelSlot> slots;
+
+        [Header("PushUps")] 
+        [SerializeField] private RectTransform giftSpinPush;
+        [SerializeField] private RectTransform unlockNewStoryPush;
         
         [Header("UI elements")]
         [SerializeField] private Text textSpin;
         [SerializeField] private Transform wheelTransform;
+        [SerializeField] private Slider expSlider;
         [SerializeField] private Button spinButton;
+        [SerializeField] private RectTransform scrollCharactersContent;
         [SerializeField] private RectTransform marker;
+        [SerializeField] private RectTransform goToStopCharactersWheel;
         [SerializeField] private RectTransform goToStopWheel;
 
+        private List<WheelSlot> _characterSlots = new();
+        
         private RectTransform _spinButtonRect;
         private BoxCollider2D _winSlotCol;
+        private BoxCollider2D _winSlotColCharacter;
         private WheelSlot _currentWinSlot;
         private Vector3 _goToStopWheelPosition;
-        
+
         private readonly Color _activeButtonColor = Color.green;
         private readonly Color _inactiveButtonColor = Color.red;
-
-        private bool _isSpinning;
-        private float _targetRotation;
+        
         private float _rotationSpeed;
         private float _deceleration;
 
+        private int _winGiftExp;
+        
+        private bool _isCharacters;
+        private bool _isSpinning;
         private bool _winSlotCollidedStopCol;
         private bool _needStopWheel;
+        private bool _needAnimate;
 
         private void Awake()
         {
             _spinButtonRect = spinButton.GetComponent<RectTransform>();
             _goToStopWheelPosition = goToStopWheel.transform.position;
             spinButton.AddListener(OnSpinButtonClicked);
+
+            _eventManager.ChangeValueExperienceEvent += OnChangeValueExperience;
         }
 
         private void Start()
@@ -50,23 +76,34 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             InitializeSlots();
 
             InitParametersData();
+
+            previewer.Characters.ForEach(character => CheckResetCharacter(character.Data));
         }
 
         private void OnDestroy()
         {
-            spinButton.RemoveListener(SpinWheel);
+            spinButton.RemoveListener(SetSpinWheelSlots);
             spinButton.RemoveListener(OnSpinButtonClicked);
+            
+            _eventManager.ChangeValueExperienceEvent -= OnChangeValueExperience;
+        }
+        
+        private void OnChangeValueExperience(int newValue)
+        {
+            expSlider.value = newValue;
+            Debug.Log($"Slider value changed to: {newValue}");
         }
 
         private void InitParametersData()
         {
             _rotationSpeed = data.rotationSpeed;
+            
             _deceleration = Random.Range(data.decelerationMin, data.decelerationMax);
         }
         
         private void FixedUpdate()
         {
-            if (_isSpinning)
+            if (_isSpinning && !_isCharacters)
             {
                 float step = _rotationSpeed * Time.fixedDeltaTime;
                 wheelTransform.Rotate(Vector3.forward * step);
@@ -84,6 +121,31 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                     else
                     {
                         _isSpinning = false;
+                        _isCharacters = true;
+                        CalculateResult();
+                    }
+                }
+            }
+            
+            if (_isSpinning && _isCharacters)
+            {
+                float step = _rotationSpeed * Time.fixedDeltaTime;
+                scrollCharactersContent.Translate(Vector2.down * step * Time.deltaTime);
+
+                _winSlotCollidedStopCol = _winSlotColCharacter.OverlapPoint(goToStopCharactersWheel.transform.position);
+
+                //Debug.Log("collided winSlot: " + _winSlotCollidedStopCol);  
+                
+                if (_needStopWheel)
+                {
+                    if (_rotationSpeed > 0)
+                    {
+                        _rotationSpeed -= data.decelerationCharactersWheel * Time.fixedDeltaTime;
+                    }
+                    else
+                    {
+                        _isSpinning = false;
+                        _isCharacters = false;
                         CalculateResult();
                     }
                 }
@@ -92,6 +154,15 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         private void OnSpinButtonClicked()
         {
+            if (data.CanSpin(_bank.Data.Money) == false)
+            {
+                Debug.LogWarning("Not enough money to spin!");
+                return;
+            }
+            
+            if (scrollCharactersContent.childCount > 0)
+                _bank.ChangeValueMoney(-data.moneyForSpin);
+
             ResetSpinStatus();
             StartCoroutine(HandleSpinButtonStatus());
         }
@@ -99,29 +170,149 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         // not need states for simple status
         private IEnumerator HandleSpinButtonStatus()
         {
-            SpinWheel();
-            SetSpinButtonNoneStatus();
-            yield return new WaitForSeconds(data.timeShowStopButton);
+            if (scrollCharactersContent.childCount <= 0)
+            {
+                SetSpinButtonUnavailableStatus();
+                yield break;
+            }
             
-            SetSpinButtonStopStatus();
+            ResetSpinStatus();
+            
+            if (_isCharacters == false) SetSpinWheelSlots();
+            else
+            {
+                SetSpinWheelCharacters();
+            }
 
-            yield return new WaitUntil(SpinButtonClicked);
+            if (_needStopWheel && _isCharacters) _needStopWheel = false;
+            
+            SetSpinButtonNoneStatus();
+
+            if (_isCharacters == false) yield return new WaitForSeconds(data.timeShowStopButton);
+
+            SetSpinButtonStopStatus();
+            
             SetSpinButtonNoneStatus();
             yield return new WaitUntil(StopWheel);
 
             yield return new WaitUntil(CalculateResult);
+
+            CharacterData winCharacterData = null;
+            
+            if (_isCharacters)
+            {
+                yield return new WaitForSeconds(1.5f);
+                
+                Debug.Log($"Current win slot name is <color=red>{_currentWinSlot.Data.name}</color>");
+
+                Character winCharacter = FindCharacterByWinSlot();
+
+                if (winCharacter == null) yield return new WaitForSeconds(1);
+
+                    winCharacterData = winCharacter.Data;
+
+                Debug.Log("Found character after spin: " + winCharacter.Data.name);
+
+                previewer.SetLockedConversation(winCharacter);
+
+                if (winCharacter.Data.ConversationsUnlocked() == false)
+                    previewer.StoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
+                
+                winCharacter.Data.ChangeExperience(_winGiftExp);
+            
+                previewer.StoryResolver.SetSliderValue(winCharacter.Data.experience);
+            
+                _eventManager.UpdateTextExperience();
+            
+                previewer.StoryResolver.UpdateStatusViews();
+            
+                _eventManager.UpdateTextExperience();
+
+                if (winCharacter.Data.allConversations[^1].isUnlocked == false)
+                {
+                    if (previewer.StoryResolver.StoryUnlocked)
+                    {
+                        ShowUnlockStoryPush();
+
+                        if (winCharacter.Data.LockedConversation != winCharacter.Data.allConversations[^1])
+                        {
+                            winCharacter.Data.LockedConversation.isUnlocked = true;
+                            winCharacter.Data.LockedConversation.isCompleted = false;
+                            winCharacter.Data.experience = 0;
+                        }
+
+                        if (winCharacter.Data.allConversations[^1] == winCharacter.Data.LockedConversation)
+                        {
+                            winCharacter.Data.allConversations[^1].isUnlocked = true;
+                            winCharacter.Data.allConversations[^1].isCompleted = false;
+                        }
+                        
+                    }
+                    else ShowGiftPush();
+                
+                    Debug.Log("Last conversation unlocked? = " + winCharacter.Data.LastConversationAvailable());
+                }
+            }
+            else
+                _winGiftExp = _currentWinSlot.GetCostExp();
+
             yield return new WaitForSeconds(2);
+
             SetSpinButtonSpinStatus();
+
+            if (_isCharacters) spinButton.onClick.Invoke();
+
+            if (winCharacterData != null)
+            {
+                CheckResetCharacter(winCharacterData);
+            }
         }
 
-        private void SpinWheel()
+        private void ShowGiftPush()
         {
+            StartCoroutine(giftSpinPush.DoLocalScaleAndUnscale(this, Vector3.one, 2));
+        }
+
+        private void ShowUnlockStoryPush()
+        {
+            StartCoroutine(unlockNewStoryPush.DoLocalScaleAndUnscale(this, Vector3.one, 3));
+        }
+
+        private void SetSpinWheelCharacters()
+        {
+            _isSpinning = true;
+            _isCharacters = true;
+            _needStopWheel = false;
+
+            _currentWinSlot = _isCharacters == false ? FindSlotForProbability(slots) : FindSlotForProbability(_characterSlots);
+
+            if (_currentWinSlot == null)
+            {
+                return;
+            }
+            
+            _winSlotCol = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
+            _winSlotColCharacter = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
+
+            //lockedConversationIsFound = _isCharacters && previewer.FindLockedConversation(_currentWinSlot.GetCurrentIcon());
+
+            _eventManager.UpdateTextExperience();
+
+            Debug.Log("winSlot: " + _currentWinSlot.Data.name);
+        }
+
+        private void SetSpinWheelSlots()
+        {
+            scrollCharactersContent.localPosition = new Vector2(0, 650);
+            
             if (!_isSpinning)
             {
                 _isSpinning = true;
 
-                _currentWinSlot = FindSlotForProbability();
+                _currentWinSlot = _isCharacters == false ? FindSlotForProbability(slots) : FindSlotForProbability(_characterSlots);
                 _winSlotCol = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
+                _winSlotColCharacter = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
+                
                 Debug.Log("winSlot: " + _currentWinSlot.Data.name);
                 
                 //_targetRotation = 360 * Random.Range(3, 6) + (360 / slots.Length) * Random.Range(0, slots.Length);
@@ -143,6 +334,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private bool CalculateResult()
         {
             RaycastHit2D hit = GetRaycastDownMarker();
+            
+            //if (_isCharacters == false) _isCharacters = true;
 
             if (hit.collider != null)
             {
@@ -153,7 +346,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
                 return true;
             }
-            
+
             return false;
         }
 
@@ -165,9 +358,9 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             return Physics2D.Raycast(rayOrigin, rayDirection);
         }
 
-        private WheelSlot FindSlotForProbability()
+        private WheelSlot FindSlotForProbability(List<WheelSlot> wheelSlots)
         {
-            if (slots.Length == 0)
+            if (wheelSlots.Count == 0)
             {
                 return null;
             }
@@ -176,17 +369,19 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             
             List<WheelSlot> eligibleSlots = new List<WheelSlot>();
 
-            foreach (var slot in slots)
+            for (var index = wheelSlots.Count - 1; index >= 0; index--)
             {
+                var slot = wheelSlots[index];
                 Vector2 probabilityRange = slot.GetProbabilityRange();
 
                 if (randomValue >= probabilityRange.x && randomValue <= probabilityRange.y)
                 {
                     eligibleSlots.Add(slot);
-                    Debug.Log(eligibleSlots.Count + ": " + slot.gameObject.name);
                 }
             }
-            
+
+            Debug.Log("Count eligibleSlots: " + eligibleSlots.Count);
+
             WheelSlot selectedSlot = eligibleSlots[Random.Range(0, eligibleSlots.Count)];
 
             return selectedSlot;
@@ -230,6 +425,13 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             textSpin.text = "STOP";
             spinButton.interactable = true;
         }
+        
+        private void SetSpinButtonUnavailableStatus()
+        {
+            SetSpinButtonColorInactive();
+            textSpin.text = "MAX";
+            spinButton.interactable = false;
+        }
 
         private void SetSpinButtonColorInactive()
         {
@@ -246,11 +448,69 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             spinButton.GetComponent<Image>().color = colorStatus;
         }
 
+        private Character FindCharacterByWinSlot()
+        {
+            foreach (var characterData in data.characters)
+            {
+                if (characterData.name != _currentWinSlot.Data.name) continue;
+                
+                Debug.Log("Found character data by win slot = <color=red>" + characterData.name + "</color>");
+
+                WheelSlotData foundData = characterData;
+
+                if (foundData == null) return null;
+
+                foreach (var character in previewer.Characters)
+                {
+                    if (character.Data.name == foundData.name) return character;
+                }
+            }
+
+            Debug.LogError("Can't find character by win slot");
+            return null;
+        }
+
+        private void CheckResetCharacter(CharacterData characterData)
+        {
+            foreach (var conversation in characterData.allConversations)
+            {
+                if (conversation.isUnlocked == false) return;
+            }
+
+            for (int i = 0; i < scrollCharactersContent.childCount; i++)
+            {
+                 WheelSlot slotCharacterToReset = scrollCharactersContent.GetChild(i).GetComponent<WheelSlot>();
+
+                if (slotCharacterToReset.Data.name == characterData.name)
+                {
+                    _characterSlots.Remove(slotCharacterToReset);
+                    slotCharacterToReset.gameObject.Destroy();
+                }
+            }
+        }
+
         private void InitializeSlots()
         {
+            int charactersCount = data.characters.Count;
+            int targetNumberOfSlots = charactersCount * 2;
+
+            for (int i = 0; i < targetNumberOfSlots; i++)
+            {
+                var character = data.characters[i % charactersCount];
+                WheelSlot characterSlot = Instantiate(characterSlotPrefab, scrollCharactersContent);
+                characterSlot.Initialize(character, data.iconMoney);
+                
+                if (i < data.characters.Count)
+                {
+                    _characterSlots.Add(characterSlot);
+                }
+            }
+
+            scrollCharactersContent.localPosition = new Vector2(0, 650);
+            
             foreach (var slot in slots)
             {
-                slot.Initialize(data.iconMoney);
+                slot.Initialize(slot.Data, data.iconMoney);
             }
         }
     }

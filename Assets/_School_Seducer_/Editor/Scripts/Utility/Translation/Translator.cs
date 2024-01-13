@@ -27,6 +27,13 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
         }
 
         [Serializable]
+        public class LanguageAudioClip
+        {
+            public string languageCode;
+            public AudioClip key;
+        }
+
+        [Serializable]
         public class SerializedMessage
         {
             public string key;

@@ -1,9 +1,4 @@
-﻿using System;
-using _School_Seducer_.Editor.Scripts.Utility;
-using _School_Seducer_.Editor.Scripts.Utility.Translation;
-using OneLine;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using _School_Seducer_.Editor.Scripts.Utility;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {

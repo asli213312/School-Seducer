@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace _School_Seducer_.Editor.Scripts.Extensions
 {
@@ -21,6 +22,12 @@ namespace _School_Seducer_.Editor.Scripts.Extensions
             }
 
             return null;
+        }
+
+        public static void ScaleAnim(this Transform transform, float duration, Vector2 start, Vector2 end, UnityAction onComplete = null)
+        {
+            transform.localScale = Vector2.Lerp(start, end, duration / Time.deltaTime);
+            onComplete?.Invoke();
         }
     }
 }

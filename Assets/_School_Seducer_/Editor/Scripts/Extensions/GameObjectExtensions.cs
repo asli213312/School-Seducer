@@ -31,7 +31,7 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
         {
             if (!gameObject.activeSelf)
             {
-                gameObject.SetActive(true);
+                gameObject?.SetActive(true);
             }
             else
                 Debug.LogWarning("GameObject already active: ", gameObject);
@@ -42,7 +42,7 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
             if (!gameObject.activeSelf)
             {
                 await Task.Delay((int)(delay * 1000));
-                gameObject.SetActive(true);
+                gameObject?.SetActive(true);
             }
             else
                 Debug.LogWarning("GameObject already active: ", gameObject);
@@ -52,7 +52,7 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
         {
             if (gameObject.activeSelf)
             {
-                gameObject.SetActive(false);
+                gameObject?.SetActive(false);
             }
             else
                 Debug.LogWarning("GameObject already inactive: ", gameObject);
@@ -63,7 +63,7 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
             if (gameObject.activeSelf)
             {
                 await Task.Delay((int)(delay * 1000));
-                gameObject.SetActive(false);
+                gameObject?.SetActive(false);
             }
             else
                 Debug.LogWarning("GameObject already inactive: ", gameObject);

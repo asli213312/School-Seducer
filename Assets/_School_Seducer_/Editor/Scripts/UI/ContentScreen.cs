@@ -28,8 +28,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
         
         private const int NEXT = 1;
         private const int PREVIOUS = -1;
-        
-        [ShowInInspector] private List<IContent> _currentSlots;
+
+        [ShowInInspector] private List<IContent> _currentSlots = new();
 
         private Button _contentWideButton;
         private Button _contentSquareButton;
@@ -71,9 +71,24 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private void InstallSlots()
         {
             if (galleryScreen.gameObject.activeSelf)
+            {
+                if (_currentSlots.Count > 0) _currentSlots.Clear();
                 _currentSlots = galleryScreen.GetTotalSlotsInContent();
+            }
             else if (chat.gameObject.activeSelf)
-                _currentSlots = chat.PictureMessages;
+            {
+                if (_currentSlots.Count > 0) _currentSlots.Clear();
+                
+                if (chat.PictureMessages.Count != 0)
+                {
+                    //_currentSlots.AddRange(chat.DampedPictureMessages);
+                    _currentSlots.AddRange(chat.PictureMessages);
+                }
+                else
+                {
+                    _currentSlots = chat.DampedPictureMessages;
+                }
+            }
         }
 
         private void ShowContent()

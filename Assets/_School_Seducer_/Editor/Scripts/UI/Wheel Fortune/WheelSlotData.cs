@@ -1,4 +1,5 @@
 ﻿using NaughtyAttributes;
+using UnityEditor.Graphs;
 using UnityEngine;
 using HideIfAttribute = Sirenix.OdinInspector.HideIfAttribute;
 
@@ -14,12 +15,16 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         {
             return IsMoneySlot(slotType) || useTest;
         }
+        
+        private bool IsCharacter() => useTest ? slotTypeTest == WheelCategorySlotEnum.Character : slotType == WheelCategorySlotEnum.Character;
 
         [HideIf("useTest")]
         private bool IsMoneySlot(WheelCategorySlotEnum slotType) => slotType == WheelCategorySlotEnum.Money;
         
         [HideIf("useTest")]
         public WheelCategorySlotEnum slotType = WheelCategorySlotEnum.Gift;
+        
+        [HideIf(nameof(IsCharacter))] public int costExp;
         
         [HideIf("useTest")]
         [Range(1, 5)] public int level;
@@ -39,6 +44,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         }
 
         [Sirenix.OdinInspector.ShowIf("useTest")] public WheelCategorySlotEnum slotTypeTest = WheelCategorySlotEnum.Gift;
+        [Sirenix.OdinInspector.ShowIf(nameof(useTest))] public int costExpTest;
         [Sirenix.OdinInspector.ShowIf("useTest"), Range(1, 5)] public int levelTest;
         [Sirenix.OdinInspector.ShowIf("useTest"), Sirenix.OdinInspector.MinMaxSlider(1, 100)] public Vector2Int chanceToGainTest;
     }

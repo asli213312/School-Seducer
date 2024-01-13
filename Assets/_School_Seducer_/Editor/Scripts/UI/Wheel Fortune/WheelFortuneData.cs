@@ -10,14 +10,15 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
     {
         [Header("Data")] 
         public Sprite iconMoney;
-        public Sprite[] girlsSprites;
+        public System.Collections.Generic.List<WheelSlotData> characters;
 
         [Header("Wheel parameters")]
         public int moneyForSpin;
         [SerializeField] public int timeShowStopButton;
         [InfoBox("If you want to show the stop button immediately, set the time to 0")]
         [Space(10)]
-        [SerializeField] public float rotationSpeed;
+        [ShowIf("showDebugParameters"), SerializeField] public float rotationSpeed;
+        [ShowIf("showDebugParameters"), SerializeField] public float decelerationCharactersWheel;
         [ShowIf("showDebugParameters")] public float decelerationMin;
         [ShowIf("showDebugParameters")] public float decelerationMax;
 
@@ -27,6 +28,11 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         
         [ShowIf("showDebugParameters"), SerializeField] public GameObject[] hints;
         private GameObject[] _originalHints;
+
+        public bool CanSpin(int moneyPlayer)
+        {
+             return moneyPlayer >= moneyForSpin;
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
@@ -48,6 +54,18 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                         hints[i] = _originalHints[i];
                     }
                 }
+            }
+
+            foreach (var character in characters)
+            {
+                if (character.useTest == false)
+                {
+                    if (character.slotType != WheelCategorySlotEnum.Character)
+                        characters.Remove(character);
+                }
+                else
+                    if (character.slotTypeTest != WheelCategorySlotEnum.Character)
+                        characters.Remove(character);
             }
         }
 #endif

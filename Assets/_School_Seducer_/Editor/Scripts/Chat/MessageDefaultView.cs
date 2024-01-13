@@ -20,18 +20,22 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private List<LocalizedScriptableObject.LocalizedData> _localizedData;
 
         public Button AudioButtonLeftActor => audioButtonLeftActor;
-        public Button AudioButtonRightActor => audioButtonRightActor;    
+        public Button AudioButtonRightActor => audioButtonRightActor;
+        private Button _currentAudioButtonActor;
             
         public MessageSender MessageSender { get; set; }
 
         private Transform _content;
         private SoundHandler _soundHandler;
+        private string _currentLanguageCode;
 
         public void Initialize(OptionButton[] optionButtons)
         {
             MessageSender = Sender;
             OptionButtons = optionButtons;
         }
+
+        public void InstallLanguageCode(string languageCode) => _currentLanguageCode = languageCode;
 
         public void InitContentSpace(Transform content)
         {
@@ -46,19 +50,69 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public void RenderGeneralData(MessageData data, Sprite actorLeft, Sprite actorRight, Sprite storyTeller, bool needIconStoryTeller)
         {
             SetSenderMsg(actorRight, actorLeft, storyTeller, data, needIconStoryTeller);
+            SetAudioButton();
             SetParentActor();
             SetOptions(data);
-            SetAudioButton();
         }
 
         public void TranslateText(string languageCode)
         {
-            msgText.text = Data.TranslateMsg(languageCode);
+            msgText.text = Data.TranslateTextMsg(languageCode);
+        }
+
+        public void TranslateAudio(string languageCode)
+        {
+            var (isTranslated, translatedAudioMsg) = Data.TranslateAudioMsg(languageCode);
+
+            if (isTranslated)
+            {
+                if (_currentAudioButtonActor != null)
+                    _currentAudioButtonActor.gameObject.Activate();
+                else
+                    Debug.LogWarning("CurrentAudioButtonActor is null to change status view");
+                
+                Debug.Log("AudioMessage was translated: " + translatedAudioMsg.name);
+            }
+            else
+            {
+                if (_currentAudioButtonActor != null)
+                    _currentAudioButtonActor.gameObject.Deactivate();
+                
+                if (translatedAudioMsg != null)
+                    Debug.Log("AudioMessage wasn't translated: " + translatedAudioMsg.name);
+            }
+
+            _currentLanguageCode = languageCode;
+            //Data.AudioMsg = translatedAudioMsg;
         }
 
         public void SetNameActors(string leftActor, string rightActor, string storyTeller)
         {
             SetName(leftActor, rightActor, storyTeller);
+        }
+
+        public void InstallStatusTranslatedAudioButtons()
+        {
+            var translatedAudio = Data.TranslateAudioMsg(_currentLanguageCode);
+
+            if (translatedAudio.isTranslated)
+            {
+                if (Sender == MessageSender.ActorLeft)
+                {
+                    audioButtonLeftActor.gameObject.Activate();
+                    audioButtonRightActor.gameObject.Deactivate();
+                }
+                else if (Sender == MessageSender.ActorRight)
+                {
+                    audioButtonRightActor.gameObject.Activate();
+                    audioButtonLeftActor.gameObject.Deactivate();
+                }
+                else if (Sender == MessageSender.StoryTeller)
+                {
+                    audioButtonLeftActor.gameObject.Activate();
+                    audioButtonRightActor.gameObject.Deactivate();
+                }
+            }
         }
 
         private void SetParentActor()
@@ -75,17 +129,21 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 {
                     audioButtonLeftActor.onClick.AddListener(InvokeAudioMsg);
                     audioButtonRightActor.gameObject.Deactivate();
+                    _currentAudioButtonActor = audioButtonLeftActor;
                 }
                 else if (Sender == MessageSender.ActorRight)
                 {
                     audioButtonRightActor.onClick.AddListener(InvokeAudioMsg);
-                    audioButtonRightActor.gameObject.Activate();
+                    //audioButtonRightActor.gameObject.Activate();
                     audioButtonLeftActor.gameObject.Deactivate();
+                    _currentAudioButtonActor = audioButtonRightActor;
                 }
                 else if (Sender == MessageSender.StoryTeller)
                 {
                     audioButtonLeftActor.onClick.AddListener(InvokeAudioMsg);
                     audioButtonRightActor.gameObject.Deactivate();
+                    _currentAudioButtonActor = audioButtonLeftActor;
+
                     RectTransform audioLeftRect = audioButtonLeftActor.GetComponent<RectTransform>();
                     audioLeftRect.Translate(Vector2.left * 6.2f);
                 }
@@ -97,11 +155,23 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void InvokeAudioMsg()
         {
             //_soundHandler.AutoManagePlayback(Data.AudioMsg);
-            
-            if (_soundHandler.IsClipPlaying())
-                _soundHandler.StopClip();
+
+            var (isTranslated, translatedAudioMsg) = Data.TranslateAudioMsg(_currentLanguageCode);
+
+            if (isTranslated)
+            {
+                if (_currentAudioButtonActor != null)
+                    _currentAudioButtonActor.gameObject.Activate();
+                else
+                    Debug.LogWarning("CurrentAudioButtonActor is null to change status view");
+                
+                if (_soundHandler.IsClipPlaying())
+                    _soundHandler.StopClip();
+                else
+                    _soundHandler.InvokeClipAfterPlayback(() =>_soundHandler.InvokeOneClip(Data.AudioMsg));
+            }
             else
-                _soundHandler.InvokeClipAfterPlayback(() =>_soundHandler.InvokeOneClip(Data.AudioMsg));
+                _currentAudioButtonActor.gameObject.Deactivate();
         }
 
         private void OnDestroy()
