@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Extensions;
+using _School_Seducer_.Editor.Scripts.UI.Popups;
 using _School_Seducer_.Editor.Scripts.Utility;
 using Sirenix.Utilities;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
@@ -26,11 +28,13 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         [SerializeField] private List<WheelSlot> slots;
 
         [Header("PushUps")] 
-        [SerializeField] private RectTransform giftSpinPush;
+        [SerializeField] private Push giftSpinPush;
         [SerializeField] private RectTransform unlockNewStoryPush;
-        
-        [Header("UI elements")]
-        [SerializeField] private Text textSpin;
+
+        [Header("UI elements")] 
+        [SerializeField] private TextMeshProUGUI goldText;
+        [SerializeField] private TextMeshProUGUI textSpin;
+        [SerializeField] private TextMeshProUGUI characterName;
         [SerializeField] private Transform wheelTransform;
         [SerializeField] private Slider expSlider;
         [SerializeField] private Button spinButton;
@@ -68,6 +72,15 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             spinButton.AddListener(OnSpinButtonClicked);
 
             _eventManager.ChangeValueExperienceEvent += OnChangeValueExperience;
+
+            _eventManager.UpdateTextMoneyEvent += UpdateGoldText;
+            
+            _eventManager.UpdateTextMoney();
+        }
+
+        private void UpdateGoldText()
+        {
+            goldText.text = _bank.Money.ToString();
         }
 
         private void Start()
@@ -86,6 +99,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             spinButton.RemoveListener(OnSpinButtonClicked);
             
             _eventManager.ChangeValueExperienceEvent -= OnChangeValueExperience;
+            
+            _eventManager.UpdateTextMoneyEvent -= UpdateGoldText;
         }
         
         private void OnChangeValueExperience(int newValue)
@@ -201,6 +216,10 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             
             if (_isCharacters)
             {
+                characterName.text = _currentWinSlot.Data.name.ToUpper();
+                
+                giftSpinPush.SetDataParent(new DataParentText(characterName));
+                
                 yield return new WaitForSeconds(1.5f);
                 
                 Debug.Log($"Current win slot name is <color=red>{_currentWinSlot.Data.name}</color>");
@@ -230,6 +249,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
                 if (winCharacter.Data.allConversations[^1].isUnlocked == false)
                 {
+                    giftSpinPush.MakeTransitions();
+                    
                     if (previewer.StoryResolver.StoryUnlocked)
                     {
                         ShowUnlockStoryPush();
@@ -254,7 +275,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 }
             }
             else
-                _winGiftExp = _currentWinSlot.GetCostExp();
+                _winGiftExp = _currentWinSlot.Data.GetCostExp();
 
             yield return new WaitForSeconds(2);
 
@@ -270,7 +291,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         private void ShowGiftPush()
         {
-            StartCoroutine(giftSpinPush.DoLocalScaleAndUnscale(this, Vector3.one, 2));
+            StartCoroutine(giftSpinPush.transform.DoLocalScaleAndUnscale(this, Vector3.one, 2));
         }
 
         private void ShowUnlockStoryPush()
@@ -290,6 +311,10 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             {
                 return;
             }
+            
+            Debug.Log("Character slot is null? " + _currentWinSlot.name);
+            
+            //if (_currentWinSlot != null) giftSpinPush.SetDataParent(new DataParentImage(_currentWinSlot.Image, nameof(_currentWinSlot)));
             
             _winSlotCol = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
             _winSlotColCharacter = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
@@ -312,6 +337,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 _currentWinSlot = _isCharacters == false ? FindSlotForProbability(slots) : FindSlotForProbability(_characterSlots);
                 _winSlotCol = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
                 _winSlotColCharacter = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
+                
+                giftSpinPush.SetDataParent(new DataParentImage(_currentWinSlot.Image, nameof(_currentWinSlot)));
                 
                 Debug.Log("winSlot: " + _currentWinSlot.Data.name);
                 
@@ -372,7 +399,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             for (var index = wheelSlots.Count - 1; index >= 0; index--)
             {
                 var slot = wheelSlots[index];
-                Vector2 probabilityRange = slot.GetProbabilityRange();
+                Vector2 probabilityRange = slot.Data.GetProbabilityRange();
 
                 if (randomValue >= probabilityRange.x && randomValue <= probabilityRange.y)
                 {

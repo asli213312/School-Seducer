@@ -17,8 +17,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         [field: NaughtyAttributes.ReadOnly] public MessageSender Sender { get; set; }
 
-        [SerializeField] private List<Translator.LanguageAudioClip> localizedAudioClips;
-        private List<Translator.Languages> _localizedData;
+        [SerializeField] private List<Translator.LanguageAudioClip> localizedAudioClips = new();
+        private List<Translator.Languages> _localizedData = new();
 
         public List<Translator.Languages> SetLocalizedData(List<Translator.Languages> localizedDataList)
         {

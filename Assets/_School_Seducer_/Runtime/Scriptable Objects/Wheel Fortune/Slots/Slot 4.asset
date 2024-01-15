@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ca1cd1e3654303aff5d941a90c197e, type: 3}
   m_Name: Slot 4
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 8f4fffcb3d35295489ccc807fab8c092, type: 3}
+  icon: {fileID: 21300000, guid: 46aa7d2dee77b0f46bd9d04802133b6d, type: 3}
   slotType: 0
-  costExp: 6
+  costExp: 5
   level: 1
   chanceToGain: {x: 11, y: 27}
   useTest: 0
