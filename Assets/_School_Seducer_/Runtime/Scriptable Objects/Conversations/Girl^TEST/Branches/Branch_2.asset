@@ -19,6 +19,8 @@ MonoBehaviour:
     localizedDataList: []
   localizator:
     translationJson: {fileID: 0}
+    _translator:
+      languages: []
   BranchName: BRANCH 2
   audioMsg: {fileID: 0}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
@@ -32,7 +34,7 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-    localizedData: []
+    localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
     Msg: 
     optionalData:
@@ -40,12 +42,15 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-    localizedData: []
+    localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
     Msg: 
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
-      Branches: []
+      Branches:
+      - {fileID: 11400000, guid: 77a53c1380855cd43ba15e3238ff485e, type: 2}
+      - {fileID: 11400000, guid: 77a53c1380855cd43ba15e3238ff485e, type: 2}
+      - {fileID: 11400000, guid: 77a53c1380855cd43ba15e3238ff485e, type: 2}
     AudioMsg: {fileID: 0}
-    localizedData: []
+    localizedAudioClips: []

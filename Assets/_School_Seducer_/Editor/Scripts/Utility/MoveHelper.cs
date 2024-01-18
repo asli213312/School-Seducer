@@ -51,7 +51,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         }
 
         public static IEnumerator DoLocalScaleAndUnscale(this Transform transform, MonoBehaviour behaviour,
-            Vector3 scale, float deactivateAfter, UnityAction onComplete = null)
+            Vector3 scale, bool needDeactivate = false, float deactivateAfter = 0, UnityAction onComplete = null)
         {
             transform.gameObject.Activate();
             
@@ -61,16 +61,30 @@ namespace _School_Seducer_.Editor.Scripts.Utility
             behaviour.StartCoroutine(LocalScale(transform, scale));
 
             onComplete?.Invoke();
+            
+            if (needDeactivate)
+            {
+                transform.position = Vector3.one * 100;
+                yield return new WaitForSeconds(deactivateAfter);
+                ReturnScale();
+            }
+            else
+            {
+                yield return new WaitUntil(() => transform.gameObject.activeSelf == false);
+                transform.position = Vector3.one * 100;
+                transform.gameObject.Activate();
+                ReturnScale();
+            }
 
-            yield return new WaitForSeconds(deactivateAfter);
-            transform.position = Vector3.one * 100;
-
-            behaviour.StartCoroutine(LocalScale(transform, initScale,
-                () =>
-                {
-                    transform.gameObject.Deactivate();
-                    transform.position = initPosition;
-                }));
+            void ReturnScale()
+            {
+                behaviour.StartCoroutine(LocalScale(transform, initScale,
+                    () =>
+                    {
+                        transform.gameObject.Deactivate();
+                        transform.position = initPosition;
+                    }));
+            }
 
             IEnumerator LocalScale(Transform currentTransform, Vector3 endScale, UnityAction onCompleteScale = null)
             {

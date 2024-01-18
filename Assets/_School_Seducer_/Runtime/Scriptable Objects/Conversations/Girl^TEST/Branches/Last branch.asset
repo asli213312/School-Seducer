@@ -14,9 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localizedFields:
   - fieldLabel: BranchName
-    localizedDataList: []
+    localizedDataList:
+    - languageCode: en
+      key: last branch
+    - languageCode: fr
+      key: FLASt branch
   localizator:
     translationJson: {fileID: 0}
+    _translator:
+      languages: []
   BranchName: LAST BRANCH
   audioMsg: {fileID: 0}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
@@ -30,4 +36,4 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-    localizedData: []
+    localizedAudioClips: []

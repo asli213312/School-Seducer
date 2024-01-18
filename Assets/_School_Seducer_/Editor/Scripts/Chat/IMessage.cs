@@ -4,7 +4,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 {
     public interface IMessage
     {
-        MessageSender MessageSender { get; set; }
         void Initialize(OptionButton[] optionButtons);
         void RenderGeneralData(MessageData data, Sprite actorLeft, Sprite actorRight, Sprite storyTeller, bool needIconStoryTeller);
 	    void SetNameActors(string leftActor, string rightActor, string storyTeller);

@@ -6,6 +6,7 @@ using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -43,8 +44,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public ChatConfig Config => config;
         public List<MessageData> CompletedMessagesCurrentConversation { get; private set; } = new();
         public List<MessageData> CompletedMessages { get; private set; } = new();
+        public List<MessageData> Messages { get; private set; } = new();
 
-        private List<MessageData> _messages = new();
         private List<ChatStatusView> _chatStatusViews = new();
         private List<MessageDefaultView> _defaultMessages = new();
         private ChatStatusView _currentStatusView;
@@ -106,11 +107,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
         public void OnObservableUpdate()
         {
-            if (_messages.Count < 0) return;
+            if (Messages.Count < 0) return;
             
             TranslateRenderedMessages();
 
-            foreach (var msg in _messages)
+            foreach (var msg in Messages)
             {
                 msg.Msg = msg.TranslateTextMsg(_localizer.GlobalLanguageCodeRuntime);
                 var translatedMsg = msg.TranslateAudioMsg(_localizer.GlobalLanguageCodeRuntime);
@@ -176,10 +177,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             {
                 ChatStatusView chatStatus = Instantiate(chatStatusView, contentChats);
                 chatStatus.Initialize(this);
-                chatStatus.Render(CurrentCharacter.allConversations[i]);
-                chatStatus.SetStatus(config.ChatCompletedSprite, config.ChatUncompletedSprite);
+                chatStatus.Render(CurrentCharacter.allConversations[i], config.ChatUncompletedSprite);
                 chatStatus.OnClick += StartDialogue;
                 _chatStatusViews.Add(chatStatus);
+
+                _eventManager.UpdateExperienceTextEvent += chatStatus.OnUpdateUnlockBar;
             }
             
             storyResolver.InitStatusViews(_chatStatusViews);
@@ -194,18 +196,18 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             MessagesStarted();
             StartConversation();
             
-            _messages.AddRange(messages);
+            Messages.AddRange(messages);
             
             OnObservableUpdate();
 
-            for (int i = 0; i < _messages.Count; i++)
+            for (int i = 0; i < Messages.Count; i++)
             {
                 if (IsMessagesEnded) StopCoroutine(ProcessMessage(i));
                     
                 yield return ProcessMessage(i);
             }
 
-            EndConversation(CheckLastMessage(_messages.ToArray(), _messages.Count - 1, false));
+            EndConversation(CheckLastMessage(Messages.ToArray(), Messages.Count - 1, false));
             MessagesEnded();
         }
         
@@ -215,7 +217,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             
             if (CompletedMessagesCurrentConversation.Count <= 0) StopCoroutine(ProcessMessage(index));
             
-            if (CompletedMessagesCurrentConversation.Contains(_messages[index]))
+            if (CompletedMessagesCurrentConversation.Contains(Messages[index]))
             {
                 yield break;
             }
@@ -226,15 +228,19 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             yield return new WaitForSeconds(0.5f);
 
             var paddingBack = CreatePadding();
-            var newMsg = InstallPrefabMsg(_messages.ToArray(), index, out var pictureMsgProxy);
+            var newMsg = InstallPrefabMsg(Messages.ToArray(), index, out var pictureMsgProxy);
             var paddingForward = CreatePadding();
-            
+
             if (newMsg == null) yield break;
 
             newMsg.Initialize(optionButtons);
-            RenderMsgData(_messages.ToArray(), newMsg, index);
+            RenderMsgData(Messages.ToArray(), newMsg, index);
 
-            ActivatePaddings(paddingBack, paddingForward);
+            if (newMsg is MessageDefaultView defaultView)
+            {
+                if (defaultView.NeedPaddings() == false)
+                    paddingBack.gameObject.Deactivate();
+            }
 
             Debug.Log("Render completed");
 
@@ -245,34 +251,33 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             yield return new WaitForSeconds(config.DelayBtwMessage);
 
-            if (MsgHasBranches(_messages.ToArray(), index))
+            if (MsgHasBranches(Messages.ToArray(), index))
             {
                 Debug.Log("options installed in MsgHasBranches");
 
                 if (pictureMsgProxy != null)
                 {
                     yield return new WaitUntil(() => pictureMsgProxy.PictureInstalled);
-                    InstallOptions(_messages[index]);
+                    InstallOptions(Messages[index]);
                 }
 
-                InstallOptions(_messages[index]);
+                InstallOptions(Messages[index]);
 
                 _iteratedMessages++;
 
-                CompletedMessagesCurrentConversation.Add(_messages[index]);
-                CompletedMessages.Add(_messages[index]);
-                _currentStatusView.CompletionChanged(index, _messages.ToArray());
+                CompletedMessagesCurrentConversation.Add(Messages[index]);
+                CompletedMessages.Add(Messages[index]);
 
                 Debug.Log("iterated messages: " + _iteratedMessages);
                 yield break;
             }
 
-            if (_messages[index] == _messages[^1])
+            if (Messages[index] == Messages[^1])
             {
                 MessagesEnded();
             }
 
-            var lastMessage = CheckLastMessage(_messages.ToArray(), index, false);
+            var lastMessage = CheckLastMessage(Messages.ToArray(), index, false);
 
             while (pictureMsgProxy != null && !pictureMsgProxy.PictureInstalled)
             {
@@ -286,9 +291,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
 
             _iteratedMessages++;
-            _currentStatusView.CompletionChanged(index, _messages.ToArray());
-            CompletedMessagesCurrentConversation.Add(_messages[index]);
-            CompletedMessages.Add(_messages[index]);
+            CompletedMessagesCurrentConversation.Add(Messages[index]);
+            CompletedMessages.Add(Messages[index]);
 
             Debug.Log("iterated messages: " + _iteratedMessages);
         }
@@ -411,6 +415,20 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 	            CurrentConversationData.ActorRightSprite,
                 config.StoryTellerSprite,
                 config.NeedIconStoryTeller);
+
+            if (newMsg is not MessageDefaultView defaultMsg) { return; }
+
+            InstallColorFontAndBackground();
+            InstallBackgroundMsg();
+
+            void InstallColorFontAndBackground()
+            {
+                defaultMsg.SetFontColor(config.leftActorColorMsg, config.rightActorColorMsg, config.storyTellerColorMsg);
+            }
+            void InstallBackgroundMsg()
+            {
+                defaultMsg.SetBlockBackground(config.leftActorBlockMsg, config.rightActorBlockMsg, config.storyTellerBlockMsg);
+            }
         }
 
         private void InstallOptions(MessageData msgData)
@@ -470,7 +488,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             foreach (var option in options)
             {
                 LocalizedUIObject localizedComponent = option.GetComponent<LocalizedUIObject>();
-                Text textComponentOption = option.GetComponentInChildren<Text>();
+                TextMeshProUGUI textComponentOption = option.GetComponentInChildren<TextMeshProUGUI>();
                 Translator.Languages neededTranslationData = localizedComponent.LocalizedData.Find(x => x.languageCode == currentLanguageCode);
                 textComponentOption.text = neededTranslationData.key;   
             }
@@ -557,7 +575,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 _currentDefaultMsg = defaultMsg;
                 _defaultMessages.Add(defaultMsg);
             }
-
+            
             return newMsg;
         }
 
@@ -571,6 +589,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             foreach (var statusView in _chatStatusViews)
             {
                 statusView.OnClick -= StartDialogue;
+
+                _eventManager.UpdateExperienceTextEvent -= statusView.OnUpdateUnlockBar;
             }
         }
 
@@ -618,7 +638,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             StopAllCoroutines();
 
             if (CompletedMessagesCurrentConversation.Count > 0) CompletedMessagesCurrentConversation.Clear();
-            if (_messages.Count > 0) _messages.Clear();
+            if (Messages.Count > 0) Messages.Clear();
 
             foreach (var pictureMsg in PictureMessages)
             {
@@ -655,13 +675,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void SetDataConversation(СonversationData chatData)
         {
-            _chatStatusView.Render(chatData);
+            //_chatStatusView.Render(chatData);
             SetStatusChat();
         }
 
         private void SetStatusChat()
         {
-            _chatStatusView.SetStatus(_completedChat, _unCompletedChat);
+            //_chatStatusView.SetStatus(_completedChat, _unCompletedChat);
         }
     }
 }

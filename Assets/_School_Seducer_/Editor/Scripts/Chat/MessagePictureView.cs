@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,13 +15,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public Image CurrentImage { get; private set; }
         public string MsgNameText { get; set; }
         public bool PictureInstalled { get; private set; }
-        public MessageSender MessageSender { get; set; }
-        
+
         private float _durationSendingPicture;
 
         public void Initialize(OptionButton[] optionButtons)
         {
-            MessageSender = Sender;
             OptionButtons = optionButtons;
         }
 
@@ -92,12 +91,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             if (Sender == MessageSender.ActorRight)
             {
-                contentOffset.Translate(Vector2.right * 0.568f);
+                contentOffset.Translate(Vector2.right * 1.757f);
                 msgSquarePicture.transform.position = rightBorderActor.transform.position;
             }
         }
 
-        private IEnumerator AnimateDots(Text text)
+        private IEnumerator AnimateDots(TextMeshProUGUI text)
         {
             while (true)
             {

@@ -12,23 +12,25 @@ namespace _School_Seducer_.Editor.Scripts.UI
     public class OpenContent : MonoBehaviour, IPointerDownHandler
     {
         [SerializeField] private ModeContentEnum modeContent;
-
-        public Image Content { get; private set; }
-        private Button _button;
+        [SerializeField] private Image contentImage;
+        [SerializeField] private Button button;
+        
+        public Image Content => contentImage;
         private Sprite _spriteToSet;
 
         private IModeContent _modeContent;
+        private Condition _condition;
+        
+        public void SetCondition(Condition condition) => _condition = condition;
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            ContentInstall(this);
-            Debug.Log("Was attempt to get content..." +  ContentScreen.CurrentData.name);
-        }
-
-        private void OnValidate()
-        {
-            _button = GetComponent<Button>();
-            _spriteToSet = GetComponent<Image>().sprite;
+            if (_condition == null)
+                ContentInstall(this);
+            else if (_condition.IsTrue())
+                ContentInstall(this);
+            
+            //Debug.Log("Was attempt to get content..." +  ContentScreen.CurrentData.name);
         }
 
         private void Start()
@@ -39,16 +41,15 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         private void OnDestroy()
         {
-            if (_button == null) return;
+            if (button == null) return;
             
-            _button.RemoveListener(_modeContent.OnClick);
+            button.RemoveListener(_modeContent.OnClick);
         }
 
         private void InstallComponents()
         {
-            _button = GetComponent<Button>();
-            Content = GetComponent<Image>();
-            _spriteToSet = GetComponent<Image>().sprite;
+            //_button = GetComponent<Button>();
+            _spriteToSet = contentImage.sprite;
         }
 
         private void InstallMode()
@@ -60,7 +61,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
                     break;
             }
             
-            _button.AddListener(_modeContent.OnClick);
+            button.AddListener(_modeContent.OnClick);
         }
 
         private void ContentInstall(OpenContent content)

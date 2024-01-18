@@ -15,6 +15,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     {
         [Header("Other")]
         [SerializeField] public int costExp;
+        [SerializeField] public Sprite iconStory;
         [SerializeField, OneLine.OneLine] private LocalizatorMessages localizator;
         public LocalizatorMessages Localizator {get => localizator; set => localizator = value;}
         private string _currentLanguage;
@@ -22,7 +23,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
         public bool isCompleted;
         public bool isUnlocked;
-        public int conversationIndex;
         [SerializeField, HideInInspector] public ChatConfig Config;
 
         [ShowAssetPreview(32, 32), SerializeField, Space(50)] public Sprite StoryTellerSprite;

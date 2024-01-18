@@ -1047,9 +1047,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   msgNameText: {fileID: 8858184059682733497}
-  msgText: {fileID: 4754187146398012258}
+  msgText: {fileID: 0}
   leftBorderActor: {fileID: 2886682803606455557}
   rightBorderActor: {fileID: 608160257872931676}
+  Data:
+    ActorIcon: {fileID: 0}
+    Msg: 
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 0}
+    localizedAudioClips: []
+  background: {fileID: 0}
   audioButtonLeftActor: {fileID: 8802609026311345131}
   audioButtonRightActor: {fileID: 8159952503832942446}
 --- !u!1 &8858184059682733479

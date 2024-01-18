@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e807c7bc91094338b301263cfc90cef4, type: 3}
   m_Name: Gallery Config
   m_EditorClassIdentifier: 
+  lockedSlot: {fileID: 21300000, guid: f060e334956fba44ea94b62926cbc391, type: 3}
+  frameSlot: {fileID: 21300000, guid: ed253ac87d078ea49b2626224d54c4ab, type: 3}
   dampedData: {fileID: 11400000, guid: a89aafde38b31494287819007f6ac54e, type: 2}
   showDebugParameters: 0

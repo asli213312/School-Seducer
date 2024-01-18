@@ -1,5 +1,6 @@
 ﻿using System;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -12,7 +13,7 @@ namespace _School_Seducer_.Editor.Scripts
         [Inject] private Bank _bank;
         [Inject] private EventManager _eventManager;
 
-        [SerializeField] private LocalizedUIObject localizedMoney;
+        [SerializeField] private TextMeshProUGUI gold;
         [SerializeField] private LocalizedUIObject localizedDiamonds;
         [SerializeField] private LocalizedUIObject localizedExp;
 
@@ -41,7 +42,7 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void UpdateMoneyText()
         {
-            localizedMoney.Text.text = $"{localizedMoney.CurrentText} " + _bank.Money;
+            gold.text = _bank.Money.ToString();
         }
     }
 }

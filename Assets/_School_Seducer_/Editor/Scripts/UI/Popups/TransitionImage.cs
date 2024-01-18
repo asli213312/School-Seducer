@@ -6,7 +6,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Popups
     public class TransitionImage : Transition, ITransition
     {
         [SerializeField] private Image image;
-        private Image _dataParent;
+        [SerializeField] private Image dataParent;
         private Sprite _data;
 
         public override void SetData(ITransitionData data)
@@ -21,20 +21,24 @@ namespace _School_Seducer_.Editor.Scripts.UI.Popups
         public override void Transit()
         {
             if (_data != null) image.sprite = _data;
-            else if (_dataParent != null) image.sprite = _dataParent.sprite;
+            else if (dataParent != null) image.sprite = dataParent.sprite;
         }
 
-        public override void SetDataParent(IDataParent dataParent)
+        public override void SetDataParent(IDataParent dataRequestedParent)
         {
-            if (dataParent is DataParentImage imageDataParent)
+            if (dataRequestedParent is DataParentImage imageDataParent)
             {
                 if (imageDataParent.fieldName == name)
                 {
-                    _dataParent = imageDataParent.image;
+                    dataParent = imageDataParent.image;
                 }
-                else
-                    Debug.LogError($"DataParentImage name is not equal to TransitionImage field name = {imageDataParent.fieldName}", imageDataParent.image.gameObject);
+                else if (imageDataParent.fieldName == null)
+                    dataParent = imageDataParent.image;
+                //else
+                    //Debug.LogError($"DataParentImage name is not equal to TransitionImage field name = {imageDataParent.fieldName}", imageDataParent.image.gameObject);
             }
+            
+            Transit();
         }
     }
 }

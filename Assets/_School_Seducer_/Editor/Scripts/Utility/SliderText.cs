@@ -10,7 +10,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
     public class SliderText : MonoBehaviour
     {
         [Inject] private EventManager _eventManager;
-        
+
         [SerializeField] private Slider slider;
 
         public Slider Slider => slider;
@@ -21,22 +21,18 @@ namespace _School_Seducer_.Editor.Scripts.Utility
 
         private void Awake()
         {
-            _eventManager.UpdateExperienceTextEvent += OnValueChanged;
-
-            OnValueChanged();
-        }
-        
-        private void OnValidate() 
-        {
             _text = GetComponent<TextMeshProUGUI>();
+            slider.onValueChanged.AddListener(OnValueChanged);
+            
+            OnValueChanged(0);
         }
 
         private void OnDestroy()
         {
-            _eventManager.UpdateExperienceTextEvent -= OnValueChanged;
+            slider.onValueChanged.RemoveListener(OnValueChanged);
         }
 
-        private void OnValueChanged()
+        private void OnValueChanged(float value)
         {
             if (slider.value >= slider.maxValue) MaxValueEvent?.Invoke();
             

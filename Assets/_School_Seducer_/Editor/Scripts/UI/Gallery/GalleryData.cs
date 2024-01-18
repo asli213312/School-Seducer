@@ -6,6 +6,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
 {
     public class GalleryData : ScriptableObject
     {
+        [SerializeField] public Sprite lockedSlot;
+        [SerializeField] public Sprite frameSlot;
         [SerializeField, Sirenix.OdinInspector.ShowIf("showDebugParameters")] public GalleryCharacterData dampedData;
         public bool showDebugParameters;
         //[ShowIf("showDebugParameters")] public 

@@ -34,10 +34,10 @@ namespace _School_Seducer_.Editor.Scripts
         public Character[] Characters => _characters;
         public StoryResolver StoryResolver => storyResolver;
         public bool NeedPush { get; set; }
+        public Character CurrentCharacter { get; set; }
         
-        private СonversationData _lockedConversation; 
-        
-        private Character _currentCharacter;
+        private СonversationData _lockedConversation;
+
         private СonversationData _currentConversation;
         private SwitcherInDialogue _switcher;
 
@@ -47,6 +47,8 @@ namespace _School_Seducer_.Editor.Scripts
         {
             Initialize();
         }
+
+        //public void ShowChat() => _chat.gameObject.Activate();
 
         public void Initialize()
         {
@@ -98,7 +100,7 @@ namespace _School_Seducer_.Editor.Scripts
 
         public CharacterData GetCurrentCharacterData()
         {
-            return _currentCharacter.Data;
+            return CurrentCharacter.Data;
         }
 
         private void Awake()
@@ -113,24 +115,24 @@ namespace _School_Seducer_.Editor.Scripts
             ResetCharacter();
         }
 
-        private void OnCharacterSelected(Character character)
+        public void OnCharacterSelected(Character character)
         {
-            if (_currentCharacter != null)
+            if (CurrentCharacter != null)
             {
-                Debug.LogWarning("Current character: " + _currentCharacter.name);
+                Debug.LogWarning("Current character: " + CurrentCharacter.name);
             }
             
             previewerPanel.Activate();
 
-            _currentCharacter = character;
-	        _currentConversation = _currentCharacter.currentConversation;
+            CurrentCharacter = character;
+	        _currentConversation = CurrentCharacter.currentConversation;
 
-            if (_currentCharacter == null) 
+            if (CurrentCharacter == null) 
 	        	Debug.LogError("current character is null on selected");
 
             _chat.DeactivateStatusViews();
             _chat.ResetStatusViews();
-            _chat.InstallCharacterData(_currentCharacter.Data);
+            _chat.InstallCharacterData(CurrentCharacter.Data);
             
             //Invoke(nameof(RegisterStartDialogue), 0.3f);
             if (!CheckLevelPlayer())
@@ -155,12 +157,12 @@ namespace _School_Seducer_.Editor.Scripts
 
         private bool CheckLevelPlayer()
         {
-            return playerConfig.Level >= _currentCharacter.Data.RequiredLevel;
+            return playerConfig.Level >= CurrentCharacter.Data.RequiredLevel;
         }
 
         private void RegisterStartDialogue()
         {
-            if (_currentCharacter == null)
+            if (CurrentCharacter == null)
             {
                 Debug.LogWarning("Character is null, cannot register options");
                 //return;
@@ -171,7 +173,7 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void UnRegisterStartDialogue()
         {
-            if (_currentCharacter == null)
+            if (CurrentCharacter == null)
             {
                 Debug.LogWarning("Character is null, cannot unregister options");
                 return;
@@ -186,7 +188,7 @@ namespace _School_Seducer_.Editor.Scripts
             }  
             else
             {
-                _currentCharacter.EndConversation();
+                CurrentCharacter.EndConversation();
                 Debug.Log("Money doesn't enough to continue...");
             }
         }       
@@ -198,18 +200,18 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void UpdateUI()
         {
-            greetingsText.text = "Hello, " + _currentCharacter.name;
-            selectedGirlImage.sprite = _currentCharacter.SpriteRenderer.sprite;
+            greetingsText.text = "Hello, " + CurrentCharacter.name;
+            selectedGirlImage.sprite = CurrentCharacter.SpriteRenderer.sprite;
         }
 
         public void AddLoyalty(int n)
         {
-            _currentCharacter.Data.ChangeLoyalty(n);
+            CurrentCharacter.Data.ChangeLoyalty(n);
         }
 
         private void ResetCharacter()
         {
-            _currentCharacter = null;
+            CurrentCharacter = null;
             _currentConversation = null;
         }
 
@@ -236,6 +238,8 @@ namespace _School_Seducer_.Editor.Scripts
                 {
                     data.LockedConversation = conversation;
                     _lockedConversation = conversation;
+                    
+                    _eventManager.SelectCharacter(character);
                     break;
                 }
             }

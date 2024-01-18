@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.UI;
 using JetBrains.Annotations;
@@ -14,17 +15,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private Slider expSlider;
 
         private List<ChatStatusView> _chatStatusViews = new();
-        private СonversationData _rolledConversation;
+        private СonversationData _lockedConversation;
 
         public bool StoryUnlocked { get; private set; }
         
-        private event Action UpdateStatusViewsEvent;
+        public event Action UpdateStatusViewsEvent;
 
         public void Initialize()
         {
             UpdateStatusViewsEvent += CheckConversationsAvailable;
             UpdateStatusViewsEvent += InstallSliderNextConversation;
-            //UpdateStatusViewsEvent += CheckToUnlockStory;
         }
 
         public void InitStatusViews(List<ChatStatusView> statusViews)
@@ -36,49 +36,43 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void SetRolledConversation([CanBeNull] СonversationData rolledConversation)
         {
-            _rolledConversation = rolledConversation;
-            
+            _lockedConversation = rolledConversation;
+
             StoryUnlocked = expSlider.value >= expSlider.maxValue;
             
-            Debug.Log("Rolled conversation in storyResolver is: " + _rolledConversation?.name);
+            Debug.Log("Rolled conversation in storyResolver is: " + _lockedConversation?.name);
         }
 
         public void UpdateStatusViews() => UpdateStatusViewsEvent?.Invoke();
 
+        public ChatStatusView FindFirstLockedStatusView() => _chatStatusViews.FirstOrDefault(x => x.Conversation.isUnlocked == false);
+
         private void InstallSliderNextConversation()
         {
-            if (_rolledConversation == null) return;
+            if (_lockedConversation == null) return;
 
-            expSlider.maxValue = _rolledConversation.costExp;
+            expSlider.maxValue = _lockedConversation.costExp;
             
             StoryUnlocked = expSlider.value >= expSlider.maxValue;
                     
-            Debug.Log("Slider will be use conversation: " + _rolledConversation.name);
+            Debug.Log("Slider will be use conversation: " + _lockedConversation.name);
         }
 
         private void CheckConversationsAvailable()
         {
             foreach (var statusView in _chatStatusViews)
             {
-                if (statusView.Conversation.isUnlocked)
-                {
-                    statusView.gameObject.Activate();
-                }
+                if (statusView == FindFirstLockedStatusView())
+                    statusView.OnUpdateUnlockBar();
                 else
-                    statusView.gameObject.Deactivate();
+                    statusView.HideBarUnlock();
             }
-        }
-
-        public void CheckToUnlockStory()
-        {
-            if (StoryUnlocked) _rolledConversation.isUnlocked = true;
         }
 
         private void OnDestroy()
         {
             UpdateStatusViewsEvent -= CheckConversationsAvailable;
             UpdateStatusViewsEvent -= InstallSliderNextConversation;
-            //UpdateStatusViewsEvent -= CheckToUnlockStory;
         }
     }
 }

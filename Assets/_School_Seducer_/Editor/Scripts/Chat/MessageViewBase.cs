@@ -1,5 +1,6 @@
 ﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     public abstract class MessageViewBase : MonoBehaviour
     {
         [SerializeField] protected Text msgNameText;
-        [SerializeField] protected Text msgText;
+        [SerializeField] protected TextMeshProUGUI msgText;
         [SerializeField] protected Image leftBorderActor;
         [SerializeField] protected Image rightBorderActor;
 
@@ -26,7 +27,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             switch (data.Sender)
             {
             case MessageSender.ActorRight:
-                    msgNameText.alignment = TextAnchor.UpperRight;
+                    //msgNameText.alignment = TextAnchor.UpperRight;
                     msgText.text = data.Msg;
 
                     rightBorderActor.gameObject.Activate();
@@ -44,7 +45,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     break;
                 
                 case MessageSender.StoryTeller:
-                    msgNameText.alignment = TextAnchor.UpperCenter;
+                    //msgNameText.alignment = TextAnchor.UpperCenter;
                     msgText.text = data.Msg;
 
                     RectTransform mainRect = gameObject.GetComponent<RectTransform>();
@@ -74,17 +75,24 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         protected void AdjustStoryTeller(Transform content, MessageSender sender)
         {
             if (sender != MessageSender.StoryTeller) return;
-            
-            GameObject parent = new GameObject("ParentStoryTeller");
-            parent.transform.SetParent(content);
+
+            GameObject parent = CreateParentObject("Parent_StoryTeller", content);
 
             RectTransform rectParent = parent.AddComponent<RectTransform>();
+            RectTransform mainRect = GetComponent<RectTransform>();
             
             parent.transform.position = gameObject.transform.position;
 
             rectParent.pivot = new Vector2(1, 0.5f);
 
-            rectParent.sizeDelta = new Vector2(4.4f, 0);
+            rectParent.sizeDelta = new Vector2(3.4f, 0);
+            
+            AlignSizeDelta alignMain = gameObject.AddComponent<AlignSizeDelta>();
+            alignMain.Initialize(rectParent, gameObject.GetComponent<RectTransform>(), msgText.text.Length);
+
+            gameObject.GetComponent<VerticalLayoutGroup>().padding.bottom = 10;
+
+            mainRect.pivot = new Vector2(0.5f, 1f);
 
             int indexMessage = gameObject.transform.GetSiblingIndex();
             parent.transform.SetSiblingIndex(indexMessage - 1);
@@ -152,7 +160,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             rightBorderActor.transform.position = parent.transform.position;
             transform.position = parent.transform.position;
 
-            rightBorderRect.Translate(-Vector2.left * 5.83f);
+            rightBorderRect.Translate(-Vector2.left * 7.03f);
             rectMain.position = rightBorderRect.position;
 
             SetStretchMode(contentRight.GetComponent<RectTransform>());
@@ -185,7 +193,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 if (data.optionalData.Branches[i] != null)
                 {
                     OptionButtons[i].BranchData = data.optionalData.Branches[i];
-                    Text textChildren = OptionButtons[i].GetComponentInChildren<Text>();
+                    TextMeshProUGUI textChildren = OptionButtons[i].GetComponentInChildren<TextMeshProUGUI>();
                     textChildren.text = OptionButtons[i].BranchData.BranchName;
                 }
             }

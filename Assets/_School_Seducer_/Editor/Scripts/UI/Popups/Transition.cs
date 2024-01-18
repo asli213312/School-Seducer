@@ -10,6 +10,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Popups
     {
         public abstract void SetData(ITransitionData data);
         public abstract void Transit();
-        public abstract void SetDataParent(IDataParent dataParent);
+        public abstract void SetDataParent(IDataParent dataRequestedParent);
     }
 }

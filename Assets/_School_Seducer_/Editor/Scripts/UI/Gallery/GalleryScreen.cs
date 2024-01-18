@@ -4,9 +4,11 @@ using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.UI.Gallery;
+using _School_Seducer_.Editor.Scripts.Utility;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace _School_Seducer_.Editor.Scripts.UI
 {
@@ -16,6 +18,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [SerializeField] private Chat.Chat chat;
         [SerializeField] private ContentScreen contentScreen;
         [SerializeField] private Transform galleryContent;
+        [SerializeField] private TextMeshProUGUI characterName;
         [SerializeField] private GalleryData data;
         [SerializeField] private GallerySlotView slotPrefab;
         [SerializeField] private GallerySectionButton[] sectionButtons;
@@ -30,7 +33,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private GallerySlotType _currentType;
         private GalleryCharacterData _currentGalleryData;
         private GallerySlotData _currentSlotData;
-        private List<GallerySlotData> _foundedSlotsInConversation = new();
+        private List<GallerySlotData> _foundedSlotsCurrentCharacter = new();
         private GallerySectionButton _currentActiveSectionButton;
 
         public void SetCurrentData(GalleryCharacterData currentData)
@@ -54,6 +57,28 @@ namespace _School_Seducer_.Editor.Scripts.UI
             InstallDefaultSection();
         }
 
+        private void OnEnable()
+        {
+            foreach (var section in sectionButtons)
+            {
+                SetCounterSlots(section.TypeSection);
+            }
+
+            characterName.text = chat.CurrentCharacter.name;
+        }
+
+        private void OnDisable()
+        {
+            if (_foundedSlotsCurrentCharacter.Count > 0) _foundedSlotsCurrentCharacter.Clear();
+            if (galleryContent.childCount > 0)
+            {
+                for (int i = 0; i < galleryContent.childCount; i++)
+                {
+                    Destroy(galleryContent.GetChild(i).gameObject);
+                }
+            }
+        }
+
         private void InstallDefaultSection()
         {
             SetSlotsByConversation(GallerySlotType.Photo);
@@ -67,7 +92,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
             _currentType = sectionButton.TypeSection;
             SetSlotsByConversation(sectionButton.TypeSection);
-            SetSlotsByData(sectionButton.TypeSection);
+            //SetSlotsByData(sectionButton.TypeSection);
         }
 
         private void SetSlotsByData(GallerySlotType section)
@@ -81,97 +106,70 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 if (slotData.Section == section)
                 {
                     GallerySlotView slotView = Instantiate(slotPrefab, galleryContent);
-                    slotView.Render(slotData);
-                    slotView.CheckCropWidePicture();
+                    slotView.Render(slotData, data.lockedSlot, data.frameSlot);
 
-                    switch (section)
-                    {
-                        case GallerySlotType.Photo:
-                            int totalPhotosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Photo);
-                            int totalPhotosCount = GetTotalCountSlotsInDataByType(GallerySlotType.Photo);
-                            
-                            photosCountText.text = $"{totalPhotosCount}/{totalPhotosCountConversation}";
-                            break;
-                        
-                        case GallerySlotType.Game:
-                            int totalGamesCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Game);
-                            int totalGamesCountData = GetTotalCountSlotsInDataByType(GallerySlotType.Game);
-                            
-                            Debug.Log("totalGamesCountConversation: " + totalGamesCountConversation);
-                            Debug.Log("totalGamesCountData: " + totalGamesCountData);
-                                
-                            gamesCountText.text = $"{totalGamesCountData}/{totalGamesCountConversation}";
-                            break;
-                        
-                        case GallerySlotType.Video:
-                            slotView.Render(slotData);
-                            int totalVideosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Video);
-                            int totalVideosCountData = GetTotalCountSlotsInDataByType(GallerySlotType.Video);
-                            
-                            videosCountText.text = $"{totalVideosCountData}/{totalVideosCountConversation}";
-                            break;
-                    }
+                    //SetCounterSlots(section);
 
                     if (slotData.AddedInGallery)
                     {
                         slotView.gameObject.Activate();
                     }
-                    else
-                        slotView.gameObject.Destroy();
                 }
             }
         }
 
         private void SetSlotsByConversation(GallerySlotType section)
         {
-            for (int j = 0; j < chat.CompletedMessages.Count; j++)
+            for (int j = 0; j < _foundedSlotsCurrentCharacter.Count; j++)
             {
-                if (chat.CompletedMessages[j].optionalData.GallerySlot != null)
+                GallerySlotData slotData = _foundedSlotsCurrentCharacter[j];
+
+                if (slotData.Section == section)
                 {
-                    GallerySlotData slotData = chat.CompletedMessages[j].optionalData.GallerySlot;
+                    GallerySlotView slotView = Instantiate(slotPrefab, galleryContent);
+                    slotView.Render(slotData, data.lockedSlot, data.frameSlot);
+                    
+                    slotView.GetComponent<OpenContent>().SetCondition(new (slotView.Data.AddedInGallery));
 
-                    if (slotData.Section == section)
+                    //SetCounterSlots(section);
+
+                    if (slotData.AddedInGallery && _currentGalleryData.IsOriginalData(slotData))
                     {
-                        GallerySlotView slotView = Instantiate(slotPrefab, galleryContent);
-                        slotView.Render(slotData);
-                        slotView.CheckCropWidePicture();
-
-                        switch (section)
-                        {
-                            case GallerySlotType.Photo:
-                                int totalPhotosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Photo);
-                                int totalPhotosCount = GetTotalCountSlotsInDataByType(GallerySlotType.Photo);
-
-                                photosCountText.text = $"{totalPhotosCount}/{totalPhotosCountConversation}";
-                                break;
-                        
-                            case GallerySlotType.Game:
-                                int totalGamesCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Game);
-                                int totalGamesCountData = GetTotalCountSlotsInDataByType(GallerySlotType.Game);
-                            
-                                Debug.Log("totalGamesCountConversation: " + totalGamesCountConversation);
-                                Debug.Log("totalGamesCountData: " + totalGamesCountData);
-                                
-                                gamesCountText.text = $"{totalGamesCountData}/{totalGamesCountConversation}";
-                                break;
-                        
-                            case GallerySlotType.Video:
-                                int totalVideosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Video);
-                                int totalVideosCountData = GetTotalCountSlotsInDataByType(GallerySlotType.Video);
-                            
-                                videosCountText.text = $"{totalVideosCountData}/{totalVideosCountConversation}";
-                                break;
-                        }
-                        
-                        if (slotData.AddedInGallery && _currentGalleryData.IsOriginalData(slotData))
-                        {
-                            slotView.gameObject.Destroy();
-                            _currentGalleryData.AddSlotData(slotData);
-                        }
-                        else
-                            slotView.gameObject.Destroy();
+                        //slotView.gameObject.Destroy();
+                        _currentGalleryData.AddSlotData(slotData);
                     }
                 }
+            }
+        }
+
+        private void SetCounterSlots(GallerySlotType section)
+        {
+            switch (section)
+            {
+                case GallerySlotType.Photo:
+                    int totalPhotosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Photo);
+                    int totalPhotosCount = GetTotalAddedSlotsByType(GallerySlotType.Photo);
+
+                    photosCountText.text = $"{totalPhotosCount}/{totalPhotosCountConversation}";
+                    break;
+
+                case GallerySlotType.Game:
+                    int totalGamesCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Game);
+                    int totalGamesCountData = GetTotalAddedSlotsByType(GallerySlotType.Game);
+
+                    Debug.Log("totalGamesCountConversation: " + totalGamesCountConversation);
+                    Debug.Log("totalGamesCountData: " + totalGamesCountData);
+
+                    gamesCountText.text = $"{totalGamesCountData}/{totalGamesCountConversation}";
+                    break;
+
+                case GallerySlotType.Video:
+                    //slotView.Render(slotData, );
+                    int totalVideosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Video);
+                    int totalVideosCountData = GetTotalAddedSlotsByType(GallerySlotType.Video);
+
+                    videosCountText.text = $"{totalVideosCountData}/{totalVideosCountConversation}";
+                    break;
             }
         }
 
@@ -209,7 +207,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
                         if (branchSlotData.Section == section && branchSlotData.NeedInGallery)
                         {
                             countedSlotsByType++;
-                            _foundedSlotsInConversation.Add(branchSlotData);
+                            _foundedSlotsCurrentCharacter.Add(branchSlotData);
                             Debug.Log($"Found a slot of type {section} in branch {branch.BranchName} for message {innerBranchMessage.Msg}.");
                         }
                         else
@@ -246,7 +244,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
                         if (slotData.Section == slotType && slotData.NeedInGallery)
                         {
                             countedSlotsByType++;
-                            _foundedSlotsInConversation.Add(slotData);
+                            _foundedSlotsCurrentCharacter.Add(slotData);
                             Debug.Log($"Found a slot of type {slotType} in main {i} message.");
                         }
                         else
@@ -310,6 +308,20 @@ namespace _School_Seducer_.Editor.Scripts.UI
             }
 
             return selectedSlots;
+        }
+
+        private int GetTotalAddedSlotsByType(GallerySlotType typeSlot)
+        {
+            int countedSlotsByType = 0;
+
+            foreach (var foundedSlot in _foundedSlotsCurrentCharacter)
+            {
+                if (foundedSlot.Section != typeSlot) continue;
+
+                if (foundedSlot.AddedInGallery) countedSlotsByType++;
+            }
+
+            return countedSlotsByType;
         }
 
         private int GetTotalCountSlotsInDataByType(GallerySlotType typeSlot)

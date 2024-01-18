@@ -21,7 +21,7 @@ MonoBehaviour:
   rotationSpeed: 150
   decelerationCharactersWheel: 100
   decelerationMin: 100
-  decelerationMax: 190
+  decelerationMax: 165
   showDebugParameters: 1
   hints:
   - {fileID: 0}

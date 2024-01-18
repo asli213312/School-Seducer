@@ -32,10 +32,7 @@ MonoBehaviour:
   storyTellerName: ffrfrfgtgtgtgtg
   NeedIconStoryTeller: 0
   ChatCompletedSprite: {fileID: 21300000, guid: 61570fe4a09b3644c95ed0c25fdc9ece, type: 3}
-  ChatUncompletedSprite: {fileID: 21300000, guid: e7950fd25b185d24f86759487e51c315, type: 3}
-  Chats:
-  - {fileID: 11400000, guid: 2d7ec7a146fc78844bab40be0177cbf1, type: 2}
-  - {fileID: 11400000, guid: 70dcabdf9ceffaa4f8ed70313909f7aa, type: 2}
+  ChatUncompletedSprite: {fileID: 21300000, guid: fc0c259c2ce5a094ea0fe6293f8ee16b, type: 3}
   MainHeight: 100
   OneOptionWidth: 824.63
   TwoOptionsWidth: 400
@@ -43,4 +40,13 @@ MonoBehaviour:
   delayAudioMsg: 0
   DelayBtwMessage: 1
   DurationSendingPicture: 5
+  mainFont: {fileID: 11400000, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
   CoinsForMessage: 1
+  leftActorColorMsg: {r: 0.4392157, g: 0.16862746, b: 0.50980395, a: 1}
+  rightActorColorMsg: {r: 0, g: 0, b: 0, a: 1}
+  storyTellerColorMsg: {r: 0.039215688, g: 0.10196079, b: 0.18039216, a: 1}
+  branchColor: {r: 0.8588236, g: 0.882353, b: 0.9176471, a: 1}
+  leftActorBlockMsg: {fileID: 21300000, guid: 4e21fedff4d3e174ab92e5b0fd3f8d37, type: 3}
+  rightActorBlockMsg: {fileID: 21300000, guid: a2452b9cda985124a89a5b00d5236781, type: 3}
+  storyTellerBlockMsg: {fileID: 21300000, guid: e69c8256c5766834c8d8e910061a4d7b, type: 3}
+  branchBlockMsg: {fileID: 21300000, guid: ad51abb1d4d3b8d4baf22418d4634466, type: 3}

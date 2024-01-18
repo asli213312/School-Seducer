@@ -29,7 +29,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         [Header("PushUps")] 
         [SerializeField] private Push giftSpinPush;
-        [SerializeField] private RectTransform unlockNewStoryPush;
+        [SerializeField] private Push unlockNewStoryPush;
 
         [Header("UI elements")] 
         [SerializeField] private TextMeshProUGUI goldText;
@@ -38,6 +38,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         [SerializeField] private Transform wheelTransform;
         [SerializeField] private Slider expSlider;
         [SerializeField] private Button spinButton;
+        [SerializeField] private Button closeButton;
         [SerializeField] private RectTransform scrollCharactersContent;
         [SerializeField] private RectTransform marker;
         [SerializeField] private RectTransform goToStopCharactersWheel;
@@ -51,9 +52,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private WheelSlot _currentWinSlot;
         private Vector3 _goToStopWheelPosition;
 
-        private readonly Color _activeButtonColor = Color.green;
-        private readonly Color _inactiveButtonColor = Color.red;
-        
         private float _rotationSpeed;
         private float _deceleration;
 
@@ -75,7 +73,13 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             _eventManager.UpdateTextMoneyEvent += UpdateGoldText;
             
-            _eventManager.UpdateTextMoney();
+            // open chat button
+            unlockNewStoryPush.Buttons[0].AddListener(() =>
+            {
+                unlockNewStoryPush.gameObject.Deactivate();
+                gameObject.Deactivate(1);
+                previewer.OnCharacterSelected(previewer.CurrentCharacter);
+            }); 
         }
 
         private void UpdateGoldText()
@@ -85,12 +89,14 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         private void Start()
         {
-            gameObject.Deactivate();
+            //gameObject.Deactivate();
             InitializeSlots();
 
             InitParametersData();
 
             previewer.Characters.ForEach(character => CheckResetCharacter(character.Data));
+            
+            _eventManager.UpdateTextMoney();
         }
 
         private void OnDestroy()
@@ -101,6 +107,13 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             _eventManager.ChangeValueExperienceEvent -= OnChangeValueExperience;
             
             _eventManager.UpdateTextMoneyEvent -= UpdateGoldText;
+            
+            unlockNewStoryPush.Buttons[0].RemoveListener(() =>
+            {
+                unlockNewStoryPush.gameObject.Deactivate();
+                gameObject.Deactivate(1);
+                previewer.OnCharacterSelected(previewer.CurrentCharacter);
+            }); 
         }
         
         private void OnChangeValueExperience(int newValue)
@@ -205,8 +218,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             if (_isCharacters == false) yield return new WaitForSeconds(data.timeShowStopButton);
 
-            SetSpinButtonStopStatus();
-            
             SetSpinButtonNoneStatus();
             yield return new WaitUntil(StopWheel);
 
@@ -228,7 +239,9 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
                 if (winCharacter == null) yield return new WaitForSeconds(1);
 
-                    winCharacterData = winCharacter.Data;
+                winCharacterData = winCharacter.Data;
+
+                previewer.CurrentCharacter = winCharacter;
 
                 Debug.Log("Found character after spin: " + winCharacter.Data.name);
 
@@ -237,8 +250,11 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 if (winCharacter.Data.ConversationsUnlocked() == false)
                     previewer.StoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
                 
+                previewer.StoryResolver.UpdateStatusViews();
+                
                 winCharacter.Data.ChangeExperience(_winGiftExp);
-            
+                OnChangeValueExperience(winCharacter.Data.experience);
+
                 previewer.StoryResolver.SetSliderValue(winCharacter.Data.experience);
             
                 _eventManager.UpdateTextExperience();
@@ -291,12 +307,12 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         private void ShowGiftPush()
         {
-            StartCoroutine(giftSpinPush.transform.DoLocalScaleAndUnscale(this, Vector3.one, 2));
+            StartCoroutine(giftSpinPush.transform.DoLocalScaleAndUnscale(this, new Vector3(0.9f, 0.9f, 0.9f)));
         }
 
         private void ShowUnlockStoryPush()
         {
-            StartCoroutine(unlockNewStoryPush.DoLocalScaleAndUnscale(this, Vector3.one, 3));
+            StartCoroutine(unlockNewStoryPush.transform.DoLocalScaleAndUnscale(this, new Vector3(0.9f, 0.9f, 0.9f)));
         }
 
         private void SetSpinWheelCharacters()
@@ -314,7 +330,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             
             Debug.Log("Character slot is null? " + _currentWinSlot.name);
             
-            //if (_currentWinSlot != null) giftSpinPush.SetDataParent(new DataParentImage(_currentWinSlot.Image, nameof(_currentWinSlot)));
+            if (_currentWinSlot != null) giftSpinPush.InitializeTransitionParent(0, new DataParentImage(_currentWinSlot.Image, null));
             
             _winSlotCol = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
             _winSlotColCharacter = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
@@ -337,9 +353,11 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 _currentWinSlot = _isCharacters == false ? FindSlotForProbability(slots) : FindSlotForProbability(_characterSlots);
                 _winSlotCol = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
                 _winSlotColCharacter = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
-                
+
                 giftSpinPush.SetDataParent(new DataParentImage(_currentWinSlot.Image, nameof(_currentWinSlot)));
                 
+                giftSpinPush.MakeTransitions();
+
                 Debug.Log("winSlot: " + _currentWinSlot.Data.name);
                 
                 //_targetRotation = 360 * Random.Range(3, 6) + (360 / slots.Length) * Random.Range(0, slots.Length);
@@ -437,42 +455,20 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         {
             textSpin.text = "";
             spinButton.interactable = false;
+            closeButton.interactable = false;
         }
 
         private void SetSpinButtonSpinStatus()
         {
-            SetSpinButtonActive();
-            textSpin.text = "SPIN";
+            textSpin.text = "SPIN!";
             spinButton.interactable = true;
+            closeButton.interactable = true;
         }
 
-        private void SetSpinButtonStopStatus()
-        {
-            SetSpinButtonColorInactive();
-            textSpin.text = "STOP";
-            spinButton.interactable = true;
-        }
-        
         private void SetSpinButtonUnavailableStatus()
         {
-            SetSpinButtonColorInactive();
             textSpin.text = "MAX";
             spinButton.interactable = false;
-        }
-
-        private void SetSpinButtonColorInactive()
-        {
-            SetSpinButtonColor(_inactiveButtonColor);
-        }
-
-        private void SetSpinButtonActive()
-        {
-            SetSpinButtonColor(_activeButtonColor);
-        }
-
-        private void SetSpinButtonColor(Color colorStatus)
-        {
-            spinButton.GetComponent<Image>().color = colorStatus;
         }
 
         private Character FindCharacterByWinSlot()

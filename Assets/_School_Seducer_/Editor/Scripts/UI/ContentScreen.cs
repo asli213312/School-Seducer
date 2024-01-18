@@ -134,6 +134,9 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 if (nextSlot is GallerySlotView)
                 {
                     GallerySlotView slotGallery = nextSlot as GallerySlotView;
+
+                    if (slotGallery.Data.AddedInGallery == false) return;
+                    
                     SetContent(slotGallery.Data.Sprite);
                     _currentContent = slotGallery.GetComponent<Image>();
                     _currentIndexContent = newIndex;    

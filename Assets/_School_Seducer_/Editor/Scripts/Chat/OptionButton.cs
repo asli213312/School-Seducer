@@ -2,6 +2,7 @@
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,6 +15,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     public class OptionButton : MonoBehaviour, IObservableCustom<MonoBehaviour>
     {
         [SerializeField] private ChatConfig _chatConfig;
+        [SerializeField] private TextMeshProUGUI text;
         [Inject] private DiContainer _container;
         [Inject] private SoundHandler _soundHandler;
         [Inject] private EventManager _eventManager;
@@ -98,19 +100,22 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             LocalizedUIObject localizedComponent = GetComponent<LocalizedUIObject>();
             //localizedComponent.SetLocalizator(_localizer);
-            Text textComponent = GetComponentInChildren<Text>();
+            TextMeshProUGUI textComponent = GetComponentInChildren<TextMeshProUGUI>();
             Translator.Languages currentLanguage = localizedComponent.LocalizedData.Find(x => x.languageCode == _localizer.GlobalLanguageCodeRuntime);
             textComponent.text = currentLanguage.key;
         }
 
         private void SetupBackGroundImage(GameObject option)
         {
-            FigmaImage optionImage = option.GetComponent<FigmaImage>();
-            optionImage.StrokeColor = GetComponent<FigmaImage>().StrokeColor;
-            optionImage.FillColor = GetComponent<FigmaImage>().FillColor;
-            optionImage.FillGradient = GetComponent<FigmaImage>().FillGradient;
-            optionImage.GradientHandlePositions = GetComponent<FigmaImage>().GradientHandlePositions;
-            optionImage.Fill = FigmaImage.FillStyle.LinearGradient;
+            Image optionImage = option.GetComponent<Image>();
+            optionImage.sprite = _chatConfig.rightActorBlockMsg;
+
+            // FigmaImage optionImage = option.GetComponent<FigmaImage>();
+            // optionImage.StrokeColor = GetComponent<FigmaImage>().StrokeColor;
+            // optionImage.FillColor = GetComponent<FigmaImage>().FillColor;
+            // optionImage.FillGradient = GetComponent<FigmaImage>().FillGradient;
+            // optionImage.GradientHandlePositions = GetComponent<FigmaImage>().GradientHandlePositions;
+            // optionImage.Fill = FigmaImage.FillStyle.LinearGradient;
         }
 
         private GameObject CreateOptionParent()
@@ -128,13 +133,17 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             RectTransform newOptionRect = newOption.GetComponent<RectTransform>();
             Button newOptionButton = newOption.GetComponent<Button>();
             HorizontalLayoutGroup parentHorizontalLayout = newOptionParent.GetComponent<HorizontalLayoutGroup>();
+            TextMeshProUGUI textComponent = newOption.GetComponentInChildren<TextMeshProUGUI>();
 
             newOption.Activate();
             newOptionRect.sizeDelta = new Vector2(660, 100);
             newOptionButton.interactable = false;
 
             parentHorizontalLayout.childAlignment = TextAnchor.MiddleLeft;
-            parentHorizontalLayout.padding.left = 73;
+            parentHorizontalLayout.padding.left = 205;
+
+            textComponent.color = _chatConfig.rightActorColorMsg;
+            textComponent.font = _chatConfig.mainFont;
 
             KeepOnlyOneSibling(newOptionParent, newOption.GetComponent<OptionButton>());
             

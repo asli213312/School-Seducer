@@ -26,14 +26,14 @@ MonoBehaviour:
   - fieldLabel: _currentLanguage
     localizedDataList: []
   costExp: 10
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
   localizator:
     translationJson: {fileID: 0}
     _translator:
       languages: []
   <Language>k__BackingField: 0
   isCompleted: 0
-  isUnlocked: 1
-  conversationIndex: 0
+  isUnlocked: 0
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: CrazyEN
@@ -48,15 +48,19 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
-    localizedAudioClips: []
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
-    Msg: this chapter 1
+    Msg: Now begineeng chapter 1
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
-    localizedAudioClips: []
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: Ones upon time...
     optionalData:
@@ -68,7 +72,7 @@ MonoBehaviour:
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: not translated
     optionalData:
-      GallerySlot: {fileID: 11400000, guid: e1be4037a0d997b4289fa1f51f396142, type: 2}
+      GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}

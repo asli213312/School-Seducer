@@ -32,6 +32,8 @@ namespace _BonGirl_.Editor.Scripts
             Time.timeScale = 1;
         }
 
+        public void ResetPause() => Time.timeScale = 1;
+
         public void SafeOpenPanel(GameObject panel)
         {
             if (_currentPanel == null)

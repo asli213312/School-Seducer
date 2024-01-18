@@ -14,16 +14,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 {
     public class MessageDefaultView : MessageViewBase, IMessage
     {
+        [SerializeField] private Image background;
         [SerializeField] private Button audioButtonLeftActor;
         [SerializeField] private Button audioButtonRightActor;
 
         private List<LocalizedScriptableObject.LocalizedData> _localizedData;
-
-        public Button AudioButtonLeftActor => audioButtonLeftActor;
-        public Button AudioButtonRightActor => audioButtonRightActor;
+        
         private Button _currentAudioButtonActor;
-            
-        public MessageSender MessageSender { get; set; }
+
+        public MessageSender MessageSender => Sender;
 
         private Transform _content;
         private SoundHandler _soundHandler;
@@ -31,8 +30,37 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void Initialize(OptionButton[] optionButtons)
         {
-            MessageSender = Sender;
             OptionButtons = optionButtons;
+        }
+
+        public bool NeedPaddings() => Sender != MessageSender.StoryTeller;
+
+        public void SetBlockBackground(Sprite leftActor, Sprite rightActor, Sprite storyTeller)
+        {
+            Sprite selectedBlock = null;
+            
+            switch (Sender)
+            {
+                case MessageSender.ActorLeft: selectedBlock = leftActor; break;
+                case MessageSender.ActorRight: selectedBlock = rightActor; break;
+                case MessageSender.StoryTeller: selectedBlock = storyTeller; break;
+            }
+
+            background.sprite = selectedBlock;
+        }
+
+        public void SetFontColor(Color actorLeft, Color actorRight, Color storyTeller)
+        {
+            Color selectedColor = Color.clear;
+            
+            switch (Sender)
+            {
+                case MessageSender.ActorLeft: selectedColor = actorLeft; break;
+                case MessageSender.ActorRight: selectedColor = actorRight; break;
+                case MessageSender.StoryTeller: selectedColor = storyTeller; break;
+            }
+            
+            msgText.color = selectedColor;
         }
 
         public void InstallLanguageCode(string languageCode) => _currentLanguageCode = languageCode;
@@ -145,7 +173,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     _currentAudioButtonActor = audioButtonLeftActor;
 
                     RectTransform audioLeftRect = audioButtonLeftActor.GetComponent<RectTransform>();
-                    audioLeftRect.Translate(Vector2.left * 6.2f);
+                    audioLeftRect.anchorMax = new Vector2(0, 0.5f);
+                    audioLeftRect.anchorMin = new Vector2(0, 0.5f);
+                    audioLeftRect.Translate(Vector2.left * 1.3f);
                 }
 
                 _soundHandler.InvokeClipAfterExistClip(InvokeAudioMsg);

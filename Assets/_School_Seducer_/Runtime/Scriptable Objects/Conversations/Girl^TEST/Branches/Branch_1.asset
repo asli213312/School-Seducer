@@ -48,20 +48,14 @@ MonoBehaviour:
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
-    localizedData:
-    - languageCode: en
-      key: Hello, young man.
-    - languageCode: fr
-      key: Bonjour, fjeune homme.
+    localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
     Msg: Hello, it's a pleasure to see you.
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
-      Branches: []
+      Branches:
+      - {fileID: 11400000, guid: 84697a5d927912e4598e97270511f91c, type: 2}
+      - {fileID: 11400000, guid: c05b307d24ea806439d0192e47787a2f, type: 2}
     AudioMsg: {fileID: 0}
-    localizedData:
-    - languageCode: en
-      key: Hello, it's a pleasure to see you.
-    - languageCode: fr
-      key: Bonjour, c'est un plaisir de vous voir.
+    localizedAudioClips: []
