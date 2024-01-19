@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
-  m_Name: TEST
+  m_Name: Meeting
   m_EditorClassIdentifier: 
   localizedFields:
   - fieldLabel: <Language>k__BackingField
@@ -30,9 +30,9 @@ MonoBehaviour:
   - fieldLabel: _currentLanguage
     localizedDataList: []
   costExp: 0
-  iconStory: {fileID: 0}
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
   localizator:
-    translationJson: {fileID: 0}
+    translationJson: {fileID: 4900000, guid: bb2fa492d6385624fa82d584c505d331, type: 3}
     _translator:
       languages:
       - languageCode: en
@@ -144,15 +144,15 @@ MonoBehaviour:
             \u0442\u0443\u0442 \u0441\u0442\u043E\u0438\u0442 \u0437\u0435\u0440\u043A\u0430\u043B\u043E!"
   <Language>k__BackingField: 0
   isCompleted: 1
-  isUnlocked: 0
+  isUnlocked: 1
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: GirlEN
-  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
   actorRightName: 
-  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
   Messages:
-  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Yo, check it out \u2013 this is gonna be my crib \n for the next couple
       of years. Not exactly \n a penthouse, but it's chill. I'm curious \n about
       my future roomie though. I hope \n he's not a total nerd, you know? I don't
@@ -161,72 +161,82 @@ MonoBehaviour:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: a8f78d8f70825924685b611242252c6a, type: 3}
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
-    - languageCode: fr
-      key: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
-    - languageCode: ru
-      key: {fileID: 8300000, guid: 2abbd0420d837c24a9236065ecb7d08a, type: 3}
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+      key: {fileID: 8300000, guid: a8f78d8f70825924685b611242252c6a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh, snap, there he is!
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
-    localizedAudioClips: []
-  - ActorIcon: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
+    AudioMsg: {fileID: 8300000, guid: a04d24afa858ca64e9b142831623df97, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a04d24afa858ca64e9b142831623df97, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Hey! I was almost wandering \n lost trying to find this joint."
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
-    localizedAudioClips: []
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    AudioMsg: {fileID: 8300000, guid: d3094efd980620c4cb01ab0bc9a0b47b, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: d3094efd980620c4cb01ab0bc9a0b47b, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Umm, hey!
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
-    localizedAudioClips: []
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 83f1049833b43eb479b7d78975128c20, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 83f1049833b43eb479b7d78975128c20, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Hey, mind scooting over a bit?  \n Can't get in with you blocking the doorway."
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
-    localizedAudioClips: []
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 22a7a7e9ecbe4aa4e982f2165557f3eb, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 22a7a7e9ecbe4aa4e982f2165557f3eb, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Oh, my bad... Sure thing! I thought it was \n my new roomie showing up.
       \n Haven't met the dude yet."
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
-    localizedAudioClips: []
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    AudioMsg: {fileID: 8300000, guid: f863a011fb309bb449fbc898dae36532, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f863a011fb309bb449fbc898dae36532, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Oh, you don't know? I'm your new roomie. \n Hope you're cool with that."
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
-    localizedAudioClips: []
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    AudioMsg: {fileID: 8300000, guid: fb1c0c073869b5343bd978f67bd7d36c, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: fb1c0c073869b5343bd978f67bd7d36c, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: I... umm... well...
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
-    localizedAudioClips: []
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    AudioMsg: {fileID: 8300000, guid: a4f4c5e5a110b5c4a9dddd38a8dc1d9a, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a4f4c5e5a110b5c4a9dddd38a8dc1d9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Supposed to be Douglas, but he's hitting \n it off with my girl Veronica.
       \n So, they asked me and Douglas to swap rooms. \n Douglas is bunking with
       Veronica, \n and now I'm rooming with..."
@@ -234,20 +244,105 @@ MonoBehaviour:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
-    localizedAudioClips: []
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    AudioMsg: {fileID: 8300000, guid: c0b8af2c6a6cdb14ca6713f900b6b90a, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c0b8af2c6a6cdb14ca6713f900b6b90a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Umm, with who?
     optionalData:
       GallerySlot: {fileID: 0}
       Animation: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 0}
-    localizedAudioClips: []
-  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 807aa0628788759418d0aab278f9f15b, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 807aa0628788759418d0aab278f9f15b, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: What's your name?
     optionalData:
       GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: d0ec8ae97289c1a49963386834f30d03, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: d0ec8ae97289c1a49963386834f30d03, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Oh, my bad, I'm Ben.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: c174c84804444f74188e1b2274f74fe1, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c174c84804444f74188e1b2274f74fe1, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+    Msg: "Nice to meet you, Ben. \n Cool with sharing the room?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: e9b95803dbc4ab9488307f251c8c8881, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e9b95803dbc4ab9488307f251c8c8881, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Me? Oh, hell yeah, come on in!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 76c260d9475d8bb428462151ed80790c, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 76c260d9475d8bb428462151ed80790c, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+    Msg: "But listen up, from now on, \n you and I are roomies! \n Just keeping it
+      friendly, you feel me?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 2af65a1e9359f784e80900121cd4a566, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2af65a1e9359f784e80900121cd4a566, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Yeah, sure.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 2ca056f08c18de949809f4798c74010a, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2ca056f08c18de949809f4798c74010a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+    Msg: "We're gonna vibe, man! Now, \n turn around, I gotta change real quick."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: e66dbb0a55e8f55498409166bef0ed2c, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e66dbb0a55e8f55498409166bef0ed2c, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Whoa, they got a mirror set up \n like it's meant to be here!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Animation: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: c5c19b8ae3391a04dac0426752521230, type: 3}
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c5c19b8ae3391a04dac0426752521230, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+    Msg: "Whoa, they got a mirror set up \n like it's meant to be here!"
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: bc1c9787b8e7696418513545f73e74ce, type: 2}
       Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}

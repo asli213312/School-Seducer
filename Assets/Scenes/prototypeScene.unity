@@ -7110,6 +7110,7 @@ MonoBehaviour:
   _characters:
   - {fileID: 617398865}
   - {fileID: 326904585}
+  - {fileID: 1068797172}
   showDebugParameters: 0
 --- !u!114 &667505091
 MonoBehaviour:
@@ -7509,7 +7510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 719433697}
   - component: {fileID: 719433696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7557,12 +7558,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -930549590, guid: ed9912528b4c0c94ba74ae4288f8dcbf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.8, y: 9.62}
+  m_Size: {x: 11.8, y: 13.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7577,7 +7578,7 @@ Transform:
   m_GameObject: {fileID: 719433695}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0062056035, y: 0.071, z: 0}
-  m_LocalScale: {x: 0.20116606, y: 0.19981964, z: 0.20116606}
+  m_LocalScale: {x: 0.12975211, y: 0.12888366, z: 0.12975211}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1068797173}
@@ -11880,8 +11881,8 @@ GameObject:
   - component: {fileID: 1068797173}
   - component: {fileID: 1068797172}
   - component: {fileID: 1068797174}
-  m_Layer: 0
-  m_Name: School Girl
+  m_Layer: 6
+  m_Name: Emily
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11931,7 +11932,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021185428, y: 0.054437667}
+  m_Offset: {x: -0.05685374, y: 0.05035782}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11942,7 +11943,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3564937, y: 1.1088753}
+  m_Size: {x: 0.64400584, y: 1.6718912}
   m_EdgeRadius: 0
 --- !u!224 &1112144794 stripped
 RectTransform:
@@ -17422,7 +17423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1795815814}
   - component: {fileID: 1795815815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
