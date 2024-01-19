@@ -33,7 +33,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             OptionButtons = optionButtons;
         }
 
-        public bool NeedPaddings() => Sender != MessageSender.StoryTeller;
+        public bool NeedPaddings() => Sender != MessageSender.StoryTeller && Sender != MessageSender.ActorRight;
 
         public void SetBlockBackground(Sprite leftActor, Sprite rightActor, Sprite storyTeller)
         {

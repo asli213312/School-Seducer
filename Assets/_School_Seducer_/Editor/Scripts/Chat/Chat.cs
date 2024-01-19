@@ -239,7 +239,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (newMsg is MessageDefaultView defaultView)
             {
                 if (defaultView.NeedPaddings() == false)
+                {
                     paddingBack.gameObject.Deactivate();
+                }
             }
 
             Debug.Log("Render completed");
