@@ -20,8 +20,8 @@ MonoBehaviour:
   timeShowStopButton: 3
   rotationSpeed: 150
   decelerationCharactersWheel: 100
-  decelerationMin: 100
-  decelerationMax: 165
+  decelerationMin: 90
+  decelerationMax: 90
   showDebugParameters: 1
   hints:
   - {fileID: 0}

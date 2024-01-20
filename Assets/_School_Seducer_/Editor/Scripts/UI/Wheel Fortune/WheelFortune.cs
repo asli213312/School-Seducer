@@ -447,6 +447,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private void ResetSpinStatus()
         {
             _rotationSpeed = data.rotationSpeed;
+            _deceleration = Random.Range(data.decelerationMin, data.decelerationMax);
             _isSpinning = false;
             _needStopWheel = false;
         }

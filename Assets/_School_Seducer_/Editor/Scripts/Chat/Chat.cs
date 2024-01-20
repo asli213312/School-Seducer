@@ -631,6 +631,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (_chatStatusViews.Count > 0)
                 _chatStatusViews.Clear();
         }
+        
+        public void ResetCurrentConversaton() => CurrentConversationData = null;
 
         public void ResetContent()
         {
@@ -656,6 +658,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 if (contentMsgs.GetChild(i) != contentMsgs.Find("Options"))
                     Destroy(contentMsgs.GetChild(i).gameObject);
             }
+            
+           
         }
     }
 

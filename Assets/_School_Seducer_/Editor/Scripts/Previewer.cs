@@ -123,6 +123,8 @@ namespace _School_Seducer_.Editor.Scripts
             }
             
             previewerPanel.Activate();
+            
+            if (CurrentCharacter != character) _chat.ResetContent();
 
             CurrentCharacter = character;
 	        _currentConversation = CurrentCharacter.currentConversation;
@@ -132,6 +134,7 @@ namespace _School_Seducer_.Editor.Scripts
 
             _chat.DeactivateStatusViews();
             _chat.ResetStatusViews();
+           
             _chat.InstallCharacterData(CurrentCharacter.Data);
             
             //Invoke(nameof(RegisterStartDialogue), 0.3f);

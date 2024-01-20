@@ -15,7 +15,7 @@ MonoBehaviour:
   currentConversation: {fileID: 11400000, guid: 3439c0f2765e41745872053657579534, type: 2}
   allConversations:
   - {fileID: 11400000, guid: 3439c0f2765e41745872053657579534, type: 2}
-  gallery: {fileID: 11400000, guid: 0ebffcf234a803245a142c4da8466a8b, type: 2}
+  gallery: {fileID: 11400000, guid: 4fdcb8444037b4549a4d8713881e0675, type: 2}
   requiredLevel: 2
   loyalty: 1
   maxLoyalty: 3

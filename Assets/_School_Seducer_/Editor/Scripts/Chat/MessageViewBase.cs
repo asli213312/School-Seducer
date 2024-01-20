@@ -119,6 +119,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             AlignSizeDelta alignMain = gameObject.AddComponent<AlignSizeDelta>();
             alignMain.Initialize(parentRect, gameObject.GetComponent<RectTransform>(), msgText.text.Length);
 
+            VerticalLayoutGroup speechBubbleLayout = transform.GetChild(1).GetComponent<VerticalLayoutGroup>();
+            speechBubbleLayout.padding.left = 18;
+            speechBubbleLayout.padding.right = 30;
+
             SetPivotPosTopMode(leftBorderActor.GetComponent<RectTransform>());
 
             AdjustSizesAndPositions(parent, contentRight, paddingForward);

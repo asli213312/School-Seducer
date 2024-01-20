@@ -22,4 +22,4 @@ MonoBehaviour:
   loyalty: 1
   maxLoyalty: 1
   showDebugParameters: 0
-  experience: 1
+  experience: 0

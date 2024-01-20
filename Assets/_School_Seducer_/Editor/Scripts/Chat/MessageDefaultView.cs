@@ -178,7 +178,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     audioLeftRect.Translate(Vector2.left * 1.3f);
                 }
 
-                _soundHandler.InvokeClipAfterExistClip(InvokeAudioMsg);
+                //_soundHandler.InvokeClipAfterExistClip(InvokeAudioMsg);
+                if (_soundHandler.IsClipPlaying())
+                {
+                    _soundHandler.StopClip();
+                    InvokeAudioMsg();
+                }
+                else
+                    InvokeAudioMsg();
             }
         }
 

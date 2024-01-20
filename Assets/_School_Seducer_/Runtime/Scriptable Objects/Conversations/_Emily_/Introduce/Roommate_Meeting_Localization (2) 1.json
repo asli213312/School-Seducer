@@ -18,9 +18,8 @@
 	{"key": "Nice to meet you, Ben. \n Cool with sharing the room?"},
 	{"key": "Me? Oh, hell yeah, come on in!"},
 	{"key": "But listen up, from now on, \n you and I are roomies! \n Just keeping it friendly, you feel me?"},
-	{"key": "Oh, sure, I wasn't thinking anything else."},
-	{"key": "We're gonna vibe, man! Now, \n turn around, I gotta change real quick."},
 	{"key": "Yeah, sure."},
+	{"key": "We're gonna vibe, man! Now, \n turn around, I gotta change real quick."},
 	{"key": "Whoa, they got a mirror set up \n like it's meant to be here!"}
       ]
     },
@@ -42,9 +41,8 @@
         {"key": "Приятно познакомиться, Бэн, я Эмили. \n Ну что, ты не против \n делить со мной комнату?"},
         {"key": "Я? Нет, конечно, я не против, проходи!"},
         {"key": "Но смотри, с этого момента мы с тобой \n соседи по комнате! Между нами не может \n быть ничего, кроме дружеских \n отношений, договорились?"},
-        {"key": "А, да, разумеется, \n я и не думал ни о чём таком."},
-        {"key": "Думаю, мы отлично поладим! \n А теперь отвернись, пожалуйста, \n мне надо переодеться."},
         {"key": "Да, конечно."},
+        {"key": "Думаю, мы отлично поладим! \n А теперь отвернись, пожалуйста, \n мне надо переодеться."},
         {"key": "Ого, как удачно тут стоит зеркало!"}
       ]
     }

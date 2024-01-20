@@ -10,6 +10,7 @@ namespace _BonGirl_.Editor.Scripts
         [Inject] private LocalizedGlobalMonoBehaviour _localizer;
         private GameObject _currentPanel;
         private Vector3 _startPanelScaled;
+       
 
         public void SelectLanguage(string languageCode)
         {
@@ -31,7 +32,7 @@ namespace _BonGirl_.Editor.Scripts
         {
             Time.timeScale = 1;
         }
-
+        
         public void ResetPause() => Time.timeScale = 1;
 
         public void SafeOpenPanel(GameObject panel)
