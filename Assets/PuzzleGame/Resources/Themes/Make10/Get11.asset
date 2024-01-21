@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price:
     type: 0
-    value: 50
+    value: 10
   brickLabel:
     labelType: 0
     collection: {fileID: 0}

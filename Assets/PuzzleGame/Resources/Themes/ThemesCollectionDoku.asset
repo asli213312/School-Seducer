@@ -12,11 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001b640a8a034ab48c0afe8c3252f494, type: 3}
   m_Name: ThemesCollectionDoku
   m_EditorClassIdentifier: 
-  themes:
-  - {fileID: 11400000, guid: 42793d7e650fb11448b871109ea6230f, type: 2}
-  - {fileID: 11400000, guid: a75fb7ebb1936c94caeca8109a4b52e0, type: 2}
-  - {fileID: 11400000, guid: c5a9e3e35b256ea408236832e55a2052, type: 2}
-  - {fileID: 11400000, guid: 41651ceddf4cc534ab1f9cf90c594a95, type: 2}
-  - {fileID: 11400000, guid: 0726fbadd63fca64a98510c24e4a43f4, type: 2}
-  - {fileID: 11400000, guid: b3e42c524fcf32646895680215234bd3, type: 2}
-  - {fileID: 11400000, guid: 5f511c038c54e62498bda727085a079d, type: 2}
+  themes: []

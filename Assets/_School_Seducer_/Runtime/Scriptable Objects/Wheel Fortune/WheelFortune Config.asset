@@ -18,11 +18,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a53beec5e19f3fe48854d886f16cc00f, type: 2}
   moneyForSpin: 5
   timeShowStopButton: 3
-  rotationSpeed: 150
-  decelerationCharactersWheel: 100
-  decelerationMin: 90
-  decelerationMax: 90
-  showDebugParameters: 1
+  rotationSpeed: 300
+  decelerationCharactersWheel: 420
+  decelerationMin: 630
+  decelerationMax: 410
+  showDebugParameters: 0
   hints:
   - {fileID: 0}
   - {fileID: 0}

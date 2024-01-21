@@ -1,21 +1,22 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace PuzzleGame.UI
 {
-    [RequireComponent(typeof(Text))]
+    [RequireComponent(typeof(TextMeshProUGUI))]
     public class CoinsCounter : MonoBehaviour
     {
-        Text label;
+        TextMeshProUGUI label;
 
         void OnProgressUpdate()
         {
-            label.text = UserProgress.Current.Coins.ToString();
+            label.text = "+ " + UserProgress.Current.Coins;
         }
 
         void Start()
         {
-            label = GetComponent<Text>();
+            label = GetComponent<TextMeshProUGUI>();
 
             OnProgressUpdate();
             UserProgress.Current.ProgressUpdate += OnProgressUpdate;

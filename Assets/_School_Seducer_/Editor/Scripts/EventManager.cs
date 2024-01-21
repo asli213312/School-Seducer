@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections;
-using System.Reflection.Emit;
-using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _School_Seducer_.Editor.Scripts
 {
     public class EventManager : MonoBehaviour
     {
         [SerializeField] private PlayerConfig playerConfig;
+        [SerializeField] public UnityEvent startGame; 
         public PlayerConfig PlayerConfig => playerConfig;
         private bool IsMessageReceived { get; set; }
 
@@ -42,6 +42,11 @@ namespace _School_Seducer_.Editor.Scripts
         {
             ChangeValueExperienceEvent?.Invoke(playerConfig.Experience);
             UpdateExperienceTextEvent?.Invoke();
+        }
+
+        public void InvokeStartEvent()
+        {
+            startGame.Invoke();
         }
 
         public bool IsChatMessageReceived()

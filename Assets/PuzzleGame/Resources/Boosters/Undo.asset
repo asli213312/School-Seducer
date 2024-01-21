@@ -16,6 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 47a5bdc996d7bdb48b5521afac326f0f, type: 3}
   Description: Undo your last turn!
   Price:
-    type: 1
-    value: 1
+    type: 0
+    value: 0
   CountToBuy: 3

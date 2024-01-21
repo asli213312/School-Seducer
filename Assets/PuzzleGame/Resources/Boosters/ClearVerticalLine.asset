@@ -17,5 +17,5 @@ MonoBehaviour:
   Description: Clears a vertical line!
   Price:
     type: 0
-    value: 75
+    value: 0
   CountToBuy: 2

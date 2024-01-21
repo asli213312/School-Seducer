@@ -13,10 +13,4 @@ MonoBehaviour:
   m_Name: ThemesCollectionMerged
   m_EditorClassIdentifier: 
   themes:
-  - {fileID: 11400000, guid: 42793d7e650fb11448b871109ea6230f, type: 2}
-  - {fileID: 11400000, guid: a75fb7ebb1936c94caeca8109a4b52e0, type: 2}
-  - {fileID: 11400000, guid: 0726fbadd63fca64a98510c24e4a43f4, type: 2}
-  - {fileID: 11400000, guid: 7a2cf10f11934254ebc9b71e8d171fff, type: 2}
-  - {fileID: 11400000, guid: 945441becd8855f4f95a05902cdeb778, type: 2}
-  - {fileID: 11400000, guid: 42e8f5dfe69d6c449a1434dfe78f2d92, type: 2}
-  - {fileID: 11400000, guid: d51433de9db61c74a8c22df83b2e2f5f, type: 2}
+  - {fileID: 11400000, guid: 6630e50716cbf8147b2921cf29d730dc, type: 2}

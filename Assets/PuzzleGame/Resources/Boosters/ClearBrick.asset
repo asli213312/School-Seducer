@@ -17,5 +17,5 @@ MonoBehaviour:
   Description: Clears any tile on the board!
   Price:
     type: 0
-    value: 25
+    value: 0
   CountToBuy: 2

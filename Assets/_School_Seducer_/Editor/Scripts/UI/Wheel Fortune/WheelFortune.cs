@@ -328,6 +328,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 return;
             }
             
+            _deceleration = data.decelerationCharactersWheel;
+            
             Debug.Log("Character slot is null? " + _currentWinSlot.name);
             
             if (_currentWinSlot != null) giftSpinPush.InitializeTransitionParent(0, new DataParentImage(_currentWinSlot.Image, null));
@@ -344,8 +346,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         private void SetSpinWheelSlots()
         {
-            scrollCharactersContent.localPosition = new Vector2(0, 650);
-            
+            scrollCharactersContent.localPosition = new Vector2(0, 2050);
+
             if (!_isSpinning)
             {
                 _isSpinning = true;
@@ -516,7 +518,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private void InitializeSlots()
         {
             int charactersCount = data.characters.Count;
-            int targetNumberOfSlots = charactersCount * 2;
+            int targetNumberOfSlots = charactersCount * 4;
 
             for (int i = 0; i < targetNumberOfSlots; i++)
             {
@@ -530,7 +532,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 }
             }
 
-            scrollCharactersContent.localPosition = new Vector2(0, 650);
+            scrollCharactersContent.localPosition = new Vector2(0, 2050);
             
             foreach (var slot in slots)
             {

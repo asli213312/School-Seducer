@@ -16,6 +16,6 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 1ebbf82eb135ba64f8aff0d131ea7be4, type: 3}
   Description: Explosion clears the area around the selected tile!
   Price:
-    type: 1
-    value: 2
+    type: 0
+    value: 0
   CountToBuy: 2

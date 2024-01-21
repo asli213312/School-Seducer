@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 46aa7d2dee77b0f46bd9d04802133b6d, type: 3}
   slotType: 0
-  costExp: 5
+  costExp: 8
   level: 1
   chanceToGain: {x: 11, y: 27}
   useTest: 0
-  iconTest: {fileID: 21300000, guid: 82bcbaa22ea353b4d856c03491bc1abf, type: 3}
+  iconTest: {fileID: 21300000, guid: 8538e4418c13a8843844fbdcee5088d5, type: 3}
   slotTypeTest: 0
   costExpTest: 0
-  levelTest: 1
-  chanceToGainTest: {x: 0, y: 0}
+  levelTest: 2
+  chanceToGainTest: {x: 0, y: 1}

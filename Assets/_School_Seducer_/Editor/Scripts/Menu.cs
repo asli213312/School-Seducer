@@ -1,4 +1,5 @@
-﻿using _School_Seducer_.Editor.Scripts.Utility;
+﻿using _School_Seducer_.Editor.Scripts.Extensions;
+using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using UnityEngine;
 using Zenject;
@@ -9,8 +10,9 @@ namespace _BonGirl_.Editor.Scripts
     {
         [Inject] private LocalizedGlobalMonoBehaviour _localizer;
         private GameObject _currentPanel;
+        private GameObject _selectedPanel;
         private Vector3 _startPanelScaled;
-       
+
 
         public void SelectLanguage(string languageCode)
         {
@@ -34,6 +36,24 @@ namespace _BonGirl_.Editor.Scripts
         }
         
         public void ResetPause() => Time.timeScale = 1;
+
+        public void SetCurrentPanel(GameObject panel)
+        {
+            _selectedPanel = panel;
+
+            Debug.Log("Panel selectedd: " + _selectedPanel.name);
+        } 
+
+        public void EnableByChangePositionX(int xPosition)
+        {
+            if (_selectedPanel == null)
+            {
+                Debug.LogWarning("Select panel to change position!");
+                return;
+            }
+
+            _selectedPanel.transform.position = new Vector3(xPosition, _selectedPanel.transform.position.y, _selectedPanel.transform.position.z);
+        }
 
         public void SafeOpenPanel(GameObject panel)
         {

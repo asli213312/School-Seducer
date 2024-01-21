@@ -25,7 +25,7 @@ MonoBehaviour:
     localizedDataList: []
   - fieldLabel: _currentLanguage
     localizedDataList: []
-  costExp: 12
+  costExp: 10
   iconStory: {fileID: 0}
   localizator:
     translationJson: {fileID: 0}

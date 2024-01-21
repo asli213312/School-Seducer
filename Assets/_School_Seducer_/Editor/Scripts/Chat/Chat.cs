@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.UI;
 using _School_Seducer_.Editor.Scripts.Utility;
+using _School_Seducer_.Editor.Scripts.Utility.Attributes;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -36,7 +37,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [ShowInInspector] public List<IContent> PictureMessages { get; private set; } = new();
         [ShowInInspector] public List<IContent> DampedPictureMessages { get; private set; } = new();
 
-        public CharacterData CurrentCharacter { get; private set; }
+        [MonoText] public CharacterData CurrentCharacter { get; private set; }
         public Transform ContentMsgs => contentMsgs;
         public BranchData CurrentBranchData { get; private set; }
         public СonversationData CurrentConversationData { get; private set; }

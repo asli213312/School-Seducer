@@ -19,7 +19,7 @@ namespace PuzzleGame.Themes
         readonly List<ThemePreview> previews = new List<ThemePreview>();
 
         ThemePreset lastAvailableTheme;
-        int maxPresetsCount = 8;
+        int maxPresetsCount = 10;
     
         void Start()
         {
