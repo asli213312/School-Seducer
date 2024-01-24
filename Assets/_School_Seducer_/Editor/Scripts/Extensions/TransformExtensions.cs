@@ -5,6 +5,18 @@ namespace _School_Seducer_.Editor.Scripts.Extensions
 {
     public static class TransformExtensions
     {
+        public static Transform FindMainParent(this Transform transform)
+        {
+            Transform mainParent = transform;
+
+            while (mainParent.parent != null)
+            {
+                mainParent = mainParent.parent;
+            }
+
+            return mainParent;
+        }
+        
         public static RectTransform FindParentRectTransform(this Transform currentTransform)
         {
             Transform parent = currentTransform.parent;

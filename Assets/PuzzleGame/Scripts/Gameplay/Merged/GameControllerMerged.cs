@@ -159,7 +159,9 @@ namespace PuzzleGame.Gameplay.Merged
         {
             nextBrickController.ResetPosition();
 
-            int nextBricksCount = bricks?.Length ?? Random.Range(0, nextBrickMaxCount) + 1;
+            bool onFieldCanMoreOneBrick = IsCanPlaceBricks(2);
+
+            int nextBricksCount = onFieldCanMoreOneBrick ? nextBrickMaxCount : 1;
 
             if (nextBricksCount > 1 && !IsCanPlaceBricks(nextBricksCount))
                 nextBricksCount--;

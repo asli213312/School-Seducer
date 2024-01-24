@@ -1,35 +1,42 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace _School_Seducer_.Editor.Scripts.Utility
 {
     public class StateAnimationController : MonoBehaviour
     {
         private enum StartType { Start, Delayed}
-        [SerializeField] private AnimationBase[] animations;
+        [SerializeField] private List<AnimationStruct> animations;
         [SerializeField, Tooltip("When need to start invoke animations step by step")] private StartType startAnimateType;
 
-        private void OnValidate()
+        private void OnEnable()
+        {
+            StartCoroutine(Animate());
+        }
+
+        private IEnumerator Start()
+        {
+            if (startAnimateType != StartType.Start) yield break;
+
+            StartCoroutine(Animate());
+        }
+
+        private IEnumerator Animate()
         {
             foreach (var animation in animations)
             {
                 switch (animation.type)
                 {
-                    case AnimationType.Move: 
-                        animation.animationRotate = null;
-                        animation.animationPosition = new();
-                        break;
-                    
-                    case AnimationType.Rotate: 
-                        animation.animationRotate = new();
-                        animation.animationPosition = null;
+                    case AnimationType.Move: AnimationBase moveBase = animation.animationPosition;
+                        moveBase.Initialize(animation.gameObject, this);
+                        animation.animationPosition.Invoke();
+
                         break;
                 }
-            }
-        }
 
-        private void Start()
-        {
-            if (startAnimateType != StartType.Start) return;
+                yield return new WaitForSeconds(2);
+            }
         }
     }
 }

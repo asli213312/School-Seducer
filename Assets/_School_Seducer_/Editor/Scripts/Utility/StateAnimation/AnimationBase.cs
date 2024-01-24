@@ -1,26 +1,24 @@
-﻿using System;
+﻿using System.Dynamic;
 using UnityEngine;
 
 namespace _School_Seducer_.Editor.Scripts.Utility
 {
-    [Serializable]
-    public class AnimationBase
+    public abstract class AnimationBase
     {
-        public AnimationType type;
-        public GameObject gameObject;
-        public AnimationMove animationPosition;
-        public AnimationRotate animationRotate;
-    }
-    
-    [Serializable]
-    public class AnimationMove
-    {
-        public Vector3 position;
-    }
+        protected GameObject Target;
+        protected MonoBehaviour Behavior;
+        protected Vector3 StartPosition;
 
-    [Serializable]
-    public class AnimationRotate
-    {
-        public Vector3 rotation;
+        public void Initialize(GameObject target, MonoBehaviour behaviour)
+        {
+            Target = target;
+            Behavior = behaviour;
+
+            if (Target.transform is RectTransform)
+                StartPosition = Target.GetComponent<RectTransform>().anchoredPosition;
+            else
+                StartPosition = Target.transform.position;
+        }
+        public abstract void Invoke();
     }
 }
