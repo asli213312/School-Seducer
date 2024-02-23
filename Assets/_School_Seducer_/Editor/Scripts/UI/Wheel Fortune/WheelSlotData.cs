@@ -1,6 +1,4 @@
 ﻿using NaughtyAttributes;
-using Sirenix.OdinInspector.Editor.TypeSearch;
-using UnityEditor.Graphs;
 using UnityEngine;
 using HideIfAttribute = Sirenix.OdinInspector.HideIfAttribute;
 

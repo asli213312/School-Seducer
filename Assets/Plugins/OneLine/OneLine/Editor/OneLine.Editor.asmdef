@@ -2,11 +2,13 @@
     "name": "st.one-line.Editor",
     "rootNamespace": "",
     "references": [
-        "st.rect-ex.Runtime",
         "st.one-line.Runtime",
-        "RectEx"
+        "RectEx",
+        "UnityEditor.UI"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

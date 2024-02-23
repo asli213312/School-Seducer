@@ -5,7 +5,10 @@ using System.Linq;
 using PuzzleGame.Gameplay.Boosters;
 using PuzzleGame.Gameplay.Boosters.Merged;
 using PuzzleGame.Sounds;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -15,13 +18,20 @@ namespace PuzzleGame.Gameplay.Merged
     {
         [Header("Mode fields")]
         public int bricksToMerge = 3;
+        public int maxObstacles = 4;
+        [Range(1, 100)] public int chanceObstacle = 20;
         public int nextBrickMaxCount = 2;
         public Brick emptyBrickPrefab;
+        public Obstacle obstacleBrickPrefab;
 
         public MergedFigureController nextBrickController;
         public GameObject nextBrickAnimator;
-    
-        Brick[,] backgroundBricks;
+
+        [SerializeField] private FieldTemplate[] fieldTemplates;
+        [FormerlySerializedAs("testArray")] [SerializeField] public BricksContainer emptyBricksContainer; 
+        [SerializeField] public BricksContainer obstacleBricks;
+        //[SerializeField] public Brick[][] backgroundBricks = { };
+        [ListDrawerSettings(ShowIndexLabels = true)]
         List<NumberedBrick> nextBricks;
 
         const int MaxNumber = 4;
@@ -29,6 +39,25 @@ namespace PuzzleGame.Gameplay.Merged
         bool isAnimating;
     
         readonly BricksHighlighter bricksHighlighter = new BricksHighlighter();
+        
+        [Serializable]
+        public class BricksContainer
+        {
+            [SerializeField] public ListBricks[] listBricks;
+        }
+
+        [Serializable]
+        public class ListBricks
+        {
+            [SerializeReference] public List<Brick> listBrick;
+        }
+
+        [Serializable]
+        public class FieldTemplate
+        {
+            public RectTransform fieldTransform;
+            public BricksContainer BricksContainer;
+        }
 
         class BrickPath
         {
@@ -38,14 +67,31 @@ namespace PuzzleGame.Gameplay.Merged
 
         void Start()
         {
-            field = new NumberedBrick[bricksCount.x, bricksCount.y];
-            backgroundBricks = new Brick[bricksCount.x, bricksCount.y];
+            int rndFieldIndex = Random.Range(0, fieldTemplates.Length);
+            
+            FieldTemplate fieldTemplate = fieldTemplates[rndFieldIndex];
+            
+            emptyBricksContainer = fieldTemplate.BricksContainer;
+            obstacleBricks = fieldTemplate.BricksContainer;
+                
+            fieldTransform.gameObject.SetActive(false);
+            fieldTransform = fieldTemplate.fieldTransform;
+                
+            fieldTransform.gameObject.SetActive(true);
 
-            for (int x = 0; x < bricksCount.x; x++)
+            field = new NumberedBrick[bricksCount.x, bricksCount.y];
+            //backgroundBricks = new Brick[tableBricks.xBricks.Length, tableBricks.yBricks.Length];
+            //backgroundBricks = new Brick[bricksCount.x, bricksCount.y];
+
+            foreach (var listBrick in obstacleBricks.listBricks)
             {
-                for (int y = 0; y < bricksCount.y; y++)
+                foreach (var brick in listBrick.listBrick)
                 {
-                    SpawnEmptyBrick(new Vector2Int(x, y));
+                    if (brick is not Obstacle obstacle) continue;
+                
+                    Vector2Int coords = GetCoords(obstacle);
+                    
+                    SpawnObstacleBrick(coords, obstacle);
                 }
             }
 
@@ -92,8 +138,12 @@ namespace PuzzleGame.Gameplay.Merged
             {
                 for (int y = 0; y < bricksCount.y; y++)
                 {
+                    //SpawnObstacleBrick(new Vector2Int(x, y));
+                    
                     if (numbers[x * bricksCount.y + y] > 0)
+                    {
                         SpawnBrick(new Vector2Int(x, y), numbers[x * bricksCount.y + y]);
+                    }
                 }
             }
 
@@ -126,6 +176,20 @@ namespace PuzzleGame.Gameplay.Merged
             UserProgress.Current.SaveGameState(name);
         }
 
+        void SpawnObstacleBrick(Vector2Int coords, NumberedBrick brick)
+        {
+            if (brick is not Obstacle) return;
+            
+            brick.transform.SetParent(fieldTransform, false);
+            brick.RectTransform.anchorMin = Vector2.zero;
+            brick.RectTransform.anchorMax = Vector2.zero;
+            brick.RectTransform.anchoredPosition = GetBrickPosition(new Vector2(coords.x, coords.y));
+            
+            brick.PointerClick += OnHighlightedTargetClick;
+
+            field[coords.x, coords.y] = brick;
+        }
+
         void SpawnEmptyBrick(Vector2Int coords)
         {
             var brick = Instantiate(emptyBrickPrefab, fieldTransform);
@@ -136,7 +200,8 @@ namespace PuzzleGame.Gameplay.Merged
             brick.RectTransform.anchoredPosition = GetBrickPosition(new Vector2(coords.x, coords.y));
             brick.PointerClick += OnHighlightedTargetClick;
 
-            backgroundBricks[coords.x, coords.y] = brick;
+            //backgroundBricks[coords.x][coords.y] = brick;
+            emptyBricksContainer.listBricks[coords.x].listBrick[coords.y] = brick;
         }
 
         void SpawnBrick(Vector2Int coords, int number)
@@ -187,7 +252,7 @@ namespace PuzzleGame.Gameplay.Merged
 
                 if (nextBricksCount == 1)
                 {
-                    nextBrickAnimator.SetActive(false);
+                    //nextBrickAnimator.SetActive(false);
                     brickRectTransform.anchoredPosition = Vector2.zero;
                     return;
                 }
@@ -218,6 +283,18 @@ namespace PuzzleGame.Gameplay.Merged
         void OnNextBrickPointerUp(FigureController controller)
         {
             bricksHighlighter.UnhighlightBricks();
+
+            // foreach (var listBrick in obstacleBricks.listBricks)
+            // {
+            //     for (int i = 0; i < listBrick.listBrick.Count; i++)
+            //     {
+            //         if (listBrick.listBrick[i] is not Obstacle) continue;
+            //         
+            //         var obstacleBrick = listBrick.listBrick[i] as Obstacle;
+            //         
+            //         if (controller.bricks.Contains(obstacleBrick) == false) controller.bricks.Add(obstacleBrick);       
+            //     }
+            // }
 
             if (!TryGetCoords(controller.bricks, out var coords))
                 return;
@@ -258,7 +335,7 @@ namespace PuzzleGame.Gameplay.Merged
                 return;
             }
 
-            bricksHighlighter.SetHighlight(coords.Select(c => backgroundBricks[c.x, c.y]).ToArray());
+            bricksHighlighter.SetHighlight(coords.Select(c => emptyBricksContainer.listBricks[c.x].listBrick[c.y]).ToArray());
         }
 
         IEnumerator MergeBricks(List<NumberedBrick> bricks)
@@ -410,7 +487,7 @@ namespace PuzzleGame.Gameplay.Merged
                             }
                         );
 
-                        gameState.Score += brick.Number;
+                        gameState.Score += 1;
                         AnimateDestroyBrick(brick, coords, () =>
                         {
                             isAnimating = false;

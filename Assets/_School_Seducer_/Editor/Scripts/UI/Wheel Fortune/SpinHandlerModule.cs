@@ -1,0 +1,183 @@
+﻿using System;
+using System.Collections.Generic;
+using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.Chat;
+using _School_Seducer_.Editor.Scripts.Utility;
+using Sirenix.Utilities;
+using UnityEngine;
+using UnityEngine.UI;
+using Zenject;
+using Random = UnityEngine.Random;
+
+namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
+{
+    public class SpinHandlerModule : MonoBehaviour, IModule<WheelFortuneSystem>
+    {
+        [Inject] protected Bank Bank;
+        [Inject] protected EventManager EventManager;
+        [Inject] protected IChatStoryResolverModule ChatStoryResolver;
+        
+        [Header("Handlers")]
+        [SerializeField] private SpinHandler defaultSpinHandler;
+        [SerializeField] private ExtraSpinHandler extraSpinHandler;
+        
+        [Header("UI elements")]
+        [SerializeField] private Slider expSlider;
+        [SerializeField] public RectTransform scrollCharactersContent;
+        [SerializeField] public WheelSlot characterSlotPrefab;
+        [SerializeField] public List<WheelSlot> slots;
+        
+        [Header("PushUps")] 
+        [SerializeField] public Push giftSpinPush;
+        [SerializeField] public Push unlockNewStoryPush;
+
+        public Previewer Previewer => _system.Previewer;
+        public WheelFortuneData Data => _system.Data;
+        
+        [NonSerialized] public List<WheelSlot> _characterSlots = new();
+        
+        private WheelFortuneSystem _system;
+
+        public void InitializeCore(WheelFortuneSystem system)
+        {
+            _system = system;
+        }
+
+        public void Initialize()
+        {
+            defaultSpinHandler.InitializeCore(this);
+            extraSpinHandler.InitializeCore(this);
+        }
+
+        private void Awake()
+        {
+            AddListenerToOpenChatButton();
+            void AddListenerToOpenChatButton()
+            {
+                unlockNewStoryPush.Buttons[0].AddListener(() =>
+                {
+                    unlockNewStoryPush.gameObject.Deactivate();
+                    gameObject.Deactivate(1);
+                    _system.Previewer.OnCharacterSelected(_system.Previewer.CurrentCharacter);
+                });
+            }
+        }
+
+        private void OnDestroy()
+        {
+            RemoveListenerToOpenChatButton();
+            void RemoveListenerToOpenChatButton()
+            {
+                unlockNewStoryPush.Buttons[0].RemoveListener(() =>
+                {
+                    unlockNewStoryPush.gameObject.Deactivate();
+                    gameObject.Deactivate(1);
+                    _system.Previewer.OnCharacterSelected(_system.Previewer.CurrentCharacter);
+                });
+            }
+        }
+
+        private void Start()
+        {
+            InitializeSlots();
+            
+            CheckResetCharactersOutWheel();
+
+            EventManager.UpdateTextMoney();
+
+            void CheckResetCharactersOutWheel()
+            {
+                _system.Previewer.Characters.ForEach(character => CheckResetCharacter(character.Data));
+            }
+        }
+        
+        public void ShowGiftPush()
+        {
+            StartCoroutine(giftSpinPush.transform.DoLocalScaleAndUnscale(this, new Vector3(0.9f, 0.9f, 0.9f)));
+        }
+
+        public void ShowUnlockStoryPush()
+        {
+            StartCoroutine(unlockNewStoryPush.transform.DoLocalScaleAndUnscale(this, new Vector3(0.9f, 0.9f, 0.9f)));
+        }
+        
+        public void OnChangeValueExperience(int newValue)
+        {
+            expSlider.value = newValue;
+            Debug.Log($"Slider value changed to: {newValue}");
+        }
+        
+        public WheelSlot FindSlotForProbability(List<WheelSlot> wheelSlots)
+        {
+            if (wheelSlots.Count == 0)
+            {
+                return null;
+            }
+            
+            float randomValue = Random.Range(1, 101);
+            
+            List<WheelSlot> eligibleSlots = new List<WheelSlot>();
+
+            for (var index = wheelSlots.Count - 1; index >= 0; index--)
+            {
+                var slot = wheelSlots[index];
+                Vector2 probabilityRange = slot.Data.GetProbabilityRange();
+
+                if (randomValue >= probabilityRange.x && randomValue <= probabilityRange.y)
+                {
+                    eligibleSlots.Add(slot);
+                }
+            }
+
+            Debug.Log("Count eligibleSlots: " + eligibleSlots.Count);
+
+            WheelSlot selectedSlot = eligibleSlots[Random.Range(0, eligibleSlots.Count)];
+
+            return selectedSlot;
+        }
+
+        public void CheckResetCharacter(CharacterData characterData)
+        {
+            foreach (var conversation in characterData.allConversations)
+            {
+                if (conversation.isUnlocked == false) return;
+            }
+
+            for (int i = 0; i < scrollCharactersContent.childCount; i++)
+            {
+                WheelSlot slotCharacterToReset = scrollCharactersContent.GetChild(i).GetComponent<WheelSlot>();
+
+                if (slotCharacterToReset.Data.name == characterData.name)
+                {
+                    _characterSlots.Remove(slotCharacterToReset);
+                    slotCharacterToReset.gameObject.Destroy();
+                }
+            }
+        }
+
+        private void InitializeSlots()
+        {
+            int charactersCount = _system.Data.characters.Count;
+            int targetNumberOfSlots = charactersCount * 4;
+
+            for (int i = 0; i < targetNumberOfSlots; i++)
+            {
+                var character = _system.Data.characters[i % charactersCount];
+                WheelSlot characterSlot = Instantiate(characterSlotPrefab, scrollCharactersContent);
+                characterSlot.Initialize(character, _system.Data.iconMoney);
+                
+                if (i < _system.Data.characters.Count)
+                {
+                    _characterSlots.Add(characterSlot);
+                }
+            }
+
+            scrollCharactersContent.localPosition = new Vector2(0, 2050);
+            
+            foreach (var slot in slots)
+            {
+                slot.Initialize(slot.Data, _system.Data.iconMoney);
+            }
+        }
+    }
+}

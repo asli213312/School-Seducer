@@ -20,7 +20,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [Inject] private LocalizedGlobalMonoBehaviour _localizer;
         [Inject] private SoundHandler _soundHandler;
         [Inject] private EventManager _eventManager;
-        
+        [Inject] private IContentDataProvider _contentDataProvider;
+
         [SerializeField] private Transform contentMsgs;
         [SerializeField] private Transform contentChats;
         [SerializeField] private GalleryScreen gallery;
@@ -95,12 +96,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _eventManager.UpdateExperienceTextEvent -= storyResolver.UpdateStatusViews;
         }
 
-        private void OnEnable()
-        {
-            //Invoke(nameof(InitializeChats), 0.5f);
-            //storyResolver.UpdateStatusViews();
-        }
-
         private void OnDisable()
         {
             UnRegisterStatusViews();
@@ -152,12 +147,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void InstallCurrentStatusView(ChatStatusView statusView) => _currentStatusView = statusView;
 
-        private void InstallCurrentConversation(СonversationData data) 
-	    {
-	    	CurrentConversationData = data;
-            CurrentCharacter.currentConversation = CurrentConversationData;
-        }
-
         private void StartDialogue()
         {
             if (_currentStatusView != null && CurrentConversationData == _currentStatusView.Conversation && contentMsgs.childCount > 1)
@@ -172,6 +161,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             StartCoroutine(ChatTap(() => InvokeStartConversation(_currentStatusView.Conversation.Messages)));
         }
 
+        private void InstallCurrentConversation(СonversationData data) 
+        {
+            CurrentConversationData = data;
+            CurrentCharacter.currentConversation = CurrentConversationData;
+        }
+
         private void InitializeChats()
         {
             for (int i = 0; i < CurrentCharacter.allConversations.Count; i++)
@@ -181,8 +176,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 chatStatus.Render(CurrentCharacter.allConversations[i], config.ChatUncompletedSprite);
                 chatStatus.OnClick += StartDialogue;
                 _chatStatusViews.Add(chatStatus);
-
-                _eventManager.UpdateExperienceTextEvent += chatStatus.OnUpdateUnlockBar;
             }
             
             storyResolver.InitStatusViews(_chatStatusViews);
@@ -206,6 +199,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 if (IsMessagesEnded) StopCoroutine(ProcessMessage(i));
                     
                 yield return ProcessMessage(i);
+
+                if (DampedPictureMessages.Count <= 0)
+                    this.DelayedCall(.3f, () => _contentDataProvider.LoadContentData(PictureMessages));
+                else
+                    this.DelayedCall(.3f, () => _contentDataProvider.LoadContentData(DampedPictureMessages));
             }
 
             EndConversation(CheckLastMessage(Messages.ToArray(), Messages.Count - 1, false));
@@ -592,8 +590,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             foreach (var statusView in _chatStatusViews)
             {
                 statusView.OnClick -= StartDialogue;
-
-                _eventManager.UpdateExperienceTextEvent -= statusView.OnUpdateUnlockBar;
             }
         }
 

@@ -1,0 +1,16 @@
+{
+    "name": "PuzzleGames.Themes.Editor",
+    "rootNamespace": "",
+    "references": ["GUID:df9f127f9ae1b6c46868857ab3cc1b38"],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

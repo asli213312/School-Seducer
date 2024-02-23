@@ -105,7 +105,7 @@ namespace _School_Seducer_.Editor.Scripts
         {
             CharacterSelectedEvent?.Invoke(character);
         }
-        
+
         public void InvokeDelayedBoolAction(float delay, Action<bool> onComplete, bool boolParameter)
         {
             StartCoroutine(DelayToBoolAction(delay, onComplete, boolParameter));

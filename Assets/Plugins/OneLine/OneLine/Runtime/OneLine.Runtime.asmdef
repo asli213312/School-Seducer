@@ -2,7 +2,7 @@
     "name": "st.one-line.Runtime",
     "rootNamespace": "",
     "references": [
-        "st.rect-ex.Runtime"
+        "RectEx"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

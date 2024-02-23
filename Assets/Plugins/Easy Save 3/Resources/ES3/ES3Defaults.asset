@@ -36,15 +36,16 @@ MonoBehaviour:
     - LottiePlugin.Sample.SceneUI.Runtime
     - NaughtyAttributes.Core
     - NaughtyAttributes.Test
+    - NutakuSDK
     - Plugins.Baedrick.ColoredHeaderCreator
     - Project.Editor
     - PuzzleGames
+    - RectEx
     - SingularityGroup.HotReload.Runtime
     - SingularityGroup.HotReload.Runtime.Public
     - spine-csharp
     - spine-unity
     - spine-unity-examples
-    - st.one-line.Editor
     - st.one-line.Runtime
     - Tayx.Graphy
     - UltEvents

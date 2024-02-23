@@ -1,13 +1,14 @@
 ﻿using PuzzleGame.Gameplay;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace PuzzleGame.UI
 {
-    [RequireComponent(typeof(Text))]
+    [RequireComponent(typeof(TextMeshProUGUI))]
     public class ScoreCounter : MonoBehaviour
     {
-        Text label;
+        TextMeshProUGUI label;
 
         protected GameState currentGameState;
 
@@ -15,7 +16,7 @@ namespace PuzzleGame.UI
 
         void Start()
         {
-            label = GetComponent<Text>();
+            label = GetComponent<TextMeshProUGUI>();
 
             OnProgressUpdate();
             UserProgress.Current.ProgressUpdate += OnProgressUpdate;
@@ -47,7 +48,7 @@ namespace PuzzleGame.UI
 
         void OnStateUpdate()
         {
-            label.text = Value.ToString();
+            label.text = "+" + Value;
         }
     }
 }

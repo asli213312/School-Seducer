@@ -1,13 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using _BonGirl_.Editor.Scripts;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
-using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace _School_Seducer_.Editor.Scripts.Chat

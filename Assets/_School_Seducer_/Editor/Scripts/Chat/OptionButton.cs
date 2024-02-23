@@ -16,6 +16,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     {
         [SerializeField] private ChatConfig _chatConfig;
         [SerializeField] private TextMeshProUGUI text;
+        
+        [Inject] private IChatStateHandlerModule _chatStateHandler;
+        [Inject] private ChatSystem _chatSystem;
         [Inject] private DiContainer _container;
         [Inject] private SoundHandler _soundHandler;
         [Inject] private EventManager _eventManager;
@@ -27,6 +30,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private Chat _chat;
 
         public event Action OnClick;
+        public event Action<MessageData[]> LoadMessagesEvent;
         
         private RectTransform _parent;
 
@@ -72,17 +76,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             SetupBackGroundImage(option);
             SetupAudioMessage();
 
-            //Debug.Break();
-            
-            //_localizer = _parent.GetChild(0).GetComponent<OptionButton>().Localizer;
-            
-                // Debug.Break();
-
-            TranslateOption();
+            //TranslateOption();
 
             _eventManager.UpdateScrollChat();
 
-            Debug.Log("lastMessage:", _chat.ContentMsgs.GetChild(_chat.ContentMsgs.childCount - 2));
+            //Debug.Log("lastMessage:", _chat.ContentMsgs.GetChild(_chat.ContentMsgs.childCount - 2));
             Debug.Log("new option:", newOptionParent.gameObject);
         }
 
@@ -120,7 +118,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private GameObject CreateOptionParent()
         {
-            GameObject newOptionParent = Instantiate(_parent.gameObject, _chat.ContentMsgs);
+            GameObject newOptionParent = Instantiate(_parent.gameObject, _chatSystem.ContentMsg);
             newOptionParent.transform.SetAsLastSibling();
             _parent.gameObject.Deactivate();
             return newOptionParent;
@@ -156,8 +154,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private void SetupPadding(GameObject newOptionParent)
         {
-            RectTransform backPadding = _chat.CreatePadding();
-            RectTransform forwardPadding = _chat.CreatePadding();
+            RectTransform backPadding = _chatSystem.MessageProcessor.GetUtilityObject().GetComponent<RectTransform>();
+            RectTransform forwardPadding = _chatSystem.MessageProcessor.GetUtilityObject().GetComponent<RectTransform>();;
 
             backPadding.SetSiblingIndex(newOptionParent.transform.GetSiblingIndex() - 1);
             backPadding.sizeDelta = new Vector2(backPadding.sizeDelta.x, backPadding.sizeDelta.y + 20);
@@ -191,7 +189,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void LoadBranch()
         {
             OnClick?.Invoke();
-            _chat.LoadBranch(BranchData);
+            //_chat.LoadBranch(BranchData);
+            //_chatStateHandler.LoadMessages(BranchData.Messages);
+            LoadMessagesEvent?.Invoke(BranchData.Messages);    
 
             Debug.Log("option", gameObject);
         }

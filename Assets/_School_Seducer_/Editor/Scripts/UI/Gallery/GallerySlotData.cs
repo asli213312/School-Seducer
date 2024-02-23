@@ -1,4 +1,5 @@
 ﻿using NaughtyAttributes;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -7,17 +8,19 @@ namespace _School_Seducer_.Editor.Scripts.UI
     [CreateAssetMenu(fileName = "GallerySlotData", menuName = "Game/Data/Gallery/Slot", order = 0)]
     public class GallerySlotData : ScriptableObject
     {
-        [ShowAssetPreview(32, 32), ShowIf("CheckEmptyAnimation")] public Sprite Sprite;
-        [ShowAssetPreview(32, 32), ShowIf("CheckEmptyImage")] public Sprite Animation;
+        [ShowAssetPreview(32, 32)] public Sprite Sprite;
+        [ShowIf(nameof(Section), GallerySlotType.Video)]public SkeletonDataAsset animation;
         
         private bool CheckEmptyImage() => Sprite == null;
-        private bool CheckEmptyAnimation() => Animation == null;
+        private bool CheckEmptyAnimation() => animation == null;
         
         [FormerlySerializedAs("Type")] public GallerySlotType Section;
 
         [FormerlySerializedAs("AddedToGallery")] public bool NeedInGallery = true;
         [SerializeField] public bool showDebugParameters; 
         [Sirenix.OdinInspector.ShowIf("showDebugParameters")] public bool AddedInGallery;
+
+        public string GetAnimationName() => animation.GetSkeletonData(false).Animations.Items[0].Name;
 
         public void CheckNeedInGallery()
         {

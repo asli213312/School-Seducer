@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using UnityEditor;
-
 using RectEx;
 using System;
+using UnityEditor;
 
 namespace OneLine.Settings {
     [CustomEditor(typeof(Settings))]

@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityFigmaBridge.Runtime.UI;
+using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.UI
 {
@@ -22,6 +23,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private Sprite _uncompletedSprite;
         
         public event Action OnClick;
+        public event Action<ChatStatusView> SelectEvent;
 
         public void Initialize(Chat.Chat chat)
         {
@@ -33,15 +35,16 @@ namespace _School_Seducer_.Editor.Scripts.UI
             transform.Rotate(new Vector3(0, 0, 180));
         }
 
-        public void OnUpdateUnlockBar()
+        public void OnUpdateUnlockBar(float newValueBar)
         {
             if (StoryUnlocked() == false)
             {
-                barToUnlock.value = _chat.CurrentCharacter.experience;
-                SetStatus();    
+                barToUnlock.value = newValueBar;
             }
             else
                 HideBarUnlock();
+            
+            SetStatus();  
         }
 
         public void HideBarUnlock()
@@ -59,7 +62,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             
             barToUnlock.maxValue = Conversation.costExp;
             
-            OnUpdateUnlockBar();
+            SetStatus();
         }
 
         private void SetStatus()
@@ -71,7 +74,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
         {
             if (StoryUnlocked() == false) return;
             
-            _chat.InstallCurrentStatusView(this);
+            SelectEvent?.Invoke(this);
+            _chat?.InstallCurrentStatusView(this);
             OnClick?.Invoke();
         }
 

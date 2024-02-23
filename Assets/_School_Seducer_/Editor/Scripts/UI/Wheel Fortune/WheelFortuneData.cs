@@ -16,8 +16,12 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         public int moneyForSpin;
         [SerializeField] public int timeShowStopButton;
         [InfoBox("If you want to show the stop button immediately, set the time to 0")]
+        [SerializeField] public int secondsSlowSpdSlots;
+        
         [Space(10)]
+        [ShowIf(nameof(showDebugParameters)), SerializeField] public float rotationSpeedCharacters;
         [ShowIf("showDebugParameters"), SerializeField] public float rotationSpeed;
+        [ShowIf("showDebugParameters"), SerializeField] public float rotationSlowSpeed;
         [ShowIf("showDebugParameters"), SerializeField] public float decelerationCharactersWheel;
         [ShowIf("showDebugParameters")] public float decelerationMin;
         [ShowIf("showDebugParameters")] public float decelerationMax;
@@ -29,9 +33,9 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         [ShowIf("showDebugParameters"), SerializeField] public GameObject[] hints;
         private GameObject[] _originalHints;
 
-        public bool CanSpin(int moneyPlayer)
+        public bool CanSpin(int moneyPlayer, float multiplier = 1f)
         {
-             return moneyPlayer >= moneyForSpin;
+             return moneyPlayer >= moneyForSpin * multiplier;
         }
 
 #if UNITY_EDITOR

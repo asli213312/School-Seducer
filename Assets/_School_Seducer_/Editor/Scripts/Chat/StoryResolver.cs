@@ -21,10 +21,17 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
         public event Action UpdateStatusViewsEvent;
 
+        private CharacterData _currentCharacterData;
+
         public void Initialize()
         {
             UpdateStatusViewsEvent += CheckConversationsAvailable;
             UpdateStatusViewsEvent += InstallSliderNextConversation;
+        }
+
+        public void InitCharacterData(CharacterData characterData)
+        {
+            _currentCharacterData = characterData;
         }
 
         public void InitStatusViews(List<ChatStatusView> statusViews)
@@ -63,7 +70,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             foreach (var statusView in _chatStatusViews)
             {
                 if (statusView == FindFirstLockedStatusView())
-                    statusView.OnUpdateUnlockBar();
+                    statusView.OnUpdateUnlockBar(_currentCharacterData.experience);
                 else
                     statusView.HideBarUnlock();
             }

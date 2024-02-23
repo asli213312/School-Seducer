@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.UI;
+using Spine.Unity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,7 +53,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             //StartCoroutine(SetSendingAnimation());
             SetOptions(data);
-            SetPicture(data);
+            SetPictureOrAnimation(data);
             AdjustRightActor();
             PictureInstalled = true;
             Data.optionalData.GallerySlot.CheckNeedInGallery();
@@ -65,17 +67,18 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             yield return new WaitForSeconds(_durationSendingPicture);
         }
 
-        private void SetPicture(MessageData data)
+        private void SetPictureOrAnimation(MessageData data)
         {
-            Sprite picture = null;
-            if (data.optionalData.GallerySlot != null) picture = data.optionalData.GallerySlot.Sprite;
-            
+            Sprite picture = data.optionalData.GallerySlot.Sprite;
+            Image selectedImage = null;
+
             if (data.optionalData.GallerySlot.Sprite.IsWideSprite())
             {
                 msgWidePicture.sprite = picture;
                 msgWidePicture.gameObject.Activate();
 
                 CurrentImage = msgWidePicture;
+                selectedImage = msgWidePicture;
             }
             else
             {
@@ -83,7 +86,17 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 msgSquarePicture.gameObject.Activate();
                 
                 CurrentImage = msgSquarePicture;
+                selectedImage = msgSquarePicture;
             }
+
+            if (data.optionalData.GallerySlot.animation != null)
+            {
+                contentOffset.GetComponentInChildren<SkeletonAnimation>().skeletonDataAsset = data.optionalData.GallerySlot.animation;
+                selectedImage.GetComponent<OpenContentSprite>().enabled = false;
+            }
+            else
+                selectedImage.GetComponent<OpenContentAnimation>().enabled = false;
+            
             Debug.Log("Picture installed");
         }
 

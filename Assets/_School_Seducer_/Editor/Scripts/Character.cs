@@ -7,7 +7,8 @@ using Zenject;
 
 public class Character : MonoBehaviour
 {
-    [Inject] private EventManager _eventManager; 
+    [Inject] private EventManager _eventManager;
+    [Inject] private ChatSystem _chatSystem;
     
     [SerializeField] private CharacterData characterData;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -39,6 +40,7 @@ public class Character : MonoBehaviour
        CharacterSelected?.Invoke(this);
        
        _chat.gameObject.SafeActivate();
+       _chatSystem.gameObject.SafeActivate();
     }
 
     public void OnMouseEnter()

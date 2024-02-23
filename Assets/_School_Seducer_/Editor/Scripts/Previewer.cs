@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
+using _School_Seducer_.Editor.Scripts.Utility;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Nutaku;
+using Nutaku.Unity;
 using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts
@@ -13,9 +17,11 @@ namespace _School_Seducer_.Editor.Scripts
     {
         [Inject] private EventManager _eventManager;
         [Inject] private Bank _bank;
+        [Inject] private IChatInitialization _chatInitializationModule;
         
         [Header("UI Data")] 
         [SerializeField] private GameObject previewerPanel;
+        [SerializeField] private ChatSystem chatSystem;
         [SerializeField] private Image selectedGirlImage;
         [SerializeField] private TextMeshProUGUI greetingsText;
 
@@ -23,7 +29,6 @@ namespace _School_Seducer_.Editor.Scripts
 	    [SerializeField] private Chat.Chat _chat;
         [SerializeField] private StoryResolver storyResolver;
         [SerializeField] private LevelChecker levelChecker;
-        [SerializeField] private MiniGameInitializer miniGameInitializer;
         [SerializeField] private Map map;
         [SerializeField] private PlayerConfig playerConfig;
         [SerializeField] private Character[] _characters;
@@ -43,12 +48,25 @@ namespace _School_Seducer_.Editor.Scripts
 
         private int _currentChatIndex;
 
+        private void Awake()
+        {
+            switch (Application.platform)
+            {
+                case RuntimePlatform.Android: SdkPlugin.Initialize(); break;
+                case RuntimePlatform.WindowsPlayer:  break;
+                case RuntimePlatform.WebGLPlayer: break;
+            }
+
+            RegisterCharacters();
+        }
+
         private void Start()
         {
             Initialize();
         }
 
         //public void ShowChat() => _chat.gameObject.Activate();
+
 
         public void Initialize()
         {
@@ -103,11 +121,6 @@ namespace _School_Seducer_.Editor.Scripts
             return CurrentCharacter.Data;
         }
 
-        private void Awake()
-        {
-            RegisterCharacters();
-        }
-
         private void OnDestroy()
         {
             UnRegisterStartDialogue();
@@ -122,12 +135,14 @@ namespace _School_Seducer_.Editor.Scripts
                 Debug.LogWarning("Current character: " + CurrentCharacter.name);
             }
             
+            if (chatSystem != null) chatSystem.gameObject.Activate();
             previewerPanel.Activate();
             
             if (CurrentCharacter != character) _chat.ResetContent();
 
             CurrentCharacter = character;
 	        _currentConversation = CurrentCharacter.currentConversation;
+            storyResolver.InitCharacterData(CurrentCharacter.Data);
 
             if (CurrentCharacter == null) 
 	        	Debug.LogError("current character is null on selected");
@@ -135,6 +150,7 @@ namespace _School_Seducer_.Editor.Scripts
             _chat.DeactivateStatusViews();
             _chat.ResetStatusViews();
            
+            if (chatSystem != null) _chatInitializationModule.InstallCharacter(CurrentCharacter);
             _chat.InstallCharacterData(CurrentCharacter.Data);
             
             //Invoke(nameof(RegisterStartDialogue), 0.3f);

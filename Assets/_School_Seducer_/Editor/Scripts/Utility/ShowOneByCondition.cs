@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Numerics;
-using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
-using Quaternion = UnityEngine.Quaternion;
-using Vector3 = UnityEngine.Vector3;
 
 namespace _School_Seducer_.Editor.Scripts.Utility
 {

@@ -25,7 +25,7 @@ MonoBehaviour:
     localizedDataList: []
   - fieldLabel: _currentLanguage
     localizedDataList: []
-  costExp: 10
+  costExp: 1000
   iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
   localizator:
     translationJson: {fileID: 0}
@@ -45,7 +45,6 @@ MonoBehaviour:
     Msg: this chapter 2
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
     localizedAudioClips: []
@@ -53,7 +52,6 @@ MonoBehaviour:
     Msg: this chapter 2
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
     localizedAudioClips: []
@@ -61,7 +59,6 @@ MonoBehaviour:
     Msg: "Hello, Jo\u043E\u043E\u043E\u043E\u043E\u043E\u043E\u043E\u043Ehn"
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
     localizedAudioClips: []
@@ -69,7 +66,6 @@ MonoBehaviour:
     Msg: Ones upon time...
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
     localizedAudioClips: []
@@ -77,7 +73,6 @@ MonoBehaviour:
     Msg: not translated
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
     localizedAudioClips: []
@@ -85,7 +80,6 @@ MonoBehaviour:
     Msg: Hello, Mary!
     optionalData:
       GallerySlot: {fileID: 11400000, guid: a138e57702664dd40b4a78642376bc65, type: 2}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
     localizedAudioClips: []
@@ -93,7 +87,6 @@ MonoBehaviour:
     Msg: not translated
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
     localizedAudioClips: []
@@ -103,7 +96,6 @@ MonoBehaviour:
       iiiiiiiiiiiiiiiiiiiiiiiiiiiii'
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
     localizedAudioClips: []
@@ -111,7 +103,6 @@ MonoBehaviour:
     Msg: Okay)
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
     localizedAudioClips: []
@@ -119,7 +110,6 @@ MonoBehaviour:
     Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 2e4140e2d06a5d24988cd74cb84ef71d, type: 2}
-      Animation: {fileID: 0}
       Branches:
       - {fileID: 11400000, guid: 0073a0138a0897a408726586fb1e6b62, type: 2}
     AudioMsg: {fileID: 0}

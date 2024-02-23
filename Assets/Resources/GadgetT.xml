@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs title="College Fuck Fest" author="example" thumbnail="" screenshot="" height="800" width="1280">
+        <Require feature="opensocial-0.8" />
+        <Require feature="opensocial-payment" />
+        <Require feature="nutaku" />
+        <Require feature="dynamic-height" />
+    </ModulePrefs>
+    <Content preferred_width="1280" type="html" view="canvas">
+
+    <![CDATA[
+        <link rel="stylesheet" href="https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF/TemplateData/style.css">
+        <script src="https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF/Build/WebGL.framework.js"></script>
+        <script src="https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF/Build/WebGL.loader.js"></script>
+        <script src="https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF/NutakuClient.js"></script>
+
+        <div id="unity-container" class="unity-desktop">
+            <canvas id="unity-canvas" width="1280" height="720"></canvas>
+
+          <div id="unity-loading-bar" style="display: none;">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <div id="unity-warning"></div>
+
+          <div id="unity-footer">
+            <div id="unity-fullscreen-button"></div>
+          </div>
+       </div>
+
+        <script type="text/javascript">
+              var gameInstance;
+
+              var container = document.querySelector("#unity-container");
+              var canvas = document.querySelector("#unity-canvas");
+              var loadingBar = document.querySelector("#unity-loading-bar");
+              var progressBarFull = document.querySelector("#unity-progress-bar-full");
+              var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+              var warningBanner = document.querySelector("#unity-warning");
+
+              function unityShowBanner(msg, type) {
+                function updateBannerVisibility() {
+                  warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+                }
+                var div = document.createElement('div');
+                div.innerHTML = msg;
+                warningBanner.appendChild(div);
+                if (type == 'error') div.style = 'background: red; padding: 10px;';
+                else {
+                  if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+                  setTimeout(function() {
+                    warningBanner.removeChild(div);
+                    updateBannerVisibility();
+                  }, 5000);
+                }
+                updateBannerVisibility();
+              }
+
+              var loaderUrl = "https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF/Build/WebGL.loader.js";
+
+              const config = {
+                dataUrl: "https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF/Build/WebGL.data",
+                frameworkUrl: "https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF/Build/WebGL.framework.js",
+                codeUrl: "https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF/Build/WebGL.wasm",
+                streamingAssetsUrl: "https://www.example.com/Builds/release/StreamingAssets",
+                companyName: "Ghezzi Games",
+                productName: "College Fuck Fest",
+                productVersion: "0.1",
+                showBanner: unityShowBanner,
+              };
+
+              if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        container.className = "unity-mobile";
+        canvas.className = "unity-mobile";
+
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
+
+
+      } else {
+        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
+        canvas.style.width = "1280px";
+        canvas.style.height = "720px";
+      }
+
+      <!-- loadingBar.style.display = "block"; -->
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      
+ 
+            var canvas;
+
+            function retrieveUser() 
+                {
+                    Nutaku.retrieveUser(function(resultData) 
+                    {
+                        this.gameInstance = gameInstance;
+                        console.log(gameInstance + "found in GADGET")
+                        gameInstance.SendMessage("_SG_NutakuManager", "OnUserRetrieved", JSON.stringify(resultData));
+                        
+                        var grade = resultData["grade"];
+                        
+                        if (grade != 0)
+                        {
+                            console.log("THIS USER HAS AN ACCOUNT");
+                        }
+                        else 
+                        {
+                            console.log("NO ACCOUNT");
+                        }
+                    });
+                }
+
+                function sendRequestToAPI(userId) {
+                    console.log("Begun sending request to API in GADGET by func")
+                    var params = {};
+                    params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
+                    params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+                    params[gadgets.io.RequestParameters.POST_DATA] = gadgets.io.encodeValues({ id: userId });
+                    params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.SIGNED;
+
+                    gadgets.io.makeRequest("https://cloud.digitalocean.com/spaces/college-fuck-fest?i=f57be9&path=CFF%2F", function(obj) {
+                        var user = obj.data;
+                        var name = user.name;
+
+                    console.log("FOUND USER DATA: " + user);
+                    console.log("FOUND USER NAME: " + name);
+                    }, params);
+                }
+             
+            function init() {
+                canvas = document.querySelector("#unity-canvas"); //or getElementById('unity-canvas')
+                gameInstance = createUnityInstance(canvas, config, (progress) => {
+                  console.log(progress);
+                  }).then((gameInstance) => {
+                    console.log("WAS LOADED");
+                    Nutaku.retrieveUser(function(resultData) 
+                    {
+                        var grade = resultData["grade"];
+                        
+                        if (grade != 0)
+                        {
+                            console.log("THIS USER HAS AN ACCOUNT");
+                        }
+                        else 
+                        {
+                            console.log("NO ACCOUNT");
+                        }
+
+                        sendRequestToAPI(resultData.id);
+
+                        console.log("FOUND USER ID TO SERVER: " + resultData.id);
+                        gameInstance.SendMessage("_SG_NutakuManager", "OnUserRetrieved", JSON.stringify(resultData));
+                    });
+                  }).catch((message) => {
+                    alert(message);
+                  });
+            }
+
+
+      document.body.appendChild(script);
+ 
+            gadgets.util.registerOnLoadHandler(init);
+            console.log("RegisterLoadHandler completed!");
+            gadgets.window.adjustHeight(768);
+        </script>
+    ]]>
+    </Content>
+</Module>

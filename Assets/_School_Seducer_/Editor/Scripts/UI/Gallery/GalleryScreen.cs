@@ -1,26 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.UI.Gallery;
 using _School_Seducer_.Editor.Scripts.Utility;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
+using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.UI
 {
     public class GalleryScreen : ScreenViewBase
     {
+        [Inject] private IContentDataProvider _contentDataProvider;
+        
         [Header("Data")]
         [SerializeField] private Chat.Chat chat;
         [SerializeField] private ContentScreen contentScreen;
         [SerializeField] private Transform galleryContent;
         [SerializeField] private TextMeshProUGUI characterName;
         [SerializeField] private GalleryData data;
-        [SerializeField] private GallerySlotView slotPrefab;
+        [SerializeField] private GallerySlotView slotPhotoPrefab;
+        [SerializeField] private GallerySlotView slotVideoPrefab;
         [SerializeField] private GallerySectionButton[] sectionButtons;
 
         [Header("Counters")]
@@ -77,11 +77,15 @@ namespace _School_Seducer_.Editor.Scripts.UI
                     Destroy(galleryContent.GetChild(i).gameObject);
                 }
             }
+            
+            _contentDataProvider.ResetContentList();
         }
 
         private void InstallDefaultSection()
         {
             SetSlotsByConversation(GallerySlotType.Photo);
+            
+            this.DelayedCall(.3f,() => _contentDataProvider.LoadContentData(GetTotalSlotsInContent()));
         }
 
         private void OnSectionSelected(GallerySectionButton sectionButton)
@@ -93,6 +97,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             _currentType = sectionButton.TypeSection;
             SetSlotsByConversation(sectionButton.TypeSection);
             //SetSlotsByData(sectionButton.TypeSection);
+            this.DelayedCall(.3f,() => _contentDataProvider.LoadContentData(GetTotalSlotsInContent()));
         }
 
         private void SetSlotsByData(GallerySlotType section)
@@ -105,7 +110,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
                 if (slotData.Section == section)
                 {
-                    GallerySlotView slotView = Instantiate(slotPrefab, galleryContent);
+                    GallerySlotView slotView = Instantiate(slotPhotoPrefab, galleryContent);
                     slotView.Render(slotData, data.lockedSlot, data.frameSlot);
 
                     //SetCounterSlots(section);
@@ -124,20 +129,26 @@ namespace _School_Seducer_.Editor.Scripts.UI
             {
                 GallerySlotData slotData = _foundedSlotsCurrentCharacter[j];
 
+                GallerySlotView selectedView = null;
+
                 if (slotData.Section == section)
                 {
-                    GallerySlotView slotView = Instantiate(slotPrefab, galleryContent);
-                    slotView.Render(slotData, data.lockedSlot, data.frameSlot);
-                    
-                    slotView.GetComponent<OpenContent>().SetCondition(new (slotView.Data.AddedInGallery));
+                    switch (slotData.Section)
+                    {
+                        case GallerySlotType.Photo: selectedView = slotPhotoPrefab; break;
+                        case GallerySlotType.Video: selectedView = slotVideoPrefab; break;
+                        case GallerySlotType.Game: selectedView = slotPhotoPrefab; break;
+                    }
 
-                    //SetCounterSlots(section);
+                    GallerySlotView slotView = Instantiate(selectedView, galleryContent);
+                    slotView.Render(slotData, data.lockedSlot, data.frameSlot);
+                
+                    slotView.GetComponent<OpenContentBase>().SetCondition(new (slotView.Data.AddedInGallery));
 
                     if (slotData.AddedInGallery && _currentGalleryData.IsOriginalData(slotData))
                     {
-                        //slotView.gameObject.Destroy();
                         _currentGalleryData.AddSlotData(slotData);
-                    }
+                    }   
                 }
             }
         }

@@ -28,7 +28,10 @@ namespace PuzzleGame.Gameplay.Merged
             var bricksRotation = Quaternion.Euler(bricks.First().transform.localEulerAngles + Vector3.forward * 90);
 
             foreach (var brick in bricks.Cast<MergedBrick>())
+            {
                 brick.DoRotate(bricksRotation, null);
+            }
+                
 
             StartCoroutine(rectTransform.DoRotation(rotation, OnRotationComplete));
         }

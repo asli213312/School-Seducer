@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs title="Example WebGL Game" author="example" thumbnail="" screenshot="" height="1080" width="1920">
+        <Require feature="opensocial-0.8" />
+        <Require feature="opensocial-payment" />
+        <Require feature="nutaku" />
+    </ModulePrefs>
+    <Content preferred_width="1920" type="html" view="canvas">
+    <![CDATA[
+        <link rel="stylesheet" href="https://www.example.com/Builds/release/TemplateData/style.css">
+        <script src="https://www.example.com/Builds/release/bin.framework.js" ></script>
+        <script src="https://www.example.com/Builds/release/bin.loader.js" ></script>
+        <script type="text/javascript">
+ 
+              const config = {
+                dataUrl: "https://www.example.com/Builds/release//bin.data",
+                frameworkUrl: "https://www.example.com/Builds/release/bin.framework.js",
+                codeUrl: "https://www.example.com/Builds/release/bin.wasm",
+                streamingAssetsUrl: "https://www.example.com/Builds/release/StreamingAssets",
+                companyName: "Your Company Name",
+                productName: "Your Product Name",
+                productVersion: "1",
+              };
+ 
+            var gameInstance;
+            var canvas;
+             
+            function init() {
+                canvas = document.querySelector("#unity-canvas"); //or getElementById('unity-canvas')
+                gameInstance = createUnityInstance(canvas, config, (progress) => {
+                  console.log(progress);
+                  }).then((gameInstance) => {
+                    console.log("WAS LOADED");
+                  }).catch((message) => {
+                    alert(message);
+                  });
+                }
+            }
+ 
+            gadgets.util.registerOnLoadHandler(init);
+        </script>
+         
+        <body style="min-height: 1080px">
+            <div class="main" id="main">
+                <div class="mainLeft"></div>
+                <div class="mainRight"></div>
+                <div class="webgl-content" id="webglcontent" style="min-height: 1080px">
+                    <div id="unity-container"  class="unity-desktop">
+                        <canvas id="unity-canvas"></canvas>
+                    </div>
+                    <div id="LogoBG" class="Logos LogoBG"></div>
+                    <div id="LogoA"  class="Logos LogoA"></div>
+                    <div id="LogoB"  class="Logos LogoB"></div>
+                </div>
+                <div id="Footer" class="Footer" onclick="gameInstance.SetFullscreen(1)"></div>
+            </div>
+        </body>
+    ]]>
+    </Content>
+</Module>

@@ -121,6 +121,17 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         {
             behaviour.StartCoroutine(DoDelayedCall(delay, onComplete));
         }
+        
+        public static void DelayedBoolCall(this MonoBehaviour behaviour, float delay, Action<bool> onComplete, bool boolParameter)
+        {
+            behaviour.StartCoroutine(DoDelayedBoolCall(delay, onComplete, boolParameter));
+        }
+
+        static IEnumerator DoDelayedBoolCall(float delay, Action<bool> onComplete, bool boolParameter)
+        {
+            yield return new WaitForSeconds(delay);
+            onComplete?.Invoke(boolParameter);
+        }
 
         static IEnumerator DoDelayedCall(float delay, Action onComplete)
         {

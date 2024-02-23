@@ -10,7 +10,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
     public class ControllerTransforms : MonoBehaviour
     {
         [SerializeField] private UnityEvent onClickTransform;
-        [SerializeField] private List<IgnoreTransform> transforms = new();
+        [SerializeField] private List<InteractTransform> transforms = new();
 
         private void Awake()
         {

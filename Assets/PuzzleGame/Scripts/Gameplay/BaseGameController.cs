@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using PuzzleGame.Gameplay.Boosters;
+using PuzzleGame.Gameplay.Merged;
 using PuzzleGame.Sounds;
 using UnityEngine;
 
@@ -212,7 +213,7 @@ namespace PuzzleGame.Gameplay
             {
                 Vector2 localCoords = ((Vector2)bricks[i].transform.position - minPosition) / GetWorldBrickSize();
                 coords[i] = Vector2Int.RoundToInt(localCoords) + minCoords;
-            
+                
                 if (coords[i].x < 0 || coords[i].y < 0 || coords[i].x >= bricksCount.x || coords[i].y >= bricksCount.y ||
                     field[coords[i].x, coords[i].y] != null)
                     return false;

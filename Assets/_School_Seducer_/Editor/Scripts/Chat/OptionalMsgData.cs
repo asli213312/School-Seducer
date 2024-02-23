@@ -1,6 +1,5 @@
 ﻿using _School_Seducer_.Editor.Scripts.UI;
 using UnityEngine;
-using OneLine;
 using Sirenix.OdinInspector;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
@@ -9,7 +8,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     public class OptionalMsgData
     {
         public GallerySlotData GallerySlot;
-        public AnimationClip Animation;
         public BranchData[] Branches;
     }
 }

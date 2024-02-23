@@ -1,0 +1,18 @@
+{
+    "name": "Nutaku.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6e3450fa7e8892340b7ec24e0682020a"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

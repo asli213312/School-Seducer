@@ -1,6 +1,7 @@
 ﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
 using NaughtyAttributes;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityFigmaBridge.Runtime.UI;
@@ -11,8 +12,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
     {
         [SerializeField] private FigmaImage image;
         [SerializeField] private FigmaImage frame;
-        [SerializeField] private FigmaImage animationPreview;
-        
+
         public GallerySlotData Data { get; private set; }
 
         public void Render(GallerySlotData data, Sprite lockedSlot, Sprite emptySlot)
@@ -23,6 +23,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
             {
                 image.sprite = data.Sprite;
                 frame.sprite = emptySlot;
+
+                if (data.animation != null) GetComponentInChildren<SkeletonAnimation>().skeletonDataAsset = data.animation;
             }
             else
             {

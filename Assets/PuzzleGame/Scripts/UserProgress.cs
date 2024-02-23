@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using PuzzleGame.Gameplay;
+using PuzzleGame.Gameplay.Merged;
 using UnityEngine;
 
 namespace PuzzleGame

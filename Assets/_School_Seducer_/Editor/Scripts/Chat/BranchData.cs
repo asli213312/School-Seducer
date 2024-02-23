@@ -4,7 +4,6 @@ using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Attributes;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using NaughtyAttributes;
-using OneLine;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,7 +14,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     //[CreateAssetMenu(fileName = "BranchData", menuName = "Game/Data/Chat/BranchData", order = 0)]
     public class BranchData : LocalizedScriptableObject, IСonversation
     {
-        [FormerlySerializedAs("translator")] [SerializeField, OneLine] private LocalizatorMessages localizator;
+        [FormerlySerializedAs("translator")] [SerializeField] private LocalizatorMessages localizator;
         public LocalizatorMessages Localizator {get => localizator; set => localizator = value;}
         private string _currentLanguage;
         [SerializeField] [ResizableTextArea] public string BranchName;
