@@ -13,9 +13,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [ShowAssetPreview(32, 32), SerializeField, Sirenix.OdinInspector.HideLabel] public Sprite ActorIcon;
         [ResizableTextArea] [NaughtyAttributes.HideIf("IsPictureMsg")] public string Msg;
         public OptionalMsgData optionalData;
-        [NaughtyAttributes.HideIf("IsPictureMsg"), Sirenix.OdinInspector.HideLabel] public AudioClip AudioMsg;
+        [NaughtyAttributes.HideIf("IsPictureMsg"), Sirenix.OdinInspector.HideLabel, HideInInspector] public AudioClip AudioMsg;
 
-        [field: NaughtyAttributes.ReadOnly] public MessageSender Sender { get; set; }
+        [field: NaughtyAttributes.ReadOnly, SerializeField, HideInInspector] public MessageSender Sender { get; set; }
 
         [SerializeField] private List<Translator.LanguageAudioClip> localizedAudioClips = new();
         private List<Translator.Languages> _localizedData = new();

@@ -53,6 +53,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private ChatStatusView _currentStatusView;
         private ConversationView _conversationView;
         private MessageDefaultView _currentDefaultMsg;
+        private MessageDefaultView _previousDefaultMsg;
         private MessagePictureView _currentPictureMsg;
         
         private bool _isStartConversation;
@@ -234,14 +235,27 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             newMsg.Initialize(optionButtons);
             RenderMsgData(Messages.ToArray(), newMsg, index);
-
-            if (newMsg is MessageDefaultView defaultView)
+            
+            if (newMsg is MessagePictureView msgPicture)
             {
-                if (defaultView.NeedPaddings() == false)
-                {
-                    paddingBack.gameObject.Deactivate();
-                }
+                paddingBack.gameObject.Deactivate();
+                
+                if (_previousDefaultMsg.PaddingForward != null)
+                    _previousDefaultMsg.PaddingForward.Deactivate();
             }
+            else if (newMsg is MessageDefaultView msgDefault) 
+            {
+                _previousDefaultMsg = msgDefault;
+                _defaultMessages.Add(msgDefault);
+            }
+
+            // if (newMsg is MessageDefaultView defaultView)
+            // {
+            //     if (defaultView.NeedPaddings() == false)
+            //     {
+            //         paddingBack.gameObject.Deactivate();
+            //     }
+            // }
 
             Debug.Log("Render completed");
 

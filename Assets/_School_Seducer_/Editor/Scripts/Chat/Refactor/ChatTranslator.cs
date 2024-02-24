@@ -14,8 +14,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat.Refactor
 
         private ChatSystem _chatSystem;
 
-        private List<MessageDefaultViewProxy> _defaultMessages;
-        private List<MessageData> _messagesData;
+        private List<MessageDefaultViewProxy> _defaultMessages = new();
+        private List<MessageData> _messagesData = new();
         
         public void InitializeCore(ChatSystem system)
         {

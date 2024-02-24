@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
   m_Name: Emily
   m_EditorClassIdentifier: 
-  currentConversation: {fileID: 11400000, guid: 3439c0f2765e41745872053657579534, type: 2}
+  currentConversation: {fileID: 11400000, guid: 9d7f9ed15c8f3c04dae67e2b813b9890, type: 2}
   allConversations:
   - {fileID: 11400000, guid: 3439c0f2765e41745872053657579534, type: 2}
+  - {fileID: 11400000, guid: f5814c5a48e4a88468cc36695805f617, type: 2}
+  - {fileID: 11400000, guid: a4e13e9d6ef6578419dad2b92440fa10, type: 2}
+  - {fileID: 11400000, guid: a51fba942addd524a8eec864ab0163ba, type: 2}
+  - {fileID: 11400000, guid: 9d7f9ed15c8f3c04dae67e2b813b9890, type: 2}
+  - {fileID: 11400000, guid: 0ad2fcc7ce8584a43a7b31658119f93c, type: 2}
   gallery: {fileID: 11400000, guid: 4fdcb8444037b4549a4d8713881e0675, type: 2}
   requiredLevel: 2
   loyalty: 1
   maxLoyalty: 3
   showDebugParameters: 0
-  experience: 0
+  experience: 1

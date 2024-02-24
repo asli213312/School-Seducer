@@ -1,0 +1,36 @@
+{
+  "languages": [
+    {
+      "languageCode": "en",
+      "messages": [
+  {"key": "Man, I'm so over studying!" },
+  {"key": "We're barely halfway through \nthe semester, and I already feel like bailing."},
+  {"key": "I thought college life would be way different. \nYeah, there are some perks, like tons \nof hot students. But damn, it's hard \nto focus with all that distraction."},
+	{"key": "I need to chill out tonight. \nMaybe hang in the room, \nplay some video games."},
+	{"key": "Weird, our room's door is locked. \nMaybe Emily's out at a lecture or \nwith her boyfriend. Alright, I'll \nuse my key to open it."},
+	{"key": "Oh crap! Emily didn't go anywhere! \nHer boyfriend's here, and they're \ngetting busy on the bed."},
+	{"key": "Awkward as hell, I gotta close \nthe door quick and dip out for an hour..."},
+	{"key": "But then again..."},
+	{"key": "They haven't noticed me... \nAnd I don't think it'll hurt to peek \nthrough the slightly open door for a bit."},
+	{"key": "Damn, wish I was in his shoes right now!"},
+	{"key": "Insert picture"}
+      ]
+    },
+    {
+      "languageCode": "ru",
+      "messages": [
+  {"key": "Как же я устал от учёбы!"},
+  {"key": "Только середина семестра, \nно мне уже хочется всё забросить."},
+  {"key": "Совсем иначе я представлял себе студенческую жизнь. \nКонечно, в колледже есть и плюсы. \nНапример, толпы сексапильных студенток. \nВот только из-за них мне сложно \nсосредоточиться на учёбе."},
+  {"key": "Надо устроить себе вечер отдыха. \nПосидеть в комнате, поиграть в видеоигры."},
+  {"key": "Странно, дверь нашей комнаты закрыта \nна ключ. Наверное, Эмили ушла на \nлекцию или на свидание со своим парнем. \nОкей, открою своим ключом."},
+  {"key": "О боже! Эмили никуда не уходила! \nНаоборот, её парень пришёл к ней \nи сейчас трахает её на кровати."},
+  {"key": "Неловкий момент, надо скорее \nзакрыть дверь и погулять часик…"},
+  {"key": "Хотя…"},
+  {"key": "Они меня не заметили… И думаю, что ничего \nстрашного не произойдёт, если я немного \nподсмотрю в приоткрытую дверь."},
+  {"key": "Хотел бы я быть сейчас на его месте!"},
+  {"key": "Вставить картинку"}
+      ]
+    }
+  ]
+}

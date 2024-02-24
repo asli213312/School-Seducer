@@ -1,0 +1,266 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Sex with boyfriend
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: <Language>k__BackingField
+    localizedDataList: []
+  - fieldLabel: actorLeftName
+    localizedDataList:
+    - languageCode: en
+      key: GirlEN
+    - languageCode: fr
+      key: GirlFR
+    - languageCode: ru
+      key: GirlRU
+  - fieldLabel: actorRightName
+    localizedDataList:
+    - languageCode: 
+      key: 
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  costExp: 0
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: 2934d0e230d5b5f40b20e08f84894e3a, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Man, I'm so over studying!
+        - key: "We're barely halfway through \nthe semester, and I already feel like
+            bailing."
+        - key: "I thought college life would be way different. \nYeah, there are
+            some perks, like tons \nof hot students. But damn, it's hard \nto focus
+            with all that distraction."
+        - key: "I need to chill out tonight. \nMaybe hang in the room, \nplay some
+            video games."
+        - key: "Weird, our room's door is locked. \nMaybe Emily's out at a lecture
+            or \nwith her boyfriend. Alright, I'll \nuse my key to open it."
+        - key: "Oh crap! Emily didn't go anywhere! \nHer boyfriend's here, and they're
+            \ngetting busy on the bed."
+        - key: "Awkward as hell, I gotta close \nthe door quick and dip out for an
+            hour..."
+        - key: But then again...
+        - key: "They haven't noticed me... \nAnd I don't think it'll hurt to peek
+            \nthrough the slightly open door for a bit."
+        - key: Damn, wish I was in his shoes right now!
+        - key: Insert picture
+      - languageCode: ru
+        messages:
+        - key: "\u041A\u0430\u043A \u0436\u0435 \u044F \u0443\u0441\u0442\u0430\u043B
+            \u043E\u0442 \u0443\u0447\u0451\u0431\u044B!"
+        - key: "\u0422\u043E\u043B\u044C\u043A\u043E \u0441\u0435\u0440\u0435\u0434\u0438\u043D\u0430
+            \u0441\u0435\u043C\u0435\u0441\u0442\u0440\u0430, \n\u043D\u043E \u043C\u043D\u0435
+            \u0443\u0436\u0435 \u0445\u043E\u0447\u0435\u0442\u0441\u044F \u0432\u0441\u0451
+            \u0437\u0430\u0431\u0440\u043E\u0441\u0438\u0442\u044C."
+        - key: "\u0421\u043E\u0432\u0441\u0435\u043C \u0438\u043D\u0430\u0447\u0435
+            \u044F \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u043B
+            \u0441\u0435\u0431\u0435 \u0441\u0442\u0443\u0434\u0435\u043D\u0447\u0435\u0441\u043A\u0443\u044E
+            \u0436\u0438\u0437\u043D\u044C. \n\u041A\u043E\u043D\u0435\u0447\u043D\u043E,
+            \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435 \u0435\u0441\u0442\u044C
+            \u0438 \u043F\u043B\u044E\u0441\u044B. \n\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440,
+            \u0442\u043E\u043B\u043F\u044B \u0441\u0435\u043A\u0441\u0430\u043F\u0438\u043B\u044C\u043D\u044B\u0445
+            \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u043A. \n\u0412\u043E\u0442
+            \u0442\u043E\u043B\u044C\u043A\u043E \u0438\u0437-\u0437\u0430 \u043D\u0438\u0445
+            \u043C\u043D\u0435 \u0441\u043B\u043E\u0436\u043D\u043E \n\u0441\u043E\u0441\u0440\u0435\u0434\u043E\u0442\u043E\u0447\u0438\u0442\u044C\u0441\u044F
+            \u043D\u0430 \u0443\u0447\u0451\u0431\u0435."
+        - key: "\u041D\u0430\u0434\u043E \u0443\u0441\u0442\u0440\u043E\u0438\u0442\u044C
+            \u0441\u0435\u0431\u0435 \u0432\u0435\u0447\u0435\u0440 \u043E\u0442\u0434\u044B\u0445\u0430.
+            \n\u041F\u043E\u0441\u0438\u0434\u0435\u0442\u044C \u0432 \u043A\u043E\u043C\u043D\u0430\u0442\u0435,
+            \u043F\u043E\u0438\u0433\u0440\u0430\u0442\u044C \u0432 \u0432\u0438\u0434\u0435\u043E\u0438\u0433\u0440\u044B."
+        - key: "\u0421\u0442\u0440\u0430\u043D\u043D\u043E, \u0434\u0432\u0435\u0440\u044C
+            \u043D\u0430\u0448\u0435\u0439 \u043A\u043E\u043C\u043D\u0430\u0442\u044B
+            \u0437\u0430\u043A\u0440\u044B\u0442\u0430 \n\u043D\u0430 \u043A\u043B\u044E\u0447.
+            \u041D\u0430\u0432\u0435\u0440\u043D\u043E\u0435, \u042D\u043C\u0438\u043B\u0438
+            \u0443\u0448\u043B\u0430 \u043D\u0430 \n\u043B\u0435\u043A\u0446\u0438\u044E
+            \u0438\u043B\u0438 \u043D\u0430 \u0441\u0432\u0438\u0434\u0430\u043D\u0438\u0435
+            \u0441\u043E \u0441\u0432\u043E\u0438\u043C \u043F\u0430\u0440\u043D\u0435\u043C.
+            \n\u041E\u043A\u0435\u0439, \u043E\u0442\u043A\u0440\u043E\u044E \u0441\u0432\u043E\u0438\u043C
+            \u043A\u043B\u044E\u0447\u043E\u043C."
+        - key: "\u041E \u0431\u043E\u0436\u0435! \u042D\u043C\u0438\u043B\u0438 \u043D\u0438\u043A\u0443\u0434\u0430
+            \u043D\u0435 \u0443\u0445\u043E\u0434\u0438\u043B\u0430! \n\u041D\u0430\u043E\u0431\u043E\u0440\u043E\u0442,
+            \u0435\u0451 \u043F\u0430\u0440\u0435\u043D\u044C \u043F\u0440\u0438\u0448\u0451\u043B
+            \u043A \u043D\u0435\u0439 \n\u0438 \u0441\u0435\u0439\u0447\u0430\u0441
+            \u0442\u0440\u0430\u0445\u0430\u0435\u0442 \u0435\u0451 \u043D\u0430
+            \u043A\u0440\u043E\u0432\u0430\u0442\u0438."
+        - key: "\u041D\u0435\u043B\u043E\u0432\u043A\u0438\u0439 \u043C\u043E\u043C\u0435\u043D\u0442,
+            \u043D\u0430\u0434\u043E \u0441\u043A\u043E\u0440\u0435\u0435 \n\u0437\u0430\u043A\u0440\u044B\u0442\u044C
+            \u0434\u0432\u0435\u0440\u044C \u0438 \u043F\u043E\u0433\u0443\u043B\u044F\u0442\u044C
+            \u0447\u0430\u0441\u0438\u043A\u2026"
+        - key: "\u0425\u043E\u0442\u044F\u2026"
+        - key: "\u041E\u043D\u0438 \u043C\u0435\u043D\u044F \u043D\u0435 \u0437\u0430\u043C\u0435\u0442\u0438\u043B\u0438\u2026
+            \u0418 \u0434\u0443\u043C\u0430\u044E, \u0447\u0442\u043E \u043D\u0438\u0447\u0435\u0433\u043E
+            \n\u0441\u0442\u0440\u0430\u0448\u043D\u043E\u0433\u043E \u043D\u0435
+            \u043F\u0440\u043E\u0438\u0437\u043E\u0439\u0434\u0451\u0442, \u0435\u0441\u043B\u0438
+            \u044F \u043D\u0435\u043C\u043D\u043E\u0433\u043E \n\u043F\u043E\u0434\u0441\u043C\u043E\u0442\u0440\u044E
+            \u0432 \u043F\u0440\u0438\u043E\u0442\u043A\u0440\u044B\u0442\u0443\u044E
+            \u0434\u0432\u0435\u0440\u044C."
+        - key: "\u0425\u043E\u0442\u0435\u043B \u0431\u044B \u044F \u0431\u044B\u0442\u044C
+            \u0441\u0435\u0439\u0447\u0430\u0441 \u043D\u0430 \u0435\u0433\u043E
+            \u043C\u0435\u0441\u0442\u0435!"
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 1
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: GirlEN
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041A\u0430\u043A \u0436\u0435 \u044F \u0443\u0441\u0442\u0430\u043B \u043E\u0442
+      \u0443\u0447\u0451\u0431\u044B!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 8cab7dc24534f87428ad21bcbf6787b2, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 8cab7dc24534f87428ad21bcbf6787b2, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0422\u043E\u043B\u044C\u043A\u043E \u0441\u0435\u0440\u0435\u0434\u0438\u043D\u0430
+      \u0441\u0435\u043C\u0435\u0441\u0442\u0440\u0430, \n\u043D\u043E \u043C\u043D\u0435
+      \u0443\u0436\u0435 \u0445\u043E\u0447\u0435\u0442\u0441\u044F \u0432\u0441\u0451
+      \u0437\u0430\u0431\u0440\u043E\u0441\u0438\u0442\u044C."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: d049ec1fa0b1cd24d892cb77b681dea2, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: d049ec1fa0b1cd24d892cb77b681dea2, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0421\u043E\u0432\u0441\u0435\u043C \u0438\u043D\u0430\u0447\u0435 \u044F
+      \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u043B \u0441\u0435\u0431\u0435
+      \u0441\u0442\u0443\u0434\u0435\u043D\u0447\u0435\u0441\u043A\u0443\u044E \u0436\u0438\u0437\u043D\u044C.
+      \n\u041A\u043E\u043D\u0435\u0447\u043D\u043E, \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435
+      \u0435\u0441\u0442\u044C \u0438 \u043F\u043B\u044E\u0441\u044B. \n\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440,
+      \u0442\u043E\u043B\u043F\u044B \u0441\u0435\u043A\u0441\u0430\u043F\u0438\u043B\u044C\u043D\u044B\u0445
+      \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u043A. \n\u0412\u043E\u0442
+      \u0442\u043E\u043B\u044C\u043A\u043E \u0438\u0437-\u0437\u0430 \u043D\u0438\u0445
+      \u043C\u043D\u0435 \u0441\u043B\u043E\u0436\u043D\u043E \n\u0441\u043E\u0441\u0440\u0435\u0434\u043E\u0442\u043E\u0447\u0438\u0442\u044C\u0441\u044F
+      \u043D\u0430 \u0443\u0447\u0451\u0431\u0435."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 783fc4606fc2a4d4692344951d8d2256, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 783fc4606fc2a4d4692344951d8d2256, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041D\u0430\u0434\u043E \u0443\u0441\u0442\u0440\u043E\u0438\u0442\u044C
+      \u0441\u0435\u0431\u0435 \u0432\u0435\u0447\u0435\u0440 \u043E\u0442\u0434\u044B\u0445\u0430.
+      \n\u041F\u043E\u0441\u0438\u0434\u0435\u0442\u044C \u0432 \u043A\u043E\u043C\u043D\u0430\u0442\u0435,
+      \u043F\u043E\u0438\u0433\u0440\u0430\u0442\u044C \u0432 \u0432\u0438\u0434\u0435\u043E\u0438\u0433\u0440\u044B."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 1310252c90fae744f857202a1f42542f, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 1310252c90fae744f857202a1f42542f, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0421\u0442\u0440\u0430\u043D\u043D\u043E, \u0434\u0432\u0435\u0440\u044C
+      \u043D\u0430\u0448\u0435\u0439 \u043A\u043E\u043C\u043D\u0430\u0442\u044B \u0437\u0430\u043A\u0440\u044B\u0442\u0430
+      \n\u043D\u0430 \u043A\u043B\u044E\u0447. \u041D\u0430\u0432\u0435\u0440\u043D\u043E\u0435,
+      \u042D\u043C\u0438\u043B\u0438 \u0443\u0448\u043B\u0430 \u043D\u0430 \n\u043B\u0435\u043A\u0446\u0438\u044E
+      \u0438\u043B\u0438 \u043D\u0430 \u0441\u0432\u0438\u0434\u0430\u043D\u0438\u0435
+      \u0441\u043E \u0441\u0432\u043E\u0438\u043C \u043F\u0430\u0440\u043D\u0435\u043C.
+      \n\u041E\u043A\u0435\u0439, \u043E\u0442\u043A\u0440\u043E\u044E \u0441\u0432\u043E\u0438\u043C
+      \u043A\u043B\u044E\u0447\u043E\u043C."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: dec56aefbc8e93643a05f8b023c828f1, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: dec56aefbc8e93643a05f8b023c828f1, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041E \u0431\u043E\u0436\u0435! \u042D\u043C\u0438\u043B\u0438 \u043D\u0438\u043A\u0443\u0434\u0430
+      \u043D\u0435 \u0443\u0445\u043E\u0434\u0438\u043B\u0430! \n\u041D\u0430\u043E\u0431\u043E\u0440\u043E\u0442,
+      \u0435\u0451 \u043F\u0430\u0440\u0435\u043D\u044C \u043F\u0440\u0438\u0448\u0451\u043B
+      \u043A \u043D\u0435\u0439 \n\u0438 \u0441\u0435\u0439\u0447\u0430\u0441 \u0442\u0440\u0430\u0445\u0430\u0435\u0442
+      \u0435\u0451 \u043D\u0430 \u043A\u0440\u043E\u0432\u0430\u0442\u0438."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 2c09811c1d33f644cbea6e6b54010795, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2c09811c1d33f644cbea6e6b54010795, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041D\u0435\u043B\u043E\u0432\u043A\u0438\u0439 \u043C\u043E\u043C\u0435\u043D\u0442,
+      \u043D\u0430\u0434\u043E \u0441\u043A\u043E\u0440\u0435\u0435 \n\u0437\u0430\u043A\u0440\u044B\u0442\u044C
+      \u0434\u0432\u0435\u0440\u044C \u0438 \u043F\u043E\u0433\u0443\u043B\u044F\u0442\u044C
+      \u0447\u0430\u0441\u0438\u043A\u2026"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 6da42f7f08bddf144909c7b1d4e01bb1, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 6da42f7f08bddf144909c7b1d4e01bb1, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0425\u043E\u0442\u044F\u2026"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: d06680e61e6ae10479b87261a3484479, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: d06680e61e6ae10479b87261a3484479, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041E\u043D\u0438 \u043C\u0435\u043D\u044F \u043D\u0435 \u0437\u0430\u043C\u0435\u0442\u0438\u043B\u0438\u2026
+      \u0418 \u0434\u0443\u043C\u0430\u044E, \u0447\u0442\u043E \u043D\u0438\u0447\u0435\u0433\u043E
+      \n\u0441\u0442\u0440\u0430\u0448\u043D\u043E\u0433\u043E \u043D\u0435 \u043F\u0440\u043E\u0438\u0437\u043E\u0439\u0434\u0451\u0442,
+      \u0435\u0441\u043B\u0438 \u044F \u043D\u0435\u043C\u043D\u043E\u0433\u043E
+      \n\u043F\u043E\u0434\u0441\u043C\u043E\u0442\u0440\u044E \u0432 \u043F\u0440\u0438\u043E\u0442\u043A\u0440\u044B\u0442\u0443\u044E
+      \u0434\u0432\u0435\u0440\u044C."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 4518077f77020824eb9d1d0f62424643, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 4518077f77020824eb9d1d0f62424643, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0425\u043E\u0442\u0435\u043B \u0431\u044B \u044F \u0431\u044B\u0442\u044C
+      \u0441\u0435\u0439\u0447\u0430\u0441 \u043D\u0430 \u0435\u0433\u043E \u043C\u0435\u0441\u0442\u0435!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 9a4c6a1ab66d5f749aa0af6b6da41ee9, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 9a4c6a1ab66d5f749aa0af6b6da41ee9, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+    Msg: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: 187e75d82dd36db48ae58bc52559827c, type: 2}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: cee53575c427d9f4886397387369dfb9, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []

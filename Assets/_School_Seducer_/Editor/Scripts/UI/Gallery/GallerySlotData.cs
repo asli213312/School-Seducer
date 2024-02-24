@@ -9,7 +9,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
     public class GallerySlotData : ScriptableObject
     {
         [ShowAssetPreview(32, 32)] public Sprite Sprite;
-        [ShowIf(nameof(Section), GallerySlotType.Video)]public SkeletonDataAsset animation;
+        [HideIf(nameof(Section), GallerySlotType.Photo)] public SkeletonDataAsset animation;
         
         private bool CheckEmptyImage() => Sprite == null;
         private bool CheckEmptyAnimation() => animation == null;

@@ -1,0 +1,56 @@
+{
+  "languages": [
+    {
+      "languageCode": "en",
+      "messages": [
+  {"key": "My neighbor is totally my type! \nSlim, stunning, and she's got this vibe..." },
+  {"key": "But hold up, she's put it out \nthere that we're just friends. \nGuess I'll have to admire her \nfrom a distance."},
+  {"key": "Or maybe I'll bring some cute \nfriends over to hang at her place? \nThat could be my in. We never said \nI couldn't be friends with \nher friends too."},
+	{"key": "Oh crap! It's already eight, \nI'm late for class! Quick \nshower and then I'm out!"},
+	{"key": "Insert picture"},
+	{"key": "Hey, what's up with barging in like that!"},
+	{"key": "Oh my god, I'm so sorry!"},
+	{"key": "Next time, knock before you \nbust in the bathroom like that!"},
+	{"key": "My bad, I thought you were \nalready off to class..."},
+	{"key": "Clearly, I'm still here."},
+	{"key": "I apologize again, didn't mean to..."},
+	{"key": "Forget it, stop saying sorry. \nHope you enjoyed the view))"},
+	{"key": "Of course, I really did..."},
+	{"key": "Yeah, that's what I thought!"},
+	{"key": "Wait, I meant I didn't like it."},
+	{"key": "What did you just say? Do I look awful?"},
+	{"key": "Oh crap! No, sorry, you look \namazing, seriously! I just meant I didn't \nmean to catch you off guard."},
+	{"key": "Come on, I'm just messing with you. \nYou're so funny when you're all apologetic!"},
+	{"key": "Sorry again, won't happen again."},
+  {"key": "Give me a couple of minutes, \nand I'll be out of your hair."},
+  {"key": "Insert picture"}
+      ]
+    },
+    {
+      "languageCode": "ru",
+      "messages": [
+  {"key": "Соседка у меня что надо! \nСтройная, красивая, страсть от неё так и прёт…"},
+  {"key": "Стоп, с ней мне ничего не светит. \nОна чётко дала понять, что между нами \nможет быть только дружба. \nПридётся любоваться ей украдкой."},
+  {"key": "А может быть к ней будут \nприходить симпатичные подружки? \nТогда у меня есть шанс. Ведь мы с ней \nне договаривались, что с её подругами я \nтоже должен только дружить."},
+  {"key": "О чёрт! Уже восемь, я опаздываю на занятия! \nСрочно в душ и бегом на занятия!"},
+  {"key": "Вставить картинку"},
+  {"key": "Эй, какого чёрта!"},
+  {"key": "О боже, извини!"},
+  {"key": "Стучаться надо, если собираешься \nтак вваливаться в ванную!"},
+  {"key": "Извини, я думал, ты уже \nушла на занятия…"},
+  {"key": "Как видишь, нет, я всё ещё тут."},
+  {"key": "Прости ещё раз, я ничего такого не хотел…"},
+  {"key": "Да ладно, хватит извиняться. \nНадеюсь, тебе понравилось то, что ты увидел))"},
+  {"key": "Конечно, очень понравилось…"},
+  {"key": "Ну да, так я и подумала!"},
+  {"key": "Ой, т.е. я хотел сказать, не понравилось."},
+  {"key": "Что ты сейчас сказал? Я плохо выгляжу?"},
+  {"key": "О чёрт! Нет, извини, ты хорошо выглядишь, \nпросто отлично! Я имел ввиду, что я \nне хотел подглядывать за тобой."},
+  {"key": "Да ладно, я шучу. Ты просто так \nзабавно извиняешься!"},
+  {"key": "Ещё раз извини, это больше не повторится."},
+  {"key": "Дай мне пару минут и \nя освобожу тебе ванную."},
+  {"key": "Вставить картинку"}
+      ]
+    }
+  ]
+}

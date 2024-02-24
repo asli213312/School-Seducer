@@ -17,7 +17,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] public int costExp;
         [SerializeField] public Sprite iconStory;
         [SerializeField] private LocalizatorMessages localizator;
-        public LocalizatorMessages Localizator {get => localizator; set => localizator = value;}
+        public LocalizatorMessages Localizator => localizator;
         private string _currentLanguage;
         [field: SerializeField, HideInInspector, ExcludeFromLocalization] public Enums.Language Language { get; set; }
         
