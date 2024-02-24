@@ -19,21 +19,23 @@ MonoBehaviour:
       key: last branch
     - languageCode: fr
       key: FLASt branch
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
   localizator:
     translationJson: {fileID: 0}
     _translator:
       languages: []
-  BranchName: LAST BRANCH
+  BranchName: last branch
   audioMsg: {fileID: 0}
   <StoryTellerSprite>k__BackingField: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
   <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 8ef457871ffe2224ba2ef24538477757, type: 3}
   Messages:
-  - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 9bcb3fa2d36e46a4eb308c5b16104c74, type: 3}
     Msg: 
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    <Sender>k__BackingField: 1
     localizedAudioClips: []

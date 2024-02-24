@@ -245,7 +245,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
             else if (newMsg is MessageDefaultView msgDefault) 
             {
+                if (_previousDefaultMsg != null && _previousDefaultMsg.PaddingForward != null && msgDefault.MessageSender != MessageSender.ActorLeft)
+                {
+                    _previousDefaultMsg.PaddingForward.gameObject.Deactivate();
+                }
                 _previousDefaultMsg = msgDefault;
+                
+                paddingBack.gameObject.Deactivate();
                 _defaultMessages.Add(msgDefault);
             }
 
