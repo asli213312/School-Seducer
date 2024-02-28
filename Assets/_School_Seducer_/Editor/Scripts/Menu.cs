@@ -2,6 +2,7 @@
 using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace _BonGirl_.Editor.Scripts
@@ -12,23 +13,6 @@ namespace _BonGirl_.Editor.Scripts
         private GameObject _currentPanel;
         private GameObject _selectedPanel;
         private Vector3 _startPanelScaled;
-
-
-        public void SelectLanguage(string languageCode)
-        {
-            string selectedLanguageCode = "";
-            
-            switch (languageCode)
-            {
-                case "en": selectedLanguageCode = "en"; break;
-                case "fr": selectedLanguageCode = "fr"; break;
-            }
-            
-            _localizer.GlobalLanguageCodeRuntime = selectedLanguageCode;
-            
-            _localizer.Notify();
-            Debug.Log("Selected language runtime: " + _localizer.GlobalLanguageCodeRuntime.ToUpper());
-        }
 
         private void Start()
         {
@@ -53,6 +37,18 @@ namespace _BonGirl_.Editor.Scripts
             }
 
             _selectedPanel.transform.position = new Vector3(xPosition, _selectedPanel.transform.position.y, _selectedPanel.transform.position.z);
+        }
+
+        public void AlphaClosePanel(Graphic graphic)
+        {
+            Color color = graphic.color;
+            graphic.color = new Color(color.r, color.g, color.b, 0);
+        }
+
+        public void AlphaOpenPanel(Graphic graphic)
+        {
+            Color color = graphic.color;
+            graphic.color = new Color(color.r, color.g, color.b, 1);
         }
 
         public void SafeOpenPanel(GameObject panel)

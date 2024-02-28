@@ -37,6 +37,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public float DurationSendingPicture;
         public TMP_FontAsset mainFont;
         [Range(1, 10)] public int CoinsForMessage;
+
+        [Header("Chat Status Views")] 
+        [SerializeField] public Sprite selectedStatusView;
         
         [Header("Actors font color")] 
         [SerializeField] public Color leftActorColorMsg;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27dd00748590468e9d21d563de25f324, type: 3}
   m_Name: Emily_Morning2
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: d9b92428ab371e446a535acbb032a135, type: 3}
+  Sprite: {fileID: 21300000, guid: 07a7648e265776b489b4f73febdaf798, type: 3}
   animation: {fileID: 0}
   Section: 0
   NeedInGallery: 1

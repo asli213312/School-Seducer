@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Zenject;
 
@@ -8,23 +9,34 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
     {
         [Inject] private LocalizedGlobalMonoBehaviour _localizer;
 
-        public void ChangeLanguage(string languageCode)
-        {
-            string selectedLanguageCode = "";
-            
-            switch (languageCode)
-            {
-                case "en": selectedLanguageCode = "en"; break;
-                case "fr": selectedLanguageCode = "fr"; break;
-                case "ru": selectedLanguageCode = "ru"; break;
-            }
+        [SerializeField] private string languageCode;
+        [SerializeField] private RectTransform checker;
+        [SerializeField] private RectTransform checkPos;
+        [SerializeField] private UnityEvent onSelect;
 
-            _localizer.GlobalLanguageCodeRuntime = selectedLanguageCode;
-            
+        private void Start()
+        {
+            SetChecker();
+        }
+
+        public void ChangeLanguage()
+        {
+            _localizer.GlobalLanguageCodeRuntime = languageCode;
+
             _localizer.Notify();
+
+            SetChecker();
+            
+            onSelect?.Invoke();
             
             //LocalizedGlobalScriptableObject.UpdateLocalizedData();
             Debug.Log("Selected language: " + _localizer.GlobalLanguageCodeRuntime);
+        }
+
+        private void SetChecker()
+        {
+            if (_localizer.GlobalLanguageCodeRuntime == languageCode)
+                checker.position = checkPos.position;
         }
     }
 }

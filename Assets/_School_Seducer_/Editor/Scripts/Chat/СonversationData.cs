@@ -36,6 +36,21 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         #region Context Menu Commands
 
+        [ContextMenu("Reset Messages")]
+        private void ResetMessages()
+        {
+            foreach (var msg in Messages)
+            {
+                if (msg.completed) msg.completed = false;
+                if (msg.optionalData.Branches.Length > 0)
+                    foreach (var branch in msg.optionalData.Branches)
+                        foreach (var msgInBranch in branch.Messages)
+                            if (msgInBranch.completed) msgInBranch.completed = false;
+            }
+            
+            Debug.Log("Messages successefully resetted!");
+        }
+
         [ContextMenu("Install Translation")]
         public void InstallTranslation()
         {

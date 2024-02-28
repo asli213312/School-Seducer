@@ -19,6 +19,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         [SerializeField] private List<Translator.LanguageAudioClip> localizedAudioClips = new();
         private List<Translator.Languages> _localizedData = new();
+        [SerializeField, HideInInspector] public bool completed; 
 
         public List<Translator.Languages> SetLocalizedData(List<Translator.Languages> localizedDataList)
         {

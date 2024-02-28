@@ -19,9 +19,12 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [SerializeField] private FigmaImage storyIcon;
         
         public СonversationData Conversation { get; private set; }
+        
         private Chat.Chat _chat;
         private Sprite _uncompletedSprite;
-        
+        private Sprite _bgStartSprite;
+        private Image _bg;
+
         public event Action OnClick;
         public event Action<ChatStatusView> SelectEvent;
 
@@ -32,6 +35,9 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         private void Start()
         {
+            _bg = transform.GetChild(0).GetComponent<Image>();
+            _bgStartSprite = _bg.sprite;
+            
             transform.Rotate(new Vector3(0, 0, 180));
         }
 
@@ -65,10 +71,9 @@ namespace _School_Seducer_.Editor.Scripts.UI
             SetStatus();
         }
 
-        private void SetStatus()
-        {
-            storyIcon.sprite = Conversation.isUnlocked ? Conversation.iconStory : _uncompletedSprite;
-        }
+        public void ActivateSelected() => _bg.sprite = _chat.Config.selectedStatusView;
+
+        public void ResetSelected() => _bg.sprite = _bgStartSprite;
 
         public void OnPointerDown(PointerEventData eventData)
         {
@@ -77,6 +82,11 @@ namespace _School_Seducer_.Editor.Scripts.UI
             SelectEvent?.Invoke(this);
             _chat?.InstallCurrentStatusView(this);
             OnClick?.Invoke();
+        }
+
+        private void SetStatus()
+        {
+            storyIcon.sprite = Conversation.isUnlocked ? Conversation.iconStory : _uncompletedSprite;
         }
 
         private bool StoryUnlocked() => Conversation.isUnlocked;

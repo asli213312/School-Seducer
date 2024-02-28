@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
 using UnityEngine;
 using UnityEngine.UI;
+using RectTransform = UnityEngine.RectTransform;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
@@ -19,6 +21,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public MessageSender MessageSender => Sender;
         public GameObject PaddingForward {get; private set;}
+        public ContentSizeFitter ContentFitter => transform.GetComponent<ContentSizeFitter>();
 
         private Transform _content;
         private SoundHandler _soundHandler;
@@ -139,8 +142,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
         }
 
+        public void EnableAlignBubbleSpeech()
+        {
+            transform.GetComponent<ContentSizeFitter>().enabled = true;
+            transform.GetComponent<VerticalLayoutGroup>().enabled = true;
+        }
+
         private void SetParentActor()
         {
+            AdjustLeftActor(_content, Sender);
             AdjustRightActor(_content, Sender);
             AdjustStoryTeller(_content, Sender);
         }
@@ -234,6 +244,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             gameObject.transform.SetParent(parent.transform);
         }
+        
+        private void AdjustLeftActor(Transform content, MessageSender sender)
+        {
+            if (sender != MessageSender.ActorLeft) return;
+
+            gameObject.GetComponent<VerticalLayoutGroup>().padding.bottom = 24;
+        }
 
         private void AdjustRightActor(Transform content, MessageSender sender)
         {
@@ -254,7 +271,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             AlignSizeDelta alignMain = gameObject.AddComponent<AlignSizeDelta>();
             alignMain.Initialize(parentRect, gameObject.GetComponent<RectTransform>(), msgText.text.Length);
-
+            
             VerticalLayoutGroup speechBubbleLayout = transform.GetChild(1).GetComponent<VerticalLayoutGroup>();
             speechBubbleLayout.padding.left = 18;
             speechBubbleLayout.padding.right = 30;
@@ -282,6 +299,30 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             target.SetParent(parent);
             target.SetSiblingIndex(index);
+        }
+        
+        private void AdjustSizesAndPositionsLeft(GameObject parent, GameObject contentLeft, GameObject paddingForward)
+        {
+            RectTransform leftBorderRect = leftBorderActor.GetComponent<RectTransform>();
+            RectTransform rightBorderRect = rightBorderActor.GetComponent<RectTransform>();
+            RectTransform rectMain = gameObject.GetComponent<RectTransform>();
+
+            //SetPivotPosTopMode(rightBorderRect);
+
+            parent.GetComponent<RectTransform>().sizeDelta = rectMain.sizeDelta + new Vector2(0, rightBorderRect.sizeDelta.y / 24);
+            contentLeft.GetComponent<RectTransform>().sizeDelta = rectMain.sizeDelta;
+
+            leftBorderActor.transform.SetParent(contentLeft.transform);
+            transform.SetParent(contentLeft.transform);
+            leftBorderActor.transform.position = parent.transform.position;
+            transform.position = parent.transform.position;
+
+            leftBorderRect.Translate(Vector2.left * -5.03f);
+            rectMain.position = leftBorderRect.position;
+
+            SetStretchModeLeft(contentLeft.GetComponent<RectTransform>());
+
+            paddingForward.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0.7f);
         }
 
         private void AdjustSizesAndPositions(GameObject parent, GameObject contentRight, GameObject paddingForward)
@@ -316,6 +357,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             leftBorderRect.pivot = new Vector2(0.5f, 0.5f);
 
             leftBorderRect.sizeDelta = new Vector2(leftBorderRect.sizeDelta.x, 50f);
+        }
+        
+        private void SetStretchModeLeft(RectTransform contentRect)
+        {
+            contentRect.anchorMin = new Vector2(0f, 0f);
+            contentRect.anchorMax = new Vector2(0f, 0f);
+
+            contentRect.pivot = new Vector2(0f, 0f);
         }
 
         private void SetStretchMode(RectTransform contentRightRect)

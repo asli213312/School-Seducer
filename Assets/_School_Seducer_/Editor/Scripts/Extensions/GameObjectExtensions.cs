@@ -5,24 +5,30 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
 {
     public static class GameObjectExtensions
     {
-        public static void SafeDeactivate(this GameObject gameObject)
+        public static async void SafeDeactivate(this GameObject gameObject, float delay = 0f)
         {
             if (gameObject.activeSelf == false)
                 Debug.LogWarning("GameObject not active for safe deactivate!");
-            
+
             if (gameObject.transform.localScale == Vector3.one)
+            {
+                await Task.Delay((int)(delay * 1000));
                 gameObject.transform.localScale = Vector3.zero;
+            }
             else
                 Debug.LogWarning("GameObject already safe inactive: ", gameObject);
         }
         
-        public static void SafeActivate(this GameObject gameObject)
+        public static async void SafeActivate(this GameObject gameObject, float delay = 0f)
         {
             if (gameObject.activeSelf == false)
                 Debug.LogWarning("GameObject not active for safe activate!");
-            
+
             if (gameObject.transform.localScale == Vector3.zero)
-                gameObject.transform.localScale = Vector3.one;
+            {
+                await Task.Delay((int)(delay * 1000));
+                gameObject.transform.localScale = Vector3.one;   
+            }
             else
                 Debug.LogWarning("GameObject already safe active: ", gameObject);
         }

@@ -12,7 +12,9 @@ namespace PuzzleGame.UI
 
         protected GameState currentGameState;
 
-        protected virtual int Value => currentGameState.Score;
+        public virtual int Value => currentGameState.Score;
+        
+        public void ResetScore() => currentGameState.Score = 0;
 
         void Start()
         {

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.UI;
 using _School_Seducer_.Editor.Scripts.Utility;
@@ -20,6 +21,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [Inject] private LocalizedGlobalMonoBehaviour _localizer;
         [Inject] private SoundHandler _soundHandler;
         [Inject] private EventManager _eventManager;
+        [Inject] private MonoController _monoController;
         [Inject] private IContentDataProvider _contentDataProvider;
 
         [SerializeField] private Transform contentMsgs;
@@ -41,7 +43,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [MonoText] public CharacterData CurrentCharacter { get; private set; }
         public Transform ContentMsgs => contentMsgs;
         public BranchData CurrentBranchData { get; private set; }
-        public СonversationData CurrentConversationData { get; private set; }
+        [MonoText] public СonversationData CurrentConversationData { get; private set; }
         public bool IsMessagesEnded { get; private set; }
         public ChatConfig Config => config;
         public List<MessageData> CompletedMessagesCurrentConversation { get; private set; } = new();
@@ -55,6 +57,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private MessageDefaultView _currentDefaultMsg;
         private MessageDefaultView _previousDefaultMsg;
         private MessagePictureView _currentPictureMsg;
+        private GameObject _paddingForTranslate;
+        private GameObject _previousPaddingBack;
         
         private bool _isStartConversation;
         private int _iteratedMessages;
@@ -117,6 +121,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             
             var paddingBack = CreatePadding();
             paddingBack.gameObject.Deactivate(0.1f);
+            paddingBack.name = "PaddingTranslate";
+
+            _paddingForTranslate = paddingBack.gameObject;
         }
 
         public void InstallCharacterData(CharacterData character)
@@ -146,7 +153,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             StartCoroutine(LoadMessages(messages));
         }
 
-        public void InstallCurrentStatusView(ChatStatusView statusView) => _currentStatusView = statusView;
+        public void InstallCurrentStatusView(ChatStatusView statusView)
+        {
+            if (_currentStatusView != null) _currentStatusView.ResetSelected();
+            
+            _currentStatusView = statusView;
+            _currentStatusView.ActivateSelected();
+        } 
 
         private void StartDialogue()
         {
@@ -159,13 +172,19 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             InstallCurrentConversation(_currentStatusView.Conversation);
 
             ResetContent();
-            StartCoroutine(ChatTap(() => InvokeStartConversation(_currentStatusView.Conversation.Messages)));
+
+            if (_currentStatusView.Conversation.Messages.Any(x => x.completed))
+                InvokeStartConversation(_currentStatusView.Conversation.Messages);
+            else
+                StartCoroutine(ChatTap(() => InvokeStartConversation(_currentStatusView.Conversation.Messages)));
         }
 
         private void InstallCurrentConversation(СonversationData data) 
         {
             CurrentConversationData = data;
             CurrentCharacter.currentConversation = CurrentConversationData;
+            
+            _monoController.UpdateMonoByName("ChatConversation");
         }
 
         private void InitializeChats()
@@ -198,8 +217,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             for (int i = 0; i < Messages.Count; i++)
             {
                 if (IsMessagesEnded) StopCoroutine(ProcessMessage(i));
-                    
-                yield return ProcessMessage(i);
+
+                if (messages[i].completed == false)
+                    yield return ProcessMessage(i);
+                else
+                    yield return ProcessMessage(i, false);
 
                 if (DampedPictureMessages.Count <= 0)
                     this.DelayedCall(.3f, () => _contentDataProvider.LoadContentData(PictureMessages));
@@ -211,7 +233,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             MessagesEnded();
         }
         
-        private IEnumerator ProcessMessage(int index)
+        private IEnumerator ProcessMessage(int index, bool needTapToNext = true)
         {
             _eventManager.ChatMessageReceived(false);
             
@@ -224,44 +246,61 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             CheckOptionsParentIsLastSibling();
 
-            yield return new WaitUntil(CheckTapBounds);
+            if (needTapToNext) yield return new WaitUntil(CheckTapBounds);
             yield return new WaitForSeconds(0.5f);
 
             var paddingBack = CreatePadding();
+            paddingBack.gameObject.name = "PaddBackChat";
+            paddingBack.gameObject.Deactivate();
             var newMsg = InstallPrefabMsg(Messages.ToArray(), index, out var pictureMsgProxy);
             var paddingForward = CreatePadding();
-
-            if (newMsg == null) yield break;
+            paddingForward.name = "PaddForwardChat";
 
             newMsg.Initialize(optionButtons);
             RenderMsgData(Messages.ToArray(), newMsg, index);
-            
+
             if (newMsg is MessagePictureView msgPicture)
             {
-                paddingBack.gameObject.Deactivate();
+                paddingForward.gameObject.Deactivate();
                 
                 if (_previousDefaultMsg.PaddingForward != null)
-                    _previousDefaultMsg.PaddingForward.Deactivate();
+                    _previousDefaultMsg.PaddingForward.Activate();
             }
-            else if (newMsg is MessageDefaultView msgDefault) 
+            else if (newMsg is MessageDefaultView msgDefault)
             {
-                if (_previousDefaultMsg != null && _previousDefaultMsg.PaddingForward != null && msgDefault.MessageSender != MessageSender.ActorLeft)
+                if (msgDefault.MessageSender == MessageSender.ActorLeft)
                 {
-                    _previousDefaultMsg.PaddingForward.gameObject.Deactivate();
+                    msgDefault.transform.SetParent(contentMsgs.parent);
+                    msgDefault.transform.position = new Vector3(0, 999, 0);
+                    yield return new WaitForSeconds(0.1f);
+                    msgDefault.transform.SetParent(contentMsgs);
+                }
+
+                if (_previousDefaultMsg != null)
+                {
+                    if (_previousDefaultMsg.PaddingForward != null && msgDefault.MessageSender != MessageSender.ActorLeft)
+                        _previousDefaultMsg.PaddingForward.gameObject.Deactivate();
+
+                    // if (msgDefault.MessageSender != MessageSender.ActorLeft && _previousDefaultMsg.MessageSender == MessageSender.ActorLeft)
+                    //     paddingBack.gameObject.Deactivate();
+                    // else if (msgDefault.MessageSender == MessageSender.ActorLeft && _previousDefaultMsg.MessageSender != MessageSender.ActorLeft)
+                    //     paddingBack.gameObject.Deactivate();
+                    // else if (msgDefault.MessageSender == MessageSender.ActorRight && _previousDefaultMsg.MessageSender == MessageSender.ActorRight)
+                    //     paddingBack.gameObject.Deactivate();
+                    // else if (msgDefault.MessageSender == MessageSender.ActorRight && _previousDefaultMsg.MessageSender == MessageSender.ActorLeft)
+                    //     paddingBack.gameObject.Deactivate();
+                    
+                    if (msgDefault.MessageSender == MessageSender.ActorRight && _previousDefaultMsg.MessageSender == MessageSender.ActorLeft)
+                    {
+                        msgDefault.PaddingForward.gameObject.Deactivate();
+                        //paddingBack.gameObject.Activate();
+                    }
                 }
                 _previousDefaultMsg = msgDefault;
-                
-                paddingBack.gameObject.Deactivate();
-                _defaultMessages.Add(msgDefault);
-            }
+                _previousPaddingBack = paddingBack.gameObject;
 
-            // if (newMsg is MessageDefaultView defaultView)
-            // {
-            //     if (defaultView.NeedPaddings() == false)
-            //     {
-            //         paddingBack.gameObject.Deactivate();
-            //     }
-            // }
+                //_defaultMessages.Add(msgDefault);
+            }
 
             Debug.Log("Render completed");
 
@@ -270,7 +309,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             CheckOptionsParentIsLastSibling();
 
-            yield return new WaitForSeconds(config.DelayBtwMessage);
+            if (needTapToNext) yield return new WaitForSeconds(config.DelayBtwMessage);
 
             if (MsgHasBranches(Messages.ToArray(), index))
             {
@@ -286,8 +325,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
                 _iteratedMessages++;
 
+                Messages[index].completed = true;
                 CompletedMessagesCurrentConversation.Add(Messages[index]);
                 CompletedMessages.Add(Messages[index]);
+                if (needTapToNext == false) _eventManager.UpdateScrollChat();
 
                 Debug.Log("iterated messages: " + _iteratedMessages);
                 yield break;
@@ -314,6 +355,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _iteratedMessages++;
             CompletedMessagesCurrentConversation.Add(Messages[index]);
             CompletedMessages.Add(Messages[index]);
+            Messages[index].completed = true;
+            if (needTapToNext == false) _eventManager.UpdateScrollChat();
 
             Debug.Log("iterated messages: " + _iteratedMessages);
         }
@@ -326,7 +369,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private bool CheckTapBounds()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && transform.localScale == Vector3.one)
             {
                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 
@@ -574,7 +617,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             Debug.Log("chosen prefab");
 
-            IMessage newMsg = Instantiate((MonoBehaviour) chosenPrefab, contentMsgs).GetComponent<IMessage>();
+            IMessage newMsg = Instantiate((MonoBehaviour)chosenPrefab, contentMsgs).GetComponent<IMessage>();
 
             pictureMsgProxy = null;
             if (newMsg is MessagePictureView)

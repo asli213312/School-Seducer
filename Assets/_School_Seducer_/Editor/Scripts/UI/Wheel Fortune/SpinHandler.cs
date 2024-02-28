@@ -2,6 +2,7 @@
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat.Refactor;
 using _School_Seducer_.Editor.Scripts.UI.Popups;
+using _School_Seducer_.Editor.Scripts.Utility;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -160,6 +161,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             else
             {
                 SetSpinWheelCharacters();
+                SpinHandler.charactersLockedSlot.gameObject.Deactivate();
             }
 
             if (_needStopWheel && _isCharacters) _needStopWheel = false;
@@ -185,6 +187,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             if (_isCharacters)
             {
                 characterName.text = _currentWinSlot.Data.name.ToUpper();
+                characterName.gameObject.Activate(0.5f);
                 
                 SpinHandler.giftSpinPush.SetDataParent(new DataParentText(characterName));
                 
@@ -230,8 +233,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
                 if (winCharacter.Data.allConversations[^1].isUnlocked == false)
                 {
-                    SpinHandler.giftSpinPush.MakeTransitions();
-                    
                     if (SpinHandler.Previewer.StoryResolver.StoryUnlocked || ChatStoryResolver is ChatStoryResolver
                         {
                             StoryUnlocked: true
@@ -282,7 +283,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             _currentWinSlot = _isCharacters == false 
                 ? SpinHandler.FindSlotForProbability(SpinHandler.slots) 
-                : SpinHandler.FindSlotForProbability(SpinHandler._characterSlots);
+                : SpinHandler.FindSlotForProbability(SpinHandler.CharacterSlots);
 
             if (_currentWinSlot == null)
             {
@@ -308,13 +309,15 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         private void SetSpinWheelSlots()
         {
-            SpinHandler.scrollCharactersContent.localPosition = new Vector2(0, 2050);
+            SpinHandler.scrollCharactersContent.localPosition = new Vector2(0, int.MaxValue);
+            SpinHandler.charactersLockedSlot.gameObject.Activate();
+            characterName.gameObject.Deactivate();
 
             if (!_isSpinning)
             {
                 _isSpinning = true;
 
-                _currentWinSlot = _isCharacters == false ? SpinHandler.FindSlotForProbability(SpinHandler.slots) : SpinHandler.FindSlotForProbability(SpinHandler._characterSlots);
+                _currentWinSlot = _isCharacters == false ? SpinHandler.FindSlotForProbability(SpinHandler.slots) : SpinHandler.FindSlotForProbability(SpinHandler.CharacterSlots);
                 _winSlotCol = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
                 _winSlotColCharacter = _currentWinSlot.gameObject.GetComponent<BoxCollider2D>();
 

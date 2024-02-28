@@ -4,6 +4,7 @@ using _School_Seducer_.Editor.Scripts;
 using _School_Seducer_.Editor.Scripts.Mini_Games;
 using UnityEngine;
 using UnityEngine.UI;
+using PuzzleGame.UI;
 using Zenject;
 
 public class MiniGameInitializer : MonoBehaviour
@@ -11,6 +12,7 @@ public class MiniGameInitializer : MonoBehaviour
     [Inject] private EventManager _eventManager;
     [Inject] private Bank _bank;
     
+    [SerializeField] private ScoreCounter scoreCounter;
     [SerializeField] private Button closeGameButton; 
     [SerializeField] private MiniGamesConfig data;
     [SerializeField] private List<GameObject> miniGames;
@@ -50,8 +52,8 @@ public class MiniGameInitializer : MonoBehaviour
     public void ResetGameAvailability()
     {
         MiniGameAvailable = false;
-        _bank.ChangeValueMoney(PuzzleGame.UserProgress.Current.Coins);
-        PuzzleGame.UserProgress.Current.Coins = 0;
+        _bank.ChangeValueMoney(scoreCounter.Value);
+        scoreCounter.ResetScore();
     }
 
     public void StartMiniGame()

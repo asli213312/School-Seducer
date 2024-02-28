@@ -138,6 +138,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: b5ba82c06afbfa945a3eb56a87e96fd1, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Trying to cram for my study sesh. \nBut honestly, I'm down for anything
       \nto take a break from this textbook."
@@ -149,6 +150,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 6bca02df0e03a854a8d6bce87f4581b6, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Sweet! Can you help me pick \nout an outfit for my date tonight?"
     optionalData:
@@ -159,6 +161,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 0e04446da4b42974b865f21c9e2b1125, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Me, picking outfits? \nI'm not exactly a fashion guru."
     optionalData:
@@ -169,6 +172,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 47f697ba993222b428aff4beca724ec4, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Nah, just need a guy's perspective, \nlike, does it turn you on or not."
     optionalData:
@@ -179,6 +183,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 421536311cf8ee24794a03f968304bb7, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Um, sure, I'll give it a shot...
     optionalData:
@@ -189,6 +194,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 6c6695bc80fbc64439e10f7430e65139, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Alright, let's start with the dress. \nWhat about these ones? Too short?"
     optionalData:
@@ -199,6 +205,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 87fb0f52ae397f142a48a83bd93d0801, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Insert picture
     optionalData:
@@ -209,6 +216,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 29be8fc75b7be9547ba406018c92b411, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: You're rocking them!
     optionalData:
@@ -219,6 +227,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: f432b85146c572648820aa8e82229cae, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Just rocking them or do they make \nyou want to tear them off \nand claim
       me?"
@@ -230,6 +239,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 6fe9f9e87d5ec5944bdf9f58165390ec, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Definitely the second one.
     optionalData:
@@ -240,6 +250,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: c0ee7b9f51854fd4c999e1444c4f27f3, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Awesome, then let's go with those. \nNow, lingerie. Should scream passionate,
       \nnot thirsty."
@@ -251,6 +262,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 28e32b52282ca4c4b891d1081220610a, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Not an easy find.
     optionalData:
@@ -261,6 +273,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 4235571bab4570c4aba3681891bef5a5, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Let's check...
     optionalData:
@@ -271,6 +284,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 753e9f2411f3e8541aa67ea7cc3f053f, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Insert picture
     optionalData:
@@ -281,6 +295,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: a61d64a504ab788438902649d91997a7, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Hmm, they all look good to me. \nThey're making me want to rip \nthem off
       and claim you too."
@@ -292,6 +307,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 6daafde365708bb4fb03b39f0848d7b1, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Hey! I don't hook up on first dates. \nI gotta be like the unattainable
       prize \n- close but out of reach."
@@ -303,6 +319,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: f1b0299d3ac20c04c9699430d9abb947, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Got it, I respect your boundaries!
     optionalData:
@@ -313,3 +330,4 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 17cb24621c53be340acfcc145e32c947, type: 3}
+    completed: 0

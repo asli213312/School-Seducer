@@ -1,6 +1,7 @@
 ﻿using PuzzleGame.Ads;
 using PuzzleGame.Gameplay;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ namespace PuzzleGame.UI
     [RequireComponent(typeof(Button))]
     public class RestartButton : MonoBehaviour
     {
+        [SerializeField] private UnityEvent onClick;
+        
         public float interval = 30f;
 
         static float lastAdsTime;
@@ -18,13 +21,15 @@ namespace PuzzleGame.UI
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
-        void OnClick()
+        public void OnClick()
         {
             UserProgress.Current.GetGameState<GameState>(UserProgress.Current.CurrentGameId).Reset();
             UserProgress.Current.SaveGameState(UserProgress.Current.CurrentGameId);
             UserProgress.Current.Save();
+            
+            onClick?.Invoke();
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
             if (UserProgress.Current.IsItemPurchased("no_ads"))
                 return;

@@ -121,6 +121,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 794ed9e4f76ed944e8115836984d7a02, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Hmm, what's that sound\u2026"
     optionalData:
@@ -131,6 +132,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: d2eb564806b6ff64e8a54f32c3c9d523, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Oh... Yeah... Mmm...
     optionalData:
@@ -141,6 +143,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: cee53575c427d9f4886397387369dfb9, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "What's with those moans? \nSounds like Emily..."
     optionalData:
@@ -151,6 +154,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: dbb663acf252060418936ed0876c0e3b, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Insert picture
     optionalData:
@@ -159,6 +163,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 8300000, guid: 421536311cf8ee24794a03f968304bb7, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips: []
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Wow, she's fondling herself!
     optionalData:
@@ -169,6 +174,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: e85b3dae6585ac748ab99f7f48216164, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Looks like she hasn't realized \nI'm awake yet..."
     optionalData:
@@ -179,6 +185,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: fc8d9343d4a21e14780337fef29c921e, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Damn, wish I could be cuddling\n with her right now."
     optionalData:
@@ -189,6 +196,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: e1d86bdfc76fd8b4f882baab0caf69f3, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Better keep quiet so \nI don't freak her out."
     optionalData:
@@ -199,6 +207,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: ed340b8e64f0bdf4892d535680ec15ed, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "She seems to be moaning harder\n and harder... Now I'm feeling \nthe strongest
       excitement too!"
@@ -210,6 +219,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: c39993abe163da64581ae74232c0d324, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Oh... Yeah... Mmm...
     optionalData:
@@ -220,6 +230,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: cee53575c427d9f4886397387369dfb9, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Insert picture
     optionalData:
@@ -228,6 +239,7 @@ MonoBehaviour:
     AudioMsg: {fileID: 8300000, guid: 28e32b52282ca4c4b891d1081220610a, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips: []
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "It's such a shame that she and \nI agreed to just be friends... \nI want
       so badly to enter her, \nto fuck her naked body, \nto cum in her mouth...."
@@ -239,6 +251,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: aad0c38991674b8428d427e75ca2f642, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "But no, I'm left to just lie \nthere and watch her fondle herself."
     optionalData:
@@ -249,3 +262,4 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 6e5363f192bf2ee499f23a4063f9eb03, type: 3}
+    completed: 0

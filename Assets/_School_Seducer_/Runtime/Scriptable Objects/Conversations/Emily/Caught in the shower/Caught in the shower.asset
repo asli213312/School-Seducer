@@ -146,6 +146,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 9577542fe4f04aa4a9399ea06e56cd19, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "But hold up, she's put it out \nthere that we're just friends. \nGuess
       I'll have to admire her \nfrom a distance."
@@ -157,6 +158,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 9337c9a6a3073764fb7aee61e734ecdf, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Or maybe I'll bring some cute \nfriends over to hang at her place? \nThat
       could be my in. We never said \nI couldn't be friends with \nher friends too."
@@ -168,6 +170,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 70cedc52893eb9b468e3fd63b6c77fe4, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Oh crap! It's already eight, \nI'm late for class! Quick \nshower and then
       I'm out!"
@@ -179,14 +182,16 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 161310902b7e820498d07a7d63c2f179, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Insert picture
     optionalData:
-      GallerySlot: {fileID: 11400000, guid: bce5c4fcca36e73488368979814099b2, type: 2}
+      GallerySlot: {fileID: 11400000, guid: e3bedbb9053b1bc4e956a5c146060e95, type: 2}
       Branches: []
     AudioMsg: {fileID: 0}
     <Sender>k__BackingField: 0
     localizedAudioClips: []
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Hey, what's up with barging in like that!
     optionalData:
@@ -197,6 +202,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 31448640c03e7514bb8f7caae87cd162, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh my god, I'm so sorry!
     optionalData:
@@ -207,6 +213,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: ed25d86bea0e030408083206464589da, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Next time, knock before you \nbust in the bathroom like that!"
     optionalData:
@@ -217,6 +224,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 5e0bbc6696ff13e4cb8be27c65409a8d, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "My bad, I thought you were \nalready off to class..."
     optionalData:
@@ -227,6 +235,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 77a5f97bab34410438086d43b4ac3be4, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Clearly, I'm still here.
     optionalData:
@@ -237,6 +246,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 782b23642c16df642b6e1d26e2b2d767, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: I apologize again, didn't mean to...
     optionalData:
@@ -247,6 +257,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 1313928c8838ee545ad6bb94858278b8, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Forget it, stop saying sorry. \nHope you enjoyed the view))"
     optionalData:
@@ -257,6 +268,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 0dfdffcf1893e904998a69b75d33d340, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Of course, I really did...
     optionalData:
@@ -267,6 +279,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 0f1ca3b081c2aed41a0203548163407d, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Yeah, that's what I thought!
     optionalData:
@@ -277,6 +290,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: afeade8d62b1a644ca2b382d0330248e, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Wait, I meant I didn't like it.
     optionalData:
@@ -287,6 +301,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 4a282d51372f8704e84d0139c4340f2b, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: What did you just say? Do I look awful?
     optionalData:
@@ -297,6 +312,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 5618e736013ee8f4b9a7396e30e541ff, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Oh crap! No, sorry, you look \namazing, seriously! I just meant I didn't
       \nmean to catch you off guard."
@@ -308,6 +324,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 9a3730e9831c0aa4e942dcda5e0612d9, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Come on, I'm just messing with you. \nYou're so funny when you're all apologetic!"
     optionalData:
@@ -318,6 +335,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: ef59833a36401644dbcc6fa785386b21, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Sorry again, won't happen again.
     optionalData:
@@ -328,6 +346,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 3631cf7737e5ebd41957ca3f29738fcc, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Give me a couple of minutes, \nand I'll be out of your hair."
     optionalData:
@@ -338,11 +357,13 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: c162cd5efbbf56346ab2e24ecc1df135, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Insert picture
     optionalData:
-      GallerySlot: {fileID: 11400000, guid: e3bedbb9053b1bc4e956a5c146060e95, type: 2}
+      GallerySlot: {fileID: 11400000, guid: bce5c4fcca36e73488368979814099b2, type: 2}
       Branches: []
     AudioMsg: {fileID: 0}
     <Sender>k__BackingField: 0
     localizedAudioClips: []
+    completed: 0

@@ -16,13 +16,14 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: bb881d8f861fb2941b70d59ad3760a28, type: 2}
   - {fileID: 11400000, guid: a53beec5e19f3fe48854d886f16cc00f, type: 2}
+  - {fileID: 11400000, guid: d581a9bc42dc27946af41768cd4b2a03, type: 2}
   moneyForSpin: 10
   timeShowStopButton: 3
   secondsSlowSpdSlots: 1
-  rotationSpeedCharacters: 400
+  rotationSpeedCharacters: 1800
   rotationSpeed: 1000
   rotationSlowSpeed: -1500
-  decelerationCharactersWheel: 200
+  decelerationCharactersWheel: 3000
   decelerationMin: 199
   decelerationMax: 198
   showDebugParameters: 1

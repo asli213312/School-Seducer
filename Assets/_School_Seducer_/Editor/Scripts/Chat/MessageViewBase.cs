@@ -39,8 +39,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 
                 case MessageSender.ActorLeft:
 	                msgText.text = data.Msg;
+                    leftBorderActor.gameObject.Activate();
                     Image leftIcon = leftBorderActor.transform.GetChild(0).GetComponent<Image>();
                     leftIcon.sprite = actorLeft;
+                    rightBorderActor.gameObject.Deactivate();
                     Debug.Log("Base actor installed");
                     break;
                 

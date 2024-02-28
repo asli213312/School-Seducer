@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.Utility;
+using NaughtyAttributes;
+using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,8 +22,9 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         [Header("Handlers")]
         [SerializeField] private SpinHandler defaultSpinHandler;
         [SerializeField] private ExtraSpinHandler extraSpinHandler;
-        
-        [Header("UI elements")]
+
+        [Header("UI elements")] 
+        [SerializeField] public RectTransform charactersLockedSlot;
         [SerializeField] private Slider expSlider;
         [SerializeField] public RectTransform scrollCharactersContent;
         [SerializeField] public WheelSlot characterSlotPrefab;
@@ -34,7 +37,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         public Previewer Previewer => _system.Previewer;
         public WheelFortuneData Data => _system.Data;
         
-        [NonSerialized] public List<WheelSlot> _characterSlots = new();
+        [field: ShowInInspector] public List<WheelSlot> CharacterSlots {get; set; } = new();
         
         private WheelFortuneSystem _system;
 
@@ -93,7 +96,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         
         public void ShowGiftPush()
         {
-            StartCoroutine(giftSpinPush.transform.DoLocalScaleAndUnscale(this, new Vector3(0.9f, 0.9f, 0.9f)));
+            StartCoroutine(giftSpinPush.transform.DoLocalScaleAndUnscale(this, new Vector3(0.95f, 0.95f, 0.95f)));
         }
 
         public void ShowUnlockStoryPush()
@@ -149,7 +152,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
                 if (slotCharacterToReset.Data.name == characterData.name)
                 {
-                    _characterSlots.Remove(slotCharacterToReset);
+                    CharacterSlots.Remove(slotCharacterToReset);
                     slotCharacterToReset.gameObject.Destroy();
                 }
             }
@@ -158,7 +161,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private void InitializeSlots()
         {
             int charactersCount = _system.Data.characters.Count;
-            int targetNumberOfSlots = charactersCount * 4;
+            int targetNumberOfSlots = charactersCount * 8;
 
             for (int i = 0; i < targetNumberOfSlots; i++)
             {
@@ -166,14 +169,14 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 WheelSlot characterSlot = Instantiate(characterSlotPrefab, scrollCharactersContent);
                 characterSlot.Initialize(character, _system.Data.iconMoney);
                 
-                if (i < _system.Data.characters.Count)
+                if (i < Data.characters.Count)
                 {
-                    _characterSlots.Add(characterSlot);
+                    CharacterSlots.Add(characterSlot);
                 }
             }
 
-            scrollCharactersContent.localPosition = new Vector2(0, 2050);
-            
+            scrollCharactersContent.localPosition = new Vector2(0, int.MaxValue);
+
             foreach (var slot in slots)
             {
                 slot.Initialize(slot.Data, _system.Data.iconMoney);

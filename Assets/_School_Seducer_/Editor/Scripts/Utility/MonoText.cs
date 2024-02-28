@@ -12,11 +12,13 @@ namespace _School_Seducer_.Editor.Scripts.Utility
     {
         [SerializeField] private MonoBehaviour monoObject;
         [SerializeField] private TextMeshProUGUI textComponent;
+        [SerializeField] private string nameId;
         [SerializeField] private string necessaryTypeName;
         [SerializeField] private bool useValueByString;
         [SerializeField] private bool needEntryUpdate;
         [SerializeField, ShowIf(nameof(useValueByString))] private string nameMember;
-
+        public string NameId => nameId;
+        
         private MonoBehaviour _necessaryType;
         private MemberInfo _foundedMember;
 
@@ -38,7 +40,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
             if (foundedMemberObject is not Object engineObject) return;
             
             textComponent.text = engineObject.name;
-            //Debug.Log("Name founded member: " + engineObject.name);
+            Debug.Log("Name founded member: " + engineObject.name);
         }
 
         private void OnEnable()
@@ -110,6 +112,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                     }
                     
                     Debug.Log($"MonoText as {name} was successfully changed on = {textComponent.text}");
+                    Debug.Log("MonoText was successfully founded foundedMember! " + name);
                 }
             }
         }

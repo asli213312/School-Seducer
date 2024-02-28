@@ -42,6 +42,7 @@ MonoBehaviour:
   DurationSendingPicture: 5
   mainFont: {fileID: 11400000, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
   CoinsForMessage: 1
+  selectedStatusView: {fileID: 21300000, guid: 2bfa0eb6423279c408c898c5ca1b5d50, type: 3}
   leftActorColorMsg: {r: 0.4392157, g: 0.16862746, b: 0.50980395, a: 1}
   rightActorColorMsg: {r: 0, g: 0, b: 0, a: 1}
   storyTellerColorMsg: {r: 0.039215688, g: 0.10196079, b: 0.18039216, a: 1}

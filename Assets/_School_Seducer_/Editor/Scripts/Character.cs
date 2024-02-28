@@ -39,7 +39,8 @@ public class Character : MonoBehaviour
        Debug.Log("This character: " + gameObject.name);
        CharacterSelected?.Invoke(this);
        
-       _chat.gameObject.SafeActivate();
+       _chat.gameObject.SafeActivate(.1f);
+       _eventManager.UpdateScrollChat();
        _chatSystem.gameObject.SafeActivate();
     }
 

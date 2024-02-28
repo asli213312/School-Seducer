@@ -165,6 +165,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: cfb546852dbc0eb4eace65f43d0aa4b5, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh, snap, there he is!
     optionalData:
@@ -175,6 +176,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 286673feda752434bbe8a59fa0fab744, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Hey! I was almost wandering \n lost trying to find this joint."
     optionalData:
@@ -185,6 +187,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: fcbff791d275ec640abf855ef7588ea3, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Umm, hey!
     optionalData:
@@ -195,6 +198,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: eafaa0c4b17555b45a12a806cb6f7594, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Hey, mind scooting over a bit?  \n Can't get in with you blocking the doorway."
     optionalData:
@@ -205,6 +209,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: e71634ff0841d0245bfce05552dbc64e, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Oh, my bad... Sure thing! I thought it was \n my new roomie showing up.
       \n Haven't met the dude yet."
@@ -216,6 +221,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 08865bc8f6fe0ff42bd8f46f9e7d9a87, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Oh, you don't know? I'm your new roomie. \n Hope you're cool with that."
     optionalData:
@@ -226,6 +232,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 9173595d31bda214a9adeae31eeb9607, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: I... umm... well...
     optionalData:
@@ -236,6 +243,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 29be8fc75b7be9547ba406018c92b411, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Supposed to be Douglas, but he's hitting \n it off with my girl Veronica.
       \n So, they asked me and Douglas to swap rooms. \n Douglas is bunking with
@@ -248,6 +256,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 6eb641a9b6afe5141a727439d60fc081, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Umm, with who?
     optionalData:
@@ -258,6 +267,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 006d383b61d175847abec20e531fc662, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: What's your name?
     optionalData:
@@ -268,6 +278,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: ed069d4110118a04aa3dfabb1101433f, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh, my bad, I'm Ben.
     optionalData:
@@ -278,6 +289,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 40130447835b80d48825e23149814c0a, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "Nice to meet you, Ben. \n Cool with sharing the room?"
     optionalData:
@@ -288,6 +300,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: ab004f0ab21d5c54d8f4e3acacecf282, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Me? Oh, hell yeah, come on in!
     optionalData:
@@ -298,6 +311,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 857eb25b2c1679a48b54a0bbae1052de, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "But listen up, from now on, \n you and I are roomies! \n Just keeping it
       friendly, you feel me?"
@@ -309,6 +323,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: a61d64a504ab788438902649d91997a7, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh, sure, I wasn't thinking anything else.
     optionalData:
@@ -319,6 +334,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: b292c827a2bcfe94fa257c813d071355, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: "We're gonna vibe, man! Now, \n turn around, I gotta change real quick."
     optionalData:
@@ -329,6 +345,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: b9146111eb9f9784485596d10ae0dbbe, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Yeah, sure.
     optionalData:
@@ -339,6 +356,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: f7b721f7ea6c88248ad548acd89dece4, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Whoa, they got a mirror set up \n like it's meant to be here!"
     optionalData:
@@ -349,6 +367,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: baf753687ce5dae40838c8c2c220c45f, type: 3}
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: not translated
     optionalData:
@@ -357,3 +376,4 @@ MonoBehaviour:
     AudioMsg: {fileID: 0}
     <Sender>k__BackingField: 0
     localizedAudioClips: []
+    completed: 0
