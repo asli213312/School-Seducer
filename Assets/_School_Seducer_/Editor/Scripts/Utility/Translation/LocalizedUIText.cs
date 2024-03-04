@@ -1,43 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
-using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.Utility.Translation
 {
-    public class LocalizedUIObject : MonoBehaviour, IObservableCustom<MonoBehaviour>
+    public class LocalizedUIText : LocalizedUIBase
     {
-        [Inject] private LocalizedGlobalMonoBehaviour _localizer;
-
         [SerializeField] private Text text;
         [SerializeField] private TextMeshProUGUI textPro;
-        [SerializeField] private List<Translator.Languages> localizedData;
-        public List<Translator.Languages> LocalizedData => localizedData;
-
+        [SerializeField] private List<Translator.Languages> _localizedData;
+        public List<Translator.Languages> LocalizedData
+        {
+            get
+            {
+                List<Translator.Languages> languagesList = _localizedData;
+                foreach (var item in localizedData)
+                {
+                    languagesList.Add((Translator.Languages)item);
+                }
+                return languagesList;
+            }
+        }
         public string CurrentText { get; private set; }
         public Text Text { get; private set; }
 
-        private void Awake()
-        {
-            if (_localizer != null) _localizer.AddObserver(this);
-        }
+        protected override List<Translator.LanguagesBase> localizedData => _localizedData.Cast<Translator.LanguagesBase>().ToList();
 
         private void Start()
+        {
+            UpdateView();
+        }
+
+        public override void UpdateView()
         {
             CurrentText = GetCurrentText();
         }
 
-        private void OnDestroy()
+        protected override void OnChangeLanguage()
         {
-            _localizer?.RemoveObserver(this);
-        }
-        
-        public void OnObservableUpdate()
-        {
-            Translator.Languages currentLanguage = localizedData.Find(x => x.languageCode == _localizer.GlobalLanguageCodeRuntime);
+            Translator.Languages currentLanguage = GetCurrentLanguage() as Translator.Languages;
 
             if (currentLanguage == null) return;    
 

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
   m_Name: Test Character
   m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: ca3557d6ca51f544abfc78f4f01160c9, type: 2}
   currentConversation: {fileID: 11400000, guid: 70dcabdf9ceffaa4f8ed70313909f7aa, type: 2}
+  gifts: []
   allConversations:
   - {fileID: 11400000, guid: 70dcabdf9ceffaa4f8ed70313909f7aa, type: 2}
   gallery: {fileID: 11400000, guid: a89aafde38b31494287819007f6ac54e, type: 2}

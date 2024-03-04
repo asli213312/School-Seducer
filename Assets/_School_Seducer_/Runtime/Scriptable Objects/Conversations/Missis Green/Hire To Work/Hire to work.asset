@@ -1,0 +1,372 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Hire to work
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  costExp: 0
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: a0a8d9dcc04b6e24485b8281e29e7510, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: The lecture's done. Catch you next week.
+        - key: Ben, hang back after class, please.
+        - key: Sure thing, Miss Green.
+        - key: "I need someone to help with house chores, \nand I want to hire you
+            for the job."
+        - key: "You want me? Usually, it's girls \ndoing this stuff."
+        - key: "Yeah, but I've got my reasons. \nI'll pay $500 a month. \nAre you
+            down?"
+        - key: "That's a lot of cash for me. \nYeah, count me in."
+        - key: Awesome, see you Saturday at 9 am.
+        - key: Catch you later, Miss Green. Thanks!
+        - key: ...
+        - key: "Hey, I've been waiting for you. \nCome on in. Your first gig is to
+            vacuum \nall the rooms on the second floor. \nThen I'll hook you up with
+            \nsomething else."
+        - key: Got it, Miss Green.
+        - key: "Feels kinda lame doing this gig, \nbut hey, Miss Green's bankrolling,
+            so..."
+        - key: "Alright, this room's done, \nonto the next one."
+        - key: Insert picture
+        - key: "Oh, sorry, didn't realize you \nwere here... My bad... \nI'll clean
+            this spot later..."
+        - key: Nah, all good, Ben. Don't sweat it.
+        - key: Cool, whatever you say, Miss Green...
+        - key: "She's so hot! Oh man, I hope \nshe doesn't clock my huge boner..."
+        - key: ...
+        - key: "Thanks, Ben, you nailed it. \nComing back the day after tomorrow?"
+        - key: Sure thing, thank you...
+      - languageCode: ru
+        messages:
+        - key: "\u041B\u0435\u043A\u0446\u0438\u044F \u0437\u0430\u043A\u043E\u043D\u0447\u0435\u043D\u0430.
+            \u0414\u043E \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0439 \u043D\u0435\u0434\u0435\u043B\u0438."
+        - key: "\u0411\u0435\u043D, \u043E\u0441\u0442\u0430\u043D\u044C\u0441\u044F
+            \u043F\u043E\u0441\u043B\u0435 \u043B\u0435\u043A\u0446\u0438\u0438,
+            \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430."
+        - key: "\u0414\u0430, \u043C\u0438\u0441\u0441 \u0413\u0440\u0438\u043D."
+        - key: "\u041C\u043D\u0435 \u043D\u0443\u0436\u0435\u043D \u043F\u043E\u043C\u043E\u0449\u043D\u0438\u043A
+            \u043F\u043E \u0434\u043E\u043C\u0443, \n\u0438 \u044F \u043F\u0440\u0435\u0434\u043B\u0430\u0433\u0430\u044E
+            \u0442\u0435\u0431\u0435 \u044D\u0442\u0443 \u0440\u0430\u0431\u043E\u0442\u0443."
+        - key: "\u0412\u044B \u0445\u043E\u0442\u0438\u0442\u0435 \u043D\u0430\u043D\u044F\u0442\u044C
+            \u043C\u0435\u043D\u044F? \n\u041E\u0431\u044B\u0447\u043D\u043E \u044D\u0442\u043E
+            \u0434\u0435\u0432\u0443\u0448\u043A\u0438 \u0434\u0435\u043B\u0430\u044E\u0442."
+        - key: "\u0414\u0430, \u043D\u043E \u0443 \u043C\u0435\u043D\u044F \u0441\u0432\u043E\u0438
+            \u043F\u0440\u0438\u0447\u0438\u043D\u044B. \n\u041F\u043B\u0430\u0447\u0443
+            500 \u0434\u043E\u043B\u043B\u0430\u0440\u043E\u0432 \u0432 \u043C\u0435\u0441\u044F\u0446.
+            \n\u0421\u043E\u0433\u043B\u0430\u0441\u0435\u043D?"
+        - key: "\u042D\u0442\u043E \u0431\u043E\u043B\u044C\u0448\u0438\u0435 \u0434\u0435\u043D\u044C\u0433\u0438
+            \u0434\u043B\u044F \u043C\u0435\u043D\u044F. \n\u0414\u0430, \u0441\u043E\u0433\u043B\u0430\u0441\u0435\u043D."
+        - key: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E, \u0436\u0434\u0443 \u0442\u0435\u0431\u044F
+            \u0432 \u0441\u0443\u0431\u0431\u043E\u0442\u0443 \u0432 9 \u0443\u0442\u0440\u0430."
+        - key: "\u0414\u043E \u0432\u0441\u0442\u0440\u0435\u0447\u0438, \u043C\u0438\u0441\u0441
+            \u0413\u0440\u0438\u043D. \u0421\u043F\u0430\u0441\u0438\u0431\u043E!"
+        - key: ...
+        - key: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E, \u044F \u0436\u0434\u0430\u043B\u0430
+            \u0442\u0435\u0431\u044F. \u041F\u0440\u043E\u0445\u043E\u0434\u0438.
+            \n\u041F\u0435\u0440\u0432\u043E\u0435 \u0442\u0432\u043E\u0451 \u0437\u0430\u0434\u0430\u043D\u0438\u0435
+            - \u043F\u0440\u043E\u043F\u044B\u043B\u0435\u0441\u043E\u0441\u044C
+            \u0432\u0441\u0435 \n\u043A\u043E\u043C\u043D\u0430\u0442\u044B \u043D\u0430
+            \u0432\u0442\u043E\u0440\u043E\u043C \u044D\u0442\u0430\u0436\u0435.
+            \n\u041F\u043E\u0442\u043E\u043C \u044F \u0434\u0430\u043C \u0442\u0435\u0431\u0435
+            \u043D\u043E\u0432\u043E\u0435 \u0437\u0430\u0434\u0430\u043D\u0438\u0435."
+        - key: "\u041E\u043A\u0435\u0439, \u043C\u0438\u0441\u0441 \u0413\u0440\u0438\u043D."
+        - key: "\u041D\u0435\u043C\u043D\u043E\u0433\u043E \u0443\u043D\u0438\u0437\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+            \u0437\u0430\u043D\u0438\u043C\u0430\u0442\u044C\u0441\u044F \u0442\u0430\u043A\u043E\u0439
+            \u0440\u0430\u0431\u043E\u0442\u043E\u0439, \n\u0441 \u0434\u0440\u0443\u0433\u043E\u0439
+            \u0441\u0442\u043E\u0440\u043E\u043D\u044B, \u043C\u0438\u0441\u0441
+            \u0413\u0440\u0438\u043D \u0445\u043E\u0440\u043E\u0448\u043E \u043F\u043B\u0430\u0442\u0438\u0442."
+        - key: "\u0422\u0430\u043A, \u0441 \u044D\u0442\u043E\u0439 \u043A\u043E\u043C\u043D\u0430\u0442\u043E\u0439
+            \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B, \n\u043F\u043E\u0440\u0430
+            \u043F\u0435\u0440\u0435\u0445\u043E\u0434\u0438\u0442\u044C \u043A \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0439."
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+        - key: "\u041E\u0439, \u043F\u0440\u043E\u0441\u0442\u0438\u0442\u0435, \u044F
+            \u043D\u0435 \u0437\u043D\u0430\u043B, \u0447\u0442\u043E \u0432\u044B
+            \u0442\u0443\u0442\u2026 \n\u0418\u0437\u0432\u0438\u043D\u0438\u0442\u0435\u2026
+            \u044F \u043F\u0440\u043E\u043F\u044B\u043B\u0435\u0441\u043E\u0448\u0443
+            \u0442\u0443\u0442 \u043F\u043E\u043F\u043E\u0437\u0436\u0435\u2026"
+        - key: "\u041D\u0435\u0442, \u0432\u0441\u0451 \u0432 \u043F\u043E\u0440\u044F\u0434\u043A\u0435,
+            \u043D\u0435 \u043E\u0431\u0440\u0430\u0449\u0430\u0439 \n\u043D\u0430
+            \u043C\u0435\u043D\u044F \u0432\u043D\u0438\u043C\u0430\u043D\u0438\u044F,
+            \u0411\u044D\u043D."
+        - key: "\u041E\u043A\u0435\u0439, \u043A\u0430\u043A \u0441\u043A\u0430\u0436\u0438\u0442\u0435,
+            \u043C\u0438\u0441\u0441 \u0413\u0440\u0438\u043D\u2026"
+        - key: "\u041A\u0430\u043A \u043E\u043D\u0430 \u0445\u043E\u0440\u043E\u0448\u0430!
+            \u0411\u043E\u0436\u0435, \u043A\u0430\u043A \u0431\u044B \u043E\u043D\u0430
+            \u043D\u0435 \n\u0437\u0430\u043C\u0435\u0442\u0438\u043B\u0430 \u043C\u043E\u0439
+            \u043E\u0433\u0440\u043E\u043C\u043D\u044B\u0439 \u0441\u0442\u043E\u044F\u043A\u2026"
+        - key: ...
+        - key: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0411\u044D\u043D, \u0442\u044B
+            \u043E\u0442\u043B\u0438\u0447\u043D\u043E \u0441\u043F\u0440\u0430\u0432\u0438\u043B\u0441\u044F.
+            \n\u0416\u0434\u0443 \u0442\u0435\u0431\u044F \u043F\u043E\u0441\u043B\u0435\u0437\u0430\u0432\u0442\u0440\u0430?"
+        - key: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u2026"
+  <Language>k__BackingField: 0
+  isCompleted: 0
+  isUnlocked: 1
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+    Msg: The lecture's done. Catch you next week.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: de063421dcc606b4fb59655d1247a458, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: b2b0655ef2ac0894e9a06d5b28788565, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+    Msg: Ben, hang back after class, please.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 3a83991893a08914aaf8c20bdf6f9e81, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 649416710f1e9fa4a8c99418666e1bb6, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Sure thing, Miss Green.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 9499a01df7a9d0a4e93fbef0fd91bb21, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 293da447b91e2de42a3103e75918a119, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+    Msg: "I need someone to help with house chores, \nand I want to hire you for
+      the job."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 76654bda387eaaf428eac855be37b091, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 19566829459433149818d5d4e4e33985, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "You want me? Usually, it's girls \ndoing this stuff."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 45c21d7fe324f4f449994f6bae0a82ad, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: d9ea5f2cdd9025d4b84aadb83bd3f053, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+    Msg: "Yeah, but I've got my reasons. \nI'll pay $500 a month. \nAre you down?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 6e97572c887e851408a61d8bfe5069b0, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 1a62aac18647ebc40b4a1f3777469da4, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "That's a lot of cash for me. \nYeah, count me in."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 35ce6492b1b0604409a2c42b812fb0f0, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 65e092b7d2118714f82e862f8b875e2b, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+    Msg: Awesome, see you Saturday at 9 am.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: f35c536feef98fe4fbe076f0b560795d, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 84817e5e544d16b4e9b34e9396fd85f8, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Catch you later, Miss Green. Thanks!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 32c0a180d06713348ba50ebb567474c7, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 4f801a5f1327b4943a61487b53ad1b12, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: ...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 10830a65c8e01f14f98b5858c5f3134b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips: []
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+    Msg: "Hey, I've been waiting for you. \nCome on in. Your first gig is to vacuum
+      \nall the rooms on the second floor. \nThen I'll hook you up with \nsomething
+      else."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: e6a8ac352b1fd2041bfa79b80b1122ae, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 9776251df28939a44b9a7c2c8eb893b6, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Got it, Miss Green.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 10830a65c8e01f14f98b5858c5f3134b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 6f0b5ae9987db8e42b89da7e555a9bf9, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Feels kinda lame doing this gig, \nbut hey, Miss Green's bankrolling, so..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 238cdc5a2148ac04084a2ea8a133a7ab, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: b39a4366426493d41a16521aba78b2df, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Alright, this room's done, \nonto the next one."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f0ef39631af13ba4b83804cce17a5682, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+    Msg: Insert picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: a0e096293e6362b4e97d50b2dd430a3a, type: 2}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Oh, sorry, didn't realize you \nwere here... My bad... \nI'll clean this
+      spot later..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: d0c9099b131a4ed449ed5eb942db3e4a, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+    Msg: Nah, all good, Ben. Don't sweat it.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: d3fe77d3281487949bdb5bd32fe60e33, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Cool, whatever you say, Miss Green...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 37e1ebb173288a34c9768a6eac236ffe, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "She's so hot! Oh man, I hope \nshe doesn't clock my huge boner..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 230e1224945237d44bef91072d88a08f, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: ...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+    Msg: "Thanks, Ben, you nailed it. \nComing back the day after tomorrow?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a38d9f12f9f87e74694ad40c7f569458, type: 3}
+    completed: 0
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Sure thing, thank you...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: d9ed59768045e87438b01d1021bc3c97, type: 3}
+    completed: 0

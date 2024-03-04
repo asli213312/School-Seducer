@@ -20,10 +20,21 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
         }
 
         [Serializable]
-        public class Languages
+        public class LanguagesBase
         {
             public string languageCode;
+        }
+
+        [Serializable]
+        public class Languages : LanguagesBase
+        {
             public string key;
+        }
+
+        [Serializable]
+        public class LanguagesImage : LanguagesBase
+        {
+            public Sprite key;
         }
 
         [Serializable]

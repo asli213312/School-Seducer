@@ -12,7 +12,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
              
              [SerializeField] private RectTransform paddingPrefab;
              
-             public СonversationData CurrentConversation => _chatSystem.Initializator.CurrentCharacter.currentConversation;
+             public СonversationData CurrentConversation => _chatSystem.Initializator.CurrentCharacter.CurrentConversation;
              public List<MessageData> Messages { get; private set; } = new();
      
              public event Action TapEvent;

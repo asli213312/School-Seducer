@@ -11,14 +11,18 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
 {
     public class LocalizedGlobalMonoBehaviour : MonoBehaviour, IObserverCustom<MonoBehaviour>
     {
-        [SerializeField] private List<Text> localizedUIObjects = new();
         [SerializeField] private string globalLanguageCodeRuntime;
         public string GlobalLanguageCodeRuntime { get => globalLanguageCodeRuntime; set => globalLanguageCodeRuntime = value; }
         private List<IObservableCustom<MonoBehaviour>> _localizedObjects = new();
 
         private void Awake()
         {
-            globalLanguageCodeRuntime = GlobalSettings.GlobalCurrentLanguage;
+            GlobalLanguageCodeRuntime = "en";
+        }
+
+        private void Start()
+        {
+            Notify();
         }
 
         private void OnDestroy()

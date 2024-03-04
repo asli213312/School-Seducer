@@ -96,12 +96,17 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         
         public void ShowGiftPush()
         {
-            StartCoroutine(giftSpinPush.transform.DoLocalScaleAndUnscale(this, new Vector3(0.95f, 0.95f, 0.95f)));
+            ShowPush(giftSpinPush, 0.95f);
         }
 
         public void ShowUnlockStoryPush()
         {
-            StartCoroutine(unlockNewStoryPush.transform.DoLocalScaleAndUnscale(this, new Vector3(0.9f, 0.9f, 0.9f)));
+            ShowPush(unlockNewStoryPush, 0.9f);
+        }
+
+        public void ShowPush(Push push, float scaleMultiplier)
+        {
+            StartCoroutine(push.transform.DoLocalScaleAndUnscale(this, new Vector3(scaleMultiplier, scaleMultiplier, scaleMultiplier)));
         }
         
         public void OnChangeValueExperience(int newValue)

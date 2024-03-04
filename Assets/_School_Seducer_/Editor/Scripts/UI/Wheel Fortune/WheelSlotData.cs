@@ -1,5 +1,6 @@
 ﻿using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 using HideIfAttribute = Sirenix.OdinInspector.HideIfAttribute;
 
 namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
@@ -7,6 +8,16 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
     [CreateAssetMenu(fileName = "WheelSlotData", menuName = "Game/Data/Wheel Fortune/Slot Data", order = 0)]
     public class WheelSlotData : ScriptableObject
     {
+        [Header("Info Gifts Data")]
+        [HideIf(nameof(IsCharacter))] public Sprite iconInfo;
+        [HideIf(nameof(IsCharacter))] public Sprite borderSpriteByColor;
+
+        [FormerlySerializedAs("extraWinCharacter")]
+        [Header("Extra")] 
+        [HideIf(nameof(IsGift))] public Sprite extraCharacterPortrait;
+        
+        [Header("General")]
+
         [HideIf("TestOrIsMoneySlot")]
         [ShowAssetPreview(32, 32)] public Sprite icon;
 
@@ -23,8 +34,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         
         [HideIf(nameof(IsCharacter))] public int costExp;
         
-        [HideIf("useTest")]
-        [Range(1, 5)] public int level;
+        [FormerlySerializedAs("level")] [HideIf("useTest")] [Range(1, 5), HideIf(nameof(IsCharacter))] public int score;
         
         [HideIf("useTest"), Sirenix.OdinInspector.MinMaxSlider(1, 100)]
         public Vector2Int chanceToGain;
@@ -52,6 +62,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         public Sprite GetCurrentIcon() => IsTest() ? iconTest : icon;
         public int GetCostExp() => IsTest() ? costExpTest : costExp;
         public bool IsCharacter() => useTest ? slotTypeTest == WheelCategorySlotEnum.Character : slotType == WheelCategorySlotEnum.Character;
+        public bool IsGift() => useTest ? slotTypeTest == WheelCategorySlotEnum.Gift : slotType == WheelCategorySlotEnum.Gift;
         private bool IsTest() => useTest;
     }
 }

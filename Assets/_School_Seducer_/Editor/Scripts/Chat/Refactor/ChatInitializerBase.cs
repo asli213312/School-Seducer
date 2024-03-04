@@ -18,7 +18,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public void InstallCharacter(Character character)
         {
             CurrentCharacter = character;
-            CurrentConversation = character.currentConversation;
+            CurrentConversation = character.CurrentConversation;
             
             _chatSystem.StoryResolver.Initialize();
         }

@@ -11,9 +11,9 @@ namespace _School_Seducer_.Editor.Scripts.Utility
     {
         [Inject] private EventManager _eventManager;
 
+        [SerializeField] private string divider;
+        [SerializeField, Tooltip("False = value + divider + maxValue")] private bool onlyValue;
         [SerializeField] private Slider slider;
-
-        public Slider Slider => slider;
 
         public event Action MaxValueEvent; 
         
@@ -36,7 +36,10 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         {
             if (slider.value >= slider.maxValue) MaxValueEvent?.Invoke();
             
-            _text.text = slider.value + "/" + slider.maxValue;
+            if (onlyValue)
+                _text.text = slider.value + divider;
+            else
+                _text.text = slider.value + divider + slider.maxValue;
         }
     }
 }

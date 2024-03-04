@@ -13,6 +13,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Popups
         {
             if (data is TransitionDataSprite newData)
             {
+                if (newData.fieldName != name) return;
+                
                 _data = newData.dataSprite;
             }
             else Debug.LogError("Data for TransitionSprite is not TransitionDataSprite", gameObject);

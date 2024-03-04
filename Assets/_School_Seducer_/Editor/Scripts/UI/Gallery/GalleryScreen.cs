@@ -64,7 +64,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 SetCounterSlots(section.TypeSection);
             }
 
-            characterName.text = chat.CurrentCharacter.name;
+            characterName.text = chat.CurrentCharacterData.name;
         }
 
         private void OnDisable()
@@ -242,7 +242,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             HashSet<MessageData> checkedMessages = new HashSet<MessageData>();
             HashSet<string> checkedBranches = new HashSet<string>();
 
-            foreach (var conversation in chat.CurrentCharacter.allConversations)
+            foreach (var conversation in chat.CurrentCharacterData.allConversations)
             {
                 for (int i = 0; i < conversation.Messages.Length; i++)
                 {

@@ -20,7 +20,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [ShowInInspector] public List<IContent> PictureMessages { get; private set; } = new();
         [ShowInInspector] public List<IContent> DampedPictureMessages { get; private set; } = new();
         
-        public СonversationData CurrentConversation => _chatSystem.Initializator.CurrentCharacter.currentConversation;
+        public СonversationData CurrentConversation => _chatSystem.Initializator.CurrentCharacter.CurrentConversation;
         public List<MessageData> Messages { get; private set; } = new();
         public List<MessageData> CompletedMessagesCurrentConversation { get; private set; } = new();
         public List<MessageData> CompletedMessages { get; private set; } = new();

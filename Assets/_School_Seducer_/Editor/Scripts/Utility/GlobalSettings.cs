@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using Sirenix.OdinInspector;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 

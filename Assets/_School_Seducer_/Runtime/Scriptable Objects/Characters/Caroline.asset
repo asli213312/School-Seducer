@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
   m_Name: Caroline
   m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: e08b820f55b64e2409c4bc49ce7ff6d9, type: 2}
   currentConversation: {fileID: 11400000, guid: bafbb1cf884ebee4dbf77ea559b64c6b, type: 2}
+  gifts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   allConversations:
   - {fileID: 11400000, guid: edbfb2d914a99f94086005fb8c9832e5, type: 2}
   - {fileID: 11400000, guid: bafbb1cf884ebee4dbf77ea559b64c6b, type: 2}
@@ -22,4 +30,4 @@ MonoBehaviour:
   loyalty: 1
   maxLoyalty: 1
   showDebugParameters: 0
-  experience: 0
+  experience: 1

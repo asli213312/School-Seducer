@@ -12,35 +12,64 @@ namespace _School_Seducer_.Editor.Scripts.Utility
     {
         [SerializeField] private MonoBehaviour monoObject;
         [SerializeField] private TextMeshProUGUI textComponent;
-        [SerializeField] private string nameId;
+        [SerializeField, Tooltip("ID for call using MonoController")] private string nameId;
         [SerializeField] private string necessaryTypeName;
         [SerializeField] private bool useValueByString;
         [SerializeField] private bool needEntryUpdate;
+        [SerializeField, Tooltip("Const base text + divider + nameMember")] private bool needConstBaseText;
+        [SerializeField, ShowIf(nameof(needConstBaseText))] private string divider;
+        [SerializeField, ShowIf(nameof(needConstBaseText))] private string baseText;
         [SerializeField, ShowIf(nameof(useValueByString))] private string nameMember;
+
+        [Header("Debug")] 
+        [SerializeField] private bool showDebugParameters;
+
         public string NameId => nameId;
         
         private MonoBehaviour _necessaryType;
-        private MemberInfo _foundedMember;
+        [ShowIf(nameof(showDebugParameters)), ShowInInspector] private MemberInfo _foundedMember;
+        
+        private MemberInfo FoundedMember
+        {
+            get => _foundedMember;
+            set
+            {
+                _foundedMember = value;
+                UpdateText();
+            }
+        }
 
         public void UpdateText()
         {
-            _foundedMember.IsNullReturn();
+            FoundedMember.IsNullReturn();
 
             object foundedMemberObject = null;
 
-            if (_foundedMember is FieldInfo foundedField)
+            if (FoundedMember is FieldInfo foundedField)
             {
                 foundedMemberObject = foundedField.GetValue(_necessaryType);
             }
-            else if (_foundedMember is PropertyInfo foundedProperty)
+            else if (FoundedMember is PropertyInfo foundedProperty)
             {
                 foundedMemberObject = foundedProperty.GetValue(_necessaryType, null);
             }
 
-            if (foundedMemberObject is not Object engineObject) return;
-            
-            textComponent.text = engineObject.name;
-            Debug.Log("Name founded member: " + engineObject.name);
+            if (foundedMemberObject is Object engineObject)
+            {
+                if (needConstBaseText)
+                    textComponent.text = baseText + divider + engineObject.name;
+                else
+                    textComponent.text = engineObject.name;
+                Debug.Log("Name founded member: " + engineObject.name);
+            }
+            else
+            {
+                if (needConstBaseText)
+                    textComponent.text = baseText + divider + foundedMemberObject;
+                else
+                    textComponent.text = foundedMemberObject?.ToString();
+                Debug.Log("Value founded member: " + foundedMemberObject);   
+            }
         }
 
         private void OnEnable()
@@ -69,7 +98,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                 }
                 else
                 {
-                    Debug.LogWarning("Failed to find the component using InstanceID for: " + name);
+                    Debug.LogWarning("Failed to find the necessary component for: " + name);
                 }
             }
         }
@@ -97,8 +126,9 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                         if (fieldValue is Object objectField)
                         {
                             textComponent.text = objectField.name;
-                            _foundedMember = field;
                         }
+                        
+                        FoundedMember = field;
                     }
                     else if (member is PropertyInfo property)
                     {
@@ -107,8 +137,9 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                         if (propertyValue is Object objectProperty)
                         {
                             textComponent.text = objectProperty.name;
-                            _foundedMember = property;
                         }
+                        
+                        FoundedMember = property;
                     }
                     
                     Debug.Log($"MonoText as {name} was successfully changed on = {textComponent.text}");
@@ -125,9 +156,29 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                 return;
             }
             
-            var members = _necessaryType.GetType().GetMembers();
+            var fields = _necessaryType.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            var field = fields.FirstOrDefault(f => f.Name == nameMember);
+            
+            if (field == null)
+            {
+                var properties = _necessaryType.GetType().GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                var property = properties.FirstOrDefault(p => p.Name == nameMember);
 
-            _foundedMember = members.FirstOrDefault(x => x.Name == nameMember);
+                if (property != null)
+                {
+                    FoundedMember = property;
+                    Debug.Log("Found property: " + property.Name);
+                }
+                else
+                {
+                    Debug.Log("Member not found.");
+                }
+            }
+            else
+            {
+                FoundedMember = field;
+                Debug.Log("Found field: " + field.Name);
+            }
         }
     }
 }

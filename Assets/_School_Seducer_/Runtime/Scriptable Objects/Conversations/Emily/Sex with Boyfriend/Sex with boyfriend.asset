@@ -111,7 +111,7 @@ MonoBehaviour:
             \u043C\u0435\u0441\u0442\u0435!"
         - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
   <Language>k__BackingField: 0
-  isCompleted: 1
+  isCompleted: 0
   isUnlocked: 1
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
@@ -130,7 +130,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 8cab7dc24534f87428ad21bcbf6787b2, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "We're barely halfway through \nthe semester, and I already feel like bailing."
     optionalData:
@@ -141,7 +141,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: d049ec1fa0b1cd24d892cb77b681dea2, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "I thought college life would be way different. \nYeah, there are some perks,
       like tons \nof hot students. But damn, it's hard \nto focus with all that distraction."
@@ -153,7 +153,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 783fc4606fc2a4d4692344951d8d2256, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "I need to chill out tonight. \nMaybe hang in the room, \nplay some video
       games."
@@ -165,7 +165,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 1310252c90fae744f857202a1f42542f, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Weird, our room's door is locked. \nMaybe Emily's out at a lecture or \nwith
       her boyfriend. Alright, I'll \nuse my key to open it."
@@ -177,7 +177,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: dec56aefbc8e93643a05f8b023c828f1, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Oh crap! Emily didn't go anywhere! \nHer boyfriend's here, and they're
       \ngetting busy on the bed."
@@ -189,7 +189,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 2c09811c1d33f644cbea6e6b54010795, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Awkward as hell, I gotta close \nthe door quick and dip out for an hour..."
     optionalData:
@@ -200,7 +200,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 6da42f7f08bddf144909c7b1d4e01bb1, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: But then again...
     optionalData:
@@ -211,7 +211,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: d06680e61e6ae10479b87261a3484479, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "They haven't noticed me... \nAnd I don't think it'll hurt to peek \nthrough
       the slightly open door for a bit."
@@ -223,7 +223,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 4518077f77020824eb9d1d0f62424643, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Damn, wish I was in his shoes right now!
     optionalData:
@@ -234,7 +234,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 9a4c6a1ab66d5f749aa0af6b6da41ee9, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
     Msg: Insert picture
     optionalData:
@@ -243,4 +243,4 @@ MonoBehaviour:
     AudioMsg: {fileID: 8300000, guid: cee53575c427d9f4886397387369dfb9, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips: []
-    completed: 0
+    completed: 1

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
@@ -9,6 +10,7 @@ using UnityEngine.UI;
 using TMPro;
 using Nutaku;
 using Nutaku.Unity;
+using UnityEngine.Events;
 using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts
@@ -26,6 +28,7 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField] private TextMeshProUGUI greetingsText;
 
         [Header("Data")] 
+        [SerializeField] private CharactersConfig charactersConfig;
 	    [SerializeField] private Chat.Chat _chat;
         [SerializeField] private StoryResolver storyResolver;
         [SerializeField] private LevelChecker levelChecker;
@@ -33,14 +36,20 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField] private PlayerConfig playerConfig;
         [SerializeField] private Character[] _characters;
 
+        [Header("Events")] 
+        [SerializeField] private UnityEvent characterSelected;
+
         [Header("Options")] 
         [SerializeField] private bool showDebugParameters;
+        
+        public event Action<Character> CharacterSelectedEvent;
 
+        public CharactersConfig CharactersConfig => charactersConfig;
         public Character[] Characters => _characters;
         public StoryResolver StoryResolver => storyResolver;
         public bool NeedPush { get; set; }
         public Character CurrentCharacter { get; set; }
-        
+
         private СonversationData _lockedConversation;
 
         private СonversationData _currentConversation;
@@ -65,55 +74,9 @@ namespace _School_Seducer_.Editor.Scripts
             Initialize();
         }
 
-        //public void ShowChat() => _chat.gameObject.Activate();
-
-
-        public void Initialize()
+        private void Initialize()
         {
-            foreach (var character in _characters)
-            {
-                character.Initialize(_chat);
-            }
-            
             storyResolver.Initialize();
-        }
-
-        public bool FindLockedConversation(Sprite rolledLeftActorConversationSprite)
-        {
-            bool notFound = false;
-            
-            foreach (var character in _characters)
-            {
-                SetLockedConversation(character);
-                
-                if (character.Data.LockedConversation.ActorLeftSprite != rolledLeftActorConversationSprite) continue;
-
-                Debug.Log("Character for locked conversation: " + character.Data.name);
-
-                foreach (var conversation in character.Data.allConversations)
-                {
-                    if (conversation != character.Data.LockedConversation)  continue;
-                    
-                    if (conversation.ActorLeftSprite == rolledLeftActorConversationSprite)
-                    {
-                        //_lockedConversation = conversation;
-
-                        if (conversation.isUnlocked) return false;
-                        
-                        storyResolver.SetRolledConversation(conversation);
-
-                        storyResolver.UpdateStatusViews();
-                        
-                        _eventManager.UpdateTextExperience();
-
-                        Debug.Log("Found rolled conversation: " + conversation.name);
-                        return true;
-                    }
-                }
-            }
-
-            Debug.Log("Locked Conversation is null");
-            return false;
         }
 
         public CharacterData GetCurrentCharacterData()
@@ -126,6 +89,14 @@ namespace _School_Seducer_.Editor.Scripts
             UnRegisterStartDialogue();
             UnRegisterCharacters();
             ResetCharacter();
+        }
+
+        public void SelectCharacter(Character character)
+        {
+            CurrentCharacter = character;
+            CharacterSelectedEvent?.Invoke(character);
+            characterSelected?.Invoke();
+            Debug.Log("Selected character: " + character.name);
         }
 
         public void OnCharacterSelected(Character character)
@@ -141,53 +112,21 @@ namespace _School_Seducer_.Editor.Scripts
             if (CurrentCharacter != character) _chat.ResetContent();
 
             CurrentCharacter = character;
-	        _currentConversation = CurrentCharacter.currentConversation;
+            
+            characterSelected?.Invoke();
+            _eventManager.UpdateScrollChat();
+
+            _currentConversation = CurrentCharacter.CurrentConversation;
             storyResolver.InitCharacterData(CurrentCharacter.Data);
 
             if (CurrentCharacter == null) 
 	        	Debug.LogError("current character is null on selected");
 
-            _chat.DeactivateStatusViews();
-            _chat.ResetStatusViews();
-           
             if (chatSystem != null) _chatInitializationModule.InstallCharacter(CurrentCharacter);
-            _chat.InstallCharacterData(CurrentCharacter.Data);
-            
-            //Invoke(nameof(RegisterStartDialogue), 0.3f);
-            if (!CheckLevelPlayer())
-            {
-                Debug.Log("Check for level is invoked");
-                //startDialogueButton.AddListener(SkipDialog);
-            }
 
-            //_switcher.Initialize(_emote, selectedGirlImage);
-            //Invoke(nameof(SetCurrentNodeID), 3f);
+            CharacterSelectedEvent?.Invoke(character);
 
-	        map.CloseMap();
-            //_chat.InstallCurrentConversation(_currentConversation);
-
-            //UpdateUI();
-        }
-
-        public void SkipDialog()
-        {
-            
-        }
-
-        private bool CheckLevelPlayer()
-        {
-            return playerConfig.Level >= CurrentCharacter.Data.RequiredLevel;
-        }
-
-        private void RegisterStartDialogue()
-        {
-            if (CurrentCharacter == null)
-            {
-                Debug.LogWarning("Character is null, cannot register options");
-                //return;
-            }
-            
-            //_chat.StartDialogue(_currentCharacter.StartConversation);
+            map.CloseMap();
         }
 
         private void UnRegisterStartDialogue()
@@ -207,7 +146,7 @@ namespace _School_Seducer_.Editor.Scripts
             }  
             else
             {
-                CurrentCharacter.EndConversation();
+                _eventManager.ConversationEnded();
                 Debug.Log("Money doesn't enough to continue...");
             }
         }       
@@ -215,12 +154,6 @@ namespace _School_Seducer_.Editor.Scripts
         public void AddDiamondOnConversationEnd()
         {
             _bank.ChangeValueDiamonds(1);
-        }
-
-        private void UpdateUI()
-        {
-            greetingsText.text = "Hello, " + CurrentCharacter.name;
-            selectedGirlImage.sprite = CurrentCharacter.SpriteRenderer.sprite;
         }
 
         public void AddLoyalty(int n)
@@ -232,6 +165,16 @@ namespace _School_Seducer_.Editor.Scripts
         {
             CurrentCharacter = null;
             _currentConversation = null;
+        }
+
+        public void RegisterCharacter(Character character)
+        {
+            character.CharacterSelected += OnCharacterSelected;
+        }
+
+        public void UnregisterCharacter(Character character)
+        {
+            character.CharacterSelected -= OnCharacterSelected;
         }
 
         private void RegisterCharacters()

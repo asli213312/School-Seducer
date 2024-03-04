@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
   m_Name: Emily
   m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: 2a82848f2e60fa141b687f3046d8c01c, type: 2}
   currentConversation: {fileID: 11400000, guid: 9d7f9ed15c8f3c04dae67e2b813b9890, type: 2}
+  gifts:
+  - {fileID: 11400000, guid: 305dc3e3cec847c4a9522832ecbb4e09, type: 2}
+  - {fileID: 11400000, guid: c6ba291f0d8467c43953533dd030efcf, type: 2}
+  - {fileID: 11400000, guid: d26f4a124d377554db0c457c0d3884c7, type: 2}
+  - {fileID: 11400000, guid: 7959429b15eaa9940a5db8e30909c592, type: 2}
+  - {fileID: 11400000, guid: 3b19abd93d649894287dec2ab8d9721d, type: 2}
+  - {fileID: 11400000, guid: 305dc3e3cec847c4a9522832ecbb4e09, type: 2}
   allConversations:
   - {fileID: 11400000, guid: 3439c0f2765e41745872053657579534, type: 2}
   - {fileID: 11400000, guid: f5814c5a48e4a88468cc36695805f617, type: 2}
@@ -25,4 +33,4 @@ MonoBehaviour:
   loyalty: 1
   maxLoyalty: 3
   showDebugParameters: 0
-  experience: 1
+  experience: 271

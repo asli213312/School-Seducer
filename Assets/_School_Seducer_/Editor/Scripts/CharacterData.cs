@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.UI.Gallery;
+using _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune;
 using UnityEngine;
 using NaughtyAttributes;
 using UltEvents;
@@ -11,9 +12,10 @@ namespace _School_Seducer_.Editor.Scripts
     [CreateAssetMenu(fileName = "CharacterData", menuName = "Game/Data/Character Data", order = 0)]
     public class CharacterData : ScriptableObject
     {
-        [FormerlySerializedAs("conversation")]
-        [Header("Data")]
+        [Header("Data")] 
+        [SerializeField] public CharacterInfo info;
         [SerializeField] public СonversationData currentConversation;
+        [SerializeField] public List<WheelSlotData> gifts;
         [SerializeField] public List<СonversationData> allConversations;
         [SerializeField] public GalleryCharacterData gallery;
         
@@ -34,6 +36,14 @@ namespace _School_Seducer_.Editor.Scripts
                 loyalty = 1;
             if (loyalty > maxLoyalty)
                 loyalty = maxLoyalty;
+        }
+
+        public void AddGift(WheelSlotData gift, int max)
+        {
+            if (gift.slotType != WheelCategorySlotEnum.Gift || gift.slotTypeTest != WheelCategorySlotEnum.Gift) return;
+            
+            if (gifts.Count >= max) return;
+            gifts.Add(gift);
         }
 
         public bool LastConversationAvailable()
@@ -63,6 +73,5 @@ namespace _School_Seducer_.Editor.Scripts
         }
 
         public int RequiredLevel => requiredLevel;
-        public int Loyalty => loyalty;
     }
 }

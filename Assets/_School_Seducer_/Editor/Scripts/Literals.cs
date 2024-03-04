@@ -14,8 +14,8 @@ namespace _School_Seducer_.Editor.Scripts
         [Inject] private EventManager _eventManager;
 
         [SerializeField] private TextMeshProUGUI gold;
-        [SerializeField] private LocalizedUIObject localizedDiamonds;
-        [SerializeField] private LocalizedUIObject localizedExp;
+        [SerializeField] private LocalizedUIText localizedDiamonds;
+        [SerializeField] private LocalizedUIText localizedExp;
 
         private void Awake()
         {

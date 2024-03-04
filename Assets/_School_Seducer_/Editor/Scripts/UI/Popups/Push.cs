@@ -12,10 +12,15 @@ namespace _School_Seducer_.Editor.Scripts.UI
 {
     public class Push : MonoBehaviour
     {
+        [SerializeField] private float upscaleMultiplier;
         [SerializeField] private List<Transition> transitions = new();
         [SerializeField, Space(20)] private bool needOtherElements;
         [SerializeField, ShowIf(nameof(needOtherElements))] private Button[] buttons = { };
+        [SerializeField] private UnityEvent onShowEvent;
+        [SerializeField] private UnityEvent onHideEvent;
 
+        public float Upscale => upscaleMultiplier;
+        
         public Button[] Buttons => buttons;
 
         public void InitializeButton(int indexButton, UnityAction action)
@@ -75,6 +80,13 @@ namespace _School_Seducer_.Editor.Scripts.UI
             {
                 transition.Transit();
             }
+            
+            onShowEvent?.Invoke();
+        }
+
+        private void OnDisable()
+        {
+            onHideEvent?.Invoke();
         }
     }
 }

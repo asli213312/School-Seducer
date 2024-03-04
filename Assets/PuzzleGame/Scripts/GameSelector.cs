@@ -5,6 +5,7 @@ using PuzzleGame.Gameplay;
 using PuzzleGame.Gameplay.Boosters;
 using PuzzleGame.UI;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace PuzzleGame
@@ -41,6 +42,8 @@ namespace PuzzleGame
         static readonly int BigField = Animator.StringToHash("Big");
         static readonly int MiddleField = Animator.StringToHash("Middle");
         static readonly int SmallField = Animator.StringToHash("Small");
+
+        [SerializeField] private UnityEvent gameOverEvent; 
 
         public void MinimizeCurrentGame(bool value)
         {
@@ -218,15 +221,18 @@ namespace PuzzleGame
 
         void OnGameOver()
         {
-            ResetTriggers();
-            currentGame.fieldAnimator.SetTrigger(MiddleField);
-            fieldBlocker.SetActive(true);
+            gameOverEvent?.Invoke();
+            
+            Debug.Log("GAME OVER!");
+            //ResetTriggers();
+            //currentGame.fieldAnimator.SetTrigger(MiddleField);
+            //fieldBlocker.SetActive(true);
 
-            foreach(BoosterButton button in boosters)
-                button.SetRaycast(false);
+            //foreach(BoosterButton button in boosters)
+                //button.SetRaycast(false);
         
-            gameOver.gameObject.SetActive(true);
-            gameOver.LastChance();
+            //gameOver.gameObject.SetActive(true);
+            //gameOver.LastChance();
         }
     
         void OnLastChance()

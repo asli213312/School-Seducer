@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
@@ -96,7 +97,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
         private void TranslateOption()
         {
-            LocalizedUIObject localizedComponent = GetComponent<LocalizedUIObject>();
+            LocalizedUIText localizedComponent = GetComponent<LocalizedUIText>();
             //localizedComponent.SetLocalizator(_localizer);
             TextMeshProUGUI textComponent = GetComponentInChildren<TextMeshProUGUI>();
             Translator.Languages currentLanguage = localizedComponent.LocalizedData.Find(x => x.languageCode == _localizer.GlobalLanguageCodeRuntime);

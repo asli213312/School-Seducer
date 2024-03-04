@@ -50,8 +50,8 @@ namespace PuzzleGame.Ads
             //if (!UnityAdsController.Instance.IsRewardedVideoLoaded)
                 //return;
 
-            restartGameObject.SetActive(false);
-            lastChanceGameObject.gameObject.SetActive(true);
+            //restartGameObject.SetActive(false);
+            //lastChanceGameObject.gameObject.SetActive(true);
 
             lastChanceButton.interactable = false;
             maskImage.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, maskSize);

@@ -3,17 +3,19 @@ using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts;
 using _School_Seducer_.Editor.Scripts.Chat;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Zenject;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, IPointerDownHandler
 {
     [Inject] private EventManager _eventManager;
     [Inject] private ChatSystem _chatSystem;
+    [Inject] private DiContainer _diContainer;
     
     [SerializeField] private CharacterData characterData;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
-    public СonversationData  currentConversation => characterData.currentConversation;
+    public СonversationData CurrentConversation => characterData.currentConversation;
     public CharacterData Data => characterData;
     public SpriteRenderer SpriteRenderer => spriteRenderer;
 
@@ -21,27 +23,15 @@ public class Character : MonoBehaviour
     public event Action<Character> CharacterSelected;
     public event Action<Character> CharacterEnter;
     public event Action CharacterExit;
-
-    private Chat _chat;
     
-    public void Initialize(Chat chat)
-    {
-        _chat = chat;
-    }
-    
-    void Start()
-    {
-        _collider = GetComponent<BoxCollider2D>();
-    }
+    public void Initialize(CharacterData data) => characterData = data;
 
-    public void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
-       Debug.Log("This character: " + gameObject.name);
-       CharacterSelected?.Invoke(this);
-       
-       _chat.gameObject.SafeActivate(.1f);
-       _eventManager.UpdateScrollChat();
-       _chatSystem.gameObject.SafeActivate();
+        Debug.Log("This character: " + gameObject.name);
+        CharacterSelected?.Invoke(this);
+        
+        //_chatSystem.gameObject.SafeActivate();
     }
 
     public void OnMouseEnter()
@@ -52,18 +42,5 @@ public class Character : MonoBehaviour
     public void OnMouseExit()
     {
         CharacterExit?.Invoke();
-    }
-
-    public void StartConversation()
-    {
-        _chat.ResetContent();
-        _chat.InvokeStartConversation(characterData.currentConversation.Messages);
-        
-        Debug.Log("Conversation is started: " + characterData.currentConversation.name);
-    }
-
-    public void EndConversation()
-    {
-        _eventManager.ConversationEnded();
     }
 }

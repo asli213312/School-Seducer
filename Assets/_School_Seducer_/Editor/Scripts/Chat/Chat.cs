@@ -16,7 +16,7 @@ using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.Chat
 {
-    public class Chat : MonoBehaviour, IObservableCustom<MonoBehaviour>
+    public class Chat : MonoBehaviour, IObservableCustom<MonoBehaviour>, ICharacterSelected
     {
         [Inject] private LocalizedGlobalMonoBehaviour _localizer;
         [Inject] private SoundHandler _soundHandler;
@@ -24,6 +24,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [Inject] private MonoController _monoController;
         [Inject] private IContentDataProvider _contentDataProvider;
 
+        [Header("UI")] 
+        [SerializeField] private Transform chatLocker;
         [SerializeField] private Transform contentMsgs;
         [SerializeField] private Transform contentChats;
         [SerializeField] private GalleryScreen gallery;
@@ -37,10 +39,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private MessageDefaultView msgDefaultPrefab;
         [SerializeField] private MessagePictureView msgPicturePrefab;
         [SerializeField] private RectTransform paddingPrefab;
+
+        [Header("Events")] 
+        [SerializeField] private UnityEvent chatOpenedEvent;
+        [SerializeField] private UnityEvent storySelectedEvent;
         [ShowInInspector] public List<IContent> PictureMessages { get; private set; } = new();
         [ShowInInspector] public List<IContent> DampedPictureMessages { get; private set; } = new();
 
-        [MonoText] public CharacterData CurrentCharacter { get; private set; }
+        [MonoText] public CharacterData CurrentCharacterData { get; private set; }
         public Transform ContentMsgs => contentMsgs;
         public BranchData CurrentBranchData { get; private set; }
         [MonoText] public СonversationData CurrentConversationData { get; private set; }
@@ -74,6 +80,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 msg.TranslateAudio(_localizer.GlobalLanguageCodeRuntime);
             }
         }
+        
+        private void StorySelected() => storySelectedEvent?.Invoke();
 
         private void Awake()
         {
@@ -86,6 +94,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _localizer.AddObserver(this);
 
             _eventManager.UpdateExperienceTextEvent += storyResolver.UpdateStatusViews;
+            previewer.CharacterSelectedEvent += OnCharacterSelected;
             //_conversationView.Initialize(config.ChatCompletedSprite, config.ChatUncompletedSprite);
         }
 
@@ -99,11 +108,28 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _localizer.RemoveObserver(this);
             
             _eventManager.UpdateExperienceTextEvent -= storyResolver.UpdateStatusViews;
+            previewer.CharacterSelectedEvent -= OnCharacterSelected;
         }
 
         private void OnDisable()
         {
             UnRegisterStatusViews();
+        }
+
+        public void OnCharacterSelected(Character character)
+        {
+            if (previewer.CurrentCharacter != character) ResetContent();
+            
+            ResetContent();
+            
+            transform.GetChild(0).gameObject.SafeActivate(.1f);
+            Debug.Log("Chat activated!");
+            
+            DeactivateStatusViews();
+            ResetStatusViews();
+            InstallCharacterData(character.Data);
+            
+            chatOpenedEvent?.Invoke();
         }
         
         public void OnObservableUpdate()
@@ -129,7 +155,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public void InstallCharacterData(CharacterData character)
         {
             DeactivateStatusViews();
-            CurrentCharacter = character;
+            CurrentCharacterData = character;
 
             if (_chatStatusViews.Count <= 0)
             {
@@ -182,19 +208,20 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void InstallCurrentConversation(СonversationData data) 
         {
             CurrentConversationData = data;
-            CurrentCharacter.currentConversation = CurrentConversationData;
+            CurrentCharacterData.currentConversation = CurrentConversationData;
             
             _monoController.UpdateMonoByName("ChatConversation");
         }
 
         private void InitializeChats()
         {
-            for (int i = 0; i < CurrentCharacter.allConversations.Count; i++)
+            for (int i = 0; i < CurrentCharacterData.allConversations.Count; i++)
             {
                 ChatStatusView chatStatus = Instantiate(chatStatusView, contentChats);
                 chatStatus.Initialize(this);
-                chatStatus.Render(CurrentCharacter.allConversations[i], config.ChatUncompletedSprite);
+                chatStatus.Render(CurrentCharacterData.allConversations[i], config.ChatUncompletedSprite);
                 chatStatus.OnClick += StartDialogue;
+                chatStatus.OnClick += StorySelected;
                 _chatStatusViews.Add(chatStatus);
             }
             
@@ -217,11 +244,20 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             for (int i = 0; i < Messages.Count; i++)
             {
                 if (IsMessagesEnded) StopCoroutine(ProcessMessage(i));
+                
+                if (messages[0].completed) chatLocker.gameObject.Activate();
 
                 if (messages[i].completed == false)
+                {
+                    chatLocker.gameObject.Deactivate();
                     yield return ProcessMessage(i);
+                }
                 else
+                {
                     yield return ProcessMessage(i, false);
+                    
+                    if (messages[^1].completed) chatLocker.gameObject.Deactivate();
+                }
 
                 if (DampedPictureMessages.Count <= 0)
                     this.DelayedCall(.3f, () => _contentDataProvider.LoadContentData(PictureMessages));
@@ -246,8 +282,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             CheckOptionsParentIsLastSibling();
 
-            if (needTapToNext) yield return new WaitUntil(CheckTapBounds);
-            yield return new WaitForSeconds(0.5f);
+            if (needTapToNext)
+            {
+                yield return new WaitUntil(CheckTapBounds);
+                yield return new WaitForSeconds(0.5f);
+            }
 
             var paddingBack = CreatePadding();
             paddingBack.gameObject.name = "PaddBackChat";
@@ -372,9 +411,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (Input.GetMouseButtonDown(0) && transform.localScale == Vector3.one)
             {
                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                
-                BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
-                
+
                 RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero, Mathf.Infinity);
                 
                 if (ContentScreen.CurrentData != null)
@@ -551,7 +588,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             foreach (var option in options)
             {
-                LocalizedUIObject localizedComponent = option.GetComponent<LocalizedUIObject>();
+                LocalizedUIText localizedComponent = option.GetComponent<LocalizedUIText>();
                 TextMeshProUGUI textComponentOption = option.GetComponentInChildren<TextMeshProUGUI>();
                 Translator.Languages neededTranslationData = localizedComponent.LocalizedData.Find(x => x.languageCode == currentLanguageCode);
                 textComponentOption.text = neededTranslationData.key;   
@@ -570,7 +607,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 BranchData branch = lastMessage.optionalData.Branches[i];
                 OptionButton option = options[i];
                 
-                LocalizedUIObject localizedComponent = option.GetComponent<LocalizedUIObject>();
+                LocalizedUIText localizedComponent = option.GetComponent<LocalizedUIText>();
 
                 foreach (var localizedField in branch.LocalizedFields)
                 {
@@ -653,6 +690,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             foreach (var statusView in _chatStatusViews)
             {
                 statusView.OnClick -= StartDialogue;
+                statusView.OnClick -= StorySelected;
             }
         }
 
@@ -691,8 +729,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (_chatStatusViews.Count > 0)
                 _chatStatusViews.Clear();
         }
-        
-        public void ResetCurrentConversaton() => CurrentConversationData = null;
 
         public void ResetContent()
         {

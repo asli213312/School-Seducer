@@ -18,7 +18,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private СonversationData _lockedConversation;
 
         public bool StoryUnlocked { get; private set; }
-        
+
         public event Action UpdateStatusViewsEvent;
 
         private CharacterData _currentCharacterData;
@@ -39,6 +39,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _chatStatusViews = statusViews;
         }
 
+        public void SetSlider(Slider newSlider) => expSlider = newSlider;
+
         public void SetSliderValue(int characterExperience) => expSlider.value = characterExperience;
 
         public void SetRolledConversation([CanBeNull] СonversationData rolledConversation)
@@ -52,7 +54,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void UpdateStatusViews() => UpdateStatusViewsEvent?.Invoke();
 
-        public ChatStatusView FindFirstLockedStatusView() => _chatStatusViews.FirstOrDefault(x => x.Conversation.isUnlocked == false);
+        private ChatStatusView FindFirstLockedStatusView() => _chatStatusViews.FirstOrDefault(x => x.Conversation.isUnlocked == false);
 
         private void InstallSliderNextConversation()
         {

@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ca1cd1e3654303aff5d941a90c197e, type: 3}
   m_Name: Slot 7
   m_EditorClassIdentifier: 
+  iconInfo: {fileID: 21300000, guid: 576fbc5c3f41c824a8cf7aebb3bce02e, type: 3}
+  borderSpriteByColor: {fileID: 21300000, guid: 751edfc29ab8d1f41a6369b8097fb7c2, type: 3}
+  extraCharacterPortrait: {fileID: 0}
   icon: {fileID: 21300000, guid: 846ee8402d77bbe4baf58fd7cae1d4a7, type: 3}
   slotType: 0
   costExp: 3
-  level: 2
-  chanceToGain: {x: 51, y: 60}
+  score: 2
+  chanceToGain: {x: 1, y: 100}
   useTest: 0
   iconTest: {fileID: 21300000, guid: 8538e4418c13a8843844fbdcee5088d5, type: 3}
   slotTypeTest: 0

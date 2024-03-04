@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308157901ddc4b60a6ea6c615f040d48, type: 3}
+  m_Name: Missis Green
+  m_EditorClassIdentifier: 
+  portrait: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  onLocationSprite: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  age: 27
+  faculty: Students
+  hobbies:
+  - More teach more teach more teach more teach
+  - Very more teach more teach more teach

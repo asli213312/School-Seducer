@@ -39,6 +39,17 @@ namespace _BonGirl_.Editor.Scripts
             _selectedPanel.transform.position = new Vector3(xPosition, _selectedPanel.transform.position.y, _selectedPanel.transform.position.z);
         }
 
+        public void StartScaleSelected(float scaleValue)
+        {
+            if (_selectedPanel == null)
+            {
+                Debug.LogWarning("Select panel to upscale!");
+                return;
+            }
+
+            StartCoroutine(_selectedPanel.transform.DoLocalScaleAndUnscale(this, new Vector3(scaleValue, scaleValue, scaleValue)));
+        }
+
         public void AlphaClosePanel(Graphic graphic)
         {
             Color color = graphic.color;
