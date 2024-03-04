@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Missis Green
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: 0e7a8928f3ea31d4898ea8629a6a90b1, type: 2}
-  currentConversation: {fileID: 11400000, guid: fa4bc44f2ee271040ae668de6518d7af, type: 2}
+  currentConversation: {fileID: 11400000, guid: 0d6b433c2c3bfc740ac71c860aa9b5c9, type: 2}
   gifts: []
   allConversations:
   - {fileID: 11400000, guid: f5ef8038c00b21742b3f32cd2d8c6244, type: 2}
   - {fileID: 11400000, guid: fa4bc44f2ee271040ae668de6518d7af, type: 2}
   - {fileID: 11400000, guid: b31eacc18c5d9c648b10efa6adb9d510, type: 2}
+  - {fileID: 11400000, guid: 0d6b433c2c3bfc740ac71c860aa9b5c9, type: 2}
   gallery: {fileID: 11400000, guid: 3f787d9eea38ba844ab9ebc88f33fbcb, type: 2}
   requiredLevel: 3
   loyalty: 2

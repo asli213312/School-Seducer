@@ -122,7 +122,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             
             ResetContent();
             
-            transform.GetChild(0).gameObject.SafeActivate(.1f);
+            gameObject.SafeActivate(.1f);
             Debug.Log("Chat activated!");
             
             DeactivateStatusViews();
