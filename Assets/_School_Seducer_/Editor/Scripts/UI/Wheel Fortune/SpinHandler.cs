@@ -32,7 +32,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private Vector3 _goToStopWheelPosition;
         private Character _winCharacter;
 
-        private float _speedCharacters;
+        private float _targetYWinCharacter;
         private float _rotationSpeed;
         private float _deceleration;
 
@@ -66,8 +66,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private void InitParametersData()
         {
             _rotationSpeed = SpinHandler.Data.rotationSpeed;
-            _speedCharacters = SpinHandler.Data.speedSpinCharacters;
-            
+
             _deceleration = Random.Range(SpinHandler.Data.decelerationMin, SpinHandler.Data.decelerationMax);
         }
 
@@ -155,16 +154,20 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private IEnumerator HandleWinCharacter()
         {
             SetSpinWheelCharacters();
-            SpinHandler.charactersLockedSlot.gameObject.Deactivate();
 
             CharacterData winCharacterData = null;
+            
+            _targetYWinCharacter = _winSlotRect.anchoredPosition.y - 350;
+
+            SpinHandler.charactersLockedSlot.gameObject.Deactivate(.2f);
+            yield return HandleScrollCharacter(_targetYWinCharacter);
 
             characterName.text = CurrentWinSlot.Data.name.ToUpper();
             characterName.gameObject.Activate(0.5f);
 
             SpinHandler.giftSpinPush.SetDataParent(new DataParentText(characterName));
 
-            yield return new WaitForSeconds(1.5f);
+                //yield return new WaitForSeconds(1.5f);
 
             Debug.Log($"Current win slot name is <color=red>{CurrentWinSlot.Data.name}</color>");
 
@@ -202,8 +205,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             ChatStoryResolver.UpdateView();
 
             EventManager.UpdateTextExperience();
-
-            yield return HandleScrollCharacter();
 
             if (winCharacter.Data.allConversations[^1].isUnlocked == false)
             {
@@ -243,19 +244,19 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             }
         }
 
-        private IEnumerator HandleScrollCharacter()
+        private IEnumerator HandleScrollCharacter(float anchoredPositionYCharacter)
         {
             float elapsedTime = 0f;
 
-            while (_isSpinning && _isCharacters)
+            while (_isSpinning)
             {
                 elapsedTime += Time.deltaTime;
                 float t = Mathf.Clamp01(elapsedTime / SpinHandler.Data.durationSpinCharacters);
                 
-                float newY = Mathf.Lerp(SpinHandler.scrollCharactersContent.anchoredPosition.y, _winSlotRect.anchoredPosition.y, t * t);
+                float newY = Mathf.Lerp(SpinHandler.scrollCharactersContent.anchoredPosition.y, anchoredPositionYCharacter, t * t);
                 SpinHandler.scrollCharactersContent.anchoredPosition = new Vector2(SpinHandler.scrollCharactersContent.anchoredPosition.x, newY);
 
-                if (Mathf.Approximately(SpinHandler.scrollCharactersContent.anchoredPosition.y, _winSlotRect.anchoredPosition.y))
+                if (Mathf.Approximately(SpinHandler.scrollCharactersContent.anchoredPosition.y, anchoredPositionYCharacter))
                 {
                     _isSpinning = false;
                     _isCharacters = false;
