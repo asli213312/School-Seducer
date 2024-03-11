@@ -14,6 +14,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] protected Image rightBorderActor;
 
         public MessageData Data;
+        
+        public RectTransform PaddingBackChat { get; set; }
+        public RectTransform PaddingForwardChat { get; set; }
+        public bool NeedPadding { get; set; }
+        
         protected OptionButton[] OptionButtons;
         protected MessageSender Sender;
 

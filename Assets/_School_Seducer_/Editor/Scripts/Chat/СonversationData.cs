@@ -86,8 +86,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 var (isTranslated, translatedAudioMsg) = Messages[i].TranslateAudioMsg(GlobalSettings.GlobalCurrentLanguage);
                 Messages[i].AudioMsg = translatedAudioMsg;
             }
-            
-            Debug.Log("Messages translated for conversation: " + name);
+
+            Debug.Log("Messages translated for conversation at name: " + name);
         }
 
         [ContextMenu(nameof(ResetLanguageContainer))]

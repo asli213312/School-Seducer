@@ -79,12 +79,12 @@ MonoBehaviour:
             \u043E\u043D\u0430 \u0433\u043E\u0440\u044F\u0447\u0430\u044F!"
         - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
   <Language>k__BackingField: 0
-  isCompleted: 0
+  isCompleted: 1
   isUnlocked: 1
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: 
-  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
   actorRightName: 
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
   Messages:
@@ -98,7 +98,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 920bf3aec081bf9479900bc1ce2bc736, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: How did I manage to sleep through my alarm?
     optionalData:
@@ -108,8 +108,8 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 34448abb5854bbe4180a45c070a613f0, type: 3}
-    completed: 0
+      key: {fileID: 8300000, guid: e390e58759f394c4096a980f6badcc0e, type: 3}
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Okay, Auditorium 212 in Building B. \nHere we go."
     optionalData:
@@ -119,9 +119,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: c339b94bebb27364eb1b9bc85c88334d, type: 3}
-    completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+      key: {fileID: 8300000, guid: 31bce10b3d1566a48bde23b249cda38e, type: 3}
+    completed: 1
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: "It's a real achievement to \nbe late on day one!"
     optionalData:
       GallerySlot: {fileID: 0}
@@ -130,8 +130,8 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 96341cfe13993364087821133609a189, type: 3}
-    completed: 0
+      key: {fileID: 8300000, guid: b6a0ac0494a05604bbab901da17c984f, type: 3}
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Hey, sorry, didn't mean to interrupt...
     optionalData:
@@ -141,9 +141,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 04ec621db252afa4095b74aaeb0d91ee, type: 3}
-    completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+      key: {fileID: 8300000, guid: 152557058626fba4bb79b363b39782f8, type: 3}
+    completed: 1
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: Of course not. And what's your name, kid?
     optionalData:
       GallerySlot: {fileID: 0}
@@ -152,8 +152,8 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: abdd883e087bcdd499a2216001576ad3, type: 3}
-    completed: 0
+      key: {fileID: 8300000, guid: a08aab01b5c2717469e5b09f3e6f09f3, type: 3}
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: It's Ben, ma'am.
     optionalData:
@@ -163,9 +163,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 35ce6492b1b0604409a2c42b812fb0f0, type: 3}
+      key: {fileID: 8300000, guid: 0c15602844df44f45a2f1910965ac491, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: "Well, Ben, you're definitely leaving \nan impression! You're gonna be my
       \nfavorite now. Come on in, grab a seat."
     optionalData:
@@ -175,7 +175,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 960ceeed426032c4991276d544058dc5, type: 3}
+      key: {fileID: 8300000, guid: 9ed5c59a6d636f343b09e52fa1db8209, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Thanks, ma'am. I'm really sorry \nabout being late."
@@ -186,9 +186,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: e42cae576b0a9bf4c98d118fd20cb86a, type: 3}
+      key: {fileID: 8300000, guid: 97cc9b2d595f6494a983d3137d23c4c3, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: "No worries, take a seat up front so \nI can keep an eye on you."
     optionalData:
       GallerySlot: {fileID: 0}
@@ -197,7 +197,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 42faf2f0c8b383248b784ba932a5759f, type: 3}
+      key: {fileID: 8300000, guid: fa388807ed24569439dcccd00e86cc31, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Sure thing, ma'am.
@@ -221,14 +221,12 @@ MonoBehaviour:
     - languageCode: en
       key: {fileID: 8300000, guid: 72b61b9c610dd7d4e97fc7779d00bca7, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: Insert picture
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 7a44f2c58747d3840b2c3c49e7d3a6ca, type: 2}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 0f1ca3b081c2aed41a0203548163407d, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips:
-    - languageCode: en
-      key: {fileID: 8300000, guid: 0f1ca3b081c2aed41a0203548163407d, type: 3}
+    localizedAudioClips: []
     completed: 0

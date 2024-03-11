@@ -1,0 +1,38 @@
+{
+  "languages": [
+    {
+      "languageCode": "en",
+      "messages": [
+  {"key": "Mrs. Green, I have some questions \nabout a paper due this weekend." },
+  {"key": "Yeah, what exactly is your question?"},
+  {"key": "Well... you know... umm... I was \nhoping you could have an extra class \nwhere you could explain everything \nto me in detail. If you know what I mean."},
+	{"key": "Oh, that's so sweet. The boy wants \nhis mommy. I'm sorry, darling, but \nI can't these days, and I wish I could."},
+	{"key": "Well, maybe there's some other way."},
+	{"key": "Ha! You're getting cocky and \ninsolent. You think you can \ndemand something?"},
+	{"key": "Mmmm, I feel like I do a lot \nfor you... Perhaps it's time \nto pay the bills?"},
+  {"key": "I can't believe you're actually \ntrying to tell me what to do. Although...\n Okay, there are some things I \ncan do for you...."},
+  {"key": "But next time, I'm gonna \nteach you to obey, okay?"},
+  {"key": "Of course, Mrs. Green. \nBut next time."},
+	{"key": "Insert picture"},
+	{"key": "Insert picture"}
+      ]
+    },
+    {
+      "languageCode": "ru",
+      "messages": [
+  {"key": "Миссис Грин, у меня есть вопросы по \nработе, которую мы должны сдать до выходных."},
+  {"key": "Да, в чём именно у тебя вопрос?"},
+  {"key": "Ну… знаете… м-м-м… я надеялся, \nчто вы сможете провести дополнительное \nзанятие, где всё мне подробно объясните. \nЕсли вы понимаете, о чём я."},
+  {"key": "Ах, как это мило. Мальчишка хочет к \nмамочке. Прости, дорогой, но у меня эти \nдни, я не могу, хотя мне самой \nочень этого хотелось бы."},
+  {"key": "Ну, может может быть есть \nкакой-то другой способ?"},
+  {"key": "Ха! А ты становишься дерзким и наглым. \nТы считаешь, что можешь что-то требовать?"},
+  {"key": "М-м-м, мне кажется, я многое делаю \nдля вас… Возможно, настало время \nплатить по счетам?"},
+  {"key": "Не могу поверить, что ты и правда \nпытаешься мне указывать. Хотя… Ладно, \nкое что я могу для тебя сделать…"},
+  {"key": "Но в следующий раз я научу \nтебя подчиняться, ясно?"},
+  {"key": "Конечно, миссис Грин. \nНо в следующий раз."},
+  {"key": "Вставить картинку"},
+  {"key": "Вставить картинку"}
+      ]
+    }
+  ]
+}

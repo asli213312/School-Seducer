@@ -111,13 +111,12 @@ MonoBehaviour:
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: 
-  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
   actorRightName: 
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
   Messages:
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u0421\u0435\u0433\u043E\u0434\u043D\u044F \u043C\u044B \u043F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u043C
-      \u043E \u0441\u0435\u043A\u0441\u0443\u0430\u043B\u044C\u043D\u043E\u043C \u0432\u043B\u0435\u0447\u0435\u043D\u0438\u0438."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: Today, we're diving into sexual attraction.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -125,13 +124,10 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: de063421dcc606b4fb59655d1247a458, type: 3}
+      key: {fileID: 8300000, guid: 7b2682d18f3bf974b80ba27ecc5519fb, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u041C\u044B \u0440\u0430\u0441\u0441\u043C\u043E\u0442\u0440\u0438\u043C
-      \u043E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u0444\u0435\u0442\u0438\u0448\u0438
-      \n\u0441\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0433\u043E
-      \u043C\u0443\u0436\u0447\u0438\u043D\u044B."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: Let's talk about what gets modern guys going.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -139,14 +135,11 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 3a83991893a08914aaf8c20bdf6f9e81, type: 3}
+      key: {fileID: 8300000, guid: 5c2e5516f973b5d4d9e559f1c5ef9069, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u041D\u0435\u0434\u0430\u0432\u043D\u043E \u0443\u0447\u0451\u043D\u044B\u0435
-      \u0438\u0437 \u041A\u0435\u043C\u0431\u0440\u0438\u0434\u0436\u0430 \u043E\u043F\u0443\u0431\u043B\u0438\u043A\u043E\u0432\u0430\u043B\u0438
-      \n\u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B \u0438\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u044F,
-      \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043E\u043D\u0438 \n\u043F\u0440\u043E\u0432\u043E\u0434\u0438\u043B\u0438
-      \u0434\u0432\u0430 \u043C\u0435\u0441\u044F\u0446\u0430."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: "Recently, Cambridge scientists dropped \na study they've been working on
+      \nfor two months."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -154,14 +147,11 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 9499a01df7a9d0a4e93fbef0fd91bb21, type: 3}
+      key: {fileID: 8300000, guid: e8057ca1a4d55b342b3ccdb5b47ae915, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u0418\u0445 \u0434\u0430\u043D\u043D\u044B\u0435 \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u044E\u0442
-      \u0441\u0430\u043C\u044B\u0435 \u0440\u0430\u0441\u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u0435
-      \n\u0442\u0435\u043C\u044B, \u043F\u0440\u0438\u0432\u043B\u0435\u043A\u0430\u044E\u0449\u0438\u0435
-      \u043C\u0443\u0436\u0447\u0438\u043D \u0432 \u0441\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0439
-      \n\u0433\u043E\u0440\u043E\u0434\u0441\u043A\u043E\u0439 \u0436\u0435\u043D\u0449\u0438\u043D\u0435."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: "They spilled the tea on what really \ncatches a dude's eye when it \ncomes
+      to city girls."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -169,16 +159,11 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 76654bda387eaaf428eac855be37b091, type: 3}
+      key: {fileID: 8300000, guid: a3687fa679f4bbb479403647c200f6c8, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u0418\u0442\u0430\u043A, \u0432\u043E \u043F\u0435\u0440\u0432\u044B\u0445,
-      \u044D\u0442\u043E \u0442\u0430\u043A \u043D\u0430\u0437\u044B\u0432\u0430\u0435\u043C\u044B\u0435
-      \n<i>downblouse</i>. \u0421\u0438\u0442\u0443\u0430\u0446\u0438\u044F, \u043A\u043E\u0433\u0434\u0430
-      \u0436\u0435\u043D\u0449\u0438\u043D\u0430 \n\u043D\u0430\u043A\u043B\u043E\u043D\u044F\u0435\u0442\u0441\u044F
-      \u0438 \u0432 \u0432\u044B\u0440\u0435\u0437\u0435 \u0434\u0435\u043A\u043E\u043B\u044C\u0442\u0435
-      \n\u0441\u0442\u0430\u043D\u043E\u0432\u044F\u0442\u0441\u044F \u0432\u0438\u0434\u043D\u044B
-      \u0435\u0451 \u0441\u043E\u0441\u043A\u0438."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: "So, first up, we got the <i>downblouse</i> \nmove. You know, when a girl
+      leans \nforward and you catch a sneak peek \nof her nipples in her neckline"
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -186,11 +171,10 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 45c21d7fe324f4f449994f6bae0a82ad, type: 3}
+      key: {fileID: 8300000, guid: f28cda5a98a6f264fbfc6dc76f7971f8, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u0421\u0435\u0439\u0447\u0430\u0441 \u044F \u043F\u0440\u043E\u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0438\u0440\u0443\u044E
-      \u0432\u0430\u043C \u043F\u0440\u0438\u043C\u0435\u0440."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: Let me give you a quick demo.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -198,10 +182,10 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 6e97572c887e851408a61d8bfe5069b0, type: 3}
+      key: {fileID: 8300000, guid: 08885ba4a1a88a14cb38290375a6cb74, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: Insert picture
     optionalData:
       GallerySlot: {fileID: 11400000, guid: bd04aeab50ce833478d9321695a0983d, type: 2}
       Branches: []
@@ -209,16 +193,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips: []
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u043F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u0439
-      \u0444\u0435\u0442\u0438\u0448 - \u044D\u0442\u043E \n\u0447\u0443\u043B\u043A\u0438
-      \u043D\u0430 \u0436\u0435\u043D\u0441\u043A\u0438\u0445 \u043D\u043E\u0433\u0430\u0445.
-      \u0418\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u0435 \u043F\u043E\u043A\u0430\u0437\u0430\u043B\u043E,
-      \n\u0447\u0442\u043E \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u0435
-      \u043E\u0433\u043E\u043B\u0435\u043D\u0438\u0435 \u0447\u0443\u043B\u043A\u043E\u0432
-      \u0443 \u0441\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0445 \n\u0436\u0435\u043D\u0449\u0438\u043D
-      \u0440\u0430\u0441\u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u0451\u043D\u043D\u043E\u0435
-      \u044F\u0432\u043B\u0435\u043D\u0438\u0435."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: "Then, we got stockings on girls' legs. \nTurns out, it's a big turn-on
+      \nwhen those accidentally show."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -226,12 +203,10 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: f35c536feef98fe4fbe076f0b560795d, type: 3}
+      key: {fileID: 8300000, guid: 8122df6b3b989ad4eb448b147e309c34, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u0438\u0437-\u0437\u0430
-      \u0433\u043B\u0443\u0431\u043E\u043A\u043E\u0433\u043E \u0432\u044B\u0440\u0435\u0437\u0430
-      \u043D\u0430 \u044E\u0431\u043A\u0435."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: "Like, if her skirt has a super \ndeep slit, you know?"
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -239,26 +214,20 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 32c0a180d06713348ba50ebb567474c7, type: 3}
+      key: {fileID: 8300000, guid: ea1699ca04a6727438952219df72e996, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: Insert picture
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 57994e6e947a1b9419dad6e92f175961, type: 2}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 10830a65c8e01f14f98b5858c5f3134b, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips:
-    - languageCode: en
-      key: {fileID: 8300000, guid: 10830a65c8e01f14f98b5858c5f3134b, type: 3}
+    localizedAudioClips: []
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u0420\u0430\u0437 \u043C\u044B \u0437\u0430\u0433\u043E\u0432\u043E\u0440\u0438\u043B\u0438
-      \u043E \u044E\u0431\u043A\u0430\u0445, \u0442\u043E \u0441\u0430\u043C\u0438
-      \u043F\u043E \n\u0441\u0435\u0431\u0435 \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0435
-      \u044E\u0431\u043A\u0438 \u043F\u0440\u0438\u0432\u043B\u0435\u043A\u0430\u044E\u0442
-      \u043C\u0443\u0436\u0447\u0438\u043D. \n\u041D\u043E \u044D\u0442\u043E, \u0434\u0443\u043C\u0430\u044E,
-      \u043F\u043E\u043D\u044F\u0442\u043D\u043E \u0438 \u0431\u0435\u0437 \u0438\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u0439."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: "And speaking of skirts, short ones \ndrive guys wild. But I mean, we \nkinda
+      knew that already, right?"
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -266,11 +235,10 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: e6a8ac352b1fd2041bfa79b80b1122ae, type: 3}
+      key: {fileID: 8300000, guid: e919950073736dd4eb35986bb9679a29, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u041D\u0430\u043A\u043E\u043D\u0435\u0446, \u043F\u0440\u043E\u0441\u0442\u0443\u043F\u0430\u044E\u0449\u0438\u0435
-      \u0441\u043E\u0441\u043A\u0438 \u043F\u043E\u0434 \u043E\u0434\u0435\u0436\u0434\u043E\u0439."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: "Lastly, we've got nipples poking \nthrough clothes."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -278,14 +246,10 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 10830a65c8e01f14f98b5858c5f3134b, type: 3}
+      key: {fileID: 8300000, guid: 3621511960ce30b4aa73be6ac7b34fe9, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u041D\u0430 \u044D\u0442\u0443 \u043B\u0435\u043A\u0446\u0438\u044E \u044F
-      \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u043E \u043D\u0435 \u043D\u0430\u0434\u0435\u043B\u0430
-      \n\u0431\u044E\u0441\u0442\u0433\u0430\u043B\u044C\u0442\u0435\u0440, \u0447\u0442\u043E\u0431\u044B
-      \u043F\u0440\u043E\u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-      \n\u0432\u0430\u043C \u044D\u0442\u043E \u044F\u0432\u043B\u0435\u043D\u0438\u0435."
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: "Yeah, I skipped the bra today \nto show you this one firsthand."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
@@ -293,16 +257,14 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 238cdc5a2148ac04084a2ea8a133a7ab, type: 3}
+      key: {fileID: 8300000, guid: ee42a578fe5617942a32fb7ab0b3b36c, type: 3}
     completed: 1
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
-    Msg: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
+    Msg: Insert picture
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 697d5a73066d1a446a25f755a6a0cebf, type: 2}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips:
-    - languageCode: en
-      key: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    localizedAudioClips: []
     completed: 1

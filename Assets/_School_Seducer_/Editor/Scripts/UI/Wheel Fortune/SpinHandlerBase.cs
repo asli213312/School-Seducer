@@ -12,10 +12,28 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         [Inject] protected IChatStoryResolverModule ChatStoryResolver;
 
         protected SpinHandlerModule SpinHandler;
+        protected PushesModule Pushes;
 
         public void InitializeCore(SpinHandlerModule system)
         {
             SpinHandler = system;
+        }
+
+        public void Initialize(PushesModule pushesModule)
+        {
+            Pushes = pushesModule;
+        }
+
+        protected virtual void TryBuySpin()
+        {
+            if (SpinHandler.Data.CanSpin(Bank.Data.Money) == false)
+            {
+                Debug.LogWarning("Not enough money to spin!");
+                return;
+            }
+            
+            if (SpinHandler.scrollCharactersContent.childCount > 0)
+                Bank.ChangeValueMoney(-SpinHandler.Data.moneyForSpin);
         }
 
         protected abstract void Spin();

@@ -18,6 +18,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         public string MsgNameText { get; set; }
         public bool PictureInstalled { get; private set; }
 
+        public MessageSender MessageSender => Sender;
+
         private float _durationSendingPicture;
 
         public void Initialize(OptionButton[] optionButtons)

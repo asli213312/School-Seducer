@@ -124,109 +124,109 @@ MonoBehaviour:
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: 
-  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
   actorRightName: 
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
   Messages:
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: The lecture's done. Catch you next week.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: de063421dcc606b4fb59655d1247a458, type: 3}
+    AudioMsg: {fileID: 8300000, guid: b2b0655ef2ac0894e9a06d5b28788565, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: b2b0655ef2ac0894e9a06d5b28788565, type: 3}
+      key: {fileID: 8300000, guid: 670dd3e664826044c9b3b60b25753745, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: Ben, hang back after class, please.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 3a83991893a08914aaf8c20bdf6f9e81, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 649416710f1e9fa4a8c99418666e1bb6, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 649416710f1e9fa4a8c99418666e1bb6, type: 3}
+      key: {fileID: 8300000, guid: 0ef8b3e65221351479df5888a1e2e969, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Sure thing, Miss Green.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 9499a01df7a9d0a4e93fbef0fd91bb21, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 293da447b91e2de42a3103e75918a119, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 293da447b91e2de42a3103e75918a119, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: "I need someone to help with house chores, \nand I want to hire you for
       the job."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 76654bda387eaaf428eac855be37b091, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 19566829459433149818d5d4e4e33985, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 19566829459433149818d5d4e4e33985, type: 3}
+      key: {fileID: 8300000, guid: 415592c8183a0c148b7c013b7b405982, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "You want me? Usually, it's girls \ndoing this stuff."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 45c21d7fe324f4f449994f6bae0a82ad, type: 3}
+    AudioMsg: {fileID: 8300000, guid: d9ea5f2cdd9025d4b84aadb83bd3f053, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: d9ea5f2cdd9025d4b84aadb83bd3f053, type: 3}
+      key: {fileID: 8300000, guid: c2afc0ec7fb59c446a41533976330e48, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: "Yeah, but I've got my reasons. \nI'll pay $500 a month. \nAre you down?"
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 6e97572c887e851408a61d8bfe5069b0, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 1a62aac18647ebc40b4a1f3777469da4, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 1a62aac18647ebc40b4a1f3777469da4, type: 3}
+      key: {fileID: 8300000, guid: eb97cc16c36c2bb499920257b6fcd996, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "That's a lot of cash for me. \nYeah, count me in."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 35ce6492b1b0604409a2c42b812fb0f0, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 65e092b7d2118714f82e862f8b875e2b, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 65e092b7d2118714f82e862f8b875e2b, type: 3}
+      key: {fileID: 8300000, guid: 3740b623c857105428dcb4e58e7795c2, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: Awesome, see you Saturday at 9 am.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: f35c536feef98fe4fbe076f0b560795d, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 84817e5e544d16b4e9b34e9396fd85f8, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 84817e5e544d16b4e9b34e9396fd85f8, type: 3}
+      key: {fileID: 8300000, guid: 758c09a87d6d8b7498c8146974aa3b57, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Catch you later, Miss Green. Thanks!
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 32c0a180d06713348ba50ebb567474c7, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 4f801a5f1327b4943a61487b53ad1b12, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 4f801a5f1327b4943a61487b53ad1b12, type: 3}
+      key: {fileID: 8300000, guid: 68718040f7d81d24d92508644b2444f1, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: ...
@@ -237,53 +237,53 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips: []
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: "Hey, I've been waiting for you. \nCome on in. Your first gig is to vacuum
       \nall the rooms on the second floor. \nThen I'll hook you up with \nsomething
       else."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: e6a8ac352b1fd2041bfa79b80b1122ae, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 9776251df28939a44b9a7c2c8eb893b6, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 9776251df28939a44b9a7c2c8eb893b6, type: 3}
+      key: {fileID: 8300000, guid: dccceef6535df06499f3692ba4467769, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Got it, Miss Green.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 10830a65c8e01f14f98b5858c5f3134b, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 6f0b5ae9987db8e42b89da7e555a9bf9, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 6f0b5ae9987db8e42b89da7e555a9bf9, type: 3}
+      key: {fileID: 8300000, guid: 42ed301b0ca81ba4dbed5ae60bf81651, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Feels kinda lame doing this gig, \nbut hey, Miss Green's bankrolling, so..."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 238cdc5a2148ac04084a2ea8a133a7ab, type: 3}
+    AudioMsg: {fileID: 8300000, guid: b39a4366426493d41a16521aba78b2df, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: b39a4366426493d41a16521aba78b2df, type: 3}
+      key: {fileID: 8300000, guid: d1ea45c35a0bcc34781460c9ea871b2d, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Alright, this room's done, \nonto the next one."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    AudioMsg: {fileID: 8300000, guid: f0ef39631af13ba4b83804cce17a5682, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: f0ef39631af13ba4b83804cce17a5682, type: 3}
+      key: {fileID: 8300000, guid: 282f783095ea7db418efd51ba9da4ba5, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: Insert picture
     optionalData:
       GallerySlot: {fileID: 11400000, guid: a0e096293e6362b4e97d50b2dd430a3a, type: 2}
@@ -298,29 +298,29 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    AudioMsg: {fileID: 8300000, guid: d0c9099b131a4ed449ed5eb942db3e4a, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: d0c9099b131a4ed449ed5eb942db3e4a, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: Nah, all good, Ben. Don't sweat it.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    AudioMsg: {fileID: 8300000, guid: d3fe77d3281487949bdb5bd32fe60e33, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: d3fe77d3281487949bdb5bd32fe60e33, type: 3}
+      key: {fileID: 8300000, guid: 9a622df70283ea244af3440a2b5fae37, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Cool, whatever you say, Miss Green...
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 37e1ebb173288a34c9768a6eac236ffe, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
@@ -331,11 +331,11 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 230e1224945237d44bef91072d88a08f, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 230e1224945237d44bef91072d88a08f, type: 3}
+      key: {fileID: 8300000, guid: 932d85c01cb9aff4e85128ace71354a2, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: ...
@@ -344,29 +344,27 @@ MonoBehaviour:
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips:
-    - languageCode: en
-      key: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    localizedAudioClips: []
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: aa686bb208cd8b344ab19e3be685c65a, type: 3}
     Msg: "Thanks, Ben, you nailed it. \nComing back the day after tomorrow?"
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    AudioMsg: {fileID: 8300000, guid: a38d9f12f9f87e74694ad40c7f569458, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: a38d9f12f9f87e74694ad40c7f569458, type: 3}
+      key: {fileID: 8300000, guid: 306ed541f4ea95049b62783a46f1f627, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Sure thing, thank you...
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    AudioMsg: {fileID: 8300000, guid: d9ed59768045e87438b01d1021bc3c97, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: d9ed59768045e87438b01d1021bc3c97, type: 3}
+      key: {fileID: 8300000, guid: 8f43e65318e771341942ec3515d8c41d, type: 3}
     completed: 0

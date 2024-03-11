@@ -27,6 +27,8 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                 case Enums.Language.EN: languageCode = "en"; break; 
                 case Enums.Language.FR: languageCode = "fr"; break;
                 case Enums.Language.RU: languageCode = "ru"; break;
+                case Enums.Language.IT: languageCode = "it"; break;
+                case Enums.Language.DE: languageCode = "de"; break;
             }
             
             GlobalCurrentLanguage = languageCode;

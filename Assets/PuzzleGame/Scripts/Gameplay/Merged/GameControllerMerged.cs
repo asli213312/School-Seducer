@@ -19,8 +19,6 @@ namespace PuzzleGame.Gameplay.Merged
     {
         [Header("Mode fields")]
         public int bricksToMerge = 3;
-        public int maxObstacles = 4;
-        [Range(1, 100)] public int chanceObstacle = 20;
         public int nextBrickMaxCount = 2;
         public Brick emptyBrickPrefab;
         public Obstacle obstacleBrickPrefab;
@@ -34,7 +32,7 @@ namespace PuzzleGame.Gameplay.Merged
         [ListDrawerSettings(ShowIndexLabels = true)]
         List<NumberedBrick> nextBricks;
 
-        const int MaxNumber = 4;
+        const int MaxNumber = 5;
         const float OffsetBetweenNextBricks = 10;
         bool isAnimating;
     
@@ -662,7 +660,7 @@ namespace PuzzleGame.Gameplay.Merged
 
         int GetRandomNumber()
         {
-            return Random.Range(1, MaxNumber);
+            return Random.Range(1, MaxNumber - 1);
         }
 
         int GetColorIndex(int number)

@@ -22,14 +22,18 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         [Header("Modules")] 
         [SerializeField] private SpinHandlerModule spinHandlerModule;
+        [SerializeField] private PushesModule pushesModule;
 
         public WheelFortuneData Data => data;
         public Previewer Previewer => previewer;
+        public PushesModule PushesModule => pushesModule;
 
         private void Awake()
         {
             spinHandlerModule.InitializeCore(this);
             spinHandlerModule.Initialize();
+            
+            pushesModule.InitializeCore(this);
 
             _eventManager.ChangeValueExperienceEvent += spinHandlerModule.OnChangeValueExperience;
             _eventManager.UpdateTextMoneyEvent += UpdateGoldText;

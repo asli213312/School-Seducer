@@ -21,11 +21,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7959429b15eaa9940a5db8e30909c592, type: 2}
   - {fileID: 11400000, guid: 3b19abd93d649894287dec2ab8d9721d, type: 2}
   - {fileID: 11400000, guid: 305dc3e3cec847c4a9522832ecbb4e09, type: 2}
+  - {fileID: 11400000, guid: 305dc3e3cec847c4a9522832ecbb4e09, type: 2}
+  - {fileID: 11400000, guid: c6ba291f0d8467c43953533dd030efcf, type: 2}
+  - {fileID: 11400000, guid: 305dc3e3cec847c4a9522832ecbb4e09, type: 2}
+  - {fileID: 11400000, guid: 0083d6e4361df514090a7683ef72f0eb, type: 2}
+  - {fileID: 11400000, guid: d26f4a124d377554db0c457c0d3884c7, type: 2}
   allConversations:
   - {fileID: 11400000, guid: 3439c0f2765e41745872053657579534, type: 2}
+  - {fileID: 11400000, guid: a51fba942addd524a8eec864ab0163ba, type: 2}
   - {fileID: 11400000, guid: f5814c5a48e4a88468cc36695805f617, type: 2}
   - {fileID: 11400000, guid: a4e13e9d6ef6578419dad2b92440fa10, type: 2}
-  - {fileID: 11400000, guid: a51fba942addd524a8eec864ab0163ba, type: 2}
   - {fileID: 11400000, guid: 9d7f9ed15c8f3c04dae67e2b813b9890, type: 2}
   - {fileID: 11400000, guid: 0ad2fcc7ce8584a43a7b31658119f93c, type: 2}
   gallery: {fileID: 11400000, guid: 4fdcb8444037b4549a4d8713881e0675, type: 2}
@@ -33,4 +38,4 @@ MonoBehaviour:
   loyalty: 1
   maxLoyalty: 3
   showDebugParameters: 0
-  experience: 271
+  experience: 0

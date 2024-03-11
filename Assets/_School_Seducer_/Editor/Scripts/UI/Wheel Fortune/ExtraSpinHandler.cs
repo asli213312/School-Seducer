@@ -78,8 +78,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             {
                 foreach (var character in SpinHandler.Previewer.Characters)
                 {
-                    if (character.Data.gifts.Count >= SpinHandler.Previewer.CharactersConfig.maxGifts) continue;
-                    
                     WheelSlot slot = SpinHandler.FindSlotForProbability(SpinHandler.CharacterSlots);
                     
                     if (character.Data.name != slot.Data.name) continue;
@@ -88,7 +86,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 }
             }
             
-            //_winCharacterSlots.Add(CurrentWinSlot);
             Debug.Log("All slots in extra spin: " + _winSlots.Count);
         }
 
@@ -112,9 +109,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 
                 for (int j = 0; j < SpinHandler.Previewer.Characters.Length; j++)
                 {
-                    if (SpinHandler.Previewer.Characters[j].Data.gifts.Count >=
-                        SpinHandler.Previewer.CharactersConfig.maxGifts) continue;
-                    
                     if (SpinHandler.Previewer.Characters[j].Data.name != _winCharacterSlots[i].Data.name) continue;
 
                     winCharacter = SpinHandler.Previewer.Characters[j];
@@ -129,20 +123,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 
                 SetupWinCharacter(winCharacter, _winSlots[i].Data);
             }
-        }
-
-        private Character FindWinCharacterByWinSlot(WheelSlotData winCharacterSlot)
-        {
-            foreach (var character in SpinHandler.Previewer.Characters)
-            {
-                if (character.Data.gifts.Count >= SpinHandler.Previewer.CharactersConfig.maxGifts) continue;
-                
-                if (winCharacterSlot.name == character.Data.name)
-                    return character;
-            }
-
-            Debug.LogError("Can't find win character by win slot: " + winCharacterSlot.name);
-            return null;
         }
 
         private void ResetSlotsContent()

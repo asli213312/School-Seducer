@@ -91,6 +91,16 @@ namespace _School_Seducer_.Editor.Scripts
             ResetCharacter();
         }
 
+        public void SelectCurrentCharacter()
+        {
+            if (CurrentCharacter is null) return;
+            
+            CharacterSelectedEvent?.Invoke(CurrentCharacter);
+            characterSelected?.Invoke();
+            
+            Debug.Log("Selected character: " + CurrentCharacter.name);
+        }
+
         public void SelectCharacter(Character character)
         {
             CurrentCharacter = character;

@@ -1,0 +1,70 @@
+Push_reached_gift.json.png
+size:2048,2048
+filter:Linear,Linear
+pma:true
+scale:0.9
+1
+bounds:1839,84,26,48
+999/999
+bounds:1576,71,129,34
+rotate:90
+Continue
+bounds:1536,15,185,38
+rotate:90
+Girl
+bounds:1487,602,266,454
+offsets:5,1,271,455
+Rounded Rectangle 10
+bounds:1779,60,452,58
+rotate:90
+Rounded Rectangle 10 copy
+bounds:1839,134,208,49
+rotate:90
+User name
+bounds:1890,203,139,27
+rotate:90
+back_effect
+bounds:992,14,542,547
+offsets:41,42,617,626
+btn_1
+bounds:1663,206,394,114
+rotate:90
+btn_back
+bounds:1536,202,398,125
+rotate:90
+icon
+bounds:1839,344,185,168
+menuBg
+bounds:1779,514,242,267
+rotate:90
+menu_focus
+bounds:1755,758,280,298
+offsets:2,2,284,302
+patricle copy
+bounds:1487,1058,988,555
+offsets:8,8,1004,570
+rotate:90
+patricle copy 2
+bounds:2,6,988,555
+offsets:8,8,1004,570
+rotate
+bounds:2,563,1483,1483
+offsets:60,60,1603,1603
+
+Push_reached_gift.json_2.png
+size:1603,1603
+filter:Linear,Linear
+pma:true
+scale:0.9
+Frame_Girl
+bounds:906,361,523,544
+offsets:5,5,533,554
+You have reached the Next Level!
+bounds:1431,867,734,44
+rotate:90
+glow_all
+bounds:2,2,902,903
+offsets:10,10,921,923
+patricle
+bounds:2,907,1245,694
+offsets:7,8,1259,708

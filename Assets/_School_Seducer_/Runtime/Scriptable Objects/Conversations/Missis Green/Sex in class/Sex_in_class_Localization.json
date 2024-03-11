@@ -1,0 +1,52 @@
+{
+  "languages": [
+    {
+      "languageCode": "en",
+      "messages": [
+  {"key": "Ben, could you stay after the lecture, please?" },
+  {"key": "Yes, Mrs. Green."},
+  {"key": "You think just because you and \nI slept together once, you can be \nirresponsible about your studies?"},
+	{"key": "No! Of course not."},
+	{"key": "Then what about that paper \nyou turned in last week?"},
+	{"key": "I... I didn't have time to \nprepare... I'm sorry...."},
+	{"key": "What were you doing?"},
+  {"key": "Nothing much, Mrs. Green."},
+  {"key": "Don't lie to me, you dirty boy! \nI've seen you looking at \nthe other students."},
+  {"key": "Admit it, you like younger girls, \ndon't you? Am I not good \nenough for you?"},
+	{"key": "No, you're not."},
+	{"key": "Shut up! Take off your pants!"},
+	{"key": "What? Right here? I can't."},
+	{"key": "Did you hear what I said? \nTake your pants off right now!"},
+  {"key": "Oh, Mrs. Green. (groans)"},
+  {"key": "And remember! If you dare to treat \nmy subject irresponsibly again, \nyou will be punished!"},
+  {"key": "Do you understand?"},
+  {"key": "Yes, Mrs. Green, I deserve \nto be punished!"},
+  {"key": "Insert picture"}
+      ]
+    },
+    {
+      "languageCode": "ru",
+      "messages": [
+  {"key": "Бен, задержись после лекции, пожалуйста."},
+  {"key": "Да, миссис Грин."},
+  {"key": "Ты думаешь, что если мы с тобой \nразок переспали, то ты можешь \nбезответственно относиться к учёбе?"},
+  {"key": "Нет! Конечно нет…"},
+  {"key": "Тогда что с твоей работой, которую \nты сдал на прошлой неделе?"},
+  {"key": "Я… я не успел подготовиться… Простите…"},
+  {"key": "Чем ты был занят?"},
+  {"key": "Ничем особенным, миссис Грин."},
+  {"key": "Не ври мне, грязный мальчишка! \nЯ видела, как ты заглядываешься \nна других студенток."},
+  {"key": "Признай, тебе нравятся девушки \nпомоложе, верно? А я недостаточно \nхороша для тебя?"},
+  {"key": "Нет, что вы…"},
+  {"key": "Заткнись! Снимай штаны!"},
+  {"key": "Что? Прямо тут? Я не могу…"},
+  {"key": "Ты слышал, что я сказала? \nНемедленно снимай штаны!"},
+  {"key": "Ох, миссис Грин… (стонет)"},
+  {"key": "И запомни! Если ты ещё раз посмеешь \nбезответственно отнестись к моему \nпредмету, то будешь наказан!"},
+  {"key": "Ты понял?"},
+  {"key": "Да, миссис Грин, я заслуживаю наказания!"},
+  {"key": "Вставить картинку"}
+      ]
+    }
+  ]
+}

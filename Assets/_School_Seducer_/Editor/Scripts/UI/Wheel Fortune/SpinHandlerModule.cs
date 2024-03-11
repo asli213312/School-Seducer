@@ -6,6 +6,7 @@ using _School_Seducer_.Editor.Scripts.Utility;
 using NaughtyAttributes;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -22,6 +23,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         [Header("Handlers")]
         [SerializeField] private SpinHandler defaultSpinHandler;
         [SerializeField] private ExtraSpinHandler extraSpinHandler;
+        [SerializeField] private SpinHandlerBase uniqueSpinHandler;
 
         [Header("UI elements")] 
         [SerializeField] public RectTransform charactersLockedSlot;
@@ -50,6 +52,11 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         {
             defaultSpinHandler.InitializeCore(this);
             extraSpinHandler.InitializeCore(this);
+            uniqueSpinHandler.InitializeCore(this);
+            
+            defaultSpinHandler.Initialize(_system.PushesModule);
+            extraSpinHandler.Initialize(_system.PushesModule);
+            uniqueSpinHandler.Initialize(_system.PushesModule);
         }
 
         private void Awake()

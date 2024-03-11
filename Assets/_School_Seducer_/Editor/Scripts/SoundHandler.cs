@@ -16,6 +16,9 @@ using UnityEngine.Events;
             _audioSource ??= GetComponent<AudioSource>();
         }
 
+        public void Mute() => _audioSource.mute = true;
+        public void Unmute() => _audioSource.mute = false;
+
         public bool TrySetQueueClip(AudioClip clipInQueue)
         {
             if (IsClipPlaying()) _clipInQueue = clipInQueue; return true;

@@ -22,7 +22,8 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         {
             if (_rectUpdate != null && _rectOffsetToUpdate != null && !_aligned)
             {
-                _rectUpdate.sizeDelta = new Vector2(0, _rectOffsetToUpdate.sizeDelta.y / 7 / 13f);
+                _rectUpdate.sizeDelta = new Vector2(0, _rectOffsetToUpdate.sizeDelta.y / 7f / 13f);
+
                 _aligned = true;
             }
         }

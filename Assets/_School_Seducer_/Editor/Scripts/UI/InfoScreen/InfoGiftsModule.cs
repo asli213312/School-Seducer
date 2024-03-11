@@ -1,10 +1,7 @@
-﻿using System;
-using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.UI;
-using _School_Seducer_.Editor.Scripts.UI.Popups;
 using _School_Seducer_.Editor.Scripts.Utility;
-using _School_Seducer_.Editor.Scripts.Utility.Attributes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -20,6 +17,7 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField] private Push giftPresentPush;
         [SerializeField] private CharactersConfig config;
         [SerializeField] private Slider barExpCharacter;
+        [SerializeField] private Slider infoExpBar;
         [SerializeField] private GiftView giftPrefab;
         [SerializeField] private Transform content;
         [SerializeField] private Button presentButton;
@@ -47,6 +45,8 @@ namespace _School_Seducer_.Editor.Scripts
             _currentCharacter = character;
 
             SetStatusContent(character);
+            
+            InstallExpBar(infoExpBar);
         }
 
         private void SetStatusContent(Character character)
@@ -74,12 +74,7 @@ namespace _School_Seducer_.Editor.Scripts
         {
             if (_scoreCurrentGifts == 0) return;
             
-            _system.Previewer.SetLockedConversation(_currentCharacter);
-            
-            _system.Previewer.StoryResolver.SetSlider(barExpCharacter);
-            _system.Previewer.StoryResolver.UpdateStatusViews();
-            _system.Previewer.StoryResolver.SetRolledConversation(_currentCharacter.Data.LockedConversation);
-            _system.Previewer.StoryResolver.UpdateStatusViews();
+            InstallExpBar(barExpCharacter);
             
             _currentCharacter.Data.ChangeExperience(_scoreCurrentGifts);
             _system.Previewer.StoryResolver.SetSliderValue(_currentCharacter.Data.experience);
@@ -117,6 +112,21 @@ namespace _School_Seducer_.Editor.Scripts
                 
                 SetStatusContent(_currentCharacter);
             }
+            
+            InstallExpBar(infoExpBar);
+            SetStatusContent(_currentCharacter);
+        }
+
+        private void InstallExpBar(Slider bar)
+        {
+            _system.Previewer.SetLockedConversation(_currentCharacter);
+            _system.Previewer.StoryResolver.SetSlider(bar);
+            _system.Previewer.StoryResolver.UpdateStatusViews();
+            _system.Previewer.StoryResolver.SetRolledConversation(_currentCharacter.Data.LockedConversation);
+            _system.Previewer.StoryResolver.UpdateStatusViews();
+
+            _system.Previewer.StoryResolver.SetSliderValue(_currentCharacter.Data.experience);
+            _system.Previewer.StoryResolver.UpdateStatusViews();
         }
 
         private void ShowGiftPush()

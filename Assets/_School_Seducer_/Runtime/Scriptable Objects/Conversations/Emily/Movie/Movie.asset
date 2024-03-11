@@ -142,7 +142,7 @@ MonoBehaviour:
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: 
-  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
   actorRightName: 
   <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
   Messages:
@@ -155,9 +155,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 7b980493acd2d0041bfc7b4cb393e9db, type: 3}
-    completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+      key: {fileID: 8300000, guid: 5e29719457febcb489b305f6c792d4b1, type: 3}
+    completed: 1
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: Guys are such jerks!
     optionalData:
       GallerySlot: {fileID: 0}
@@ -166,8 +166,8 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 745d8bd501ceac54ba180945cd7c3e4c, type: 3}
-    completed: 0
+      key: {fileID: 8300000, guid: e193ab249e4a8074a8a3d939dc87a045, type: 3}
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Hmm... Well, I kinda find it hard \nto agree with that."
     optionalData:
@@ -177,9 +177,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 3e05f126fce3d84418e2377fc2f1ea88, type: 3}
-    completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+      key: {fileID: 8300000, guid: 0e7822d9e815e05459b11bf91ad5fc94, type: 3}
+    completed: 1
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "No, not all guys, just the ones \nI've been seeing."
     optionalData:
       GallerySlot: {fileID: 0}
@@ -188,8 +188,8 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 17e63af4a0e70dd42a22f625bfc01279, type: 3}
-    completed: 0
+      key: {fileID: 8300000, guid: d41cd77f727658a419baba8e571b9521, type: 3}
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: You mean there's more than one?
     optionalData:
@@ -199,9 +199,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 17c7929a779ac5d46af2aab508655182, type: 3}
+      key: {fileID: 8300000, guid: 40f65cab877051448b4a73c3200e514d, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: Not all at once, just one at a time.
     optionalData:
       GallerySlot: {fileID: 0}
@@ -210,7 +210,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: e35a20d503c7ad24d8f95c4e29f469f1, type: 3}
+      key: {fileID: 8300000, guid: 87ccb1442d6bb454f8917568e0ca936b, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Got it...
@@ -221,9 +221,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 7434cebbd13cf3f4bba13b00d7d1186c, type: 3}
+      key: {fileID: 8300000, guid: 82a8fddee2571ef46ad07975e0fc7c5e, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Thought I found this awesome guy, \nwent on a few dates with him, \neverything
       seemed perfect."
     optionalData:
@@ -233,7 +233,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 5774660a5299e8047bb3df59a51e6411, type: 3}
+      key: {fileID: 8300000, guid: a31afc187895898419e2c077a2384d75, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: But I bet there's a catch now...
@@ -244,9 +244,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: e5c6dd32919488246b15aa46c4bac0d1, type: 3}
+      key: {fileID: 8300000, guid: bcaa2b0cf9f9e824e85612b078d9048a, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Let me finish before you jump in. \nOn our third date, I had a bit too
       much \nto drink and... I invited him over..."
     optionalData:
@@ -256,7 +256,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 2aa7148bb038f1b45a50965bb3981bfa, type: 3}
+      key: {fileID: 8300000, guid: 407f52940c7b56448a3817d76c32bb17, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: That was just last week?
@@ -267,9 +267,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: fd796da5dcf90f74597c683de1e3ee03, type: 3}
+      key: {fileID: 8300000, guid: 9e41c41ae77beb241970e5cc6c35fa4a, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: Yeah, how'd you know? You weren't home.
     optionalData:
       GallerySlot: {fileID: 0}
@@ -278,7 +278,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 2ac478a5878c30c489781a794f1a2ea0, type: 3}
+      key: {fileID: 8300000, guid: 1237ba3e385f45c458a88ca31ba34bdc, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Uh, I don't know, just a guess.
@@ -289,9 +289,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: e4e15e5cd620ceb488e87afd959be800, type: 3}
+      key: {fileID: 8300000, guid: b79410f67b8a84d4dbc9698d6c4be4b2, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Anyway, one thing led to another, \nand we ended up hooking up..."
     optionalData:
       GallerySlot: {fileID: 0}
@@ -300,9 +300,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 89d7935850de5e041bb6fbfdd033b7d1, type: 3}
+      key: {fileID: 8300000, guid: 0c20cee6f93bb2f4e89ee64aa71d9ea7, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Next morning, I was on cloud nine, \nfeeling so damn happy! But then in
       the evening, \nI accidentally caught him... cozying up... \nwith someone else...
       sobbing"
@@ -313,7 +313,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 5c93d9f5b3cfe334db6adcfc08628a68, type: 3}
+      key: {fileID: 8300000, guid: 1f17cebf36f74944281103408bf401e5, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Damn, Emily, you crying?
@@ -324,9 +324,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 85c8ccbfe32acf442ad5ff05fb331775, type: 3}
+      key: {fileID: 8300000, guid: 383f1f338e349234eb630f45e50fbe65, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Yeah, sorry... It's just not fair! \nHe totally used me."
     optionalData:
       GallerySlot: {fileID: 0}
@@ -335,7 +335,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: a8210bff3c9314042997d7d8a9fd521a, type: 3}
+      key: {fileID: 8300000, guid: 3e0d6e008bf8d0b4eada746166a3aa75, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Anything I can do to help?
@@ -346,9 +346,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: cf9fc58c666b59948896e03933344808, type: 3}
+      key: {fileID: 8300000, guid: c91f1311eeb6c0e498b7f54be6cd8935, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Nah, thanks, Ben. You're awesome! \nJust stick around, please."
     optionalData:
       GallerySlot: {fileID: 0}
@@ -357,7 +357,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 9a2b7aa1ac7e5164d8d93f946be70a1d, type: 3}
+      key: {fileID: 8300000, guid: a0b13106d5ea0dc4498eaa115869d4e3, type: 3}
     completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "You know what would cheer you up? \nLet's order pizza, throw on a sad movie,
@@ -369,9 +369,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: eed409753e7fdc44283adc74796d1117, type: 3}
+      key: {fileID: 8300000, guid: b50a38183ad6a7c4d91ce4bd1cb81c91, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: You're the best, Ben! Thanks!
     optionalData:
       GallerySlot: {fileID: 0}
@@ -380,9 +380,9 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: 0d6bb18ec12a43641a9f8c429c879a5e, type: 3}
+      key: {fileID: 8300000, guid: c6174ea441b1e2c4994934659521fcea, type: 3}
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: ...
     optionalData:
       GallerySlot: {fileID: 0}
@@ -391,7 +391,7 @@ MonoBehaviour:
     <Sender>k__BackingField: 0
     localizedAudioClips: []
     completed: 0
-  - ActorIcon: {fileID: 21300000, guid: fcd1606f67b11494282ec539ddb57177, type: 3}
+  - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: Insert picture
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 284e592c5a2ca73469204524be1aeb35, type: 2}
@@ -410,5 +410,5 @@ MonoBehaviour:
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
-      key: {fileID: 8300000, guid: cd4a2047cdc428b4b84de8141d84120a, type: 3}
+      key: {fileID: 8300000, guid: 7de79da6018b4b34682297b8348b9932, type: 3}
     completed: 0

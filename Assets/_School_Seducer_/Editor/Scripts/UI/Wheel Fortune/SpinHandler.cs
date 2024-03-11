@@ -26,11 +26,13 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         
         private WheelSlot _currentWinGift;
         private RectTransform _spinButtonRect;
+        private RectTransform _winSlotRect;
         private BoxCollider2D _winSlotCol;
         private BoxCollider2D _winSlotColCharacter;
         private Vector3 _goToStopWheelPosition;
         private Character _winCharacter;
-        
+
+        private float _speedCharacters;
         private float _rotationSpeed;
         private float _deceleration;
 
@@ -64,6 +66,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private void InitParametersData()
         {
             _rotationSpeed = SpinHandler.Data.rotationSpeed;
+            _speedCharacters = SpinHandler.Data.speedSpinCharacters;
             
             _deceleration = Random.Range(SpinHandler.Data.decelerationMin, SpinHandler.Data.decelerationMax);
         }
@@ -93,8 +96,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                     }
                 }
             }
-            
-            if (_isSpinning && _isCharacters)
+
+            /*if (_isSpinning && _isCharacters)
             {
                 float step = _rotationSpeed * Time.fixedDeltaTime;
                 SpinHandler.scrollCharactersContent.Translate(Vector2.down * step * Time.deltaTime);
@@ -114,7 +117,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                         CalculateResult();
                     }
                 }
-            }
+            }*/
         }
 
         protected override void Stop()
@@ -139,20 +142,160 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             TryBuySpin();
 
             ResetSpinStatus();
-            StartCoroutine(HandleSpinButtonStatus());
+            StartCoroutine(ProcessButtonClicked());
         }
 
-        protected virtual void TryBuySpin()
+        private IEnumerator ProcessButtonClicked()
         {
-            if (SpinHandler.Data.CanSpin(Bank.Data.Money) == false)
+            yield return HandleSpinSlots();
+
+            yield return HandleWinCharacter();
+        }
+
+        private IEnumerator HandleWinCharacter()
+        {
+            SetSpinWheelCharacters();
+            SpinHandler.charactersLockedSlot.gameObject.Deactivate();
+
+            CharacterData winCharacterData = null;
+
+            characterName.text = CurrentWinSlot.Data.name.ToUpper();
+            characterName.gameObject.Activate(0.5f);
+
+            SpinHandler.giftSpinPush.SetDataParent(new DataParentText(characterName));
+
+            yield return new WaitForSeconds(1.5f);
+
+            Debug.Log($"Current win slot name is <color=red>{CurrentWinSlot.Data.name}</color>");
+
+            Character winCharacter = FindCharacterByCurrentWinSlot();
+            _winCharacter = winCharacter;
+
+            winCharacterData = winCharacter.Data;
+
+            SpinHandler.Previewer.CurrentCharacter = winCharacter;
+
+            Debug.Log("Found character after spin: " + winCharacter.Data.name);
+
+            SpinHandler.Previewer.SetLockedConversation(winCharacter);
+
+            ChatStoryResolver chatStoryResolver = ChatStoryResolver as ChatStoryResolver;
+
+            if (winCharacter.Data.ConversationsUnlocked() == false)
             {
-                Debug.LogWarning("Not enough money to spin!");
-                return;
+                SpinHandler.Previewer.StoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
+                chatStoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
+            }
+
+            SpinHandler.Previewer.StoryResolver.UpdateStatusViews();
+            ChatStoryResolver.UpdateView();
+
+            //winCharacter.Data.ChangeExperience(_winGiftExp);
+            SpinHandler.OnChangeValueExperience(winCharacter.Data.experience);
+
+            SpinHandler.Previewer.StoryResolver.SetSliderValue(winCharacter.Data.experience);
+            chatStoryResolver.SetSliderValue(winCharacter.Data.experience);
+
+            EventManager.UpdateTextExperience();
+
+            SpinHandler.Previewer.StoryResolver.UpdateStatusViews();
+            ChatStoryResolver.UpdateView();
+
+            EventManager.UpdateTextExperience();
+
+            yield return HandleScrollCharacter();
+
+            if (winCharacter.Data.allConversations[^1].isUnlocked == false)
+            {
+                if (SpinHandler.Previewer.StoryResolver.StoryUnlocked || ChatStoryResolver is ChatStoryResolver
+                    {
+                        StoryUnlocked: true
+                    }
+                   )
+                {
+                    ActionStoryUnlocked();
+
+                    if (winCharacter.Data.LockedConversation != winCharacter.Data.allConversations[^1])
+                    {
+                        winCharacter.Data.LockedConversation.isUnlocked = true;
+                        winCharacter.Data.LockedConversation.isCompleted = false;
+                        winCharacter.Data.experience = 0;
+                    }
+
+                    if (winCharacter.Data.allConversations[^1] == winCharacter.Data.LockedConversation)
+                    {
+                        winCharacter.Data.allConversations[^1].isUnlocked = true;
+                        winCharacter.Data.allConversations[^1].isCompleted = false;
+                    }
+
+                }
+                else
+                {
+                    ActionGiftGot();
+                }
+
+                Debug.Log("Last conversation unlocked? = " + winCharacter.Data.LastConversationAvailable());
             }
             
-            if (SpinHandler.scrollCharactersContent.childCount > 0)
-                Bank.ChangeValueMoney(-SpinHandler.Data.moneyForSpin);
-        } 
+            if (winCharacterData != null)
+            {
+                SpinHandler.CheckResetCharacter(winCharacterData);
+            }
+        }
+
+        private IEnumerator HandleScrollCharacter()
+        {
+            float elapsedTime = 0f;
+
+            while (_isSpinning && _isCharacters)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsedTime / SpinHandler.Data.durationSpinCharacters);
+                
+                float newY = Mathf.Lerp(SpinHandler.scrollCharactersContent.anchoredPosition.y, _winSlotRect.anchoredPosition.y, t * t);
+                SpinHandler.scrollCharactersContent.anchoredPosition = new Vector2(SpinHandler.scrollCharactersContent.anchoredPosition.x, newY);
+
+                if (Mathf.Approximately(SpinHandler.scrollCharactersContent.anchoredPosition.y, _winSlotRect.anchoredPosition.y))
+                {
+                    _isSpinning = false;
+                    _isCharacters = false;
+
+                    yield return new WaitForSeconds(0.5f);
+                }
+
+                yield return null;
+            }
+        }
+
+        private IEnumerator HandleSpinSlots()
+        {
+            if (SpinHandler.scrollCharactersContent.childCount <= 0)
+            {
+                SetSpinButtonUnavailableStatus();
+                yield break;
+            }
+            
+            ResetSpinStatus();
+            
+            SetSpinWheelSlots();
+
+            SetSpinButtonNoneStatus();
+
+            _rotationSpeed -= SpinHandler.Data.rotationSlowSpeed * Time.fixedDeltaTime;
+            yield return new WaitForSeconds(SpinHandler.Data.secondsSlowSpdSlots);
+
+            yield return new WaitUntil(NeedStopWheel);
+            
+            yield return new WaitUntil(() => _rotationSpeed <= _deceleration);
+
+            yield return new WaitUntil(CalculateResult);
+
+            _winGiftExp = CurrentWinSlot.Data.GetCostExp();
+
+            yield return new WaitForSeconds(2);
+
+            SetSpinButtonSpinStatus();
+        }
 
         private IEnumerator HandleSpinButtonStatus()
         {
@@ -197,7 +340,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 characterName.gameObject.Activate(0.5f);
                 
                 SpinHandler.giftSpinPush.SetDataParent(new DataParentText(characterName));
-                
+
                 yield return new WaitForSeconds(1.5f);
                 
                 Debug.Log($"Current win slot name is <color=red>{CurrentWinSlot.Data.name}</color>");
@@ -328,9 +471,14 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             _rotationSpeed = SpinHandler.Data.rotationSpeedCharacters;
             
             Debug.Log("Character slot is null? " + CurrentWinSlot.name);
-            
-            if (CurrentWinSlot != null) SpinHandler.giftSpinPush.InitializeTransitionParent(0, new DataParentImage(CurrentWinSlot.Image, null));
-            
+
+            if (CurrentWinSlot != null)
+            {
+                SpinHandler.giftSpinPush.InitializeTransitionParent(0, new DataParentImage(CurrentWinSlot.Image, null));
+                Pushes.giftPush.GetComponent<Push>().InitializeTransitionParent(0, new DataParentImage(CurrentWinSlot.Image, null));
+            }
+
+            _winSlotRect = CurrentWinSlot.GetComponent<RectTransform>();
             _winSlotCol = CurrentWinSlot.gameObject.GetComponent<BoxCollider2D>();
             _winSlotColCharacter = CurrentWinSlot.gameObject.GetComponent<BoxCollider2D>();
 
@@ -345,7 +493,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         protected virtual void ActionGiftGot()
         {
             _winCharacter.Data.AddGift(_currentWinGift.Data, SpinHandler.Previewer.CharactersConfig.maxGifts);
-            SpinHandler.ShowGiftPush();
+            //SpinHandler.ShowGiftPush();
+            Pushes.ShowGiftPush();
         }
 
         protected virtual void SetupExtraSlots() { }
@@ -378,6 +527,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
                 //SpinHandler.giftSpinPush.SetDataParent(new DataParentImage(CurrentWinSlot.Image, nameof(CurrentWinSlot)));
                 SpinHandler.giftSpinPush.InitializeData(new TransitionDataSprite(CurrentWinSlot.Data.iconInfo, nameof(CurrentWinSlot)));
+                Pushes.giftPush.GetComponent<Push>().InitializeData(new TransitionDataSprite(CurrentWinSlot.Data.iconInfo, nameof(CurrentWinSlot)));
                 
                 SpinHandler.giftSpinPush.MakeTransitions();
 

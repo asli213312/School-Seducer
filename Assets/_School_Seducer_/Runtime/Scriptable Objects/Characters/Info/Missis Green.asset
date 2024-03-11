@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308157901ddc4b60a6ea6c615f040d48, type: 3}
   m_Name: Missis Green
   m_EditorClassIdentifier: 
-  portrait: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
+  portrait: {fileID: 21300000, guid: 3de26f91ec0be8e4b81e1dbe381f8ff9, type: 3}
   onLocationSprite: {fileID: 21300000, guid: cf42d16ca990e2d439028e38ecd1fe9a, type: 3}
   age: 27
   faculty: Students

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconInfo: {fileID: 0}
   borderSpriteByColor: {fileID: 0}
-  extraCharacterPortrait: {fileID: 21300000, guid: 4152e0d56a99f9e40a584f1b9d65785c, type: 3}
-  icon: {fileID: 21300000, guid: b83b36a5298316d4e9a65123bfcf522e, type: 3}
+  extraCharacterPortrait: {fileID: 21300000, guid: fafa11e2834c86c47a72a62219792ddc, type: 3}
+  icon: {fileID: 21300000, guid: 90f2d5a10f5c4c34d86bcff1a5757b42, type: 3}
   slotType: 2
   costExp: 0
   score: 1

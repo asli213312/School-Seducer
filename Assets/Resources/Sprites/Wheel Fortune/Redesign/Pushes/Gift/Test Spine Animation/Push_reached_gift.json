@@ -1,0 +1,415 @@
+{
+"skeleton": {
+	"hash": "HKXV4F9vzyo",
+	"spine": "4.1.24",
+	"x": 381,
+	"y": -39,
+	"width": 2107,
+	"height": 1781,
+	"images": "",
+	"audio": "C:/Users/ghezz/OneDrive/Рабочий стол/Ghezzi/GameDev/CollegeFF/Assets/UI/PSD_UI/Push_reached_gift/Gift_Setup_1"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "GirL_holder", "parent": "root", "x": 1282.27, "y": 944.72 },
+	{ "name": "Bar_holder", "parent": "root", "x": 1265.17, "y": 558.01 },
+	{ "name": "Gift_holder", "parent": "root", "x": 1269.95, "y": 294.54 },
+	{ "name": "Text_holder", "parent": "root", "rotation": 0.1, "x": 1267.99, "y": 1305.64 },
+	{ "name": "Button", "parent": "root", "x": 2268.06, "y": 146.15 }
+],
+"slots": [
+	{ "name": "rotate", "bone": "root", "attachment": "rotate" },
+	{ "name": "glow_all", "bone": "root", "attachment": "glow_all" },
+	{ "name": "You have reached the Next Level!", "bone": "Text_holder", "attachment": "You have reached the Next Level!" },
+	{ "name": "Empty_Text", "bone": "Text_holder", "attachment": "Empty_Text" },
+	{ "name": "Button", "bone": "Button", "attachment": "Button" },
+	{ "name": "patricle", "bone": "root", "attachment": "patricle" },
+	{ "name": "patricle copy", "bone": "root", "attachment": "patricle copy" },
+	{ "name": "patricle copy 2", "bone": "root", "attachment": "patricle copy 2" },
+	{ "name": "Frame_Girl", "bone": "GirL_holder", "attachment": "Frame_Girl" },
+	{ "name": "Empty_Girl", "bone": "GirL_holder", "attachment": "Empty_Girl" },
+	{ "name": "Bar", "bone": "Bar_holder", "attachment": "Bar" },
+	{ "name": "Empty_Bar", "bone": "Bar_holder", "attachment": "Empty_Bar" },
+	{ "name": "Gift_Holder", "bone": "Gift_holder", "attachment": "Gift_Holder" },
+	{ "name": "Empty_Gift", "bone": "Gift_holder", "attachment": "Empty_Gift" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Bar": {
+				"Bar": { "x": 15.33, "y": 0.99, "width": 499, "height": 60 }
+			},
+			"Button": {
+				"Button": { "x": -1.06, "y": -1.65, "width": 442, "height": 139 }
+			},
+			"Empty_Bar": {
+				"Empty_Bar": { "x": -0.17, "y": -0.01, "width": 10, "height": 10 }
+			},
+			"Empty_Gift": {
+				"Empty_Gift": { "x": -1.95, "y": 38.46, "rotation": 0.4, "width": 10, "height": 10 }
+			},
+			"Empty_Girl": {
+				"Empty_Girl": { "x": 1.73, "y": -45.72, "width": 10, "height": 10 }
+			},
+			"Empty_Text": {
+				"Empty_Text": { "x": 12.01, "y": -0.64, "width": 10, "height": 10 }
+			},
+			"Frame_Girl": {
+				"Frame_Girl": { "x": -5.27, "y": 3.78, "width": 592, "height": 615 }
+			},
+			"Gift_Holder": {
+				"Gift_Holder": { "x": 2.55, "y": 23.46, "width": 685, "height": 696 }
+			},
+			"glow_all": {
+				"glow_all": { "x": 1270.5, "y": 851.5, "width": 1023, "height": 1025 }
+			},
+			"patricle": {
+				"patricle": { "x": 1322.5, "y": 906.5, "width": 1399, "height": 787 }
+			},
+			"patricle copy": {
+				"patricle copy": { "x": 967, "y": 794.5, "width": 1116, "height": 633 }
+			},
+			"patricle copy 2": {
+				"patricle copy 2": { "x": 1671, "y": 1067.5, "width": 1116, "height": 633 }
+			},
+			"rotate": {
+				"rotate": { "x": 1271.5, "y": 851.5, "width": 1781, "height": 1781 }
+			},
+			"You have reached the Next Level!": {
+				"You have reached the Next Level!": { "x": 11.51, "y": 3.86, "width": 815, "height": 49 }
+			}
+		}
+	}
+],
+"animations": {
+	"appear": {
+		"slots": {
+			"Empty_Bar": {
+				"rgba": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"glow_all": {
+				"rgba": [
+					{
+						"color": "ffffff00",
+						"curve": [ 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 0, 0.111, 1 ]
+					},
+					{ "time": 0.1667, "color": "ffffffff" }
+				]
+			},
+			"patricle": {
+				"rgba": [
+					{
+						"color": "ffffff00",
+						"curve": [ 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 0, 0.111, 1 ]
+					},
+					{ "time": 0.1667, "color": "ffffffff" }
+				]
+			},
+			"patricle copy": {
+				"rgba": [
+					{
+						"color": "ffffff00",
+						"curve": [ 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 0, 0.111, 1 ]
+					},
+					{ "time": 0.1667, "color": "ffffffff" }
+				]
+			},
+			"patricle copy 2": {
+				"rgba": [
+					{
+						"color": "ffffff00",
+						"curve": [ 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 0, 0.111, 1 ]
+					},
+					{ "time": 0.1667, "color": "ffffffff" }
+				]
+			},
+			"rotate": {
+				"rgba": [
+					{
+						"color": "ffffff00",
+						"curve": [ 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 1, 0.111, 1, 0.056, 0, 0.111, 1 ]
+					},
+					{ "time": 0.1667, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"Bar_holder": {
+				"scale": [
+					{
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.037, 0.905, 0.133, 1.2, 0.038, 0.912, 0.133, 1.2 ]
+					},
+					{
+						"time": 0.2,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.244, 1.2, 0.289, 1.154, 0.244, 1.2, 0.289, 1.154 ]
+					},
+					{ "time": 0.3333 }
+				]
+			},
+			"Gift_holder": {
+				"translate": [
+					{
+						"y": -624.87,
+						"curve": [ 0.067, 0, 0.133, 0, 0.066, 114.35, 0.133, 98.39 ]
+					},
+					{
+						"time": 0.2,
+						"y": 98.39,
+						"curve": [ 0.244, 0, 0.289, 0, 0.244, 98.39, 0.289, 60.92 ]
+					},
+					{ "time": 0.3333 }
+				],
+				"scale": [
+					{
+						"x": 0.7,
+						"y": 0.7,
+						"curve": [ 0.067, 0.7, 0.133, 1.2, 0.067, 0.7, 0.133, 1.2 ]
+					},
+					{
+						"time": 0.2,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.244, 1.2, 0.289, 1, 0.244, 1.2, 0.289, 1 ]
+					},
+					{ "time": 0.3333 }
+				]
+			},
+			"GirL_holder": {
+				"scale": [
+					{
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.038, 0.791, 0.133, 1.2, 0.038, 0.758, 0.133, 1.2 ]
+					},
+					{
+						"time": 0.2,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.244, 1.2, 0.284, 1.168, 0.244, 1.2, 0.282, 1.161 ]
+					},
+					{ "time": 0.3333 }
+				]
+			},
+			"Text_holder": {
+				"translate": [
+					{
+						"x": -1.34,
+						"y": 743.78,
+						"curve": [ 0.111, -1.34, 0.222, 0, 0.111, 743.78, 0.22, 638.46 ]
+					},
+					{ "time": 0.3333 }
+				]
+			},
+			"Button": {
+				"scale": [
+					{
+						"x": 0.3,
+						"y": 0.3,
+						"curve": [ 0.045, 0.878, 0.133, 1.2, 0.044, 0.858, 0.133, 1.2 ]
+					},
+					{
+						"time": 0.2,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.244, 1.2, 0.289, 1.096, 0.244, 1.2, 0.29, 1.085 ]
+					},
+					{ "time": 0.3333 }
+				]
+			}
+		}
+	},
+	"disappear": {
+		"slots": {
+			"glow_all": {
+				"rgba": [
+					{
+						"time": 0.1667,
+						"color": "ffffffff",
+						"curve": [ 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 0 ]
+					},
+					{ "time": 0.3333, "color": "ffffff00" }
+				]
+			},
+			"patricle": {
+				"rgba": [
+					{
+						"time": 0.1667,
+						"color": "ffffffff",
+						"curve": [ 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 0 ]
+					},
+					{ "time": 0.3333, "color": "ffffff00" }
+				]
+			},
+			"patricle copy": {
+				"rgba": [
+					{
+						"time": 0.1667,
+						"color": "ffffffff",
+						"curve": [ 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 0 ]
+					},
+					{ "time": 0.3333, "color": "ffffff00" }
+				]
+			},
+			"patricle copy 2": {
+				"rgba": [
+					{
+						"time": 0.1667,
+						"color": "ffffffff",
+						"curve": [ 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 0 ]
+					},
+					{ "time": 0.3333, "color": "ffffff00" }
+				]
+			},
+			"rotate": {
+				"rgba": [
+					{
+						"time": 0.1667,
+						"color": "ffffffff",
+						"curve": [ 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 1, 0.222, 1, 0.278, 0 ]
+					},
+					{ "time": 0.3333, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"Bar_holder": {
+				"scale": [
+					{
+						"time": 0.0333,
+						"curve": [ 0.064, 1.166, 0.1, 1.2, 0.063, 1.15, 0.1, 1.2 ]
+					},
+					{
+						"time": 0.1333,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.156, 1.2, 0.19, 0.826, 0.156, 1.2, 0.19, 0.813 ]
+					},
+					{ "time": 0.2, "x": 0.2, "y": 0.2 }
+				]
+			},
+			"Button": {
+				"scale": [
+					{
+						"time": 0.0667,
+						"curve": [ 0.098, 1.157, 0.133, 1.2, 0.097, 1.166, 0.133, 1.2 ]
+					},
+					{
+						"time": 0.1667,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.189, 1.2, 0.223, 0.822, 0.189, 1.2, 0.223, 0.79 ]
+					},
+					{ "time": 0.2333, "x": 0.2, "y": 0.2 }
+				]
+			},
+			"Gift_holder": {
+				"scale": [
+					{
+						"time": 0.1,
+						"curve": [ 0.131, 1.163, 0.167, 1.2, 0.13, 1.16, 0.167, 1.2 ]
+					},
+					{
+						"time": 0.2,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.222, 1.2, 0.256, 0.81, 0.222, 1.2, 0.256, 0.806 ]
+					},
+					{ "time": 0.2667, "x": 0.2, "y": 0.2 }
+				]
+			},
+			"GirL_holder": {
+				"scale": [
+					{
+						"time": 0.1333,
+						"curve": [ 0.164, 1.16, 0.2, 1.2, 0.164, 1.153, 0.2, 1.2 ]
+					},
+					{
+						"time": 0.2333,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.256, 1.2, 0.29, 0.803, 0.256, 1.2, 0.289, 0.822 ]
+					},
+					{ "time": 0.3, "x": 0.2, "y": 0.2 }
+				]
+			},
+			"Text_holder": {
+				"scale": [
+					{
+						"time": 0.1667,
+						"curve": [ 0.197, 1.157, 0.233, 1.2, 0.196, 1.15, 0.233, 1.2 ]
+					},
+					{
+						"time": 0.2667,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.289, 1.2, 0.323, 0.819, 0.289, 1.2, 0.323, 0.826 ]
+					},
+					{ "time": 0.3333, "x": 0.2, "y": 0.2 }
+				]
+			}
+		}
+	},
+	"idle": {
+		"slots": {
+			"patricle": {
+				"rgba": [
+					{ "color": "ffffffff", "curve": "stepped" },
+					{
+						"time": 0.1667,
+						"color": "ffffffff",
+						"curve": [ 0.2, 1, 0.233, 1, 0.2, 1, 0.233, 1, 0.2, 1, 0.233, 1, 0.2, 0.85, 0.233, 0.54 ]
+					},
+					{
+						"time": 0.2667,
+						"color": "ffffff8a",
+						"curve": [ 0.289, 1, 0.311, 1, 0.289, 1, 0.311, 1, 0.289, 1, 0.311, 1, 0.289, 0.54, 0.311, 1 ]
+					},
+					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1, "color": "ffffffff" }
+				]
+			},
+			"patricle copy": {
+				"rgba": [
+					{ "color": "ffffffff", "curve": "stepped" },
+					{
+						"time": 0.4667,
+						"color": "ffffffff",
+						"curve": [ 0.5, 1, 0.533, 1, 0.5, 1, 0.533, 1, 0.5, 1, 0.533, 1, 0.5, 0.85, 0.533, 0.54 ]
+					},
+					{
+						"time": 0.5667,
+						"color": "ffffff8a",
+						"curve": [ 0.589, 1, 0.611, 1, 0.589, 1, 0.611, 1, 0.589, 1, 0.611, 1, 0.589, 0.54, 0.611, 1 ]
+					},
+					{ "time": 0.6333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1, "color": "ffffffff" }
+				]
+			},
+			"patricle copy 2": {
+				"rgba": [
+					{ "color": "ffffffff", "curve": "stepped" },
+					{
+						"time": 0.7,
+						"color": "ffffffff",
+						"curve": [ 0.733, 1, 0.767, 1, 0.733, 1, 0.767, 1, 0.733, 1, 0.767, 1, 0.733, 0.85, 0.767, 0.54 ]
+					},
+					{
+						"time": 0.8,
+						"color": "ffffff8a",
+						"curve": [ 0.822, 1, 0.844, 1, 0.822, 1, 0.844, 1, 0.822, 1, 0.844, 1, 0.822, 0.54, 0.844, 1 ]
+					},
+					{ "time": 0.8667, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1, "color": "ffffffff" }
+				]
+			}
+		}
+	}
+}
+}

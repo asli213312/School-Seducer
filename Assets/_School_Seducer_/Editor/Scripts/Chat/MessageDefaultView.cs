@@ -11,9 +11,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 {
     public class MessageDefaultView : MessageViewBase, IMessage
     {
+        [Header("UI")]
         [SerializeField] private Image background;
         [SerializeField] private Button audioButtonLeftActor;
         [SerializeField] private Button audioButtonRightActor;
+
+        [Header("Options")] 
+        [SerializeField] private float offsetRightActor = -5.03f;
+        [SerializeField] private float parentMultiplierSizeDelta;
 
         private List<LocalizedScriptableObject.LocalizedData> _localizedData;
         
@@ -21,7 +26,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public MessageSender MessageSender => Sender;
         public GameObject PaddingForward {get; private set;}
-        public ContentSizeFitter ContentFitter => transform.GetComponent<ContentSizeFitter>();
+        public MessageDefaultView PreviousDefaultMsg { get; set; }
+        public GameObject MainParent { get; private set; }
+        public bool NeedPreviousDefaultMsg { get; set; }
 
         private Transform _content;
         private SoundHandler _soundHandler;
@@ -31,8 +38,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             OptionButtons = optionButtons;
         }
-
-        public bool NeedPaddings() => Sender != MessageSender.StoryTeller && Sender != MessageSender.ActorRight;
 
         public void SetBlockBackground(Sprite leftActor, Sprite rightActor, Sprite storyTeller)
         {
@@ -142,12 +147,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
         }
 
-        public void EnableAlignBubbleSpeech()
-        {
-            transform.GetComponent<ContentSizeFitter>().enabled = true;
-            transform.GetComponent<VerticalLayoutGroup>().enabled = true;
-        }
-
         private void SetParentActor()
         {
             AdjustLeftActor(_content, Sender);
@@ -222,6 +221,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (sender != MessageSender.StoryTeller) return;
 
             GameObject parent = CreateParentObject("Parent_StoryTeller", content);
+            MainParent = parent;
 
             RectTransform rectParent = parent.AddComponent<RectTransform>();
             RectTransform mainRect = GetComponent<RectTransform>();
@@ -262,6 +262,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             GameObject contentRight = CreateChildObject("ContentRight", parent.transform);
             GameObject paddingForward = CreateChildObject("Padding Forward", parent.transform);
             PaddingForward = paddingForward;
+            MainParent = parent;
 
             SetSiblingIndexAlongParent(paddingForward.transform, content, parent.transform.GetSiblingIndex() + 1);
 
@@ -300,30 +301,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             target.SetParent(parent);
             target.SetSiblingIndex(index);
         }
-        
-        private void AdjustSizesAndPositionsLeft(GameObject parent, GameObject contentLeft, GameObject paddingForward)
-        {
-            RectTransform leftBorderRect = leftBorderActor.GetComponent<RectTransform>();
-            RectTransform rightBorderRect = rightBorderActor.GetComponent<RectTransform>();
-            RectTransform rectMain = gameObject.GetComponent<RectTransform>();
-
-            //SetPivotPosTopMode(rightBorderRect);
-
-            parent.GetComponent<RectTransform>().sizeDelta = rectMain.sizeDelta + new Vector2(0, rightBorderRect.sizeDelta.y / 24);
-            contentLeft.GetComponent<RectTransform>().sizeDelta = rectMain.sizeDelta;
-
-            leftBorderActor.transform.SetParent(contentLeft.transform);
-            transform.SetParent(contentLeft.transform);
-            leftBorderActor.transform.position = parent.transform.position;
-            transform.position = parent.transform.position;
-
-            leftBorderRect.Translate(Vector2.left * -5.03f);
-            rectMain.position = leftBorderRect.position;
-
-            SetStretchModeLeft(contentLeft.GetComponent<RectTransform>());
-
-            paddingForward.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0.7f);
-        }
 
         private void AdjustSizesAndPositions(GameObject parent, GameObject contentRight, GameObject paddingForward)
         {
@@ -333,7 +310,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             SetPivotPosTopMode(leftBorderRect);
 
-            parent.GetComponent<RectTransform>().sizeDelta = rectMain.sizeDelta + new Vector2(0, leftBorderRect.sizeDelta.y / 24);
+            parent.GetComponent<RectTransform>().sizeDelta = rectMain.sizeDelta + new Vector2(0, leftBorderRect.sizeDelta.y / parentMultiplierSizeDelta); // / 24
             contentRight.GetComponent<RectTransform>().sizeDelta = rectMain.sizeDelta;
 
             rightBorderActor.transform.SetParent(contentRight.transform);
@@ -341,7 +318,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             rightBorderActor.transform.position = parent.transform.position;
             transform.position = parent.transform.position;
 
-            rightBorderRect.Translate(-Vector2.left * 7.03f);
+            rightBorderRect.Translate(-Vector2.left * offsetRightActor);
             rectMain.position = rightBorderRect.position;
 
             SetStretchMode(contentRight.GetComponent<RectTransform>());
