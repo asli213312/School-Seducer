@@ -149,6 +149,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             yield return HandleSpinSlots();
 
             yield return HandleWinCharacter();
+            
+            SetSpinButtonSpinStatus();
         }
 
         private IEnumerator HandleWinCharacter()
@@ -294,8 +296,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             _winGiftExp = CurrentWinSlot.Data.GetCostExp();
 
             yield return new WaitForSeconds(2);
-
-            SetSpinButtonSpinStatus();
         }
 
         private IEnumerator HandleSpinButtonStatus()

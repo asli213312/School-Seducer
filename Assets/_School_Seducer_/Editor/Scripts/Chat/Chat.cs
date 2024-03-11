@@ -138,6 +138,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void OnCharacterSelected(Character character)
         {
+            if (previewer.CurrentCharacter.Data == CurrentCharacterData)
+            {
+                return;
+            }
+
             if (previewer.CurrentCharacter != character)
             {
                 //DeleteContentObjects();
@@ -1251,6 +1256,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             if (_chatStatusViews.Count > 0) _chatStatusViews.ForEach(chat => chat.gameObject.Deactivate());
         }
+
+        private bool ChatDisabled() => transform.localScale == Vector3.zero;
 
         public void ResetStatusViews()
         {
