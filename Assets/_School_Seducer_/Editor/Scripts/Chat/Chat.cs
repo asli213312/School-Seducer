@@ -138,11 +138,6 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void OnCharacterSelected(Character character)
         {
-            if (previewer.CurrentCharacter.Data == CurrentCharacterData)
-            {
-                return;
-            }
-
             if (previewer.CurrentCharacter != character)
             {
                 //DeleteContentObjects();

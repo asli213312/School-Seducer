@@ -16,6 +16,7 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: d581a9bc42dc27946af41768cd4b2a03, type: 2}
   - {fileID: 11400000, guid: 0483e869c1d3d334bbeae32b220e981e, type: 2}
+  - {fileID: 11400000, guid: 4ebe77d14cd3fc040833867624d7ad1a, type: 2}
   moneyForSpin: 10
   timeShowStopButton: 3
   secondsSlowSpdSlots: 1

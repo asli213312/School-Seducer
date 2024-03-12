@@ -49,6 +49,11 @@ MonoBehaviour:
     - st.one-line.Runtime
     - Tayx.Graphy
     - UltEvents
+    - UniTask
+    - UniTask.Addressables
+    - UniTask.DOTween
+    - UniTask.Linq
+    - UniTask.TextMeshPro
     - Zenject
     - Zenject-IntegrationTests
     - Zenject-IntegrationTests-Editor
