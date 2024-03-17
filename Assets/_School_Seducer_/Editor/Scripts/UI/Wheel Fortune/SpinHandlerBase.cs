@@ -33,7 +33,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             }
             
             if (SpinHandler.scrollCharactersContent.childCount > 0)
-                Bank.ChangeValueMoney(-SpinHandler.Data.moneyForSpin);
+                Bank.ChangeValueGold(-SpinHandler.Data.moneyForSpin);
         }
 
         protected abstract void Spin();

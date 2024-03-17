@@ -43,6 +43,7 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField] private bool showDebugParameters;
         
         public event Action<Character> CharacterSelectedEvent;
+        public event Action<Character> UpdateChatEvent;
 
         public CharactersConfig CharactersConfig => charactersConfig;
         public Character[] Characters => _characters;
@@ -106,6 +107,7 @@ namespace _School_Seducer_.Editor.Scripts
             CurrentCharacter = character;
             CharacterSelectedEvent?.Invoke(character);
             characterSelected?.Invoke();
+            UpdateChatEvent?.Invoke(character);
             Debug.Log("Selected character: " + character.name);
         }
 
@@ -135,6 +137,7 @@ namespace _School_Seducer_.Editor.Scripts
             if (chatSystem != null) _chatInitializationModule.InstallCharacter(CurrentCharacter);
 
             CharacterSelectedEvent?.Invoke(character);
+            UpdateChatEvent?.Invoke(character);
 
             map.CloseMap();
         }
@@ -152,7 +155,7 @@ namespace _School_Seducer_.Editor.Scripts
         {
             if (_bank.Money >= _chat.Config.CoinsForMessage)
             {
-                _bank.ChangeValueMoney(-_chat.Config.CoinsForMessage);
+                _bank.ChangeValueGold(-_chat.Config.CoinsForMessage);
             }  
             else
             {

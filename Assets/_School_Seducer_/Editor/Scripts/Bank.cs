@@ -56,7 +56,7 @@ namespace _School_Seducer_.Editor.Scripts
             Diamonds = playerConfig.Diamonds;
         }
 
-        public void ChangeValueMoney(int value)
+        public void ChangeValueGold(int value)
         {
             if (Money + value >= 0)
             {

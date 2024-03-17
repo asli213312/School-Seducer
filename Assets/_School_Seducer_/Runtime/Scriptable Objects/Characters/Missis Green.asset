@@ -30,4 +30,4 @@ MonoBehaviour:
   loyalty: 2
   maxLoyalty: 6
   showDebugParameters: 0
-  experience: 0
+  experience: 35

@@ -9,7 +9,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 {
     public class SpinHandlerLerp : SpinHandlerBase
     {
-        [SerializeField] private ScrollRect scrollRect;
+        [SerializeField] private RectTransform goToStopCharacter;
         [SerializeField] private Button spinButton;
 
         [Header("Options")] 
@@ -75,23 +75,39 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         private IEnumerator ScrollCoroutine()
         {
+            // Получаем позицию объекта goToStopCharacter относительно content
+            Vector3 goToStopCharacterLocalPosition = goToStopCharacter.localPosition;
+
+            // Получаем позицию выпавшего элемента относительно content
+            Vector3 fallenElementLocalPosition = _rectWinSlot.localPosition;
+
+            // Рассчитываем, насколько нужно прокрутить content, чтобы выпавший элемент был на нужной позиции относительно goToStopCharacter
+            float yOffset = -(fallenElementLocalPosition.y - goToStopCharacterLocalPosition.y);
+
+            // Прокручиваем content
+            float scrollSpeed = SpinHandler.Data.speedSpinCharacters; // Скорость прокрутки
+            float duration = SpinHandler.Data.durationSpinCharacters; // Время прокрутки
             float elapsedTime = 0f;
 
-            while (_isSpinning)
+            while (elapsedTime < duration)
             {
-                elapsedTime += Time.deltaTime;
-                float t = Mathf.Clamp01(elapsedTime / duration);
-                
-                float newY = Mathf.Lerp(_content.anchoredPosition.y, _targetY, t * t);
-                _content.anchoredPosition = new Vector2(_content.anchoredPosition.x, newY);
+                // Рассчитываем новую позицию content
+                Vector2 newAnchoredPosition = SpinHandler.scrollCharactersContent.anchoredPosition;
+                newAnchoredPosition.y += (yOffset / duration) * Time.deltaTime * scrollSpeed;
 
-                if (Mathf.Approximately(_content.anchoredPosition.y, _targetY))
-                {
-                    _isSpinning = false;
-                }
+                // Применяем новую позицию
+                SpinHandler.scrollCharactersContent.anchoredPosition = newAnchoredPosition;
+
+                // Увеличиваем прошедшее время
+                elapsedTime += Time.deltaTime;
 
                 yield return null;
             }
+
+            // Завершаем прокрутку точно к целевой позиции
+            SpinHandler.scrollCharactersContent.anchoredPosition = 
+                new Vector2(SpinHandler.scrollCharactersContent.anchoredPosition.x, 
+                    -_rectWinSlot.localPosition.y + goToStopCharacter.localPosition.y);
         }
 
         private void InstallContent()

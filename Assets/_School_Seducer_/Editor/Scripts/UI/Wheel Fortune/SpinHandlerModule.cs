@@ -91,7 +91,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         {
             InitializeSlots();
             
-            CheckResetCharactersOutWheel();
+            //CheckResetCharactersOutWheel();
 
             EventManager.UpdateTextMoney();
 
@@ -153,10 +153,10 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         public void CheckResetCharacter(CharacterData characterData)
         {
-            foreach (var conversation in characterData.allConversations)
-            {
-                if (conversation.isUnlocked == false) return;
-            }
+            //foreach (var conversation in characterData.allConversations)
+           // {
+                //if (conversation.isUnlocked == false) return;
+            //}
 
             for (int i = 0; i < scrollCharactersContent.childCount; i++)
             {
@@ -173,7 +173,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private void InitializeSlots()
         {
             int charactersCount = _system.Data.characters.Count;
-            int targetNumberOfSlots = charactersCount * 8;
+            int targetNumberOfSlots = 3 * 8;
 
             for (int i = 0; i < targetNumberOfSlots; i++)
             {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -114,7 +114,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _localizer.AddObserver(this);
 
             _eventManager.UpdateExperienceTextEvent += storyResolver.UpdateStatusViews;
-            previewer.CharacterSelectedEvent += OnCharacterSelected;
+            previewer.UpdateChatEvent += OnCharacterSelected;
             //_conversationView.Initialize(config.ChatCompletedSprite, config.ChatUncompletedSprite);
         }
 
@@ -128,11 +128,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _localizer.RemoveObserver(this);
             
             _eventManager.UpdateExperienceTextEvent -= storyResolver.UpdateStatusViews;
-            previewer.CharacterSelectedEvent -= OnCharacterSelected;
-        }
+            previewer.UpdateChatEvent -= OnCharacterSelected;
 
-        private void OnDisable()
-        {
             UnRegisterStatusViews();
         }
 
@@ -145,14 +142,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 //ResetContent();
             }
 
+            if (_allMessages.Count > 0) _allMessages.Clear();
             if (_renderedChats.Count > 0) _renderedChats.Clear();
             
             //ResetContent();
             //DeleteContentObjects();
             ResetRenderedContent();
 
-            gameObject.SafeActivate(.1f);
-            Debug.Log("Chat activated!");
+            transform.position = new Vector3(-8.89f, transform.position.y, transform.position.z);
+            gameObject.SafeActivate(0.3f);
+            Debug.Log("Chat activated!!");
             
             DeactivateStatusViews();
             ResetStatusViews();
@@ -212,6 +211,20 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             _currentStatusView.ActivateSelected();
         }
 
+        public void InstallCurrentCharacter() 
+        {
+            InstallCharacterData(CurrentCharacterData);
+        }
+
+        public void LoadCurrentStory()
+        {
+            if (_currentStatusView == null) return;
+
+            if (_currentStatusView.Conversation.Messages.All(x => x.completed)) return;
+            
+            StartCoroutine(LoadMessages(_currentStatusView.Conversation.Messages));
+        }
+
         private IEnumerator LoadStartupConversationsCurrentCharacter()
         {
             if (CurrentCharacterData == null)
@@ -222,31 +235,28 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             
             DeleteContentObjects();
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.1f);
 
             List<СonversationData> conversations = CurrentCharacterData.allConversations;
 
-            if (_currentRenderedChat != null)
-            {
-                bool needEnd = false;
+            bool needEnd = false;
                 
-                foreach (var conversation in conversations)
+            foreach (var conversation in conversations)
+            {
+                foreach (var existRenderedChat in _renderedChats)
                 {
-                    foreach (var existRenderedChat in _renderedChats)
+                    if (conversation != existRenderedChat.conversation)
                     {
-                        if (conversation != existRenderedChat.conversation)
-                        {
-                            needEnd = true;
-                            break;
-                        }
-                    }       
-                }
+                        needEnd = true;
+                        break;
+                    }
+                }       
+            }
 
-                if (needEnd)
-                {
-                    Debug.Log("<color=red>Founded new conversation. End loading startup conversations!</color>");
-                    yield break;
-                }
+            if (needEnd)
+            {
+                Debug.Log("<color=red>Founded new conversation. End loading startup conversations!</color>");
+                yield break;
             }
             
             _soundHandler.Mute();
@@ -293,19 +303,27 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 return loadingComplete;
             });
 
+            CurrentConversationData = null;
+
             foreach (var renderedChat in _renderedChats)
             {
                 for (int i = 0; i < renderedChat.messages.Count; i++)
                 {
                     MessageViewBase foundedRenderedMsgView = _allMessages.FirstOrDefault(x => x.Data == renderedChat.messages[i]);
                     
-                    if (foundedRenderedMsgView is null) continue;
+                    if (foundedRenderedMsgView is null) 
+                    {
+                        Debug.Log("Message not found like rendered");
+                        continue;
+                    } 
                     
                     if (renderedChat.messagesView.Contains(foundedRenderedMsgView))
                     {
                         Debug.Log("Message already rendered: " + foundedRenderedMsgView.name);
                         continue;
                     }
+
+                    if (foundedRenderedMsgView == null) continue;
                     
                     renderedChat.messagesView.Add(foundedRenderedMsgView);
                     Debug.Log("Message was added to rendered view messages: " + foundedRenderedMsgView.name, foundedRenderedMsgView.gameObject);
@@ -316,6 +334,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     {
                         if (defaultMsg.MainParent != null) defaultMsg.MainParent.gameObject.Deactivate();
                         else defaultMsg.gameObject.Deactivate();
+                        
+                        //if (defaultMsg.PaddingForward != null) defaultMsg.PaddingForward.gameObject.Deactivate();
                     }
                     else if (renderedChat.messagesView[i] is MessagePictureView)
                     {
@@ -444,7 +464,30 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             OnObservableUpdate();
             
             ResetMsgPictures();
+
+            _soundHandler.Mute();
             
+            foreach (var otherRenderedChat in _renderedChats)
+            {
+                if (otherRenderedChat == _currentRenderedChat) continue;
+                            
+                foreach (var otherChatMsgView in otherRenderedChat.messagesView)
+                {
+                    otherChatMsgView.PaddingForwardChat.gameObject.Deactivate();
+
+                    if (otherChatMsgView is MessageDefaultView otherDefaultMsg)
+                    {
+                        if (otherDefaultMsg.PaddingForward != null)
+                            otherDefaultMsg.PaddingForward.gameObject.Deactivate();
+                            
+                        if (otherDefaultMsg.PreviousDefaultMsg == null) continue;
+                        if (otherDefaultMsg.PreviousDefaultMsg.PaddingForward == null) continue;
+                            
+                        otherDefaultMsg.PreviousDefaultMsg.PaddingForward.gameObject.Deactivate();
+                    }
+                }
+            }
+
             for (int i = 0; i < Messages.Count; i++)
             {
                 if (IsMessagesEnded) StopCoroutine(ProcessMessage(i));
@@ -454,8 +497,25 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 foreach (var msgView in _currentRenderedChat.messagesView)
                 {
                     if (msgView is null) continue;
+                    if (i > _currentRenderedChat.messagesView.Count) continue;
+                    if (messages[i] == null) continue;
                     if (messages[i] != msgView.Data) continue;
+
+                    bool needPaddingForward = true;
                     
+                    SecondVersion(msgView);
+                    
+                    //needPaddingForward = FirstVersion(msgView, needPaddingForward);
+                    
+                    //if (needPaddingForward)
+                        //msgView.PaddingForwardChat?.gameObject.Activate();
+                        
+                    renderedMsgView = msgView;
+                    break;                    
+                }
+
+                void SecondVersion(MessageViewBase msgView)
+                {
                     if (msgView is MessageDefaultView defaultMsg)
                     {
                         if (defaultMsg.MainParent != null) defaultMsg.MainParent.gameObject.Activate();
@@ -463,52 +523,38 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                         {
                             defaultMsg.gameObject.Activate();
                         }
-                        
-                        if (defaultMsg.PreviousDefaultMsg != null) 
-                        {
-                            if (defaultMsg.PreviousDefaultMsg.PaddingForward != null && defaultMsg.MessageSender != MessageSender.ActorLeft)
-                                defaultMsg.PreviousDefaultMsg.PaddingForward.gameObject.Deactivate();
-                            //else if (defaultMsg.PreviousDefaultMsg.PaddingForward != null)
-                                //defaultMsg.PreviousDefaultMsg.PaddingForward.gameObject.Activate();
-                        }
 
                         if (defaultMsg.MessageSender == MessageSender.ActorLeft)
                         {
-                            if (defaultMsg.PreviousDefaultMsg != null && defaultMsg.PreviousDefaultMsg.MessageSender != MessageSender.ActorLeft)
-                            {
-                                defaultMsg.PreviousDefaultMsg.PaddingForward.gameObject.Activate();
-                                Debug.Log("Deactivated padForward is <color=green>founded</color> for prev default msg of LEFT msg", defaultMsg.gameObject);
-                            }
-                            else
-                            {
-                                defaultMsg?.PreviousDefaultMsg?.PaddingForward?.gameObject.Deactivate();
-                                Debug.Log("Prev default msg && his padForward is <color=red>null</color> for LEFT msg to deactivate padForward", defaultMsg.gameObject);
-                            }
-
-                            if (defaultMsg.PreviousDefaultMsg != null && defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.ActorRight)
-                            	defaultMsg.PaddingForwardChat.gameObject.Deactivate();
-
-                        	if (_previousPictureMsg.MessageSender == MessageSender.ActorLeft) 
-                        	{
-	                        	_previousPictureMsg.PaddingForwardChat.gameObject.Activate();
-                        	}
-
-                        }
-                        else if (defaultMsg.MessageSender == MessageSender.ActorRight)
-                        {
-                            if (defaultMsg.PreviousDefaultMsg != null && defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.ActorLeft)
-                            {
-                                defaultMsg.PreviousDefaultMsg.PaddingForwardChat.gameObject.Deactivate();
-                            }
+                            defaultMsg.PaddingForwardChat.gameObject.Activate();
                             
-                            if (defaultMsg.PreviousDefaultMsg != null && defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.StoryTeller)
-                                defaultMsg.PreviousDefaultMsg.PaddingForwardChat.gameObject.Deactivate();
+                            if (_previousPictureMsg != null)
+                            {
+                                if (_previousPictureMsg.MessageSender == MessageSender.ActorLeft)
+                                {
+                                    _previousPictureMsg.PaddingForwardChat.gameObject.Activate();
+                                }
+                            }
 
-                            if (_previousPictureMsg.MessageSender == MessageSender.ActorLeft)
-                            	_previousPictureMsg.PaddingForwardChat.gameObject.Activate();
+                            if (defaultMsg.PreviousDefaultMsg != null)
+                            {
+                                if (defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.ActorRight)
+                                {
+                                    //defaultMsg.PreviousDefaultMsg.PaddingForward.gameObject.Activate();
+                                }   
+                            }
                         }
                         
-                        _previousDefaultMsg = defaultMsg;
+                        if (_previousPictureMsg != null)
+                            _previousPictureMsg.PaddingForwardChat.gameObject.Activate();
+
+                        if (defaultMsg.MessageSender == MessageSender.ActorRight)
+                        {
+                            defaultMsg.PaddingForward.gameObject.Activate();
+                        }
+
+                        if (defaultMsg.PaddingForward != null)
+                            defaultMsg.PaddingForward.gameObject.Activate();
                     }
                     else if (msgView is MessagePictureView pictureMsg)
                     {
@@ -516,53 +562,127 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                         
                         PictureMessages.Add(pictureMsg);
                         DampedPictureMessages.Add(pictureMsg);
-
-                        if (_previousDefaultMsg != null)  
-                        {
-							if (_previousDefaultMsg.MessageSender == MessageSender.ActorRight) 
-                        	{
-                        		//_previousDefaultMsg.PaddingForward.gameObject.Activate();
-                        	}
-                        	else if (_previousDefaultMsg.MessageSender == MessageSender.ActorLeft) 
-                        	{
-                        		_previousDefaultMsg.PaddingForwardChat.gameObject.Deactivate();
-                        	}
-                        }
-
-                        if (_previousPictureMsg.MessageSender == MessageSender.ActorLeft)
-                        	pictureMsg.PaddingForwardChat.gameObject.Deactivate();
-                        	
+                        
+                        pictureMsg.PaddingForwardChat.gameObject.Deactivate();
 
                         _previousPictureMsg = pictureMsg;
                     }
-                    
-                    msgView.PaddingForwardChat?.gameObject.Activate();
-                        
-                    renderedMsgView = msgView;
-                    _soundHandler.StopClip();
-                    break;
                 }
                 
-                foreach (var otherRenderedChat in _renderedChats)
+                bool FirstVersion(MessageViewBase msgView, bool needPaddingForward)
                 {
-                    if (otherRenderedChat == _currentRenderedChat) continue;
-                            
-                    foreach (var otherChatMsgView in otherRenderedChat.messagesView)
+                    if (msgView is MessageDefaultView defaultMsg)
                     {
-                        otherChatMsgView.PaddingForwardChat.gameObject.Deactivate();
-
-                        if (otherChatMsgView is MessageDefaultView otherDefaultMsg)
+                        if (defaultMsg.MainParent != null) defaultMsg.MainParent.gameObject.Activate();
+                        else if (defaultMsg.MessageSender == MessageSender.ActorLeft)
                         {
-                            if (otherDefaultMsg.PreviousDefaultMsg == null) continue;
-                            if (otherDefaultMsg.PreviousDefaultMsg.PaddingForward == null) continue;
-                            
-                            otherDefaultMsg.PreviousDefaultMsg.PaddingForward.gameObject.Deactivate();
-                            
-                            if (otherDefaultMsg.PaddingForward == null) continue;
-                            
-                            otherDefaultMsg.PaddingForward.gameObject.Deactivate();
+                            defaultMsg.gameObject.Activate();
                         }
+
+                        if (defaultMsg.MessageSender == MessageSender.ActorLeft)
+                        {
+                            if (defaultMsg.PreviousDefaultMsg != null)
+                            {
+                                if (defaultMsg.PreviousDefaultMsg.MessageSender != MessageSender.ActorLeft)
+                                {
+                                    defaultMsg.PreviousDefaultMsg.PaddingForward.gameObject.Activate();
+                                    Debug.Log("Deactivated padForward is <color=green>founded</color> for prev default msg of LEFT msg",
+                                        defaultMsg.gameObject);
+                                }
+
+                                if (defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.ActorRight)
+                                    defaultMsg.PaddingForwardChat.gameObject.Activate();
+
+                                if (defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.ActorLeft)
+                                    defaultMsg.PaddingForwardChat.gameObject.Activate();
+                            }
+
+                            if (_previousPictureMsg != null)
+                            {
+                                if (_previousPictureMsg.MessageSender == MessageSender.ActorLeft)
+                                {
+                                    _previousPictureMsg.PaddingForwardChat.gameObject.Activate();
+                                }
+                            }
+                        }
+                        else if (defaultMsg.MessageSender == MessageSender.ActorRight)
+                        {
+                            defaultMsg.PaddingForward.gameObject.Activate();
+                            if (defaultMsg.PreviousDefaultMsg != null)
+                            {
+                                if (defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.StoryTeller)
+                                    defaultMsg.PreviousDefaultMsg.PaddingForwardChat.gameObject.Deactivate();
+
+                                if (defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.ActorLeft)
+                                {
+                                    defaultMsg.PreviousDefaultMsg.PaddingForwardChat.gameObject.Deactivate();
+                                }
+
+                                if (defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.ActorRight)
+                                    defaultMsg.PaddingForwardChat.gameObject.Activate();
+
+                                if (defaultMsg.PreviousDefaultMsg.PreviousDefaultMsg != null)
+                                {
+                                    if (defaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.ActorLeft
+                                        &&
+                                        defaultMsg.PreviousDefaultMsg.PreviousDefaultMsg.MessageSender == MessageSender.ActorLeft)
+                                    {
+                                        defaultMsg.PreviousDefaultMsg.PaddingForwardChat.gameObject.Activate();
+                                        defaultMsg.PaddingForwardChat.gameObject.Deactivate();
+                                        needPaddingForward = false;
+                                    }
+                                }
+
+                                defaultMsg.PaddingForward.gameObject.Activate();
+                            }
+
+                            defaultMsg.PaddingForward.gameObject.Activate();
+                        }
+
+                        if (defaultMsg.PreviousDefaultMsg != null)
+                        {
+                            if (defaultMsg.PreviousDefaultMsg.PaddingForward != null &&
+                                defaultMsg.MessageSender != MessageSender.ActorLeft)
+                                defaultMsg.PreviousDefaultMsg.PaddingForward.gameObject.Deactivate();
+                        }
+
+                        if (_previousPictureMsg != null)
+                        {
+                            if (_previousPictureMsg.MessageSender == MessageSender.ActorLeft)
+                                _previousPictureMsg.PaddingForwardChat.gameObject.Activate();
+                        }
+
+                        _previousDefaultMsg = defaultMsg;
                     }
+                    else if (msgView is MessagePictureView pictureMsg)
+                    {
+                        msgView.gameObject.Activate();
+
+                        PictureMessages.Add(pictureMsg);
+                        DampedPictureMessages.Add(pictureMsg);
+
+                        if (_previousDefaultMsg != null)
+                        {
+                            if (_previousDefaultMsg.MessageSender == MessageSender.ActorRight)
+                            {
+                                //_previousDefaultMsg.PaddingForward.gameObject.Activate();
+                            }
+                            else if (_previousDefaultMsg.MessageSender == MessageSender.ActorLeft)
+                            {
+                                _previousDefaultMsg.PaddingForwardChat.gameObject.Deactivate();
+                            }
+                        }
+
+                        if (_previousPictureMsg != null)
+                        {
+                            if (_previousPictureMsg.MessageSender == MessageSender.ActorLeft)
+                                pictureMsg.PaddingForwardChat.gameObject.Deactivate();
+                        }
+
+                        _previousPictureMsg = pictureMsg;
+                    }
+
+                    return needPaddingForward;
                 }
 
                 if (renderedMsgView != null && renderedMsgView.Data == messages[i])
@@ -648,10 +768,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             {
                 paddingForward.gameObject.Deactivate();
 
-                if (_previousDefaultMsg.PaddingForward != null) 
-                {
-                    _previousDefaultMsg.PaddingForward.Deactivate();
-                }
+                //if (_previousDefaultMsg.PaddingForward != null) 
+                //{
+                    //_previousDefaultMsg.PaddingForward.Deactivate();
+                //}
                 
                 msgPicture.PaddingForwardChat = paddingForward;
                 msgPicture.PaddingBackChat = paddingBack;
@@ -661,7 +781,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
             else if (newMsg is MessageDefaultView msgDefault)
             {
+                if (msgDefault.PaddingForward != null) msgDefault.PaddingForward.gameObject.Activate();
+                
                 msgDefault.PaddingForwardChat = paddingForward;
+                //msgDefault.PaddingForwardChat.gameObject.Deactivate();
                 msgDefault.PaddingBackChat = paddingBack;
 
                 if (msgDefault.MessageSender == MessageSender.ActorLeft)
@@ -671,13 +794,17 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     //yield return new WaitForSeconds(0.1f);
                     //msgDefault.transform.SetParent(contentMsgs);
                 }
+                else if (msgDefault.MessageSender == MessageSender.ActorRight)
+                {
+                    //msgDefault.PaddingForward.gameObject.Activate();
+                }
 
                 if (_previousDefaultMsg != null)
                 {
-                    if (_previousDefaultMsg.PaddingForward != null && msgDefault.MessageSender != MessageSender.ActorLeft)
+                    msgDefault.PreviousDefaultMsg = _previousDefaultMsg;
+                    /*if (_previousDefaultMsg.PaddingForward != null && msgDefault.MessageSender != MessageSender.ActorLeft)
                         _previousDefaultMsg.PaddingForward.gameObject.Deactivate();
                     
-                    msgDefault.PreviousDefaultMsg = _previousDefaultMsg;
                     msgDefault.NeedPreviousDefaultMsg = msgDefault.PreviousDefaultMsg.PaddingForward != null &&
                                                         msgDefault.MessageSender != MessageSender.ActorLeft;
 
@@ -692,11 +819,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     
                     if (msgDefault.MessageSender == MessageSender.ActorRight && _previousDefaultMsg.MessageSender == MessageSender.ActorLeft)
                     {
-                        msgDefault.PaddingForward.gameObject.Deactivate();
+                        msgDefault.PaddingForward.gameObject.Activate();
 
                         msgDefault.NeedPadding = msgDefault.MessageSender == MessageSender.ActorRight && msgDefault.PreviousDefaultMsg.MessageSender == MessageSender.ActorLeft;
                         //paddingBack.gameObject.Activate();
                     }
+
+                    if (msgDefault.MessageSender == MessageSender.ActorLeft && _previousDefaultMsg.MessageSender == MessageSender.ActorLeft) 
+                    {
+                        paddingForward.gameObject.Activate();
+                    }*/
                 }
                 _previousDefaultMsg = msgDefault;
                 _previousPaddingBack = paddingBack.gameObject;
@@ -705,6 +837,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
 
             Debug.Log("Render completed");
+
+            _soundHandler.StopClip();
 
             config.OnMessageReceived?.Invoke();
             _eventManager.ChatMessageReceived(true);
@@ -796,12 +930,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             if (newMsg is MessagePictureView msgPicture)
             {
-                paddingForward.gameObject.Deactivate();
+                //paddingForward.gameObject.Deactivate();
                 
-                if (_previousDefaultMsg.PaddingForward != null)
-                    _previousDefaultMsg.PaddingForward.Deactivate();
+                //if (_previousDefaultMsg.PaddingForward != null)
+                    //_previousDefaultMsg.PaddingForward.Deactivate();
                 
                 msgPicture.PaddingForwardChat = paddingForward;
+
+                _previousPictureMsg = msgPicture;
             }
             else if (newMsg is MessageDefaultView msgDefault)
             {
@@ -810,41 +946,64 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 if (msgDefault.MessageSender == MessageSender.ActorLeft)
                 {
                     msgDefault.transform.SetParent(contentMsgs.parent);
+                    paddingForward.transform.SetParent(contentMsgs.parent);
                     msgDefault.transform.position = new Vector3(0, 999, 0);
                     yield return new WaitForSeconds(0.1f);
                     msgDefault.transform.SetParent(contentMsgs);
+                    paddingForward.transform.SetParent(contentMsgs);
+                }
+                else if (msgDefault.MessageSender == MessageSender.ActorRight)
+                {
+                    msgDefault.PaddingForwardChat.gameObject.Deactivate();
+                    msgDefault.PaddingForward.gameObject.Activate();
                 }
 
                 if (_previousDefaultMsg != null)
                 {
-                    if (_previousDefaultMsg.PaddingForward != null && msgDefault.MessageSender != MessageSender.ActorLeft)
-                        _previousDefaultMsg.PaddingForward.gameObject.Deactivate();
+                    //if (_previousDefaultMsg.PaddingForward != null && msgDefault.MessageSender != MessageSender.ActorLeft)
+                        //_previousDefaultMsg.PaddingForward.gameObject.Deactivate();
+                        
+                    //if (_previousDefaultMsg.MessageSender == MessageSender.ActorRight && msgDefault.MessageSender == MessageSender.ActorRight)
+                        //msgDefault.PaddingForwardChat.gameObject.Deactivate();
                     
                     msgDefault.PreviousDefaultMsg = _previousDefaultMsg;
                     msgDefault.NeedPreviousDefaultMsg = msgDefault.PreviousDefaultMsg.PaddingForward != null &&
                                                         msgDefault.MessageSender != MessageSender.ActorLeft;
 
-                    // if (msgDefault.MessageSender != MessageSender.ActorLeft && _previousDefaultMsg.MessageSender == MessageSender.ActorLeft)
-                    //     paddingBack.gameObject.Deactivate();
-                    // else if (msgDefault.MessageSender == MessageSender.ActorLeft && _previousDefaultMsg.MessageSender != MessageSender.ActorLeft)
-                    //     paddingBack.gameObject.Deactivate();
-                    // else if (msgDefault.MessageSender == MessageSender.ActorRight && _previousDefaultMsg.MessageSender == MessageSender.ActorRight)
-                    //     paddingBack.gameObject.Deactivate();
-                    // else if (msgDefault.MessageSender == MessageSender.ActorRight && _previousDefaultMsg.MessageSender == MessageSender.ActorLeft)
-                    //     paddingBack.gameObject.Deactivate();
-
                     if (msgDefault.MessageSender == MessageSender.ActorRight && _previousDefaultMsg.MessageSender == MessageSender.ActorLeft)
                     {
-                        msgDefault.PaddingForward.gameObject.Deactivate();
+                        //msgDefault.PaddingForward.gameObject.Deactivate();
+                        //msgDefault.PaddingForwardChat.gameObject.Deactivate();
                         //paddingBack.gameObject.Activate();
-                        
-                        msgDefault.NeedPadding = msgDefault.MessageSender == MessageSender.ActorRight && _previousDefaultMsg.MessageSender == MessageSender.ActorLeft;
                     }
 
+                    //if (msgDefault.MessageSender == MessageSender.ActorLeft && _previousDefaultMsg.MessageSender == MessageSender.ActorRight)
+                    	//_previousDefaultMsg.PaddingForward.gameObject.Deactivate();
+                        
                     if (msgDefault.MessageSender == MessageSender.ActorLeft && _previousDefaultMsg.MessageSender == MessageSender.ActorRight)
-                    	_previousDefaultMsg.PaddingForward.gameObject.Deactivate();
-
+                    {
+                        //_previousDefaultMsg.PaddingForward.gameObject.Activate();
+                    }
+                    
+                    //if (msgDefault.MessageSender == MessageSender.ActorRight && _previousDefaultMsg.MessageSender == MessageSender.ActorRight)
+                        //_previousDefaultMsg.PaddingForward.gameObject.Activate();
                 }
+                
+                if (_previousPictureMsg != null)
+                {
+                    if (msgDefault.MessageSender == MessageSender.ActorRight && _previousPictureMsg.MessageSender == MessageSender.ActorLeft)
+                    {
+                        //_previousPictureMsg.PaddingForwardChat.gameObject.Activate();
+                        _previousPictureMsg = null;
+                    }
+
+                    if (msgDefault.MessageSender == MessageSender.ActorLeft && _previousPictureMsg.MessageSender == MessageSender.ActorLeft)
+                    {
+                        //_previousPictureMsg.PaddingForwardChat.gameObject.Activate();
+                        _previousPictureMsg = null;
+                    }
+                }
+                
                 _previousDefaultMsg = msgDefault;
                 _previousPaddingBack = paddingBack.gameObject;
 
@@ -1281,7 +1440,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (DampedPictureMessages.Count > 0) DampedPictureMessages.Clear();
         }
 
-        private void ResetRenderedContent()
+        public void ResetRenderedContent()
         {
             if (contentMsgs.childCount <= 0) return;
             
@@ -1289,7 +1448,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
             if (_currentRenderedChat is null)
             {
-                Debug.LogError("CurrentRenderedChat is null to reset rendered content!");
+                //Debug.LogError("CurrentRenderedChat is null to reset rendered content!");
                 return;
             }
             

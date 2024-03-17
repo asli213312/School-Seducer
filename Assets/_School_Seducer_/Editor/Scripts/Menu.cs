@@ -28,7 +28,7 @@ namespace _BonGirl_.Editor.Scripts
             Debug.Log("Panel selectedd: " + _selectedPanel.name);
         } 
 
-        public void EnableByChangePositionX(int xPosition)
+        public void EnableByChangePositionX(float xPosition)
         {
             if (_selectedPanel == null)
             {

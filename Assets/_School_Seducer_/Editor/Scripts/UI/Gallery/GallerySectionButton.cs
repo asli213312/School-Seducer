@@ -14,13 +14,9 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         private Button _button; 
 
-        private void OnValidate()
-        {
-            _button = GetComponent<Button>();
-        }
-
         private void Awake()
         {
+        	_button = GetComponent<Button>();
             _button.AddListener(SetSection);
         }
 

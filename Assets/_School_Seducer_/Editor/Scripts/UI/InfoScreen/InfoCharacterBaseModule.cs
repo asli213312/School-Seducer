@@ -40,6 +40,8 @@ namespace _School_Seducer_.Editor.Scripts
             {
                 hobbies.text += "Hobby: " + hobby + "\n";
             }
+
+            //_system.transform.GetChild(0).gameObject.SetActive(true);
             
             //characterChangedEvent?.Invoke();
         }

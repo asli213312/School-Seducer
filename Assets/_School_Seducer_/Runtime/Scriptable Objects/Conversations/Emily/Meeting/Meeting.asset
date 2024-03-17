@@ -435,7 +435,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: fa41228281f9aeb41976a4e164352e9c, type: 3}
-    completed: 1
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: I... umm... well...
     optionalData:
@@ -446,7 +446,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 9e5c175f23c668341a0dc1bb1c3ef130, type: 3}
-    completed: 1
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Supposed to be Douglas, but he's hitting \n it off with my girl Veronica.
       \n So, they asked me and Douglas to swap rooms. \n Douglas is bunking with
@@ -459,7 +459,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: afcd56ceeb4d78b42acbcc25a687bd1a, type: 3}
-    completed: 1
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: Umm, with who?
     optionalData:
@@ -470,7 +470,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: db5782b75254c4c448978f47d03883ba, type: 3}
-    completed: 1
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: What's your name?
     optionalData:
@@ -481,7 +481,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: e06d4342769667847bd5266a17232cb9, type: 3}
-    completed: 1
+    completed: 0
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh, my bad, I'm Ben.
     optionalData:
@@ -514,7 +514,7 @@ MonoBehaviour:
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: ec0958dcefd91834f825f4b9194c7b16, type: 3}
-    completed: 0
+    completed: 1
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "But listen up, from now on, \n you and I are roomies! \n Just keeping it
       friendly, you feel me?"

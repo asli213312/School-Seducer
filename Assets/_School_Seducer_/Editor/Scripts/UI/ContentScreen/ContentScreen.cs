@@ -48,17 +48,10 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private int _currentIndexContent;
         private bool _isSelected;
 
-        private void OnValidate()
-        {
-            _container = gameObject.transform.GetChild(0).gameObject;
-            _contentWideButton = contentWide.GetComponent<Button>();
-            _contentSquareButton = contentSquare.GetComponent<Button>();
-            _contentAnimationButton = contentAnimation.GetComponent<Button>();
-            _animateButton = contentAnimation.transform.GetChild(0).GetComponent<Button>();
-        }
-
         private void Awake()
         {
+        	Initialize();
+
             RegisterCloseContent();
             RegisterIterateContent();
             RegisterAnimateButton();
@@ -78,6 +71,15 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 ShowContent();
                 _isSelected = true;
             }
+        }
+
+        private void Initialize() 
+        {
+        	_container = gameObject.transform.GetChild(0).gameObject;
+            _contentWideButton = contentWide.GetComponent<Button>();
+            _contentSquareButton = contentSquare.GetComponent<Button>();
+            _contentAnimationButton = contentAnimation.GetComponent<Button>();
+            _animateButton = contentAnimation.transform.GetChild(0).GetComponent<Button>();
         }
 
         private void InstallSlots()
@@ -247,10 +249,11 @@ namespace _School_Seducer_.Editor.Scripts.UI
             for (int i = 0; i < _currentSlots.Count; i++)
             {
                 MonoBehaviour slotGO = _currentSlots[i] as MonoBehaviour;
-                Image slotView = slotGO.GetComponent<Image>();
 
                 if (_currentSlots[i] is MessagePictureView)
                 {
+                    Image slotView = slotGO.GetComponent<Image>();
+
                     Debug.Log("Founded messagePictureView in content screen");
                     
                     MessagePictureView slotChat = _currentSlots[i] as MessagePictureView;
@@ -277,15 +280,19 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 }
                 
                 if (slotGO is GallerySlotView slotGallery) 
+                {
+                    Image slotGalleryView = slotGO.transform.GetChild(0).GetComponent<Image>();
+
                     if (_currentContentAnimation != null && slotGallery.Data.animation != null)
-                        if (_currentContentAnimation.skeletonDataAsset == slotView.GetComponent<OpenContentAnimation>()
+                        if (_currentContentAnimation.skeletonDataAsset == slotGalleryView.GetComponent<OpenContentAnimation>()
                             .Animation.skeletonDataAsset) 
                             return i;
 
-                if (_currentContentImage != null && _currentContentImage.sprite == slotView.sprite)
-                {
-                    return i;
-                }
+                    if (_currentContentImage != null && _currentContentImage.sprite == slotGalleryView.sprite)
+                    {
+                        return i;
+                    }
+                } 
             }
             
             Debug.LogWarning("Index not found for current content");

@@ -19,7 +19,7 @@ MonoBehaviour:
     localizedDataList: []
   - fieldLabel: _currentLanguage
     localizedDataList: []
-  costExp: 500
+  costExp: 40
   iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
   localizator:
     translationJson: {fileID: 4900000, guid: 18a538477c398324592e5ae91d83727b, type: 3}
@@ -102,7 +102,7 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 9034c68c584e9f2438203a0f7ecd81b7, type: 3}
+    AudioMsg: {fileID: 8300000, guid: d64f1af45aaefbf449163a8ae869afd6, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
@@ -114,7 +114,7 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 6ff038e0cff2cb54593b33fff28f2510, type: 3}
+    AudioMsg: {fileID: 8300000, guid: d8e99bf9e529e5e48921084bb788909f, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
@@ -125,7 +125,7 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 8bf6c1e8ea365e64c82760d056768538, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 4b74a6a5385d0a343b6481008735a6bb, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
@@ -136,7 +136,7 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 25e43fdd67614f44f832bd6116c96880, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 08b76e648dcd81d4ca7052854705f0f7, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
@@ -147,7 +147,7 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 152db45c6fc6df0448ab9a08a0778510, type: 3}
+    AudioMsg: {fileID: 8300000, guid: f2499820b54bc8d458e6723c65e00e7e, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
@@ -158,7 +158,7 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: b53c0d42f80b4584cafa7b3a099ea7c8, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 3b260299aacd9f844bf3333829148905, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
@@ -169,7 +169,7 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: f928d7c86e9adba4a87dff2a2ad29c15, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 6ed968e3329fc1443aa5ba45233f5516, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
@@ -180,7 +180,7 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: b920a5e76a78b6948bee4051a7c5ced0, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 4c4c2827eecce804eb788229611a481f, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
@@ -202,7 +202,7 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 9227243bd94f35c498ef31674a4ffa5b, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 74a88ea1ee1e3e44d9d0d02a8bb3e98f, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en

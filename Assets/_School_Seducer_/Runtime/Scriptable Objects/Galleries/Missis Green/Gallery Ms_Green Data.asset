@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d88bec5d267471ea4f2cdddfa4c0617, type: 3}
   m_Name: Gallery Ms_Green Data
   m_EditorClassIdentifier: 
-  AllSlots: []
+  AllSlots:
+  - {fileID: 11400000, guid: 7a44f2c58747d3840b2c3c49e7d3a6ca, type: 2}
+  - {fileID: 11400000, guid: bd04aeab50ce833478d9321695a0983d, type: 2}
+  - {fileID: 11400000, guid: 57994e6e947a1b9419dad6e92f175961, type: 2}
+  - {fileID: 11400000, guid: 697d5a73066d1a446a25f755a6a0cebf, type: 2}
+  - {fileID: 11400000, guid: a0e096293e6362b4e97d50b2dd430a3a, type: 2}
+  - {fileID: 11400000, guid: fc0a0c71692dd52429585b47f72bf381, type: 2}
+  - {fileID: 11400000, guid: c8d522ca4fd9bfc4e9221e3309c2ca5b, type: 2}
+  - {fileID: 11400000, guid: 9bd37c19dea07f0499a17c6f87f2cbcc, type: 2}
+  - {fileID: 11400000, guid: eced04fe584161e4dbf02d96f5ee7980, type: 2}
+  - {fileID: 11400000, guid: a8ff921da40f24045a419e5a0ffe88d6, type: 2}
+  - {fileID: 11400000, guid: 3483c97a067e2f84eb7623d25622fe6d, type: 2}
+  - {fileID: 11400000, guid: 2fcfc4feb35ed9d4ca9ae0415692bb2a, type: 2}
+  - {fileID: 11400000, guid: 11a97357de811334e811710fb6a72244, type: 2}
+  - {fileID: 11400000, guid: 4b377763a19288d429935ec148ef446a, type: 2}
+  - {fileID: 11400000, guid: adb61e7115a96d5448101f78e61fbf1e, type: 2}
+  - {fileID: 11400000, guid: 99384e2c7aed2a54b8a802564ed83d0b, type: 2}

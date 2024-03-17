@@ -52,7 +52,7 @@ public class MiniGameInitializer : MonoBehaviour
     public void ResetGameAvailability()
     {
         MiniGameAvailable = false;
-        _bank.ChangeValueMoney(scoreCounter.Value);
+        _bank.ChangeValueGold(scoreCounter.Value);
         scoreCounter.ResetScore();
     }
 

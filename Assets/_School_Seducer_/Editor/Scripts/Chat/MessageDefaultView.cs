@@ -161,13 +161,14 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 if (Sender == MessageSender.ActorLeft)
                 {
                     audioButtonLeftActor.onClick.AddListener(InvokeAudioMsg);
+                    audioButtonLeftActor.onClick.AddListener(_soundHandler.Unmute);
                     audioButtonRightActor.gameObject.Deactivate();
                     _currentAudioButtonActor = audioButtonLeftActor;
                 }
                 else if (Sender == MessageSender.ActorRight)
                 {
                     audioButtonRightActor.onClick.AddListener(InvokeAudioMsg);
-                    //audioButtonRightActor.gameObject.Activate();
+                    audioButtonRightActor.onClick.AddListener(_soundHandler.Unmute);
                     audioButtonLeftActor.gameObject.Deactivate();
                     _currentAudioButtonActor = audioButtonRightActor;
                 }
@@ -357,7 +358,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (Data.AudioMsg != null)
             {
                 audioButtonLeftActor.RemoveListener(InvokeAudioMsg);
+                audioButtonLeftActor.RemoveListener(_soundHandler.Unmute);
                 audioButtonRightActor.RemoveListener(InvokeAudioMsg);
+                audioButtonRightActor.RemoveListener(_soundHandler.Unmute);
             }
         }
     }

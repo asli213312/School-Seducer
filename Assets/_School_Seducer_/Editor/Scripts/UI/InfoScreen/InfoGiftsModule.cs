@@ -73,6 +73,7 @@ namespace _School_Seducer_.Editor.Scripts
         private void PresentGift()
         {
             if (_scoreCurrentGifts == 0) return;
+            if (_currentCharacter.Data.LastConversationAvailable()) return;
             
             InstallExpBar(barExpCharacter);
             
@@ -127,6 +128,7 @@ namespace _School_Seducer_.Editor.Scripts
 
             _system.Previewer.StoryResolver.SetSliderValue(_currentCharacter.Data.experience);
             _system.Previewer.StoryResolver.UpdateStatusViews();
+            _system.Previewer.StoryResolver.UpdateStatusViews();
         }
 
         private void ShowGiftPush()
@@ -141,6 +143,8 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void RenderContent(Character character)
         {
+            _scoreCurrentGifts = 0;
+
             for (int i = 0; i < character.Data.gifts.Count; i++)
             {
                 var giftData = character.Data.gifts[i];

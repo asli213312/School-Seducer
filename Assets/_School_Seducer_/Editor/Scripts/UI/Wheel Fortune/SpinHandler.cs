@@ -157,13 +157,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         {
             SetSpinWheelCharacters();
 
-            CharacterData winCharacterData = null;
-            
-            _targetYWinCharacter = _winSlotRect.anchoredPosition.y - 350;
-
-            SpinHandler.charactersLockedSlot.gameObject.Deactivate(.2f);
-            yield return HandleScrollCharacter(_targetYWinCharacter);
-
             characterName.text = CurrentWinSlot.Data.name.ToUpper();
             characterName.gameObject.Activate(0.5f);
 
@@ -175,6 +168,20 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             Character winCharacter = FindCharacterByCurrentWinSlot();
             _winCharacter = winCharacter;
+
+            for (int i = 0; i < SpinHandler.Previewer.Characters.Length; i++)
+            {
+                if (winCharacter.Data != SpinHandler.Previewer.Characters[i].Data) continue;
+                
+                if (i == 0) _targetYWinCharacter = _winSlotRect.anchoredPosition.y + 350;
+                else if (i == 1) _targetYWinCharacter = _winSlotRect.anchoredPosition.y;
+                else _targetYWinCharacter = _winSlotRect.anchoredPosition.y - 350;
+            }
+            
+            CharacterData winCharacterData = null;
+            
+            SpinHandler.charactersLockedSlot.gameObject.Deactivate(.2f);
+            yield return HandleScrollCharacter(_targetYWinCharacter);
 
             winCharacterData = winCharacter.Data;
 
@@ -207,42 +214,12 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             ChatStoryResolver.UpdateView();
 
             EventManager.UpdateTextExperience();
-
-            if (winCharacter.Data.allConversations[^1].isUnlocked == false)
-            {
-                if (SpinHandler.Previewer.StoryResolver.StoryUnlocked || ChatStoryResolver is ChatStoryResolver
-                    {
-                        StoryUnlocked: true
-                    }
-                   )
-                {
-                    ActionStoryUnlocked();
-
-                    if (winCharacter.Data.LockedConversation != winCharacter.Data.allConversations[^1])
-                    {
-                        winCharacter.Data.LockedConversation.isUnlocked = true;
-                        winCharacter.Data.LockedConversation.isCompleted = false;
-                        winCharacter.Data.experience = 0;
-                    }
-
-                    if (winCharacter.Data.allConversations[^1] == winCharacter.Data.LockedConversation)
-                    {
-                        winCharacter.Data.allConversations[^1].isUnlocked = true;
-                        winCharacter.Data.allConversations[^1].isCompleted = false;
-                    }
-
-                }
-                else
-                {
-                    ActionGiftGot();
-                }
-
-                Debug.Log("Last conversation unlocked? = " + winCharacter.Data.LastConversationAvailable());
-            }
             
+            ActionGiftGot();
+
             if (winCharacterData != null)
             {
-                SpinHandler.CheckResetCharacter(winCharacterData);
+                //SpinHandler.CheckResetCharacter(winCharacterData);
             }
         }
 
@@ -254,11 +231,11 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             {
                 elapsedTime += Time.deltaTime;
                 float t = Mathf.Clamp01(elapsedTime / SpinHandler.Data.durationSpinCharacters);
-                
-                float newY = Mathf.Lerp(SpinHandler.scrollCharactersContent.anchoredPosition.y, anchoredPositionYCharacter, t * t);
+
+                float newY = Mathf.Lerp(SpinHandler.scrollCharactersContent.anchoredPosition.y, -CurrentWinSlot.transform.localPosition.y + goToStopCharactersWheel.localPosition.y, t * t);
                 SpinHandler.scrollCharactersContent.anchoredPosition = new Vector2(SpinHandler.scrollCharactersContent.anchoredPosition.x, newY);
 
-                if (Mathf.Approximately(SpinHandler.scrollCharactersContent.anchoredPosition.y, anchoredPositionYCharacter))
+                if (Mathf.Approximately(SpinHandler.scrollCharactersContent.anchoredPosition.y, -CurrentWinSlot.transform.localPosition.y + goToStopCharactersWheel.localPosition.y))
                 {
                     _isSpinning = false;
                     _isCharacters = false;
@@ -426,7 +403,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             if (winCharacterData != null)
             {
-                SpinHandler.CheckResetCharacter(winCharacterData);
+                //SpinHandler.CheckResetCharacter(winCharacterData);
             }
         }
 

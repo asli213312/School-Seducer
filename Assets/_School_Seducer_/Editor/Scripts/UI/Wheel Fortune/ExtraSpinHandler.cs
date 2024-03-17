@@ -42,7 +42,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             if (SpinHandler.scrollCharactersContent.childCount > 0)
             {
-                Bank.ChangeValueMoney(-SpinHandler.Data.moneyForSpin * multiplier);
+                Bank.ChangeValueGold(-SpinHandler.Data.moneyForSpin * multiplier);
             }
         }
 

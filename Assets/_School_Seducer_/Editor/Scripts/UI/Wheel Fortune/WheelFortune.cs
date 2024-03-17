@@ -201,7 +201,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             }
             
             if (scrollCharactersContent.childCount > 0)
-                _bank.ChangeValueMoney(-data.moneyForSpin * 10);
+                _bank.ChangeValueGold(-data.moneyForSpin * 10);
 
             ResetSpinStatus();
             StartCoroutine(HandleExtraSpinButtonStatus());
@@ -216,7 +216,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             }
             
             if (scrollCharactersContent.childCount > 0)
-                _bank.ChangeValueMoney(-data.moneyForSpin);
+                _bank.ChangeValueGold(-data.moneyForSpin);
 
             ResetSpinStatus();
             StartCoroutine(HandleSpinButtonStatus());

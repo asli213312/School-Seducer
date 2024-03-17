@@ -37,7 +37,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         #region Context Menu Commands
 
         [ContextMenu("Reset Messages")]
-        private void ResetMessages()
+        public void ResetMessages()
         {
             foreach (var msg in Messages)
             {

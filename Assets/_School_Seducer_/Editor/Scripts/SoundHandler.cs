@@ -13,11 +13,14 @@ using UnityEngine.Events;
 
         private void Awake()
         {
-            _audioSource ??= GetComponent<AudioSource>();
+            _audioSource = GetComponent<AudioSource>();
         }
 
         public void Mute() => _audioSource.mute = true;
         public void Unmute() => _audioSource.mute = false;
+
+        public void StartControlStopClip() => StartCoroutine(ControlToStopClip());
+        public void StopControlStopClip() => StopCoroutine(ControlToStopClip());
 
         public bool TrySetQueueClip(AudioClip clipInQueue)
         {
@@ -140,6 +143,16 @@ using UnityEngine.Events;
             }
             else
                 _audioSource.PlayOneShot(clip);
+        }
+
+        private IEnumerator ControlToStopClip()
+        {
+            if (_audioSource.isPlaying)
+            {
+                _audioSource.Stop();
+            }
+
+            yield return null;
         }
 
         private bool IsClipNull(string warningMessage)
