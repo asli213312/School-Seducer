@@ -9,5 +9,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
     {
         public GallerySlotData GallerySlot;
         public BranchData[] Branches;
+        public ContainerIcon otherActorIcon;
+    }
+    
+    [System.Serializable]
+    public class ContainerIcon
+    {
+        public MessageSender sender;
+        public Sprite icon;
     }
 }

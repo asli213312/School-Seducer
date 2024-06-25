@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ca1cd1e3654303aff5d941a90c197e, type: 3}
   m_Name: Emily
   m_EditorClassIdentifier: 
+  count: 0
   iconInfo: {fileID: 0}
   borderSpriteByColor: {fileID: 0}
   extraCharacterPortrait: {fileID: 21300000, guid: fafa11e2834c86c47a72a62219792ddc, type: 3}
-  icon: {fileID: 21300000, guid: 90f2d5a10f5c4c34d86bcff1a5757b42, type: 3}
+  icon: {fileID: 21300000, guid: 29d97248e5abe5140a74db7a5b266c44, type: 3}
   slotType: 2
   costExp: 0
   score: 1

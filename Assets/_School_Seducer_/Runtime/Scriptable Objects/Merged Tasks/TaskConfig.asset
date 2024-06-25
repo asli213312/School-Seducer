@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 121cba8a2ec24f3e86459a502696250d, type: 3}
+  m_Name: TaskConfig
+  m_EditorClassIdentifier: 
+  maxTasks: 3
+  tasks:
+  - rid: 6066072898068807680
+  - rid: 6066072898068807681
+  - rid: 6066072898068807682
+  - rid: 6066072898068807683
+  - rid: 6066072898068807684
+  references:
+    version: 2
+    RefIds:
+    - rid: 6066072898068807680
+      type: {class: MiniGamesTaskDataGatherSets, ns: PuzzleGame.Gameplay.Merged.Tasks, asm: PuzzleGames}
+      data:
+        description: Gather 1 set by 1
+        setsCount: 1
+        numberForSet: 1
+    - rid: 6066072898068807681
+      type: {class: MiniGamesTaskDataGatherSets, ns: PuzzleGame.Gameplay.Merged.Tasks, asm: PuzzleGames}
+      data:
+        description: Gather 2 sets by 4
+        setsCount: 2
+        numberForSet: 4
+    - rid: 6066072898068807682
+      type: {class: MiniGamesTaskDataGatherSets, ns: PuzzleGame.Gameplay.Merged.Tasks, asm: PuzzleGames}
+      data:
+        description: Gather 2 sets by 3
+        setsCount: 2
+        numberForSet: 3
+    - rid: 6066072898068807683
+      type: {class: MiniGamesTaskDataGatherSets, ns: PuzzleGame.Gameplay.Merged.Tasks, asm: PuzzleGames}
+      data:
+        description: Gather 1 set by 5
+        setsCount: 1
+        numberForSet: 5
+    - rid: 6066072898068807684
+      type: {class: MiniGamesAbstractTaskDataUseBooster, ns: PuzzleGame.Gameplay.Merged, asm: PuzzleGames}
+      data:
+        description: Use any booster

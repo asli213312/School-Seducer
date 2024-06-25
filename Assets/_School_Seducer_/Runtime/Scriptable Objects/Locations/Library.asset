@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72189bfd0bc0491cb501c26ed385fad8, type: 3}
   m_Name: Library
   m_EditorClassIdentifier: 
-  characters:
-  - {fileID: 11400000, guid: 3b8874d9c434e2645a6e1052bdfff254, type: 2}
-  - {fileID: 11400000, guid: 0a0c2a4432119194481bc26b488d6f7e, type: 2}
-  - {fileID: 11400000, guid: 8f7a19bf7b9c2a54ab3730400ad76eec, type: 2}
+  characters: []
   requiredLevel: 2
   isLocked: 1

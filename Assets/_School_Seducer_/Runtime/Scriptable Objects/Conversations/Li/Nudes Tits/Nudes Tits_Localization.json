@@ -1,0 +1,92 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hi, it's Ben. Remember me?"
+                },
+                {
+                    "key": "Damn, of course I remember. \nHow did I manage to bet \nyou a few wishes?"
+                },
+                {
+                    "key": "Well, we were drunk, having fun... \nyou were sure you wouldn't lose."
+                },
+                {
+                    "key": "Yeah, yesterday was fun, \nbut today not so much."
+                },
+                {
+                    "key": "Alright, I'm only human too. \nLet's forget about this silly bet."
+                },
+                {
+                    "key": "No way! I hate it when people \npity me. I bet you ten wishes \nand I'll fulfill them."
+                },
+                {
+                    "key": "Are you sure?"
+                },
+                {
+                    "key": "Absolutely! So, what's your first wish?"
+                },
+                {
+                    "key": "Show me a tits."
+                },
+                {
+                    "key": "Hmm, unexpected..."
+                },
+                {
+                    "key": "picture"
+                },
+                {
+                    "key": "I was just kidding... Didn't \nthink you'd actually do it..."
+                },
+                {
+                    "key": "Nine wishes left."
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Привет, это Бен. Помнишь меня?"
+                },
+                {
+                    "key": "Черт, конечно помню. Как меня \nугораздило проспорить тебе \nнесколько желаний?"
+                },
+                {
+                    "key": "Ну, мы были пьяны, нам было весело… \nты была уверена, что не проиграешь."
+                },
+                {
+                    "key": "Да, вчера было весело, а сегодня не очень."
+                },
+                {
+                    "key": "Ладно, я тоже человек. Давай \nзабудем про этот дурацкий спор."
+                },
+                {
+                    "key": "Ну уж нет! Ненавижу, когда меня \nжалеют. Я тебе проспорила 10 \nжеланий и я выполню их."
+                },
+                {
+                    "key": "Ты уверена?"
+                },
+                {
+                    "key": "Еще как! Итак, твое первое желание?"
+                },
+                {
+                    "key": "Покажи сиськи."
+                },
+                {
+                    "key": "Хм, неожиданно…"
+                },
+                {
+                    "key": "картинка"
+                },
+                {
+                    "key": "Да я же пошутил… Не думал, \nчто ты и правда сделаешь это…"
+                },
+                {
+                    "key": "Осталось 9 желаний."
+                }
+            ]
+        }
+    ]
+}

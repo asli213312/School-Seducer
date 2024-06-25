@@ -23,5 +23,6 @@ MonoBehaviour:
   requiredLevel: 5
   loyalty: 1
   maxLoyalty: 1
-  showDebugParameters: 0
+  showDebugParameters: 1
   experience: 1
+  isLocked: 0

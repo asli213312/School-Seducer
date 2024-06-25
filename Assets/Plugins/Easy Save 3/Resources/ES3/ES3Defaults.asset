@@ -32,12 +32,14 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
+    - GameAnalyticsDef
     - IngameDebugConsole.Runtime
     - LottiePlugin.Runtime
     - LottiePlugin.Sample.SceneUI.Runtime
     - NaughtyAttributes.Core
     - NaughtyAttributes.Test
     - NutakuSDK
+    - PlayFab
     - Plugins.Baedrick.ColoredHeaderCreator
     - Project.Editor
     - PuzzleGames

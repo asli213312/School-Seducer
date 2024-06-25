@@ -23,7 +23,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         {
             if (_lastMonoText != null && _lastMonoText.NameId == nameId)
             {
-                _lastMonoText.UpdateText();
+                _lastMonoText.UpdateMember();
                 
                 Report();
                 return;
@@ -33,7 +33,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
             {
                 if (monoText.NameId == nameId)
                 {
-                    monoText.UpdateText();
+                    monoText.UpdateMember();
                     _lastMonoText = monoText;
                     
                     Report();
@@ -50,7 +50,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
             [SerializeField] public string nameId;
             [SerializeField] public List<MonoText> monoTexts;
             
-            public void UpdateAll() => monoTexts.ForEach(x => x.UpdateText());
+            public void UpdateAll() => monoTexts.ForEach(x => x.UpdateMember());
         }
     }
 }

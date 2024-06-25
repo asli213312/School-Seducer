@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
+  m_Name: Estella
+  m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: b465448b533e8aa44b973603d814ff97, type: 2}
+  currentConversation: {fileID: 11400000, guid: 24272fc23aadf8b4eb73ee4f5cfb2845, type: 2}
+  gifts:
+  - {fileID: 11400000, guid: 305dc3e3cec847c4a9522832ecbb4e09, type: 2}
+  - {fileID: 11400000, guid: d26f4a124d377554db0c457c0d3884c7, type: 2}
+  - {fileID: 11400000, guid: 0083d6e4361df514090a7683ef72f0eb, type: 2}
+  allConversations:
+  - {fileID: 11400000, guid: 7abf784b1e5fa004bbbafc8c22386d70, type: 2}
+  - {fileID: 11400000, guid: 3ff02865ad08d0b49ba1c2524dd670fd, type: 2}
+  - {fileID: 11400000, guid: 808ce91a1e66d5240b2a92085f0e53a8, type: 2}
+  - {fileID: 11400000, guid: 73b57ace96db3534c870023094b11d5b, type: 2}
+  - {fileID: 11400000, guid: 32d9e2151efdf00429bd8771211a3c19, type: 2}
+  gallery: {fileID: 11400000, guid: 715f6c4c462a6ca45bec11ee51ba365e, type: 2}
+  requiredLevel: 2
+  loyalty: 1
+  maxLoyalty: 3
+  showDebugParameters: 1
+  experience: 0
+  isLocked: 0

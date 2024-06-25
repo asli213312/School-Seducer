@@ -1,54 +1,199 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Yo, what's up!" },
-  {"key": "Hey, Alison. Didn't think \nyou'd be in this math class."},
-  {"key": "Thought I was just a body, huh?"},
-  {"key": "Nah, that's not what I meant."},
-  {"key": "Anyway, you can sit next to me."},
-  {"key": "Thanks."},
-  {"key": "Honestly, math isn't really my thing. \nBut I'm totally crushing on the professor."},
-  {"key": "Crushing on him?"},
-  {"key": "Yeah! The lecture just started, \nand I'm already swooning... Don't know \nwhy, but his voice, the way he lectures..."},
-  {"key": "Hey... What are you doing?"},
-  {"key": "Insert picture"},
-  {"key": "And you don't like it? \nAre you against it?"},
-  {"key": "We're in class, we might get caught."},
-  {"key": "We won't get caught if you \nstay calm... Relax and enjoy it."},
-  {"key": "Damn it, Alison, squeeze it tighter!"},
-  {"key": "Speak softer, or we \nreally might get caught."},
-  {"key": "Oh yeah! I'm almost there!"},
-  {"key": "That was amazing!"},
-  {"key": "And I seem to have forgotten the \nnapkins at home... I’ll have \nto sit like this until the end \nof the lecture in your sperm."},
-  {"key": "Insert picture"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "О, привет!"},
-  {"key": "Привет, Элисон. Не думал тебя \nвстретить на лекции по математике."},
-  {"key": "Ты думал, что я способна \nтолько светить своим телом?"},
-  {"key": "Нет, я не это хотел сказать."},
-  {"key": "Ладно, можешь сесть рядом."},
-  {"key": "Спасибо."},
-  {"key": "Если честно, я и правда не очень \nинтересуюсь математикой. Но меня \nочень заводит профессор."},
-  {"key": "Заводит?"},
-  {"key": "Да! Лекция только началась, а я уже \nвся теку… Не знаю почему, но его \nголос, его манера вести лекцию…"},
-  {"key": "Эй… Что ты делаешь?"},
-  {"key": "Вставить картинку"},
-  {"key": "А тебе не нравится? Ты против?"},
-  {"key": "Мы же на лекции, нас могут застукать."},
-  {"key": "Не застукают, если будешь сидеть \nспокойно… Расслабься и получай удовольствие."},
-  {"key": "Вот чёрт, Элисон, сожми его сильнее!"},
-  {"key": "Говори тише, а то и правда нас застукают."},
-  {"key": "О да! Я сейчас кончу!"},
-  {"key": "Это было прекрасно!"},
-  {"key": "А я, кажется, забыла салфетки дома… \nПридётся так и сидеть до конца \nлекции в твоей сперме."},
-  {"key": "Вставить картинку"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Yo, what's up!"
+                },
+                {
+                    "key": "Hey, Alison. Didn't think \nyou'd be in this math class."
+                },
+                {
+                    "key": "Thought I was just a body, huh?"
+                },
+                {
+                    "key": "Nah, that's not what I meant."
+                },
+                {
+                    "key": "Anyway, you can sit next to me."
+                },
+                {
+                    "key": "Thanks."
+                },
+                {
+                    "key": "Honestly, math isn't really my thing. \nBut I'm totally crushing on the professor."
+                },
+                {
+                    "key": "Crushing on him?"
+                },
+                {
+                    "key": "Yeah! The lecture just started, \nand I'm already swooning... Don't know \nwhy, but his voice, the way he lectures..."
+                },
+                {
+                    "key": "Hey... What are you doing?"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "And you don't like it? \nAre you against it?"
+                },
+                {
+                    "key": "We're in class, we might get caught."
+                },
+                {
+                    "key": "We won't get caught if you \nstay calm... Relax and enjoy it."
+                },
+                {
+                    "key": "Damn it, Alison, squeeze it tighter!"
+                },
+                {
+                    "key": "Speak softer, or we \nreally might get caught."
+                },
+                {
+                    "key": "Oh yeah! I'm almost there!"
+                },
+                {
+                    "key": "That was amazing!"
+                },
+                {
+                    "key": "And I seem to have forgotten the \nnapkins at home... I’ll have \nto sit like this until the end \nof the lecture in your sperm."
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "О, привет!"
+                },
+                {
+                    "key": "Привет, Элисон. Не думал тебя \nвстретить на лекции по математике."
+                },
+                {
+                    "key": "Ты думал, что я способна \nтолько светить своим телом?"
+                },
+                {
+                    "key": "Нет, я не это хотел сказать."
+                },
+                {
+                    "key": "Ладно, можешь сесть рядом."
+                },
+                {
+                    "key": "Спасибо."
+                },
+                {
+                    "key": "Если честно, я и правда не очень \nинтересуюсь математикой. Но меня \nочень заводит профессор."
+                },
+                {
+                    "key": "Заводит?"
+                },
+                {
+                    "key": "Да! Лекция только началась, а я уже \nвся теку… Не знаю почему, но его \nголос, его манера вести лекцию…"
+                },
+                {
+                    "key": "Эй… Что ты делаешь?"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "А тебе не нравится? Ты против?"
+                },
+                {
+                    "key": "Мы же на лекции, нас могут застукать."
+                },
+                {
+                    "key": "Не застукают, если будешь сидеть \nспокойно… Расслабься и получай удовольствие."
+                },
+                {
+                    "key": "Вот черт, Элисон, сожми его сильнее!"
+                },
+                {
+                    "key": "Говори тише, а то и правда нас застукают."
+                },
+                {
+                    "key": "О да! Я сейчас кончу!"
+                },
+                {
+                    "key": "Это было прекрасно!"
+                },
+                {
+                    "key": "А я, кажется, забыла салфетки дома… \nПридется так и сидеть до конца \nлекции в твоей сперме."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Oh, hallo!"
+                },
+                {
+                    "key": "Hallo, Alison. Habe nicht erwartet, \ndich in der Mathestunde zu treffen."
+                },
+                {
+                    "key": "Du dachtest wohl, ich sei \nnur dazu da, meinen \nKörper zu präsentieren?"
+                },
+                {
+                    "key": "Nein, das wollte ich nicht sagen."
+                },
+                {
+                    "key": "Okay, setz dich ruhig neben mich."
+                },
+                {
+                    "key": "Danke."
+                },
+                {
+                    "key": "Um ehrlich zu sein, interessiere \nich mich nicht besonders für \nMathematik. Aber der Professor \nzieht mich total an."
+                },
+                {
+                    "key": "Zieht dich an?"
+                },
+                {
+                    "key": "Ja! Die Vorlesung hat gerade erst \nbegonnen, und ich bin schon ganz \naufgeregt... Ich weiß nicht, \nwarum, aber seine Stimme, \nseine Art zu unterrichten..."
+                },
+                {
+                    "key": "Hey... Was machst du da?"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Magst du es nicht? Bist du dagegen?"
+                },
+                {
+                    "key": "Wir sind doch in einer Vorlesung, \nwir könnten erwischt werden."
+                },
+                {
+                    "key": "Wir werden nicht erwischt, wenn \ndu ruhig sitzen bleibst... \nEntspann dich und genieß es."
+                },
+                {
+                    "key": "Verdammt, Alison, drück ihn fester!"
+                },
+                {
+                    "key": "Sprich leiser, sonst werden \nwir wirklich erwischt."
+                },
+                {
+                    "key": "Oh, ja! Ich werde kommen!"
+                },
+                {
+                    "key": "Das war wunderschön."
+                },
+                {
+                    "key": "Ich glaube, ich habe meine Servietten \nzu Hause vergessen... Ich werde \nden Rest der Vorlesung in \ndeiner Wichse sitzen müssen."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
 }

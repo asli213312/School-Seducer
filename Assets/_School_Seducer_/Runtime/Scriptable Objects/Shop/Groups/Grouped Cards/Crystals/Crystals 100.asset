@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd86f81f98dcc441a1de010e65d0dd9, type: 3}
+  m_Name: Crystals 100
+  m_EditorClassIdentifier: 
+  isSold: 0
+  cost: 34.44
+  view: {fileID: 3582723538908009550, guid: 47230963dbde7cc46ae6f8d0145f1dd9, type: 3}
+  showDebugParameters: 1
+  id: crystals_100
+  value: 100
+  useTimer: 0
+  timeToWait: 0
+  currentAwaitedTime: 0

@@ -1,50 +1,244 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Ben, you free right now?" },
-  {"key": "Trying to cram for my study sesh. \nBut honestly, I'm down for anything \nto take a break from this textbook."},
-  {"key": "Sweet! Can you help me pick \nout an outfit for my date tonight?"},
-	{"key": "Me, picking outfits? \nI'm not exactly a fashion guru."},
-	{"key": "Nah, just need a guy's perspective, \nlike, does it turn you on or not."},
-	{"key": "Um, sure, I'll give it a shot..."},
-	{"key": "Alright, let's start with the dress. \nWhat about these ones? Too short?"},
-	{"key": "Insert picture"},
-	{"key": "You're rocking them!"},
-	{"key": "Just rocking them or do they make \nyou want to tear them off \nand claim me?"},
-	{"key": "Definitely the second one."},
-	{"key": "Awesome, then let's go with those. \nNow, lingerie. Should scream passionate, \nnot thirsty."},
-	{"key": "Not an easy find."},
-	{"key": "Let's check..."},
-	{"key": "Insert picture"},
-	{"key": "Hmm, they all look good to me. \nThey're making me want to rip \nthem off and claim you too."},
-	{"key": "Hey! I don't hook up on first dates. \nI gotta be like the unattainable prize \n- close but out of reach."},
-	{"key": "Got it, I respect your boundaries!"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Бэн, ты сейчас занят?"},
-  {"key": "Я пытаюсь учиться. Но если честно, \nготов отвлечься на что угодно, \nлишь бы закрыть учебник."},
-  {"key": "Отлично! Помоги мне подобрать наряд \nна сегодняшнее свидание, пожалуйста."},
-  {"key": "Подобрать наряд? \nЯ в этом не очень разбираюсь."},
-  {"key": "А ты не должен разбираться. Мне нужно \nчисто мужское мнение, возбуждает или нет."},
-  {"key": "Э-э-э, ладно, я попробую…"},
-  {"key": "Окей, тогда начнём с платья. \nКак тебе эти? Не слишком короткие?"},
-  {"key": "Вставить картинку"},
-  {"key": "Тебе очень идёт!"},
-  {"key": "Просто идёт или его хочется \nсорвать и завладеть мной?"},
-  {"key": "Скорее второе."},
-  {"key": "Отлично, тогда оставляем. Теперь бельё. \nОно должно показывать, что я страстная, \nно не шлюшка."},
-  {"key": "Не просто такое подобрать."},
-  {"key": "Сейчас посмотрим…"},
-  {"key": "Вставить картинку"},
-  {"key": "Хм, мне кажется, все варианты хорошо \nсмотрятся. Их тоже хочется сорвать\n и завладеть тобой."},
-  {"key": "Эй! Я не сплю с парнями на первом \nсвидании. Я должна быть для них запретным \nплодом - совсем близко, но не достать."},
-  {"key": "Окей, уважаю твои принципы!"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Ben, you free right now?"
+                },
+                {
+                    "key": "Trying to cram for my study sesh. \nBut honestly, I'm down for anything \nto take a break from this textbook."
+                },
+                {
+                    "key": "Sweet! Can you help me pick \nout an outfit for my date tonight?"
+                },
+                {
+                    "key": "Me, picking outfits? \nI'm not exactly a fashion guru."
+                },
+                {
+                    "key": "Nah, just need a guy's perspective, \nlike, does it turn you on or not."
+                },
+                {
+                    "key": "Um, sure, I'll give it a shot..."
+                },
+                {
+                    "key": "Alright, let's start with the dress. \nWhat about these ones? Too short?"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "You're rocking them!"
+                },
+                {
+                    "key": "Just rocking them or do they make \nyou want to tear them off \nand claim me?"
+                },
+                {
+                    "key": "Definitely the second one."
+                },
+                {
+                    "key": "Awesome, then let's go with those. \nNow, lingerie. Should scream passionate, \nnot thirsty."
+                },
+                {
+                    "key": "Not an easy find."
+                },
+                {
+                    "key": "Let's check..."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Hmm, they all look good to me. \nThey're making me want to rip \nthem off and claim you too."
+                },
+                {
+                    "key": "Hey! I don't hook up on first dates. \nI gotta be like the unattainable prize \n- close but out of reach."
+                },
+                {
+                    "key": "Got it, I respect your boundaries!"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Бэн, ты сейчас занят?"
+                },
+                {
+                    "key": "Я пытаюсь учиться. Но если честно, \nготов отвлечься на что угодно, \nлишь бы закрыть учебник."
+                },
+                {
+                    "key": "Отлично! Помоги мне подобрать наряд \nна сегодняшнее свидание, пожалуйста."
+                },
+                {
+                    "key": "Подобрать наряд? \nЯ в этом не очень разбираюсь."
+                },
+                {
+                    "key": "А ты не должен разбираться. Мне нужно \nчисто мужское мнение, возбуждает или нет."
+                },
+                {
+                    "key": "Э-э-э, ладно, я попробую…"
+                },
+                {
+                    "key": "Окей, тогда начнем с платья. \nКак тебе эти? Не слишком короткие?"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Тебе очень идет!"
+                },
+                {
+                    "key": "Просто идет или его хочется \nсорвать и завладеть мной?"
+                },
+                {
+                    "key": "Скорее второе."
+                },
+                {
+                    "key": "Отлично, тогда оставляем. Теперь белье. \nОно должно показывать, что я страстная, \nно не шлюшка."
+                },
+                {
+                    "key": "Не просто такое подобрать."
+                },
+                {
+                    "key": "Сейчас посмотрим…"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Хм, мне кажется, все варианты хорошо \nсмотрятся. Их тоже хочется сорвать\n и завладеть тобой."
+                },
+                {
+                    "key": "Эй! Я не сплю с парнями на первом \nсвидании. Я должна быть для них запретным \nплодом - совсем близко, но не достать."
+                },
+                {
+                    "key": "Окей, уважаю твои принципы!"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Ben, bist du gerade frei?"
+                },
+                {
+                    "key": "Versuche gerade, mich für meine \nLernsession zu quetschen. Aber \nehrlich gesagt bin ich für \nalles bereit, um eine Pause \nvon diesem Lehrbuch zu machen."
+                },
+                {
+                    "key": "Cool! Kannst du mir helfen, \nein Outfit für mein Date \nheute Abend auszusuchen?"
+                },
+                {
+                    "key": "Ich, Outfits aussuchen? \nIch bin nicht gerade \nein Modeexperte."
+                },
+                {
+                    "key": "Nee, ich brauche nur die \nPerspektive eines Typen, also, \nmacht es dich an oder nicht."
+                },
+                {
+                    "key": "Ähm, okay, ich werde es versuchen..."
+                },
+                {
+                    "key": "Okay, lass uns mit dem Kleid \nanfangen. Was ist mit \ndiesen hier? Zu kurz?"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Die stehen dir richtig gut!"
+                },
+                {
+                    "key": "Nur gut oder machen sie dich \nheiß und wollen dich sofort \nausziehen und mich nehmen?"
+                },
+                {
+                    "key": "Definitiv die zweite Option."
+                },
+                {
+                    "key": "Super, dann nehmen wir die. \nJetzt, Dessous. Soll \nleidenschaftlich, nicht \nverzweifelt wirken."
+                },
+                {
+                    "key": "Keine leichte Aufgabe."
+                },
+                {
+                    "key": "Schauen wir mal..."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Hmm, sie sehen alle gut aus für \nmich. Sie machen mich auch \nheiß und wollen dich sofort \nausziehen und mich nehmen."
+                },
+                {
+                    "key": "Hey! Ich gehe beim ersten Date \nnicht gleich aufs Ganze. Ich \nmuss wie der unerreichbare Preis \nsein - nah, aber außer Reichweite."
+                },
+                {
+                    "key": "Verstanden, ich respektiere deine Grenzen!"
+                }
+            ]
+        }
+    ]
 }

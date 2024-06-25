@@ -1,5 +1,8 @@
-﻿namespace _School_Seducer_.Editor.Scripts.Utility
+﻿using System;
+
+namespace _School_Seducer_.Editor.Scripts.Utility
 {
+    [Serializable]
     public class Condition
     {
         private readonly bool _isTrue;

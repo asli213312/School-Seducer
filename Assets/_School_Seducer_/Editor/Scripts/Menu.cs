@@ -1,14 +1,19 @@
-﻿using _School_Seducer_.Editor.Scripts.Extensions;
+﻿using System;
+using System.Collections;
+using _School_Seducer_.Editor.Scripts;
+using _School_Seducer_.Editor.Scripts.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using UnityEngine;
 using UnityEngine.UI;
+using UltEvents;
 using Zenject;
 
 namespace _BonGirl_.Editor.Scripts
 {
     public class Menu : MonoBehaviour
     {
+    	[Inject] private Bank _bank;
         [Inject] private LocalizedGlobalMonoBehaviour _localizer;
         private GameObject _currentPanel;
         private GameObject _selectedPanel;
@@ -18,6 +23,36 @@ namespace _BonGirl_.Editor.Scripts
         {
             Time.timeScale = 1;
         }
+
+        public void GiveGold(int amount) 
+        {
+        	_bank.ChangeValueGold(amount);
+        }
+
+        public void GiveDiamonds(int amount) 
+        {
+        	_bank.ChangeValueDiamonds(amount);
+        }
+
+        public void GiveGold(int amount, UltEventHolder onSuccess) 
+        {
+        	_bank.ChangeValueGold(amount, () => onSuccess?.Invoke());
+        }
+
+        public void GiveDiamonds(int amount, UltEventHolder onSuccess) 
+        {
+        	_bank.ChangeValueDiamonds(amount, () => onSuccess?.Invoke());
+        }
+
+        public void SubtractGold(int amount, UltEventHolder onSuccess) 
+        {
+        	_bank.ChangeValueGold(-amount, () => onSuccess?.Invoke());
+        }
+
+        public void SubtractDiamonds(int amount, UltEventHolder onSuccess) 
+        {
+        	_bank.ChangeValueDiamonds(-amount, () => onSuccess?.Invoke());
+        }
         
         public void ResetPause() => Time.timeScale = 1;
 
@@ -26,7 +61,9 @@ namespace _BonGirl_.Editor.Scripts
             _selectedPanel = panel;
 
             Debug.Log("Panel selectedd: " + _selectedPanel.name);
-        } 
+        }
+
+        public void PressButton(Button button) => button.onClick?.Invoke();
 
         public void EnableByChangePositionX(float xPosition)
         {
@@ -37,6 +74,17 @@ namespace _BonGirl_.Editor.Scripts
             }
 
             _selectedPanel.transform.position = new Vector3(xPosition, _selectedPanel.transform.position.y, _selectedPanel.transform.position.z);
+        }
+
+        public void ChangePositionSelectedByPoint(Transform point)
+        {
+            if (_selectedPanel == null)
+            {
+                Debug.LogWarning("Select panel to change position!");
+                return;
+            }
+            
+            _selectedPanel.transform.position = point.position;
         }
 
         public void StartScaleSelected(float scaleValue)

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80f2625d44f943499a5ffc81ba0edc1, type: 3}
+  m_Name: Undress
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3429014741291853325, guid: 7b42e7aac6a980f4db3343c6e245e24d, type: 3}
+  finalCharacterImage: {fileID: 21300000, guid: e1dee20b49538384db03a71b1a143601, type: 3}
+  pointsTypes: 00000000010000000300000002000000
+  levels:
+  - pointsToTouch:
+    - icon: {fileID: 21300000, guid: a60eb5c57b23baf4c8cc7d6d49166d15, type: 3}
+      type: 0
+    - icon: {fileID: 21300000, guid: 6efe561994e97294e9d511403dc6c61b, type: 3}
+      type: 3
+    - icon: {fileID: 21300000, guid: 8ca61d8f25b0ee84f8c4a2da56861245, type: 3}
+      type: 2
+    - icon: {fileID: 21300000, guid: 3b40e23e241981c4f81ddbd0d5274c36, type: 3}
+      type: 1
+    - icon: {fileID: 21300000, guid: 8ca61d8f25b0ee84f8c4a2da56861245, type: 3}
+      type: 2
+    - icon: {fileID: 21300000, guid: 3b40e23e241981c4f81ddbd0d5274c36, type: 3}
+      type: 1
+    nextImage: {fileID: 21300000, guid: c0f3a900f67b22e4997eb0e457e32a4d, type: 3}
+  - pointsToTouch:
+    - icon: {fileID: 21300000, guid: 8ca61d8f25b0ee84f8c4a2da56861245, type: 3}
+      type: 2
+    - icon: {fileID: 21300000, guid: 3b40e23e241981c4f81ddbd0d5274c36, type: 3}
+      type: 1
+    - icon: {fileID: 21300000, guid: a60eb5c57b23baf4c8cc7d6d49166d15, type: 3}
+      type: 0
+    - icon: {fileID: 21300000, guid: 6efe561994e97294e9d511403dc6c61b, type: 3}
+      type: 3
+    - icon: {fileID: 21300000, guid: 3b40e23e241981c4f81ddbd0d5274c36, type: 3}
+      type: 1
+    nextImage: {fileID: 21300000, guid: 58deb446fb875e044a8b419b6112401d, type: 3}
+  - pointsToTouch:
+    - icon: {fileID: 21300000, guid: 3b40e23e241981c4f81ddbd0d5274c36, type: 3}
+      type: 1
+    - icon: {fileID: 21300000, guid: 6efe561994e97294e9d511403dc6c61b, type: 3}
+      type: 3
+    - icon: {fileID: 21300000, guid: a60eb5c57b23baf4c8cc7d6d49166d15, type: 3}
+      type: 0
+    - icon: {fileID: 21300000, guid: 8ca61d8f25b0ee84f8c4a2da56861245, type: 3}
+      type: 2
+    - icon: {fileID: 21300000, guid: 6efe561994e97294e9d511403dc6c61b, type: 3}
+      type: 3
+    nextImage: {fileID: 21300000, guid: bed529de1748d23428526aeeffe9bf06, type: 3}

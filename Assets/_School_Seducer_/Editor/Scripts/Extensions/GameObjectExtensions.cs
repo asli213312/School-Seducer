@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
 {
@@ -78,7 +80,9 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
         public static void Destroy(this GameObject gameObject, float delay = 0f)
         {
             if (gameObject != null)
+            {
                 Object.Destroy(gameObject, delay);
+            }
             else
                 Debug.LogWarning("GameObject already destroyed: " + gameObject.name);
         }

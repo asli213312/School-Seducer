@@ -42,6 +42,28 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
             
             sprite.color = targetColor;
         }
+
+        public static IEnumerator Fade(this Image sprite, float duration, float target, UnityAction onComplete = null)
+        {
+            Color originalColor = sprite.color;
+            Color targetColor = new Color(originalColor.r, originalColor.g, originalColor.b, target);
+
+            float elapsedTime = 0f;
+
+            while (elapsedTime < duration)
+            {
+                sprite.color = Color.Lerp(originalColor, targetColor, elapsedTime / duration);
+                elapsedTime += Time.deltaTime;
+                
+                if (elapsedTime >= duration)
+                    break;
+
+                yield return null;
+            }
+            
+            sprite.color = targetColor;
+            onComplete?.Invoke();
+        }
         
         public static IEnumerator FadeOut(this Image sprite, float duration, UnityAction onComplete = null)
         {
@@ -65,7 +87,7 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
             onComplete?.Invoke();
         }
         
-        public static IEnumerator FadeIn(this Image sprite, float duration)
+        public static IEnumerator FadeIn(this Image sprite, float duration, UnityAction onComplete = null)
         {
             Color originalColor = sprite.color;
             Color targetColor = new Color(originalColor.r, originalColor.g, originalColor.b, 1f);
@@ -84,6 +106,7 @@ namespace _Kittens__Kitchen.Editor.Scripts.Utility.Extensions
             }
             
             sprite.color = targetColor;
+            onComplete?.Invoke();
         }
     }
 }

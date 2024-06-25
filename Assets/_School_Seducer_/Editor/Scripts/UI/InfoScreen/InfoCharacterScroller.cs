@@ -51,9 +51,12 @@ namespace _School_Seducer_.Editor.Scripts
                 
                 if (i + 1 < _characters.Length)
                 {
+                    if (_characters[i + 1].Data.isLocked) continue;
+                    
                     _scrollersModule.SelectCharacter(_characters[i + 1]);
                     _monoController.UpdateMonoByName("Character Name Info");
                     _monoController.UpdateMonoByName("Character Name Chat");
+                    
                     Debug.Log("Next character: " + _characters[i + 1].Data.name);
                     break;
                 }
@@ -72,9 +75,12 @@ namespace _School_Seducer_.Editor.Scripts
                 
                 if (i - 1 >= 0)
                 {
+                    if (_characters[i - 1].Data.isLocked) continue;
+                    
                     _scrollersModule.SelectCharacter(_characters[i - 1]);
                     _monoController.UpdateMonoByName("Character Name Info");
                     _monoController.UpdateMonoByName("Character Name Chat");
+                    
                     Debug.Log("Previous character: " + _characters[i - 1].Data.name);
                     break;
                 }

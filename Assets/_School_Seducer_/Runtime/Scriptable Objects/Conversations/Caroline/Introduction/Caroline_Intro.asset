@@ -26,14 +26,14 @@ MonoBehaviour:
   - fieldLabel: _currentLanguage
     localizedDataList: []
   costExp: 0
+  iconStory: {fileID: 0}
   localizator:
     translationJson: {fileID: 0}
     _translator:
       languages: []
   <Language>k__BackingField: 0
-  isCompleted: 0
+  isCompleted: 1
   isUnlocked: 1
-  conversationIndex: 150
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: CrazyEN
@@ -45,49 +45,49 @@ MonoBehaviour:
     Msg: this Caroline Intro
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
+    <Sender>k__BackingField: 0
     localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: this chapter 1
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
+    <Sender>k__BackingField: 2
     localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: Ones upon time...
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: e5e1c974f0cd1e44ab646777a57a722a, type: 3}
+    <Sender>k__BackingField: 1
     localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: e1be4037a0d997b4289fa1f51f396142, type: 2}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
+    <Sender>k__BackingField: 2
     localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: Hello, Mary!
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 7444bfefa27ef8240b339a54028a6761, type: 3}
+    <Sender>k__BackingField: 1
     localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 25ace05a8ac97604a9babb612e8d4506, type: 2}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
+    <Sender>k__BackingField: 2
     localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: 'Just relaxiiiiiiiiiiiiiiiiiiiiiiiiiiii
@@ -95,31 +95,31 @@ MonoBehaviour:
       iiiiiiiiiiiiiiiiiiiiiiiiiiiii'
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    <Sender>k__BackingField: 2
     localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 325860eca2aff734fbcd249995bdf5d6, type: 3}
     Msg: Okay)
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    <Sender>k__BackingField: 1
     localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 4498eac02cc9c1d42afe64d85f01ce7f, type: 2}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 0}
+    <Sender>k__BackingField: 2
     localizedAudioClips: []
   - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
     Msg: Maybe let's play?
     optionalData:
       GallerySlot: {fileID: 0}
-      Animation: {fileID: 0}
       Branches: []
     AudioMsg: {fileID: 8300000, guid: 766017852469f684092df09c7ce163ab, type: 3}
+    <Sender>k__BackingField: 2
     localizedAudioClips: []

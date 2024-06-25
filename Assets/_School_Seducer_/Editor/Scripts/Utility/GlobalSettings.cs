@@ -13,9 +13,12 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         [SerializeField] private Enums.Language currentLanguage;
 
         [SerializeField] private bool showDebugParameters;
+        [SerializeField] private bool tutorialCompleted;
+        [SerializeField] public bool soundEnabled;
         [SerializeField, ShowIf(nameof(showDebugParameters))] private LocalizedGlobalMonoBehaviour localizatorRuntime;
         public static string GlobalCurrentLanguage { get; private set; }
-        
+        public bool TutorialCompleted { get => tutorialCompleted; set => tutorialCompleted = value; }
+
         public static event Action LanguageChanged;
 
         private void OnValidate()

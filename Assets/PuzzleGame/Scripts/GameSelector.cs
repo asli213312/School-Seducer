@@ -188,6 +188,7 @@ namespace PuzzleGame
                     gamePresetsList.presets[currentGameIndex].canBuyBoosters);
             
                 booster.Select += OnBoosterSelected;
+                booster.infoButton.onClick.AddListener(() => InvokeInfoBooster(booster.Preset));
                 boosters.Add(booster);
 
                 BoostersController.Instance.SetBoostersConfig(gamePresetsList.presets[currentGameIndex].BoosterConfigs);
@@ -206,11 +207,16 @@ namespace PuzzleGame
             }
             else
             {
-                boostersPanel.Init(preset);
-                MinimizeCurrentGame(true);
+                
+                //MinimizeCurrentGame(true);
             }
         }
-    
+
+        void InvokeInfoBooster(BoosterPreset preset)
+        {
+            boostersPanel.Init(preset);
+        }
+
         void OnBoosterDeselected(BoosterPreset preset)
         {
             boostersBlocker.gameObject.SetActive(false);

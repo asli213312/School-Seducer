@@ -1,40 +1,136 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Oh man, I'm late for the lecture \non the first day of this new class!" },
-  {"key": "How did I manage to sleep through my alarm?"},
-  {"key": "Okay, Auditorium 212 in Building B. \nHere we go."},
-	{"key": "It's a real achievement to \nbe late on day one!"},
-	{"key": "Hey, sorry, didn't mean to interrupt..."},
-	{"key": "Of course not. And what's your name, kid?"},
-	{"key": "It's Ben, ma'am."},
-	{"key": "Well, Ben, you're definitely leaving \nan impression! You're gonna be my \nfavorite now. Come on in, grab a seat."},
-	{"key": "Thanks, ma'am. I'm really sorry \nabout being late."},
-	{"key": "No worries, take a seat up front so \nI can keep an eye on you."},
-	{"key": "Sure thing, ma'am."},
-	{"key": "Damn, she's hot!"},
-	{"key": "Insert picture"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "О нет, в первый же день нового предмета \nопаздывать на лекцию!"},
-  {"key": "Как я мог проспать?"},
-  {"key": "Так, аудитория 212 в корпусе Б. \nКажется, это здесь."},
-  {"key": "О, это же надо постараться, \nчтобы опоздать в первый же день!"},
-  {"key": "Простите, мэм. Я не хотел…"},
-  {"key": "Разумеется ты не хотел. \nИ как зовут сегодняшнего героя?"},
-  {"key": "Бэн, мэм."},
-  {"key": "Ну что, Бэн, тебя я теперь точно запомню! \nТы теперь будешь моим любимчиком. \nПроходи, садись."},
-  {"key": "Спасибо, мэм. Ещё раз простите, \nтакое больше не повторится."},
-  {"key": "Нет, нет, садись на первый ряд, \nчтобы я тебя видела."},
-  {"key": "Да, мэм, конечно."},
-  {"key": "Вот это да! Какая-же она горячая!"},
-  {"key": "Вставить картинку"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Oh man, I'm late for the lecture \non the first day of this new class!"
+                },
+                {
+                    "key": "How did I manage to sleep \nthrough my alarm?"
+                },
+                {
+                    "key": "Okay, Auditorium 212 in Building B. \nHere we go."
+                },
+                {
+                    "key": "It's a real achievement to \nbe late on day one!"
+                },
+                {
+                    "key": "Hey, sorry, didn't mean to interrupt..."
+                },
+                {
+                    "key": "Of course not. And what's your name, kid?"
+                },
+                {
+                    "key": "It's Ben, ma'am."
+                },
+                {
+                    "key": "Well, Ben, you're definitely leaving \nan impression! You're gonna be my \nfavorite now. Come on in, grab a seat."
+                },
+                {
+                    "key": "Thanks, ma'am. I'm really sorry \nabout being late."
+                },
+                {
+                    "key": "No worries, take a seat up front so \nI can keep an eye on you."
+                },
+                {
+                    "key": "Sure thing, ma'am."
+                },
+                {
+                    "key": "Damn, she's hot!"
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "О нет, в первый же день нового предмета \nопаздывать на лекцию!"
+                },
+                {
+                    "key": "Как я мог проспать?"
+                },
+                {
+                    "key": "Так, аудитория 212 в корпусе Б. \nКажется, это здесь."
+                },
+                {
+                    "key": "О, это же надо постараться, \nчтобы опоздать в первый же день!"
+                },
+                {
+                    "key": "Простите, мэм. Я не хотел…"
+                },
+                {
+                    "key": "Разумеется ты не хотел. \nИ как зовут сегодняшнего героя?"
+                },
+                {
+                    "key": "Бэн, мэм."
+                },
+                {
+                    "key": "Ну что, Бэн, тебя я теперь точно запомню! \nТы теперь будешь моим любимчиком. \nПроходи, садись."
+                },
+                {
+                    "key": "Спасибо, мэм. Еще раз простите, \nтакое больше не повторится."
+                },
+                {
+                    "key": "Нет, нет, садись на первый ряд, \nчтобы я тебя видела."
+                },
+                {
+                    "key": "Да, мэм, конечно."
+                },
+                {
+                    "key": "Вот это да! Какая-же она горячая!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Oh nein, am ersten Tag \ndieses neuen Fachs zu \nspät zur Vorlesung kommen!"
+                },
+                {
+                    "key": "Wie konnte ich nur verschlafen?"
+                },
+                {
+                    "key": "Also, Hörsaal 212 im Gebäude \nB. Hier muss es sein."
+                },
+                {
+                    "key": "Es ist schon eine Leistung, \nam ersten Tag zu spät zu kommen!"
+                },
+                {
+                    "key": "Entschuldigung, Ma'am. \nIch wollte nicht…"
+                },
+                {
+                    "key": "Natürlich nicht. Und wie \nheißt der Held des Tages?"
+                },
+                {
+                    "key": "Ben, Ma'am."
+                },
+                {
+                    "key": "Na, Ben, dich werde ich mir merken! \nDu bist jetzt mein Liebling. \nKomm rein, setz dich."
+                },
+                {
+                    "key": "Danke, Ma'am. Nochmals \nEntschuldigung, das wird \nnicht wieder vorkommen."
+                },
+                {
+                    "key": "Nein, nein, setz dich in die \nerste Reihe, damit ich \ndich sehen kann."
+                },
+                {
+                    "key": "Ja, Ma'am, natürlich."
+                },
+                {
+                    "key": "Wow, ist die heiß!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
 }

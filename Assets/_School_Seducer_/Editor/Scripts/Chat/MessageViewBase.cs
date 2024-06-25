@@ -1,4 +1,5 @@
-﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+﻿using System;
+using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
 using TMPro;
 using UnityEngine;
@@ -13,8 +14,9 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] protected Image leftBorderActor;
         [SerializeField] protected Image rightBorderActor;
 
+        public Action OnDestroyEvent;
         public MessageData Data;
-        
+
         public RectTransform PaddingBackChat { get; set; }
         public RectTransform PaddingForwardChat { get; set; }
         public bool NeedPadding { get; set; }
@@ -38,6 +40,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     rightBorderActor.gameObject.Activate();
                     Image rightIcon = rightBorderActor.transform.GetChild(0).GetComponent<Image>();
                     rightIcon.sprite = actorRight;
+                    
+                    if (data.optionalData.otherActorIcon.icon != null)
+                        rightIcon.sprite = data.optionalData.otherActorIcon.icon;
+                    
                     leftBorderActor.gameObject.Deactivate();
                     Debug.Log("Right actor installed");
                     break;
@@ -47,6 +53,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     leftBorderActor.gameObject.Activate();
                     Image leftIcon = leftBorderActor.transform.GetChild(0).GetComponent<Image>();
                     leftIcon.sprite = actorLeft;
+                    
+                    if (data.optionalData.otherActorIcon.icon != null)
+                        leftIcon.sprite = data.optionalData.otherActorIcon.icon;
+                    
                     rightBorderActor.gameObject.Deactivate();
                     Debug.Log("Base actor installed");
                     break;
@@ -115,6 +125,11 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         private void SetIconStoryTeller(bool needIcon)
         {
             leftBorderActor.gameObject.SetActive(needIcon);
+        }
+
+        private void OnDestroy()
+        {
+            OnDestroyEvent?.Invoke();
         }
     }
 }

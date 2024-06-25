@@ -123,11 +123,12 @@ namespace _School_Seducer_.Editor.Scripts.UI
                     }
                 }
 
-                void InstallContent(GallerySlotData data)
+                void InstallContent(GallerySlotDataBase slotData)
                 {
-                    switch (data.Section)
+                    switch (slotData.Section)
                     {
                         case GallerySlotType.Video:
+                            GallerySlotData data = slotData as GallerySlotData;
                             SetContentAnimation(data.animation, data.GetAnimationName());
                             _currentContentAnimation = contentAnimation;
                             _currentIndexContent = newIndex;
@@ -187,10 +188,15 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 }
                 
                 if (slotGO is GallerySlotView slotGallery) 
-                    if (_currentContentAnimation != null && slotGallery.Data.animation != null)
+                {
+                    if (slotGallery.Data is GallerySlotData defaultSlotData) 
+                    {
+                        if (_currentContentAnimation != null && defaultSlotData.animation != null)
                         if (_currentContentAnimation.skeletonDataAsset == slotView.GetComponent<OpenContentAnimation>()
                             .Animation.skeletonDataAsset) 
                             return i;
+                    }
+                }
 
                 if (_currentContentImage != null && _currentContentImage.sprite == slotView.sprite)
                 {

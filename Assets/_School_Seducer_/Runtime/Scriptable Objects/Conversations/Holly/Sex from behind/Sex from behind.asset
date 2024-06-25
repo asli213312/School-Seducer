@@ -1,0 +1,289 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Sex from behind
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Sex from behind
+    localizedDataList:
+    - languageCode: en
+      key: Sex from behind
+    - languageCode: ru
+      key: "\u0421\u0435\u043A\u0441 \u0441\u0437\u0430\u0434\u0438"
+    - languageCode: de
+      key: Sex von hinten
+    - languageCode: fr
+      key: "Le sexe par derri\xE8re"
+    - languageCode: it
+      key: Sesso da dietro
+    - languageCode: sp
+      key: "Sexo por detr\xE1s"
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: 9f2b2ae07f38a7c409d0dde44799d10b, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Strip yourself...
+        - key: Hi, I'm glad to see you too.
+        - key: Shut up and undress.
+        - key: Hey, what has happened to you?
+        - key: "I want to fuck you. Fuck until \nyou lose consciousness."
+        - key: That sounds interesting...
+        - key: "I never said that I wanted to \nchat with you. So keep your \nmouth
+            shut and turn around \nto face me from behind."
+        - key: Yes, my master...
+        - key: Insert video
+      - languageCode: ru
+        messages:
+        - key: "\u0420\u0430\u0437\u0434\u0435\u0432\u0430\u0439\u0441\u044F\u2026"
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u044F \u0442\u043E\u0436\u0435
+            \u0440\u0430\u0434\u0430 \u0442\u0435\u0431\u044F \u0432\u0438\u0434\u0435\u0442\u044C."
+        - key: "\u0417\u0430\u0442\u043A\u043D\u0438\u0441\u044C \u0438 \u0440\u0430\u0437\u0434\u0435\u0432\u0430\u0439\u0441\u044F."
+        - key: "\u042D\u0439, \u0447\u0442\u043E \u043D\u0430 \u0442\u0435\u0431\u044F
+            \u043D\u0430\u0448\u043B\u043E?"
+        - key: "\u042F \u0445\u043E\u0447\u0443 \u0442\u0435\u0431\u044F \u0432\u044B\u0435\u0431\u0430\u0442\u044C.
+            \u041E\u0442\u0442\u0440\u0430\u0445\u0430\u0442\u044C \n\u0434\u043E
+            \u043F\u043E\u0442\u0435\u0440\u0438 \u0441\u043E\u0437\u043D\u0430\u043D\u0438\u044F."
+        - key: "\u0417\u0432\u0443\u0447\u0438\u0442 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E\u2026"
+        - key: "\u042F \u043D\u0435 \u0433\u043E\u0432\u043E\u0440\u0438\u043B, \u0447\u0442\u043E
+            \u0445\u043E\u0447\u0443 \u0441 \u0442\u043E\u0431\u043E\u0439 \u0431\u043E\u043B\u0442\u0430\u0442\u044C.
+            \n\u0422\u0430\u043A \u0447\u0442\u043E \u0437\u0430\u043A\u0440\u043E\u0439
+            \u0441\u0432\u043E\u0439 \u0440\u043E\u0442 \u0438 \n\u043F\u043E\u0432\u0435\u0440\u043D\u0438\u0441\u044C
+            \u043A\u043E \u043C\u043D\u0435 \u0437\u0430\u0434\u043D\u0438\u0446\u0435\u0439."
+        - key: "\u0414\u0430, \u043C\u043E\u0439 \u0433\u043E\u0441\u043F\u043E\u0434\u0438\u043D\u2026"
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0432\u0438\u0434\u0435\u043E"
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 0
+  isSeen: 0
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Strip yourself...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 9cc690ac1da735540a16925c347f506a, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 9cc690ac1da735540a16925c347f506a, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Strip yourself...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0420\u0430\u0437\u0434\u0435\u0432\u0430\u0439\u0441\u044F\u2026"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: Hi, I'm glad to see you too.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 0cf1c953eb122d341927fd3a01795187, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 0cf1c953eb122d341927fd3a01795187, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hi, I'm glad to see you too.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u044F \u0442\u043E\u0436\u0435
+        \u0440\u0430\u0434\u0430 \u0442\u0435\u0431\u044F \u0432\u0438\u0434\u0435\u0442\u044C."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Shut up and undress.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: cad236b05ae74e34a9f03db3b524f4c0, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: cad236b05ae74e34a9f03db3b524f4c0, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Shut up and undress.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0417\u0430\u0442\u043A\u043D\u0438\u0441\u044C \u0438 \u0440\u0430\u0437\u0434\u0435\u0432\u0430\u0439\u0441\u044F."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: Hey, what has happened to you?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 62f7816a54ae11b479bf930dc9c672e5, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 62f7816a54ae11b479bf930dc9c672e5, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hey, what has happened to you?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042D\u0439, \u0447\u0442\u043E \u043D\u0430 \u0442\u0435\u0431\u044F
+        \u043D\u0430\u0448\u043B\u043E?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "I want to fuck you. Fuck until \nyou lose consciousness."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 0f731dc496b58c249ab0ccf06aad68cd, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 0f731dc496b58c249ab0ccf06aad68cd, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I want to fuck you. Fuck until \nyou lose consciousness."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u0445\u043E\u0447\u0443 \u0442\u0435\u0431\u044F \u0432\u044B\u0435\u0431\u0430\u0442\u044C.
+        \u041E\u0442\u0442\u0440\u0430\u0445\u0430\u0442\u044C \n\u0434\u043E \u043F\u043E\u0442\u0435\u0440\u0438
+        \u0441\u043E\u0437\u043D\u0430\u043D\u0438\u044F."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: That sounds interesting...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 50e6db02ba3a0904eaaa8034437d9e88, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 50e6db02ba3a0904eaaa8034437d9e88, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: That sounds interesting...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0417\u0432\u0443\u0447\u0438\u0442 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E\u2026"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "I never said that I wanted to \nchat with you. So keep your \nmouth shut
+      and turn around \nto face me from behind."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: dcb9838755a55d84582fe19556030ae0, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: dcb9838755a55d84582fe19556030ae0, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I never said that I wanted to \nchat with you. So keep your \nmouth shut
+        and turn around \nto face me from behind."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u043D\u0435 \u0433\u043E\u0432\u043E\u0440\u0438\u043B, \u0447\u0442\u043E
+        \u0445\u043E\u0447\u0443 \u0441 \u0442\u043E\u0431\u043E\u0439 \u0431\u043E\u043B\u0442\u0430\u0442\u044C.
+        \n\u0422\u0430\u043A \u0447\u0442\u043E \u0437\u0430\u043A\u0440\u043E\u0439
+        \u0441\u0432\u043E\u0439 \u0440\u043E\u0442 \u0438 \n\u043F\u043E\u0432\u0435\u0440\u043D\u0438\u0441\u044C
+        \u043A\u043E \u043C\u043D\u0435 \u0437\u0430\u0434\u043D\u0438\u0446\u0435\u0439."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: Yes, my master...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: fcc2b53e7484d574a8f677139e2719d6, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: fcc2b53e7484d574a8f677139e2719d6, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Yes, my master...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0430, \u043C\u043E\u0439 \u0433\u043E\u0441\u043F\u043E\u0434\u0438\u043D\u2026"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: Insert video
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: 0a8fcfc94196cb043bb84ecc832d98e6, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 0abe3890407dec3459f77d9292fb74e3, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Insert video
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0432\u0438\u0434\u0435\u043E"
+      options:
+        font: {fileID: 0}

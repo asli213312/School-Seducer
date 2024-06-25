@@ -1,0 +1,1002 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Beach
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Beach
+    localizedDataList:
+    - languageCode: en
+      key: Beach
+    - languageCode: ru
+      key: "\u041F\u043B\u044F\u0436"
+    - languageCode: fr
+      key: Plage
+    - languageCode: de
+      key: Strand
+    - languageCode: it
+      key: Spiaggia
+    - languageCode: es
+      key: Playa
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: 5a8f60aa6df97b949954ea1671e71b8b, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Hello, Alison!
+        - key: Hello!
+        - key: Spent the weekend outdoors?
+        - key: Why did you decide?
+        - key: You have such a strong tan.
+        - key: "Yes, you won\u2019t believe \nwhat happened to me!"
+        - key: Tell me.
+        - key: "I went to sunbathe on a secluded beach. \nI was there alone. I was
+            lying \ntopless, wearing only panties."
+        - key: It already sounds tempting.
+        - key: Still would!
+        - key: "But the most interesting thing happened \nnext. I noticed that someone
+            was \nwatching me from the bushes. I \npretended to be asleep and waited."
+        - key: "And you weren\u2019t embarrassed \nthat someone was staring \nat
+            your bare chest?"
+        - key: "What are you doing? On the contrary, \nit turned me on) I have beautiful
+            breasts, \nso let those around me enjoy."
+        - key: You're crazy))
+        - key: "Listen further. After about 10 minutes, \na teenager, about 15 years
+            old, emerged \nfrom the bushes. Not just one, \nthere were 7 of them."
+        - key: "They surrounded me, thinking that \nI was sleeping. I heard them
+            whispering, \ndiscussing my body, my breasts..."
+        - key: "And then they stopped chatting \nand all I could hear was \nconcentrated
+            snoring."
+        - key: "After a couple of minutes, I felt \nsomething warm splash on my chest,
+            \nand one of the guys let \nout a sigh of pleasure."
+        - key: "You want to say\u2026"
+        - key: "Yes, these little assholes stood \naround me, jerking off and releasing
+            \ntheir sperm right on me!"
+        - key: Insert picture
+        - key: And you liked it, right?
+        - key: "And how! Then one of them said: \nThis bitch is pretending to \nbe
+            asleep! And she likes it!"
+        - key: "I opened my eyes and smiled at them. \nThey laughed and then left."
+        - key: "One of them said goodbye to me: \nCome next Saturday, we\u2019ll
+            \nbe glad to see you!"
+      - languageCode: ru
+        messages:
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u042D\u043B\u0438\u0441\u043E\u043D!"
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442!"
+        - key: "\u041F\u0440\u043E\u0432\u0435\u043B\u0430 \u0432\u044B\u0445\u043E\u0434\u043D\u044B\u0435
+            \u043D\u0430 \u043F\u0440\u0438\u0440\u043E\u0434\u0435?"
+        - key: "\u0421 \u0447\u0435\u0433\u043E \u0442\u044B \u0440\u0435\u0448\u0438\u043B?"
+        - key: "\u0423 \u0442\u0435\u0431\u044F \u0442\u0430\u043A\u043E\u0439 \u0441\u0438\u043B\u044C\u043D\u044B\u0439
+            \u0437\u0430\u0433\u0430\u0440."
+        - key: "\u0414\u0430, \u0442\u044B \u043D\u0435 \u043F\u043E\u0432\u0435\u0440\u0438\u0448\u044C,
+            \u0447\u0442\u043E \u0441\u043E \u043C\u043D\u043E\u0439 \u0441\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C!"
+        - key: "\u0420\u0430\u0441\u0441\u043A\u0430\u0437\u044B\u0432\u0430\u0439."
+        - key: "\u042F \u043F\u043E\u0435\u0445\u0430\u043B\u0430 \u043F\u043E\u0437\u0430\u0433\u043E\u0440\u0430\u0442\u044C
+            \u043D\u0430 \u0443\u0435\u0434\u0438\u043D\u0435\u043D\u043D\u044B\u0439
+            \n\u043F\u043B\u044F\u0436. \u042F \u0431\u044B\u043B\u0430 \u043D\u0430
+            \u043D\u0435\u043C \u043E\u0434\u043D\u0430. \u041B\u0435\u0436\u0430\u043B\u0430
+            \n\u0442\u043E\u043F\u043B\u0435\u0441\u0441, \u0432 \u043E\u0434\u043D\u0438\u0445
+            \u0442\u0440\u0443\u0441\u0438\u043A\u0430\u0445."
+        - key: "\u0417\u0432\u0443\u0447\u0438\u0442 \u0443\u0436\u0435 \u0441\u043E\u0431\u043B\u0430\u0437\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E."
+        - key: "\u0415\u0449\u0451 \u0431\u044B!"
+        - key: "\u041D\u043E \u0441\u0430\u043C\u043E\u0435 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E\u0435
+            \u0441\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C \u0434\u0430\u043B\u044C\u0448\u0435.
+            \n\u042F \u0437\u0430\u043C\u0435\u0442\u0438\u043B\u0430, \u0447\u0442\u043E
+            \u0438\u0437 \u043A\u0443\u0441\u0442\u043E\u0432 \u0437\u0430 \u043C\u043D\u043E\u0439
+            \n\u043A\u0442\u043E-\u0442\u043E \u043D\u0430\u0431\u043B\u044E\u0434\u0430\u0435\u0442.
+            \u042F \u043F\u0440\u0438\u0442\u0432\u043E\u0440\u0438\u043B\u0430\u0441\u044C
+            \n\u0441\u043F\u044F\u0449\u0435\u0439 \u0438 \u0441\u0442\u0430\u043B\u0430
+            \u0436\u0434\u0430\u0442\u044C."
+        - key: "\u0418 \u0442\u0435\u0431\u044F \u043D\u0435 \u0441\u043C\u0443\u0442\u0438\u043B\u043E,
+            \u0447\u0442\u043E \u043D\u0430 \u0442\u0432\u043E\u044E \n\u0433\u043E\u043B\u0443\u044E
+            \u0433\u0440\u0443\u0434\u044C \u043A\u0442\u043E-\u0442\u043E \u043F\u044F\u043B\u0438\u0442\u0441\u044F?"
+        - key: "\u0422\u044B \u0447\u0442\u043E? \u041D\u0430\u043E\u0431\u043E\u0440\u043E\u0442,
+            \u043C\u0435\u043D\u044F \u044D\u0442\u043E \u0437\u0430\u0432\u043E\u0434\u0438\u043B\u043E)
+            \n\u0423 \u043C\u0435\u043D\u044F \u043A\u0440\u0430\u0441\u0438\u0432\u0430\u044F
+            \u0433\u0440\u0443\u0434\u044C, \u0442\u0430\u043A \u043F\u0443\u0441\u0442\u044C
+            \n\u043E\u043A\u0440\u0443\u0436\u0430\u044E\u0449\u0438\u0435 \u043D\u0430\u0441\u043B\u0430\u0436\u0434\u0430\u044E\u0442\u0441\u044F."
+        - key: "\u0422\u044B \u0447\u0451\u043A\u043D\u0443\u0442\u0430\u044F))"
+        - key: "\u0421\u043B\u0443\u0448\u0430\u0439 \u0434\u0430\u043B\u044C\u0448\u0435.
+            \u0427\u0435\u0440\u0435\u0437 \u043C\u0438\u043D\u0443\u0442 10 \u0438\u0437
+            \n\u043A\u0443\u0441\u0442\u043E\u0432 \u0432\u044B\u0431\u0440\u0430\u043B\u0441\u044F
+            \u043F\u043E\u0434\u0440\u043E\u0441\u0442\u043E\u043A, \u043B\u0435\u0442
+            15. \n\u0414\u0430 \u043D\u0435 \u043E\u0434\u0438\u043D, \u0438\u0445
+            \u0431\u044B\u043B\u043E 7 \u0447\u0435\u043B\u043E\u0432\u0435\u043A."
+        - key: "\u041E\u043D\u0438 \u043E\u043A\u0440\u0443\u0436\u0438\u043B\u0438
+            \u043C\u0435\u043D\u044F, \u0434\u0443\u043C\u0430\u044F, \u0447\u0442\u043E
+            \u044F \u0441\u043F\u043B\u044E. \n\u042F \u0441\u043B\u044B\u0448\u0430\u043B\u0430,
+            \u043A\u0430\u043A \u043E\u043D\u0438 \u0448\u0435\u043F\u0442\u0430\u043B\u0438\u0441\u044C,
+            \n\u043E\u0431\u0441\u0443\u0436\u0434\u0430\u044F \u043C\u043E\u0451
+            \u0442\u0435\u043B\u043E, \u043C\u043E\u044E \u0433\u0440\u0443\u0434\u044C\u2026"
+        - key: "\u0410 \u043F\u043E\u0442\u043E\u043C \u043E\u043D\u0438 \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u043B\u0438
+            \u0431\u043E\u043B\u0442\u0430\u0442\u044C \u0438 \n\u0434\u043E \u043C\u0435\u043D\u044F
+            \u0434\u043E\u043D\u043E\u0441\u0438\u043B\u043E\u0441\u044C \u0442\u043E\u043B\u044C\u043A\u043E
+            \n\u0441\u043E\u0441\u0440\u0435\u0434\u043E\u0442\u043E\u0447\u0435\u043D\u043D\u043E\u0435
+            \u0441\u043E\u043F\u0435\u043D\u0438\u0435."
+        - key: "\u0427\u0435\u0440\u0435\u0437 \u043F\u0430\u0440\u0443 \u043C\u0438\u043D\u0443\u0442
+            \u044F \u043F\u043E\u0447\u0443\u0432\u0441\u0442\u0432\u043E\u0432\u0430\u043B\u0430,
+            \u0447\u0442\u043E \n\u043C\u043D\u0435 \u043D\u0430 \u0433\u0440\u0443\u0434\u044C
+            \u0431\u0440\u044B\u0437\u043D\u0443\u043B\u043E \u0447\u0442\u043E-\u0442\u043E
+            \u0442\u0451\u043F\u043B\u043E\u0435, \u0430 \n\u043E\u0434\u0438\u043D
+            \u0438\u0437 \u043F\u0430\u0440\u043D\u0435\u0439 \u0438\u0437\u0434\u0430\u043B
+            \u0432\u0437\u0434\u043E\u0445 \u043D\u0430\u0441\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F."
+        - key: "\u0422\u044B \u0445\u043E\u0447\u0435\u0448\u044C \u0441\u043A\u0430\u0437\u0430\u0442\u044C\u2026"
+        - key: "\u0414\u0430, \u044D\u0442\u0438 \u043C\u0435\u043B\u043A\u0438\u0435
+            \u0437\u0430\u0441\u0440\u0430\u043D\u0446\u044B \u0441\u0442\u043E\u044F\u043B\u0438
+            \n\u0432\u043E\u043A\u0440\u0443\u0433 \u043C\u0435\u043D\u044F, \u0434\u0440\u043E\u0447\u0438\u043B\u0438
+            \u0438 \u0441\u043F\u0443\u0441\u043A\u0430\u043B\u0438 \n\u0441\u0432\u043E\u044E
+            \u0441\u043F\u0435\u0440\u043C\u0443 \u043F\u0440\u044F\u043C\u043E \u043D\u0430
+            \u043C\u0435\u043D\u044F!"
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+        - key: "\u0418 \u0442\u0435\u0431\u0435 \u044D\u0442\u043E \u043D\u0440\u0430\u0432\u0438\u043B\u043E\u0441\u044C,
+            \u0434\u0430?"
+        - key: "\u0415\u0449\u0451 \u043A\u0430\u043A! \u041F\u043E\u0442\u043E\u043C
+            \u043E\u0434\u0438\u043D \u0438\u0437 \u043D\u0438\u0445 \u0441\u043A\u0430\u0437\u0430\u043B:
+            \n\u0414\u0430 \u044D\u0442\u0430 \u0441\u0443\u0447\u043A\u0430 \u043F\u0440\u0438\u0442\u0432\u043E\u0440\u044F\u0435\u0442\u0441\u044F,
+            \n\u0447\u0442\u043E \u0441\u043F\u0438\u0442! \u0418 \u0435\u0439 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F!"
+        - key: "\u042F \u043E\u0442\u043A\u0440\u044B\u043B\u0430 \u0433\u043B\u0430\u0437\u0430
+            \u0438 \u0443\u043B\u044B\u0431\u043D\u0443\u043B\u0430\u0441\u044C \u0438\u043C.
+            \n\u041E\u043D\u0438 \u043F\u043E\u0441\u043C\u0435\u044F\u043B\u0438\u0441\u044C,
+            \u0430 \u043F\u043E\u0442\u043E\u043C \u0443\u0448\u043B\u0438."
+        - key: "\u041E\u0434\u0438\u043D \u0438\u0437 \u043D\u0438\u0445 \u0431\u0440\u043E\u0441\u0438\u043B
+            \u043C\u043D\u0435 \u043D\u0430 \u043F\u0440\u043E\u0449\u0430\u043D\u0438\u0435:
+            \n\u041F\u0440\u0438\u0445\u043E\u0434\u0438 \u0432 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0443\u044E
+            \u0441\u0443\u0431\u0431\u043E\u0442\u0443, \n\u0431\u0443\u0434\u0435\u043C
+            \u0440\u0430\u0434\u044B \u0442\u0435\u0431\u044F \u0432\u0438\u0434\u0435\u0442\u044C!"
+      - languageCode: de
+        messages:
+        - key: Hallo, Alison!
+        - key: Hallo!
+        - key: "Hast du das Wochenende \nin der Natur verbracht?"
+        - key: Wieso denkst du das?
+        - key: "Du hast so eine starke Br\xE4une."
+        - key: "Ja, du wirst nicht glauben, \nwas mir passiert ist!"
+        - key: "Erz\xE4hl mal."
+        - key: "Ich nahm ein Sonnenbad an einem \nabgelegenen Strand. Ich war \nallein
+            dort. Ich war oben \nohne, nur in meinem Schl\xFCpfer."
+        - key: Klingt schon verlockend.
+        - key: War es auch!
+        - key: "Aber das Interessanteste passierte \ndann. Ich bemerkte, dass mich
+            \njemand aus dem Geb\xFCsch beobachtete. \nIch tat so, als ob ich \nschliefe
+            und wartete."
+        - key: "Und es hat dich nicht gest\xF6rt, \ndass jemand auf deine nackten
+            \nBr\xFCste gestarrt hat?"
+        - key: "Nein, nicht? Im Gegenteil, es \nhat mich erregt. Ich habe \nsch\xF6ne
+            Br\xFCste, also sollen \nandere sie genie\xDFen."
+        - key: Du spinnst doch.)
+        - key: "H\xF6ren Sie mir zu. Nach etwa \n10 Minuten kam ein Jugendlicher,
+            \netwa 15 Jahre alt, aus dem \nGeb\xFCsch. Nicht nur \neiner, es waren
+            7."
+        - key: "Sie umzingelten mich, weil sie \ndachten, ich schliefe. Ich h\xF6rte,
+            \nwie sie \xFCber meinen K\xF6rper, \nmeine Br\xFCste fl\xFCsterten."
+        - key: "Dann h\xF6rten sie auf zu reden und \nich h\xF6rte nur noch ein \nkonzentriertes
+            Schniefen."
+        - key: "Nach ein paar Minuten sp\xFCrte \nich etwas Warmes gegen meine \nBrust
+            platschen, und einer \nder Jungs stie\xDF einen \nSeufzer der Freude
+            aus."
+        - key: Du meinst...
+        - key: "Ja, diese kleinen Arschl\xF6cher standen \num mich herum, holten
+            sich \neinen runter und spritzten \nihr Sperma \xFCber mich!"
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+        - key: "Und es hat Ihnen \ngefallen, nicht wahr?"
+        - key: "Ja, wirklich! Dann sagte einer von \nihnen: Die Schlampe tut so,
+            als \nw\xFCrde sie schlafen! \nUnd es gef\xE4llt ihr!"
+        - key: "Ich \xF6ffnete meine Augen und \nl\xE4chelte sie an. Sie \nlachten
+            und gingen dann."
+        - key: "Einer von ihnen sagte zu mir: \nKomm n\xE4chsten Samstag wieder,
+            wir \nw\xFCrden uns freuen, dich zu sehen!"
+  <Language>k__BackingField: 0
+  isCompleted: 0
+  isUnlocked: 0
+  isSeen: 1
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Hello, Alison!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 5023b3b2575ecd4489eda851b40aca52, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 5023b3b2575ecd4489eda851b40aca52, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 2e43182b9651abb48b588e5130d3c696, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hello, Alison!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u042D\u043B\u0438\u0441\u043E\u043D!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Hallo, Alison!
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: Hello!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f74685ce7f7f4d04198f25303b0a148e, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f74685ce7f7f4d04198f25303b0a148e, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 3acc3e0b3cf5f374bbd4ba82a710c752, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hello!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Hallo!
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Spent the weekend outdoors?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: a12dcab968a2615499a6dd0da49ba24c, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a12dcab968a2615499a6dd0da49ba24c, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 3ed2dcfed9eaac54386e069fa954e1ea, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Spent the weekend outdoors?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u043E\u0432\u0435\u043B\u0430 \u0432\u044B\u0445\u043E\u0434\u043D\u044B\u0435
+        \u043D\u0430 \u043F\u0440\u0438\u0440\u043E\u0434\u0435?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hast du das Wochenende \nin der Natur verbracht?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: Why did you decide?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 99df4de39549a4044bb30a6cd7d42d1f, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 99df4de39549a4044bb30a6cd7d42d1f, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 1739f06144aa90046ac545832365820c, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Why did you decide?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0421 \u0447\u0435\u0433\u043E \u0442\u044B \u0440\u0435\u0448\u0438\u043B?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Wieso denkst du das?
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: You have such a strong tan.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e9ec2c1546206e94b9f03c26ebdc5d06, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e9ec2c1546206e94b9f03c26ebdc5d06, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 4b0a45d989c352a43ab2af7d8f09e3b9, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: You have such a strong tan.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0423 \u0442\u0435\u0431\u044F \u0442\u0430\u043A\u043E\u0439 \u0441\u0438\u043B\u044C\u043D\u044B\u0439
+        \u0437\u0430\u0433\u0430\u0440."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Du hast so eine starke Br\xE4une."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "Yes, you won\u2019t believe \nwhat happened to me!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 4d0449d63b8fdc640a6443c03d2d77b5, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 4d0449d63b8fdc640a6443c03d2d77b5, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: ef154d952cccb5642bf67a89eb46be7e, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Yes, you won\u2019t believe \nwhat happened to me!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0430, \u0442\u044B \u043D\u0435 \u043F\u043E\u0432\u0435\u0440\u0438\u0448\u044C,
+        \u0447\u0442\u043E \u0441\u043E \u043C\u043D\u043E\u0439 \u0441\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ja, du wirst nicht glauben, \nwas mir passiert ist!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Tell me.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 080ded5b5a32afe47b02b3e7e74ff1fd, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 080ded5b5a32afe47b02b3e7e74ff1fd, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 0feb4bced36b05f46a2c9615282280e4, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Tell me.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0420\u0430\u0441\u0441\u043A\u0430\u0437\u044B\u0432\u0430\u0439."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Erz\xE4hl mal."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "I went to sunbathe on a secluded beach. \nI was there alone. I was lying
+      \ntopless, wearing only panties."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 45cb2a2f8c9299246af0a2389c20214b, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 45cb2a2f8c9299246af0a2389c20214b, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: eeb6dc62caa77534f926cb2392840dfe, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I went to sunbathe on a secluded beach. \nI was there alone. I was lying
+        \ntopless, wearing only panties."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u043F\u043E\u0435\u0445\u0430\u043B\u0430 \u043F\u043E\u0437\u0430\u0433\u043E\u0440\u0430\u0442\u044C
+        \u043D\u0430 \u0443\u0435\u0434\u0438\u043D\u0435\u043D\u043D\u044B\u0439
+        \n\u043F\u043B\u044F\u0436. \u042F \u0431\u044B\u043B\u0430 \u043D\u0430
+        \u043D\u0435\u043C \u043E\u0434\u043D\u0430. \u041B\u0435\u0436\u0430\u043B\u0430
+        \n\u0442\u043E\u043F\u043B\u0435\u0441\u0441, \u0432 \u043E\u0434\u043D\u0438\u0445
+        \u0442\u0440\u0443\u0441\u0438\u043A\u0430\u0445."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ich nahm ein Sonnenbad an einem \nabgelegenen Strand. Ich war \nallein
+        dort. Ich war oben \nohne, nur in meinem Schl\xFCpfer."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: It already sounds tempting.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: afd8bf5d21a752d4abcad5e067f96937, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: afd8bf5d21a752d4abcad5e067f96937, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 0411eb96b77a9f349ac46022fd6ff1cc, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: It already sounds tempting.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0417\u0432\u0443\u0447\u0438\u0442 \u0443\u0436\u0435 \u0441\u043E\u0431\u043B\u0430\u0437\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Klingt schon verlockend.
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: Still would!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 8069912ecb71d744ab435152352bdb99, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 8069912ecb71d744ab435152352bdb99, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 3271bb7ae557d904d805e83d2c9aece5, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Still would!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0415\u0449\u0451 \u0431\u044B!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: War es auch!
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "But the most interesting thing happened \nnext. I noticed that someone
+      was \nwatching me from the bushes. I \npretended to be asleep and waited."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 2f6e758f179498d4885daf59d60e7ab5, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2f6e758f179498d4885daf59d60e7ab5, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: f6f8d91480f2ad043a644919e81809f8, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "But the most interesting thing happened \nnext. I noticed that someone
+        was \nwatching me from the bushes. I \npretended to be asleep and waited."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u043E \u0441\u0430\u043C\u043E\u0435 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E\u0435
+        \u0441\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C \u0434\u0430\u043B\u044C\u0448\u0435.
+        \n\u042F \u0437\u0430\u043C\u0435\u0442\u0438\u043B\u0430, \u0447\u0442\u043E
+        \u0438\u0437 \u043A\u0443\u0441\u0442\u043E\u0432 \u0437\u0430 \u043C\u043D\u043E\u0439
+        \n\u043A\u0442\u043E-\u0442\u043E \u043D\u0430\u0431\u043B\u044E\u0434\u0430\u0435\u0442.
+        \u042F \u043F\u0440\u0438\u0442\u0432\u043E\u0440\u0438\u043B\u0430\u0441\u044C
+        \n\u0441\u043F\u044F\u0449\u0435\u0439 \u0438 \u0441\u0442\u0430\u043B\u0430
+        \u0436\u0434\u0430\u0442\u044C."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Aber das Interessanteste passierte \ndann. Ich bemerkte, dass mich \njemand
+        aus dem Geb\xFCsch beobachtete. \nIch tat so, als ob ich \nschliefe und wartete."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "And you weren\u2019t embarrassed \nthat someone was staring \nat your bare
+      chest?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 5f8f308e334d7234285dad3abd7aaba2, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 5f8f308e334d7234285dad3abd7aaba2, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: eadf39cb7bf00db42b46f7c18ac41d31, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "And you weren\u2019t embarrassed \nthat someone was staring \nat your
+        bare chest?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0418 \u0442\u0435\u0431\u044F \u043D\u0435 \u0441\u043C\u0443\u0442\u0438\u043B\u043E,
+        \u0447\u0442\u043E \u043D\u0430 \u0442\u0432\u043E\u044E \n\u0433\u043E\u043B\u0443\u044E
+        \u0433\u0440\u0443\u0434\u044C \u043A\u0442\u043E-\u0442\u043E \u043F\u044F\u043B\u0438\u0442\u0441\u044F?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Und es hat dich nicht gest\xF6rt, \ndass jemand auf deine nackten \nBr\xFCste
+        gestarrt hat?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "What are you doing? On the contrary, \nit turned me on) I have beautiful
+      breasts, \nso let those around me enjoy."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c5d7ca09140c3b8488d0dac96c26e485, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c5d7ca09140c3b8488d0dac96c26e485, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 5b44df523e24d5e4790d280c80be24d0, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "What are you doing? On the contrary, \nit turned me on) I have beautiful
+        breasts, \nso let those around me enjoy."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u044B \u0447\u0442\u043E? \u041D\u0430\u043E\u0431\u043E\u0440\u043E\u0442,
+        \u043C\u0435\u043D\u044F \u044D\u0442\u043E \u0437\u0430\u0432\u043E\u0434\u0438\u043B\u043E)
+        \n\u0423 \u043C\u0435\u043D\u044F \u043A\u0440\u0430\u0441\u0438\u0432\u0430\u044F
+        \u0433\u0440\u0443\u0434\u044C, \u0442\u0430\u043A \u043F\u0443\u0441\u0442\u044C
+        \n\u043E\u043A\u0440\u0443\u0436\u0430\u044E\u0449\u0438\u0435 \u043D\u0430\u0441\u043B\u0430\u0436\u0434\u0430\u044E\u0442\u0441\u044F."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Nein, nicht? Im Gegenteil, es \nhat mich erregt. Ich habe \nsch\xF6ne
+        Br\xFCste, also sollen \nandere sie genie\xDFen."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: You're crazy))
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 8375793b0634ed744ac5883f07f79fd2, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 8375793b0634ed744ac5883f07f79fd2, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 9c66b40345b77b14283fc0b534d2989d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: You're crazy))
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u044B \u0447\u0451\u043A\u043D\u0443\u0442\u0430\u044F))"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Du spinnst doch.)
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "Listen further. After about 10 minutes, \na teenager, about 15 years old,
+      emerged \nfrom the bushes. Not just one, \nthere were 7 of them."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c8ab99858b9dd7f48bab776fe863f6e5, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c8ab99858b9dd7f48bab776fe863f6e5, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 83b694dcb6715bf42b53acaf2f7883d8, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Listen further. After about 10 minutes, \na teenager, about 15 years
+        old, emerged \nfrom the bushes. Not just one, \nthere were 7 of them."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0421\u043B\u0443\u0448\u0430\u0439 \u0434\u0430\u043B\u044C\u0448\u0435.
+        \u0427\u0435\u0440\u0435\u0437 \u043C\u0438\u043D\u0443\u0442 10 \u0438\u0437
+        \n\u043A\u0443\u0441\u0442\u043E\u0432 \u0432\u044B\u0431\u0440\u0430\u043B\u0441\u044F
+        \u043F\u043E\u0434\u0440\u043E\u0441\u0442\u043E\u043A, \u043B\u0435\u0442
+        15. \n\u0414\u0430 \u043D\u0435 \u043E\u0434\u0438\u043D, \u0438\u0445 \u0431\u044B\u043B\u043E
+        7 \u0447\u0435\u043B\u043E\u0432\u0435\u043A."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "H\xF6ren Sie mir zu. Nach etwa \n10 Minuten kam ein Jugendlicher, \netwa
+        15 Jahre alt, aus dem \nGeb\xFCsch. Nicht nur \neiner, es waren 7."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "They surrounded me, thinking that \nI was sleeping. I heard them whispering,
+      \ndiscussing my body, my breasts..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 3b3fc2d18759efb408e8c737f2a46ea2, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 3b3fc2d18759efb408e8c737f2a46ea2, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 5230a81010f23be408192c6e20540630, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "They surrounded me, thinking that \nI was sleeping. I heard them whispering,
+        \ndiscussing my body, my breasts..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u043D\u0438 \u043E\u043A\u0440\u0443\u0436\u0438\u043B\u0438 \u043C\u0435\u043D\u044F,
+        \u0434\u0443\u043C\u0430\u044F, \u0447\u0442\u043E \u044F \u0441\u043F\u043B\u044E.
+        \n\u042F \u0441\u043B\u044B\u0448\u0430\u043B\u0430, \u043A\u0430\u043A \u043E\u043D\u0438
+        \u0448\u0435\u043F\u0442\u0430\u043B\u0438\u0441\u044C, \n\u043E\u0431\u0441\u0443\u0436\u0434\u0430\u044F
+        \u043C\u043E\u0451 \u0442\u0435\u043B\u043E, \u043C\u043E\u044E \u0433\u0440\u0443\u0434\u044C\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Sie umzingelten mich, weil sie \ndachten, ich schliefe. Ich h\xF6rte,
+        \nwie sie \xFCber meinen K\xF6rper, \nmeine Br\xFCste fl\xFCsterten."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "And then they stopped chatting \nand all I could hear was \nconcentrated
+      snoring."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 2bcb0a2cca4040948bad5e921ab59c99, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2bcb0a2cca4040948bad5e921ab59c99, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 72734ebb33081354db63a5e821387c73, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "And then they stopped chatting \nand all I could hear was \nconcentrated
+        snoring."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0410 \u043F\u043E\u0442\u043E\u043C \u043E\u043D\u0438 \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u043B\u0438
+        \u0431\u043E\u043B\u0442\u0430\u0442\u044C \u0438 \n\u0434\u043E \u043C\u0435\u043D\u044F
+        \u0434\u043E\u043D\u043E\u0441\u0438\u043B\u043E\u0441\u044C \u0442\u043E\u043B\u044C\u043A\u043E
+        \n\u0441\u043E\u0441\u0440\u0435\u0434\u043E\u0442\u043E\u0447\u0435\u043D\u043D\u043E\u0435
+        \u0441\u043E\u043F\u0435\u043D\u0438\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Dann h\xF6rten sie auf zu reden und \nich h\xF6rte nur noch ein \nkonzentriertes
+        Schniefen."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "After a couple of minutes, I felt \nsomething warm splash on my chest,
+      \nand one of the guys let \nout a sigh of pleasure."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: ed48156d8b523d8498180bf0e55bd18c, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: ed48156d8b523d8498180bf0e55bd18c, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: c3c38a573d237f74097e690ee34d95fe, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "After a couple of minutes, I felt \nsomething warm splash on my chest,
+        \nand one of the guys let \nout a sigh of pleasure."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0427\u0435\u0440\u0435\u0437 \u043F\u0430\u0440\u0443 \u043C\u0438\u043D\u0443\u0442
+        \u044F \u043F\u043E\u0447\u0443\u0432\u0441\u0442\u0432\u043E\u0432\u0430\u043B\u0430,
+        \u0447\u0442\u043E \n\u043C\u043D\u0435 \u043D\u0430 \u0433\u0440\u0443\u0434\u044C
+        \u0431\u0440\u044B\u0437\u043D\u0443\u043B\u043E \u0447\u0442\u043E-\u0442\u043E
+        \u0442\u0451\u043F\u043B\u043E\u0435, \u0430 \n\u043E\u0434\u0438\u043D \u0438\u0437
+        \u043F\u0430\u0440\u043D\u0435\u0439 \u0438\u0437\u0434\u0430\u043B \u0432\u0437\u0434\u043E\u0445
+        \u043D\u0430\u0441\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Nach ein paar Minuten sp\xFCrte \nich etwas Warmes gegen meine \nBrust
+        platschen, und einer \nder Jungs stie\xDF einen \nSeufzer der Freude aus."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "You want to say\u2026"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 9c969345387da3f42a9cbd60e3efdabf, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 9c969345387da3f42a9cbd60e3efdabf, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: dbeb4edc0092b1e4fb7e864010c82945, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "You want to say\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u044B \u0445\u043E\u0447\u0435\u0448\u044C \u0441\u043A\u0430\u0437\u0430\u0442\u044C\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Du meinst...
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "Yes, these little assholes stood \naround me, jerking off and releasing
+      \ntheir sperm right on me!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 0a74bd3be87c7934f841c13aa4fb0428, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 0a74bd3be87c7934f841c13aa4fb0428, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 150e6c805a8147c41a5170d998dbdcaf, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Yes, these little assholes stood \naround me, jerking off and releasing
+        \ntheir sperm right on me!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0430, \u044D\u0442\u0438 \u043C\u0435\u043B\u043A\u0438\u0435
+        \u0437\u0430\u0441\u0440\u0430\u043D\u0446\u044B \u0441\u0442\u043E\u044F\u043B\u0438
+        \n\u0432\u043E\u043A\u0440\u0443\u0433 \u043C\u0435\u043D\u044F, \u0434\u0440\u043E\u0447\u0438\u043B\u0438
+        \u0438 \u0441\u043F\u0443\u0441\u043A\u0430\u043B\u0438 \n\u0441\u0432\u043E\u044E
+        \u0441\u043F\u0435\u0440\u043C\u0443 \u043F\u0440\u044F\u043C\u043E \u043D\u0430
+        \u043C\u0435\u043D\u044F!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ja, diese kleinen Arschl\xF6cher standen \num mich herum, holten sich
+        \neinen runter und spritzten \nihr Sperma \xFCber mich!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: Insert picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: 2f225a76ab917da459455fa743c7c8ef, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 37e1ebb173288a34c9768a6eac236ffe, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: And you liked it, right?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 09857edd20f2e264292cccba67108ea5, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 09857edd20f2e264292cccba67108ea5, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 292a287f0fe283c498dbc48ec11802b5, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: And you liked it, right?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0418 \u0442\u0435\u0431\u0435 \u044D\u0442\u043E \u043D\u0440\u0430\u0432\u0438\u043B\u043E\u0441\u044C,
+        \u0434\u0430?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Und es hat Ihnen \ngefallen, nicht wahr?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "And how! Then one of them said: \nThis bitch is pretending to \nbe asleep!
+      And she likes it!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 0e3358aa6fc0f3c42abe4cf0a14f6a80, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 0e3358aa6fc0f3c42abe4cf0a14f6a80, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 6c5cd6b6469d9c74db06a510571c2872, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "And how! Then one of them said: \nThis bitch is pretending to \nbe asleep!
+        And she likes it!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0415\u0449\u0451 \u043A\u0430\u043A! \u041F\u043E\u0442\u043E\u043C
+        \u043E\u0434\u0438\u043D \u0438\u0437 \u043D\u0438\u0445 \u0441\u043A\u0430\u0437\u0430\u043B:
+        \n\u0414\u0430 \u044D\u0442\u0430 \u0441\u0443\u0447\u043A\u0430 \u043F\u0440\u0438\u0442\u0432\u043E\u0440\u044F\u0435\u0442\u0441\u044F,
+        \n\u0447\u0442\u043E \u0441\u043F\u0438\u0442! \u0418 \u0435\u0439 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ja, wirklich! Dann sagte einer von \nihnen: Die Schlampe tut so, als
+        \nw\xFCrde sie schlafen! \nUnd es gef\xE4llt ihr!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "I opened my eyes and smiled at them. \nThey laughed and then left."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 828c3ceb68af7c2409e1fa30def70824, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 828c3ceb68af7c2409e1fa30def70824, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 3a676b6e770509f43880cfc743ec3992, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I opened my eyes and smiled at them. \nThey laughed and then left."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u043E\u0442\u043A\u0440\u044B\u043B\u0430 \u0433\u043B\u0430\u0437\u0430
+        \u0438 \u0443\u043B\u044B\u0431\u043D\u0443\u043B\u0430\u0441\u044C \u0438\u043C.
+        \n\u041E\u043D\u0438 \u043F\u043E\u0441\u043C\u0435\u044F\u043B\u0438\u0441\u044C,
+        \u0430 \u043F\u043E\u0442\u043E\u043C \u0443\u0448\u043B\u0438."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ich \xF6ffnete meine Augen und \nl\xE4chelte sie an. Sie \nlachten und
+        gingen dann."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "One of them said goodbye to me: \nCome next Saturday, we\u2019ll \nbe glad
+      to see you!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: cc1c000b0e0039f42880efa65caf2be6, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: cc1c000b0e0039f42880efa65caf2be6, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 2af562c81908c2b4db074a8bae94c882, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "One of them said goodbye to me: \nCome next Saturday, we\u2019ll \nbe
+        glad to see you!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u0434\u0438\u043D \u0438\u0437 \u043D\u0438\u0445 \u0431\u0440\u043E\u0441\u0438\u043B
+        \u043C\u043D\u0435 \u043D\u0430 \u043F\u0440\u043E\u0449\u0430\u043D\u0438\u0435:
+        \n\u041F\u0440\u0438\u0445\u043E\u0434\u0438 \u0432 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0443\u044E
+        \u0441\u0443\u0431\u0431\u043E\u0442\u0443, \n\u0431\u0443\u0434\u0435\u043C
+        \u0440\u0430\u0434\u044B \u0442\u0435\u0431\u044F \u0432\u0438\u0434\u0435\u0442\u044C!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Einer von ihnen sagte zu mir: \nKomm n\xE4chsten Samstag wieder, wir
+        \nw\xFCrden uns freuen, dich zu sehen!"
+      options:
+        font: {fileID: 0}

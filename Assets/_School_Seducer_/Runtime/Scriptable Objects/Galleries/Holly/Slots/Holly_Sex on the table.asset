@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27dd00748590468e9d21d563de25f324, type: 3}
+  m_Name: Holly_Sex on the table
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 6a20a6b1a1fbdc64b83fbca52f56e453, type: 3}
+  animation: {fileID: 11400000, guid: 5ceecc421fece834cbfa78fdc2cb89e0, type: 2}
+  Section: 2
+  NeedInGallery: 1
+  showDebugParameters: 0
+  AddedInGallery: 1

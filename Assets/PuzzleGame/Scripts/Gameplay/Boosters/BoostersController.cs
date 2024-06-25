@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using GameAnalyticsSDK;
+using UnityEngine;
 
 namespace PuzzleGame.Gameplay.Boosters
 {
@@ -77,14 +79,21 @@ namespace PuzzleGame.Gameplay.Boosters
         {
             for (int i = 0; i < preset.CountToBuy; i++)
                 UserProgress.Current.OnItemPurchased(ItemName(preset));
-        
+            
+            Debug.Log("Was purchased booster: " + preset.name);
             BoosterPurchased.Invoke(preset);
         }
 
         public void OnBoosterProceeded(bool succeed)
         {
-            if(succeed)
+            Debug.Log("Was try proceed booster");
+
+            if (succeed)
+            {
                 RemoveBoosterPurchase(currentBooster);
+                Debug.Log("Booster " + currentBooster + " succeed");
+                GameAnalytics.NewDesignEvent("dice_booster_" + currentBooster.name);
+            }
         
             BoosterProceeded.Invoke(currentBooster, succeed);
         }

@@ -19,7 +19,21 @@ MonoBehaviour:
     localizedDataList: []
   - fieldLabel: _currentLanguage
     localizedDataList: []
-  costExp: 40
+  - fieldLabel: Under table
+    localizedDataList:
+    - languageCode: en
+      key: Under table
+    - languageCode: ru
+      key: "\u041F\u043E\u0434 \u0441\u0442\u043E\u043B\u043E\u043C"
+    - languageCode: de
+      key: Untertisch
+    - languageCode: fr
+      key: Sous la table
+    - languageCode: sp
+      key: Debajo de la mesa
+    - languageCode: it
+      key: Sotto il tavolo
+  costExp: 30
   iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
   localizator:
     translationJson: {fileID: 4900000, guid: f5bbecdfb5e93b9408e112672da03330, type: 3}
@@ -104,9 +118,38 @@ MonoBehaviour:
             \n\u043B\u0435\u043A\u0446\u0438\u0438 \u0432 \u0442\u0432\u043E\u0435\u0439
             \u0441\u043F\u0435\u0440\u043C\u0435."
         - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      - languageCode: de
+        messages:
+        - key: Oh, hallo!
+        - key: "Hallo, Alison. Habe nicht erwartet, \ndich in der Mathestunde zu
+            treffen."
+        - key: "Du dachtest wohl, ich sei \nnur dazu da, meinen \nK\xF6rper zu pr\xE4sentieren?"
+        - key: Nein, das wollte ich nicht sagen.
+        - key: Okay, setz dich ruhig neben mich.
+        - key: Danke.
+        - key: "Um ehrlich zu sein, interessiere \nich mich nicht besonders f\xFCr
+            \nMathematik. Aber der Professor \nzieht mich total an."
+        - key: Zieht dich an?
+        - key: "Ja! Die Vorlesung hat gerade erst \nbegonnen, und ich bin schon ganz
+            \naufgeregt... Ich wei\xDF nicht, \nwarum, aber seine Stimme, \nseine
+            Art zu unterrichten..."
+        - key: Hey... Was machst du da?
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+        - key: Magst du es nicht? Bist du dagegen?
+        - key: "Wir sind doch in einer Vorlesung, \nwir k\xF6nnten erwischt werden."
+        - key: "Wir werden nicht erwischt, wenn \ndu ruhig sitzen bleibst... \nEntspann
+            dich und genie\xDF es."
+        - key: "Verdammt, Alison, dr\xFCck ihn fester!"
+        - key: "Sprich leiser, sonst werden \nwir wirklich erwischt."
+        - key: Oh, ja! Ich werde kommen!
+        - key: "Das war wundersch\xF6n."
+        - key: "Ich glaube, ich habe meine Servietten \nzu Hause vergessen... Ich
+            werde \nden Rest der Vorlesung in \ndeiner Wichse sitzen m\xFCssen."
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
   <Language>k__BackingField: 0
-  isCompleted: 1
-  isUnlocked: 1
+  isCompleted: 0
+  isUnlocked: 0
+  isSeen: 0
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: 
@@ -119,181 +162,590 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 670dd3e664826044c9b3b60b25753745, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 39418d3da9718cf4bb00f69172446d24, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 39418d3da9718cf4bb00f69172446d24, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: dc706ed2d40efb9449a288d15f815c63, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Yo, what's up!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E, \u043F\u0440\u0438\u0432\u0435\u0442!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Oh, hallo!
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Hey, Alison. Didn't think \nyou'd be in this math class."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 0ef8b3e65221351479df5888a1e2e969, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 020fbfaa82c451a43bd4380990314f4f, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 020fbfaa82c451a43bd4380990314f4f, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 2fca81faea582f34ca510af69b9b24de, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Hey, Alison. Didn't think \nyou'd be in this math class."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u042D\u043B\u0438\u0441\u043E\u043D.
+        \u041D\u0435 \u0434\u0443\u043C\u0430\u043B \u0442\u0435\u0431\u044F \n\u0432\u0441\u0442\u0440\u0435\u0442\u0438\u0442\u044C
+        \u043D\u0430 \u043B\u0435\u043A\u0446\u0438\u0438 \u043F\u043E \u043C\u0430\u0442\u0435\u043C\u0430\u0442\u0438\u043A\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hallo, Alison. Habe nicht erwartet, \ndich in der Mathestunde zu treffen."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: Thought I was just a body, huh?
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 293da447b91e2de42a3103e75918a119, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c5e967fda92fd894fb7ef5484b21ee96, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c5e967fda92fd894fb7ef5484b21ee96, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: f5d5c35abf1e5074aa9c9e6831b9284c, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Thought I was just a body, huh?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u044B \u0434\u0443\u043C\u0430\u043B, \u0447\u0442\u043E \u044F
+        \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u0430 \n\u0442\u043E\u043B\u044C\u043A\u043E
+        \u0441\u0432\u0435\u0442\u0438\u0442\u044C \u0441\u0432\u043E\u0438\u043C
+        \u0442\u0435\u043B\u043E\u043C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Du dachtest wohl, ich sei \nnur dazu da, meinen \nK\xF6rper zu pr\xE4sentieren?"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Nah, that's not what I meant.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 415592c8183a0c148b7c013b7b405982, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 0a0f6cf73237f71489252d5562770008, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 0a0f6cf73237f71489252d5562770008, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: d76832bc617cbe14285b91e0514df8f3, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Nah, that's not what I meant.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0435\u0442, \u044F \u043D\u0435 \u044D\u0442\u043E \u0445\u043E\u0442\u0435\u043B
+        \u0441\u043A\u0430\u0437\u0430\u0442\u044C."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Nein, das wollte ich nicht sagen.
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: Anyway, you can sit next to me.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: c2afc0ec7fb59c446a41533976330e48, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 4e0f27316f2eb5f428c97108e9cc5567, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 4e0f27316f2eb5f428c97108e9cc5567, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 53d9c29a25ac8624da359ed35220d234, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Anyway, you can sit next to me.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041B\u0430\u0434\u043D\u043E, \u043C\u043E\u0436\u0435\u0448\u044C
+        \u0441\u0435\u0441\u0442\u044C \u0440\u044F\u0434\u043E\u043C."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Okay, setz dich ruhig neben mich.
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Thanks.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: eb97cc16c36c2bb499920257b6fcd996, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 50e77833eef234c4f94e2e941daef051, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 50e77833eef234c4f94e2e941daef051, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: a9126bf5a5d318b4a94eac97fb211e96, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Thanks.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Danke.
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: "Honestly, math isn't really my thing. \nBut I'm totally crushing on the
       professor."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 3740b623c857105428dcb4e58e7795c2, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 9d05531a38e7baa4f9a45cf1dc13d1d0, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 9d05531a38e7baa4f9a45cf1dc13d1d0, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: fe4c515c91b0f66469a68047e0e12455, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Honestly, math isn't really my thing. \nBut I'm totally crushing on the
+        professor."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0415\u0441\u043B\u0438 \u0447\u0435\u0441\u0442\u043D\u043E, \u044F
+        \u0438 \u043F\u0440\u0430\u0432\u0434\u0430 \u043D\u0435 \u043E\u0447\u0435\u043D\u044C
+        \n\u0438\u043D\u0442\u0435\u0440\u0435\u0441\u0443\u044E\u0441\u044C \u043C\u0430\u0442\u0435\u043C\u0430\u0442\u0438\u043A\u043E\u0439.
+        \u041D\u043E \u043C\u0435\u043D\u044F \n\u043E\u0447\u0435\u043D\u044C \u0437\u0430\u0432\u043E\u0434\u0438\u0442
+        \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Um ehrlich zu sein, interessiere \nich mich nicht besonders f\xFCr \nMathematik.
+        Aber der Professor \nzieht mich total an."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Crushing on him?
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 758c09a87d6d8b7498c8146974aa3b57, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 4f91ccd043a9ae94ab856f7fed4aa9ea, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 4f91ccd043a9ae94ab856f7fed4aa9ea, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 01ebf8e9836df304e95da032d3e65759, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Crushing on him?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0417\u0430\u0432\u043E\u0434\u0438\u0442?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Zieht dich an?
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: "Yeah! The lecture just started, \nand I'm already swooning... Don't know
       \nwhy, but his voice, the way he lectures..."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 68718040f7d81d24d92508644b2444f1, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: ddce026d597d5904f8feb3fd03edca8b, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: ddce026d597d5904f8feb3fd03edca8b, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: d7d9b94a38c90b6478c9c33d58fc4105, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Yeah! The lecture just started, \nand I'm already swooning... Don't know
+        \nwhy, but his voice, the way he lectures..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0430! \u041B\u0435\u043A\u0446\u0438\u044F \u0442\u043E\u043B\u044C\u043A\u043E
+        \u043D\u0430\u0447\u0430\u043B\u0430\u0441\u044C, \u0430 \u044F \u0443\u0436\u0435
+        \n\u0432\u0441\u044F \u0442\u0435\u043A\u0443\u2026 \u041D\u0435 \u0437\u043D\u0430\u044E
+        \u043F\u043E\u0447\u0435\u043C\u0443, \u043D\u043E \u0435\u0433\u043E \n\u0433\u043E\u043B\u043E\u0441,
+        \u0435\u0433\u043E \u043C\u0430\u043D\u0435\u0440\u0430 \u0432\u0435\u0441\u0442\u0438
+        \u043B\u0435\u043A\u0446\u0438\u044E\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ja! Die Vorlesung hat gerade erst \nbegonnen, und ich bin schon ganz
+        \naufgeregt... Ich wei\xDF nicht, \nwarum, aber seine Stimme, \nseine Art
+        zu unterrichten..."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Hey... What are you doing?
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 10830a65c8e01f14f98b5858c5f3134b, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 70ccc214c15c77f4cb0e9ab9223d2367, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 70ccc214c15c77f4cb0e9ab9223d2367, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 2e90b9a38b611e14bbedb7aed16b1c8b, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hey... What are you doing?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042D\u0439\u2026 \u0427\u0442\u043E \u0442\u044B \u0434\u0435\u043B\u0430\u0435\u0448\u044C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Hey... Was machst du da?
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: Insert picture
     optionalData:
       GallerySlot: {fileID: 11400000, guid: 295d33c3aeb1bcf4fbe8ed9fe34ca7bd, type: 2}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: dccceef6535df06499f3692ba4467769, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips: []
-    completed: 1
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: "And you don't like it? \nAre you against it?"
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 42ed301b0ca81ba4dbed5ae60bf81651, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: bd70a0c1cee308b418894994284ad949, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: bd70a0c1cee308b418894994284ad949, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 45d0abaf3ce31d448a39eb0a167d87e5, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "And you don't like it? \nAre you against it?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0410 \u0442\u0435\u0431\u0435 \u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F?
+        \u0422\u044B \u043F\u0440\u043E\u0442\u0438\u0432?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Magst du es nicht? Bist du dagegen?
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: We're in class, we might get caught.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: d1ea45c35a0bcc34781460c9ea871b2d, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 649fa5c9dfcddb44c82e6c647fafe348, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 649fa5c9dfcddb44c82e6c647fafe348, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 1799f27385e4dd743bbf0179a6916bdf, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: We're in class, we might get caught.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041C\u044B \u0436\u0435 \u043D\u0430 \u043B\u0435\u043A\u0446\u0438\u0438,
+        \u043D\u0430\u0441 \u043C\u043E\u0433\u0443\u0442 \u0437\u0430\u0441\u0442\u0443\u043A\u0430\u0442\u044C."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Wir sind doch in einer Vorlesung, \nwir k\xF6nnten erwischt werden."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: "We won't get caught if you \nstay calm... Relax and enjoy it."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 282f783095ea7db418efd51ba9da4ba5, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f0bcee827ddd1eb46a6ac1ef0624365e, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f0bcee827ddd1eb46a6ac1ef0624365e, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 263d4c078c26f154f8de7bf545a113a4, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "We won't get caught if you \nstay calm... Relax and enjoy it."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0435 \u0437\u0430\u0441\u0442\u0443\u043A\u0430\u044E\u0442,
+        \u0435\u0441\u043B\u0438 \u0431\u0443\u0434\u0435\u0448\u044C \u0441\u0438\u0434\u0435\u0442\u044C
+        \n\u0441\u043F\u043E\u043A\u043E\u0439\u043D\u043E\u2026 \u0420\u0430\u0441\u0441\u043B\u0430\u0431\u044C\u0441\u044F
+        \u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u0439 \u0443\u0434\u043E\u0432\u043E\u043B\u044C\u0441\u0442\u0432\u0438\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Wir werden nicht erwischt, wenn \ndu ruhig sitzen bleibst... \nEntspann
+        dich und genie\xDF es."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Damn it, Alison, squeeze it tighter!
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: ab8f3022f825cac48bda8a2bfaaf1f5d, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: ab8f3022f825cac48bda8a2bfaaf1f5d, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: f312b228fb7264c478ccd16b07def075, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Damn it, Alison, squeeze it tighter!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u043E\u0442 \u0447\u0451\u0440\u0442, \u042D\u043B\u0438\u0441\u043E\u043D,
+        \u0441\u043E\u0436\u043C\u0438 \u0435\u0433\u043E \u0441\u0438\u043B\u044C\u043D\u0435\u0435!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Verdammt, Alison, dr\xFCck ihn fester!"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: "Speak softer, or we \nreally might get caught."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: d0c9099b131a4ed449ed5eb942db3e4a, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: a2e075ad8906b4442a256fc74141942a, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a2e075ad8906b4442a256fc74141942a, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 4f4f9eb893a9dd64bb969181ac4532c8, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Speak softer, or we \nreally might get caught."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0413\u043E\u0432\u043E\u0440\u0438 \u0442\u0438\u0448\u0435, \u0430
+        \u0442\u043E \u0438 \u043F\u0440\u0430\u0432\u0434\u0430 \u043D\u0430\u0441
+        \u0437\u0430\u0441\u0442\u0443\u043A\u0430\u044E\u0442."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Sprich leiser, sonst werden \nwir wirklich erwischt."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh yeah! I'm almost there!
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 9a622df70283ea244af3440a2b5fae37, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 3c55352e8ae329646b1f42e6bda392fa, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 3c55352e8ae329646b1f42e6bda392fa, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 4988f0d56151ece44bf5be5f1c00c4c0, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Oh yeah! I'm almost there!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E \u0434\u0430! \u042F \u0441\u0435\u0439\u0447\u0430\u0441 \u043A\u043E\u043D\u0447\u0443!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Oh, ja! Ich werde kommen!
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: That was amazing!
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 37e1ebb173288a34c9768a6eac236ffe, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 99c079b08c7246e45a66853304678ee2, type: 3}
     <Sender>k__BackingField: 1
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 99c079b08c7246e45a66853304678ee2, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 057deb5c7527a484a866939752626c2e, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: That was amazing!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042D\u0442\u043E \u0431\u044B\u043B\u043E \u043F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u043E!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Das war wundersch\xF6n."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: "And I seem to have forgotten the \nnapkins at home... I\u2019ll have \nto
       sit like this until the end \nof the lecture in your sperm."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
-    AudioMsg: {fileID: 8300000, guid: 37e1ebb173288a34c9768a6eac236ffe, type: 3}
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e44b19d94a1dd334e8d5c6a3c5c8fd4f, type: 3}
     <Sender>k__BackingField: 0
-    localizedAudioClips: []
-    completed: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e44b19d94a1dd334e8d5c6a3c5c8fd4f, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 46cfe23fabddf574a8693736e398fa5f, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "And I seem to have forgotten the \nnapkins at home... I\u2019ll have
+        \nto sit like this until the end \nof the lecture in your sperm."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0410 \u044F, \u043A\u0430\u0436\u0435\u0442\u0441\u044F, \u0437\u0430\u0431\u044B\u043B\u0430
+        \u0441\u0430\u043B\u0444\u0435\u0442\u043A\u0438 \u0434\u043E\u043C\u0430\u2026
+        \n\u041F\u0440\u0438\u0434\u0451\u0442\u0441\u044F \u0442\u0430\u043A \u0438
+        \u0441\u0438\u0434\u0435\u0442\u044C \u0434\u043E \u043A\u043E\u043D\u0446\u0430
+        \n\u043B\u0435\u043A\u0446\u0438\u0438 \u0432 \u0442\u0432\u043E\u0435\u0439
+        \u0441\u043F\u0435\u0440\u043C\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ich glaube, ich habe meine Servietten \nzu Hause vergessen... Ich werde
+        \nden Rest der Vorlesung in \ndeiner Wichse sitzen m\xFCssen."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
     Msg: Insert picture
     optionalData:
       GallerySlot: {fileID: 11400000, guid: cd5a01adc23db9a428d9b4cd66237be1, type: 2}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 37e1ebb173288a34c9768a6eac236ffe, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips: []
-    completed: 1
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}

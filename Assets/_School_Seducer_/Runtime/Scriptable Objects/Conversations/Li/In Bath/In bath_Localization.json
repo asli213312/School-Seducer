@@ -1,0 +1,98 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hi! I've come up with my next wish."
+                },
+                {
+                    "key": "I thought you'd write sooner."
+                },
+                {
+                    "key": "Drowning in studies."
+                },
+                {
+                    "key": "And what's your wish this time?"
+                },
+                {
+                    "key": "Go on a date with me."
+                },
+                {
+                    "key": "Wow, unexpected. And when?"
+                },
+                {
+                    "key": "Right now."
+                },
+                {
+                    "key": "Oh, sorry, dear, but I physically \ncan't right now."
+                },
+                {
+                    "key": "Are you refusing to fulfill my wish?"
+                },
+                {
+                    "key": "picture"
+                },
+                {
+                    "key": "Maybe this will do?"
+                },
+                {
+                    "key": "Wow! How come the water doesn't \nboil with someone as hot as you?"
+                },
+                {
+                    "key": "Does that mean there \nare 8 wishes left?"
+                },
+                {
+                    "key": "Alright, this time you got lucky, \nthere are 8 wishes left."
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Привет! Я придумал свое следующее желание."
+                },
+                {
+                    "key": "Я думала, ты раньше напишешь."
+                },
+                {
+                    "key": "Погряз в учебе."
+                },
+                {
+                    "key": "И каково твое желание на этот раз?"
+                },
+                {
+                    "key": "Сходи со мной на свидание."
+                },
+                {
+                    "key": "Ого, неожиданно. И когда?"
+                },
+                {
+                    "key": "Прямо сейчас."
+                },
+                {
+                    "key": "О, прости, дорогой, но сейчас \nя физически не могу."
+                },
+                {
+                    "key": "Ты отказываешься выполнить мое желание?"
+                },
+                {
+                    "key": "картинка"
+                },
+                {
+                    "key": "Может это подойдет?"
+                },
+                {
+                    "key": "Ого! Как вода не закипает \nот такой горячей, как ты?"
+                },
+                {
+                    "key": "Это значит, что осталось 8 желаний?"
+                },
+                {
+                    "key": "Ладно, на этот раз тебе повезло, \nосталось 8 желаний."
+                }
+            ]
+        }
+    ]
+}

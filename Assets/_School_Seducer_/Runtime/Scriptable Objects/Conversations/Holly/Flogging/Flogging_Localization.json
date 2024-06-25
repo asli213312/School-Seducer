@@ -1,0 +1,145 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "It's been a long time since \nwe last saw each other, huh?"
+                },
+                {
+                    "key": "I was horribly busy. Getting \nready for the exam."
+                },
+                {
+                    "key": "Oh, can I upset you?"
+                },
+                {
+                    "key": "Of course... Congratulate me \non how I botched the exam."
+                },
+                {
+                    "key": "Oh, I feel sorry for you..."
+                },
+                {
+                    "key": "Retake in a month."
+                },
+                {
+                    "key": "I sympathize with you. I am \nconfident that this time you \nwill be able to pass it!"
+                },
+                {
+                    "key": "What are you doing? Are you \ntrying to comfort me?"
+                },
+                {
+                    "key": "Okay... And I try to cheer you up."
+                },
+                {
+                    "key": "Punish me! I didn't prepare well, \nI didn't use enough time for \nstudying, I deserve punishment."
+                },
+                {
+                    "key": "I thought..."
+                },
+                {
+                    "key": "Punish me, I deserve this."
+                },
+                {
+                    "key": "You are right, you are a bad \nschoolgirl, you need to \nscold and punish..."
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Давно не виделись, как ты?"
+                },
+                {
+                    "key": "Была ужасно занята. Готовилась к экзамену."
+                },
+                {
+                    "key": "О, тебя можно поздравить?"
+                },
+                {
+                    "key": "Конечно… Поздравь меня с тем, \nкак я завалила экзамен."
+                },
+                {
+                    "key": "О, мне жаль…"
+                },
+                {
+                    "key": "Пересдача через месяц."
+                },
+                {
+                    "key": "Сочувствую тебе. Уверен, что \nна этот раз ты сможешь его сдать!"
+                },
+                {
+                    "key": "Что ты делаешь? Успокаиваешь меня?"
+                },
+                {
+                    "key": "Ну да… и стараюсь подбодрить."
+                },
+                {
+                    "key": "Накажи меня! Я плохо подготовилась, \nне достаточно времени тратила на \nучебу, я заслуживаю наказания."
+                },
+                {
+                    "key": "Я думал…"
+                },
+                {
+                    "key": "Накажи меня, я этого заслуживаю."
+                },
+                {
+                    "key": "Ты права, ты плохая девчонка, \nтебя надо выпороть…"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Lange nicht gesehen, wie geht es dir?"
+                },
+                {
+                    "key": "Ich war furchtbar beschäftigt. \nIch habe für eine Prüfung gelernt."
+                },
+                {
+                    "key": "Oh, darf ich dir gratulieren?"
+                },
+                {
+                    "key": "Klar... Gratulieren Sie mir, \nweil ich die Prüfung nicht \nbestanden habe."
+                },
+                {
+                    "key": "Oh, das tut mir leid."
+                },
+                {
+                    "key": "Die Wiederholung ist in einem Monat."
+                },
+                {
+                    "key": "Ich fühle mit Ihnen. Ich bin \nsicher, dass du es \ndiesmal schaffst!"
+                },
+                {
+                    "key": "Was machst du denn da? \nBeruhigst du mich?"
+                },
+                {
+                    "key": "Nun, ja... und ich versuche, \ndich aufzumuntern."
+                },
+                {
+                    "key": "Bestrafe mich! Ich habe nicht hart \ngenug gelernt, ich habe nicht \ngenug gelernt, ich verdiene \nes, bestraft zu werden."
+                },
+                {
+                    "key": "Ich dachte..."
+                },
+                {
+                    "key": "Bestrafe mich, ich verdiene es."
+                },
+                {
+                    "key": "Du hast recht, du bist ein \nböses Mädchen, du solltest \nausgepeitscht werden..."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
+}

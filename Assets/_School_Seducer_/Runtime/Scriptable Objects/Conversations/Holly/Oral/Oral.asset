@@ -1,0 +1,482 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Oral
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Oral
+    localizedDataList:
+    - languageCode: en
+      key: Oral
+    - languageCode: ru
+      key: "\u041E\u0440\u0430\u043B\u044C\u043D\u043E"
+    - languageCode: fr
+      key: Oral
+    - languageCode: de
+      key: "M\xFCndlich"
+    - languageCode: sp
+      key: Oral
+    - languageCode: it
+      key: Orale
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: acf9e483a48cc6d40bd7391a69fd223a, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Hello...?
+        - key: ...
+        - key: What's up? Are you all stressed out?
+        - key: "Trouble at school. My grades were \nunfairly lowered on the last
+            exam."
+        - key: "It's a shame to hear that... \nWhat are you feeling? Tell me..."
+        - key: Anger, frustration, irritation!
+        - key: "Keep going, what would you \ndo with those who have not \ntreated
+            you fairly?"
+        - key: "So what's it gonna look like if we \nstart having these conversations?
+            \nI'm just getting mad..."
+        - key: "I see... And I want to use \nyour anger right now."
+        - key: What? About what are you talking?
+        - key: Fuck me!
+        - key: Now?
+        - key: "Yes, right now. Fuck me \nhard, release your anger \nand frustration
+            on me."
+        - key: I don't know...
+        - key: "Shut up and fuck me. \nThis will help both of us."
+        - key: Insert picture
+      - languageCode: ru
+        messages:
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442\u2026"
+        - key: ...
+        - key: "\u041E\u0433\u043E, \u0442\u044B \u0432\u0435\u0441\u044C \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D!
+            \u0427\u0442\u043E-\u0442\u043E \u0441\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C?"
+        - key: "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u0438 \u0432 \u0443\u0447\u0451\u0431\u0435.
+            \u041C\u043D\u0435 \u043D\u0435\u0441\u043F\u0440\u0430\u0432\u0435\u0434\u043B\u0438\u0432\u043E
+            \n\u0437\u0430\u043D\u0438\u0437\u0438\u043B\u0438 \u0431\u0430\u043B\u043B\u044B
+            \u043D\u0430 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u043C \u044D\u043A\u0437\u0430\u043C\u0435\u043D\u0435."
+        - key: "\u0416\u0430\u043B\u044C \u044D\u0442\u043E \u0441\u043B\u044B\u0448\u0430\u0442\u044C\u2026
+            \u0427\u0442\u043E \u0442\u044B \u0447\u0443\u0432\u0441\u0442\u0432\u0443\u0435\u0448\u044C?
+            \n\u0420\u0430\u0441\u0441\u043A\u0430\u0436\u0438 \u043C\u043D\u0435\u2026"
+        - key: "\u0417\u043B\u043E\u0441\u0442\u044C, \u044F\u0440\u043E\u0441\u0442\u044C,
+            \u0440\u0430\u0437\u0434\u0440\u0430\u0436\u0435\u043D\u0438\u0435!"
+        - key: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0430\u0439, \u0447\u0442\u043E
+            \u0431\u044B \u0442\u044B \u0441\u0434\u0435\u043B\u0430\u043B \u0441
+            \u0442\u0435\u043C\u0438, \n\u043A\u0442\u043E \u043D\u0435\u0441\u043F\u0440\u0430\u0432\u0435\u0434\u043B\u0438\u0432\u043E
+            \u0441 \u0442\u043E\u0431\u043E\u0439 \u043E\u0431\u043E\u0448\u0451\u043B\u0441\u044F?"
+        - key: "\u0414\u0430 \u043A \u0447\u0435\u043C\u0443 \u044D\u0442\u0438 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440\u044B?
+            \u042F \u043F\u0440\u043E\u0441\u0442\u043E \u0437\u043B\u044E\u0441\u044C\u2026"
+        - key: "\u042F \u0432\u0438\u0436\u0443\u2026 \u0418 \u0445\u043E\u0447\u0443
+            \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
+            \n\u0442\u0432\u043E\u044E \u044F\u0440\u043E\u0441\u0442\u044C \u0441\u0435\u0439\u0447\u0430\u0441."
+        - key: "\u0427\u0442\u043E? \u041E \u0447\u0451\u043C \u0442\u044B \u0433\u043E\u0432\u043E\u0440\u0438\u0448\u044C?"
+        - key: "\u0412\u044B\u0435\u0431\u0438 \u043C\u0435\u043D\u044F."
+        - key: "\u041F\u0440\u044F\u043C\u043E \u0441\u0435\u0439\u0447\u0430\u0441?"
+        - key: "\u0414\u0430, \u043F\u0440\u044F\u043C\u043E \u0441\u0435\u0439\u0447\u0430\u0441.
+            \u0412\u044B\u0435\u0431\u0438 \u043C\u0435\u043D\u044F \u0436\u0451\u0441\u0442\u043A\u043E,
+            \n\u0432\u044B\u043C\u0435\u0441\u0442\u0438 \u043D\u0430 \u043C\u043D\u0435
+            \u0441\u0432\u043E\u044E \u0437\u043B\u043E\u0441\u0442\u044C \u0438
+            \u044F\u0440\u043E\u0441\u0442\u044C."
+        - key: "\u042F \u0434\u0430\u0436\u0435 \u043D\u0435 \u0437\u043D\u0430\u044E\u2026"
+        - key: "\u0417\u0430\u0442\u043A\u043D\u0438\u0441\u044C \u0438 \u0432\u044B\u0435\u0431\u0438
+            \u043C\u0435\u043D\u044F. \n\u042D\u0442\u043E \u043F\u043E\u043C\u043E\u0436\u0435\u0442
+            \u043D\u0430\u043C \u043E\u0431\u043E\u0438\u043C."
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 0
+  isSeen: 0
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: Hello...?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f473ad68d1abcc44d865da208f4b061f, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f473ad68d1abcc44d865da208f4b061f, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hello...?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442\u2026"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: ...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 6dc698a504c60f54099fb1ef08edbbf5, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: ...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: ...
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: What's up? Are you all stressed out?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: a40579a4365ab1743bb128b784297853, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a40579a4365ab1743bb128b784297853, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: What's up? Are you all stressed out?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u0433\u043E, \u0442\u044B \u0432\u0435\u0441\u044C \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D!
+        \u0427\u0442\u043E-\u0442\u043E \u0441\u043B\u0443\u0447\u0438\u043B\u043E\u0441\u044C?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Trouble at school. My grades were \nunfairly lowered on the last exam."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c8abcd20c3fa79c4cbb926631f2ad121, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c8abcd20c3fa79c4cbb926631f2ad121, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Trouble at school. My grades were \nunfairly lowered on the last exam."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u0438 \u0432 \u0443\u0447\u0451\u0431\u0435.
+        \u041C\u043D\u0435 \u043D\u0435\u0441\u043F\u0440\u0430\u0432\u0435\u0434\u043B\u0438\u0432\u043E
+        \n\u0437\u0430\u043D\u0438\u0437\u0438\u043B\u0438 \u0431\u0430\u043B\u043B\u044B
+        \u043D\u0430 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u043C \u044D\u043A\u0437\u0430\u043C\u0435\u043D\u0435."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: "It's a shame to hear that... \nWhat are you feeling? Tell me..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e51d5124ecdbb5445a33de2823285cad, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e51d5124ecdbb5445a33de2823285cad, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "It's a shame to hear that... \nWhat are you feeling? Tell me..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0416\u0430\u043B\u044C \u044D\u0442\u043E \u0441\u043B\u044B\u0448\u0430\u0442\u044C\u2026
+        \u0427\u0442\u043E \u0442\u044B \u0447\u0443\u0432\u0441\u0442\u0432\u0443\u0435\u0448\u044C?
+        \n\u0420\u0430\u0441\u0441\u043A\u0430\u0436\u0438 \u043C\u043D\u0435\u2026"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Anger, frustration, irritation!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 8de5406a6dcdf294283eb54e05dae5e1, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 8de5406a6dcdf294283eb54e05dae5e1, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Anger, frustration, irritation!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0417\u043B\u043E\u0441\u0442\u044C, \u044F\u0440\u043E\u0441\u0442\u044C,
+        \u0440\u0430\u0437\u0434\u0440\u0430\u0436\u0435\u043D\u0438\u0435!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: "Keep going, what would you \ndo with those who have not \ntreated you fairly?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 222445c882fd57c45bfcd12ca8f4f828, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 222445c882fd57c45bfcd12ca8f4f828, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Keep going, what would you \ndo with those who have not \ntreated you
+        fairly?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0430\u0439, \u0447\u0442\u043E
+        \u0431\u044B \u0442\u044B \u0441\u0434\u0435\u043B\u0430\u043B \u0441 \u0442\u0435\u043C\u0438,
+        \n\u043A\u0442\u043E \u043D\u0435\u0441\u043F\u0440\u0430\u0432\u0435\u0434\u043B\u0438\u0432\u043E
+        \u0441 \u0442\u043E\u0431\u043E\u0439 \u043E\u0431\u043E\u0448\u0451\u043B\u0441\u044F?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "So what's it gonna look like if we \nstart having these conversations?
+      \nI'm just getting mad..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 7037414b42645ca41a303ed09a97375a, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 7037414b42645ca41a303ed09a97375a, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "So what's it gonna look like if we \nstart having these conversations?
+        \nI'm just getting mad..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0430 \u043A \u0447\u0435\u043C\u0443 \u044D\u0442\u0438 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440\u044B?
+        \u042F \u043F\u0440\u043E\u0441\u0442\u043E \u0437\u043B\u044E\u0441\u044C\u2026"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: "I see... And I want to use \nyour anger right now."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: b29d6dd2259248f4589771cd8cd81c85, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: b29d6dd2259248f4589771cd8cd81c85, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I see... And I want to use \nyour anger right now."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u0432\u0438\u0436\u0443\u2026 \u0418 \u0445\u043E\u0447\u0443
+        \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
+        \n\u0442\u0432\u043E\u044E \u044F\u0440\u043E\u0441\u0442\u044C \u0441\u0435\u0439\u0447\u0430\u0441."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: What? About what are you talking?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e997ceae75114ed4295b685015f669f4, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e997ceae75114ed4295b685015f669f4, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: What? About what are you talking?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0427\u0442\u043E? \u041E \u0447\u0451\u043C \u0442\u044B \u0433\u043E\u0432\u043E\u0440\u0438\u0448\u044C?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: Fuck me!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: cae515624e09abf41a61b0eb71dbd33c, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: cae515624e09abf41a61b0eb71dbd33c, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Fuck me!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u044B\u0435\u0431\u0438 \u043C\u0435\u043D\u044F."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Now?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 2050faf203033004787f60708b3e7419, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2050faf203033004787f60708b3e7419, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Now?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u044F\u043C\u043E \u0441\u0435\u0439\u0447\u0430\u0441?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: "Yes, right now. Fuck me \nhard, release your anger \nand frustration on
+      me."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: ec44d89046289c5458fb0d92d57e3df2, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: ec44d89046289c5458fb0d92d57e3df2, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Yes, right now. Fuck me \nhard, release your anger \nand frustration
+        on me."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0430, \u043F\u0440\u044F\u043C\u043E \u0441\u0435\u0439\u0447\u0430\u0441.
+        \u0412\u044B\u0435\u0431\u0438 \u043C\u0435\u043D\u044F \u0436\u0451\u0441\u0442\u043A\u043E,
+        \n\u0432\u044B\u043C\u0435\u0441\u0442\u0438 \u043D\u0430 \u043C\u043D\u0435
+        \u0441\u0432\u043E\u044E \u0437\u043B\u043E\u0441\u0442\u044C \u0438 \u044F\u0440\u043E\u0441\u0442\u044C."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: I don't know...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 87effd5a4dd88c4429131723a7105ca9, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 87effd5a4dd88c4429131723a7105ca9, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: I don't know...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u0434\u0430\u0436\u0435 \u043D\u0435 \u0437\u043D\u0430\u044E\u2026"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: "Shut up and fuck me. \nThis will help both of us."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: a6e74c209761a5149a53259c180ec938, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a6e74c209761a5149a53259c180ec938, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Shut up and fuck me. \nThis will help both of us."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0417\u0430\u0442\u043A\u043D\u0438\u0441\u044C \u0438 \u0432\u044B\u0435\u0431\u0438
+        \u043C\u0435\u043D\u044F. \n\u042D\u0442\u043E \u043F\u043E\u043C\u043E\u0436\u0435\u0442
+        \u043D\u0430\u043C \u043E\u0431\u043E\u0438\u043C."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2f304164f93b59e41b814e4365dbf6b2, type: 3}
+    Msg: Insert picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: f3bff1435f44b6645a82b886793c8955, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c507cf4308bb7d340a9fe7bb8894afa3, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}

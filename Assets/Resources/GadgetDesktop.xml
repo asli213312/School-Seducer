@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-    <ModulePrefs></ModulePrefs>
+    <ModulePrefs>
+    	<Require feature="opensocial-0.8" />
+        <Require feature="opensocial-payment" />
+        <Require feature="nutaku" />
+        <Link rel="payment.handler" href="https://example.com/your-app/payment-handler" />
+        <Link rel="game.download" href="https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF_DESKTOP/college_fuck_fest.zip" />
+    </ModulePrefs>
+    <Content preferred_width="10" type="url" href="https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF_DESKTOP/college_fuck_fest.zip" allow_domains="fuckfest.college/scripts/, college-fuck-fest.nyc3.cdn.digitaloceanspaces.com" />
 </Module>

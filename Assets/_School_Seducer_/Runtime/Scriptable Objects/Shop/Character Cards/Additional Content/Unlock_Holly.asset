@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baacbf843424475e9c0f6d20abee0f60, type: 3}
+  m_Name: Unlock_Holly
+  m_EditorClassIdentifier: 
+  isSold: 0
+  cost: 30.99
+  view: {fileID: -8700447903198792316, guid: 7c60ef34d9dc09445b18737588a76d90, type: 3}
+  characterData: {fileID: 11400000, guid: ad5771578c7639b4791ec4add435baad, type: 2}

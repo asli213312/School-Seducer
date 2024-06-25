@@ -1,34 +1,109 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Well, my dear Ben, it's time to pay the bill." },
-  {"key": "Mrs. Green, I'm not sure that--"},
-  {"key": "Shut up! I'm your mistress and \nI don't give you permission \nto talk, do you understand?"},
-	{"key": "Yes, but I wanted to--"},
-	{"key": "Ow! That hurts!"},
-	{"key": "I told you to shut up! Now get undressed."},
-	{"key": "Put this on. And this around your neck."},
-  {"key": "Yes, Mrs. Green."},
-  {"key": "Now get on your knees! \nOn your goddamn knees!"},
-  {"key": "Insert picture"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Ну что, мой дорогой Бен, настало \nвремя платить по счетам."},
-  {"key": "Миссис Грин, я не уверен, что…"},
-  {"key": "Заткнись! Я твоя госпожа и я не \nразрешала тебе разговаривать, ты понял?"},
-  {"key": "Да, но я хотел…"},
-  {"key": "Ай! Больно!"},
-  {"key": "Я же сказала тебе заткнуться! \nА теперь раздевайся."},
-  {"key": "Надень вот это… И вот это на шею…"},
-  {"key": "Да, миссис Грин."},
-  {"key": "А теперь на колени! На \nколени, чёрт возьми!"},
-  {"key": "Вставить картинку"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Well, my dear Ben, it's time to pay the bill."
+                },
+                {
+                    "key": "Mrs. Green, I'm not sure that--"
+                },
+                {
+                    "key": "Shut up! I'm your mistress and \nI don't give you permission \nto talk, do you understand?"
+                },
+                {
+                    "key": "Yes, but I wanted to--"
+                },
+                {
+                    "key": "Ow! That hurts!"
+                },
+                {
+                    "key": "I told you to shut up! Now get undressed."
+                },
+                {
+                    "key": "Put this on. And this around your neck."
+                },
+                {
+                    "key": "Yes, Mrs. Green."
+                },
+                {
+                    "key": "Now get on your knees! \nOn your goddamn knees!"
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Ну что, мой дорогой Бен, настало \nвремя платить по счетам."
+                },
+                {
+                    "key": "Миссис Грин, я не уверен, что…"
+                },
+                {
+                    "key": "Заткнись! Я твоя госпожа и я не \nразрешала тебе разговаривать, ты понял?"
+                },
+                {
+                    "key": "Да, но я хотел…"
+                },
+                {
+                    "key": "Ай! Больно!"
+                },
+                {
+                    "key": "Я же сказала тебе заткнуться! \nА теперь раздевайся."
+                },
+                {
+                    "key": "Надень вот это… И вот это на шею…"
+                },
+                {
+                    "key": "Да, миссис Грин."
+                },
+                {
+                    "key": "А теперь на колени! На \nколени, черт возьми!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Nun, mein lieber Ben, es \nist Zeit, zu bezahlen."
+                },
+                {
+                    "key": "Mrs. Green, ich bin mir \nnicht sicher, ob ich..."
+                },
+                {
+                    "key": "Sei still! Ich bin deine \nHerrin und lasse dich \nreden, verstehst du?"
+                },
+                {
+                    "key": "Ja, aber ich wollte nur..."
+                },
+                {
+                    "key": "Au! Das tut weh!"
+                },
+                {
+                    "key": "Ich sagte, du sollst still \nsein! Jetzt zieh dich aus."
+                },
+                {
+                    "key": "Zieh das an. Und das \num deinen Hals."
+                },
+                {
+                    "key": "Ja, Frau Green."
+                },
+                {
+                    "key": "Und jetzt runter auf die Knie! \nAuf deine verdammten Knie!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
 }

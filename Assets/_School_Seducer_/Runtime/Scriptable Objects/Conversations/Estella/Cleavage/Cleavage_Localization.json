@@ -1,0 +1,107 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "I hope to manage to sign \nall the documents today."
+                },
+                {
+                    "key": "Hello!"
+                },
+                {
+                    "key": "Have you come to sign the form?"
+                },
+                {
+                    "key": "Yes."
+                },
+                {
+                    "key": "Alright, wait a couple of minutes."
+                },
+                {
+                    "key": "Estella, come into my office."
+                },
+                {
+                    "key": "Sorry, you'll have to wait a bit longer."
+                },
+                {
+                    "key": "* 10 minutes later *"
+                },
+                {
+                    "key": "Sorry for the wait..."
+                },
+                {
+                    "key": "I'll sign everything now."
+                },
+                {
+                    "key": "Thank you!"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Wow, she obviously gave the director \na blowjob while he was in the \noffice. And she forgot to wipe \nthe sperm off her cleavage..."
+                },
+                {
+                    "key": "Here you go."
+                },
+                {
+                    "key": "Thank you very much!"
+                },
+                {
+                    "key": "See you!"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Надеюсь, что сегодня получится \nподписать все бумаги."
+                },
+                {
+                    "key": "Привет!"
+                },
+                {
+                    "key": "Ты пришел подписать бланк?"
+                },
+                {
+                    "key": "Да."
+                },
+                {
+                    "key": "Хорошо, подожди пару минут."
+                },
+                {
+                    "key": "Эстелла, зайдите ко мне в кабинет."
+                },
+                {
+                    "key": "Извини, придется подольше подождать."
+                },
+                {
+                    "key": "* Через 10 минут*"
+                },
+                {
+                    "key": "Сейчас все подпишу."
+                },
+                {
+                    "key": "Спасибо!"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Ого, она явно отсосала директору, \nпока был в кабинете. И забыла \nстереть сперму с декольте…"
+                },
+                {
+                    "key": "Вот, держи."
+                },
+                {
+                    "key": "Спасибо, большое!"
+                },
+                {
+                    "key": "До встречи!"
+                }
+            ]
+        }
+    ]
+}

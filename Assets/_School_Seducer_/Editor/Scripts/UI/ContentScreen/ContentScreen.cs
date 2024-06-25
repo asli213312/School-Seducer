@@ -20,6 +20,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [Header("Components")]
         [SerializeField] private Image contentWide;
         [SerializeField] private Image contentSquare;
+        [SerializeField] private Image comicsContent;
         [SerializeField] private SkeletonAnimation contentAnimation;
         [SerializeField] private Button leftImageButton;
         [SerializeField] private Button rightImageButton;
@@ -39,6 +40,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private Button _contentWideButton;
         private Button _contentSquareButton;
         private Button _contentAnimationButton;
+        private Button _contentComicsButton;
         private Button _animateButton;
         
         private GameObject _container;
@@ -73,12 +75,16 @@ namespace _School_Seducer_.Editor.Scripts.UI
             }
         }
 
+        public void ChangeChat(Chat.Chat newChat) => chat = newChat;
+        public void ResetSlots() => _currentSlots.Clear();
+
         private void Initialize() 
         {
         	_container = gameObject.transform.GetChild(0).gameObject;
             _contentWideButton = contentWide.GetComponent<Button>();
             _contentSquareButton = contentSquare.GetComponent<Button>();
             _contentAnimationButton = contentAnimation.GetComponent<Button>();
+            _contentComicsButton = comicsContent.GetComponent<Button>();
             _animateButton = contentAnimation.transform.GetChild(0).GetComponent<Button>();
         }
 
@@ -117,6 +123,9 @@ namespace _School_Seducer_.Editor.Scripts.UI
             }
 
             InstallSlots();
+            
+            leftImageButton.gameObject.Activate();
+            rightImageButton.gameObject.Activate();
 
             if (CurrentData is OpenContentSprite openContentSprite)
             {
@@ -176,11 +185,12 @@ namespace _School_Seducer_.Editor.Scripts.UI
                     }
                 }
 
-                void InstallContent(GallerySlotData data)
+                void InstallContent(GallerySlotDataBase slotData)
                 {
-                    switch (data.Section)
+                    switch (slotData.Section)
                     {
                         case GallerySlotType.Video:
+                            GallerySlotData data = slotData as GallerySlotData;
                             SetContentAnimation(data.animation, data.GetAnimationName());
                             _currentContentAnimation = contentAnimation;
                             _currentIndexContent = newIndex;
@@ -197,26 +207,47 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         private void SetContentAnimation(SkeletonDataAsset animationData, string animationName)
         {
+            comicsContent.transform.parent.transform.parent.transform.parent.gameObject.Deactivate();
             contentWide.gameObject.Deactivate();
             contentSquare.gameObject.Deactivate();
             _currentContentImage = null;
 
-            //contentAnimation.timeScale = 0;
-            
             contentAnimation.skeletonDataAsset = animationData;
             contentAnimation.AnimationName = animationName;
             contentAnimation.skeletonDataAsset.Clear();
             contentAnimation.Initialize(true);
             contentAnimation.Initialize(true);
-            contentAnimation.timeScale = 0;
+            contentAnimation.loop = true;
+            
+            AnimateContent();
+            //contentAnimation.timeScale = 0; // use for click handle animation
             
             contentAnimation.gameObject.Activate();
         }
 
         private void SetContentImage(Sprite spriteInContent)
         {
+            comicsContent.transform.parent.transform.parent.transform.parent.gameObject.Deactivate();
             contentAnimation.gameObject.Deactivate();
             _currentContentAnimation = null;
+
+            OpenContentSprite contentSprite = CurrentData as OpenContentSprite;
+            GallerySlotView gallerySlot = contentSprite.GetComponent<GallerySlotView>();
+
+            if (gallerySlot != null && gallerySlot.Data.Section == GallerySlotType.Special) 
+            {
+                contentSquare.gameObject.Deactivate();
+                contentWide.gameObject.Deactivate();
+
+                comicsContent.transform.parent.transform.parent.transform.parent.gameObject.Activate();
+                comicsContent.sprite = spriteInContent;
+                
+                leftImageButton.gameObject.Deactivate();
+                rightImageButton.gameObject.Deactivate();
+                
+                Debug.Log("Installed COMICS content");
+                return;
+            }
 
             if (spriteInContent.IsWideSprite())
             {
@@ -273,6 +304,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
                                 return i;
                     }
 
+                    if (_currentContentAnimation != null) return i;
+
                     if (_currentContentImage.sprite != pictureChat.sprite) continue;
                     
                     if (_currentContentImage.sprite == pictureChat.sprite)
@@ -283,10 +316,13 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 {
                     Image slotGalleryView = slotGO.transform.GetChild(0).GetComponent<Image>();
 
-                    if (_currentContentAnimation != null && slotGallery.Data.animation != null)
-                        if (_currentContentAnimation.skeletonDataAsset == slotGalleryView.GetComponent<OpenContentAnimation>()
+                    if (slotGallery.Data is GallerySlotData defaultSlotData) 
+                    {
+                        if (_currentContentAnimation != null && defaultSlotData != null && defaultSlotData.animation != null)
+                        if (_currentContentAnimation.skeletonDataAsset == slotGO.transform.GetComponent<OpenContentAnimation>()
                             .Animation.skeletonDataAsset) 
                             return i;
+                    }
 
                     if (_currentContentImage != null && _currentContentImage.sprite == slotGalleryView.sprite)
                     {
@@ -332,6 +368,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             _contentSquareButton.RemoveListener(ResetContent);
             _contentWideButton.RemoveListener(ResetContent);
             _contentAnimationButton.RemoveListener(ResetContent);
+            _contentComicsButton.RemoveListener(ResetContent);
         }
 
         private void RegisterCloseContent()
@@ -339,6 +376,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             _contentSquareButton.AddListener(ResetContent);
             _contentWideButton.AddListener(ResetContent);
             _contentAnimationButton.AddListener(ResetContent);
+            _contentComicsButton.AddListener(ResetContent);
         }
 
         private void ResetContent()

@@ -24,10 +24,8 @@ MonoBehaviour:
   boosterConfigList:
     list:
     - booster: {fileID: 11400000, guid: f7f4fd224e0a0d74cb6fd4555078e553, type: 2}
-      startCount: 0
-    - booster: {fileID: 11400000, guid: 8bd05df1072bda64cbd2694fcb431927, type: 2}
-      startCount: 0
+      startCount: 2
     - booster: {fileID: 11400000, guid: 0984744077fcb7749b0c6d1d42a074cf, type: 2}
-      startCount: 0
-    - booster: {fileID: 11400000, guid: be062b3a31d335442b273b9f29b41011, type: 2}
-      startCount: 0
+      startCount: 2
+    - booster: {fileID: 11400000, guid: 8bd05df1072bda64cbd2694fcb431927, type: 2}
+      startCount: 2

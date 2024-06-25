@@ -1,0 +1,154 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Oh, hi! Are you preparing for the exam too?"
+                },
+                {
+                    "key": "Actually, I’m getting ready, but now \nI came to the library to provoke these \nnerds and bespectacled people. When \nI come here in this skirt, they can't \ntake their eyes off me. They immediately \nstop thinking about studying."
+                },
+                {
+                    "key": "They can be understood. \nFew can resist you."
+                },
+                {
+                    "key": "And you?"
+                },
+                {
+                    "key": "Well... I will always find \nsomething to please you \nwith... If you know what I mean."
+                },
+                {
+                    "key": "Hmm... Help me find a textbook on \nendocrinology. He's in the far section..."
+                },
+                {
+                    "key": "Of course, let's go."
+                },
+                {
+                    "key": "And here he is..."
+                },
+                {
+                    "key": "I didn’t know you were \ninterested in endocrinology."
+                },
+                {
+                    "key": "I’m interested in the back \nsection of the library..."
+                },
+                {
+                    "key": "What? Right here?"
+                },
+                {
+                    "key": "Do you have something against it?"
+                },
+                {
+                    "key": "But we might get caught..."
+                },
+                {
+                    "key": "They can, of course. This \nturns me on even more..."
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "О, привет! Ты тоже готовишься к экзамену?"
+                },
+                {
+                    "key": "Вообще готовлюсь, но сейчас я пришла в \nбиблиотеку раззадорить этих ботанов и очкариков. \nКогда я прихожу сюда в этой юбке, они не \nмогут оторвать взгляд и от меня. \nСразу перестают думать об учебе."
+                },
+                {
+                    "key": "Их можно понять. Мало \nкто устоит перед тобой."
+                },
+                {
+                    "key": "И ты?"
+                },
+                {
+                    "key": "Ну… Я всегда найду чем тебя порадовать… \nЕсли ты понимаешь, о чем я."
+                },
+                {
+                    "key": "Хм… Помоги как мне найти учебник \nпо эндокринологии. Он в дальней секции…"
+                },
+                {
+                    "key": "Конечно, пойдем."
+                },
+                {
+                    "key": "А вот и он…"
+                },
+                {
+                    "key": "Не знал, что тебя интересует эндокринология."
+                },
+                {
+                    "key": "Меня интересует дальняя секция библиотеки…"
+                },
+                {
+                    "key": "Что? Прямо тут?"
+                },
+                {
+                    "key": "Ты что-то имеешь против?"
+                },
+                {
+                    "key": "Но нас могут застукать…"
+                },
+                {
+                    "key": "Могут, конечно. Это еще больше заводит…"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Oh, hallo! Bereitest du dich \nauch auf die Prüfung vor?"
+                },
+                {
+                    "key": "Eigentlich schon, aber gerade bin \nich in die Bibliothek gekommen, \num diese Streber und Brillenträger \naufzumischen. Wenn ich hier in \ndiesem Rock auftauche, können sie \nihre Blicke nicht von mir lassen. \nSie hören sofort auf, an \ndas Lernen zu denken."
+                },
+                {
+                    "key": "Das kann man verstehen. Wenige \nkönnen dir widerstehen."
+                },
+                {
+                    "key": "Und du?"
+                },
+                {
+                    "key": "Nun... Ich finde immer etwas, \nwomit ich dich erfreuen kann... \nWenn du verstehst, was ich meine."
+                },
+                {
+                    "key": "Hm... Hilf mir, ein Buch über \nEndokrinologie zu finden. \nEs ist im hinteren Teil..."
+                },
+                {
+                    "key": "Natürlich, gehen wir."
+                },
+                {
+                    "key": "Und hier ist es..."
+                },
+                {
+                    "key": "Wusste nicht, dass du dich \nfür Endokrinologie interessierst."
+                },
+                {
+                    "key": "Mich interessiert der hintere \nTeil der Bibliothek..."
+                },
+                {
+                    "key": "Was? Genau hier?"
+                },
+                {
+                    "key": "Hast du etwas dagegen?"
+                },
+                {
+                    "key": "Aber wir könnten erwischt werden..."
+                },
+                {
+                    "key": "Könnten wir, sicher. Das macht \nes nur noch spannender..."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
+}

@@ -1,50 +1,181 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Hey, am I late?" },
-  {"key": "Hey! Nah, we're just getting started."},
-  {"key": "Sweet, thanks!"},
-  {"key": "First time here?"},
-  {"key": "Yeah, newbie vibes."},
-  {"key": "Ever tried painting before?"},
-  {"key": "Nah, just getting into it now."},
-  {"key": "Welcome aboard! Grab a seat, \nthe model's coming soon, \nand we're kicking off."},
-  {"key": "Model?"},
-  {"key": "Yeah, still life's pushed to next \nweek. Today, it's all about \na nude female model."},
-  {"key": "Got it... Thanks!"},
-  {"key": "Whoa, those curves though!"},
-  {"key": "Insert picture"},
-  {"key": "Meet Emily, our new model. Try to \ncatch the light and shadows on \nher body in your drawing."},
-  {"key": "Can't stop staring, she's stunning..."},
-  {"key": "Insert picture"},
-  {"key": "Ben, you're doing alright. \nBut aim for the whole \npicture, not just parts."},
-  {"key": "Sure thing... I'm on it..."}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Добрый день, я не опоздал?"},
-  {"key": "Привет! Нет, мы только начинаем."},
-  {"key": "Отлично, спасибо!"},
-  {"key": "Вы же новенький?"},
-  {"key": "Да, первый раз."},
-  {"key": "Вы когда-нибудь до этого занимались живописью?"},
-  {"key": "Нет, только сейчас решил начать."},
-  {"key": "Добро пожаловать! Занимайте свободное место, \nсейчас придёт натурщица и начинаем занятие."},
-  {"key": "Натурщица?"},
-  {"key": "Да, натюрморт перенесли на следующую \nнеделю, сегодня обнажённое женское тело."},
-  {"key": "Ясно… Спасибо!"},
-  {"key": "Ого, вот это грудь!"},
-  {"key": "Вставить картинку"},
-  {"key": "Познакомьтесь, это Эмили, наша новая \nнатурщица. Постарайтесь передать в рисунке \nигру света и тени на её теле."},
-  {"key": "Не могу оторвать глаз \nот её тела, она прекрасна…"},
-  {"key": "Вставить картинку"},
-  {"key": "Бен, у вас неплохо получается. \nНо постарайтесь охватить всю картину \nцеликом, а не только её части."},
-  {"key": "Да, конечно… Я стараюсь…"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hey, am I late?"
+                },
+                {
+                    "key": "Hey! Nah, we're just getting started."
+                },
+                {
+                    "key": "Sweet, thanks!"
+                },
+                {
+                    "key": "First time here?"
+                },
+                {
+                    "key": "Yeah, newbie vibes."
+                },
+                {
+                    "key": "Ever tried painting before?"
+                },
+                {
+                    "key": "Nah, just getting into it now."
+                },
+                {
+                    "key": "Welcome aboard! Grab a seat, \nthe model's coming soon, \nand we're kicking off."
+                },
+                {
+                    "key": "Model?"
+                },
+                {
+                    "key": "Yeah, still life's pushed to next \nweek. Today, it's all about \na nude female model."
+                },
+                {
+                    "key": "Got it... Thanks!"
+                },
+                {
+                    "key": "Whoa, those curves though!"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Meet Emily, our new model. Try to \ncatch the light and shadows on \nher body in your drawing."
+                },
+                {
+                    "key": "Can't stop staring, she's stunning..."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Ben, you're doing alright. \nBut aim for the whole \npicture, not just parts."
+                },
+                {
+                    "key": "Sure thing... I'm on it..."
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Добрый день, я не опоздал?"
+                },
+                {
+                    "key": "Привет! Нет, мы только начинаем."
+                },
+                {
+                    "key": "Отлично, спасибо!"
+                },
+                {
+                    "key": "Вы же новенький?"
+                },
+                {
+                    "key": "Да, первый раз."
+                },
+                {
+                    "key": "Вы когда-нибудь до этого занимались живописью?"
+                },
+                {
+                    "key": "Нет, только сейчас решил начать."
+                },
+                {
+                    "key": "Добро пожаловать! Занимайте свободное место, \nсейчас придет натурщица и начинаем занятие."
+                },
+                {
+                    "key": "Натурщица?"
+                },
+                {
+                    "key": "Да, натюрморт перенесли на следующую \nнеделю, сегодня обнаженное женское тело."
+                },
+                {
+                    "key": "Ясно… Спасибо!"
+                },
+                {
+                    "key": "Ого, вот это грудь!"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Познакомьтесь, это Эмили, наша новая \nнатурщица. Постарайтесь передать в рисунке \nигру света и тени на ее теле."
+                },
+                {
+                    "key": "Не могу оторвать глаз \nот ее тела, она прекрасна…"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Бен, у вас неплохо получается. \nНо постарайтесь охватить всю картину \nцеликом, а не только ее части."
+                },
+                {
+                    "key": "Да, конечно… Я стараюсь…"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Guten Tag, bin ich zu spät gekommen?"
+                },
+                {
+                    "key": "Hallo! Nein, wir fangen gerade erst an."
+                },
+                {
+                    "key": "Super, danke!"
+                },
+                {
+                    "key": "Bist du neu hier?"
+                },
+                {
+                    "key": "Ja, das ist mein erster Tag."
+                },
+                {
+                    "key": "Hast du jemals zuvor gemalt?"
+                },
+                {
+                    "key": "Nein, ich habe gerade erst \nbeschlossen, anzufangen."
+                },
+                {
+                    "key": "Willkommen! Nehmen Sie bitte Platz, \ndie Aktmalerin wird gleich \nkommen und wir fangen an."
+                },
+                {
+                    "key": "Aktmalerin?"
+                },
+                {
+                    "key": "Ja, das Stillleben wurde \nauf nächste Woche verschoben, \nheute ist ein nackter weiblicher \nKörper an der Reihe."
+                },
+                {
+                    "key": "Verstanden... Danke!"
+                },
+                {
+                    "key": "Wow, was für Titten"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Treffen Sie Alison, unser neues \nodel. Versuchen Sie, das Licht \nund die Schatten auf ihrem Körper \nin Ihrer Zeichnung einzufangen."
+                },
+                {
+                    "key": "Kann nicht aufhören zu starren, \nsie ist atemberaubend..."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Ben, du machst es ganz gut. \nAber zielen Sie auf das Gesamtbild, \nnicht nur auf Teile."
+                },
+                {
+                    "key": "Natürlich... Ich arbeite daran..."
+                }
+            ]
+        }
+    ]
 }

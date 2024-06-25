@@ -1,0 +1,89 @@
+{
+"skeleton": {
+	"hash": "Fx1Duxvfc10",
+	"spine": "4.1",
+	"x": -1,
+	"y": -1,
+	"width": 1191,
+	"height": 1050,
+	"images": "./Export/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bg", "parent": "root", "x": 571.91, "y": 546.76 },
+	{ "name": "avatar", "parent": "bg", "x": 2.37, "y": -73.37 },
+	{ "name": "button_yellow", "parent": "bg", "x": 2.37, "y": -381.06 },
+	{ "name": "ribbon", "parent": "bg", "x": -16.57, "y": 328.99 }
+],
+"slots": [
+	{ "name": "Popup", "bone": "bg", "attachment": "Popup" },
+	{ "name": "btn_close", "bone": "bg", "attachment": "btn_close" },
+	{ "name": "reward", "bone": "avatar", "attachment": "reward" },
+	{ "name": "btn", "bone": "button_yellow", "attachment": "btn" },
+	{ "name": "ribbon", "bone": "ribbon", "attachment": "ribbon" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"btn": {
+				"btn": { "x": 1.72, "y": -7.7, "width": 374, "height": 130 }
+			},
+			"btn_close": {
+				"btn_close": { "x": 563.59, "y": 449.74, "width": 109, "height": 105 }
+			},
+			"Popup": {
+				"Popup": { "x": 0.59, "y": -43.76, "width": 1147, "height": 1008 }
+			},
+			"reward": {
+				"reward": { "x": 0.72, "y": 16.11, "width": 858, "height": 859 }
+			},
+			"ribbon": {
+				"ribbon": { "x": 12.15, "y": -9.75, "width": 951, "height": 142 }
+			}
+		}
+	}
+],
+"animations": {
+	"appear": {
+		"bones": {
+			"bg": {
+				"scale": [
+					{
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.015, 0.551, 0.089, 1.1, 0.013, 0.525, 0.089, 1.1 ]
+					},
+					{
+						"time": 0.1333,
+						"x": 1.1,
+						"y": 1.1,
+						"curve": [ 0.156, 1.1, 0.183, 1.051, 0.155, 1.1, 0.183, 1.06 ]
+					},
+					{ "time": 0.2 }
+				]
+			}
+		}
+	},
+	"disappear": {
+		"bones": {
+			"bg": {
+				"scale": [
+					{
+						"curve": [ 0.011, 1, 0.022, 1.131, 0.011, 1, 0.022, 1.13 ]
+					},
+					{
+						"time": 0.0333,
+						"x": 1.1,
+						"y": 1.1,
+						"curve": [ 0.057, 1.036, 0.078, 0, 0.058, 1.036, 0.078, 0 ]
+					},
+					{ "time": 0.1, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"idle": {}
+}
+}

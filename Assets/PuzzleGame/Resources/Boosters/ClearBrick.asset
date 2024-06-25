@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ClearBrick
   m_EditorClassIdentifier: 
   Type: 1
-  Icon: {fileID: 21300000, guid: c90629dd8701d164096813704e2bd15f, type: 3}
+  Icon: {fileID: 21300000, guid: 974602d9923044549ad25b18048f0cd7, type: 3}
   Description: Clears any tile on the board!
   Price:
     type: 0

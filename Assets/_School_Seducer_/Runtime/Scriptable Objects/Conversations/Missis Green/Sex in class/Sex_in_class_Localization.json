@@ -1,52 +1,190 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Ben, could you stay after the lecture, please?" },
-  {"key": "Yes, Mrs. Green."},
-  {"key": "You think just because you and \nI slept together once, you can be \nirresponsible about your studies?"},
-	{"key": "No! Of course not."},
-	{"key": "Then what about that paper \nyou turned in last week?"},
-	{"key": "I... I didn't have time to \nprepare... I'm sorry...."},
-	{"key": "What were you doing?"},
-  {"key": "Nothing much, Mrs. Green."},
-  {"key": "Don't lie to me, you dirty boy! \nI've seen you looking at \nthe other students."},
-  {"key": "Admit it, you like younger girls, \ndon't you? Am I not good \nenough for you?"},
-	{"key": "No, you're not."},
-	{"key": "Shut up! Take off your pants!"},
-	{"key": "What? Right here? I can't."},
-	{"key": "Did you hear what I said? \nTake your pants off right now!"},
-  {"key": "Oh, Mrs. Green. (groans)"},
-  {"key": "And remember! If you dare to treat \nmy subject irresponsibly again, \nyou will be punished!"},
-  {"key": "Do you understand?"},
-  {"key": "Yes, Mrs. Green, I deserve \nto be punished!"},
-  {"key": "Insert picture"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Бен, задержись после лекции, пожалуйста."},
-  {"key": "Да, миссис Грин."},
-  {"key": "Ты думаешь, что если мы с тобой \nразок переспали, то ты можешь \nбезответственно относиться к учёбе?"},
-  {"key": "Нет! Конечно нет…"},
-  {"key": "Тогда что с твоей работой, которую \nты сдал на прошлой неделе?"},
-  {"key": "Я… я не успел подготовиться… Простите…"},
-  {"key": "Чем ты был занят?"},
-  {"key": "Ничем особенным, миссис Грин."},
-  {"key": "Не ври мне, грязный мальчишка! \nЯ видела, как ты заглядываешься \nна других студенток."},
-  {"key": "Признай, тебе нравятся девушки \nпомоложе, верно? А я недостаточно \nхороша для тебя?"},
-  {"key": "Нет, что вы…"},
-  {"key": "Заткнись! Снимай штаны!"},
-  {"key": "Что? Прямо тут? Я не могу…"},
-  {"key": "Ты слышал, что я сказала? \nНемедленно снимай штаны!"},
-  {"key": "Ох, миссис Грин… (стонет)"},
-  {"key": "И запомни! Если ты ещё раз посмеешь \nбезответственно отнестись к моему \nпредмету, то будешь наказан!"},
-  {"key": "Ты понял?"},
-  {"key": "Да, миссис Грин, я заслуживаю наказания!"},
-  {"key": "Вставить картинку"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Ben, could you stay after the lecture, please?"
+                },
+                {
+                    "key": "Yes, Mrs. Green."
+                },
+                {
+                    "key": "You think just because you and \nI slept together once, you can be \nirresponsible about your studies?"
+                },
+                {
+                    "key": "No! Of course not."
+                },
+                {
+                    "key": "Then what about that paper \nyou turned in last week?"
+                },
+                {
+                    "key": "I... I didn't have time to \nprepare... I'm sorry...."
+                },
+                {
+                    "key": "What were you doing?"
+                },
+                {
+                    "key": "Nothing much, Mrs. Green."
+                },
+                {
+                    "key": "Don't lie to me, you dirty boy! \nI've seen you looking at \nthe other students."
+                },
+                {
+                    "key": "Admit it, you like younger girls, \ndon't you? Am I not good \nenough for you?"
+                },
+                {
+                    "key": "No, you're not."
+                },
+                {
+                    "key": "Shut up! Take off your pants!"
+                },
+                {
+                    "key": "What? Right here? I can't."
+                },
+                {
+                    "key": "Did you hear what I said? \nTake your pants off right now!"
+                },
+                {
+                    "key": "Oh, Mrs. Green. (groans)"
+                },
+                {
+                    "key": "And remember! If you dare to treat \nmy subject irresponsibly again, \nyou will be punished!"
+                },
+                {
+                    "key": "Do you understand?"
+                },
+                {
+                    "key": "Yes, Mrs. Green, I deserve \nto be punished!"
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Бен, задержись после лекции, пожалуйста."
+                },
+                {
+                    "key": "Да, миссис Грин."
+                },
+                {
+                    "key": "Ты думаешь, что если мы с тобой \nразок переспали, то ты можешь \nбезответственно относиться к учебе?"
+                },
+                {
+                    "key": "Нет! Конечно нет…"
+                },
+                {
+                    "key": "Тогда что с твоей работой, которую \nты сдал на прошлой неделе?"
+                },
+                {
+                    "key": "Я… я не успел подготовиться… Простите…"
+                },
+                {
+                    "key": "Чем ты был занят?"
+                },
+                {
+                    "key": "Ничем особенным, миссис Грин."
+                },
+                {
+                    "key": "Не ври мне, грязный мальчишка! \nЯ видела, как ты заглядываешься \nна других студенток."
+                },
+                {
+                    "key": "Признай, тебе нравятся девушки \nпомоложе, верно? А я недостаточно \nхороша для тебя?"
+                },
+                {
+                    "key": "Нет, что вы…"
+                },
+                {
+                    "key": "Заткнись! Снимай штаны!"
+                },
+                {
+                    "key": "Что? Прямо тут? Я не могу…"
+                },
+                {
+                    "key": "Ты слышал, что я сказала? \nНемедленно снимай штаны!"
+                },
+                {
+                    "key": "Ох, миссис Грин… (стонет)"
+                },
+                {
+                    "key": "И запомни! Если ты еще раз посмеешь \nбезответственно отнестись к моему \nпредмету, то будешь наказан!"
+                },
+                {
+                    "key": "Ты понял?"
+                },
+                {
+                    "key": "Да, миссис Грин, я заслуживаю наказания!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Ben, könntest du nach der Vorlesung \nnoch bleiben, bitte?"
+                },
+                {
+                    "key": "Ja, Mrs. Green."
+                },
+                {
+                    "key": "Sie denken, nur weil Sie \nund ich schlief einmal, können \nSie unverantwortlich über \nIhre Studien sein?"
+                },
+                {
+                    "key": "Nein! Nein, natürlich nicht."
+                },
+                {
+                    "key": "Was ist dann mit dem \nReferat, das du letzte \nWoche eingereicht hast?"
+                },
+                {
+                    "key": "I... Ich hatte keine Zeit, \nmich vorzubereiten... \nEs tut mir leid ...."
+                },
+                {
+                    "key": "Was haben Sie gemacht?"
+                },
+                {
+                    "key": "Nicht viel, Mrs. Green."
+                },
+                {
+                    "key": "Lüg mich nicht an, du dreckiger \nJunge! Ich habe gesehen, wie \ndu die anderen Schüler \nangeschaut hast."
+                },
+                {
+                    "key": "Gib es zu, du magst jüngere Mädchen, \nnicht wahr? Bin ich nicht \ngut genug für dich?"
+                },
+                {
+                    "key": "Nein..."
+                },
+                {
+                    "key": "Halt die Klappe! Zieh deine Hose aus!"
+                },
+                {
+                    "key": "Was ist denn? Gleich hier? \nDas kann ich nicht."
+                },
+                {
+                    "key": "Hast du gehört, was ich gesagt \nhabe? Ziehen Sie Ihre \nHose aus, jetzt!"
+                },
+                {
+                    "key": "Oh, Mrs. Green. "
+                },
+                {
+                    "key": "Und denk dran! Wenn du es noch \neinmal wagst, meine Untergebene \nunverantwortlich zu behandeln, \nwirst du bestraft werden!"
+                },
+                {
+                    "key": "Haben Sie das verstanden?"
+                },
+                {
+                    "key": "Ja, Mrs. Green, ich verdiene es, \nbestraft zu werden!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
 }

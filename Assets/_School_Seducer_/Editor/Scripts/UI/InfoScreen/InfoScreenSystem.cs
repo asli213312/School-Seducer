@@ -9,12 +9,14 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField, SerializeReference] private InfoScrollersModule scrollersModule;
         [SerializeField] private InfoStoryCounter storyCounter;
         [SerializeField] private InfoGiftsModule giftsModule;
+        [SerializeField] private InfoSpecialContent specialContentModule;
         
         public Previewer Previewer => previewer;
         public IInfoCharacterModule InfoModule => infoModule;
         public IInfoScrollersModule ScrollersModule => scrollersModule;
         public InfoStoryCounter StoryCounter => storyCounter;
         public InfoGiftsModule GiftsModule => giftsModule;
+        public InfoSpecialContent SpecialContentModule => specialContentModule;
 
         private void Awake()
         {
@@ -33,6 +35,9 @@ namespace _School_Seducer_.Editor.Scripts
                 
                 giftsModule.InitializeCore(this);
                 giftsModule.Initialize();
+
+                specialContentModule.InitializeCore(this);
+                specialContentModule.Initialize();
             }
         }
     }

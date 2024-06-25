@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ca1cd1e3654303aff5d941a90c197e, type: 3}
+  m_Name: Li
+  m_EditorClassIdentifier: 
+  count: 0
+  iconInfo: {fileID: 0}
+  borderSpriteByColor: {fileID: 0}
+  extraCharacterPortrait: {fileID: 21300000, guid: 8e1e07c886131654aa7331c96d886f86, type: 3}
+  icon: {fileID: 21300000, guid: 6f485ff4fe70034499e548c8840c960e, type: 3}
+  slotType: 2
+  costExp: 0
+  score: 1
+  chanceToGain: {x: 1, y: 100}
+  useTest: 0
+  iconTest: {fileID: 0}
+  slotTypeTest: 2
+  costExpTest: 0
+  levelTest: 0
+  chanceToGainTest: {x: 0, y: 0}

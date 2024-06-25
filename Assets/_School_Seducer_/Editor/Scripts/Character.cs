@@ -2,6 +2,7 @@
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts;
 using _School_Seducer_.Editor.Scripts.Chat;
+using GameAnalyticsSDK;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;
@@ -30,6 +31,9 @@ public class Character : MonoBehaviour, IPointerDownHandler
     {
         Debug.Log("This character: " + gameObject.name);
         CharacterSelected?.Invoke(this);
+
+        GameAnalytics.NewDesignEvent("main_girl_" + characterData.name);
+        Debug.Log("main_girl_" + characterData.name);
         
         //_chatSystem.gameObject.SafeActivate();
     }

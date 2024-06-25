@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.UI.Gallery;
 using _School_Seducer_.Editor.Scripts.Utility;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.UI
 {
-    public class GalleryScreen : ScreenViewBase
+    public class GalleryScreen : MonoBehaviour
     {
         [Inject] private IContentDataProvider _contentDataProvider;
         
@@ -19,7 +21,9 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [SerializeField] private Transform galleryContent;
         [SerializeField] private TextMeshProUGUI characterName;
         [SerializeField] private GalleryData data;
+        [SerializeField] private GallerySlotView slotGamePrefab;
         [SerializeField] private GallerySlotView slotPhotoPrefab;
+        [SerializeField] private GallerySlotView slotComicsPrefab;
         [SerializeField] private GallerySlotView slotVideoPrefab;
         [SerializeField] private GallerySectionButton[] sectionButtons;
 
@@ -27,6 +31,11 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [SerializeField] private TextMeshProUGUI photosCountText;
         [SerializeField] private TextMeshProUGUI gamesCountText;
         [SerializeField] private TextMeshProUGUI videosCountText;
+        
+        [Header("MiniGames")]
+        [SerializeField] private Canvas miniGameCanvas;
+        [SerializeField] private UnityEvent onStartMiniGame;
+        [SerializeField] private UnityEvent onCloseMiniGame;
 
         public ContentScreen ContentScreen => contentScreen;
         
@@ -34,13 +43,6 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private GalleryCharacterData _currentGalleryData;
         private GallerySlotData _currentSlotData;
         private List<GallerySlotData> _foundedSlotsCurrentCharacter = new();
-        private GallerySectionButton _currentActiveSectionButton;
-
-        public void SetCurrentData(GalleryCharacterData currentData)
-        {
-            _currentGalleryData = currentData;
-            data.dampedData = _currentGalleryData;
-        }
 
         private void Awake()
         {
@@ -81,22 +83,32 @@ namespace _School_Seducer_.Editor.Scripts.UI
             _contentDataProvider.ResetContentList();
         }
 
+        public void SetCurrentData(GalleryCharacterData currentData)
+        {
+            _currentGalleryData = currentData;
+            data.dampedData = _currentGalleryData;
+        }
+
+        public void SelectSection(GallerySectionButton sectionButton) 
+        {
+            OnSectionSelected(sectionButton);
+        }
+
         private void InstallDefaultSection()
         {
             SetSlotsByConversation(GallerySlotType.Photo);
+            SetSlotsByData(GallerySlotType.Photo);
             
             this.DelayedCall(.3f,() => _contentDataProvider.LoadContentData(GetTotalSlotsInContent()));
         }
 
         private void OnSectionSelected(GallerySectionButton sectionButton)
         {
-            _currentActiveSectionButton = sectionButton;
-
             ResetContent();
 
             _currentType = sectionButton.TypeSection;
             SetSlotsByConversation(sectionButton.TypeSection);
-            //SetSlotsByData(sectionButton.TypeSection);
+            SetSlotsByData(sectionButton.TypeSection);
             this.DelayedCall(.3f,() => _contentDataProvider.LoadContentData(GetTotalSlotsInContent()));
         }
 
@@ -106,12 +118,34 @@ namespace _School_Seducer_.Editor.Scripts.UI
             
             for (int j = 0; j < _currentGalleryData.AllSlots.Count; j++)
             {
-                GallerySlotData slotData = _currentGalleryData.AllSlots[j];
+                GallerySlotDataBase slotData = _currentGalleryData.AllSlots[j];
+                GallerySlotView selectedView = null;
 
                 if (slotData.Section == section)
                 {
-                    GallerySlotView slotView = Instantiate(slotPhotoPrefab, galleryContent);
+                    switch (slotData.Section)
+                    {
+                        case GallerySlotType.Photo: selectedView = slotPhotoPrefab; break;
+                        case GallerySlotType.Video: selectedView = slotVideoPrefab; break;
+                        case GallerySlotType.Game: selectedView = slotGamePrefab; break;
+                        case GallerySlotType.Special: selectedView = slotData.prefab; break;
+                    }
+
+                    GallerySlotView slotView = Instantiate(selectedView, galleryContent);
                     slotView.Render(slotData, data.lockedSlot, data.frameSlot);
+                    
+                    slotView.GetComponent<OpenContentBase>().SetCondition(new (slotView.Data.AddedInGallery));
+
+                    if (slotView.Data is GallerySlotDataGame gameData)
+                    {
+                        if (gameData.AddedInGallery) 
+                        {
+                            OpenContentGame gameContent = slotView.GetComponentInChildren<OpenContentGame>();
+                            gameContent.Initialize(gameData.miniGameData, miniGameCanvas.transform);
+                            gameContent.InstanceGame.StartGameAction += onStartMiniGame.Invoke;
+                            gameContent.InstanceGame.CloseGameAction += onCloseMiniGame.Invoke;
+                        }
+                    }
 
                     //SetCounterSlots(section);
 
@@ -147,7 +181,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
                     if (slotData.AddedInGallery && _currentGalleryData.IsOriginalData(slotData))
                     {
-                        _currentGalleryData.AddSlotData(slotData);
+                        //_currentGalleryData.AddSlotData(slotData);
                     }   
                 }
             }
@@ -159,27 +193,32 @@ namespace _School_Seducer_.Editor.Scripts.UI
             {
                 case GallerySlotType.Photo:
                     int totalPhotosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Photo);
-                    int totalPhotosCount = GetTotalAddedSlotsByType(GallerySlotType.Photo);
+                    int totalPhotosCountAddedData = GetAddedSlotsInDataByType(GallerySlotType.Photo);
+                    int totalPhotosCountData = GetTotalCountSlotsInDataByType(GallerySlotType.Photo);
+                    int totalPhotosCount = GetTotalAddedConversationSlotsByType(GallerySlotType.Photo) + totalPhotosCountData;
 
-                    photosCountText.text = $"{totalPhotosCount}/{totalPhotosCountConversation}";
+                    photosCountText.text = $"{totalPhotosCount}/{totalPhotosCountConversation + totalPhotosCountAddedData}";
                     break;
 
                 case GallerySlotType.Game:
                     int totalGamesCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Game);
-                    int totalGamesCountData = GetTotalAddedSlotsByType(GallerySlotType.Game);
+                    int totalGameCountAddedData = GetAddedSlotsInDataByType(GallerySlotType.Game);
+                    int totalGameCountData = GetTotalCountSlotsInDataByType(GallerySlotType.Game);
+                    int totalGamesCount = GetTotalAddedConversationSlotsByType(GallerySlotType.Game) + totalGameCountData;
 
                     Debug.Log("totalGamesCountConversation: " + totalGamesCountConversation);
-                    Debug.Log("totalGamesCountData: " + totalGamesCountData);
+                    Debug.Log("totalGamesCountData: " + totalGamesCount);
 
-                    gamesCountText.text = $"{totalGamesCountData}/{totalGamesCountConversation}";
+                    gamesCountText.text = $"{totalGamesCount}/{totalGamesCountConversation + totalGameCountAddedData}";
                     break;
 
                 case GallerySlotType.Video:
-                    //slotView.Render(slotData, );
                     int totalVideosCountConversation = GetTotalCountSlotsByConversation(GallerySlotType.Video);
-                    int totalVideosCountData = GetTotalAddedSlotsByType(GallerySlotType.Video);
+                    int totalVideosCountAddedData = GetAddedSlotsInDataByType(GallerySlotType.Video);
+                    int totalVideosCountData = GetTotalCountSlotsInDataByType(GallerySlotType.Video);
+                    int totalVideosCount = GetTotalAddedConversationSlotsByType(GallerySlotType.Video) + totalVideosCountData;
 
-                    videosCountText.text = $"{totalVideosCountData}/{totalVideosCountConversation}";
+                    videosCountText.text = $"{totalVideosCount}/{totalVideosCountConversation + totalVideosCountAddedData}";
                     break;
             }
         }
@@ -289,24 +328,6 @@ namespace _School_Seducer_.Editor.Scripts.UI
             return countedSlotsByType;
         }
 
-        private int GetCountSlotsAddedByConversation(GallerySlotType typeSlot)
-        {
-            int countedSlotsByType = 0;
-            for (int i = 0; i < chat.CompletedMessagesCurrentConversation.Count; i++)
-            {
-                if (chat.CompletedMessagesCurrentConversation[i].optionalData.GallerySlot == null) continue;
-                
-                GallerySlotData slotData = chat.CompletedMessagesCurrentConversation[i].optionalData.GallerySlot;
-
-                if (slotData.Section == typeSlot && slotData.AddedInGallery)
-                {
-                    countedSlotsByType++;
-                }
-            }
-
-            return countedSlotsByType;
-        }
-
         public List<IContent> GetTotalSlotsInContent()
         {
             List<IContent> selectedSlots = new List<IContent>();
@@ -321,7 +342,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             return selectedSlots;
         }
 
-        private int GetTotalAddedSlotsByType(GallerySlotType typeSlot)
+        private int GetTotalAddedConversationSlotsByType(GallerySlotType typeSlot)
         {
             int countedSlotsByType = 0;
 
@@ -341,7 +362,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
             
             for (int i = 0; i < _currentGalleryData.AllSlots.Count; i++)
             {
-                GallerySlotData slotData = _currentGalleryData.AllSlots[i];
+                GallerySlotDataBase slotData = _currentGalleryData.AllSlots[i];
                 
                 if (slotData.Section == typeSlot)
                 {
@@ -353,11 +374,38 @@ namespace _School_Seducer_.Editor.Scripts.UI
             return countedSlotsByType;
         }
 
+        private int GetAddedSlotsInDataByType(GallerySlotType typeSlot)
+        {
+            int countedSlotsByType = 0;
+
+            for (int i = 0; i < _currentGalleryData.AllSlots.Count; i++)
+            {
+                GallerySlotDataBase slotData = _currentGalleryData.AllSlots[i];
+                
+                if (slotData.Section == typeSlot)
+                    if (slotData.AddedInGallery)
+                        countedSlotsByType++;
+            }
+
+            return countedSlotsByType;
+        }
+
         private void ResetContent()
         {
             for (int i = 0; i < galleryContent.childCount; i++)
             {
-                Destroy(galleryContent.GetChild(i).gameObject);
+                OpenContentBase contentBase = galleryContent.GetChild(i).GetComponent<OpenContentBase>();
+
+                if (contentBase is OpenContentGame contentGame)
+                {
+                    if (contentGame.InstanceGame != null) 
+                    {
+                        contentGame.InstanceGame.StartGameAction -= onStartMiniGame.Invoke;
+                        contentGame.InstanceGame.CloseGameAction -= onCloseMiniGame.Invoke;
+                    }
+                }
+                
+                Destroy(contentBase.gameObject);
             }
         }
 

@@ -87,7 +87,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private void SetupAudioMessage()
         {
-            _soundHandler.InvokeClipAfterPlayback(InstallAudioMessage);
+            _soundHandler.InvokeActionAfterPlayback(InstallAudioMessage);
         }
 
         private void InstallAudioMessage()
@@ -100,8 +100,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             LocalizedUIText localizedComponent = GetComponent<LocalizedUIText>();
             //localizedComponent.SetLocalizator(_localizer);
             TextMeshProUGUI textComponent = GetComponentInChildren<TextMeshProUGUI>();
-            Translator.Languages currentLanguage = localizedComponent.LocalizedData.Find(x => x.languageCode == _localizer.GlobalLanguageCodeRuntime);
-            textComponent.text = currentLanguage.key;
+            Translator.LanguagesText currentLanguageText = localizedComponent.LocalizedData.Find(x => x.languageCode == _localizer.GlobalLanguageCodeRuntime);
+            textComponent.text = currentLanguageText.key;
         }
 
         private void SetupBackGroundImage(GameObject option)

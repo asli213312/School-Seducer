@@ -1,124 +1,314 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-        {"key": "Yo, check it out – this is gonna be my crib \n for the next couple of years. Not exactly \n a penthouse, but it's chill. I'm curious \n about my future roomie though. I hope \n he's not a total nerd, you know? I don't \n want our room to be \n a total chick repellent!" },
-        {"key": "Oh, snap, there he is!"},
-        {"key": "Hey! I was almost wandering \n lost trying to find this joint."},
-	{"key": "Umm, hey!"},
-	{"key": "Hey, mind scooting over a bit?  \n Can't get in with you blocking the doorway."},
-	{"key": "Oh, my bad... Sure thing! I thought it was \n my new roomie showing up. \n Haven't met the dude yet."},
-	{"key": "Oh, you don't know? I'm your new roomie. \n Hope you're cool with that."},
-	{"key": "I... umm... well..."},
-	{"key": "Supposed to be Douglas, but he's hitting \n it off with my girl Veronica. \n So, they asked me and Douglas to swap rooms. \n Douglas is bunking with Veronica, \n and now I'm rooming with..."},
-	{"key": "Umm, with who?"},
-	{"key": "What's your name?"},
-	{"key": "Oh, my bad, I'm Ben."},
-	{"key": "Nice to meet you, Ben. \n Cool with sharing the room?"},
-	{"key": "Me? Oh, hell yeah, come on in!"},
-	{"key": "But listen up, from now on, \n you and I are roomies! \n Just keeping it friendly, you feel me?"},
-	{"key": "Oh, sure, I wasn't thinking anything else."},
-	{"key": "We're gonna vibe, man! Now, \n turn around, I gotta change real quick."},
-	{"key": "Yeah, sure."},
-	{"key": "Whoa, they got a mirror set up \n like it's meant to be here!"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-        {"key": "Ну что, вот и моя комната на ближайшие \n несколько лет. Не пентхаус, но сойдёт. \n Интересно, какой он, мой будущий сосед \n по комнате? Надеюсь, он не нудный ботаник. \n А то с таким соседом по комнате девчонки \n нашу комнату будут за километр обходить."},
-        {"key": "О, а вот и он!"},
-        {"key": "О, привет! Я чуть не заблудилась, \n пока искала."},
-        {"key": "М-м-м, привет!"},
-        {"key": "Слушай, а может ты подвинешься? \n А то пока ты стоишь в двери, \n я не могу войти."},
-        {"key": "Ой, да… Конечно! Прости… Просто я думал, \n что это пришёл мой новый сосед по комнате. \n Я с ним ещё не знаком. "},
-        {"key": "А, ты не в курсе? \n Я твой новый сосед, точнее, соседка. \n Ты, надеюсь, не против? "},
-        {"key": "Я… м-м-м… э-э-э…"},
-        {"key": "Твоим соседом должен был быть Дуглас, но \n он мутит с моей соседкой Вероникой. \n И, в общем, они попросили меня с Дугласом \n поменяться комнатами. \n Так что Дуглас будет жить с Вероникой, \n а я буду жить с…"},
-        {"key": "Э-э-э?"},
-        {"key": "Как тебя зовут?"},
-        {"key": "А, да, извини, меня зовут Бэн."},
-        {"key": "Приятно познакомиться, Бэн, я Эмили. \n Ну что, ты не против \n делить со мной комнату?"},
-        {"key": "Я? Нет, конечно, я не против, проходи!"},
-        {"key": "Но смотри, с этого момента мы с тобой \n соседи по комнате! Между нами не может \n быть ничего, кроме дружеских \n отношений, договорились?"},
-        {"key": "А, да, разумеется, я и не думал ни о чём таком."},
-        {"key": "Думаю, мы отлично поладим! \n А теперь отвернись, пожалуйста, \n мне надо переодеться."},
-        {"key": "Да, конечно."},
-        {"key": "Ого, как удачно тут стоит зеркало!"}
-      ]
-    },
-    {
-    	"languageCode": "de",
-      "messages": [
-        {"key": "Yo, check es aus – das wird \nfür die nächsten paar Jahre mein \nZuhause sein. Nicht gerade ein Penthouse, \naber es ist entspannt. Ich bin \ngespannt auf meinen zukünftigen Mitbewohner. \nHoffentlich ist er nicht totaler Nerd, \nweißt du? Ich möchte nicht, dass unser \nZimmer total abtörnend für die Mädels ist!"},
-        {"key": "О, а вот и он!"},
-        {"key": "О, привет! Я чуть не заблудилась, \n пока искала."},
-        {"key": "М-м-м, привет!"},
-        {"key": "Слушай, а может ты подвинешься? \n А то пока ты стоишь в двери, \n я не могу войти."},
-        {"key": "Ой, да… Конечно! Прости… Просто я думал, \n что это пришёл мой новый сосед по комнате. \n Я с ним ещё не знаком. "},
-        {"key": "А, ты не в курсе? \n Я твой новый сосед, точнее, соседка. \n Ты, надеюсь, не против? "},
-        {"key": "Я… м-м-м… э-э-э…"},
-        {"key": "Твоим соседом должен был быть Дуглас, но \n он мутит с моей соседкой Вероникой. \n И, в общем, они попросили меня с Дугласом \n поменяться комнатами. \n Так что Дуглас будет жить с Вероникой, \n а я буду жить с…"},
-        {"key": "Э-э-э?"},
-        {"key": "Как тебя зовут?"},
-        {"key": "А, да, извини, меня зовут Бэн."},
-        {"key": "Приятно познакомиться, Бэн, я Эмили. \n Ну что, ты не против \n делить со мной комнату?"},
-        {"key": "Я? Нет, конечно, я не против, проходи!"},
-        {"key": "Но смотри, с этого момента мы с тобой \n соседи по комнате! Между нами не может \n быть ничего, кроме дружеских \n отношений, договорились?"},
-        {"key": "А, да, разумеется, я и не думал ни о чём таком."},
-        {"key": "Думаю, мы отлично поладим! \n А теперь отвернись, пожалуйста, \n мне надо переодеться."},
-        {"key": "Да, конечно."},
-        {"key": "Ого, как удачно тут стоит зеркало!"}
-      ]
-    },
-    {
-      "languageCode": "it",
-      "messages": [
-        {"key": "Yo, dai un'occhiata - questa sarà la mia \ncrib per i prossimi anni. Non proprio \nun attico, ma è tranquillo. Sono curioso \nriguardo al mio futuro coinquilino. Spero \nnon sia un totale secchione, capisci? \nNon voglio che la nostra stanza \nsia un totale repellente per le ragazze!"},
-        {"key": "О, а вот и он!"},
-        {"key": "О, привет! Я чуть не заблудилась, \n пока искала."},
-        {"key": "М-м-м, привет!"},
-        {"key": "Слушай, а может ты подвинешься? \n А то пока ты стоишь в двери, \n я не могу войти."},
-        {"key": "Ой, да… Конечно! Прости… Просто я думал, \n что это пришёл мой новый сосед по комнате. \n Я с ним ещё не знаком. "},
-        {"key": "А, ты не в курсе? \n Я твой новый сосед, точнее, соседка. \n Ты, надеюсь, не против? "},
-        {"key": "Я… м-м-м… э-э-э…"},
-        {"key": "Твоим соседом должен был быть Дуглас, но \n он мутит с моей соседкой Вероникой. \n И, в общем, они попросили меня с Дугласом \n поменяться комнатами. \n Так что Дуглас будет жить с Вероникой, \n а я буду жить с…"},
-        {"key": "Э-э-э?"},
-        {"key": "Как тебя зовут?"},
-        {"key": "А, да, извини, меня зовут Бэн."},
-        {"key": "Приятно познакомиться, Бэн, я Эмили. \n Ну что, ты не против \n делить со мной комнату?"},
-        {"key": "Я? Нет, конечно, я не против, проходи!"},
-        {"key": "Но смотри, с этого момента мы с тобой \n соседи по комнате! Между нами не может \n быть ничего, кроме дружеских \n отношений, договорились?"},
-        {"key": "А, да, разумеется, я и не думал ни о чём таком."},
-        {"key": "Думаю, мы отлично поладим! \n А теперь отвернись, пожалуйста, \n мне надо переодеться."},
-        {"key": "Да, конечно."},
-        {"key": "Ого, как удачно тут стоит зеркало!"}
-      ]
-    },
-    {
-      "languageCode": "fr",
-      "messages": [
-        {"key": "Yo, regarde ça - c'est là que je vais \nhabiter pour les prochaines années. \nPas vraiment un penthouse, mais c'est \ncool. Je suis curieux de voir mon \nfutur colocataire. J'espère qu'il n'est \npas un vrai nerd, tu vois? Je ne \nveux pas que notre chambre soit \nun vrai repoussoir pour les filles !"},
-        {"key": "О, а вот и он!"},
-        {"key": "О, привет! Я чуть не заблудилась, \n пока искала."},
-        {"key": "М-м-м, привет!"},
-        {"key": "Слушай, а может ты подвинешься? \n А то пока ты стоишь в двери, \n я не могу войти."},
-        {"key": "Ой, да… Конечно! Прости… Просто я думал, \n что это пришёл мой новый сосед по комнате. \n Я с ним ещё не знаком. "},
-        {"key": "А, ты не в курсе? \n Я твой новый сосед, точнее, соседка. \n Ты, надеюсь, не против? "},
-        {"key": "Я… м-м-м… э-э-э…"},
-        {"key": "Твоим соседом должен был быть Дуглас, но \n он мутит с моей соседкой Вероникой. \n И, в общем, они попросили меня с Дугласом \n поменяться комнатами. \n Так что Дуглас будет жить с Вероникой, \n а я буду жить с…"},
-        {"key": "Э-э-э?"},
-        {"key": "Как тебя зовут?"},
-        {"key": "А, да, извини, меня зовут Бэн."},
-        {"key": "Приятно познакомиться, Бэн, я Эмили. \n Ну что, ты не против \n делить со мной комнату?"},
-        {"key": "Я? Нет, конечно, я не против, проходи!"},
-        {"key": "Но смотри, с этого момента мы с тобой \n соседи по комнате! Между нами не может \n быть ничего, кроме дружеских \n отношений, договорились?"},
-        {"key": "А, да, разумеется, я и не думал ни о чём таком."},
-        {"key": "Думаю, мы отлично поладим! \n А теперь отвернись, пожалуйста, \n мне надо переодеться."},
-        {"key": "Да, конечно."},
-        {"key": "Ого, как удачно тут стоит зеркало!"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Yo, check it out – this is gonna be my crib \n for the next couple of years. Not exactly \n a penthouse, but it's chill. I'm curious \n about my future roomie though. I hope \n he's not a total nerd, you know? I don't \n want our room to be \n a total chick repellent!"
+                },
+                {
+                    "key": "Oh, snap, there he is!"
+                },
+                {
+                    "key": "Hey! I was almost wandering \n lost trying to find this joint."
+                },
+                {
+                    "key": "Umm, hey!"
+                },
+                {
+                    "key": "Hey, mind scooting over a bit?  \n Can't get in with you blocking the doorway."
+                },
+                {
+                    "key": "Oh, my bad... Sure thing! I thought it was \n my new roomie showing up. \n Haven't met the dude yet."
+                },
+                {
+                    "key": "Oh, you don't know? I'm your new roomie. \n Hope you're cool with that."
+                },
+                {
+                    "key": "I... umm... well..."
+                },
+                {
+                    "key": "Supposed to be Douglas, but he's \nhitting it off with my girl Veronica. \nSo, they asked me and Douglas to \nswap rooms. Douglas is bunking with \nVeronica, and now I'm rooming with..."
+                },
+                {
+                    "key": "Umm, with who?"
+                },
+                {
+                    "key": "What's your name?"
+                },
+                {
+                    "key": "Oh, my bad, I'm Ben."
+                },
+                {
+                    "key": "Nice to meet you, Ben. \n Cool with sharing the room?"
+                },
+                {
+                    "key": "Me? Oh, hell yeah, come on in!"
+                },
+                {
+                    "key": "But listen up, from now on, \n you and I are roomies! \n Just keeping it friendly, you feel me?"
+                },
+                {
+                    "key": "Oh, sure, I wasn't thinking anything else."
+                },
+                {
+                    "key": "We're gonna vibe, man! Now, \n turn around, I gotta change real quick."
+                },
+                {
+                    "key": "Yeah, sure."
+                },
+                {
+                    "key": "Whoa, they got a mirror set up \n like it's meant to be here!"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Ну что, вот и моя комната на ближайшие \n несколько лет. Не пентхаус, но сойдет. \n Интересно, какой он, мой будущий сосед \n по комнате? Надеюсь, он не нудный ботаник. \n А то с таким соседом по комнате девчонки \n нашу комнату будут за километр обходить."
+                },
+                {
+                    "key": "О, а вот и он!"
+                },
+                {
+                    "key": "О, привет! Я чуть не заблудилась, \n пока искала."
+                },
+                {
+                    "key": "М-м-м, привет!"
+                },
+                {
+                    "key": "Слушай, а может ты подвинешься? \n А то пока ты стоишь в двери, \n я не могу войти."
+                },
+                {
+                    "key": "Ой, да… Конечно! Прости… Просто я думал, \n что это пришел мой новый сосед по комнате. \n Я с ним еще не знаком. "
+                },
+                {
+                    "key": "А, ты не в курсе? \n Я твой новый сосед, точнее, соседка. \n Ты, надеюсь, не против? "
+                },
+                {
+                    "key": "Я… м-м-м… э-э-э…"
+                },
+                {
+                    "key": "Твоим соседом должен был быть Дуглас, но \n он мутит с моей соседкой Вероникой. \n И, в общем, они попросили меня с Дугласом \n поменяться комнатами. \n Так что Дуглас будет жить с Вероникой, \n а я буду жить с…"
+                },
+                {
+                    "key": "Э-э-э?"
+                },
+                {
+                    "key": "Как тебя зовут?"
+                },
+                {
+                    "key": "А, да, извини, меня зовут Бэн."
+                },
+                {
+                    "key": "Приятно познакомиться, Бэн, я Эмили. \n Ну что, ты не против \n делить со мной комнату?"
+                },
+                {
+                    "key": "Я? Нет, конечно, я не против, проходи!"
+                },
+                {
+                    "key": "Но смотри, с этого момента мы с тобой \n соседи по комнате! Между нами не может \n быть ничего, кроме дружеских \n отношений, договорились?"
+                },
+                {
+                    "key": "А, да, разумеется, я и не думал ни о чем таком."
+                },
+                {
+                    "key": "Думаю, мы отлично поладим! \n А теперь отвернись, пожалуйста, \n мне надо переодеться."
+                },
+                {
+                    "key": "Да, конечно."
+                },
+                {
+                    "key": "Ого, как удачно тут стоит зеркало!"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Yo, check es aus – das wird \nfür die nächsten paar Jahre \nmein Zuhause sein. Nicht gerade \nein Penthouse, aber es ist \nentspannt. Ich bin gespannt \nauf meinen zukünftigen Mitbewohner. \nHoffentlich ist er nicht totaler \nNerd, weißt du? Ich möchte nicht, \ndass unser Zimmer total abtörnend \nfür die Mädels ist!"
+                },
+                {
+                    "key": "Oh, krass, da ist er!"
+                },
+                {
+                    "key": "Hey! Ich war fast verloren auf \nder Suche nach dieser Bude."
+                },
+                {
+                    "key": "Umm, hey!"
+                },
+                {
+                    "key": "Hey, könntest du vielleicht ein \nbisschen zur Seite rutschen? \nIch komm nicht durch, wenn \ndu die Tür blockierst."
+                },
+                {
+                    "key": "Oh, mein Fehler... Klar, kein \nProblem! Ich dachte, das wäre \nmein neuer Mitbewohner, der \nauftaucht. Hab den Kerl noch \nnicht kennengelernt."
+                },
+                {
+                    "key": "Oh, weißt du das nicht? Ich \nbin dein neuer Nachbar, oder \nbesser gesagt Nachbar. Ich \nhoffe, es macht dir nichts aus?"
+                },
+                {
+                    "key": "Ich... ähm... nun..."
+                },
+                {
+                    "key": "Sollte eigentlich mit Douglas \nsein, aber er hat es gut mit \nmeiner Freundin Veronica. Also \nhaben sie mich und Douglas gebeten, \ndie Zimmer zu tauschen. Douglas \npennt jetzt bei Veronica, \nund jetzt bin ich..."
+                },
+                {
+                    "key": "Mit wem?"
+                },
+                {
+                    "key": "Wie heißt du?"
+                },
+                {
+                    "key": "Oh, mein Fehler, ich bin Ben."
+                },
+                {
+                    "key": "Freut mich, dich kennenzulernen, \nBen. Hast du etwas dagegen, \ndas Zimmer zu teilen?"
+                },
+                {
+                    "key": "Ich? Oh, verdammt ja, komm rein!"
+                },
+                {
+                    "key": "Aber hör zu, von jetzt an \nsind du und ich Mitbewohner! \nEinfach freundlich bleiben, \nverstehst du?"
+                },
+                {
+                    "key": "Oh, sicher, ich dachte \nan nichts anderes."
+                },
+                {
+                    "key": "Wir werden gut miteinander \nauskommen, Mann! Jetzt dreh \ndich um, ich muss mich \nschnell umziehen."
+                },
+                {
+                    "key": "Ja, klar."
+                },
+                {
+                    "key": "Wow, die haben hier einen \nSpiegel aufgestellt, als \nob er hierhergehört!"
+                }
+            ]
+        },
+        {
+            "languageCode": "it",
+            "messages": [
+                {
+                    "key": "Yo, dai un'occhiata - questa sarà la mia \ncrib per i prossimi anni. Non proprio \nun attico, ma è tranquillo. Sono curioso \nriguardo al mio futuro coinquilino. Spero \nnon sia un totale secchione, capisci? \nNon voglio che la nostra stanza \nsia un totale repellente per le ragazze!"
+                },
+                {
+                    "key": "О, а вот и он!"
+                },
+                {
+                    "key": "О, привет! Я чуть не заблудилась, \n пока искала."
+                },
+                {
+                    "key": "М-м-м, привет!"
+                },
+                {
+                    "key": "Слушай, а может ты подвинешься? \n А то пока ты стоишь в двери, \n я не могу войти."
+                },
+                {
+                    "key": "Ой, да… Конечно! Прости… Просто я думал, \n что это пришел мой новый сосед по комнате. \n Я с ним ещё не знаком. "
+                },
+                {
+                    "key": "А, ты не в курсе? \n Я твой новый сосед, точнее, соседка. \n Ты, надеюсь, не против? "
+                },
+                {
+                    "key": "Я… м-м-м… э-э-э…"
+                },
+                {
+                    "key": "Твоим соседом должен был быть Дуглас, но \n он мутит с моей соседкой Вероникой. \n И, в общем, они попросили меня с Дугласом \n поменяться комнатами. \n Так что Дуглас будет жить с Вероникой, \n а я буду жить с…"
+                },
+                {
+                    "key": "Э-э-э?"
+                },
+                {
+                    "key": "Как тебя зовут?"
+                },
+                {
+                    "key": "А, да, извини, меня зовут Бэн."
+                },
+                {
+                    "key": "Приятно познакомиться, Бэн, я Эмили. \n Ну что, ты не против \n делить со мной комнату?"
+                },
+                {
+                    "key": "Я? Нет, конечно, я не против, проходи!"
+                },
+                {
+                    "key": "Но смотри, с этого момента мы с тобой \n соседи по комнате! Между нами не может \n быть ничего, кроме дружеских \n отношений, договорились?"
+                },
+                {
+                    "key": "А, да, разумеется, я и не думал ни о чем таком."
+                },
+                {
+                    "key": "Думаю, мы отлично поладим! \n А теперь отвернись, пожалуйста, \n мне надо переодеться."
+                },
+                {
+                    "key": "Да, конечно."
+                },
+                {
+                    "key": "Ого, как удачно тут стоит зеркало!"
+                }
+            ]
+        },
+        {
+            "languageCode": "fr",
+            "messages": [
+                {
+                    "key": "Yo, regarde ça - c'est là que je vais \nhabiter pour les prochaines années. \nPas vraiment un penthouse, mais c'est \ncool. Je suis curieux de voir mon \nfutur colocataire. J'espère qu'il n'est \npas un vrai nerd, tu vois? Je ne \nveux pas que notre chambre soit \nun vrai repoussoir pour les filles !"
+                },
+                {
+                    "key": "О, а вот и он!"
+                },
+                {
+                    "key": "О, привет! Я чуть не заблудилась, \n пока искала."
+                },
+                {
+                    "key": "М-м-м, привет!"
+                },
+                {
+                    "key": "Слушай, а может ты подвинешься? \n А то пока ты стоишь в двери, \n я не могу войти."
+                },
+                {
+                    "key": "Ой, да… Конечно! Прости… Просто я думал, \n что это пришёл мой новый сосед по комнате. \n Я с ним ещё не знаком. "
+                },
+                {
+                    "key": "А, ты не в курсе? \n Я твой новый сосед, точнее, соседка. \n Ты, надеюсь, не против? "
+                },
+                {
+                    "key": "Я… м-м-м… э-э-э…"
+                },
+                {
+                    "key": "Твоим соседом должен был быть Дуглас, но \n он мутит с моей соседкой Вероникой. \n И, в общем, они попросили меня с Дугласом \n поменяться комнатами. \n Так что Дуглас будет жить с Вероникой, \n а я буду жить с…"
+                },
+                {
+                    "key": "Э-э-э?"
+                },
+                {
+                    "key": "Как тебя зовут?"
+                },
+                {
+                    "key": "А, да, извини, меня зовут Бэн."
+                },
+                {
+                    "key": "Приятно познакомиться, Бэн, я Эмили. \n Ну что, ты не против \n делить со мной комнату?"
+                },
+                {
+                    "key": "Я? Нет, конечно, я не против, проходи!"
+                },
+                {
+                    "key": "Но смотри, с этого момента мы с тобой \n соседи по комнате! Между нами не может \n быть ничего, кроме дружеских \n отношений, договорились?"
+                },
+                {
+                    "key": "А, да, разумеется, я и не думал ни о чем таком."
+                },
+                {
+                    "key": "Думаю, мы отлично поладим! \n А теперь отвернись, пожалуйста, \n мне надо переодеться."
+                },
+                {
+                    "key": "Да, конечно."
+                },
+                {
+                    "key": "Ого, как удачно тут стоит зеркало!"
+                }
+            ]
+        }
+    ]
 }

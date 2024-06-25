@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88968f6acf6d43419b503cdf506f95a8, type: 3}
+  m_Name: Premium Holly
+  m_EditorClassIdentifier: 
+  isSold: 0
+  showDebugParameters: 1
+  id: premium_Holly
+  cost: 19.99
+  view: {fileID: 201704229642559818, guid: c3384f973160cfe4287fe75b47577e9e, type: 3}
+  characterData: {fileID: 11400000, guid: ad5771578c7639b4791ec4add435baad, type: 2}

@@ -1,58 +1,217 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "The lecture's done. Catch you next week." },
-  {"key": "Ben, hang back after class, please."},
-  {"key": "Sure thing, Miss Green."},
-	{"key": "I need someone to help with house chores, \nand I want to hire you for the job."},
-	{"key": "You want me? Usually, it's girls \ndoing this stuff."},
-	{"key": "Yeah, but I've got my reasons. \nI'll pay $500 a month. \nAre you down?"},
-	{"key": "That's a lot of cash for me. \nYeah, count me in."},
-  {"key": "Awesome, see you Saturday at 9 am."},
-  {"key": "Catch you later, Miss Green. Thanks!"},
-  {"key": "..."},
-	{"key": "Hey, I've been waiting for you. \nCome on in. Your first gig is to vacuum \nall the rooms on the second floor. \nThen I'll hook you up with \nsomething else."},
-	{"key": "Got it, Miss Green."},
-	{"key": "Feels kinda lame doing this gig, \nbut hey, Miss Green's bankrolling, so..."},
-	{"key": "Alright, this room's done, \nonto the next one."},
-  {"key": "Insert picture"},
-  {"key": "Oh, sorry, didn't realize you \nwere here... My bad... \nI'll clean this spot later..."},
-  {"key": "Nah, all good, Ben. Don't sweat it."},
-  {"key": "Cool, whatever you say, Miss Green..."},
-  {"key": "She's so hot! Oh man, I hope \nshe doesn't clock my huge boner..."},
-  {"key": "..."},
-  {"key": "Thanks, Ben, you nailed it. \nComing back the day after tomorrow?"},
-  {"key": "Sure thing, thank you..."}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Лекция закончена. До следующей недели."},
-  {"key": "Бен, останься после лекции, пожалуйста."},
-  {"key": "Да, мисс Грин."},
-  {"key": "Мне нужен помощник по дому, \nи я предлагаю тебе эту работу."},
-  {"key": "Вы хотите нанять меня? \nОбычно это девушки делают."},
-  {"key": "Да, но у меня свои причины. \nПлачу 500 долларов в месяц. \nСогласен?"},
-  {"key": "Это большие деньги для меня. \nДа, согласен."},
-  {"key": "Отлично, жду тебя в субботу в 9 утра."},
-  {"key": "До встречи, мисс Грин. Спасибо!"},
-  {"key": "..."},
-  {"key": "Отлично, я ждала тебя. Проходи. \nПервое твоё задание - пропылесось все \nкомнаты на втором этаже. \nПотом я дам тебе новое задание."},
-  {"key": "Окей, мисс Грин."},
-  {"key": "Немного унизительно заниматься такой работой, \nс другой стороны, мисс Грин хорошо платит."},
-  {"key": "Так, с этой комнатой закончил, \nпора переходить к следующей."},
-  {"key": "Вставить картинку"},
-  {"key": "Ой, простите, я не знал, что вы тут… \nИзвините… я пропылесошу тут попозже…"},
-  {"key": "Нет, всё в порядке, не обращай \nна меня внимания, Бэн."},
-  {"key": "Окей, как скажите, мисс Грин…"},
-  {"key": "Как она хороша! Боже, как бы она не \nзаметила мой огромный стояк…"},
-  {"key": "..."},
-  {"key": "Спасибо, Бэн, ты отлично справился. \nЖду тебя послезавтра?"},
-  {"key": "Спасибо, конечно…"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "The lecture's done. Catch you next week."
+                },
+                {
+                    "key": "Ben, hang back after class, please."
+                },
+                {
+                    "key": "Sure thing, Miss Green."
+                },
+                {
+                    "key": "I need someone to help with house chores, \nand I want to hire you for the job."
+                },
+                {
+                    "key": "You want me? Usually, it's girls \ndoing this stuff."
+                },
+                {
+                    "key": "Yeah, but I've got my reasons. \nI'll pay $500 a month. \nAre you down?"
+                },
+                {
+                    "key": "That's a lot of cash for me. \nYeah, count me in."
+                },
+                {
+                    "key": "Awesome, see you Saturday at 9 am."
+                },
+                {
+                    "key": "Catch you later, Miss Green. Thanks!"
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Hey, I've been waiting for you. \nCome on in. Your first gig is to vacuum \nall the rooms on the second floor. \nThen I'll hook you up with \nsomething else."
+                },
+                {
+                    "key": "Got it, Miss Green."
+                },
+                {
+                    "key": "Feels kinda lame doing this gig, \nbut hey, Miss Green's bankrolling, so..."
+                },
+                {
+                    "key": "Alright, this room's done, \nonto the next one."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Oh, sorry, didn't realize you \nwere here... My bad... \nI'll clean this spot later..."
+                },
+                {
+                    "key": "Nah, all good, Ben. Don't sweat it."
+                },
+                {
+                    "key": "Cool, whatever you say, Miss Green..."
+                },
+                {
+                    "key": "She's so hot! Oh man, I hope \nshe doesn't clock my huge boner..."
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Thanks, Ben, you nailed it. \nComing back the day after tomorrow?"
+                },
+                {
+                    "key": "Sure thing, thank you..."
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Лекция закончена. До следующей недели."
+                },
+                {
+                    "key": "Бен, останься после лекции, пожалуйста."
+                },
+                {
+                    "key": "Да, мисс Грин."
+                },
+                {
+                    "key": "Мне нужен помощник по дому, \nи я предлагаю тебе эту работу."
+                },
+                {
+                    "key": "Вы хотите нанять меня? \nОбычно это девушки делают."
+                },
+                {
+                    "key": "Да, но у меня свои причины. \nПлачу 500 долларов в месяц. \nСогласен?"
+                },
+                {
+                    "key": "Это большие деньги для меня. \nДа, согласен."
+                },
+                {
+                    "key": "Отлично, жду тебя в субботу в 9 утра."
+                },
+                {
+                    "key": "До встречи, мисс Грин. Спасибо!"
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Отлично, я ждала тебя. Проходи. \nПервое твое задание - пропылесось все \nкомнаты на втором этаже. \nПотом я дам тебе новое задание."
+                },
+                {
+                    "key": "Окей, мисс Грин."
+                },
+                {
+                    "key": "Немного унизительно заниматься такой работой, \nс другой стороны, мисс Грин хорошо платит."
+                },
+                {
+                    "key": "Так, с этой комнатой закончил, \nпора переходить к следующей."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Ой, простите, я не знал, что вы тут… \nИзвините… я пропылесошу тут попозже…"
+                },
+                {
+                    "key": "Нет, все в порядке, не обращай \nна меня внимания, Бэн."
+                },
+                {
+                    "key": "Окей, как скажите, мисс Грин…"
+                },
+                {
+                    "key": "Как она хороша! Боже, как бы она не \nзаметила мой огромный стояк…"
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Спасибо, Бэн, ты отлично справился. \nЖду тебя послезавтра?"
+                },
+                {
+                    "key": "Спасибо, конечно…"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Die Vorlesung ist vorbei. \nBis nächste Woche."
+                },
+                {
+                    "key": "Ben, bleib bitte nach dem \nUnterricht hier."
+                },
+                {
+                    "key": "Natürlich, Frau Grün."
+                },
+                {
+                    "key": "Ich brauche jemanden, der bei \nden Hausarbeiten hilft, und \nich möchte dich für \nden Job einstellen."
+                },
+                {
+                    "key": "Du willst mich? Normalerweise \nmachen das doch Mädchen."
+                },
+                {
+                    "key": "Ja, aber ich habe meine Gründe. \nIch zahle 500 Dollar im \nMonat. Bist du dabei?"
+                },
+                {
+                    "key": "Das ist viel Geld für mich. \nJa, ich bin dabei."
+                },
+                {
+                    "key": "Super, wir sehen uns am \nSamstag um 9 Uhr morgens."
+                },
+                {
+                    "key": "Bis später, Frau Grün. Danke!"
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Hey, ich habe auf dich gewartet. \nKomm herein. Dein erster Einsatz \nist es, alle Zimmer im zweiten \nStock zu saugen. Dann werde \nich dir etwas anderes geben."
+                },
+                {
+                    "key": "Verstanden, Frau Grün."
+                },
+                {
+                    "key": "Es fühlt sich irgendwie seltsam an, \ndiesen Job zu machen, aber hey, \nFrau Grün finanziert das \nGanze, also..."
+                },
+                {
+                    "key": "In Ordnung, dieses Zimmer ist \nfertig, weiter zum nächsten."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Oh, sorry, habe nicht bemerkt, \ndass du hier bist... Mein \nFehler... Ich werde diesen \nFleck später reinigen..."
+                },
+                {
+                    "key": "Ach, alles gut, Ben. \nMach dir keine Sorgen."
+                },
+                {
+                    "key": "Cool, wie du möchtest, Frau Grün..."
+                },
+                {
+                    "key": "Sie ist so heiß! Oh Mann, \nich hoffe, sie bemerkt nicht \nmeine riesige Erektion..."
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Danke, Ben, du hast es geschafft. \nKommst du übermorgen wieder?"
+                },
+                {
+                    "key": "Natürlich, vielen Dank..."
+                }
+            ]
+        }
+    ]
 }

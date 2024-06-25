@@ -1,0 +1,289 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Cabinet
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Cabinet
+    localizedDataList:
+    - languageCode: en
+      key: Cabinet
+    - languageCode: ru
+      key: "\u041A\u0430\u0431\u0438\u043D\u0435\u0442"
+    - languageCode: de
+      key: Kabinett
+    - languageCode: sp
+      key: Armario
+    - languageCode: it
+      key: Armadietto
+    - languageCode: fr
+      key: Armoire
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: 2d0ce287490ea714f83def2243f3487b, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Good afternoon! May I come in?
+        - key: Hello, what do you want?
+        - key: I need to see the director.
+        - key: Regarding what matter?
+        - key: "I want to discuss my \ninternship for the summer."
+        - key: "Unfortunately, the director is \nbusy at the moment. Try to come
+            \nback tomorrow after lunch."
+        - key: Insert picture
+        - key: Okay, thank you.
+        - key: "Wow, the director is lucky \nto have such a secretary!"
+      - languageCode: ru
+        messages:
+        - key: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0434\u0435\u043D\u044C! \u041C\u043E\u0436\u043D\u043E
+            \u0432\u043E\u0439\u0442\u0438?"
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0447\u0442\u043E \u0442\u044B
+            \u0445\u043E\u0442\u0435\u043B?"
+        - key: "\u041C\u043D\u0435 \u043D\u0430\u0434\u043E \u043A \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\u0443."
+        - key: "\u041F\u043E \u043A\u0430\u043A\u043E\u043C\u0443 \u0432\u043E\u043F\u0440\u043E\u0441\u0443?"
+        - key: "\u0425\u043E\u0447\u0443 \u043E\u0431\u0441\u0443\u0434\u0438\u0442\u044C
+            \u043C\u043E\u044E \u0441\u0442\u0430\u0436\u0438\u0440\u043E\u0432\u043A\u0443
+            \u043B\u0435\u0442\u043E\u043C."
+        - key: "\u0423\u0432\u044B, \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440
+            \u0441\u0435\u0439\u0447\u0430\u0441 \u0437\u0430\u043D\u044F\u0442,
+            \n\u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0437\u0430\u0439\u0442\u0438
+            \u0437\u0430\u0432\u0442\u0440\u0430 \u043F\u043E\u0441\u043B\u0435 \u043E\u0431\u0435\u0434\u0430."
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+        - key: "\u041E\u043A\u0435\u0439, \u0441\u043F\u0430\u0441\u0438\u0431\u043E."
+        - key: "\u041E\u0433\u043E, \u043F\u043E\u0432\u0435\u0437\u043B\u043E \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\u0443
+            \u0441 \u0441\u0435\u043A\u0440\u0435\u0442\u0430\u0440\u0448\u0435\u0439!"
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 0
+  isSeen: 0
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 75183090350465c4abb577d8e87ca05e, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Good afternoon! May I come in?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 0fcf4cda1ef03ce468e93cf8a8d42e2a, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 0fcf4cda1ef03ce468e93cf8a8d42e2a, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Good afternoon! May I come in?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0434\u0435\u043D\u044C! \u041C\u043E\u0436\u043D\u043E
+        \u0432\u043E\u0439\u0442\u0438?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 75183090350465c4abb577d8e87ca05e, type: 3}
+    Msg: Hello, what do you want?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: a9db65a0458580944a8d7b04813c1dab, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a9db65a0458580944a8d7b04813c1dab, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hello, what do you want?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0447\u0442\u043E \u0442\u044B
+        \u0445\u043E\u0442\u0435\u043B?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: I need to see the director.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 7430fe5138c3fb14bb4b0d8697e3748d, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 7430fe5138c3fb14bb4b0d8697e3748d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: I need to see the director.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041C\u043D\u0435 \u043D\u0430\u0434\u043E \u043A \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\u0443."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 75183090350465c4abb577d8e87ca05e, type: 3}
+    Msg: Regarding what matter?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 4f06056be7d65b7499baba878d341e1d, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 4f06056be7d65b7499baba878d341e1d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Regarding what matter?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u043E \u043A\u0430\u043A\u043E\u043C\u0443 \u0432\u043E\u043F\u0440\u043E\u0441\u0443?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "I want to discuss my \ninternship for the summer."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 2b7b28ba23fc07d499ef913bbbdd3d5e, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2b7b28ba23fc07d499ef913bbbdd3d5e, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I want to discuss my \ninternship for the summer."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0425\u043E\u0447\u0443 \u043E\u0431\u0441\u0443\u0434\u0438\u0442\u044C
+        \u043C\u043E\u044E \u0441\u0442\u0430\u0436\u0438\u0440\u043E\u0432\u043A\u0443
+        \u043B\u0435\u0442\u043E\u043C."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 75183090350465c4abb577d8e87ca05e, type: 3}
+    Msg: "Unfortunately, the director is \nbusy at the moment. Try to come \nback
+      tomorrow after lunch."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 312f6f353e97736449348334de4c0172, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 312f6f353e97736449348334de4c0172, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Unfortunately, the director is \nbusy at the moment. Try to come \nback
+        tomorrow after lunch."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0423\u0432\u044B, \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440
+        \u0441\u0435\u0439\u0447\u0430\u0441 \u0437\u0430\u043D\u044F\u0442, \n\u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439
+        \u0437\u0430\u0439\u0442\u0438 \u0437\u0430\u0432\u0442\u0440\u0430 \u043F\u043E\u0441\u043B\u0435
+        \u043E\u0431\u0435\u0434\u0430."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 75183090350465c4abb577d8e87ca05e, type: 3}
+    Msg: Insert picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: f5fa65f213d466348ad90db2ac803223, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: aee03beabdea80d44a02fbe6e083da15, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Okay, thank you.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 64ad936a4caa8f842a05173a1b701d1d, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 64ad936a4caa8f842a05173a1b701d1d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Okay, thank you.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u043A\u0435\u0439, \u0441\u043F\u0430\u0441\u0438\u0431\u043E."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Wow, the director is lucky \nto have such a secretary!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 2c691c9f8aa3d3940807a391bb1a0515, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2c691c9f8aa3d3940807a391bb1a0515, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Wow, the director is lucky \nto have such a secretary!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u0433\u043E, \u043F\u043E\u0432\u0435\u0437\u043B\u043E \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\u0443
+        \u0441 \u0441\u0435\u043A\u0440\u0435\u0442\u0430\u0440\u0448\u0435\u0439!"
+      options:
+        font: {fileID: 0}

@@ -290,7 +290,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 {
                     if (winCharacter.ConversationsUnlocked() == false)
                     {
-                        previewer.StoryResolver.SetRolledConversation(winCharacter.LockedConversation);
+                        previewer.StoryResolver.SetLockedConversation(winCharacter.LockedConversation);
                         chatStoryResolver.SetRolledConversation(winCharacter.LockedConversation);
                     }
                     
@@ -420,7 +420,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
                 if (winCharacter.Data.ConversationsUnlocked() == false)
                 {
-                    previewer.StoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
+                    previewer.StoryResolver.SetLockedConversation(winCharacter.Data.LockedConversation);
                     chatStoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
                 }
 

@@ -2,6 +2,8 @@
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using TMPro;
 using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.Utility
@@ -11,7 +13,11 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         [Inject] private MiniGameInitializer _controllerMiniGames;
 
         [SerializeField] private Button skipButton;
-        [SerializeField] private Text timerText;
+        [SerializeField] private TextMeshProUGUI[] timerTexts;
+
+        [Header("Events")]
+        [SerializeField] private UnityEvent timerIsActiveEvent;
+        [SerializeField] private UnityEvent timerIsEndedEvent;
 
         private float _currentTime;
         private bool _isRunning;
@@ -42,6 +48,8 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                 {
                     SetAvailableGame();
                     _isRunning = false;
+
+                    timerIsEndedEvent?.Invoke();
                 }
             
                 UpdateText();    
@@ -52,11 +60,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         {
             if (_controllerMiniGames.MiniGameAvailable) return;
             
-            timerText.gameObject.Activate();
-            timerText.gameObject.Deactivate(3);
-            
-            skipButton.gameObject.Activate();
-            skipButton.gameObject.Deactivate(3);
+            timerIsActiveEvent?.Invoke();
         }
 
         public void Skip()
@@ -67,6 +71,8 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                 UpdateText();
                 SetAvailableGame();
                 _isRunning = false;
+
+                timerIsEndedEvent?.Invoke();
             }
         }
 
@@ -84,13 +90,17 @@ namespace _School_Seducer_.Editor.Scripts.Utility
 
         private void UpdateText()
         {
-            timerText.text = "Need to wait: " + FormatTimer(_currentTime);
+            if (timerTexts.Length == 0) return;
+            foreach (var timer in timerTexts)
+            {
+                timer.text = FormatTimer(_currentTime);   
+            }
         }
         
         private string FormatTimer(float seconds)
         {
             System.TimeSpan time = System.TimeSpan.FromSeconds(seconds);
-            return string.Format("{0:D2}:{1:D2}", time.Minutes, time.Seconds);
+            return string.Format("{0:D2}   {1:D2}", time.Minutes, time.Seconds);
         }
     }
 }

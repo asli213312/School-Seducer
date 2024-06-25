@@ -1,0 +1,68 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Good afternoon! May I come in?"
+                },
+                {
+                    "key": "Hello, what do you want?"
+                },
+                {
+                    "key": "I need to see the director."
+                },
+                {
+                    "key": "Regarding what matter?"
+                },
+                {
+                    "key": "I want to discuss my \ninternship for the summer."
+                },
+                {
+                    "key": "Unfortunately, the director is \nbusy at the moment. Try to come \nback tomorrow after lunch."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Okay, thank you."
+                },
+                {
+                    "key": "Wow, the director is lucky \nto have such a secretary!"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Добрый день! Можно войти?"
+                },
+                {
+                    "key": "Привет, что ты хотел?"
+                },
+                {
+                    "key": "Мне надо к директору."
+                },
+                {
+                    "key": "По какому вопросу?"
+                },
+                {
+                    "key": "Хочу обсудить мою стажировку летом."
+                },
+                {
+                    "key": "Увы, директор сейчас занят, \nпопробуй зайти завтра после обеда."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Окей, спасибо."
+                },
+                {
+                    "key": "Ого, повезло директору с секретаршей!"
+                }
+            ]
+        }
+    ]
+}

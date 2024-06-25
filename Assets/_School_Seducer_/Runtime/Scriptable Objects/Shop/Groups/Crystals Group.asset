@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63742195a0b94a00820c91f62b2e0265, type: 3}
+  m_Name: Crystals Group
+  m_EditorClassIdentifier: 
+  isSold: 0
+  showDebugParameters: 0
+  id: 
+  columnsAmount: 1
+  view: {fileID: 7878331212349510945, guid: 5f78b414eefe9a94c9eaf11d5c020076, type: 3}
+  items:
+  - {fileID: 11400000, guid: 0c5670621306f9942b41cef398e552e1, type: 2}
+  - {fileID: 11400000, guid: e630a41606ec9584a84dc827c6667a9e, type: 2}
+  - {fileID: 11400000, guid: c45312abef1eafc4183b721b9ad99e51, type: 2}

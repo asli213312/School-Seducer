@@ -2,6 +2,6 @@
 {
     public enum GallerySlotType
     {
-        Photo, Game, Video
+        Photo, Game, Video, Special
     }
 }

@@ -1,62 +1,235 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Why the long face?" },
-  {"key": "Guys are such jerks!"},
-  {"key": "Hmm... Well, I kinda find it hard \nto agree with that."},
-	{"key": "No, not all guys, just the ones \nI've been seeing."},
-	{"key": "You mean there's more than one?"},
-	{"key": "Not all at once, just one at a time."},
-	{"key": "Got it..."},
-	{"key": "Thought I found this awesome guy, \nwent on a few dates with him, \neverything seemed perfect."},
-	{"key": "But I bet there's a catch now..."},
-	{"key": "Let me finish before you jump in. \nOn our third date, I had a bit too much \nto drink and... I invited him over..."},
-	{"key": "That was just last week?"},
-	{"key": "Yeah, how'd you know? You weren't home."},
-	{"key": "Uh, I don't know, just a guess."},
-	{"key": "Anyway, one thing led to another, \nand we ended up hooking up..."},
-	{"key": "Next morning, I was on cloud nine, \nfeeling so damn happy! But then in the evening, \nI accidentally caught him... cozying up... \nwith someone else... sobbing"},
-	{"key": "Damn, Emily, you crying?"},
-	{"key": "Yeah, sorry... It's just not fair! \nHe totally used me."},
-	{"key": "Anything I can do to help?"},
-	{"key": "Nah, thanks, Ben. You're awesome! \nJust stick around, please."},
-  {"key": "You know what would cheer you up? \nLet's order pizza, throw on a sad movie, \nand chill at home all night?"},
-  {"key": "You're the best, Ben! Thanks!"},
-  {"key": "..."},
-  {"key": "Insert picture"},
-  {"key": "I think she fell asleep in my lap... \nI hope she didn't notice my massive erection!"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Ты чего такая грустная?"},
-  {"key": "Парни придурки!"},
-  {"key": "Хм… Ну, мне как-то сложно с этим согласиться."},
-  {"key": "Ну нет, я имею ввиду, не все парни, \nа те, с которыми я встречаюсь."},
-  {"key": "Ты хочешь сказать, что их несколько?"},
-  {"key": "Одновременно нет, всегда только один."},
-  {"key": "Ясно…"},
-  {"key": "Мне казалось, что я повстречала хорошего парня, \nмы с ним сходили на свидание пару раз, \nвсё было просто прекрасно."},
-  {"key": "Судя по всему, сейчас будет какое-то “но…”"},
-  {"key": "Слушай дальше и не перебивай. На третьем \nсвидании я выпила чуть больше, чем стоила \nи… и пригласила его зайти ко мне…"},
-  {"key": "Это было на прошлой неделе?"},
-  {"key": "Да, откуда ты знаешь? Тебя не было дома."},
-  {"key": "Э-э-э, да я и не знаю, так… просто предположил."},
-  {"key": "Короче, мы с ним переспали…"},
-  {"key": "Всё следующее утро я порхала как бабочка, \nчувствовала себя счастливой! А вечером \nслучайно увидела, как он… уже \nобнимается… с другой… (всхлипывает)"},
-  {"key": "Чёрт, Эмили, ты что, плачешь?"},
-  {"key": "Да, прости… Просто это так не справедливо! \nОн просто воспользовался мной."},
-  {"key": "Я могу тебе как-то помочь?"},
-  {"key": "Нет, спасибо, Бэн. Ты замечательный! \nПросто побудь со мной, пожалуйста."},
-  {"key": "Знаешь, что тебе сейчас поможет? \nДавай закажем пиццу, включим грустный фильм \nи весь вечер проведём дома?"},
-  {"key": "Ты отличный друг, Бэн! Спасибо!"},
-  {"key": "..."},
-  {"key": "Вставить картинку"},
-  {"key": "Кажется, она заснула у меня на коленях… \nНадеюсь, она не заметила мою \nсильнейшую эрекцию!"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Why the long face?"
+                },
+                {
+                    "key": "Guys are such jerks!"
+                },
+                {
+                    "key": "Hmm... Well, I kinda find it hard \nto agree with that."
+                },
+                {
+                    "key": "No, not all guys, just the ones \nI've been seeing."
+                },
+                {
+                    "key": "You mean there's more than one?"
+                },
+                {
+                    "key": "Not all at once, just one at a time."
+                },
+                {
+                    "key": "Got it..."
+                },
+                {
+                    "key": "Thought I found this awesome guy, \nwent on a few dates with him, \neverything seemed perfect."
+                },
+                {
+                    "key": "But I bet there's a catch now..."
+                },
+                {
+                    "key": "Let me finish before you jump in. \nOn our third date, I had a bit too much \nto drink and... I invited him over..."
+                },
+                {
+                    "key": "That was just last week?"
+                },
+                {
+                    "key": "Yeah, how'd you know? You weren't home."
+                },
+                {
+                    "key": "Uh, I don't know, just a guess."
+                },
+                {
+                    "key": "Anyway, one thing led to another, \nand we ended up hooking up..."
+                },
+                {
+                    "key": "Next morning, I was on cloud nine, \nfeeling so damn happy! But then in the evening, \nI accidentally caught him... cozying up... \nwith someone else... sobbing"
+                },
+                {
+                    "key": "Damn, Emily, you crying?"
+                },
+                {
+                    "key": "Yeah, sorry... It's just not fair! \nHe totally used me."
+                },
+                {
+                    "key": "Anything I can do to help?"
+                },
+                {
+                    "key": "Nah, thanks, Ben. You're awesome! \nJust stick around, please."
+                },
+                {
+                    "key": "You know what would cheer you up? \nLet's order pizza, throw on a sad movie, \nand chill at home all night?"
+                },
+                {
+                    "key": "You're the best, Ben! Thanks!"
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "I think she fell asleep in my lap... \nI hope she didn't notice my massive erection!"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Ты чего такая грустная?"
+                },
+                {
+                    "key": "Парни придурки!"
+                },
+                {
+                    "key": "Хм… Ну, мне как-то сложно с этим согласиться."
+                },
+                {
+                    "key": "Ну нет, я имею ввиду, не все парни, \nа те, с которыми я встречаюсь."
+                },
+                {
+                    "key": "Ты хочешь сказать, что их несколько?"
+                },
+                {
+                    "key": "Одновременно нет, всегда только один."
+                },
+                {
+                    "key": "Ясно…"
+                },
+                {
+                    "key": "Мне казалось, что я повстречала хорошего парня, \nмы с ним сходили на свидание пару раз, \nвсе было просто прекрасно."
+                },
+                {
+                    "key": "Судя по всему, сейчас будет какое-то “но…”"
+                },
+                {
+                    "key": "Слушай дальше и не перебивай. На третьем \nсвидании я выпила чуть больше, чем стоила \nи… и пригласила его зайти ко мне…"
+                },
+                {
+                    "key": "Это было на прошлой неделе?"
+                },
+                {
+                    "key": "Да, откуда ты знаешь? Тебя не было дома."
+                },
+                {
+                    "key": "Э-э-э, да я и не знаю, так… просто предположил."
+                },
+                {
+                    "key": "Короче, мы с ним переспали…"
+                },
+                {
+                    "key": "Все следующее утро я порхала как бабочка, \nчувствовала себя счастливой! А вечером \nслучайно увидела, как он… уже \nобнимается… с другой… (всхлипывает)"
+                },
+                {
+                    "key": "Черт, Эмили, ты что, плачешь?"
+                },
+                {
+                    "key": "Да, прости… Просто это так не справедливо! \nОн просто воспользовался мной."
+                },
+                {
+                    "key": "Я могу тебе как-то помочь?"
+                },
+                {
+                    "key": "Нет, спасибо, Бэн. Ты замечательный! \nПросто побудь со мной, пожалуйста."
+                },
+                {
+                    "key": "Знаешь, что тебе сейчас поможет? \nДавай закажем пиццу, включим грустный фильм \nи весь вечер проведем дома?"
+                },
+                {
+                    "key": "Ты отличный друг, Бэн! Спасибо!"
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Кажется, она заснула у меня на коленях… \nНадеюсь, она не заметила мою \nсильнейшую эрекцию!"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Warum bist du so traurig?"
+                },
+                {
+                    "key": "Jungs sind solche Idioten!"
+                },
+                {
+                    "key": "Hmm... Nun ja, da fällt es mir \nirgendwie schwer zuzustimmen."
+                },
+                {
+                    "key": "Nein, nicht alle Jungs, nur die, \ndie ich kennengelernt habe."
+                },
+                {
+                    "key": "Du meinst, es gab mehr als einen?"
+                },
+                {
+                    "key": "Nicht alle gleichzeitig, immer nur einer."
+                },
+                {
+                    "key": "Verstanden..."
+                },
+                {
+                    "key": "Dachte, ich hätte diesen tollen \nKerl gefunden, war ein paar Mal \nmit ihm ausgegangen, \nalles schien perfekt."
+                },
+                {
+                    "key": "Aber ich wette, jetzt kommt ein Haken..."
+                },
+                {
+                    "key": "Lass mich ausreden, bevor du \ndazwischen grätschst. Bei unserem \ndritten Date hatte ich ein \nbisschen zu viel getrunken und... \nich habe ihn eingeladen..."
+                },
+                {
+                    "key": "Das war doch erst letzte Woche?"
+                },
+                {
+                    "key": "Ja, wie wusstest du das? \nDu warst nicht zu Hause."
+                },
+                {
+                    "key": "Äh, ich weiß nicht, einfach geraten."
+                },
+                {
+                    "key": "Wie auch immer, eins führte \nzum anderen und wir sind \nmiteinander im Bett gelandet..."
+                },
+                {
+                    "key": "Am nächsten Morgen war ich überglücklich, \nfühlte mich so verdammt glücklich! \nAber dann am Abend habe ich ihn \nversehentlich... wie er sich... \nmit jemand anderem... gemütlich \nmachte... schluchzend"
+                },
+                {
+                    "key": "Verdammt, Emily, weinst du?"
+                },
+                {
+                    "key": "ДJa, tut mir leid... Es ist \neinfach nicht fair! Er hat \nmich total ausgenutzt."
+                },
+                {
+                    "key": "Kann ich etwas tun, um zu helfen?"
+                },
+                {
+                    "key": "Nee, danke, Ben. Du bist klasse! \nBleib einfach hier, okay?"
+                },
+                {
+                    "key": "Weißt du, was dich aufmuntern würde? \nLass uns Pizza bestellen, einen \ntraurigen Film gucken und den \nganzen Abend zu Hause entspannen?"
+                },
+                {
+                    "key": "Du bist der Beste, Ben! Danke!"
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Ich glaube, sie ist auf meinem \nSchoß eingeschlafen... Ich hoffe, \nsie hat meine riesige \nErektion nicht bemerkt!"
+                }
+            ]
+        }
+    ]
 }

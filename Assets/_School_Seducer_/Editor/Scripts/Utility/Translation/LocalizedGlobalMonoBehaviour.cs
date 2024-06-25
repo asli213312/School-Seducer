@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using _School_Seducer_.Editor.Scripts.Chat;
+using _School_Seducer_.Editor.Scripts.Services;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -12,13 +13,26 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
     public class LocalizedGlobalMonoBehaviour : MonoBehaviour, IObserverCustom<MonoBehaviour>
     {
         [SerializeField] private string globalLanguageCodeRuntime;
-        public string GlobalLanguageCodeRuntime { get => globalLanguageCodeRuntime; set => globalLanguageCodeRuntime = value; }
-        private List<IObservableCustom<MonoBehaviour>> _localizedObjects = new();
+        [SerializeField] private List<Translator.LanguagesTextOptions> globalTextOptions;
+        public TextOptions TextOptions 
+        {   
+            get 
+            { 
+                Translator.LanguagesTextOptions selectedOptions = globalTextOptions.Find(x => x.languageCode == GlobalLanguageCodeRuntime);
 
-        private void Awake()
-        {
-            GlobalLanguageCodeRuntime = "en";
+                if (selectedOptions != null) 
+                {
+                    return selectedOptions.options;
+                }
+
+                return null;
+            } 
         }
+
+
+        public string GlobalLanguageCodeRuntime { get => globalLanguageCodeRuntime; set => globalLanguageCodeRuntime = value; }
+        private TextOptions _currentTextOptions;
+        private List<IObservableCustom<MonoBehaviour>> _localizedObjects = new();
 
         private void Start()
         {

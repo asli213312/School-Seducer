@@ -1,0 +1,111 @@
+{
+"skeleton": {
+	"hash": "2VyeYSfqfzo",
+	"spine": "4.1.24",
+	"x": -1,
+	"y": -1,
+	"width": 1191,
+	"height": 1050,
+	"images": "./Pop_up_Present/",
+	"audio": "C:/Users/ghezz/OneDrive/Рабочий стол/Ghezzi/GameDev/CollegeFF/Assets/UI/UI_Animations/Pop_up_Present"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "frame", "parent": "root", "x": 580.45, "y": 462.94 },
+	{ "name": "girl", "parent": "frame", "x": -3.21, "y": 212.17 },
+	{ "name": "bar", "parent": "frame", "x": -12.86, "y": -139.84 },
+	{ "name": "button", "parent": "frame", "x": -14.47, "y": -300.58 }
+],
+"slots": [
+	{ "name": "btn_close", "bone": "frame", "attachment": "btn_close" },
+	{ "name": "Girl", "bone": "girl", "attachment": "Girl" },
+	{ "name": "bar", "bone": "bar", "attachment": "bar" },
+	{ "name": "btn", "bone": "button", "attachment": "btn" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bar": {
+				"bar": { "color": "ffffff00", "x": 9.41, "y": 0.9, "width": 502, "height": 64 }
+			},
+			"btn": {
+				"btn": { "x": 6.02, "y": -6.36, "width": 442, "height": 150 }
+			},
+			"btn_close": {
+				"btn_close": { "x": 14.05, "y": 61.06, "width": 1191, "height": 1050 }
+			},
+			"Girl": {
+				"Girl": { "color": "ffffff00", "x": -3.23, "y": 16.89, "width": 502, "height": 520 }
+			}
+		}
+	}
+],
+"animations": {
+	"appear": {
+		"bones": {
+			"frame": {
+				"scale": [
+					{ "x": 0, "y": 0, "curve": "stepped" },
+					{
+						"time": 0.1333,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.178, 0.735, 0.222, 1.2, 0.178, 0.736, 0.222, 1.2 ]
+					},
+					{
+						"time": 0.2667,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.289, 1.2, 0.307, 1.128, 0.289, 1.2, 0.307, 1.143 ]
+					},
+					{ "time": 0.3333 }
+				]
+			},
+			"girl": {
+				"scale": [
+					{ "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.2, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 1.2, "y": 1.2 },
+					{ "time": 0.4 }
+				]
+			},
+			"bar": {
+				"scale": [
+					{ "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.2333, "x": 0, "y": 0 },
+					{ "time": 0.3667, "x": 1.2, "y": 1.2 },
+					{ "time": 0.4333 }
+				]
+			},
+			"button": {
+				"scale": [
+					{ "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.2333, "x": 0, "y": 0 },
+					{ "time": 0.3667, "x": 1.2, "y": 1.2 },
+					{ "time": 0.4333 }
+				]
+			}
+		}
+	},
+	"disappear": {
+		"bones": {
+			"frame": {
+				"scale": [
+					{
+						"curve": [ 0.046, 1.22, 0.067, 1.2, 0.045, 1.213, 0.067, 1.2 ]
+					},
+					{
+						"time": 0.1,
+						"x": 1.2,
+						"y": 1.2,
+						"curve": [ 0.122, 1.2, 0.145, 0.917, 0.122, 1.2, 0.146, 0.887 ]
+					},
+					{ "time": 0.1667, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"idle": {}
+}
+}

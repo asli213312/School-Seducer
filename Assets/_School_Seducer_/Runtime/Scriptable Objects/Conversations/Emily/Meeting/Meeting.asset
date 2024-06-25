@@ -29,7 +29,21 @@ MonoBehaviour:
       key: 
   - fieldLabel: _currentLanguage
     localizedDataList: []
-  costExp: 500
+  - fieldLabel: Meeting
+    localizedDataList:
+    - languageCode: en
+      key: Meeting
+    - languageCode: ru
+      key: "\u0417\u043D\u0430\u043A\u043E\u043C\u0441\u0442\u0432\u043E"
+    - languageCode: fr
+      key: "R\xE9union"
+    - languageCode: it
+      key: Riunione
+    - languageCode: sp
+      key: "Reuni\xF3n"
+    - languageCode: de
+      key: Treffen
+  costExp: 30
   iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
   localizator:
     translationJson: {fileID: 4900000, guid: bb2fa492d6385624fa82d584c505d331, type: 3}
@@ -51,9 +65,9 @@ MonoBehaviour:
         - key: "Oh, you don't know? I'm your new roomie. \n Hope you're cool with
             that."
         - key: I... umm... well...
-        - key: "Supposed to be Douglas, but he's hitting \n it off with my girl Veronica.
-            \n So, they asked me and Douglas to swap rooms. \n Douglas is bunking
-            with Veronica, \n and now I'm rooming with..."
+        - key: "Supposed to be Douglas, but he's \nhitting it off with my girl Veronica.
+            \nSo, they asked me and Douglas to \nswap rooms. Douglas is bunking with
+            \nVeronica, and now I'm rooming with..."
         - key: Umm, with who?
         - key: What's your name?
         - key: Oh, my bad, I'm Ben.
@@ -71,7 +85,7 @@ MonoBehaviour:
             \u043A\u043E\u043C\u043D\u0430\u0442\u0430 \u043D\u0430 \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0438\u0435
             \n \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043B\u0435\u0442.
             \u041D\u0435 \u043F\u0435\u043D\u0442\u0445\u0430\u0443\u0441, \u043D\u043E
-            \u0441\u043E\u0439\u0434\u0451\u0442. \n \u0418\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E,
+            \u0441\u043E\u0439\u0434\u0435\u0442. \n \u0418\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E,
             \u043A\u0430\u043A\u043E\u0439 \u043E\u043D, \u043C\u043E\u0439 \u0431\u0443\u0434\u0443\u0449\u0438\u0439
             \u0441\u043E\u0441\u0435\u0434 \n \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435?
             \u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u043E\u043D \u043D\u0435
@@ -94,9 +108,9 @@ MonoBehaviour:
         - key: "\u041E\u0439, \u0434\u0430\u2026 \u041A\u043E\u043D\u0435\u0447\u043D\u043E!
             \u041F\u0440\u043E\u0441\u0442\u0438\u2026 \u041F\u0440\u043E\u0441\u0442\u043E
             \u044F \u0434\u0443\u043C\u0430\u043B, \n \u0447\u0442\u043E \u044D\u0442\u043E
-            \u043F\u0440\u0438\u0448\u0451\u043B \u043C\u043E\u0439 \u043D\u043E\u0432\u044B\u0439
+            \u043F\u0440\u0438\u0448\u0435\u043B \u043C\u043E\u0439 \u043D\u043E\u0432\u044B\u0439
             \u0441\u043E\u0441\u0435\u0434 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435.
-            \n \u042F \u0441 \u043D\u0438\u043C \u0435\u0449\u0451 \u043D\u0435 \u0437\u043D\u0430\u043A\u043E\u043C. "
+            \n \u042F \u0441 \u043D\u0438\u043C \u0435\u0449\u0435 \u043D\u0435 \u0437\u043D\u0430\u043A\u043E\u043C. "
         - key: "\u0410, \u0442\u044B \u043D\u0435 \u0432 \u043A\u0443\u0440\u0441\u0435?
             \n \u042F \u0442\u0432\u043E\u0439 \u043D\u043E\u0432\u044B\u0439 \u0441\u043E\u0441\u0435\u0434,
             \u0442\u043E\u0447\u043D\u0435\u0435, \u0441\u043E\u0441\u0435\u0434\u043A\u0430.
@@ -134,7 +148,7 @@ MonoBehaviour:
             \n \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0439, \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u043B\u0438\u0441\u044C?"
         - key: "\u0410, \u0434\u0430, \u0440\u0430\u0437\u0443\u043C\u0435\u0435\u0442\u0441\u044F,
             \u044F \u0438 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B \u043D\u0438
-            \u043E \u0447\u0451\u043C \u0442\u0430\u043A\u043E\u043C."
+            \u043E \u0447\u0435\u043C \u0442\u0430\u043A\u043E\u043C."
         - key: "\u0414\u0443\u043C\u0430\u044E, \u043C\u044B \u043E\u0442\u043B\u0438\u0447\u043D\u043E
             \u043F\u043E\u043B\u0430\u0434\u0438\u043C! \n \u0410 \u0442\u0435\u043F\u0435\u0440\u044C
             \u043E\u0442\u0432\u0435\u0440\u043D\u0438\u0441\u044C, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,
@@ -145,71 +159,37 @@ MonoBehaviour:
       - languageCode: de
         messages:
         - key: "Yo, check es aus \u2013 das wird \nf\xFCr die n\xE4chsten paar Jahre
-            mein \nZuhause sein. Nicht gerade ein Penthouse, \naber es ist entspannt.
-            Ich bin \ngespannt auf meinen zuk\xFCnftigen Mitbewohner. \nHoffentlich
-            ist er nicht totaler Nerd, \nwei\xDFt du? Ich m\xF6chte nicht, dass unser
-            \nZimmer total abt\xF6rnend f\xFCr die M\xE4dels ist!"
-        - key: "\u041E, \u0430 \u0432\u043E\u0442 \u0438 \u043E\u043D!"
-        - key: "\u041E, \u043F\u0440\u0438\u0432\u0435\u0442! \u042F \u0447\u0443\u0442\u044C
-            \u043D\u0435 \u0437\u0430\u0431\u043B\u0443\u0434\u0438\u043B\u0430\u0441\u044C,
-            \n \u043F\u043E\u043A\u0430 \u0438\u0441\u043A\u0430\u043B\u0430."
-        - key: "\u041C-\u043C-\u043C, \u043F\u0440\u0438\u0432\u0435\u0442!"
-        - key: "\u0421\u043B\u0443\u0448\u0430\u0439, \u0430 \u043C\u043E\u0436\u0435\u0442
-            \u0442\u044B \u043F\u043E\u0434\u0432\u0438\u043D\u0435\u0448\u044C\u0441\u044F?
-            \n \u0410 \u0442\u043E \u043F\u043E\u043A\u0430 \u0442\u044B \u0441\u0442\u043E\u0438\u0448\u044C
-            \u0432 \u0434\u0432\u0435\u0440\u0438, \n \u044F \u043D\u0435 \u043C\u043E\u0433\u0443
-            \u0432\u043E\u0439\u0442\u0438."
-        - key: "\u041E\u0439, \u0434\u0430\u2026 \u041A\u043E\u043D\u0435\u0447\u043D\u043E!
-            \u041F\u0440\u043E\u0441\u0442\u0438\u2026 \u041F\u0440\u043E\u0441\u0442\u043E
-            \u044F \u0434\u0443\u043C\u0430\u043B, \n \u0447\u0442\u043E \u044D\u0442\u043E
-            \u043F\u0440\u0438\u0448\u0451\u043B \u043C\u043E\u0439 \u043D\u043E\u0432\u044B\u0439
-            \u0441\u043E\u0441\u0435\u0434 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435.
-            \n \u042F \u0441 \u043D\u0438\u043C \u0435\u0449\u0451 \u043D\u0435 \u0437\u043D\u0430\u043A\u043E\u043C. "
-        - key: "\u0410, \u0442\u044B \u043D\u0435 \u0432 \u043A\u0443\u0440\u0441\u0435?
-            \n \u042F \u0442\u0432\u043E\u0439 \u043D\u043E\u0432\u044B\u0439 \u0441\u043E\u0441\u0435\u0434,
-            \u0442\u043E\u0447\u043D\u0435\u0435, \u0441\u043E\u0441\u0435\u0434\u043A\u0430.
-            \n \u0422\u044B, \u043D\u0430\u0434\u0435\u044E\u0441\u044C, \u043D\u0435
-            \u043F\u0440\u043E\u0442\u0438\u0432? "
-        - key: "\u042F\u2026 \u043C-\u043C-\u043C\u2026 \u044D-\u044D-\u044D\u2026"
-        - key: "\u0422\u0432\u043E\u0438\u043C \u0441\u043E\u0441\u0435\u0434\u043E\u043C
-            \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u043B \u0431\u044B\u0442\u044C
-            \u0414\u0443\u0433\u043B\u0430\u0441, \u043D\u043E \n \u043E\u043D \u043C\u0443\u0442\u0438\u0442
-            \u0441 \u043C\u043E\u0435\u0439 \u0441\u043E\u0441\u0435\u0434\u043A\u043E\u0439
-            \u0412\u0435\u0440\u043E\u043D\u0438\u043A\u043E\u0439. \n \u0418, \u0432
-            \u043E\u0431\u0449\u0435\u043C, \u043E\u043D\u0438 \u043F\u043E\u043F\u0440\u043E\u0441\u0438\u043B\u0438
-            \u043C\u0435\u043D\u044F \u0441 \u0414\u0443\u0433\u043B\u0430\u0441\u043E\u043C
-            \n \u043F\u043E\u043C\u0435\u043D\u044F\u0442\u044C\u0441\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430\u043C\u0438.
-            \n \u0422\u0430\u043A \u0447\u0442\u043E \u0414\u0443\u0433\u043B\u0430\u0441
-            \u0431\u0443\u0434\u0435\u0442 \u0436\u0438\u0442\u044C \u0441 \u0412\u0435\u0440\u043E\u043D\u0438\u043A\u043E\u0439,
-            \n \u0430 \u044F \u0431\u0443\u0434\u0443 \u0436\u0438\u0442\u044C \u0441\u2026"
-        - key: "\u042D-\u044D-\u044D?"
-        - key: "\u041A\u0430\u043A \u0442\u0435\u0431\u044F \u0437\u043E\u0432\u0443\u0442?"
-        - key: "\u0410, \u0434\u0430, \u0438\u0437\u0432\u0438\u043D\u0438, \u043C\u0435\u043D\u044F
-            \u0437\u043E\u0432\u0443\u0442 \u0411\u044D\u043D."
-        - key: "\u041F\u0440\u0438\u044F\u0442\u043D\u043E \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F,
-            \u0411\u044D\u043D, \u044F \u042D\u043C\u0438\u043B\u0438. \n \u041D\u0443
-            \u0447\u0442\u043E, \u0442\u044B \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432
-            \n \u0434\u0435\u043B\u0438\u0442\u044C \u0441\u043E \u043C\u043D\u043E\u0439
-            \u043A\u043E\u043C\u043D\u0430\u0442\u0443?"
-        - key: "\u042F? \u041D\u0435\u0442, \u043A\u043E\u043D\u0435\u0447\u043D\u043E,
-            \u044F \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432, \u043F\u0440\u043E\u0445\u043E\u0434\u0438!"
-        - key: "\u041D\u043E \u0441\u043C\u043E\u0442\u0440\u0438, \u0441 \u044D\u0442\u043E\u0433\u043E
-            \u043C\u043E\u043C\u0435\u043D\u0442\u0430 \u043C\u044B \u0441 \u0442\u043E\u0431\u043E\u0439
-            \n \u0441\u043E\u0441\u0435\u0434\u0438 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435!
-            \u041C\u0435\u0436\u0434\u0443 \u043D\u0430\u043C\u0438 \u043D\u0435
-            \u043C\u043E\u0436\u0435\u0442 \n \u0431\u044B\u0442\u044C \u043D\u0438\u0447\u0435\u0433\u043E,
-            \u043A\u0440\u043E\u043C\u0435 \u0434\u0440\u0443\u0436\u0435\u0441\u043A\u0438\u0445
-            \n \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0439, \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u043B\u0438\u0441\u044C?"
-        - key: "\u0410, \u0434\u0430, \u0440\u0430\u0437\u0443\u043C\u0435\u0435\u0442\u0441\u044F,
-            \u044F \u0438 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B \u043D\u0438
-            \u043E \u0447\u0451\u043C \u0442\u0430\u043A\u043E\u043C."
-        - key: "\u0414\u0443\u043C\u0430\u044E, \u043C\u044B \u043E\u0442\u043B\u0438\u0447\u043D\u043E
-            \u043F\u043E\u043B\u0430\u0434\u0438\u043C! \n \u0410 \u0442\u0435\u043F\u0435\u0440\u044C
-            \u043E\u0442\u0432\u0435\u0440\u043D\u0438\u0441\u044C, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,
-            \n \u043C\u043D\u0435 \u043D\u0430\u0434\u043E \u043F\u0435\u0440\u0435\u043E\u0434\u0435\u0442\u044C\u0441\u044F."
-        - key: "\u0414\u0430, \u043A\u043E\u043D\u0435\u0447\u043D\u043E."
-        - key: "\u041E\u0433\u043E, \u043A\u0430\u043A \u0443\u0434\u0430\u0447\u043D\u043E
-            \u0442\u0443\u0442 \u0441\u0442\u043E\u0438\u0442 \u0437\u0435\u0440\u043A\u0430\u043B\u043E!"
+            \nmein Zuhause sein. Nicht gerade \nein Penthouse, aber es ist \nentspannt.
+            Ich bin gespannt \nauf meinen zuk\xFCnftigen Mitbewohner. \nHoffentlich
+            ist er nicht totaler \nNerd, wei\xDFt du? Ich m\xF6chte nicht, \ndass
+            unser Zimmer total abt\xF6rnend \nf\xFCr die M\xE4dels ist!"
+        - key: Oh, krass, da ist er!
+        - key: "Hey! Ich war fast verloren auf \nder Suche nach dieser Bude."
+        - key: Umm, hey!
+        - key: "Hey, k\xF6nntest du vielleicht ein \nbisschen zur Seite rutschen?
+            \nIch komm nicht durch, wenn \ndu die T\xFCr blockierst."
+        - key: "Oh, mein Fehler... Klar, kein \nProblem! Ich dachte, das w\xE4re
+            \nmein neuer Mitbewohner, der \nauftaucht. Hab den Kerl noch \nnicht
+            kennengelernt."
+        - key: "Oh, wei\xDFt du das nicht? Ich \nbin dein neuer Nachbar, oder \nbesser
+            gesagt Nachbar. Ich \nhoffe, es macht dir nichts aus?"
+        - key: "Ich... \xE4hm... nun..."
+        - key: "Sollte eigentlich mit Douglas \nsein, aber er hat es gut mit \nmeiner
+            Freundin Veronica. Also \nhaben sie mich und Douglas gebeten, \ndie Zimmer
+            zu tauschen. Douglas \npennt jetzt bei Veronica, \nund jetzt bin ich..."
+        - key: Mit wem?
+        - key: "Wie hei\xDFt du?"
+        - key: Oh, mein Fehler, ich bin Ben.
+        - key: "Freut mich, dich kennenzulernen, \nBen. Hast du etwas dagegen, \ndas
+            Zimmer zu teilen?"
+        - key: Ich? Oh, verdammt ja, komm rein!
+        - key: "Aber h\xF6r zu, von jetzt an \nsind du und ich Mitbewohner! \nEinfach
+            freundlich bleiben, \nverstehst du?"
+        - key: "Oh, sicher, ich dachte \nan nichts anderes."
+        - key: "Wir werden gut miteinander \nauskommen, Mann! Jetzt dreh \ndich um,
+            ich muss mich \nschnell umziehen."
+        - key: Ja, klar.
+        - key: "Wow, die haben hier einen \nSpiegel aufgestellt, als \nob er hierhergeh\xF6rt!"
       - languageCode: it
         messages:
         - key: "Yo, dai un'occhiata - questa sar\xE0 la mia \ncrib per i prossimi
@@ -229,7 +209,7 @@ MonoBehaviour:
         - key: "\u041E\u0439, \u0434\u0430\u2026 \u041A\u043E\u043D\u0435\u0447\u043D\u043E!
             \u041F\u0440\u043E\u0441\u0442\u0438\u2026 \u041F\u0440\u043E\u0441\u0442\u043E
             \u044F \u0434\u0443\u043C\u0430\u043B, \n \u0447\u0442\u043E \u044D\u0442\u043E
-            \u043F\u0440\u0438\u0448\u0451\u043B \u043C\u043E\u0439 \u043D\u043E\u0432\u044B\u0439
+            \u043F\u0440\u0438\u0448\u0435\u043B \u043C\u043E\u0439 \u043D\u043E\u0432\u044B\u0439
             \u0441\u043E\u0441\u0435\u0434 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435.
             \n \u042F \u0441 \u043D\u0438\u043C \u0435\u0449\u0451 \u043D\u0435 \u0437\u043D\u0430\u043A\u043E\u043C. "
         - key: "\u0410, \u0442\u044B \u043D\u0435 \u0432 \u043A\u0443\u0440\u0441\u0435?
@@ -269,7 +249,7 @@ MonoBehaviour:
             \n \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0439, \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u043B\u0438\u0441\u044C?"
         - key: "\u0410, \u0434\u0430, \u0440\u0430\u0437\u0443\u043C\u0435\u0435\u0442\u0441\u044F,
             \u044F \u0438 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B \u043D\u0438
-            \u043E \u0447\u0451\u043C \u0442\u0430\u043A\u043E\u043C."
+            \u043E \u0447\u0435\u043C \u0442\u0430\u043A\u043E\u043C."
         - key: "\u0414\u0443\u043C\u0430\u044E, \u043C\u044B \u043E\u0442\u043B\u0438\u0447\u043D\u043E
             \u043F\u043E\u043B\u0430\u0434\u0438\u043C! \n \u0410 \u0442\u0435\u043F\u0435\u0440\u044C
             \u043E\u0442\u0432\u0435\u0440\u043D\u0438\u0441\u044C, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,
@@ -337,7 +317,7 @@ MonoBehaviour:
             \n \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0439, \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u043B\u0438\u0441\u044C?"
         - key: "\u0410, \u0434\u0430, \u0440\u0430\u0437\u0443\u043C\u0435\u0435\u0442\u0441\u044F,
             \u044F \u0438 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B \u043D\u0438
-            \u043E \u0447\u0451\u043C \u0442\u0430\u043A\u043E\u043C."
+            \u043E \u0447\u0435\u043C \u0442\u0430\u043A\u043E\u043C."
         - key: "\u0414\u0443\u043C\u0430\u044E, \u043C\u044B \u043E\u0442\u043B\u0438\u0447\u043D\u043E
             \u043F\u043E\u043B\u0430\u0434\u0438\u043C! \n \u0410 \u0442\u0435\u043F\u0435\u0440\u044C
             \u043E\u0442\u0432\u0435\u0440\u043D\u0438\u0441\u044C, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,
@@ -346,8 +326,9 @@ MonoBehaviour:
         - key: "\u041E\u0433\u043E, \u043A\u0430\u043A \u0443\u0434\u0430\u0447\u043D\u043E
             \u0442\u0443\u0442 \u0441\u0442\u043E\u0438\u0442 \u0437\u0435\u0440\u043A\u0430\u043B\u043E!"
   <Language>k__BackingField: 0
-  isCompleted: 1
+  isCompleted: 0
   isUnlocked: 1
+  isSeen: 0
   Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
   StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
   actorLeftName: GirlEN
@@ -363,220 +344,866 @@ MonoBehaviour:
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 9d27cb5920692e741bda3a85b0749b05, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 9d27cb5920692e741bda3a85b0749b05, type: 3}
-    completed: 1
+    - languageCode: de
+      key: {fileID: 8300000, guid: ed5ea7eb5b4e18f43b326e0b4396c04f, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Yo, check it out \u2013 this is gonna be my crib \n for the next couple
+        of years. Not exactly \n a penthouse, but it's chill. I'm curious \n about
+        my future roomie though. I hope \n he's not a total nerd, you know? I don't
+        \n want our room to be \n a total chick repellent!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0443 \u0447\u0442\u043E, \u0432\u043E\u0442 \u0438 \u043C\u043E\u044F
+        \u043A\u043E\u043C\u043D\u0430\u0442\u0430 \u043D\u0430 \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0438\u0435
+        \n \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043B\u0435\u0442.
+        \u041D\u0435 \u043F\u0435\u043D\u0442\u0445\u0430\u0443\u0441, \u043D\u043E
+        \u0441\u043E\u0439\u0434\u0435\u0442. \n \u0418\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E,
+        \u043A\u0430\u043A\u043E\u0439 \u043E\u043D, \u043C\u043E\u0439 \u0431\u0443\u0434\u0443\u0449\u0438\u0439
+        \u0441\u043E\u0441\u0435\u0434 \n \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435?
+        \u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u043E\u043D \u043D\u0435 \u043D\u0443\u0434\u043D\u044B\u0439
+        \u0431\u043E\u0442\u0430\u043D\u0438\u043A. \n \u0410 \u0442\u043E \u0441
+        \u0442\u0430\u043A\u0438\u043C \u0441\u043E\u0441\u0435\u0434\u043E\u043C
+        \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435 \u0434\u0435\u0432\u0447\u043E\u043D\u043A\u0438
+        \n \u043D\u0430\u0448\u0443 \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u0431\u0443\u0434\u0443\u0442
+        \u0437\u0430 \u043A\u0438\u043B\u043E\u043C\u0435\u0442\u0440 \u043E\u0431\u0445\u043E\u0434\u0438\u0442\u044C."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Yo, check es aus \u2013 das wird \nf\xFCr die n\xE4chsten paar Jahre
+        \nmein Zuhause sein. Nicht gerade \nein Penthouse, aber es ist \nentspannt.
+        Ich bin gespannt \nauf meinen zuk\xFCnftigen Mitbewohner. \nHoffentlich ist
+        er nicht totaler \nNerd, wei\xDFt du? Ich m\xF6chte nicht, \ndass unser Zimmer
+        total abt\xF6rnend \nf\xFCr die M\xE4dels ist!"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Yo, dai un'occhiata - questa sar\xE0 la mia \ncrib per i prossimi anni.
+        Non proprio \nun attico, ma \xE8 tranquillo. Sono curioso \nriguardo al mio
+        futuro coinquilino. Spero \nnon sia un totale secchione, capisci? \nNon voglio
+        che la nostra stanza \nsia un totale repellente per le ragazze!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Yo, regarde \xE7a - c'est l\xE0 que je vais \nhabiter pour les prochaines
+        ann\xE9es. \nPas vraiment un penthouse, mais c'est \ncool. Je suis curieux
+        de voir mon \nfutur colocataire. J'esp\xE8re qu'il n'est \npas un vrai nerd,
+        tu vois? Je ne \nveux pas que notre chambre soit \nun vrai repoussoir pour
+        les filles !"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh, snap, there he is!
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: b8b176fdbac1de941b7fc146734f64c0, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: b8b176fdbac1de941b7fc146734f64c0, type: 3}
-    completed: 1
+    - languageCode: de
+      key: {fileID: 8300000, guid: 8c5799a659d861f4582d8f4b3669fce6, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Oh, snap, there he is!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E, \u0430 \u0432\u043E\u0442 \u0438 \u043E\u043D!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Oh, krass, da ist er!
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u041E, \u0430 \u0432\u043E\u0442 \u0438 \u043E\u043D!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u041E, \u0430 \u0432\u043E\u0442 \u0438 \u043E\u043D!"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Hey! I was almost wandering \n lost trying to find this joint."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 57e34060356ebc341a34457d71bb2179, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 57e34060356ebc341a34457d71bb2179, type: 3}
-    completed: 1
+    - languageCode: de
+      key: {fileID: 8300000, guid: 4be8a2ac2fe47534cb7fd01ce16e305b, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Hey! I was almost wandering \n lost trying to find this joint."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E, \u043F\u0440\u0438\u0432\u0435\u0442! \u042F \u0447\u0443\u0442\u044C
+        \u043D\u0435 \u0437\u0430\u0431\u043B\u0443\u0434\u0438\u043B\u0430\u0441\u044C,
+        \n \u043F\u043E\u043A\u0430 \u0438\u0441\u043A\u0430\u043B\u0430."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hey! Ich war fast verloren auf \nder Suche nach dieser Bude."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u041E, \u043F\u0440\u0438\u0432\u0435\u0442! \u042F \u0447\u0443\u0442\u044C
+        \u043D\u0435 \u0437\u0430\u0431\u043B\u0443\u0434\u0438\u043B\u0430\u0441\u044C,
+        \n \u043F\u043E\u043A\u0430 \u0438\u0441\u043A\u0430\u043B\u0430."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u041E, \u043F\u0440\u0438\u0432\u0435\u0442! \u042F \u0447\u0443\u0442\u044C
+        \u043D\u0435 \u0437\u0430\u0431\u043B\u0443\u0434\u0438\u043B\u0430\u0441\u044C,
+        \n \u043F\u043E\u043A\u0430 \u0438\u0441\u043A\u0430\u043B\u0430."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Umm, hey!
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 2f1dabe0cefbb534bb947ac6d68e700e, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 2f1dabe0cefbb534bb947ac6d68e700e, type: 3}
-    completed: 1
+    - languageCode: de
+      key: {fileID: 8300000, guid: 85106cdf6d4815d47bb5c5b53093d61e, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Umm, hey!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041C-\u043C-\u043C, \u043F\u0440\u0438\u0432\u0435\u0442!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Umm, hey!
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u041C-\u043C-\u043C, \u043F\u0440\u0438\u0432\u0435\u0442!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u041C-\u043C-\u043C, \u043F\u0440\u0438\u0432\u0435\u0442!"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Hey, mind scooting over a bit?  \n Can't get in with you blocking the doorway."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 8a614cfec7aa1f14da902e89c087a845, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 8a614cfec7aa1f14da902e89c087a845, type: 3}
-    completed: 1
+    - languageCode: de
+      key: {fileID: 8300000, guid: 1058d34e24f6e8d419569da21ad9e4b6, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Hey, mind scooting over a bit?  \n Can't get in with you blocking the
+        doorway."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0421\u043B\u0443\u0448\u0430\u0439, \u0430 \u043C\u043E\u0436\u0435\u0442
+        \u0442\u044B \u043F\u043E\u0434\u0432\u0438\u043D\u0435\u0448\u044C\u0441\u044F?
+        \n \u0410 \u0442\u043E \u043F\u043E\u043A\u0430 \u0442\u044B \u0441\u0442\u043E\u0438\u0448\u044C
+        \u0432 \u0434\u0432\u0435\u0440\u0438, \n \u044F \u043D\u0435 \u043C\u043E\u0433\u0443
+        \u0432\u043E\u0439\u0442\u0438."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hey, k\xF6nntest du vielleicht ein \nbisschen zur Seite rutschen? \nIch
+        komm nicht durch, wenn \ndu die T\xFCr blockierst."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u0421\u043B\u0443\u0448\u0430\u0439, \u0430 \u043C\u043E\u0436\u0435\u0442
+        \u0442\u044B \u043F\u043E\u0434\u0432\u0438\u043D\u0435\u0448\u044C\u0441\u044F?
+        \n \u0410 \u0442\u043E \u043F\u043E\u043A\u0430 \u0442\u044B \u0441\u0442\u043E\u0438\u0448\u044C
+        \u0432 \u0434\u0432\u0435\u0440\u0438, \n \u044F \u043D\u0435 \u043C\u043E\u0433\u0443
+        \u0432\u043E\u0439\u0442\u0438."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u0421\u043B\u0443\u0448\u0430\u0439, \u0430 \u043C\u043E\u0436\u0435\u0442
+        \u0442\u044B \u043F\u043E\u0434\u0432\u0438\u043D\u0435\u0448\u044C\u0441\u044F?
+        \n \u0410 \u0442\u043E \u043F\u043E\u043A\u0430 \u0442\u044B \u0441\u0442\u043E\u0438\u0448\u044C
+        \u0432 \u0434\u0432\u0435\u0440\u0438, \n \u044F \u043D\u0435 \u043C\u043E\u0433\u0443
+        \u0432\u043E\u0439\u0442\u0438."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Oh, my bad... Sure thing! I thought it was \n my new roomie showing up.
       \n Haven't met the dude yet."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 7e020ff4bd70e33449175c6b2c27b702, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 7e020ff4bd70e33449175c6b2c27b702, type: 3}
-    completed: 1
+    - languageCode: de
+      key: {fileID: 8300000, guid: 5a37fadb1b311054ba42f0a2601c5f7d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Oh, my bad... Sure thing! I thought it was \n my new roomie showing up.
+        \n Haven't met the dude yet."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u0439, \u0434\u0430\u2026 \u041A\u043E\u043D\u0435\u0447\u043D\u043E!
+        \u041F\u0440\u043E\u0441\u0442\u0438\u2026 \u041F\u0440\u043E\u0441\u0442\u043E
+        \u044F \u0434\u0443\u043C\u0430\u043B, \n \u0447\u0442\u043E \u044D\u0442\u043E
+        \u043F\u0440\u0438\u0448\u0435\u043B \u043C\u043E\u0439 \u043D\u043E\u0432\u044B\u0439
+        \u0441\u043E\u0441\u0435\u0434 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435.
+        \n \u042F \u0441 \u043D\u0438\u043C \u0435\u0449\u0435 \u043D\u0435 \u0437\u043D\u0430\u043A\u043E\u043C. "
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Oh, mein Fehler... Klar, kein \nProblem! Ich dachte, das w\xE4re \nmein
+        neuer Mitbewohner, der \nauftaucht. Hab den Kerl noch \nnicht kennengelernt."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u041E\u0439, \u0434\u0430\u2026 \u041A\u043E\u043D\u0435\u0447\u043D\u043E!
+        \u041F\u0440\u043E\u0441\u0442\u0438\u2026 \u041F\u0440\u043E\u0441\u0442\u043E
+        \u044F \u0434\u0443\u043C\u0430\u043B, \n \u0447\u0442\u043E \u044D\u0442\u043E
+        \u043F\u0440\u0438\u0448\u0435\u043B \u043C\u043E\u0439 \u043D\u043E\u0432\u044B\u0439
+        \u0441\u043E\u0441\u0435\u0434 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435.
+        \n \u042F \u0441 \u043D\u0438\u043C \u0435\u0449\u0451 \u043D\u0435 \u0437\u043D\u0430\u043A\u043E\u043C. "
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u041E\u0439, \u0434\u0430\u2026 \u041A\u043E\u043D\u0435\u0447\u043D\u043E!
+        \u041F\u0440\u043E\u0441\u0442\u0438\u2026 \u041F\u0440\u043E\u0441\u0442\u043E
+        \u044F \u0434\u0443\u043C\u0430\u043B, \n \u0447\u0442\u043E \u044D\u0442\u043E
+        \u043F\u0440\u0438\u0448\u0451\u043B \u043C\u043E\u0439 \u043D\u043E\u0432\u044B\u0439
+        \u0441\u043E\u0441\u0435\u0434 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435.
+        \n \u042F \u0441 \u043D\u0438\u043C \u0435\u0449\u0451 \u043D\u0435 \u0437\u043D\u0430\u043A\u043E\u043C. "
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Oh, you don't know? I'm your new roomie. \n Hope you're cool with that."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: fa41228281f9aeb41976a4e164352e9c, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: fa41228281f9aeb41976a4e164352e9c, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: d83c2bc771a699149b69d85f1295ecf9, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Oh, you don't know? I'm your new roomie. \n Hope you're cool with that."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0410, \u0442\u044B \u043D\u0435 \u0432 \u043A\u0443\u0440\u0441\u0435?
+        \n \u042F \u0442\u0432\u043E\u0439 \u043D\u043E\u0432\u044B\u0439 \u0441\u043E\u0441\u0435\u0434,
+        \u0442\u043E\u0447\u043D\u0435\u0435, \u0441\u043E\u0441\u0435\u0434\u043A\u0430.
+        \n \u0422\u044B, \u043D\u0430\u0434\u0435\u044E\u0441\u044C, \u043D\u0435
+        \u043F\u0440\u043E\u0442\u0438\u0432? "
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Oh, wei\xDFt du das nicht? Ich \nbin dein neuer Nachbar, oder \nbesser
+        gesagt Nachbar. Ich \nhoffe, es macht dir nichts aus?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u0410, \u0442\u044B \u043D\u0435 \u0432 \u043A\u0443\u0440\u0441\u0435?
+        \n \u042F \u0442\u0432\u043E\u0439 \u043D\u043E\u0432\u044B\u0439 \u0441\u043E\u0441\u0435\u0434,
+        \u0442\u043E\u0447\u043D\u0435\u0435, \u0441\u043E\u0441\u0435\u0434\u043A\u0430.
+        \n \u0422\u044B, \u043D\u0430\u0434\u0435\u044E\u0441\u044C, \u043D\u0435
+        \u043F\u0440\u043E\u0442\u0438\u0432? "
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u0410, \u0442\u044B \u043D\u0435 \u0432 \u043A\u0443\u0440\u0441\u0435?
+        \n \u042F \u0442\u0432\u043E\u0439 \u043D\u043E\u0432\u044B\u0439 \u0441\u043E\u0441\u0435\u0434,
+        \u0442\u043E\u0447\u043D\u0435\u0435, \u0441\u043E\u0441\u0435\u0434\u043A\u0430.
+        \n \u0422\u044B, \u043D\u0430\u0434\u0435\u044E\u0441\u044C, \u043D\u0435
+        \u043F\u0440\u043E\u0442\u0438\u0432? "
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: I... umm... well...
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 9e5c175f23c668341a0dc1bb1c3ef130, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 9e5c175f23c668341a0dc1bb1c3ef130, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: 7814c4eb6ec2adc41a0949bc3a159507, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: I... umm... well...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F\u2026 \u043C-\u043C-\u043C\u2026 \u044D-\u044D-\u044D\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ich... \xE4hm... nun..."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u042F\u2026 \u043C-\u043C-\u043C\u2026 \u044D-\u044D-\u044D\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u042F\u2026 \u043C-\u043C-\u043C\u2026 \u044D-\u044D-\u044D\u2026"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
-    Msg: "Supposed to be Douglas, but he's hitting \n it off with my girl Veronica.
-      \n So, they asked me and Douglas to swap rooms. \n Douglas is bunking with
-      Veronica, \n and now I'm rooming with..."
+    Msg: "Supposed to be Douglas, but he's \nhitting it off with my girl Veronica.
+      \nSo, they asked me and Douglas to \nswap rooms. Douglas is bunking with \nVeronica,
+      and now I'm rooming with..."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: afcd56ceeb4d78b42acbcc25a687bd1a, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: afcd56ceeb4d78b42acbcc25a687bd1a, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: fe2465d74224c0d4496a463b2f33d282, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Supposed to be Douglas, but he's \nhitting it off with my girl Veronica.
+        \nSo, they asked me and Douglas to \nswap rooms. Douglas is bunking with
+        \nVeronica, and now I'm rooming with..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u0432\u043E\u0438\u043C \u0441\u043E\u0441\u0435\u0434\u043E\u043C
+        \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u043B \u0431\u044B\u0442\u044C
+        \u0414\u0443\u0433\u043B\u0430\u0441, \u043D\u043E \n \u043E\u043D \u043C\u0443\u0442\u0438\u0442
+        \u0441 \u043C\u043E\u0435\u0439 \u0441\u043E\u0441\u0435\u0434\u043A\u043E\u0439
+        \u0412\u0435\u0440\u043E\u043D\u0438\u043A\u043E\u0439. \n \u0418, \u0432
+        \u043E\u0431\u0449\u0435\u043C, \u043E\u043D\u0438 \u043F\u043E\u043F\u0440\u043E\u0441\u0438\u043B\u0438
+        \u043C\u0435\u043D\u044F \u0441 \u0414\u0443\u0433\u043B\u0430\u0441\u043E\u043C
+        \n \u043F\u043E\u043C\u0435\u043D\u044F\u0442\u044C\u0441\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430\u043C\u0438.
+        \n \u0422\u0430\u043A \u0447\u0442\u043E \u0414\u0443\u0433\u043B\u0430\u0441
+        \u0431\u0443\u0434\u0435\u0442 \u0436\u0438\u0442\u044C \u0441 \u0412\u0435\u0440\u043E\u043D\u0438\u043A\u043E\u0439,
+        \n \u0430 \u044F \u0431\u0443\u0434\u0443 \u0436\u0438\u0442\u044C \u0441\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Sollte eigentlich mit Douglas \nsein, aber er hat es gut mit \nmeiner
+        Freundin Veronica. Also \nhaben sie mich und Douglas gebeten, \ndie Zimmer
+        zu tauschen. Douglas \npennt jetzt bei Veronica, \nund jetzt bin ich..."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u0422\u0432\u043E\u0438\u043C \u0441\u043E\u0441\u0435\u0434\u043E\u043C
+        \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u043B \u0431\u044B\u0442\u044C
+        \u0414\u0443\u0433\u043B\u0430\u0441, \u043D\u043E \n \u043E\u043D \u043C\u0443\u0442\u0438\u0442
+        \u0441 \u043C\u043E\u0435\u0439 \u0441\u043E\u0441\u0435\u0434\u043A\u043E\u0439
+        \u0412\u0435\u0440\u043E\u043D\u0438\u043A\u043E\u0439. \n \u0418, \u0432
+        \u043E\u0431\u0449\u0435\u043C, \u043E\u043D\u0438 \u043F\u043E\u043F\u0440\u043E\u0441\u0438\u043B\u0438
+        \u043C\u0435\u043D\u044F \u0441 \u0414\u0443\u0433\u043B\u0430\u0441\u043E\u043C
+        \n \u043F\u043E\u043C\u0435\u043D\u044F\u0442\u044C\u0441\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430\u043C\u0438.
+        \n \u0422\u0430\u043A \u0447\u0442\u043E \u0414\u0443\u0433\u043B\u0430\u0441
+        \u0431\u0443\u0434\u0435\u0442 \u0436\u0438\u0442\u044C \u0441 \u0412\u0435\u0440\u043E\u043D\u0438\u043A\u043E\u0439,
+        \n \u0430 \u044F \u0431\u0443\u0434\u0443 \u0436\u0438\u0442\u044C \u0441\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u0422\u0432\u043E\u0438\u043C \u0441\u043E\u0441\u0435\u0434\u043E\u043C
+        \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u043B \u0431\u044B\u0442\u044C
+        \u0414\u0443\u0433\u043B\u0430\u0441, \u043D\u043E \n \u043E\u043D \u043C\u0443\u0442\u0438\u0442
+        \u0441 \u043C\u043E\u0435\u0439 \u0441\u043E\u0441\u0435\u0434\u043A\u043E\u0439
+        \u0412\u0435\u0440\u043E\u043D\u0438\u043A\u043E\u0439. \n \u0418, \u0432
+        \u043E\u0431\u0449\u0435\u043C, \u043E\u043D\u0438 \u043F\u043E\u043F\u0440\u043E\u0441\u0438\u043B\u0438
+        \u043C\u0435\u043D\u044F \u0441 \u0414\u0443\u0433\u043B\u0430\u0441\u043E\u043C
+        \n \u043F\u043E\u043C\u0435\u043D\u044F\u0442\u044C\u0441\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430\u043C\u0438.
+        \n \u0422\u0430\u043A \u0447\u0442\u043E \u0414\u0443\u0433\u043B\u0430\u0441
+        \u0431\u0443\u0434\u0435\u0442 \u0436\u0438\u0442\u044C \u0441 \u0412\u0435\u0440\u043E\u043D\u0438\u043A\u043E\u0439,
+        \n \u0430 \u044F \u0431\u0443\u0434\u0443 \u0436\u0438\u0442\u044C \u0441\u2026"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: Umm, with who?
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: db5782b75254c4c448978f47d03883ba, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: db5782b75254c4c448978f47d03883ba, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: e2b15f4dc2c4b80428eb61d118280f22, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Umm, with who?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042D-\u044D-\u044D?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Mit wem?
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u042D-\u044D-\u044D?"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u042D-\u044D-\u044D?"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: What's your name?
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: e06d4342769667847bd5266a17232cb9, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: e06d4342769667847bd5266a17232cb9, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: c5aaba0c020dd0c4598a5b77a8230582, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: What's your name?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041A\u0430\u043A \u0442\u0435\u0431\u044F \u0437\u043E\u0432\u0443\u0442?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Wie hei\xDFt du?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u041A\u0430\u043A \u0442\u0435\u0431\u044F \u0437\u043E\u0432\u0443\u0442?"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u041A\u0430\u043A \u0442\u0435\u0431\u044F \u0437\u043E\u0432\u0443\u0442?"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh, my bad, I'm Ben.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 822dc2285504cf6468cad3a4608a6168, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 822dc2285504cf6468cad3a4608a6168, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: b5bf65a2db84e4e469e7f68520516bed, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Oh, my bad, I'm Ben.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0410, \u0434\u0430, \u0438\u0437\u0432\u0438\u043D\u0438, \u043C\u0435\u043D\u044F
+        \u0437\u043E\u0432\u0443\u0442 \u0411\u044D\u043D."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Oh, mein Fehler, ich bin Ben.
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u0410, \u0434\u0430, \u0438\u0437\u0432\u0438\u043D\u0438, \u043C\u0435\u043D\u044F
+        \u0437\u043E\u0432\u0443\u0442 \u0411\u044D\u043D."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u0410, \u0434\u0430, \u0438\u0437\u0432\u0438\u043D\u0438, \u043C\u0435\u043D\u044F
+        \u0437\u043E\u0432\u0443\u0442 \u0411\u044D\u043D."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "Nice to meet you, Ben. \n Cool with sharing the room?"
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: be825a9f47228ea4b87b1ed9ee49730b, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: be825a9f47228ea4b87b1ed9ee49730b, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: f13dd2d5e744bfd4b8494dd1741a3d98, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Nice to meet you, Ben. \n Cool with sharing the room?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u044F\u0442\u043D\u043E \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F,
+        \u0411\u044D\u043D, \u044F \u042D\u043C\u0438\u043B\u0438. \n \u041D\u0443
+        \u0447\u0442\u043E, \u0442\u044B \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432
+        \n \u0434\u0435\u043B\u0438\u0442\u044C \u0441\u043E \u043C\u043D\u043E\u0439
+        \u043A\u043E\u043C\u043D\u0430\u0442\u0443?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Freut mich, dich kennenzulernen, \nBen. Hast du etwas dagegen, \ndas
+        Zimmer zu teilen?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u041F\u0440\u0438\u044F\u0442\u043D\u043E \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F,
+        \u0411\u044D\u043D, \u044F \u042D\u043C\u0438\u043B\u0438. \n \u041D\u0443
+        \u0447\u0442\u043E, \u0442\u044B \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432
+        \n \u0434\u0435\u043B\u0438\u0442\u044C \u0441\u043E \u043C\u043D\u043E\u0439
+        \u043A\u043E\u043C\u043D\u0430\u0442\u0443?"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u041F\u0440\u0438\u044F\u0442\u043D\u043E \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F,
+        \u0411\u044D\u043D, \u044F \u042D\u043C\u0438\u043B\u0438. \n \u041D\u0443
+        \u0447\u0442\u043E, \u0442\u044B \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432
+        \n \u0434\u0435\u043B\u0438\u0442\u044C \u0441\u043E \u043C\u043D\u043E\u0439
+        \u043A\u043E\u043C\u043D\u0430\u0442\u0443?"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Me? Oh, hell yeah, come on in!
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: ec0958dcefd91834f825f4b9194c7b16, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: ec0958dcefd91834f825f4b9194c7b16, type: 3}
-    completed: 1
+    - languageCode: de
+      key: {fileID: 8300000, guid: cfa3b94dbe861dc45932321fc0814516, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Me? Oh, hell yeah, come on in!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F? \u041D\u0435\u0442, \u043A\u043E\u043D\u0435\u0447\u043D\u043E,
+        \u044F \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432, \u043F\u0440\u043E\u0445\u043E\u0434\u0438!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Ich? Oh, verdammt ja, komm rein!
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u042F? \u041D\u0435\u0442, \u043A\u043E\u043D\u0435\u0447\u043D\u043E,
+        \u044F \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432, \u043F\u0440\u043E\u0445\u043E\u0434\u0438!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u042F? \u041D\u0435\u0442, \u043A\u043E\u043D\u0435\u0447\u043D\u043E,
+        \u044F \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432, \u043F\u0440\u043E\u0445\u043E\u0434\u0438!"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "But listen up, from now on, \n you and I are roomies! \n Just keeping it
       friendly, you feel me?"
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: e895dad784ef0e6478d3828a48c046c1, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: e895dad784ef0e6478d3828a48c046c1, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: de2a60192cdc540479ff8b12b22dd035, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "But listen up, from now on, \n you and I are roomies! \n Just keeping
+        it friendly, you feel me?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u043E \u0441\u043C\u043E\u0442\u0440\u0438, \u0441 \u044D\u0442\u043E\u0433\u043E
+        \u043C\u043E\u043C\u0435\u043D\u0442\u0430 \u043C\u044B \u0441 \u0442\u043E\u0431\u043E\u0439
+        \n \u0441\u043E\u0441\u0435\u0434\u0438 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435!
+        \u041C\u0435\u0436\u0434\u0443 \u043D\u0430\u043C\u0438 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442
+        \n \u0431\u044B\u0442\u044C \u043D\u0438\u0447\u0435\u0433\u043E, \u043A\u0440\u043E\u043C\u0435
+        \u0434\u0440\u0443\u0436\u0435\u0441\u043A\u0438\u0445 \n \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0439,
+        \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u043B\u0438\u0441\u044C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Aber h\xF6r zu, von jetzt an \nsind du und ich Mitbewohner! \nEinfach
+        freundlich bleiben, \nverstehst du?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u041D\u043E \u0441\u043C\u043E\u0442\u0440\u0438, \u0441 \u044D\u0442\u043E\u0433\u043E
+        \u043C\u043E\u043C\u0435\u043D\u0442\u0430 \u043C\u044B \u0441 \u0442\u043E\u0431\u043E\u0439
+        \n \u0441\u043E\u0441\u0435\u0434\u0438 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435!
+        \u041C\u0435\u0436\u0434\u0443 \u043D\u0430\u043C\u0438 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442
+        \n \u0431\u044B\u0442\u044C \u043D\u0438\u0447\u0435\u0433\u043E, \u043A\u0440\u043E\u043C\u0435
+        \u0434\u0440\u0443\u0436\u0435\u0441\u043A\u0438\u0445 \n \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0439,
+        \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u043B\u0438\u0441\u044C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u041D\u043E \u0441\u043C\u043E\u0442\u0440\u0438, \u0441 \u044D\u0442\u043E\u0433\u043E
+        \u043C\u043E\u043C\u0435\u043D\u0442\u0430 \u043C\u044B \u0441 \u0442\u043E\u0431\u043E\u0439
+        \n \u0441\u043E\u0441\u0435\u0434\u0438 \u043F\u043E \u043A\u043E\u043C\u043D\u0430\u0442\u0435!
+        \u041C\u0435\u0436\u0434\u0443 \u043D\u0430\u043C\u0438 \u043D\u0435 \u043C\u043E\u0436\u0435\u0442
+        \n \u0431\u044B\u0442\u044C \u043D\u0438\u0447\u0435\u0433\u043E, \u043A\u0440\u043E\u043C\u0435
+        \u0434\u0440\u0443\u0436\u0435\u0441\u043A\u0438\u0445 \n \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0439,
+        \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u043B\u0438\u0441\u044C?"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Oh, sure, I wasn't thinking anything else.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 2e6af6cf138253b41a0f99bf23d86bcc, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 2e6af6cf138253b41a0f99bf23d86bcc, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: ad8388b6b7405664f983446454e37c90, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Oh, sure, I wasn't thinking anything else.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0410, \u0434\u0430, \u0440\u0430\u0437\u0443\u043C\u0435\u0435\u0442\u0441\u044F,
+        \u044F \u0438 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B \u043D\u0438 \u043E
+        \u0447\u0435\u043C \u0442\u0430\u043A\u043E\u043C."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Oh, sicher, ich dachte \nan nichts anderes."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u0410, \u0434\u0430, \u0440\u0430\u0437\u0443\u043C\u0435\u0435\u0442\u0441\u044F,
+        \u044F \u0438 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B \u043D\u0438 \u043E
+        \u0447\u0435\u043C \u0442\u0430\u043A\u043E\u043C."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u0410, \u0434\u0430, \u0440\u0430\u0437\u0443\u043C\u0435\u0435\u0442\u0441\u044F,
+        \u044F \u0438 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B \u043D\u0438 \u043E
+        \u0447\u0435\u043C \u0442\u0430\u043A\u043E\u043C."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: "We're gonna vibe, man! Now, \n turn around, I gotta change real quick."
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 76ff6753ff381454dafb30b38fe3829c, type: 3}
     <Sender>k__BackingField: 0
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 76ff6753ff381454dafb30b38fe3829c, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: 1a503944184b0854c940c7a1809612c0, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "We're gonna vibe, man! Now, \n turn around, I gotta change real quick."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0443\u043C\u0430\u044E, \u043C\u044B \u043E\u0442\u043B\u0438\u0447\u043D\u043E
+        \u043F\u043E\u043B\u0430\u0434\u0438\u043C! \n \u0410 \u0442\u0435\u043F\u0435\u0440\u044C
+        \u043E\u0442\u0432\u0435\u0440\u043D\u0438\u0441\u044C, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,
+        \n \u043C\u043D\u0435 \u043D\u0430\u0434\u043E \u043F\u0435\u0440\u0435\u043E\u0434\u0435\u0442\u044C\u0441\u044F."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Wir werden gut miteinander \nauskommen, Mann! Jetzt dreh \ndich um, ich
+        muss mich \nschnell umziehen."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u0414\u0443\u043C\u0430\u044E, \u043C\u044B \u043E\u0442\u043B\u0438\u0447\u043D\u043E
+        \u043F\u043E\u043B\u0430\u0434\u0438\u043C! \n \u0410 \u0442\u0435\u043F\u0435\u0440\u044C
+        \u043E\u0442\u0432\u0435\u0440\u043D\u0438\u0441\u044C, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,
+        \n \u043C\u043D\u0435 \u043D\u0430\u0434\u043E \u043F\u0435\u0440\u0435\u043E\u0434\u0435\u0442\u044C\u0441\u044F."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u0414\u0443\u043C\u0430\u044E, \u043C\u044B \u043E\u0442\u043B\u0438\u0447\u043D\u043E
+        \u043F\u043E\u043B\u0430\u0434\u0438\u043C! \n \u0410 \u0442\u0435\u043F\u0435\u0440\u044C
+        \u043E\u0442\u0432\u0435\u0440\u043D\u0438\u0441\u044C, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,
+        \n \u043C\u043D\u0435 \u043D\u0430\u0434\u043E \u043F\u0435\u0440\u0435\u043E\u0434\u0435\u0442\u044C\u0441\u044F."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: Yeah, sure.
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 319eaa2bce3aa964ba66f17439bc300c, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 319eaa2bce3aa964ba66f17439bc300c, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: 71f685254abe568499d070a337167527, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Yeah, sure.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0430, \u043A\u043E\u043D\u0435\u0447\u043D\u043E."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Ja, klar.
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u0414\u0430, \u043A\u043E\u043D\u0435\u0447\u043D\u043E."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u0414\u0430, \u043A\u043E\u043D\u0435\u0447\u043D\u043E."
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
     Msg: "Whoa, they got a mirror set up \n like it's meant to be here!"
     optionalData:
       GallerySlot: {fileID: 0}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 8300000, guid: 53016fef92398f344b9bc317e0fb8f67, type: 3}
     <Sender>k__BackingField: 1
     localizedAudioClips:
     - languageCode: en
       key: {fileID: 8300000, guid: 53016fef92398f344b9bc317e0fb8f67, type: 3}
-    completed: 0
+    - languageCode: de
+      key: {fileID: 8300000, guid: 907bbdbdcd4c1fb4abb0fc2a1e3a1436, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Whoa, they got a mirror set up \n like it's meant to be here!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u0433\u043E, \u043A\u0430\u043A \u0443\u0434\u0430\u0447\u043D\u043E
+        \u0442\u0443\u0442 \u0441\u0442\u043E\u0438\u0442 \u0437\u0435\u0440\u043A\u0430\u043B\u043E!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Wow, die haben hier einen \nSpiegel aufgestellt, als \nob er hierhergeh\xF6rt!"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "\u041E\u0433\u043E, \u043A\u0430\u043A \u0443\u0434\u0430\u0447\u043D\u043E
+        \u0442\u0443\u0442 \u0441\u0442\u043E\u0438\u0442 \u0437\u0435\u0440\u043A\u0430\u043B\u043E!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\u041E\u0433\u043E, \u043A\u0430\u043A \u0443\u0434\u0430\u0447\u043D\u043E
+        \u0442\u0443\u0442 \u0441\u0442\u043E\u0438\u0442 \u0437\u0435\u0440\u043A\u0430\u043B\u043E!"
+      options:
+        font: {fileID: 0}
   - ActorIcon: {fileID: 21300000, guid: 0771d8e0a166c67419dddd865ed4b211, type: 3}
     Msg: not translated
     optionalData:
       GallerySlot: {fileID: 11400000, guid: bc1c9787b8e7696418513545f73e74ce, type: 2}
       Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
     AudioMsg: {fileID: 0}
     <Sender>k__BackingField: 0
     localizedAudioClips: []
-    completed: 0
+    _localizedData: []

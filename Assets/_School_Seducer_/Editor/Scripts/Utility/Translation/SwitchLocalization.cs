@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using Zenject;
@@ -14,9 +15,11 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
         [SerializeField] private RectTransform checkPos;
         [SerializeField] private UnityEvent onSelect;
 
+        public event Action LanguageChangedEvent;
+
         private void Start()
         {
-            SetChecker();
+            //SetChecker();
         }
 
         public void ChangeLanguage()
@@ -28,6 +31,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
             SetChecker();
             
             onSelect?.Invoke();
+            LanguageChangedEvent?.Invoke();
             
             //LocalizedGlobalScriptableObject.UpdateLocalizedData();
             Debug.Log("Selected language: " + _localizer.GlobalLanguageCodeRuntime);

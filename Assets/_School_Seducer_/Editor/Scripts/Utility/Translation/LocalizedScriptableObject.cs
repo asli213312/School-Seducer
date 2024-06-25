@@ -60,7 +60,6 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                         // Проверяем, есть ли уже localizedField с тем же fieldLabel
                         bool fieldExists = localizedFields.Exists(x => x.fieldLabel == field.Name);
 
-                        // Если localizedField не существует и fieldExists равен false, то добавляем новый localizedField
                         if (localizedField == null && !fieldExists)
                         {
                             Debug.Log("original localized field was founded");
@@ -74,6 +73,16 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                     }
                 }
             }
+
+            if (!localizedFields.Exists(x => x.fieldLabel == name))
+	        {
+	            LocalizedField localizedObjectField = new LocalizedField
+	            {
+	                fieldLabel = name,
+	                dampedField = new LocalizedField { fieldLabel = name }
+	            };
+	            localizedFields.Add(localizedObjectField);
+        	}	
         }
 
         private void CheckLanguageCode()

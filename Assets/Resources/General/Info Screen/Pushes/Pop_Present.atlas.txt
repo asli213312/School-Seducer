@@ -1,0 +1,17 @@
+Pop_Present.png
+size:1403,1403
+filter:Linear,Linear
+pma:true
+scale:0.9
+Girl
+bounds:2,10,444,461
+offsets:4,5,452,468
+rotate:90
+bar
+bounds:465,2,452,58
+rotate:90
+btn
+bounds:1076,1003,398,135
+rotate:90
+btn_close
+bounds:2,456,1072,945

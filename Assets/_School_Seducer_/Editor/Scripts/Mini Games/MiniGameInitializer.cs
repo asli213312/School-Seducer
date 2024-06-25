@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts;
 using _School_Seducer_.Editor.Scripts.Mini_Games;
+using GameAnalyticsSDK;
 using UnityEngine;
 using UnityEngine.UI;
 using PuzzleGame.UI;
@@ -46,6 +47,8 @@ public class MiniGameInitializer : MonoBehaviour
         {
             currentGame.Activate();
             closeGameButton.gameObject.Activate();
+            
+            GameAnalytics.NewDesignEvent("main_game");
         }
     }
 

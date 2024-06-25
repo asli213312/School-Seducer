@@ -26,7 +26,10 @@ namespace _School_Seducer_.Editor.Scripts.UI.Popups
         {
             if (data is TransitionDataText newData)
             {
-                _data = newData.dataText;
+                if (newData.fieldName == name)
+                    _data = newData.dataText;
+                else
+                    Debug.LogWarning("Field name is incorrect!", gameObject);
             }
             else Debug.LogError("Data for TransitionText is not TransitionDataText", gameObject);
         }

@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.Utility.Translation;
 using _School_Seducer_.Editor.Scripts.Utility;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,28 +17,41 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] private Image background;
         [SerializeField] private Button audioButtonLeftActor;
         [SerializeField] private Button audioButtonRightActor;
+        [SerializeField] private Button audioPauseButtonLeftActor;
+        [SerializeField] private Button audioPauseButtonRightActor;
 
         [Header("Options")] 
         [SerializeField] private float offsetRightActor = -5.03f;
         [SerializeField] private float parentMultiplierSizeDelta;
 
         private List<LocalizedScriptableObject.LocalizedData> _localizedData;
-        
+
+        private Button _currentAudioPauseButtonActor;
         private Button _currentAudioButtonActor;
 
         public MessageSender MessageSender => Sender;
         public GameObject PaddingForward {get; private set;}
         public MessageDefaultView PreviousDefaultMsg { get; set; }
         public GameObject MainParent { get; private set; }
+        public bool Adjusted { get; set; }
         public bool NeedPreviousDefaultMsg { get; set; }
 
         private Transform _content;
+        private LocalizedGlobalMonoBehaviour _localizer;
         private SoundHandler _soundHandler;
         private string _currentLanguageCode;
 
         public void Initialize(OptionButton[] optionButtons)
         {
             OptionButtons = optionButtons;
+        }
+
+        private void OnDisable()
+        {
+            if (_currentAudioPauseButtonActor == null) return;
+            
+            if (_currentAudioPauseButtonActor.gameObject.activeSelf)
+                _currentAudioPauseButtonActor.gameObject.Deactivate();
         }
 
         public void SetBlockBackground(Sprite leftActor, Sprite rightActor, Sprite storyTeller)
@@ -67,7 +82,16 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             msgText.color = selectedColor;
         }
 
-        public void InstallLanguageCode(string languageCode) => _currentLanguageCode = languageCode;
+        public void InstallLanguageCode(string languageCode) 
+        {
+            _currentLanguageCode = languageCode;
+            TranslateTextOptions(_currentLanguageCode);
+        } 
+
+        public void InitLocalizer(LocalizedGlobalMonoBehaviour localizer) 
+        {
+            _localizer = localizer;
+        }
 
         public void InitContentSpace(Transform content)
         {
@@ -118,6 +142,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             //Data.AudioMsg = translatedAudioMsg;
         }
 
+        public void TranslateTextOptions(string languageCode) 
+        {
+            if (_localizer.TextOptions.font != null)
+                msgText.font = _localizer.TextOptions.font;
+        }
+
         public void SetNameActors(string leftActor, string rightActor, string storyTeller)
         {
             SetName(leftActor, rightActor, storyTeller);
@@ -147,6 +177,15 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             }
         }
 
+        public void UpdateSizes()
+        {
+            if (MainParent == null) return;
+
+            AlignSizeDelta aligner = GetComponent<AlignSizeDelta>();
+            aligner.RectUpdate = MainParent.GetComponent<RectTransform>();
+            aligner.Reset();
+        } 
+
         private void SetParentActor()
         {
             AdjustLeftActor(_content, Sender);
@@ -162,21 +201,34 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                 {
                     audioButtonLeftActor.onClick.AddListener(InvokeAudioMsg);
                     audioButtonLeftActor.onClick.AddListener(_soundHandler.Unmute);
+                    audioButtonLeftActor.onClick.AddListener(() =>_soundHandler.globalSettings.soundEnabled = true);
+                    audioPauseButtonLeftActor.AddListener(PauseAudioMsg);
                     audioButtonRightActor.gameObject.Deactivate();
                     _currentAudioButtonActor = audioButtonLeftActor;
+                    _currentAudioPauseButtonActor = _currentAudioButtonActor.transform.GetChild(0).GetComponent<Button>();
+                    
+                    //audioButtonLeftActor.onClick.AddListener(() =>_currentAudioPauseButtonActor.gameObject.SetActive(true));
                 }
                 else if (Sender == MessageSender.ActorRight)
                 {
                     audioButtonRightActor.onClick.AddListener(InvokeAudioMsg);
                     audioButtonRightActor.onClick.AddListener(_soundHandler.Unmute);
+                    audioButtonRightActor.onClick.AddListener(() =>_soundHandler.globalSettings.soundEnabled = true);
+                    audioPauseButtonRightActor.AddListener(PauseAudioMsg);
                     audioButtonLeftActor.gameObject.Deactivate();
                     _currentAudioButtonActor = audioButtonRightActor;
+                    _currentAudioPauseButtonActor = _currentAudioButtonActor.transform.GetChild(0).GetComponent<Button>();
+                    
+                    //audioButtonRightActor.onClick.AddListener(() =>_currentAudioPauseButtonActor.gameObject.SetActive(true));
                 }
                 else if (Sender == MessageSender.StoryTeller)
                 {
                     audioButtonLeftActor.onClick.AddListener(InvokeAudioMsg);
+                    audioButtonLeftActor.onClick.AddListener(_soundHandler.Unmute);
+                    audioButtonLeftActor.onClick.AddListener(() =>_soundHandler.globalSettings.soundEnabled = true);
                     audioButtonRightActor.gameObject.Deactivate();
                     _currentAudioButtonActor = audioButtonLeftActor;
+                    _currentAudioPauseButtonActor = _currentAudioButtonActor.transform.GetChild(0).GetComponent<Button>();
 
                     RectTransform audioLeftRect = audioButtonLeftActor.GetComponent<RectTransform>();
                     audioLeftRect.anchorMax = new Vector2(0, 0.5f);
@@ -184,14 +236,23 @@ namespace _School_Seducer_.Editor.Scripts.Chat
                     audioLeftRect.Translate(Vector2.left * 1.3f);
                 }
 
-                //_soundHandler.InvokeClipAfterExistClip(InvokeAudioMsg);
                 if (_soundHandler.IsClipPlaying())
                 {
                     _soundHandler.StopClip();
                     InvokeAudioMsg();
+
+                    if (_soundHandler.globalSettings.soundEnabled)
+                        _currentAudioPauseButtonActor.gameObject.Activate();
                 }
                 else
+                {
                     InvokeAudioMsg();
+
+                    if (_soundHandler.globalSettings.soundEnabled)
+                        _currentAudioPauseButtonActor.gameObject.Activate();
+                }
+                
+                if (Data.completed) _currentAudioPauseButtonActor.gameObject.Deactivate(); 
             }
         }
 
@@ -204,17 +265,40 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (isTranslated)
             {
                 if (_currentAudioButtonActor != null)
+                {
                     _currentAudioButtonActor.gameObject.Activate();
+
+                    if (_soundHandler.globalSettings.soundEnabled)
+                        _currentAudioPauseButtonActor.gameObject.Activate();
+                }
                 else
                     Debug.LogWarning("CurrentAudioButtonActor is null to change status view");
-                
+
                 if (_soundHandler.IsClipPlaying())
-                    _soundHandler.StopClip();
+                {
+                    PauseAudioMsg();
+                }
                 else
-                    _soundHandler.InvokeClipAfterPlayback(() =>_soundHandler.InvokeOneClip(Data.AudioMsg));
+                {
+                    StartCoroutine(ProcessInvokeDelayedClip());
+                }
             }
             else
                 _currentAudioButtonActor.gameObject.Deactivate();
+
+            IEnumerator ProcessInvokeDelayedClip()
+            {
+                yield return new WaitUntil(() => _soundHandler.IsClipPlaying() == false); 
+                _soundHandler.InvokeOneClip(translatedAudioMsg);
+                yield return new WaitUntil(() => _soundHandler.IsClipPlaying() == false); 
+                _currentAudioPauseButtonActor.gameObject.Deactivate();
+            }
+        }
+
+        private void PauseAudioMsg()
+        {
+            _soundHandler.StopClip();
+            _currentAudioPauseButtonActor.gameObject.Deactivate();
         }
         
         private void AdjustStoryTeller(Transform content, MessageSender sender)
@@ -358,9 +442,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (Data.AudioMsg != null)
             {
                 audioButtonLeftActor.RemoveListener(InvokeAudioMsg);
+                audioButtonLeftActor.onClick.RemoveListener(() =>_soundHandler.globalSettings.soundEnabled = true);
                 audioButtonLeftActor.RemoveListener(_soundHandler.Unmute);
                 audioButtonRightActor.RemoveListener(InvokeAudioMsg);
+                audioButtonRightActor.onClick.RemoveListener(() =>_soundHandler.globalSettings.soundEnabled = true);
                 audioButtonRightActor.RemoveListener(_soundHandler.Unmute);
+                audioPauseButtonRightActor.RemoveListener(PauseAudioMsg);
+                audioPauseButtonLeftActor.RemoveListener(PauseAudioMsg);
             }
         }
     }

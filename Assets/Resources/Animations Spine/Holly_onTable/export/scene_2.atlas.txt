@@ -1,0 +1,17 @@
+scene_2.png
+size:2048,2048
+filter:Linear,Linear
+pma:true
+scale:0.81
+1
+bounds:1081,769,404,256
+offsets:0,0,404,262
+1_2
+bounds:1081,356,411,181
+rotate:90
+2_1
+bounds:1081,1027,939,1017
+2_2
+bounds:2,2,1077,963
+table
+bounds:2,967,1077,1077

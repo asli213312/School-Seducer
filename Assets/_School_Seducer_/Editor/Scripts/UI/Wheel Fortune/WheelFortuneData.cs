@@ -14,7 +14,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         [Header("Wheel parameters")]
         public int moneyForSpin;
-        [SerializeField] public int timeShowStopButton;
         [InfoBox("If you want to show the stop button immediately, set the time to 0")]
         [SerializeField] public int secondsSlowSpdSlots;
         [SerializeField] public float durationSpinCharacters;

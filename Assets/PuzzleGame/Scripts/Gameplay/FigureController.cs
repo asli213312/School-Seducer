@@ -10,6 +10,8 @@ namespace PuzzleGame.Gameplay
         public float verticalOffset;
         public List<Brick> bricks = new List<Brick>();
 
+        public static event Action FiguresRotatedAction;
+
         public event Action<FigureController> PointerUp = delegate { };
         public event Action<FigureController> PointerClick = delegate { };
         public event Action<FigureController> PointerDrag = delegate { };
@@ -27,6 +29,11 @@ namespace PuzzleGame.Gameplay
 
         protected virtual void Awake()
         {
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                verticalOffset = 0;
+            }
+            
             rectTransform = GetComponent<RectTransform>();
 
             offset = new Vector2(0f, verticalOffset);
@@ -34,6 +41,14 @@ namespace PuzzleGame.Gameplay
             cachedScale = rectTransform.localScale;
 
             targetPosition = cachedPosition;
+        }
+
+        void Start() 
+        {
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                verticalOffset = 0;
+            }
         }
 
         void Update()
@@ -59,6 +74,8 @@ namespace PuzzleGame.Gameplay
         
             foreach (var brick in bricks)
                 brick.transform.localRotation = Quaternion.Euler(0f, 0f, rotation * -1);
+            
+            FiguresRotatedAction?.Invoke();
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -70,6 +87,11 @@ namespace PuzzleGame.Gameplay
     
         public virtual void OnPointerDown(PointerEventData eventData)
         {
+            if (Application.platform == RuntimePlatform.WebGLPlayer && verticalOffset != 0)
+            {
+                verticalOffset = 0;
+            }
+
             if (bricks.Count == 0 || !Interactable) return;
             
             transform.SetAsLastSibling();

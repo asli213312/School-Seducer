@@ -1,0 +1,241 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Director
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Director
+    localizedDataList:
+    - languageCode: en
+      key: Director
+    - languageCode: ru
+      key: "\u0414\u0438\u0440\u0435\u043A\u0442\u043E\u0440"
+    - languageCode: de
+      key: Regisseur
+    - languageCode: fr
+      key: Directeur
+    - languageCode: sp
+      key: Director
+    - languageCode: it
+      key: Direttore
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: e75ffddf70854fd4b86a482355170a7f, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: "It's good that I managed to \narrange my summer internship."
+        - key: "I just need the director \nto sign this form."
+        - key: "Damn it... Looks like they \nforgot to close the door."
+        - key: Insert picture
+        - key: "I was right... the director \nis fucking his secretary..."
+        - key: If anyone finds out about this...
+        - key: "It's better to close the \ndoor and quietly leave..."
+      - languageCode: ru
+        messages:
+        - key: "\u0425\u043E\u0440\u043E\u0448\u043E, \u0447\u0442\u043E \u043C\u043D\u0435
+            \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C\u0441\u044F
+            \n\u043E \u043B\u0435\u0442\u043D\u0435\u0439 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0435."
+        - key: "\u041D\u0430\u0434\u043E \u0442\u043E\u043B\u044C\u043A\u043E, \u0447\u0442\u043E\u0431\u044B
+            \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440 \n\u043F\u043E\u0434\u043F\u0438\u0441\u0430\u043B
+            \u044D\u0442\u043E\u0442 \u0431\u043B\u0430\u043D\u043A."
+        - key: "\u0412\u043E\u0442 \u0447\u0451\u0440\u0442\u2026 \u041A\u0430\u0436\u0435\u0442\u0441\u044F,
+            \u043E\u043D\u0438 \u0437\u0430\u0431\u044B\u043B\u0438 \u0437\u0430\u043A\u0440\u044B\u0442\u044C
+            \u0434\u0432\u0435\u0440\u044C."
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+        - key: "\u042F \u0431\u044B\u043B \u043F\u0440\u0430\u0432\u2026 \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440
+            \n\u0442\u0440\u0430\u0445\u0430\u0435\u0442 \u0441\u0432\u043E\u044E
+            \u0441\u0435\u043A\u0440\u0435\u0442\u0430\u0440\u0448\u0443\u2026"
+        - key: "\u0415\u0441\u043B\u0438 \u043E\u0431 \u044D\u0442\u043E\u043C \u043A\u0442\u043E-\u0442\u043E
+            \u0443\u0437\u043D\u0430\u0435\u0442\u2026"
+        - key: "\u041B\u0443\u0447\u0448\u0435 \u043F\u0440\u0438\u043A\u0440\u044B\u0442\u044C
+            \u0434\u0432\u0435\u0440\u044C \u0438 \u0442\u0438\u0445\u043E \u0443\u0439\u0442\u0438\u2026"
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 0
+  isSeen: 0
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 75183090350465c4abb577d8e87ca05e, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "It's good that I managed to \narrange my summer internship."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 98312a96e543e8d48993ff3d142711d6, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 98312a96e543e8d48993ff3d142711d6, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "It's good that I managed to \narrange my summer internship."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0425\u043E\u0440\u043E\u0448\u043E, \u0447\u0442\u043E \u043C\u043D\u0435
+        \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C\u0441\u044F
+        \n\u043E \u043B\u0435\u0442\u043D\u0435\u0439 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0435."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "I just need the director \nto sign this form."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 1d1b237b4f16eb24eb75280dca78b1e7, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 1d1b237b4f16eb24eb75280dca78b1e7, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I just need the director \nto sign this form."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0430\u0434\u043E \u0442\u043E\u043B\u044C\u043A\u043E, \u0447\u0442\u043E\u0431\u044B
+        \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440 \n\u043F\u043E\u0434\u043F\u0438\u0441\u0430\u043B
+        \u044D\u0442\u043E\u0442 \u0431\u043B\u0430\u043D\u043A."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Damn it... Looks like they \nforgot to close the door."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 8fb5d30bec89ff841adaec361434d248, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 8fb5d30bec89ff841adaec361434d248, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Damn it... Looks like they \nforgot to close the door."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u043E\u0442 \u0447\u0451\u0440\u0442\u2026 \u041A\u0430\u0436\u0435\u0442\u0441\u044F,
+        \u043E\u043D\u0438 \u0437\u0430\u0431\u044B\u043B\u0438 \u0437\u0430\u043A\u0440\u044B\u0442\u044C
+        \u0434\u0432\u0435\u0440\u044C."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+    Msg: Insert picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: 14e82618b99a0584eb8221673569984e, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 1330a66290cbc7541b2c59d7e25c08f4, type: 3}
+    <Sender>k__BackingField: 2
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "I was right... the director \nis fucking his secretary..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 81b8bdcec58571c4ab003fdf5aead476, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 81b8bdcec58571c4ab003fdf5aead476, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I was right... the director \nis fucking his secretary..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u0431\u044B\u043B \u043F\u0440\u0430\u0432\u2026 \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440
+        \n\u0442\u0440\u0430\u0445\u0430\u0435\u0442 \u0441\u0432\u043E\u044E \u0441\u0435\u043A\u0440\u0435\u0442\u0430\u0440\u0448\u0443\u2026"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: If anyone finds out about this...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 835c0a0df02f22342a9cb93675ff6dcd, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 835c0a0df02f22342a9cb93675ff6dcd, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: If anyone finds out about this...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0415\u0441\u043B\u0438 \u043E\u0431 \u044D\u0442\u043E\u043C \u043A\u0442\u043E-\u0442\u043E
+        \u0443\u0437\u043D\u0430\u0435\u0442\u2026"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "It's better to close the \ndoor and quietly leave..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: ddbe1edcb91a9ef48bf1cee24c5eea13, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: ddbe1edcb91a9ef48bf1cee24c5eea13, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "It's better to close the \ndoor and quietly leave..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041B\u0443\u0447\u0448\u0435 \u043F\u0440\u0438\u043A\u0440\u044B\u0442\u044C
+        \u0434\u0432\u0435\u0440\u044C \u0438 \u0442\u0438\u0445\u043E \u0443\u0439\u0442\u0438\u2026"
+      options:
+        font: {fileID: 0}

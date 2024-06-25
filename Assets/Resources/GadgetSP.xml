@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs title="College Fuck Fest" author="example" thumbnail="" screenshot="" height="800" width="1280">
+        <Require feature="opensocial-0.8" />
+        <Require feature="opensocial-payment" />
+        <Require feature="nutaku" />
+        <Link rel="payment.handler" href="https://example.com/your-app/payment-handler" />
+        <Require feature="dynamic-height" />
+    </ModulePrefs>
+    <Content preferred_width="1280" type="html" view="touch">
+        <head>
+          <script type="text/javascript" src="https://sbox-osapi.nutaku.com/gadgets/js/sp-net.js">
+            console.log("Hello, World!");
+          </script>
+        </head>
+    </Content>
+</Module>

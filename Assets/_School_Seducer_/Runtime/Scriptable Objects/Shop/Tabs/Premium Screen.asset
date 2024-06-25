@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a666c745d210ee44b7de1c1e77c7831, type: 3}
+  m_Name: Premium Screen
+  m_EditorClassIdentifier: 
+  isHorizontalScroll: 1
+  items:
+  - rid: 3079286186555998208
+  - rid: 3079286186555998209
+  references:
+    version: 2
+    RefIds:
+    - rid: 3079286186555998208
+      type: {class: ShopItemPremiumCharacterPackData, ns: _School_Seducer_.Editor.Scripts.UI.Shop, asm: Project.Editor}
+      data:
+        itemName: 
+        characterItem: {fileID: 11400000, guid: 55b8a4ffeb5fa664791755f42ef8fa94, type: 2}
+        groupItem: {fileID: 11400000, guid: 1494db5dc901e654eab9cbb14758682d, type: 2}
+        isSold: 1
+        showDebugParameters: 0
+        id: 
+    - rid: 3079286186555998209
+      type: {class: ShopItemPremiumCharacterPackData, ns: _School_Seducer_.Editor.Scripts.UI.Shop, asm: Project.Editor}
+      data:
+        itemName: 
+        characterItem: {fileID: 11400000, guid: 94412fd212391084cb380a16846c6d91, type: 2}
+        groupItem: {fileID: 11400000, guid: 937697b13029d5342989f4d84c825cd9, type: 2}
+        isSold: 1
+        showDebugParameters: 0
+        id: 

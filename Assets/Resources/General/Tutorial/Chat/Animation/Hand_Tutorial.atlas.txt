@@ -1,0 +1,7 @@
+Hand_Tutorial.png
+size:533,533
+filter:Linear,Linear
+pma:true
+scale:0.9
+Layer 1
+bounds:2,2,452,529

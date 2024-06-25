@@ -1,0 +1,136 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hey! Can I have a beer, please?"
+                },
+                {
+                    "key": "Here you go."
+                },
+                {
+                    "key": "Thanks! How long have you \nbeen working here? I \nhaven't seen you before."
+                },
+                {
+                    "key": "I occasionally bartend. \nThey pay pretty well for \nthis kind of parties."
+                },
+                {
+                    "key": "Your outfit looks more suitable \nfor a BDSM party... all those straps..."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "That's right. I came here straight \nfrom one. Figured this place \ncould use this attire too."
+                },
+                {
+                    "key": "Are you a fan of rough treatment?"
+                },
+                {
+                    "key": "Are you not?"
+                },
+                {
+                    "key": "I've never tried it. But I don't \nthink I'd enjoy someone \nhitting me with a strap."
+                },
+                {
+                    "key": "I enjoy being hit with a strap..."
+                },
+                {
+                    "key": "It might be interesting to try..."
+                },
+                {
+                    "key": "Give me a call next week..."
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Привет! Мне пиво, пожалуйста."
+                },
+                {
+                    "key": "Держи."
+                },
+                {
+                    "key": "Спасибо! Ты давно тут работаешь? \nЯ тебя раньше не видел."
+                },
+                {
+                    "key": "Я иногда подрабатываю барменом. \nНа таких вечеринках не плохо платят."
+                },
+                {
+                    "key": "Твой костюм больше подходит для \nБДСМ вечеринки… все эти ремни…"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Так и есть. Я с нее сразу приехала сюда. \nРешила, что для этого места \nтакой наряд тоже подходит."
+                },
+                {
+                    "key": "А любительница жесткого обращения?"
+                },
+                {
+                    "key": "А ты нет?"
+                },
+                {
+                    "key": "Я никогда не пробовал. Но думаю, \nчто мне не понравится, если \nкто-то будет меня бить ремнем."
+                },
+                {
+                    "key": "Я люблю, когда ремнем бьют меня…"
+                },
+                {
+                    "key": "Интересно попробовать…"
+                },
+                {
+                    "key": "Позвони мне на следующей неделе…"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Hallo! Ein Bier, bitte."
+                },
+                {
+                    "key": "Hier, bitte."
+                },
+                {
+                    "key": "Danke! Arbeitest du schon lange hier? \nIch habe dich vorher noch nie gesehen."
+                },
+                {
+                    "key": "Ich arbeite manchmal als Barkeeper. \nDiese Partys zahlen sich gut aus."
+                },
+                {
+                    "key": "Dein Outfit würde eher zu \neiner BDSM-Party passen... \nall diese Riemen..."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Genau. Ich kam direkt von \neiner solchen Party hierher. \nIch dachte, dass das Outfit \nauch hier passen würde."
+                },
+                {
+                    "key": "Bist du eine Liebhaberin \nvon hartem Umgang?"
+                },
+                {
+                    "key": "Und du nicht?"
+                },
+                {
+                    "key": "Ich habe es nie ausprobiert. \nAber ich denke nicht, dass \nes mir gefallen würde, wenn \njemand mich mit einem \nRiemen schlägt."
+                },
+                {
+                    "key": "Ich mag es, wenn ich mit \neinem Riemen geschlagen werde..."
+                },
+                {
+                    "key": "Wäre interessant, das auszuprobieren..."
+                },
+                {
+                    "key": "Ruf mich nächste Woche an..."
+                }
+            ]
+        }
+    ]
+}

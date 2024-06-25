@@ -1,0 +1,154 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Congratulations on getting into \ncollege, Ben. You'll start a new \nchapter in your life tomorrow."
+                },
+                {
+                    "key": "Picture"
+                },
+                {
+                    "key": "Ben, don't be so dull! College \nis about fun and new experiences!"
+                },
+                {
+                    "key": "We need to think about the \nfuture, not just fun."
+                },
+                {
+                    "key": "picture"
+                },
+                {
+                    "key": "May college be an exciting \ntime for you, Ben!"
+                },
+                {
+                    "key": "Thank you, Aunt Jane. But I'm \ngoing there to study."
+                },
+                {
+                    "key": "There will still be time for girls."
+                },
+                {
+                    "key": "Alright, I'll get some wine. Will \nyou help your dear aunt, Ben?"
+                },
+                {
+                    "key": "[In the cellar]"
+                },
+                {
+                    "key": "picture"
+                },
+                {
+                    "key": "I'm sorry, darling, I have to \ndo this. Otherwise, you'll turn \ninto the same prude as your \nfather. And you could make \nso many girls happy."
+                },
+                {
+                    "key": "Aunt... what?! What... no... \nwhat are you doing?"
+                },
+                {
+                    "key": "Shush, or your parents \nwill hear us!"
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Поздравляем с поступлением в колледж, Бэн. \nЗавтра ты начнешь новый этап в жизни."
+                },
+                {
+                    "key": "картинка"
+                },
+                {
+                    "key": "Бэн, не будь скучным! Колледж - время \nвеселья и новых знакомств!"
+                },
+                {
+                    "key": "Надо думать о будущем, не о веселье."
+                },
+                {
+                    "key": "картинка"
+                },
+                {
+                    "key": "Пусть колледж будет ярким опытом, Бэн!"
+                },
+                {
+                    "key": "Спасибо, тетя. Но я еду туда учиться."
+                },
+                {
+                    "key": "У тебя еще будет время для девушек."
+                },
+                {
+                    "key": "Ладно, я принесу вина. Поможешь, Бэн?"
+                },
+                {
+                    "key": "[В кладовке]"
+                },
+                {
+                    "key": "картинка"
+                },
+                {
+                    "key": "Прости, дорогой, я обязана это сделать. \nИначе ты превратишься в такого же \nханжу, как и твой отец. А ведь ты \nможешь стольких девчонок \nосчастливить собой."
+                },
+                {
+                    "key": "Тетя… что?! Что… нет… что ты делаешь?"
+                },
+                {
+                    "key": "Тише ты, а то твои \nродители нас услышат!"
+                },
+                {
+                    "key": "картинка"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Herzlichen Glückwunsch zum \nCollege-Eintritt, Ben. Du \nwirst morgen ein neues Kapitel \nin deinem Leben beginnen."
+                },
+                {
+                    "key": "картинка"
+                },
+                {
+                    "key": "Steve, sei nicht so langweilig! \nDas College soll Spaß machen \nund neue Erfahrungen bringen!"
+                },
+                {
+                    "key": "Wir müssen an die Zukunft \ndenken, nicht nur an Spaß."
+                },
+                {
+                    "key": "картинка"
+                },
+                {
+                    "key": "Möge das College eine aufregende \nZeit für dich sein, Ben!"
+                },
+                {
+                    "key": "Danke, Tante Jane. Aber ich \ngehe dorthin, um zu studieren."
+                },
+                {
+                    "key": "Es wird immer noch Zeit \nfür Mädchen geben."
+                },
+                {
+                    "key": "In Ordnung, ich werde etwas \nWein holen. Wirst du deiner \nlieben Tante helfen, Ben?"
+                },
+                {
+                    "key": "[im Keller]"
+                },
+                {
+                    "key": "картинка"
+                },
+                {
+                    "key": "Es tut mir leid, Liebling, ich \nmuss das tun. Sonst wirst du \ngenauso verklemmt wie dein Vater. \nUnd du könntest so viele \nMädchen glücklich machen."
+                },
+                {
+                    "key": "Tante... was?! Was... \nnein... was machst du?"
+                },
+                {
+                    "key": "Psst, oder deine Eltern \nwerden uns hören!"
+                },
+                {
+                    "key": "картинка"
+                }
+            ]
+        }
+    ]
+}

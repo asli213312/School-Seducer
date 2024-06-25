@@ -7,6 +7,8 @@ namespace _School_Seducer_.Editor.Scripts
     {
         [SerializeField] private InfoCharacterScroller characterScroller;
 
+        public Previewer Previewer => _system.Previewer;
+        
         private InfoScreenSystem _system;
 
         public void InitializeCore(InfoScreenSystem system)

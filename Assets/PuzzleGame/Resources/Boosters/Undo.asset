@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Undo
   m_EditorClassIdentifier: 
   Type: 0
-  Icon: {fileID: 21300000, guid: 47a5bdc996d7bdb48b5521afac326f0f, type: 3}
+  Icon: {fileID: 21300000, guid: a3ddd619d982c8141a09ce60fdfeb1f1, type: 3}
   Description: Undo your last turn!
   Price:
     type: 0

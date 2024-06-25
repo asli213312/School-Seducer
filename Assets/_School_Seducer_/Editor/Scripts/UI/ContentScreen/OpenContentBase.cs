@@ -1,4 +1,5 @@
-﻿using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+﻿using System;
+using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,17 +11,26 @@ namespace _School_Seducer_.Editor.Scripts.UI
     {
         [SerializeField] protected Button button;
 
+        public event Action<OpenContentBase> ContentInstalledEvent;
+        public event Action ContentDeletedEvent;
+
         protected abstract IModeContent ModeContent { get; }
+        protected virtual bool NeedContentScreen => true;
         protected Condition Condition;
 
         private void Start()
         {
+            ContentDeletedEvent += OnDestroyContent;
+            
             InstallComponents();
             InstallMode();
         }
 
         private void OnDestroy()
         {
+            ContentDeletedEvent?.Invoke();
+            ContentDeletedEvent -= OnDestroyContent;
+            
             if (button == null) return;
             
             button.RemoveListener(ModeContent.OnClick);
@@ -30,6 +40,8 @@ namespace _School_Seducer_.Editor.Scripts.UI
         
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (NeedContentScreen == false) return;
+            
             if (Condition == null)
                 ContentInstall(this);
             else if (Condition.IsTrue())
@@ -39,11 +51,14 @@ namespace _School_Seducer_.Editor.Scripts.UI
         }
 
         protected abstract void InstallComponents();
+        protected virtual void OnDestroyContent() { }
 
         private void ContentInstall(OpenContentBase content)
         {
             ContentScreen.CurrentData = content;
             ContentScreenProxy.CurrentContent = content;
+            
+            ContentInstalledEvent?.Invoke(content);
         }
 
         private void InstallMode()

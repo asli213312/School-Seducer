@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63742195a0b94a00820c91f62b2e0265, type: 3}
+  m_Name: Gold Big Group
+  m_EditorClassIdentifier: 
+  isSold: 0
+  columnsAmount: 2
+  view: {fileID: 717820230206393662, guid: 3d183bd64800bd8448d020be631214a9, type: 3}
+  items:
+  - {fileID: 11400000, guid: ac964001a987ad040b6fe713de8e887c, type: 2}
+  - {fileID: 11400000, guid: 4da1ecfb18022fa40a93241cab9cd854, type: 2}
+  - {fileID: 11400000, guid: 884927d36061b034eb24c0462292ae53, type: 2}
+  - {fileID: 11400000, guid: 02723248a98d23748a40fe2df7a9255a, type: 2}

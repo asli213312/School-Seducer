@@ -6,7 +6,7 @@ using HideIfAttribute = Sirenix.OdinInspector.HideIfAttribute;
 namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 {
     [CreateAssetMenu(fileName = "WheelSlotData", menuName = "Game/Data/Wheel Fortune/Slot Data", order = 0)]
-    public class WheelSlotData : ScriptableObject
+    public class WheelSlotData : ScriptableObjectCounter
     {
         [Header("Info Gifts Data")]
         [HideIf(nameof(IsCharacter))] public Sprite iconInfo;

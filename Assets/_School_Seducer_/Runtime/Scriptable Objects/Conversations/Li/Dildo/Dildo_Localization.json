@@ -1,0 +1,104 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Tell me, do you have a boyfriend?"
+                },
+                {
+                    "key": "You're only just deciding \nto ask that now?"
+                },
+                {
+                    "key": "I don't know why I didn't \nthink about it earlier."
+                },
+                {
+                    "key": "No, I don't have a boyfriend \nright now... but I'm in a relationship..."
+                },
+                {
+                    "key": "Hmm, do you have a girlfriend?"
+                },
+                {
+                    "key": "Unfortunately, no, although I \nwouldn't mind giving it a try."
+                },
+                {
+                    "key": "Then I don't understand..."
+                },
+                {
+                    "key": "I have Johnny..."
+                },
+                {
+                    "key": "And if Johnny isn't a boyfriend \nor a girlfriend... then who is \nhe? I'm lost in guesses..."
+                },
+                {
+                    "key": "Johnny is my dildo, with which \nwe regularly entertain ourselves."
+                },
+                {
+                    "key": "Wow!"
+                },
+                {
+                    "key": "And I have to admit that \nno real penis has been able \nto outshine Johnny yet."
+                },
+                {
+                    "key": "Guess what my next wish is..."
+                },
+                {
+                    "key": "I already know!"
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Скажи, а у тебя есть парень?"
+                },
+                {
+                    "key": "Ты только сейчас решил об этом спросить?"
+                },
+                {
+                    "key": "Почему-то раньше не думал об этом."
+                },
+                {
+                    "key": "Нет, парня у меня сейчас нет... \nно есть отношения..."
+                },
+                {
+                    "key": "Хм, у тебя есть девушка?"
+                },
+                {
+                    "key": "Увы, нет, хотя я бы \nне отказалась попробовать."
+                },
+                {
+                    "key": "Тогда я не понимаю..."
+                },
+                {
+                    "key": "У меня есть Джонни..."
+                },
+                {
+                    "key": "И если Джонни не парень и не девушка... \nТо кто это? Я теряюсь в догадках..."
+                },
+                {
+                    "key": "Джонни - это мой дилдо, с которым \nмы регулярно развлекаемся."
+                },
+                {
+                    "key": "Ого!"
+                },
+                {
+                    "key": "И должна признать, что еще \nни один настоящий пенис не \nсмог превзойти Джонни."
+                },
+                {
+                    "key": "Угадай, какое мое следующее желание..."
+                },
+                {
+                    "key": "Я уже поняла!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
+}

@@ -5,7 +5,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility
 {
     public class AlignSizeDelta : MonoBehaviour
     {
-        private RectTransform _rectUpdate;
+        public RectTransform RectUpdate { get; set; }
         private RectTransform _rectOffsetToUpdate;
         private int _amountSymbols;
         
@@ -13,16 +13,18 @@ namespace _School_Seducer_.Editor.Scripts.Utility
 
         public void Initialize(RectTransform rectNeedUpdate, RectTransform rectOffsetToUpdate, int amountSymbolsMsg)
         {
-            _rectUpdate = rectNeedUpdate;
+            RectUpdate = rectNeedUpdate;
             _rectOffsetToUpdate = rectOffsetToUpdate;
             _amountSymbols = amountSymbolsMsg;
         }
 
+        public void Reset() => _aligned = false;
+
         private void Update()
         {
-            if (_rectUpdate != null && _rectOffsetToUpdate != null && !_aligned)
+            if (RectUpdate != null && _rectOffsetToUpdate != null && !_aligned)
             {
-                _rectUpdate.sizeDelta = new Vector2(0, _rectOffsetToUpdate.sizeDelta.y / 7f / 13f);
+                RectUpdate.sizeDelta = new Vector2(0, _rectOffsetToUpdate.sizeDelta.y / 7f / 13f);
 
                 _aligned = true;
             }

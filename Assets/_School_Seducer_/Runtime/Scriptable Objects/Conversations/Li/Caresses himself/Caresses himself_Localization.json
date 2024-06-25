@@ -1,0 +1,68 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hi, Ben."
+                },
+                {
+                    "key": "Hi! Do you think about what \nmy next wish will be?"
+                },
+                {
+                    "key": "I confess, I've been thinking \nabout it, yeah..."
+                },
+                {
+                    "key": "It's strange, but I'm starting \nto like our game more and more..."
+                },
+                {
+                    "key": "Ha, if only you knew how much I like it!"
+                },
+                {
+                    "key": "That's why I decided to send you this."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Hey, that's not fair, \nI didn't make a wish."
+                },
+                {
+                    "key": "It doesn't matter, it's \njust a gift from me..."
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Привет, Бен."
+                },
+                {
+                    "key": "Привет! Думаешь, каким будет \nмой следующее желание?"
+                },
+                {
+                    "key": "Признаюсь, думаю об этом, да..."
+                },
+                {
+                    "key": "Это странно, но мне все больше \nнравится наша с тобой игра..."
+                },
+                {
+                    "key": "Ха, знала бы ты, как мне она нравится!"
+                },
+                {
+                    "key": "Поэтому я решила отправить тебе вот это"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Эй, так не честно, я не загадал желание."
+                },
+                {
+                    "key": "Не важно, это просто подарок от меня…"
+                }
+            ]
+        }
+    ]
+}

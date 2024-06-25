@@ -1,0 +1,17 @@
+New_Story_popUp.png
+size:1590,1590
+filter:Linear,Linear
+pma:true
+scale:0.9
+Popup
+bounds:2,681,1032,907
+btn
+bounds:681,562,337,117
+btn_close
+bounds:1166,1493,98,95
+reward
+bounds:2,2,677,677
+offsets:51,52,772,773
+ribbon
+bounds:1036,732,856,128
+rotate:90

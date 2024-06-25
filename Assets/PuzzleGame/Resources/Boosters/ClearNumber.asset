@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ClearNumber
   m_EditorClassIdentifier: 
   Type: 2
-  Icon: {fileID: 21300000, guid: 4c97e905b71194d4287e290dd29ad368, type: 3}
+  Icon: {fileID: 21300000, guid: a76729b55cf422d45b2edb928dabf881, type: 3}
   Description: Clears tiles with the same number!
   Price:
     type: 0

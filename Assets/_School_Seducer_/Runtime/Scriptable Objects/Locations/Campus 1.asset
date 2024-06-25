@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72189bfd0bc0491cb501c26ed385fad8, type: 3}
   m_Name: Campus 1
   m_EditorClassIdentifier: 
-  characters: []
+  characters:
+  - {fileID: 11400000, guid: 17ece68a537f90b44b00b981194b03fe, type: 2}
   requiredLevel: 2
   isLocked: 1

@@ -1,15 +1,21 @@
 ﻿using System.Collections;
+using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat.Refactor;
+using _School_Seducer_.Editor.Scripts.Extensions;
 using _School_Seducer_.Editor.Scripts.UI.Popups;
+using _School_Seducer_.Editor.Scripts.Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 {
     public class SpinHandler : SpinHandlerBase
     {
+        [Inject] private SpinHandlerUtility _spinHandlerUtility;
+        
         [Header("UI elements")]
         [SerializeField] private TextMeshProUGUI textSpin;
         [SerializeField] private TextMeshProUGUI _costSpinText;
@@ -33,8 +39,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         private Character _winCharacter;
 
         private float _targetYWinCharacter;
-        private float _rotationSpeed;
-        private float _deceleration;
+        protected float RotationSpeed;
+        protected float Deceleration;
 
         private int _winGiftExp;
         
@@ -63,29 +69,27 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             _costSpinText.text = SpinHandler.Data.moneyForSpin + " COIN";
         }
         
-        private void InitParametersData()
+        protected virtual void InitParametersData()
         {
-            _rotationSpeed = SpinHandler.Data.rotationSpeed;
+            RotationSpeed = SpinHandler.Data.rotationSpeed;
 
-            _deceleration = Random.Range(SpinHandler.Data.decelerationMin, SpinHandler.Data.decelerationMax);
+            Deceleration = Random.Range(SpinHandler.Data.decelerationMin, SpinHandler.Data.decelerationMax);
         }
 
         protected override void Spin()
         {
-            if (_isSpinning && !_isCharacters)
+            if (_isSpinning && ConditionToSpinning())
             {
-                float step = _rotationSpeed * Time.fixedDeltaTime;
+                float step = RotationSpeed * Time.fixedDeltaTime;
                 wheelTransform.Rotate(Vector3.forward * step);
 
                 _winSlotCollidedStopCol = _winSlotCol.OverlapPoint(_goToStopWheelPosition);
-
-                //Debug.Log("collided winSlot: " + _winSlotCollidedStopCol);  
                 
                 if (_needStopWheel)
                 {
-                    if (_rotationSpeed > 0)
+                    if (RotationSpeed > 0)
                     {
-                        _rotationSpeed -= _deceleration * Time.fixedDeltaTime;
+                        RotationSpeed -= Deceleration * Time.fixedDeltaTime;
                     }
                     else
                     {
@@ -95,34 +99,11 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                     }
                 }
             }
-
-            /*if (_isSpinning && _isCharacters)
-            {
-                float step = _rotationSpeed * Time.fixedDeltaTime;
-                SpinHandler.scrollCharactersContent.Translate(Vector2.down * step * Time.deltaTime);
-
-                _winSlotCollidedStopCol = _winSlotColCharacter.OverlapPoint(goToStopCharactersWheel.transform.position);
-
-                if (_needStopWheel)
-                {
-                    if (_rotationSpeed > 0)
-                    {
-                        _rotationSpeed -= SpinHandler.Data.decelerationCharactersWheel * Time.fixedDeltaTime;
-                    }
-                    else
-                    {
-                        _isSpinning = false;
-                        _isCharacters = false;
-                        CalculateResult();
-                    }
-                }
-            }*/
         }
 
-        protected override void Stop()
-        {
-            
-        }
+        protected virtual bool ConditionToSpinning() => !_isCharacters;
+
+        protected override void Stop() { }
         
         private bool NeedStopWheel()
         {
@@ -138,29 +119,38 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         private void OnSpinButtonClicked()
         {
-            TryBuySpin();
+            bool enoughMoney = TryBuySpin();
+
+            if (enoughMoney == false)
+            {
+                return;
+            }
+
+            SpinHandler.spinStarted?.Invoke();
 
             ResetSpinStatus();
             StartCoroutine(ProcessButtonClicked());
         }
 
-        private IEnumerator ProcessButtonClicked()
+        protected virtual IEnumerator ProcessButtonClicked()
         {
             yield return HandleSpinSlots();
 
             yield return HandleWinCharacter();
             
             SetSpinButtonSpinStatus();
+
+            SpinHandler.spinCompleted?.Invoke();
         }
 
-        private IEnumerator HandleWinCharacter()
+        protected IEnumerator HandleWinCharacter()
         {
             SetSpinWheelCharacters();
 
             characterName.text = CurrentWinSlot.Data.name.ToUpper();
-            characterName.gameObject.Activate(0.5f);
+            this.Activate(characterName.transform, 0.5f);
 
-            SpinHandler.giftSpinPush.SetDataParent(new DataParentText(characterName));
+            //SpinHandler.giftSpinPush.SetDataParent(new DataParentText(characterName));
 
                 //yield return new WaitForSeconds(1.5f);
 
@@ -169,19 +159,21 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             Character winCharacter = FindCharacterByCurrentWinSlot();
             _winCharacter = winCharacter;
 
-            for (int i = 0; i < SpinHandler.Previewer.Characters.Length; i++)
-            {
-                if (winCharacter.Data != SpinHandler.Previewer.Characters[i].Data) continue;
-                
-                if (i == 0) _targetYWinCharacter = _winSlotRect.anchoredPosition.y + 350;
-                else if (i == 1) _targetYWinCharacter = _winSlotRect.anchoredPosition.y;
-                else _targetYWinCharacter = _winSlotRect.anchoredPosition.y - 350;
-            }
+            InvokeCharactersMode();
+
+            // for (int i = 0; i < SpinHandler.Previewer.Characters.Length; i++)
+            // {
+            //     if (winCharacter.Data != SpinHandler.Previewer.Characters[i].Data) continue;
+            //     
+            //     if (i == 0) _targetYWinCharacter = _winSlotRect.anchoredPosition.y + 350;
+            //     else if (i == 1) _targetYWinCharacter = _winSlotRect.anchoredPosition.y;
+            //     else _targetYWinCharacter = _winSlotRect.anchoredPosition.y - 350;
+            // }
             
             CharacterData winCharacterData = null;
             
-            SpinHandler.charactersLockedSlot.gameObject.Deactivate(.2f);
-            yield return HandleScrollCharacter(_targetYWinCharacter);
+            this.Deactivate(SpinHandler.charactersLockedSlot, 0.2f);
+            yield return InvokeHandleScrollCharacter();
 
             winCharacterData = winCharacter.Data;
 
@@ -189,24 +181,34 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             Debug.Log("Found character after spin: " + winCharacter.Data.name);
 
+            int storiesUnlockedCount = winCharacterData.allConversations.Count(x => x.isUnlocked);
+            Pushes.giftPush.GetComponent<Push>().InitializeData(new TransitionDataText(storiesUnlockedCount.ToString(), "StoriesUnlocked_Count"));
+            
             SpinHandler.Previewer.SetLockedConversation(winCharacter);
+            
+            SpinHandler.Previewer.StoryResolver.UpdateStatusViews();
 
             ChatStoryResolver chatStoryResolver = ChatStoryResolver as ChatStoryResolver;
 
             if (winCharacter.Data.ConversationsUnlocked() == false)
             {
-                SpinHandler.Previewer.StoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
+                SpinHandler.Previewer.StoryResolver.SetLockedConversation(winCharacter.Data.LockedConversation);
                 chatStoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
             }
 
+            SpinHandler.Previewer.StoryResolver.SetSlider(Pushes.giftPush.GetComponent<Push>().GetBarByIndex(0));
+            
+            SpinHandler.Previewer.StoryResolver.SetSliderValue(winCharacter.Data.experience);
+            
             SpinHandler.Previewer.StoryResolver.UpdateStatusViews();
-            ChatStoryResolver.UpdateView();
-
-            //winCharacter.Data.ChangeExperience(_winGiftExp);
-            SpinHandler.OnChangeValueExperience(winCharacter.Data.experience);
+            
+            SpinHandler.Previewer.StoryResolver.SetLockedConversation(winCharacter.Data.LockedConversation);
 
             SpinHandler.Previewer.StoryResolver.SetSliderValue(winCharacter.Data.experience);
-            chatStoryResolver.SetSliderValue(winCharacter.Data.experience);
+
+            SpinHandler.Previewer.StoryResolver.UpdateStatusViews();
+            SpinHandler.Previewer.StoryResolver.UpdateStatusViews();
+            ChatStoryResolver.UpdateView();
 
             EventManager.UpdateTextExperience();
 
@@ -217,13 +219,18 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             
             ActionGiftGot();
 
-            if (winCharacterData != null)
-            {
-                //SpinHandler.CheckResetCharacter(winCharacterData);
-            }
+            this.Activate(SpinHandler.charactersLockedSlot, 0.2f);
+            this.Deactivate(characterName.transform, 0.5f);
         }
 
-        private IEnumerator HandleScrollCharacter(float anchoredPositionYCharacter)
+        protected virtual void InvokeCharactersMode() { }
+
+        protected virtual IEnumerator InvokeHandleScrollCharacter()
+        {
+            yield return HandleScrollCharacter();
+        }
+
+        protected IEnumerator HandleScrollCharacter()
         {
             float elapsedTime = 0f;
 
@@ -235,7 +242,9 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 float newY = Mathf.Lerp(SpinHandler.scrollCharactersContent.anchoredPosition.y, -CurrentWinSlot.transform.localPosition.y + goToStopCharactersWheel.localPosition.y, t * t);
                 SpinHandler.scrollCharactersContent.anchoredPosition = new Vector2(SpinHandler.scrollCharactersContent.anchoredPosition.x, newY);
 
-                if (Mathf.Approximately(SpinHandler.scrollCharactersContent.anchoredPosition.y, -CurrentWinSlot.transform.localPosition.y + goToStopCharactersWheel.localPosition.y))
+                float threshold = 0.1f;
+
+                if (Mathf.Abs(SpinHandler.scrollCharactersContent.anchoredPosition.y + CurrentWinSlot.transform.localPosition.y - goToStopCharactersWheel.localPosition.y) <= threshold)
                 {
                     _isSpinning = false;
                     _isCharacters = false;
@@ -247,7 +256,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             }
         }
 
-        private IEnumerator HandleSpinSlots()
+        protected IEnumerator HandleSpinSlots()
         {
             if (SpinHandler.scrollCharactersContent.childCount <= 0)
             {
@@ -261,18 +270,27 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             SetSpinButtonNoneStatus();
 
-            _rotationSpeed -= SpinHandler.Data.rotationSlowSpeed * Time.fixedDeltaTime;
-            yield return new WaitForSeconds(SpinHandler.Data.secondsSlowSpdSlots);
+            SubtractSpeedSlots();
 
+            yield return WaitForResult();
+        }
+
+        protected virtual IEnumerator WaitForResult()
+        {
+            yield return new WaitForSeconds(SpinHandler.Data.secondsSlowSpdSlots);
+            
             yield return new WaitUntil(NeedStopWheel);
             
-            yield return new WaitUntil(() => _rotationSpeed <= _deceleration);
+            yield return new WaitUntil(() => RotationSpeed <= Deceleration);
 
             yield return new WaitUntil(CalculateResult);
 
-            _winGiftExp = CurrentWinSlot.Data.GetCostExp();
-
             yield return new WaitForSeconds(2);
+        }
+
+        protected virtual void SubtractSpeedSlots()
+        {
+            RotationSpeed -= SpinHandler.Data.rotationSlowSpeed * Time.fixedDeltaTime;
         }
 
         private IEnumerator HandleSpinButtonStatus()
@@ -300,13 +318,13 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             if (_isCharacters == false)
             {
-                _rotationSpeed -= SpinHandler.Data.rotationSlowSpeed * Time.fixedDeltaTime;
+                RotationSpeed -= SpinHandler.Data.rotationSlowSpeed * Time.fixedDeltaTime;
                 yield return new WaitForSeconds(SpinHandler.Data.secondsSlowSpdSlots);
             }
 
             yield return new WaitUntil(NeedStopWheel);
             
-            yield return new WaitUntil(() => _rotationSpeed <= _deceleration);
+            yield return new WaitUntil(() => RotationSpeed <= Deceleration);
 
             yield return new WaitUntil(CalculateResult);
 
@@ -340,7 +358,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
                 if (winCharacter.Data.ConversationsUnlocked() == false)
                 {
-                    SpinHandler.Previewer.StoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
+                    SpinHandler.Previewer.StoryResolver.SetLockedConversation(winCharacter.Data.LockedConversation);
                     chatStoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
                 }
 
@@ -421,10 +439,14 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             if (winCharacter.Data.ConversationsUnlocked() == false)
             {
-                SpinHandler.Previewer.StoryResolver.SetRolledConversation(winCharacter.Data.LockedConversation);
+                SpinHandler.Previewer.StoryResolver.SetLockedConversation(winCharacter.Data.LockedConversation);
             }
             
             winCharacter.Data.AddGift(winSlot, SpinHandler.Previewer.CharactersConfig.maxGifts);
+            
+            Saver.mainData.AddCharacterData(winCharacter.Data);
+            Saver.SAVE();
+            
             Debug.Log("Win gift: " + winSlot.name + " for character: " + winCharacter.Data.name);
         }
         
@@ -434,9 +456,10 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             EnableCharactersMode();
             ResetStatusSpin();
 
-            CurrentWinSlot = _isCharacters == false 
-                ? SpinHandler.FindSlotForProbability(SpinHandler.slots) 
-                : SpinHandler.FindSlotForProbability(SpinHandler.CharacterSlots);
+            CurrentWinSlot = SpinHandler.FindSlotForProbability(SpinHandler.CharacterSlots);
+            
+            if (_spinHandlerUtility.SelectedWinCharacter != null) 
+                CurrentWinSlot = _spinHandlerUtility.SelectedWinCharacter;
 
             SetupExtraCharacters();
 
@@ -445,15 +468,17 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 return;
             }
             
-            _deceleration = SpinHandler.Data.decelerationCharactersWheel;
-            _rotationSpeed = SpinHandler.Data.rotationSpeedCharacters;
-            
+            SetupSpeedParametersCharacters();
+
             Debug.Log("Character slot is null? " + CurrentWinSlot.name);
 
             if (CurrentWinSlot != null)
             {
                 SpinHandler.giftSpinPush.InitializeTransitionParent(0, new DataParentImage(CurrentWinSlot.Image, null));
                 Pushes.giftPush.GetComponent<Push>().InitializeTransitionParent(0, new DataParentImage(CurrentWinSlot.Image, null));
+                Pushes.giftPush.GetComponent<Push>().InitializeData(new TransitionDataText(CurrentWinSlot.Data.name, "characterName"));
+
+                SpinHandler.Previewer.StoryResolver.SetSlider(Pushes.giftPush.GetComponent<Push>().GetBarByIndex(0));
             }
 
             _winSlotRect = CurrentWinSlot.GetComponent<RectTransform>();
@@ -467,27 +492,41 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             Debug.Log("winSlot: " + CurrentWinSlot.Data.name);
         }
 
+        protected virtual void SetupSpeedParametersCharacters()
+        {
+            Deceleration = SpinHandler.Data.decelerationCharactersWheel;
+            RotationSpeed = SpinHandler.Data.rotationSpeedCharacters;
+        }
+
         protected virtual void ActionStoryUnlocked() => SpinHandler.ShowUnlockStoryPush();
         protected virtual void ActionGiftGot()
         {
             _winCharacter.Data.AddGift(_currentWinGift.Data, SpinHandler.Previewer.CharactersConfig.maxGifts);
+            Saver.mainData.AddCharacterData(_winCharacter.Data);
+            Saver.SAVE();
             //SpinHandler.ShowGiftPush();
             Pushes.ShowGiftPush();
         }
 
-        protected virtual void SetupExtraSlots() { }
+        protected virtual void SetupExtraSlots()
+        {
+            RotationSpeed = SpinHandler.Data.rotationSpeed;
+        }
         protected virtual void SetupExtraCharacters() { }
 
+        protected void DisableCharactersMode() => _isCharacters = false;
+        protected void DisableSpinning() => _isSpinning = false;
+
+        protected void InvokeStopWheel() => _needStopWheel = true;
         private void ResetStatusSpin() => _needStopWheel = false;
 
-        private void EnableCharactersMode() => _isCharacters = true;
+        protected void EnableCharactersMode() => _isCharacters = true;
 
         private void EnableSpinning() => _isSpinning = true;
 
         private void SetSpinWheelSlots()
         {
             SpinHandler.scrollCharactersContent.localPosition = new Vector2(0, int.MaxValue);
-            SpinHandler.charactersLockedSlot.gameObject.Activate();
             characterName.gameObject.Deactivate();
 
             if (!_isSpinning)
@@ -501,12 +540,11 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                 
                 SetupExtraSlots();
 
-                _rotationSpeed = SpinHandler.Data.rotationSpeed;
-
                 //SpinHandler.giftSpinPush.SetDataParent(new DataParentImage(CurrentWinSlot.Image, nameof(CurrentWinSlot)));
                 SpinHandler.giftSpinPush.InitializeData(new TransitionDataSprite(CurrentWinSlot.Data.iconInfo, nameof(CurrentWinSlot)));
                 Pushes.giftPush.GetComponent<Push>().InitializeData(new TransitionDataSprite(CurrentWinSlot.Data.iconInfo, nameof(CurrentWinSlot)));
-                
+                Pushes.giftPush.GetComponent<Push>().InitializeData(new TransitionDataText("+" + CurrentWinSlot.Data.score, "slotScore"));
+
                 SpinHandler.giftSpinPush.MakeTransitions();
 
                 Debug.Log("winSlot: " + CurrentWinSlot.Data.name);
@@ -546,7 +584,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             disableButton.interactable = false;
         }
 
-        private void SetSpinButtonSpinStatus()
+        protected void SetSpinButtonSpinStatus()
         {
             textSpin.text = "SPIN!";
             _costSpinText.gameObject.Activate();
@@ -562,12 +600,17 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             _costSpinText.gameObject.Activate();
         }
         
-        private void ResetSpinStatus()
+        protected void ResetSpinStatus()
         {
-            _rotationSpeed = SpinHandler.Data.rotationSpeed;
-            _deceleration = Random.Range(SpinHandler.Data.decelerationMin, SpinHandler.Data.decelerationMax);
+            ResetSpeedParameters();
             _isSpinning = false;
             _needStopWheel = false;
+        }
+
+        protected virtual void ResetSpeedParameters()
+        {
+            RotationSpeed = SpinHandler.Data.rotationSpeed;
+            Deceleration = Random.Range(SpinHandler.Data.decelerationMin, SpinHandler.Data.decelerationMax);
         }
 
         private bool CalculateResult()
@@ -578,6 +621,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
             if (hit.collider != null)
             {
+                if (hit.collider.gameObject.CompareTag("Map")) return false;
+
                 GameObject hitObject = hit.collider.gameObject;
                 Debug.Log("hitObject: " + hitObject.name);
                 WheelSlot wheelSlot = hitObject.GetComponent<WheelSlot>();

@@ -18,10 +18,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [field: NaughtyAttributes.ReadOnly, SerializeField, HideInInspector] public MessageSender Sender { get; set; }
 
         [SerializeField] private List<Translator.LanguageAudioClip> localizedAudioClips = new();
-        private List<Translator.Languages> _localizedData = new();
-        [SerializeField, HideInInspector] public bool completed; 
+        [SerializeField] private List<Translator.LanguagesText> _localizedData = new();
+        public bool completed { get; set; } 
 
-        public List<Translator.Languages> SetLocalizedData(List<Translator.Languages> localizedDataList)
+        public List<Translator.LanguagesText> SetLocalizedData(List<Translator.LanguagesText> localizedDataList)
         {
             return _localizedData = localizedDataList;
         }
@@ -50,8 +50,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             {
                 if (_localizedData[i].languageCode == languageCode)
                 {
-                    Translator.Languages currentLanguage = _localizedData[i];
-                    return currentLanguage.key;
+                    Translator.LanguagesText currentLanguageText = _localizedData[i];
+                    return currentLanguageText.key;
                 }  
             }
 

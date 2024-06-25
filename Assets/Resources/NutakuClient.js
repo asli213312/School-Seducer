@@ -1,5 +1,8 @@
 var Nutaku = 
 {
+	playFabId: 0,
+  	sessionTicket: 0, 
+
 	showCreateUser : function()
     {
         var params = {};
@@ -106,5 +109,104 @@ var Nutaku =
 		 }
 
 		});
+	},
+
+	createItem : function(data)
+	{
+		console.log("Nutaku::createItem");
+
+		function guid() {
+		  function s4() {
+		    return Math.floor((1 + Math.random()) * 0x10000)
+		      .toString(16)
+		      .substring(1);
+		  }
+		  return s4() + s4() + '-' + s4();
+		}
+	
+		console.log("Create item data: " + data);
+			
+		var itemParams = {};
+		
+		//if (data.id == null || data.id == "" || data.id == undefined) data.id = guid();
+		
+		if (data.name == null || data.name == "") data.name = "Gift";
+		if (data.description == null || data.name == "") data.description = "Gift";
+		
+		itemParams[opensocial.BillingItem.Field.SKU_ID] = data.ItemId;
+		itemParams[opensocial.BillingItem.Field.PRICE] = data.VirtualCurrencyPrices['NG'];
+		itemParams[opensocial.BillingItem.Field.COUNT] = 1;
+		itemParams[opensocial.BillingItem.Field.DESCRIPTION] = data.description;
+		itemParams[nutaku.BillingItem.Field.NAME] = data.ItemId;
+		itemParams[nutaku.BillingItem.Field.IMAGE_URL] = "https://college-fuck-fest.nyc3.cdn.digitaloceanspaces.com/CFF/example_item.png";
+		
+		var item = opensocial.newBillingItem(itemParams);
+		return item;
+	},
+	
+	createPayment : function(items, description)
+	{
+		console.log("Nutaku::createPayment");
+		console.log(items);
+	
+		var params = {};
+		params[opensocial.Payment.Field.ITEMS]   = items;
+		params[opensocial.Payment.Field.MESSAGE] = description;
+		params[opensocial.Payment.Field.PAYMENT_TYPE]  = opensocial.Payment.PaymentType.PAYMENT;
+		//params[nutaku.GuestRequestFields.VERSION] = 3;
+
+		params['playFabId'] = Nutaku.playFabId;
+		params['sessionTicket'] = Nutaku.sessionTicket;
+		params['catalogVersion'] = 'catalogVer1';
+		params['storeId'] = 'myStore';
+		
+		var payment = opensocial.newPayment(params);	
+		return payment;
+	},
+	
+	createPaymentRequest : function(payment, callback)
+	{
+		console.log("Nutaku::createPaymentRequest");
+		console.log(payment);
+			
+		opensocial.requestPayment(payment, function(response) 
+		{
+			if (response.hadError()) 
+			{
+				console.log("NutakuClient::Error " + "Could not create payment request");
+				console.log(response);
+				callback(null);
+			} 
+			else 
+			{
+				var result = {};
+				result.payment = response.getData();
+				result.paymentId = payment.getField(nutaku.Payment.Field.PAYMENT_ID);
+				
+				callback(result);
+			}
+		});
+	},
+	
+	requestPayment : function(data, callback)
+	{
+		console.log("Nutaku::requestPayment");
+    	console.log("after parse: " + data);
+
+    	var items = data;
+		
+		var paymentItems = [];
+		for( var i = 0; i < items.length; i++)
+		{
+			var paymentItem = this.createItem(items[i]);
+			console.log("Created payment item: " + paymentItem + " by data as: " + items[i]);
+			paymentItems.push(paymentItem);
+		}
+
+		console.log("Payment items: " + paymentItems);
+		
+		var payment = this.createPayment(paymentItems, "store description");
+		
+		this.createPaymentRequest(payment, callback);
 	}
 }

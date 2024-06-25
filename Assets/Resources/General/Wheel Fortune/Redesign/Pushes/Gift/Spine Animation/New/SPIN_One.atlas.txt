@@ -1,0 +1,21 @@
+SPIN_One.png
+size:1184,1184
+filter:Linear,Linear
+pma:true
+scale:0.9
+bg_frame
+bounds:2,508,1055,674
+btn_close
+bounds:1057,404,75,72
+exp bar
+bounds:941,65,441,114
+rotate:90
+girl_holder
+bounds:497,48,442,458
+offsets:4,6,450,468
+icon_gift
+bounds:2,2,493,504
+offsets:37,39,560,570
+ribbon
+bounds:1059,478,704,97
+rotate:90

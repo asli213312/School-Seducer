@@ -1,50 +1,181 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Good morning, Mrs. Green. Which \nroom should I start cleaning?" },
-  {"key": "Hello, Ben. You know Denise, \ndon't you? He's a classmate of yours."},
-  {"key": "Yes, of course he is. Hi, Denise."},
-	{"key": "Great, let's go to the \nbedroom and get started."},
-	{"key": "I'm sorry, are we going to work together?"},
-	{"key": "Work? Oh, yeah, working... \nwell, you could call it that."},
-	{"key": "Now, I want you to clean my \nholes good and clean, \nyou understand me?"},
-  {"key": "But, Mrs. Green, I don't--"},
-  {"key": "One more word, and you're out \nof here. And believe me, it's \ngonna affect your grades, \ntoo. Do you understand me?"},
-  {"key": "I'm sorry, Mrs. Green. \nI didn't mean to--"},
-	{"key": "That's better. Now do your \nfavorite teacher a favor!"},
-	{"key": "Insert picture"},
-	{"key": "Come on, boys, give me some heat! \nVacation's coming up and I won't \nsee you for weeks. So make sure \nI don't forget you in the meantime!"},
-	{"key": "Insert picture"},
-  {"key": "Oh, yeah, Dennis! I like \nthe taste of you!"},
-  {"key": "Ben, don't you come inside me! \nYou got it!"},
-  {"key": "Oh, yes, of course, Mrs. Green."},
-  {"key": "Insert picture"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Доброе утро, миссис Грин. С какой \nкомнаты мне начать уборку?"},
-  {"key": "Здравствуй, Бен. Ты же знаком \nс Денисом? Он твой однокурсник."},
-  {"key": "Да, конечно. Привет, Денис."},
-  {"key": "Отлично, тогда пойдём \nв спальню, там и начнём."},
-  {"key": "Простите, мы будем работать \nс ним вместе?"},
-  {"key": "Работать? Ах, да… работать… \nну, это можно и так назвать."},
-  {"key": "А теперь я хочу, чтобы вы хорошенько \nпрочистили все мои дырочки, \nпоняли меня?"},
-  {"key": "Но… миссис Грин… Я не…"},
-  {"key": "Ещё одно слово, и ты вылетишь отсюда. \nИ поверь, на твоих итоговых оценках \nэто тоже отразится. Понял меня?"},
-  {"key": "Простите, миссис Грин… Я не хотел…"},
-  {"key": "Так то лучше. А теперь сделайте \nсвоей любимой учительнице хорошо!"},
-  {"key": "Вставить картинку"},
-  {"key": "Давайте, мальчики, задайте мне жару! \nСкоро каникулы и мы с вами не увидимся \nнесколько недель. Так сделайте так, \nчтобы я вас не забыла за это время!"},
-  {"key": "Вставить картинку"},
-  {"key": "О да, Деннис! Ты мне нравишься на вкус!"},
-  {"key": "Бен, только не вздумай кончать в меня! \nТы понял!"},
-  {"key": "О… да… конечно, миссис Грин…"},
-  {"key": "Вставить картинку"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Good morning, Mrs. Green. Which \nroom should I start cleaning?"
+                },
+                {
+                    "key": "Hello, Ben. You know Denise, \ndon't you? He's a classmate of yours."
+                },
+                {
+                    "key": "Yes, of course he is. Hi, Denise."
+                },
+                {
+                    "key": "Great, let's go to the \nbedroom and get started."
+                },
+                {
+                    "key": "I'm sorry, are we going to work together?"
+                },
+                {
+                    "key": "Work? Oh, yeah, working... \nwell, you could call it that."
+                },
+                {
+                    "key": "Now, I want you to clean my \nholes good and clean, \nyou understand me?"
+                },
+                {
+                    "key": "But, Mrs. Green, I don't--"
+                },
+                {
+                    "key": "One more word, and you're out \nof here. And believe me, it's \ngonna affect your grades, \ntoo. Do you understand me?"
+                },
+                {
+                    "key": "I'm sorry, Mrs. Green. \nI didn't mean to--"
+                },
+                {
+                    "key": "That's better. Now do your \nfavorite teacher a favor!"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Come on, boys, give me some heat! \nVacation's coming up and I won't \nsee you for weeks. So make sure \nI don't forget you in the meantime!"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Oh, yeah, Dennis! I like \nthe taste of you!"
+                },
+                {
+                    "key": "Ben, don't you come inside me! \nYou got it!"
+                },
+                {
+                    "key": "Oh, yes, of course, Mrs. Green."
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Доброе утро, миссис Грин. С какой \nкомнаты мне начать уборку?"
+                },
+                {
+                    "key": "Здравствуй, Бен. Ты же знаком \nс Денисом? Он твой однокурсник."
+                },
+                {
+                    "key": "Да, конечно. Привет, Денис."
+                },
+                {
+                    "key": "Отлично, тогда пойдем \nв спальню, там и начнем."
+                },
+                {
+                    "key": "Простите, мы будем работать \nс ним вместе?"
+                },
+                {
+                    "key": "Работать? Ах, да… работать… \nну, это можно и так назвать."
+                },
+                {
+                    "key": "А теперь я хочу, чтобы вы хорошенько \nпрочистили все мои дырочки, \nпоняли меня?"
+                },
+                {
+                    "key": "Но… миссис Грин… Я не…"
+                },
+                {
+                    "key": "Еще одно слово, и ты вылетишь отсюда. \nИ поверь, на твоих итоговых оценках \nэто тоже отразится. Понял меня?"
+                },
+                {
+                    "key": "Простите, миссис Грин… Я не хотел…"
+                },
+                {
+                    "key": "Так то лучше. А теперь сделайте \nсвоей любимой учительнице хорошо!"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Давайте, мальчики, задайте мне жару! \nСкоро каникулы и мы с вами не увидимся \nнесколько недель. Так сделайте так, \nчтобы я вас не забыла за это время!"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "О да, Деннис! Ты мне нравишься на вкус!"
+                },
+                {
+                    "key": "Бен, только не вздумай кончать в меня! \nТы понял!"
+                },
+                {
+                    "key": "О… да… конечно, миссис Грин…"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Guten Morgen, Frau Green. \nIn welchem Zimmer soll ich \nmit der Reinigung beginnen?"
+                },
+                {
+                    "key": "Hallo, Ben. Kennst du Denis, \nnicht wahr? Er ist ein \nMitschüler von dir."
+                },
+                {
+                    "key": "Ja, natürlich kenne ich \nihn. Hallo, Denis."
+                },
+                {
+                    "key": "Prima, lass uns ins Schlafzimmer \ngehen und anfangen."
+                },
+                {
+                    "key": "Entschuldigung, sollen \nwir zusammenarbeiten?"
+                },
+                {
+                    "key": "Arbeiten? Oh, ja, arbeiten... nun \nja, man könnte es so nennen."
+                },
+                {
+                    "key": "Jetzt möchte ich, dass du meine \nLöcher gut und sauber reinigst, \nhast du mich verstanden?"
+                },
+                {
+                    "key": "Aber, Frau Green, ich möchte nur sagen"
+                },
+                {
+                    "key": "Noch ein Wort, und du fliegst hier \nraus. Und glaub mir, das wird sich \nauch auf deine Noten auswirken. \nVerstehst du mich?"
+                },
+                {
+                    "key": "Es tut mir leid, Frau \nGreen. Ich wollte nur--"
+                },
+                {
+                    "key": "Das ist besser. Jetzt tue deiner \nLieblingslehrerin einen Gefallen!"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Kommt schon, Jungs, gebt mir etwas \nFeuer! Die Ferien stehen vor der \nTür und ich werde euch wochenlang \nnicht sehen. Sorgt also dafür, \ndass ich euch in der Zwischenzeit \nnicht vergesse!"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Oh, ja, Dennis! Ich \nmag deinen Geschmack!"
+                },
+                {
+                    "key": "Ben, komm nicht in mir! \nDu hast es geschafft!"
+                },
+                {
+                    "key": "Oh ja, natürlich, Mrs. Green."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
 }

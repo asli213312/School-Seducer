@@ -1,0 +1,128 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "I apologize..."
+                },
+                {
+                    "key": "What do you want?"
+                },
+                {
+                    "key": "Hey, I just wanted to ask \nif the director is around."
+                },
+                {
+                    "key": "I couldn't care less where that jerk is."
+                },
+                {
+                    "key": "Excuse me? I don't understand..."
+                },
+                {
+                    "key": "He fucking me at work, but \ntakes his wife on vacation."
+                },
+                {
+                    "key": "You know what? I'll get back at him!"
+                },
+                {
+                    "key": "You want me?"
+                },
+                {
+                    "key": "What?!"
+                },
+                {
+                    "key": "Am I attracting you?"
+                },
+                {
+                    "key": "Yes, of course, you're a \nvery beautiful girl..."
+                },
+                {
+                    "key": "Then let's do it!"
+                },
+                {
+                    "key": "Right here?"
+                },
+                {
+                    "key": "No, in his office, on his desk!"
+                },
+                {
+                    "key": "But..."
+                },
+                {
+                    "key": "Don't worry, he's gone for \na meeting, he won't be \nback for a couple of hours."
+                },
+                {
+                    "key": "Make up your mind, or I'll change mine."
+                },
+                {
+                    "key": "Yes, of course, how can I refuse?"
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Прошу прощения…"
+                },
+                {
+                    "key": "Что тебе?"
+                },
+                {
+                    "key": "Эй, я просто хотел спросить, \nу себя ли директор."
+                },
+                {
+                    "key": "Да мне плевать на то, где этот козел."
+                },
+                {
+                    "key": "Простите? Я не понимаю…"
+                },
+                {
+                    "key": "Трахает он меня на работе, а \nв отпуск везет свою жену."
+                },
+                {
+                    "key": "А знаешь что? Я ему отомщу!"
+                },
+                {
+                    "key": "Хочешь меня?"
+                },
+                {
+                    "key": "Что?!"
+                },
+                {
+                    "key": "Я привлекаю тебя?"
+                },
+                {
+                    "key": "Да, конечно, вы очень красивая девушка…"
+                },
+                {
+                    "key": "Тогда давай сделаем это!"
+                },
+                {
+                    "key": "Прямо тут?"
+                },
+                {
+                    "key": "Нет, в его кабинете на его столе!"
+                },
+                {
+                    "key": "Но…"
+                },
+                {
+                    "key": "Не бойся, он уехал на совещание, \nне вернется еще пару часов."
+                },
+                {
+                    "key": "Решайся, а то я передумаю."
+                },
+                {
+                    "key": "Да, конечно, как я могу отказаться?"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
+}

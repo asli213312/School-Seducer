@@ -1,11 +1,24 @@
 ﻿using Spine.Unity;
 using UnityEngine;
+using Zenject;
 
 namespace _School_Seducer_.Editor.Scripts.Utility
 {
-    public class SpineUtility : MonoBehaviour
+    public class SpineUtility : MonoInstaller
     {
         private SkeletonGraphic _currentAnimation;
+
+        public override void InstallBindings()
+        {
+            Container.Bind<SpineUtility>().FromComponentInHierarchy().AsSingle();
+        }
+
+        public void InvokeStartAnimation(SkeletonGraphic newAnimation) 
+        {
+            InstallAnimation(newAnimation);
+            StartupAnimation();
+            SetAnimationState(0);
+        }
 
         public void InstallAnimation(SkeletonGraphic newAnimation) => _currentAnimation = newAnimation;
 

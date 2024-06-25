@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
+  m_Name: Aunt
+  m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: 2a82848f2e60fa141b687f3046d8c01c, type: 2}
+  currentConversation: {fileID: 11400000, guid: 24272fc23aadf8b4eb73ee4f5cfb2845, type: 2}
+  gifts: []
+  allConversations:
+  - {fileID: 11400000, guid: 24272fc23aadf8b4eb73ee4f5cfb2845, type: 2}
+  gallery: {fileID: 11400000, guid: 71becb702963b4548a204bba98e4b946, type: 2}
+  requiredLevel: 2
+  loyalty: 1
+  maxLoyalty: 3
+  showDebugParameters: 1
+  experience: 0
+  isLocked: 0

@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using GameAnalyticsSDK;
 using PuzzleGame.Gameplay.Boosters;
 using PuzzleGame.Gameplay.Boosters.Merged;
+using PuzzleGame.Gameplay.Merged.Tasks.Models;
 using PuzzleGame.Sounds;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
@@ -26,15 +28,20 @@ namespace PuzzleGame.Gameplay.Merged
         public MergedFigureController nextBrickController;
         public GameObject nextBrickAnimator;
 
+        [SerializeField] private MiniGamesTaskTracker taskTracker;
         [SerializeField] private FieldTemplate[] fieldTemplates;
         [FormerlySerializedAs("testArray")] [SerializeField] public BricksContainer emptyBricksContainer; 
         [SerializeField] public BricksContainer obstacleBricks;
         [ListDrawerSettings(ShowIndexLabels = true)]
         List<NumberedBrick> nextBricks;
 
+        public static event Action OnBrickPlaced;
+
         const int MaxNumber = 5;
         const float OffsetBetweenNextBricks = 10;
         bool isAnimating;
+        List<int> _preparedNumbers = new();
+        FieldTemplate _selectedField;
     
         readonly BricksHighlighter bricksHighlighter = new BricksHighlighter();
         
@@ -63,6 +70,11 @@ namespace PuzzleGame.Gameplay.Merged
             public List<Vector2Int> path;
         }
 
+        public void SelectField(int index) => _selectedField = fieldTemplates[index];
+        public void AddPreparedNumber(int number) => _preparedNumbers.Add(number);
+        public void ClearSelectedField() => _selectedField = null;
+        public void ClearPreparedNumbers() => _preparedNumbers.Clear();
+
         public void SpawnField()
         {
             for (int i = 0; i < fieldTransform.childCount; i++)
@@ -86,6 +98,7 @@ namespace PuzzleGame.Gameplay.Merged
             int rndFieldIndex = Random.Range(0, fieldTemplates.Length);
             
             FieldTemplate fieldTemplate = fieldTemplates[rndFieldIndex];
+            GameAnalytics.NewDesignEvent("dice_map_" + fieldTemplate.fieldTransform.name);
             
             emptyBricksContainer = fieldTemplate.BricksContainer;
             obstacleBricks = fieldTemplate.BricksContainer;
@@ -110,14 +123,23 @@ namespace PuzzleGame.Gameplay.Merged
                     SpawnObstacleBrick(coords, obstacle);
                 }
             }
+            
+            taskTracker.CheckRefreshTasks();
+            taskTracker.ResetTasks();
+            taskTracker.InstallTasks();
         }
 
         public void Start()
         {
             int rndFieldIndex = Random.Range(0, fieldTemplates.Length);
             
-            FieldTemplate fieldTemplate = fieldTemplates[rndFieldIndex];
-            
+            FieldTemplate fieldTemplate = null;
+
+            if (_selectedField == null)
+                fieldTemplate = fieldTemplates[rndFieldIndex];
+            else
+                fieldTemplate = _selectedField;
+
             emptyBricksContainer = fieldTemplate.BricksContainer;
             obstacleBricks = fieldTemplate.BricksContainer;
                 
@@ -141,6 +163,8 @@ namespace PuzzleGame.Gameplay.Merged
                     SpawnObstacleBrick(coords, obstacle);
                 }
             }
+            
+            GameAnalytics.NewDesignEvent("dice_map_" + fieldTemplate.fieldTransform.name);
 
             gameState = UserProgress.Current.GetGameState<GameState>(name);
 
@@ -155,6 +179,8 @@ namespace PuzzleGame.Gameplay.Merged
             nextBrickController.PointerClick += OnNextBrickClick;
             nextBrickController.PointerUp += OnNextBrickPointerUp;
             nextBrickController.PointerDrag += OnNextBrickPointerDrag;
+            
+            taskTracker.CheckRefreshTasks();
 
             StartGame();
         }
@@ -268,11 +294,28 @@ namespace PuzzleGame.Gameplay.Merged
             {
                 NumberedBrick brick = Instantiate(brickPrefab, nextBrickController.transform);
 
-                int number;
-                do number = GetRandomNumber();
-                while (nextBrickController.bricks.Any(b => ((NumberedBrick) b).Number == number));
-
-                brick.Number = bricks?[i] ?? number;
+                int number = 0;
+                if (_preparedNumbers.Count > 0)
+                {
+                    if (_preparedNumbers.Count < i)
+                    {
+                        number = GetRandomNumber();
+                        Debug.Log("Prepared numbers is empty, will be generated random number");
+                    }
+                    else
+                    {
+                        number = _preparedNumbers[i];
+                        brick.Number = number;
+                    }
+                }
+                else
+                {
+                    do number = GetRandomNumber();
+                    while (nextBrickController.bricks.Any(b => ((NumberedBrick) b).Number == number)); 
+                    
+                    brick.Number = bricks?[i] ?? number;
+                }
+                
                 brick.ColorIndex = GetColorIndex(brick.Number);
                 brick.PointerClick += OnHighlightedTargetClick;
 
@@ -322,6 +365,10 @@ namespace PuzzleGame.Gameplay.Merged
 
             SaveGameState();
             soundCollection.GetSfx(SoundId.Landing).Play();
+            
+            if (IsFieldEmpty()) GameAnalytics.NewDesignEvent("dice_start");
+            
+            OnBrickPlaced?.Invoke();
 
             var bricks = new List<NumberedBrick>();
 
@@ -470,6 +517,9 @@ namespace PuzzleGame.Gameplay.Merged
 
                         soundCollection.GetSfx(SoundId.Merging).Play();
 
+                        taskTracker.CheckTasks(new MiniGamesTaskGatherSetsUpdater(brick.Number));
+                        Debug.Log("BRICK NUMBER_MERGE: " + brick.Number);
+
                         brick.Number++;
                         brick.ColorIndex = GetColorIndex(brick.Number);
                         brick.transform.SetAsLastSibling();
@@ -586,6 +636,21 @@ namespace PuzzleGame.Gameplay.Merged
 
             OnGameOver();
         }
+
+        bool IsFieldEmpty()
+        {
+            for (int i = 0; i < field.GetLength(0); i++)
+            {
+                for (int j = 0; j < field.GetLength(1); j++)
+                {
+                    if(field[i, j] != null && field[i, j].Number != 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     
         bool IsCanPlaceBricks(int nextBricksCount)
         {
@@ -633,6 +698,7 @@ namespace PuzzleGame.Gameplay.Merged
             if (boosterType != BoosterType.RemoveFigure)
             {
                 base.BoosterExecute(target);
+                Debug.Log("Executing booster: " + boosterType);
                 return;
             }
 

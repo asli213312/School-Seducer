@@ -1,42 +1,145 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Today, we're diving into sexual attraction." },
-  {"key": "Let's talk about what gets modern guys going."},
-  {"key": "Recently, Cambridge scientists dropped \na study they've been working on \nfor two months."},
-	{"key": "They spilled the tea on what really \ncatches a dude's eye when it \ncomes to city girls."},
-	{"key": "So, first up, we got the <i>downblouse</i> \nmove. You know, when a girl leans \nforward and you catch a sneak peek \nof her nipples in her neckline"},
-	{"key": "Let me give you a quick demo."},
-	{"key": "Insert picture"},
-  {"key": "Then, we got stockings on girls' legs. \nTurns out, it's a big turn-on \nwhen those accidentally show."},
-  {"key": "Like, if her skirt has a super \ndeep slit, you know?"},
-  {"key": "Insert picture"},
-	{"key": "And speaking of skirts, short ones \ndrive guys wild. But I mean, we \nkinda knew that already, right?"},
-	{"key": "Lastly, we've got nipples poking \nthrough clothes."},
-	{"key": "Yeah, I skipped the bra today \nto show you this one firsthand."},
-	{"key": "Insert picture"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Сегодня мы поговорим о сексуальном влечении."},
-  {"key": "Мы рассмотрим основные фетиши \nсовременного мужчины."},
-  {"key": "Недавно учёные из Кембриджа опубликовали \nрезультаты исследования, которое они \nпроводили два месяца."},
-  {"key": "Их данные показывают самые распространённые \nтемы, привлекающие мужчин в современной \nгородской женщине."},
-  {"key": "Итак, во первых, это так называемые \n<i>downblouse</i>. Ситуация, когда женщина \nнаклоняется и в вырезе декольте \nстановятся видны её соски."},
-  {"key": "Сейчас я продемонстрирую вам пример."},
-  {"key": "Вставить картинку"},
-  {"key": "Следующий популярный фетиш - это \nчулки на женских ногах. Исследование показало, \nчто случайное оголение чулков у современных \nженщин распространённое явление."},
-  {"key": "Например, из-за глубокого выреза на юбке."},
-  {"key": "Вставить картинку"},
-  {"key": "Раз мы заговорили о юбках, то сами по \nсебе короткие юбки привлекают мужчин. \nНо это, думаю, понятно и без исследований."},
-  {"key": "Наконец, проступающие соски под одеждой."},
-  {"key": "На эту лекцию я специально не надела \nбюстгальтер, чтобы продемонстрировать \nвам это явление."},
-  {"key": "Вставить картинку"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Today, we're diving into sexual attraction."
+                },
+                {
+                    "key": "Let's talk about what gets modern guys going."
+                },
+                {
+                    "key": "Recently, Cambridge scientists dropped \na study they've been working on \nfor two months."
+                },
+                {
+                    "key": "They spilled the tea on what really \ncatches a dude's eye when it \ncomes to city girls."
+                },
+                {
+                    "key": "So, first up, we got the <i>downblouse</i> \nmove. You know, when a girl leans \nforward and you catch a sneak peek \nof her nipples in her neckline"
+                },
+                {
+                    "key": "Let me give you a quick demo."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Then, we got stockings on girls' legs. \nTurns out, it's a big turn-on \nwhen those accidentally show."
+                },
+                {
+                    "key": "Like, if her skirt has a super \ndeep slit, you know?"
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "And speaking of skirts, short ones \ndrive guys wild. But I mean, we \nkinda knew that already, right?"
+                },
+                {
+                    "key": "Lastly, we've got nipples poking \nthrough clothes."
+                },
+                {
+                    "key": "Yeah, I skipped the bra today \nto show you this one firsthand."
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Сегодня мы поговорим о сексуальном влечении."
+                },
+                {
+                    "key": "Мы рассмотрим основные фетиши \nсовременного мужчины."
+                },
+                {
+                    "key": "Недавно ученые из Кембриджа опубликовали \nрезультаты исследования, которое они \nпроводили два месяца."
+                },
+                {
+                    "key": "Их данные показывают самые распространенные \nтемы, привлекающие мужчин в современной \nгородской женщине."
+                },
+                {
+                    "key": "Итак, во первых, это так называемые \n<i>downblouse</i>. Ситуация, когда женщина \nнаклоняется и в вырезе декольте \nстановятся видны ее соски."
+                },
+                {
+                    "key": "Сейчас я продемонстрирую вам пример."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Следующий популярный фетиш - это \nчулки на женских ногах. Исследование показало, \nчто случайное оголение чулков у современных \nженщин распространенное явление."
+                },
+                {
+                    "key": "Например, из-за глубокого выреза на юбке."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Раз мы заговорили о юбках, то сами по \nсебе короткие юбки привлекают мужчин. \nНо это, думаю, понятно и без исследований."
+                },
+                {
+                    "key": "Наконец, проступающие соски под одеждой."
+                },
+                {
+                    "key": "На эту лекцию я специально не надела \nбюстгальтер, чтобы продемонстрировать \nвам это явление."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Heute tauchen wir in \nsexuelle Anziehung ein."
+                },
+                {
+                    "key": "Lass uns darüber sprechen, \nwas moderne Männer anmacht."
+                },
+                {
+                    "key": "Vor Kurzem haben Cambridge-\nWissenschaftler eine Studie \nveröffentlicht, an der sie zwei \nMonate lang gearbeitet haben."
+                },
+                {
+                    "key": "Sie haben verraten, was einem \nKerl wirklich ins Auge springt, \nwenn es um Stadtmädchen geht."
+                },
+                {
+                    "key": "Also, zuerst haben wir den \n<i>Downblouse</i>. Du weißt schon, \nwenn ein Mädchen sich nach vorne \nlehnt und du einen heimlichen \nBlick auf ihre Brustwarzen im \nAusschnitt erhaschst."
+                },
+                {
+                    "key": "Lass mich dir eine schnelle \nDemonstration geben."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Dann haben wir Strümpfe an den \nBeinen von Mädchen. Es stellt sich \nheraus, dass es einen großen \nReiz ausmacht, wenn diese \nversehentlich sichtbar werden. "
+                },
+                {
+                    "key": "Beispiel, wenn ihr Rock einen \nsehr tiefen Schlitz hat, weißt du?"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Apropos Röcke: Kurze Röcke \nmachen die Männer wild. \nAber das wussten wir ja \nirgendwie schon, oder?"
+                },
+                {
+                    "key": "Zu guter Letzt haben wir \nnoch Brustwarzen, die durch \ndie Kleidung ragen."
+                },
+                {
+                    "key": "Ja, ich habe heute den BH \nausgelassen, um euch das \naus erster Hand zu zeigen."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
 }

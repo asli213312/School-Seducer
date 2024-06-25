@@ -1,54 +1,199 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Listen, Ben, do you want \nto go for a walk tonight?" },
-  {"key": "Hello! The offer is tempting, \nbut this evening I have a \npresentation on art theory."},
-  {"key": "Hmm... Which audience?"},
-  {"key": "In 505. Do you want \nto come support me?"},
-  {"key": "Yes... The word <i>support</i> is appropriate..."},
-  {"key": "Okay, thanks, I'll be glad!"},
-  {"key": "That same evening..."},
-  {"key": "Good afternoon Today I will talk\nabout the influence of Renaissance \nartists on the worldview..."},
-  {"key": "On the worldview of Europeans..."},
-  {"key": "Insert picture"},
-  {"key": "Oh damn..."},
-  {"key": "Sorry... So, the Renaissance..."},
-  {"key": "Insert picture"},
-  {"key": "I'm cumming!!! Sorry... I \nwanted to say that \nmy report is over."},
-  {"key": "Thank you all for your attention!"},
-  {"key": "What was it?"},
-  {"key": "I promised to support you at the report..."},
-  {"key": "Oh, that was unexpected..."},
-  {"key": "Just unexpectedly?"},
-  {"key": "It’s also nice!"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Послушай, Бен, хочешь вечером \nпойти прогуляться?"},
-  {"key": "Привет! Предложение заманчивое, \nно сегодня вечером у меня \nдоклад по теории искусства."},
-  {"key": "Хм… А в какой аудитории?"},
-  {"key": "В 505. Хочешь прийти поддержать меня?"},
-  {"key": "Да… Слово <i>поддержать</i> подходит…"},
-  {"key": "Окей, спасибо, я буду рад!"},
-  {"key": "Тем же вечером..."},
-  {"key": "Добрый день! Сегодня я расскажу о \nвлиянии художников эпохи \nВозрождения на мировоззрение…"},
-  {"key": "На мировоззрение европейцев…"},
-  {"key": "Вставить картинку"},
-  {"key": "Ох, блин…"},
-  {"key": "Простите… Так, эпоха Возрождения…"},
-  {"key": "Вставить картинку"},
-  {"key": "Кончаю!!! Простите… Я хотел \nсказать, что мой доклад закончился."},
-  {"key": "Всем спасибо за внимание!"},
-  {"key": "Что это было?"},
-  {"key": "Я же обещала поддержать тебя на докладе…"},
-  {"key": "Ох , это было неожиданно…"},
-  {"key": "Только неожиданно?"},
-  {"key": "Ещё и приятно!"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Listen, Ben, do you want \nto go for a walk tonight?"
+                },
+                {
+                    "key": "Hello! The offer is tempting, \nbut this evening I have a \npresentation on art theory."
+                },
+                {
+                    "key": "Hmm... Which audience?"
+                },
+                {
+                    "key": "In 505. Do you want \nto come support me?"
+                },
+                {
+                    "key": "Yes... The word <i>support</i> is appropriate..."
+                },
+                {
+                    "key": "Okay, thanks, I'll be glad!"
+                },
+                {
+                    "key": "That same evening..."
+                },
+                {
+                    "key": "Good afternoon Today I will talk\nabout the influence of Renaissance \nartists on the worldview..."
+                },
+                {
+                    "key": "On the worldview of Europeans..."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Oh damn..."
+                },
+                {
+                    "key": "Sorry... So, the Renaissance..."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "I'm cumming!!! Sorry... I \nwanted to say that \nmy report is over."
+                },
+                {
+                    "key": "Thank you all for your attention!"
+                },
+                {
+                    "key": "What was it?"
+                },
+                {
+                    "key": "I promised to support you at the report..."
+                },
+                {
+                    "key": "Oh, that was unexpected..."
+                },
+                {
+                    "key": "Just unexpectedly?"
+                },
+                {
+                    "key": "It’s also nice!"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Послушай, Бен, хочешь вечером \nпойти прогуляться?"
+                },
+                {
+                    "key": "Привет! Предложение заманчивое, \nно сегодня вечером у меня \nдоклад по теории искусства."
+                },
+                {
+                    "key": "Хм… А в какой аудитории?"
+                },
+                {
+                    "key": "В 505. Хочешь прийти поддержать меня?"
+                },
+                {
+                    "key": "Да… Слово <i>поддержать</i> подходит…"
+                },
+                {
+                    "key": "Окей, спасибо, я буду рад!"
+                },
+                {
+                    "key": "Тем же вечером..."
+                },
+                {
+                    "key": "Добрый день! Сегодня я расскажу о \nвлиянии художников эпохи \nВозрождения на мировоззрение…"
+                },
+                {
+                    "key": "На мировоззрение европейцев…"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Ох, блин…"
+                },
+                {
+                    "key": "Простите… Так, эпоха Возрождения…"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Кончаю!!! Простите… Я хотел \nсказать, что мой доклад закончился."
+                },
+                {
+                    "key": "Всем спасибо за внимание!"
+                },
+                {
+                    "key": "Что это было?"
+                },
+                {
+                    "key": "Я же обещала поддержать тебя на докладе…"
+                },
+                {
+                    "key": "Ох , это было неожиданно…"
+                },
+                {
+                    "key": "Только неожиданно?"
+                },
+                {
+                    "key": "Еще и приятно!"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Hör zu, Ben, willst du heute \nAbend spazieren gehen?"
+                },
+                {
+                    "key": "Hallo! Das Angebot ist verlockend, \naber ich habe heute Abend \neinen Vortrag über Kunsttheorie."
+                },
+                {
+                    "key": "Hmm… In welchem Hörsaal?"
+                },
+                {
+                    "key": "In 505. Willst du kommen \nund mich unterstützen?"
+                },
+                {
+                    "key": "Ja… Das Wort <i>unterstützen</i> passt…"
+                },
+                {
+                    "key": "Okay, danke, ich freue mich!"
+                },
+                {
+                    "key": "Später am selben Abend..."
+                },
+                {
+                    "key": "Guten Tag! Heute werde ich über \nden Einfluss der Renaissance-Künstler \nauf die Weltanschauung sprechen..."
+                },
+                {
+                    "key": "Auf die Weltanschauung der Europäer..."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Oh, verdammt..."
+                },
+                {
+                    "key": "Entschuldigung... Also, \ndie Renaissance..."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Ich komme zum Schluss!!! \nEntschuldigung... Ich wollte sagen, \ndass mein Vortrag zu Ende ist."
+                },
+                {
+                    "key": "Vielen Dank an alle \nfür die Aufmerksamkeit!"
+                },
+                {
+                    "key": "Was war das?"
+                },
+                {
+                    "key": "Ich habe doch versprochen, dich \nbei deinem Vortrag zu unterstützen…"
+                },
+                {
+                    "key": "Oh, das war unerwartet…"
+                },
+                {
+                    "key": "Nur unerwartet?"
+                },
+                {
+                    "key": "Auch angenehm!"
+                }
+            ]
+        }
+    ]
 }

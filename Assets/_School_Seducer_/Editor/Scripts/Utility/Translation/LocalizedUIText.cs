@@ -10,15 +10,16 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
     {
         [SerializeField] private Text text;
         [SerializeField] private TextMeshProUGUI textPro;
-        [SerializeField] private List<Translator.Languages> _localizedData;
-        public List<Translator.Languages> LocalizedData
+        [SerializeField] private TextOptions mainTextOptions;
+        [SerializeField] private List<Translator.LanguagesText> _localizedData;
+        public List<Translator.LanguagesText> LocalizedData
         {
             get
             {
-                List<Translator.Languages> languagesList = _localizedData;
+                List<Translator.LanguagesText> languagesList = _localizedData;
                 foreach (var item in localizedData)
                 {
-                    languagesList.Add((Translator.Languages)item);
+                    languagesList.Add((Translator.LanguagesText)item);
                 }
                 return languagesList;
             }
@@ -40,19 +41,25 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
 
         protected override void OnChangeLanguage()
         {
-            Translator.Languages currentLanguage = GetCurrentLanguage() as Translator.Languages;
+            Translator.LanguagesText currentLanguageText = GetCurrentLanguage() as Translator.LanguagesText;
 
-            if (currentLanguage == null) return;    
+            if (currentLanguageText == null) return;
 
-            if (currentLanguage.key is not null)
+            if (currentLanguageText.key is not null)
             {
-                if (text != null) text.text = currentLanguage.key;
-                else if (textPro != null) textPro.text = currentLanguage.key;
+                if (text != null) text.text = currentLanguageText.key;
+                else if (textPro != null) textPro.text = currentLanguageText.key;
 
-                CurrentText = currentLanguage.key;
+                if (currentLanguageText.options.font != null)
+                    currentLanguageText.options?.Install(textPro);
+                else
+                    mainTextOptions.Install(textPro);
+
+                CurrentText = currentLanguageText.key;
+                UpdateView();
             }
             else
-                Debug.LogError("Localized key not found: " + currentLanguage.key, gameObject);
+                Debug.LogError("Localized key not found: " + currentLanguageText.key, gameObject);
         }
 
         private string GetCurrentText()

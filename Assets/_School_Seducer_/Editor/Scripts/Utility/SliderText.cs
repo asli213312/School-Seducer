@@ -23,13 +23,23 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         {
             _text = GetComponent<TextMeshProUGUI>();
             slider.onValueChanged.AddListener(OnValueChanged);
-            
+
             OnValueChanged(0);
         }
 
         private void OnDestroy()
         {
             slider.onValueChanged.RemoveListener(OnValueChanged);
+        }
+
+        public void UpdateText()
+        {
+            if (_text == null) return;
+            
+            if (onlyValue)
+                _text.text = slider.value + divider;
+            else
+                _text.text = slider.value + divider + slider.maxValue;
         }
 
         private void OnValueChanged(float value)

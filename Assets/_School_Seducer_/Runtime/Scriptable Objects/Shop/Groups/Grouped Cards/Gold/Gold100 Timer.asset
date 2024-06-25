@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25a5784a3164219889dcdb7ca482fd0, type: 3}
+  m_Name: Gold100 Timer
+  m_EditorClassIdentifier: 
+  isSold: 0
+  cost: 0
+  view: {fileID: 8780010953926893290, guid: 6e6550dc16e4e764f83f1c57037bca9e, type: 3}
+  showDebugParameters: 0
+  id: 
+  value: 100
+  useTimer: 1
+  timeToWait: 5
+  currentAwaitedTime: 4

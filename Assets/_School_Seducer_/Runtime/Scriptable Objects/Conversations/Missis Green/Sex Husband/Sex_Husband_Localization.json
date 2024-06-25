@@ -1,70 +1,271 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Mrs. Green, I've finished on the second floor, \nis there anything else I can do for you?" },
-  {"key": "Yes, actually, you can. \nCome with me upstairs."},
-  {"key": "Insert picture"},
-	{"key": "Wow, there's a great view from here..."},
-	{"key": "What did you say? \nSorry, I didn't catch that."},
-	{"key": "Oh... Nothing... It's just me."},
-	{"key": "Ben, sit on the bed, I need to \ntell you something."},
-  {"key": "Yes, Mrs. Green."},
-  {"key": "I can see the way you look at me, \nBen. In class, at my house."},
-  {"key": "Oh... no, it's not... I mean... \nthere must be some misunderstanding..."},
-	{"key": "Ben, stop it, I can see everything. \nOr are you trying to say that \nI don't attract you?"},
-	{"key": "Of course not, I don't find \nyou unattractive..."},
-	{"key": "What?! Are you saying I'm ugly?"},
-	{"key": "Oh, no, God... That's not what \nI meant, you're a very beautiful woman!"},
-  {"key": "Then let's do it, Ben. \nSince we both want this."},
-  {"key": "But... I... you're my teacher..."},
-  {"key": "Alright, young man, shut up and \ndo as I say! And don't you \ndare contradict me!"},
-  {"key": "Yes, Mrs. Green."},
-  {"key": "Insert picture"},
-  {"key": "Honey, I'm home! Oh, sorry, \nyou're not alone..."},
-  {"key": "Oh damn! Your husband... I'm sorry... \nMr. Green, this isn't... I... you..."},
-  {"key": "Ben, darling, relax. Calm down, \neverything's okay."},
-  {"key": "But he... what should we do now? \nHe'll kill me!"},
-  {"key": "He won't touch you, he'll just \nwatch us. Don't panic and keep going."},
-  {"key": "I... I can't do this, he's \nwatching... I can't..."},
-  {"key": "Even if I do this?..."},
-  {"key": "Oh God!"},
-  {"key": "Insert picture"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Миссис Грин, я закончил на втором этаже, \nмогу что-то ещё для вас сделать?"},
-  {"key": "Да, пожалуй, можешь, пойдём со мной наверх."},
-  {"key": "Вставить картинку"},
-  {"key": "Ого, отсюда открывается отличный вид…"},
-  {"key": "Что ты сказал? Прости, я не расслышала."},
-  {"key": "О… Нет… Ничего, вам показалось."},
-  {"key": "Бен, сядь на кровать, я должна \nтебе что-то сказать"},
-  {"key": "Да, миссис Грин."},
-  {"key": "Я вижу, как ты на меня смотришь Бен. \nНа лекциях, у меня дома."},
-  {"key": "О… нет, что вы… Я не смотрю на \nвас… это какое-то недоразумение…"},
-  {"key": "Бен, перестань, я всё вижу. \nИли ты хочешь сказать, \nчто я не привлекаю тебя?"},
-  {"key": "Конечно нет, я не считаю \nвас привлекательной…"},
-  {"key": "Что?! Ты хочешь сказать, что я некрасивая?"},
-  {"key": "О, нет, Боже… Я не это имел ввиду, \nвы очень красивая женщина!"},
-  {"key": "Тогда давай сделаем это, Бен. \nРаз мы оба этого хотим."},
-  {"key": "Но… я… вы же учительница…"},
-  {"key": "Так, молодой человек, закройте рот и \nделайте то, что я вам говорю! \nИ не смейте мне перечить!"},
-  {"key": "Да, миссис Грин."},
-  {"key": "Вставить картинку"},
-  {"key": "Дорогая, я дома! А, извини, ты не одна…"},
-  {"key": "Вот чёрт! Ваш муж… Простите… \nМистер Грин, это не то… я… вы…"},
-  {"key": "Бен, дорогой, расслабься. \nУспокойся, всё в порядке."},
-  {"key": "Но он… что теперь делать? Он убьёт меня!"},
-  {"key": "Он тебя не тронет, просто будет \nсмотреть, как мы делаем это. \nНе нервничай и продолжай."},
-  {"key": "Я… я так не могу, он смотрит… \nУ меня не получается…"},
-  {"key": "Даже если я сделаю вот так?..."},
-  {"key": "О Боже!"},
-  {"key": "Вставить картинку"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Mrs. Green, I've finished on the second floor, \nis there anything else I can do for you?"
+                },
+                {
+                    "key": "Yes, actually, you can. \nCome with me upstairs."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Wow, there's a great view from here..."
+                },
+                {
+                    "key": "What did you say? \nSorry, I didn't catch that."
+                },
+                {
+                    "key": "Oh... Nothing... It's just me."
+                },
+                {
+                    "key": "Ben, sit on the bed, I need to \ntell you something."
+                },
+                {
+                    "key": "Yes, Mrs. Green."
+                },
+                {
+                    "key": "I can see the way you look at me, \nBen. In class, at my house."
+                },
+                {
+                    "key": "Oh... no, it's not... I mean... \nthere must be some misunderstanding..."
+                },
+                {
+                    "key": "Ben, stop it, I can see everything. \nOr are you trying to say that \nI don't attract you?"
+                },
+                {
+                    "key": "Of course not, I don't find \nyou unattractive..."
+                },
+                {
+                    "key": "What?! Are you saying I'm ugly?"
+                },
+                {
+                    "key": "Oh, no, God... That's not what \nI meant, you're a very beautiful woman!"
+                },
+                {
+                    "key": "Then let's do it, Ben. \nSince we both want this."
+                },
+                {
+                    "key": "But... I... you're my teacher..."
+                },
+                {
+                    "key": "Alright, young man, shut up and \ndo as I say! And don't you \ndare contradict me!"
+                },
+                {
+                    "key": "Yes, Mrs. Green."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Honey, I'm home! Oh, sorry, \nyou're not alone..."
+                },
+                {
+                    "key": "Oh damn! Your husband... I'm sorry... \nMr. Green, this isn't... I... you..."
+                },
+                {
+                    "key": "Ben, darling, relax. Calm down, \neverything's okay."
+                },
+                {
+                    "key": "But he... what should we do now? \nHe'll kill me!"
+                },
+                {
+                    "key": "He won't touch you, he'll just \nwatch us. Don't panic and keep going."
+                },
+                {
+                    "key": "I... I can't do this, he's \nwatching... I can't..."
+                },
+                {
+                    "key": "Even if I do this?..."
+                },
+                {
+                    "key": "Oh God!"
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Миссис Грин, я закончил на втором этаже, \nмогу что-то еще для вас сделать?"
+                },
+                {
+                    "key": "Да, пожалуй, можешь, пойдем со мной наверх."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Ого, отсюда открывается отличный вид…"
+                },
+                {
+                    "key": "Что ты сказал? Прости, я не расслышала."
+                },
+                {
+                    "key": "О… Нет… Ничего, вам показалось."
+                },
+                {
+                    "key": "Бен, сядь на кровать, я должна \nтебе что-то сказать"
+                },
+                {
+                    "key": "Да, миссис Грин."
+                },
+                {
+                    "key": "Я вижу, как ты на меня смотришь Бен. \nНа лекциях, у меня дома."
+                },
+                {
+                    "key": "О… нет, что вы… Я не смотрю на \nвас… это какое-то недоразумение…"
+                },
+                {
+                    "key": "Бен, перестань, я все вижу. \nИли ты хочешь сказать, \nчто я не привлекаю тебя?"
+                },
+                {
+                    "key": "Конечно нет, я не считаю \nвас привлекательной…"
+                },
+                {
+                    "key": "Что?! Ты хочешь сказать, что я некрасивая?"
+                },
+                {
+                    "key": "О, нет, Боже… Я не это имел ввиду, \nвы очень красивая женщина!"
+                },
+                {
+                    "key": "Тогда давай сделаем это, Бен. \nРаз мы оба этого хотим."
+                },
+                {
+                    "key": "Но… я… вы же учительница…"
+                },
+                {
+                    "key": "Так, молодой человек, закройте рот и \nделайте то, что я вам говорю! \nИ не смейте мне перечить!"
+                },
+                {
+                    "key": "Да, миссис Грин."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Дорогая, я дома! А, извини, ты не одна…"
+                },
+                {
+                    "key": "Вот черт! Ваш муж… Простите… \nМистер Грин, это не то… я… вы…"
+                },
+                {
+                    "key": "Бен, дорогой, расслабься. \nУспокойся, все в порядке."
+                },
+                {
+                    "key": "Но он… что теперь делать? Он убьет меня!"
+                },
+                {
+                    "key": "Он тебя не тронет, просто будет \nсмотреть, как мы делаем это. \nНе нервничай и продолжай."
+                },
+                {
+                    "key": "Я… я так не могу, он смотрит… \nУ меня не получается…"
+                },
+                {
+                    "key": "Даже если я сделаю вот так?..."
+                },
+                {
+                    "key": "О Боже!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Frau Grün, ich bin mit dem \nzweiten Stock fertig. Gibt \nes noch etwas, das \nich für Sie tun kann?"
+                },
+                {
+                    "key": "Ja, tatsächlich können Sie das. \nKomm mit mir nach oben."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Wow, es gibt eine tolle \nAussicht von hier..."
+                },
+                {
+                    "key": "Was hast du gesagt? Entschuldigung, \ndas habe ich nicht verstanden."
+                },
+                {
+                    "key": "Oh... Nichts... Es bin nur ich."
+                },
+                {
+                    "key": "Ben, setz dich auf das Bett, \nich muss dir etwas sagen."
+                },
+                {
+                    "key": "Ja, Frau Green."
+                },
+                {
+                    "key": "Ich sehe, wie du mich anschaust, \nBen. Im Unterricht, bei mir zu Hause."
+                },
+                {
+                    "key": "Oh... Nein, es ist nicht... \nIch meine... es muss ein \nMissverständnis geben..."
+                },
+                {
+                    "key": "Ben, hör auf damit, ich sehe \nalles. Oder willst du behaupten, \ndass ich dich nicht anziehe?"
+                },
+                {
+                    "key": "Natürlich nicht, ich finde \ndich nicht unattraktiv..."
+                },
+                {
+                    "key": "Was?! Sagst du, ich bin hässlich?"
+                },
+                {
+                    "key": "Oh, nein, Gott... Das ist \nnicht das, was ich gemeint habe, \ndu bist eine sehr schöne Frau!"
+                },
+                {
+                    "key": "Dann lass es uns tun, Ben. \nDa wir beide das wollen."
+                },
+                {
+                    "key": "Aber... ich... du bist meine Lehrerin..."
+                },
+                {
+                    "key": "In Ordnung, junger Mann, halt \nden Mund und tu, was ich sage! \nUnd wage es nicht, \nmich zu widersprechen!"
+                },
+                {
+                    "key": "Ja, Frau Green."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Schatz, ich bin zu Hause! Oh, \nentschuldige, du bist nicht allein..."
+                },
+                {
+                    "key": "Verdammt! Dein Mann... Es \ntut mir leid... Herr Green, \ndas ist nicht... Ich... du..."
+                },
+                {
+                    "key": "Ben, Liebling, entspann dich. Beruhige \ndich, alles ist in Ordnung."
+                },
+                {
+                    "key": "Aber er... was sollen wir jetzt \ntun? Er wird mich umbringen!"
+                },
+                {
+                    "key": "Er wird dich nicht anfassen, er \nwird nur zuschauen. Keine \nPanik und mach weiter."
+                },
+                {
+                    "key": "Ich... ich kann das nicht tun, \ner beobachtet... ich kann nicht..."
+                },
+                {
+                    "key": "Auch wenn ich das mache?..."
+                },
+                {
+                    "key": "Oh Gott!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
 }

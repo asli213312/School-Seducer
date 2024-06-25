@@ -1,12 +1,16 @@
-﻿using System.Collections;
-using _School_Seducer_.Editor.Scripts.Tests;
+﻿using System;
+using System.Collections;
+using _School_Seducer_.Editor.Scripts.Utility;
 using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
     public class SoundHandler : MonoBehaviour
     {
+        [SerializeField] public GlobalSettings globalSettings;
         [SerializeField, Range(0, 1f)] private float volume = 1f;
+
+        public Action ClipEndedAction;
 
         private AudioSource _audioSource;
         private AudioClip _clipInQueue;
@@ -16,8 +20,20 @@ using UnityEngine.Events;
             _audioSource = GetComponent<AudioSource>();
         }
 
-        public void Mute() => _audioSource.mute = true;
-        public void Unmute() => _audioSource.mute = false;
+        public void EnableSound() => globalSettings.soundEnabled = true;
+        public void DisableSound() => globalSettings.soundEnabled = false;
+
+        public void Mute()
+        {
+            _audioSource.mute = true;
+        }
+
+        public void Unmute()
+        {
+            _audioSource.mute = false;
+        }
+
+        public bool IsMuted() => _audioSource.mute;
 
         public void StartControlStopClip() => StartCoroutine(ControlToStopClip());
         public void StopControlStopClip() => StopCoroutine(ControlToStopClip());
@@ -85,48 +101,48 @@ using UnityEngine.Events;
             _audioSource.Play();
         }
 
-        public void InvokeQueueClip(UnityAction onComplete = null, float delay = 0)
+        public void InvokeQueueClip(Action onComplete = null, float delay = 0)
         {
             if (_clipInQueue == null) return;
             
             PlayOneShot(_clipInQueue, onComplete, delay);
         }
 
-        public void InvokeOneClip(AudioClip clip, UnityAction onComplete = null, float delay = 0)
+        public void InvokeOneClip(AudioClip clip, Action onComplete = null, float delay = 0)
         {
             PlayOneShot(clip, onComplete, delay);
         }
 
-        public void InvokeClipAfterPlayback(UnityAction onComplete)
+        public void InvokeActionAfterPlayback(Action onComplete)
         {
             StartCoroutine(WaitUntilPlaybackToInvoke(onComplete));
         }
 
-        public void InvokeClipAfterExistClip(UnityAction onComplete)
+        public void InvokeClipAfterExistClip(Action onComplete)
         {
             StartCoroutine(WaitPlayedClipToInvoke(onComplete));
         }
 
-        private void PlayOneShot(AudioClip clip, UnityAction onComplete = null, float delay = 0)
+        private void PlayOneShot(AudioClip clip, Action onComplete = null, float delay = 0)
         {
             if (_audioSource == null) return;
 
             StartCoroutine(InstallClip(clip, onComplete, delay));
         }
         
-        private IEnumerator WaitPlayedClipToInvoke(UnityAction onComplete)
+        private IEnumerator WaitPlayedClipToInvoke(Action onComplete)
         {
             yield return new WaitWhile(IsClipPlaying);
             onComplete?.Invoke();
         }
 
-        private IEnumerator WaitUntilPlaybackToInvoke(UnityAction onComplete)
+        private IEnumerator WaitUntilPlaybackToInvoke(Action onComplete)
         {
             yield return new WaitUntil(() => _audioSource.isPlaying == false);
             onComplete?.Invoke();
         }
 
-        private IEnumerator InstallClip(AudioClip clip, UnityAction onComplete = null, float delay = 0)
+        private IEnumerator InstallClip(AudioClip clip, Action onComplete = null, float delay = 0)
         {
             _audioSource.volume = volume;
             _audioSource.clip = clip;

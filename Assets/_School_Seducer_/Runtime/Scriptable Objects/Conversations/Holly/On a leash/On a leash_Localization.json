@@ -1,0 +1,64 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "It seems like I'm starting \nto get into it..."
+                },
+                {
+                    "key": "Of course, everyone enjoys power. \nEveryone likes to control \nothers, to feel strong..."
+                },
+                {
+                    "key": "Do you like it when others command you?"
+                },
+                {
+                    "key": "It drives me crazy..."
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Кажется, я начинаю втягиваться…"
+                },
+                {
+                    "key": "Конечно, всем нравится власть. \nВсем нравится управлять другими, \nчувствовать себя сильным…"
+                },
+                {
+                    "key": "А тебе нравится, когда тобой командуют?"
+                },
+                {
+                    "key": "Меня это сводит с ума…"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Ich glaube, ich fange an, \nmich zu verlieben...."
+                },
+                {
+                    "key": "Natürlich mag jeder Macht. \nJeder mag es, andere zu \nkontrollieren, sich \nmächtig zu fühlen...."
+                },
+                {
+                    "key": "Magst du es, herumkommandiert zu werden?"
+                },
+                {
+                    "key": "Es macht mich verrückt."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
+}

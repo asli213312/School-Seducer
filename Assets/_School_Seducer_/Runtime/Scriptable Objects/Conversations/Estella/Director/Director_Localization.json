@@ -1,0 +1,56 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "It's good that I managed to \narrange my summer internship."
+                },
+                {
+                    "key": "I just need the director \nto sign this form."
+                },
+                {
+                    "key": "Damn it... Looks like they \nforgot to close the door."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "I was right... the director \nis fucking his secretary..."
+                },
+                {
+                    "key": "If anyone finds out about this..."
+                },
+                {
+                    "key": "It's better to close the \ndoor and quietly leave..."
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Хорошо, что мне удалось договориться \nо летней практике."
+                },
+                {
+                    "key": "Надо только, чтобы директор \nподписал этот бланк."
+                },
+                {
+                    "key": "Вот черт… Кажется, они забыли закрыть дверь."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Я был прав… директор \nтрахает свою секретаршу…"
+                },
+                {
+                    "key": "Если об этом кто-то узнает…"
+                },
+                {
+                    "key": "Лучше прикрыть дверь и тихо уйти…"
+                }
+            ]
+        }
+    ]
+}

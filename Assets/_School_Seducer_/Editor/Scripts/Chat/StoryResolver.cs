@@ -25,8 +25,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void Initialize()
         {
-            UpdateStatusViewsEvent += CheckConversationsAvailable;
             UpdateStatusViewsEvent += InstallSliderNextConversation;
+            UpdateStatusViewsEvent += CheckConversationsAvailable;
         }
 
         public void InitCharacterData(CharacterData characterData)
@@ -41,9 +41,12 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void SetSlider(Slider newSlider) => expSlider = newSlider;
 
-        public void SetSliderValue(int characterExperience) => expSlider.value = characterExperience;
+        public void SetSliderValue(int characterExperience) 
+        {
+            expSlider.value = characterExperience;
+        }
 
-        public void SetRolledConversation([CanBeNull] СonversationData rolledConversation)
+        public void SetLockedConversation([CanBeNull] СonversationData rolledConversation)
         {
             _lockedConversation = rolledConversation;
 
@@ -54,7 +57,10 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         public void UpdateStatusViews() => UpdateStatusViewsEvent?.Invoke();
 
-        private ChatStatusView FindFirstLockedStatusView() => _chatStatusViews.FirstOrDefault(x => x.Conversation.isUnlocked == false);
+        private ChatStatusView GetFirstLockedStatusView()
+        {
+            return _chatStatusViews.LastOrDefault(x => x.Conversation.isUnlocked == false);
+        }
 
         private void InstallSliderNextConversation()
         {
@@ -71,7 +77,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         {
             foreach (var statusView in _chatStatusViews)
             {
-                if (statusView == FindFirstLockedStatusView())
+                if (statusView == GetFirstLockedStatusView())
                     statusView.OnUpdateUnlockBar(_currentCharacterData.experience);
                 else
                     statusView.HideBarUnlock();
@@ -80,8 +86,8 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         private void OnDestroy()
         {
-            UpdateStatusViewsEvent -= CheckConversationsAvailable;
             UpdateStatusViewsEvent -= InstallSliderNextConversation;
+            UpdateStatusViewsEvent -= CheckConversationsAvailable;
         }
     }
 }

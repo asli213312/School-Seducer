@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308157901ddc4b60a6ea6c615f040d48, type: 3}
+  m_Name: Estella info
+  m_EditorClassIdentifier: 
+  portrait: {fileID: 21300000, guid: a8fed5e7c111b0a44b3693c4e85260e2, type: 3}
+  onLocationSprite: {fileID: 21300000, guid: 2136cb5f28fab784eb4667dfa694248f, type: 3}
+  age: 27
+  faculty: Job
+  hobbies:
+  - 'Lopem Lopem Lopem
+
+    Lopem Lopem
+
+    Lopem'
+  - 'Opsum Opsum Opsum Opsum
+
+    Opsum'

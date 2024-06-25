@@ -1,0 +1,163 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hello...?"
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "What's up? Are you all stressed out?"
+                },
+                {
+                    "key": "Trouble at school. My grades were \nunfairly lowered on the last exam."
+                },
+                {
+                    "key": "It's a shame to hear that... \nWhat are you feeling? Tell me..."
+                },
+                {
+                    "key": "Anger, frustration, irritation!"
+                },
+                {
+                    "key": "Keep going, what would you \ndo with those who have not \ntreated you fairly?"
+                },
+                {
+                    "key": "So what's it gonna look like if we \nstart having these conversations? \nI'm just getting mad..."
+                },
+                {
+                    "key": "I see... And I want to use \nyour anger right now."
+                },
+                {
+                    "key": "What? About what are you talking?"
+                },
+                {
+                    "key": "Fuck me!"
+                },
+                {
+                    "key": "Now?"
+                },
+                {
+                    "key": "Yes, right now. Fuck me \nhard, release your anger \nand frustration on me."
+                },
+                {
+                    "key": "I don't know..."
+                },
+                {
+                    "key": "Shut up and fuck me. \nThis will help both of us."
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Привет…"
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Ого, ты весь напряжен! Что-то случилось?"
+                },
+                {
+                    "key": "Сложности в учебе. Мне несправедливо \nзанизили баллы на последнем экзамене."
+                },
+                {
+                    "key": "Жаль это слышать… Что ты чувствуешь? \nРасскажи мне…"
+                },
+                {
+                    "key": "Злость, ярость, раздражение!"
+                },
+                {
+                    "key": "Продолжай, что бы ты сделал с теми, \nкто несправедливо с тобой обошелся?"
+                },
+                {
+                    "key": "Да к чему эти разговоры? Я просто злюсь…"
+                },
+                {
+                    "key": "Я вижу… И хочу использовать \nтвою ярость сейчас."
+                },
+                {
+                    "key": "Что? О чем ты говоришь?"
+                },
+                {
+                    "key": "Выеби меня."
+                },
+                {
+                    "key": "Прямо сейчас?"
+                },
+                {
+                    "key": "Да, прямо сейчас. Выеби меня жестко, \nвымести на мне свою злость и ярость."
+                },
+                {
+                    "key": "Я даже не знаю…"
+                },
+                {
+                    "key": "Заткнись и выеби меня. \nЭто поможет нам обоим."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Hallo..."
+                },
+                {
+                    "key": "..."
+                },
+                {
+                    "key": "Wow, du bist ja ganz schön \nangespannt! Was ist denn los?"
+                },
+                {
+                    "key": "Akademische Schwierigkeiten. Ich \nwurde in der letzten Prüfung \nunfair benachteiligt."
+                },
+                {
+                    "key": "Tut mir leid, das zu hören. \nWas fühlst du? Sag es mir."
+                },
+                {
+                    "key": "Zorn, Wut, Verärgerung!"
+                },
+                {
+                    "key": "Was würden Sie denen antun, \ndie Sie ungerecht behandeln?"
+                },
+                {
+                    "key": "Was soll das ganze Gerede? \nIch bin einfach nur wütend."
+                },
+                {
+                    "key": "Das sehe ich. Und ich will \ndeine Wut jetzt ausnutzen."
+                },
+                {
+                    "key": "Was? Wovon redest du?"
+                },
+                {
+                    "key": "Leck mich doch."
+                },
+                {
+                    "key": "Jetzt gleich?"
+                },
+                {
+                    "key": "Ja, genau jetzt. Fick mich hart, \nlass deinen Zorn und \ndeine Wut an mir aus."
+                },
+                {
+                    "key": "Ich weiß es nicht einmal."
+                },
+                {
+                    "key": "Halt die Klappe und fick mich. \nEs wird uns beiden helfen."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
+}

@@ -1,38 +1,127 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "I'm like so close to having enough \ncash for an epic summer!" },
-  {"key": "Miss Green's been hooking me up. \nShe's tossing me some side \ngigs and other stuff..."},
-  {"key": "I've checked off all the rooms. \nBut I'm hella curious about \nwhat's behind that door..."},
-	{"key": "Miss Green's like, <i>Hands off</i>, \nbut it's too tempting..."},
-	{"key": "OMG!"},
-	{"key": "Dude, Ben! What the heck \nare you doing here?"},
-	{"key": "Oops... My bad..."},
-  {"key": "Don't even think about spilling \nabout what you just saw here..."},
-  {"key": "Or about spotting Miss Monica."},
-  {"key": "Yeah, my bad... I'm outta here!"},
-	{"key": "Now get out of here!"},
-  {"key": "Insert picture"}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "Я почти скопил денег на то, \nчтобы здорово провести лето!"},
-  {"key": "Повезло мне с мисс Грин. Она \nдаёт мне и подработку и кое что ещё…"},
-  {"key": "Кажется, я закончил со всеми комнатами. \nИнтересно, а что находится за той дверью…"},
-  {"key": "мисс Грин говорила, что туда \nнельзя заходить, но любопытно…"},
-  {"key": "О мой бог!"},
-  {"key": "Чёрт возьми, Бен! Какого \nчёрта ты делаешь здесь?"},
-  {"key": "Простите… Я случайно…"},
-  {"key": "Даже не думай никому рассказывать \nо том, что ты тут видел…"},
-  {"key": "И о том, что ты видел тут мисс Монику."},
-  {"key": "Да, конечно, извините…"},
-  {"key": "А теперь проваливай отсюда!"},
-  {"key": "Вставить картинку"}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "I'm like so close to having enough \ncash for an epic summer!"
+                },
+                {
+                    "key": "Miss Green's been hooking me up. \nShe's tossing me some side \ngigs and other stuff..."
+                },
+                {
+                    "key": "I've checked off all the rooms. \nBut I'm hella curious about \nwhat's behind that door..."
+                },
+                {
+                    "key": "Miss Green's like, <i>Hands off</i>, \nbut it's too tempting..."
+                },
+                {
+                    "key": "OMG!"
+                },
+                {
+                    "key": "Dude, Ben! What the heck \nare you doing here?"
+                },
+                {
+                    "key": "Oops... My bad..."
+                },
+                {
+                    "key": "Don't even think about spilling \nabout what you just saw here..."
+                },
+                {
+                    "key": "Or about spotting Miss Monica."
+                },
+                {
+                    "key": "Yeah, my bad... I'm outta here!"
+                },
+                {
+                    "key": "Now get out of here!"
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Я почти скопил денег на то, \nчтобы здорово провести лето!"
+                },
+                {
+                    "key": "Повезло мне с мисс Грин. Она \nдает мне и подработку и кое что еще…"
+                },
+                {
+                    "key": "Кажется, я закончил со всеми комнатами. \nИнтересно, а что находится за той дверью…"
+                },
+                {
+                    "key": "мисс Грин говорила, что туда \nнельзя заходить, но любопытно…"
+                },
+                {
+                    "key": "О мой бог!"
+                },
+                {
+                    "key": "Черт возьми, Бен! Какого \nчерта ты делаешь здесь?"
+                },
+                {
+                    "key": "Простите… Я случайно…"
+                },
+                {
+                    "key": "Даже не думай никому рассказывать \nо том, что ты тут видел…"
+                },
+                {
+                    "key": "И о том, что ты видел тут мисс Монику."
+                },
+                {
+                    "key": "Да, конечно, извините…"
+                },
+                {
+                    "key": "А теперь проваливай отсюда!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Ich bin kurz davor, genug Geld \nfür einen epischen Sommer zu haben!"
+                },
+                {
+                    "key": "Frau Green hat mich unterstützt. \nSie hat mir ein paar Nebenjobs \nund andere Dinge verschafft..."
+                },
+                {
+                    "key": "Ich habe alle Zimmer abgehakt. \nAber ich bin mega neugierig, \nwas sich hinter dieser Tür verbirgt..."
+                },
+                {
+                    "key": "Frau Green sagt so was wie \n<i>Finger weg</i>, aber es \nist zu verlockend..."
+                },
+                {
+                    "key": "OMG!"
+                },
+                {
+                    "key": "Verdammt noch mal, Ben!"
+                },
+                {
+                    "key": "Ups... Mein Fehler..."
+                },
+                {
+                    "key": "Denk nicht mal daran, über \ndas, was du gerade gesehen \nhast, zu plappern..."
+                },
+                {
+                    "key": "Oder über das Treffen \nmit Frau Monica."
+                },
+                {
+                    "key": "Ja, mein Fehler... \nIch bin weg hier!"
+                },
+                {
+                    "key": "Und jetzt hau ab!"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
 }

@@ -1,0 +1,563 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Library
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Library
+    localizedDataList:
+    - languageCode: en
+      key: Library
+    - languageCode: ru
+      key: "\u0411\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0430"
+    - languageCode: sp
+      key: Biblioteca
+    - languageCode: it
+      key: Biblioteca
+    - languageCode: de
+      key: Bibliothek
+    - languageCode: fr
+      key: "Biblioth\xE8que"
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: 8c9fc0f0428b73b4fb765112295e0831, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Oh, hi! Are you preparing for the exam too?
+        - key: "Actually, I\u2019m getting ready, but now \nI came to the library
+            to provoke these \nnerds and bespectacled people. When \nI come here
+            in this skirt, they can't \ntake their eyes off me. They immediately
+            \nstop thinking about studying."
+        - key: "They can be understood. \nFew can resist you."
+        - key: And you?
+        - key: "Well... I will always find \nsomething to please you \nwith... If
+            you know what I mean."
+        - key: "Hmm... Help me find a textbook on \nendocrinology. He's in the far
+            section..."
+        - key: Of course, let's go.
+        - key: And here he is...
+        - key: "I didn\u2019t know you were \ninterested in endocrinology."
+        - key: "I\u2019m interested in the back \nsection of the library..."
+        - key: What? Right here?
+        - key: Do you have something against it?
+        - key: But we might get caught...
+        - key: "They can, of course. This \nturns me on even more..."
+        - key: Insert picture
+      - languageCode: ru
+        messages:
+        - key: "\u041E, \u043F\u0440\u0438\u0432\u0435\u0442! \u0422\u044B \u0442\u043E\u0436\u0435
+            \u0433\u043E\u0442\u043E\u0432\u0438\u0448\u044C\u0441\u044F \u043A \u044D\u043A\u0437\u0430\u043C\u0435\u043D\u0443?"
+        - key: "\u0412\u043E\u043E\u0431\u0449\u0435 \u0433\u043E\u0442\u043E\u0432\u043B\u044E\u0441\u044C,
+            \u043D\u043E \u0441\u0435\u0439\u0447\u0430\u0441 \u044F \u043F\u0440\u0438\u0448\u043B\u0430
+            \u0432 \n\u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0443
+            \u0440\u0430\u0437\u0437\u0430\u0434\u043E\u0440\u0438\u0442\u044C \u044D\u0442\u0438\u0445
+            \u0431\u043E\u0442\u0430\u043D\u043E\u0432 \u0438 \u043E\u0447\u043A\u0430\u0440\u0438\u043A\u043E\u0432.
+            \n\u041A\u043E\u0433\u0434\u0430 \u044F \u043F\u0440\u0438\u0445\u043E\u0436\u0443
+            \u0441\u044E\u0434\u0430 \u0432 \u044D\u0442\u043E\u0439 \u044E\u0431\u043A\u0435,
+            \u043E\u043D\u0438 \u043D\u0435 \n\u043C\u043E\u0433\u0443\u0442 \u043E\u0442\u043E\u0440\u0432\u0430\u0442\u044C
+            \u0432\u0437\u0433\u043B\u044F\u0434 \u0438 \u043E\u0442 \u043C\u0435\u043D\u044F.
+            \n\u0421\u0440\u0430\u0437\u0443 \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u044E\u0442
+            \u0434\u0443\u043C\u0430\u0442\u044C \u043E\u0431 \u0443\u0447\u0435\u0431\u0435."
+        - key: "\u0418\u0445 \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u043D\u044F\u0442\u044C.
+            \u041C\u0430\u043B\u043E \n\u043A\u0442\u043E \u0443\u0441\u0442\u043E\u0438\u0442
+            \u043F\u0435\u0440\u0435\u0434 \u0442\u043E\u0431\u043E\u0439."
+        - key: "\u0418 \u0442\u044B?"
+        - key: "\u041D\u0443\u2026 \u042F \u0432\u0441\u0435\u0433\u0434\u0430 \u043D\u0430\u0439\u0434\u0443
+            \u0447\u0435\u043C \u0442\u0435\u0431\u044F \u043F\u043E\u0440\u0430\u0434\u043E\u0432\u0430\u0442\u044C\u2026
+            \n\u0415\u0441\u043B\u0438 \u0442\u044B \u043F\u043E\u043D\u0438\u043C\u0430\u0435\u0448\u044C,
+            \u043E \u0447\u0435\u043C \u044F."
+        - key: "\u0425\u043C\u2026 \u041F\u043E\u043C\u043E\u0433\u0438 \u043A\u0430\u043A
+            \u043C\u043D\u0435 \u043D\u0430\u0439\u0442\u0438 \u0443\u0447\u0435\u0431\u043D\u0438\u043A
+            \n\u043F\u043E \u044D\u043D\u0434\u043E\u043A\u0440\u0438\u043D\u043E\u043B\u043E\u0433\u0438\u0438.
+            \u041E\u043D \u0432 \u0434\u0430\u043B\u044C\u043D\u0435\u0439 \u0441\u0435\u043A\u0446\u0438\u0438\u2026"
+        - key: "\u041A\u043E\u043D\u0435\u0447\u043D\u043E, \u043F\u043E\u0439\u0434\u0435\u043C."
+        - key: "\u0410 \u0432\u043E\u0442 \u0438 \u043E\u043D\u2026"
+        - key: "\u041D\u0435 \u0437\u043D\u0430\u043B, \u0447\u0442\u043E \u0442\u0435\u0431\u044F
+            \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u0443\u0435\u0442 \u044D\u043D\u0434\u043E\u043A\u0440\u0438\u043D\u043E\u043B\u043E\u0433\u0438\u044F."
+        - key: "\u041C\u0435\u043D\u044F \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u0443\u0435\u0442
+            \u0434\u0430\u043B\u044C\u043D\u044F\u044F \u0441\u0435\u043A\u0446\u0438\u044F
+            \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438\u2026"
+        - key: "\u0427\u0442\u043E? \u041F\u0440\u044F\u043C\u043E \u0442\u0443\u0442?"
+        - key: "\u0422\u044B \u0447\u0442\u043E-\u0442\u043E \u0438\u043C\u0435\u0435\u0448\u044C
+            \u043F\u0440\u043E\u0442\u0438\u0432?"
+        - key: "\u041D\u043E \u043D\u0430\u0441 \u043C\u043E\u0433\u0443\u0442 \u0437\u0430\u0441\u0442\u0443\u043A\u0430\u0442\u044C\u2026"
+        - key: "\u041C\u043E\u0433\u0443\u0442, \u043A\u043E\u043D\u0435\u0447\u043D\u043E.
+            \u042D\u0442\u043E \u0435\u0449\u0451 \u0431\u043E\u043B\u044C\u0448\u0435
+            \u0437\u0430\u0432\u043E\u0434\u0438\u0442\u2026"
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      - languageCode: de
+        messages:
+        - key: "Oh, hallo! Bereitest du dich \nauch auf die Pr\xFCfung vor?"
+        - key: "Eigentlich schon, aber gerade bin \nich in die Bibliothek gekommen,
+            \num diese Streber und Brillentr\xE4ger \naufzumischen. Wenn ich hier
+            in \ndiesem Rock auftauche, k\xF6nnen sie \nihre Blicke nicht von mir
+            lassen. \nSie h\xF6ren sofort auf, an \ndas Lernen zu denken."
+        - key: "Das kann man verstehen. Wenige \nk\xF6nnen dir widerstehen."
+        - key: Und du?
+        - key: "Nun... Ich finde immer etwas, \nwomit ich dich erfreuen kann... \nWenn
+            du verstehst, was ich meine."
+        - key: "Hm... Hilf mir, ein Buch \xFCber \nEndokrinologie zu finden. \nEs
+            ist im hinteren Teil..."
+        - key: "Nat\xFCrlich, gehen wir."
+        - key: Und hier ist es...
+        - key: "Wusste nicht, dass du dich \nf\xFCr Endokrinologie interessierst."
+        - key: "Mich interessiert der hintere \nTeil der Bibliothek..."
+        - key: Was? Genau hier?
+        - key: Hast du etwas dagegen?
+        - key: "Aber wir k\xF6nnten erwischt werden..."
+        - key: "K\xF6nnten wir, sicher. Das macht \nes nur noch spannender..."
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+  <Language>k__BackingField: 0
+  isCompleted: 0
+  isUnlocked: 0
+  isSeen: 0
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Oh, hi! Are you preparing for the exam too?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: a5e548ad8aa2b0a43b332d7d97f687dc, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a5e548ad8aa2b0a43b332d7d97f687dc, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Oh, hi! Are you preparing for the exam too?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E, \u043F\u0440\u0438\u0432\u0435\u0442! \u0422\u044B \u0442\u043E\u0436\u0435
+        \u0433\u043E\u0442\u043E\u0432\u0438\u0448\u044C\u0441\u044F \u043A \u044D\u043A\u0437\u0430\u043C\u0435\u043D\u0443?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Oh, hallo! Bereitest du dich \nauch auf die Pr\xFCfung vor?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "Actually, I\u2019m getting ready, but now \nI came to the library to provoke
+      these \nnerds and bespectacled people. When \nI come here in this skirt, they
+      can't \ntake their eyes off me. They immediately \nstop thinking about studying."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e9863d1602ca27b4a8e112a09f228d55, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e9863d1602ca27b4a8e112a09f228d55, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Actually, I\u2019m getting ready, but now \nI came to the library to
+        provoke these \nnerds and bespectacled people. When \nI come here in this
+        skirt, they can't \ntake their eyes off me. They immediately \nstop thinking
+        about studying."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u043E\u043E\u0431\u0449\u0435 \u0433\u043E\u0442\u043E\u0432\u043B\u044E\u0441\u044C,
+        \u043D\u043E \u0441\u0435\u0439\u0447\u0430\u0441 \u044F \u043F\u0440\u0438\u0448\u043B\u0430
+        \u0432 \n\u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0443 \u0440\u0430\u0437\u0437\u0430\u0434\u043E\u0440\u0438\u0442\u044C
+        \u044D\u0442\u0438\u0445 \u0431\u043E\u0442\u0430\u043D\u043E\u0432 \u0438
+        \u043E\u0447\u043A\u0430\u0440\u0438\u043A\u043E\u0432. \n\u041A\u043E\u0433\u0434\u0430
+        \u044F \u043F\u0440\u0438\u0445\u043E\u0436\u0443 \u0441\u044E\u0434\u0430
+        \u0432 \u044D\u0442\u043E\u0439 \u044E\u0431\u043A\u0435, \u043E\u043D\u0438
+        \u043D\u0435 \n\u043C\u043E\u0433\u0443\u0442 \u043E\u0442\u043E\u0440\u0432\u0430\u0442\u044C
+        \u0432\u0437\u0433\u043B\u044F\u0434 \u0438 \u043E\u0442 \u043C\u0435\u043D\u044F.
+        \n\u0421\u0440\u0430\u0437\u0443 \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u044E\u0442
+        \u0434\u0443\u043C\u0430\u0442\u044C \u043E\u0431 \u0443\u0447\u0435\u0431\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Eigentlich schon, aber gerade bin \nich in die Bibliothek gekommen, \num
+        diese Streber und Brillentr\xE4ger \naufzumischen. Wenn ich hier in \ndiesem
+        Rock auftauche, k\xF6nnen sie \nihre Blicke nicht von mir lassen. \nSie h\xF6ren
+        sofort auf, an \ndas Lernen zu denken."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "They can be understood. \nFew can resist you."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: ae19bbe3244c14a48bbbba6871502c5b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: ae19bbe3244c14a48bbbba6871502c5b, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "They can be understood. \nFew can resist you."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0418\u0445 \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u043D\u044F\u0442\u044C.
+        \u041C\u0430\u043B\u043E \n\u043A\u0442\u043E \u0443\u0441\u0442\u043E\u0438\u0442
+        \u043F\u0435\u0440\u0435\u0434 \u0442\u043E\u0431\u043E\u0439."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Das kann man verstehen. Wenige \nk\xF6nnen dir widerstehen."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: And you?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e32a130a5b526904199df2d3e974e0cc, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e32a130a5b526904199df2d3e974e0cc, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: And you?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0418 \u0442\u044B?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Und du?
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Well... I will always find \nsomething to please you \nwith... If you know
+      what I mean."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 5c26251042cab5f43a8ba13906faec5b, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 5c26251042cab5f43a8ba13906faec5b, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Well... I will always find \nsomething to please you \nwith... If you
+        know what I mean."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0443\u2026 \u042F \u0432\u0441\u0435\u0433\u0434\u0430 \u043D\u0430\u0439\u0434\u0443
+        \u0447\u0435\u043C \u0442\u0435\u0431\u044F \u043F\u043E\u0440\u0430\u0434\u043E\u0432\u0430\u0442\u044C\u2026
+        \n\u0415\u0441\u043B\u0438 \u0442\u044B \u043F\u043E\u043D\u0438\u043C\u0430\u0435\u0448\u044C,
+        \u043E \u0447\u0435\u043C \u044F."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Nun... Ich finde immer etwas, \nwomit ich dich erfreuen kann... \nWenn
+        du verstehst, was ich meine."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "Hmm... Help me find a textbook on \nendocrinology. He's in the far section..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 1d42cccdea652cf46991ac57b3139612, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 1d42cccdea652cf46991ac57b3139612, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Hmm... Help me find a textbook on \nendocrinology. He's in the far section..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0425\u043C\u2026 \u041F\u043E\u043C\u043E\u0433\u0438 \u043A\u0430\u043A
+        \u043C\u043D\u0435 \u043D\u0430\u0439\u0442\u0438 \u0443\u0447\u0435\u0431\u043D\u0438\u043A
+        \n\u043F\u043E \u044D\u043D\u0434\u043E\u043A\u0440\u0438\u043D\u043E\u043B\u043E\u0433\u0438\u0438.
+        \u041E\u043D \u0432 \u0434\u0430\u043B\u044C\u043D\u0435\u0439 \u0441\u0435\u043A\u0446\u0438\u0438\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hm... Hilf mir, ein Buch \xFCber \nEndokrinologie zu finden. \nEs ist
+        im hinteren Teil..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Of course, let's go.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 096f198b5bcbda9439564736ef8322cf, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 096f198b5bcbda9439564736ef8322cf, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Of course, let's go.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041A\u043E\u043D\u0435\u0447\u043D\u043E, \u043F\u043E\u0439\u0434\u0435\u043C."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Nat\xFCrlich, gehen wir."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: And here he is...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 286a2527b911eef41b38dac21edb9f62, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 286a2527b911eef41b38dac21edb9f62, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: And here he is...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0410 \u0432\u043E\u0442 \u0438 \u043E\u043D\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Und hier ist es...
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "I didn\u2019t know you were \ninterested in endocrinology."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 19b1b551a16de39449dba8c2d35df62d, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 19b1b551a16de39449dba8c2d35df62d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I didn\u2019t know you were \ninterested in endocrinology."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0435 \u0437\u043D\u0430\u043B, \u0447\u0442\u043E \u0442\u0435\u0431\u044F
+        \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u0443\u0435\u0442 \u044D\u043D\u0434\u043E\u043A\u0440\u0438\u043D\u043E\u043B\u043E\u0433\u0438\u044F."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Wusste nicht, dass du dich \nf\xFCr Endokrinologie interessierst."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "I\u2019m interested in the back \nsection of the library..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 5480fd307864b2747a3685e92bccb701, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 5480fd307864b2747a3685e92bccb701, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I\u2019m interested in the back \nsection of the library..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041C\u0435\u043D\u044F \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u0443\u0435\u0442
+        \u0434\u0430\u043B\u044C\u043D\u044F\u044F \u0441\u0435\u043A\u0446\u0438\u044F
+        \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Mich interessiert der hintere \nTeil der Bibliothek..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: What? Right here?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c17fbd47c826fd6459ed59b2df54b9b4, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c17fbd47c826fd6459ed59b2df54b9b4, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: What? Right here?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0427\u0442\u043E? \u041F\u0440\u044F\u043C\u043E \u0442\u0443\u0442?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Was? Genau hier?
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: Do you have something against it?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 54020102c5455e94288e4dc81e0ae5c2, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 54020102c5455e94288e4dc81e0ae5c2, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Do you have something against it?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u044B \u0447\u0442\u043E-\u0442\u043E \u0438\u043C\u0435\u0435\u0448\u044C
+        \u043F\u0440\u043E\u0442\u0438\u0432?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Hast du etwas dagegen?
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: But we might get caught...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 95628800eb66f1c4ba156cf3afb7c733, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 95628800eb66f1c4ba156cf3afb7c733, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: But we might get caught...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u043E \u043D\u0430\u0441 \u043C\u043E\u0433\u0443\u0442 \u0437\u0430\u0441\u0442\u0443\u043A\u0430\u0442\u044C\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Aber wir k\xF6nnten erwischt werden..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "They can, of course. This \nturns me on even more..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: af6097b1ed31e8646be123af37bfd583, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: af6097b1ed31e8646be123af37bfd583, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "They can, of course. This \nturns me on even more..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041C\u043E\u0433\u0443\u0442, \u043A\u043E\u043D\u0435\u0447\u043D\u043E.
+        \u042D\u0442\u043E \u0435\u0449\u0451 \u0431\u043E\u043B\u044C\u0448\u0435
+        \u0437\u0430\u0432\u043E\u0434\u0438\u0442\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "K\xF6nnten wir, sicher. Das macht \nes nur noch spannender..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: Insert picture
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 99e4526d1c645394f98d8fc4480bf87b, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}

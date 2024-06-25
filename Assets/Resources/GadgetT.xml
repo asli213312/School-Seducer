@@ -4,6 +4,7 @@
         <Require feature="opensocial-0.8" />
         <Require feature="opensocial-payment" />
         <Require feature="nutaku" />
+        <Link rel="payment.handler" href="https://example.com/your-app/payment-handler" />
         <Require feature="dynamic-height" />
     </ModulePrefs>
     <Content preferred_width="1280" type="html" view="canvas">
@@ -72,7 +73,7 @@
                 showBanner: unityShowBanner,
               };
 
-              if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
 
         var meta = document.createElement('meta');
@@ -81,10 +82,13 @@
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
         canvas.className = "unity-mobile";
+        canvas.style.width = "10px";
+        canvas.style.height = "100px";
+        console.log("FOUND SP DEVICE");
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+        config.devicePixelRatio = 1;
 
 
       } else {
@@ -123,29 +127,49 @@
                     });
                 }
 
+                function onPaymentFinished(result) 
+                {
+                  console.log(result);
+                  gameInstance.SendMessage("PlayFab_Manager", "OnPaymentFinished", JSON.stringify(result));
+                }
+
+                function requestPayment(paymentData) 
+                {
+                  Nutaku.requestPayment(paymentData, function(resultData) 
+                  {
+                    console.log(resultData);
+                    var result = {};
+                    result.responseCode = resultData == null ? "failed" : resultData["payment"].getField("responseCode");
+                    gameInstance.SendMessage("_SG_NutakuManager", "OnPaymentFinished", JSON.stringify(result));
+                  });
+                }
+
                 function sendRequestToAPI(userId) {
-                    console.log("Begun sending request to API in GADGET by func")
+                    console.log("Begun sending request to API in GADGET by func");
                     var params = {};
                     params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
                     params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-                    params[gadgets.io.RequestParameters.POST_DATA] = gadgets.io.encodeValues({ id: userId });
+                    params[gadgets.io.RequestParameters.POST_DATA] = gadgets.io.encodeValues({});
                     params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.SIGNED;
+                    console.log("PARAMS SIGNED, should be makeRequest...");
 
-                    gadgets.io.makeRequest("https://cloud.digitalocean.com/spaces/college-fuck-fest?i=f57be9&path=CFF%2F", function(obj) {
-                        var user = obj.data;
-                        var name = user.name;
+                    var apiUrl = "https://fuckfest.college/scripts/authenticate.php?id=" + userId;
 
-                    console.log("FOUND USER DATA: " + user);
-                    console.log("FOUND USER NAME: " + name);
+                    gadgets.io.makeRequest(apiUrl, function(obj) {
+                        
+
+                    console.log("FOUND AUTH DATA:", obj);
+                    gameInstance.SendMessage("Save_Handler", "OnAuthenticate", JSON.stringify(obj.data));
                     }, params);
                 }
              
             function init() {
                 canvas = document.querySelector("#unity-canvas"); //or getElementById('unity-canvas')
-                gameInstance = createUnityInstance(canvas, config, (progress) => {
+                var gameInstanceInit = createUnityInstance(canvas, config, (progress) => {
                   console.log(progress);
-                  }).then((gameInstance) => {
+                  }).then((gameInstanceInit) => {
                     console.log("WAS LOADED");
+                    fullscreenButton.onclick = () => { gameInstanceInit.SetFullscreen(1) };
                     Nutaku.retrieveUser(function(resultData) 
                     {
                         var grade = resultData["grade"];
@@ -159,10 +183,15 @@
                             console.log("NO ACCOUNT");
                         }
 
-                        sendRequestToAPI(resultData.id);
+                        if (window.location.protocol == "https:" || window.location.protocol == "http:" && window.location.pathname == "/scripts/authenticate.php") {
+                          sendRequestToAPI(resultData.id);
+                      } else {
+                          console.error("Invalid request method or path.");
+                      }
 
-                        console.log("FOUND USER ID TO SERVER: " + resultData.id);
-                        gameInstance.SendMessage("_SG_NutakuManager", "OnUserRetrieved", JSON.stringify(resultData));
+                        console.log("FOUND USER ID: " + resultData.id);
+                        gameInstanceInit.SendMessage("_SG_NutakuManager", "OnUserRetrieved", JSON.stringify(resultData));
+                        gameInstance = gameInstanceInit;
                     });
                   }).catch((message) => {
                     alert(message);

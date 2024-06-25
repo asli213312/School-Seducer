@@ -1,0 +1,98 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "I want to see your ass."
+                },
+                {
+                    "key": "Could have said hello first."
+                },
+                {
+                    "key": "Hi. And now send me a photo of your ass."
+                },
+                {
+                    "key": "Is that your next wish?"
+                },
+                {
+                    "key": "Yes, exactly."
+                },
+                {
+                    "key": "But I can't, I'm walking in the \npark right now, there are \na lot of people around."
+                },
+                {
+                    "key": "Are you refusing?"
+                },
+                {
+                    "key": "Damn, you're not giving me a choice..."
+                },
+                {
+                    "key": "Wait a minute, I'll try \nto hide in those bushes."
+                },
+                {
+                    "key": "picture"
+                },
+                {
+                    "key": "Are you satisfied?"
+                },
+                {
+                    "key": "More than!"
+                },
+                {
+                    "key": "I'm glad. Then say it yourself..."
+                },
+                {
+                    "key": "You owe me 7 wishes."
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Хочу увидеть твою попку."
+                },
+                {
+                    "key": "Мог бы сначала поздороваться."
+                },
+                {
+                    "key": "Привет. А теперь пришли мне фото своей попки."
+                },
+                {
+                    "key": "Это что, твое следующее желание?"
+                },
+                {
+                    "key": "Да, именно так."
+                },
+                {
+                    "key": "Но я не могу, я сейчас гуляю \nв парке, тут много людей."
+                },
+                {
+                    "key": "Ты что, отказываешься?"
+                },
+                {
+                    "key": "Черт, ты мне не оставляешь выбора…?"
+                },
+                {
+                    "key": "Подожди минутку, попробую \nспрятаться в тех кустах."
+                },
+                {
+                    "key": "картинка"
+                },
+                {
+                    "key": "Ты доволен?"
+                },
+                {
+                    "key": "Еще как!"
+                },
+                {
+                    "key": "Я рада. Тогда сам это скажи…"
+                },
+                {
+                    "key": "Ты мне должна 7 желаний."
+                }
+            ]
+        }
+    ]
+}

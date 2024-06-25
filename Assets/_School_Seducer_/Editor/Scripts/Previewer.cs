@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.Utility;
+using _School_Seducer_.Editor.Scripts.Services;
+using GameAnalyticsSDK;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +21,7 @@ namespace _School_Seducer_.Editor.Scripts
 {
     public class Previewer : MonoBehaviour
     {
+        [Inject] private SaveToDB _saver;
         [Inject] private EventManager _eventManager;
         [Inject] private Bank _bank;
         [Inject] private IChatInitialization _chatInitializationModule;
@@ -24,8 +29,6 @@ namespace _School_Seducer_.Editor.Scripts
         [Header("UI Data")] 
         [SerializeField] private GameObject previewerPanel;
         [SerializeField] private ChatSystem chatSystem;
-        [SerializeField] private Image selectedGirlImage;
-        [SerializeField] private TextMeshProUGUI greetingsText;
 
         [Header("Data")] 
         [SerializeField] private CharactersConfig charactersConfig;
@@ -33,8 +36,7 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField] private StoryResolver storyResolver;
         [SerializeField] private LevelChecker levelChecker;
         [SerializeField] private Map map;
-        [SerializeField] private PlayerConfig playerConfig;
-        [SerializeField] private Character[] _characters;
+        [SerializeField] private List<Character> _characters;
 
         [Header("Events")] 
         [SerializeField] private UnityEvent characterSelected;
@@ -46,7 +48,8 @@ namespace _School_Seducer_.Editor.Scripts
         public event Action<Character> UpdateChatEvent;
 
         public CharactersConfig CharactersConfig => charactersConfig;
-        public Character[] Characters => _characters;
+        public Character[] Characters => _characters.ToArray();
+
         public StoryResolver StoryResolver => storyResolver;
         public bool NeedPush { get; set; }
         public Character CurrentCharacter { get; set; }
@@ -60,24 +63,39 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void Awake()
         {
-            switch (Application.platform)
-            {
-                case RuntimePlatform.Android: SdkPlugin.Initialize(); break;
-                case RuntimePlatform.WindowsPlayer:  break;
-                case RuntimePlatform.WebGLPlayer: break;
-            }
-
+            //StartCoroutine(LoadCharacterSaves());
             RegisterCharacters();
         }
 
         private void Start()
         {
             Initialize();
+            _saver.Initialize();
         }
 
         private void Initialize()
         {
             storyResolver.Initialize();
+        }
+
+        public void SaveCharacters() 
+        {
+            foreach (var character in _characters) 
+            {
+                _saver.mainData.AddCharacterData(character.Data);
+            }
+
+            _saver.SAVE();
+        }
+
+        private IEnumerator LoadCharacterSaves()
+        {
+            yield return _saver.LOAD();
+            
+            foreach (var character in _characters) 
+            {
+                _saver.mainData.LoadCharacterData(character.Data);
+            }
         }
 
         public CharacterData GetCurrentCharacterData()
@@ -111,6 +129,16 @@ namespace _School_Seducer_.Editor.Scripts
             Debug.Log("Selected character: " + character.name);
         }
 
+        public void InvokeGAEventCurrentCharacter(string eventName)
+        {
+            GameAnalytics.NewDesignEvent("girl_" + CurrentCharacter.Data.name + "_" + eventName);
+        }
+
+        public void RemoveCharacter(CharacterData characterData)
+        {
+            _characters.Remove(_characters.FirstOrDefault(x => x.Data == characterData));
+        }
+
         public void OnCharacterSelected(Character character)
         {
             if (CurrentCharacter != null)
@@ -118,9 +146,8 @@ namespace _School_Seducer_.Editor.Scripts
                 Debug.LogWarning("Current character: " + CurrentCharacter.name);
             }
             
-            if (chatSystem != null) chatSystem.gameObject.Activate();
-            previewerPanel.Activate();
-            
+            //if (chatSystem != null) chatSystem.gameObject.Activate();
+
             if (CurrentCharacter != character) _chat.ResetContent();
 
             CurrentCharacter = character;
@@ -135,11 +162,16 @@ namespace _School_Seducer_.Editor.Scripts
 	        	Debug.LogError("current character is null on selected");
 
             if (chatSystem != null) _chatInitializationModule.InstallCharacter(CurrentCharacter);
+            
+            SetLockedConversation(CurrentCharacter);
 
             CharacterSelectedEvent?.Invoke(character);
             UpdateChatEvent?.Invoke(character);
 
             map.CloseMap();
+            
+            previewerPanel.Activate();
+            previewerPanel.SafeActivate();
         }
 
         private void UnRegisterStartDialogue()
@@ -214,7 +246,7 @@ namespace _School_Seducer_.Editor.Scripts
                     data.LockedConversation = conversation;
                     _lockedConversation = conversation;
                     
-                    _eventManager.SelectCharacter(character);
+                    //_eventManager.SelectCharacter(character);
                     break;
                 }
             }

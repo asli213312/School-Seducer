@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using _School_Seducer_.Editor.Scripts.Utility;
 using _School_Seducer_.Editor.Scripts.Utility.Attributes;
 using _School_Seducer_.Editor.Scripts.Utility.Translation;
@@ -23,6 +24,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         
         public bool isCompleted;
         public bool isUnlocked;
+        public bool isSeen;
         [SerializeField, HideInInspector] public ChatConfig Config;
 
         [ShowAssetPreview(32, 32), SerializeField, Space(50)] public Sprite StoryTellerSprite;
@@ -35,6 +37,18 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [SerializeField] public MessageData[] Messages;
 
         #region Context Menu Commands
+
+        [ContextMenu("Remove 'ё'")]
+        private void RemoveSymbolRussian()
+        {
+            if (localizator == null) 
+            {
+                Debug.LogError("Install localizator to execute operations on them!");
+                return;
+            }
+
+            localizator.RemoveRestrictedCharsRussian();
+        }
 
         [ContextMenu("Reset Messages")]
         public void ResetMessages()
@@ -135,6 +149,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             {
                 foreach (var msg in Messages)
                 {
+                    if (msg.optionalData.otherActorIcon.icon != null)
+                    {
+                        msg.ActorIcon = msg.optionalData.otherActorIcon.icon;
+                        msg.Sender = msg.optionalData.otherActorIcon.sender;
+                        continue;
+                    }
+                    
                     Sprite spriteToSet;
                     if (msg.ActorIcon == ActorLeftSprite)
                     {

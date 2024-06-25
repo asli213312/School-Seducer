@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: 2a82848f2e60fa141b687f3046d8c01c, type: 2}
   currentConversation: {fileID: 11400000, guid: a4e13e9d6ef6578419dad2b92440fa10, type: 2}
-  gifts:
-  - {fileID: 11400000, guid: 5bfe369184d9bbc4cac841ddedfd6671, type: 2}
-  - {fileID: 11400000, guid: 74bb8322ec207e740b7b58da10c84bd0, type: 2}
+  gifts: []
   allConversations:
   - {fileID: 11400000, guid: 3439c0f2765e41745872053657579534, type: 2}
   - {fileID: 11400000, guid: a51fba942addd524a8eec864ab0163ba, type: 2}
@@ -28,5 +26,6 @@ MonoBehaviour:
   requiredLevel: 2
   loyalty: 1
   maxLoyalty: 3
-  showDebugParameters: 0
-  experience: 38
+  showDebugParameters: 1
+  experience: 0
+  isLocked: 0

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d88bec5d267471ea4f2cdddfa4c0617, type: 3}
   m_Name: Gallery Emily Data
   m_EditorClassIdentifier: 
-  AllSlots: []
+  AllSlots:
+  - {fileID: 11400000, guid: b92f570202476a84a95d4118c6b36b7d, type: 2}

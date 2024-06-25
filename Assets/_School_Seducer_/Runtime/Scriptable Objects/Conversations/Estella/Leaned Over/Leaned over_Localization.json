@@ -1,0 +1,62 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hmm... there's a great \nview from here..."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "She's so hot!"
+                },
+                {
+                    "key": "If I were the director, \nI definitely wouldn't \nbe able to resist..."
+                },
+                {
+                    "key": "Hey, are you just going \nto stand in the doorway?"
+                },
+                {
+                    "key": "Oh... sorry... You said to come in today."
+                },
+                {
+                    "key": "Yes, he's expecting you."
+                },
+                {
+                    "key": "Thank you!"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Хм… отсюда открывается отличный вид…"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Какая она горячая!"
+                },
+                {
+                    "key": "На месте директора я бы \nточно не удержался бы…"
+                },
+                {
+                    "key": "Привет, ты так и будешь стоять в дверях?"
+                },
+                {
+                    "key": "Оу… простите… Вы сказали зайти сегодня."
+                },
+                {
+                    "key": "Да, он ждет тебя."
+                },
+                {
+                    "key": "Спасибо!"
+                }
+            ]
+        }
+    ]
+}

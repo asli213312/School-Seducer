@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.UI.Popups;
+using ModestTree;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [SerializeField] private List<Transition> transitions = new();
         [SerializeField, Space(20)] private bool needOtherElements;
         [SerializeField, ShowIf(nameof(needOtherElements))] private Button[] buttons = { };
+        [SerializeField, ShowIf(nameof(needOtherElements))] private RectTransform[] sliders = { };
         [SerializeField] private UnityEvent onShowEvent;
         [SerializeField] private UnityEvent onHideEvent;
 
@@ -32,6 +34,44 @@ namespace _School_Seducer_.Editor.Scripts.UI
                 if (indexButton == i) 
                     buttons[i].AddListener(action); break; 
             }
+        }
+
+        public void InitializeBar(int indexBar, float value = 0, float maxValue = 0)
+        {
+            if (sliders.Length <= 0) return;
+
+            for (int i = 0; i < sliders.Length; i++)
+            {
+                if (indexBar == i)
+                {
+                    Slider slider = sliders[i].GetComponent<Slider>();
+
+                    if (value == 0 || maxValue == 0)
+                    {
+                        slider.value = GetBarByIndex(indexBar).value;
+                        slider.maxValue = GetBarByIndex(indexBar).maxValue;
+                    }
+                    else
+                    {
+                        slider.value = value;
+                        slider.maxValue = maxValue;   
+                    }
+                    break;
+                }
+            }
+        }
+
+        public Slider GetBarByIndex(int index)
+        {
+            for (int i = 0; i < sliders.Length; i++)
+            {
+                if (index == i)
+                {
+                    return sliders[i].GetComponent<Slider>();
+                }
+            }
+
+            return null;
         }
 
         public void SetDataParent(IDataParent dataParent)

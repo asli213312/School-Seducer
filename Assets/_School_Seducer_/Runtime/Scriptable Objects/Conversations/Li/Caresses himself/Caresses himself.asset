@@ -1,0 +1,292 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Caresses himself
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Caresses himself
+    localizedDataList:
+    - languageCode: en
+      key: Caresses himself
+    - languageCode: ru
+      key: "\u041B\u0430\u0441\u043A\u0430\u0435\u0442 \u0441\u0435\u0431\u044F"
+    - languageCode: fr
+      key: Se caresse
+    - languageCode: de
+      key: Streichelt sich selbst
+    - languageCode: it
+      key: Accarezza se stesso
+    - languageCode: sp
+      key: Se acaricia
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: ddfd0da61b30bcd45a4d1453457b60fc, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Hi, Ben.
+        - key: "Hi! Do you think about what \nmy next wish will be?"
+        - key: "I confess, I've been thinking \nabout it, yeah..."
+        - key: "It's strange, but I'm starting \nto like our game more and more..."
+        - key: Ha, if only you knew how much I like it!
+        - key: That's why I decided to send you this.
+        - key: Insert picture
+        - key: "Hey, that's not fair, \nI didn't make a wish."
+        - key: "It doesn't matter, it's \njust a gift from me..."
+      - languageCode: ru
+        messages:
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0411\u0435\u043D."
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442! \u0414\u0443\u043C\u0430\u0435\u0448\u044C,
+            \u043A\u0430\u043A\u0438\u043C \u0431\u0443\u0434\u0435\u0442 \n\u043C\u043E\u0439
+            \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0435 \u0436\u0435\u043B\u0430\u043D\u0438\u0435?"
+        - key: "\u041F\u0440\u0438\u0437\u043D\u0430\u044E\u0441\u044C, \u0434\u0443\u043C\u0430\u044E
+            \u043E\u0431 \u044D\u0442\u043E\u043C, \u0434\u0430..."
+        - key: "\u042D\u0442\u043E \u0441\u0442\u0440\u0430\u043D\u043D\u043E, \u043D\u043E
+            \u043C\u043D\u0435 \u0432\u0441\u0451 \u0431\u043E\u043B\u044C\u0448\u0435
+            \n\u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F \u043D\u0430\u0448\u0430
+            \u0441 \u0442\u043E\u0431\u043E\u0439 \u0438\u0433\u0440\u0430..."
+        - key: "\u0425\u0430, \u0437\u043D\u0430\u043B\u0430 \u0431\u044B \u0442\u044B,
+            \u043A\u0430\u043A \u043C\u043D\u0435 \u043E\u043D\u0430 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F!"
+        - key: "\u041F\u043E\u044D\u0442\u043E\u043C\u0443 \u044F \u0440\u0435\u0448\u0438\u043B\u0430
+            \u043E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0442\u0435\u0431\u0435
+            \u0432\u043E\u0442 \u044D\u0442\u043E"
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+        - key: "\u042D\u0439, \u0442\u0430\u043A \u043D\u0435 \u0447\u0435\u0441\u0442\u043D\u043E,
+            \u044F \u043D\u0435 \u0437\u0430\u0433\u0430\u0434\u0430\u043B \u0436\u0435\u043B\u0430\u043D\u0438\u0435."
+        - key: "\u041D\u0435 \u0432\u0430\u0436\u043D\u043E, \u044D\u0442\u043E \u043F\u0440\u043E\u0441\u0442\u043E
+            \u043F\u043E\u0434\u0430\u0440\u043E\u043A \u043E\u0442 \u043C\u0435\u043D\u044F\u2026"
+  <Language>k__BackingField: 0
+  isCompleted: 0
+  isUnlocked: 0
+  isSeen: 0
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: Hi, Ben.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 797c21a6fdf68b0499c9a659251f2218, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 797c21a6fdf68b0499c9a659251f2218, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hi, Ben.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0411\u0435\u043D."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Hi! Do you think about what \nmy next wish will be?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 22fd329bddb05ec4ea23fb82dd47c3af, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 22fd329bddb05ec4ea23fb82dd47c3af, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Hi! Do you think about what \nmy next wish will be?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442! \u0414\u0443\u043C\u0430\u0435\u0448\u044C,
+        \u043A\u0430\u043A\u0438\u043C \u0431\u0443\u0434\u0435\u0442 \n\u043C\u043E\u0439
+        \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0435 \u0436\u0435\u043B\u0430\u043D\u0438\u0435?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: "I confess, I've been thinking \nabout it, yeah..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: ad089c6b15942b34eba91aacfd0fb9fe, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: ad089c6b15942b34eba91aacfd0fb9fe, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I confess, I've been thinking \nabout it, yeah..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0437\u043D\u0430\u044E\u0441\u044C, \u0434\u0443\u043C\u0430\u044E
+        \u043E\u0431 \u044D\u0442\u043E\u043C, \u0434\u0430..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: "It's strange, but I'm starting \nto like our game more and more..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c61cd57cff5ecc041a69fc448e01cd69, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c61cd57cff5ecc041a69fc448e01cd69, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "It's strange, but I'm starting \nto like our game more and more..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042D\u0442\u043E \u0441\u0442\u0440\u0430\u043D\u043D\u043E, \u043D\u043E
+        \u043C\u043D\u0435 \u0432\u0441\u0451 \u0431\u043E\u043B\u044C\u0448\u0435
+        \n\u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F \u043D\u0430\u0448\u0430
+        \u0441 \u0442\u043E\u0431\u043E\u0439 \u0438\u0433\u0440\u0430..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Ha, if only you knew how much I like it!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 782122469032424478c319cc7b80f0cb, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 782122469032424478c319cc7b80f0cb, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Ha, if only you knew how much I like it!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0425\u0430, \u0437\u043D\u0430\u043B\u0430 \u0431\u044B \u0442\u044B,
+        \u043A\u0430\u043A \u043C\u043D\u0435 \u043E\u043D\u0430 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: That's why I decided to send you this.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: fe2dbeaa1e6aafa4e80562a0c443e790, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: fe2dbeaa1e6aafa4e80562a0c443e790, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: That's why I decided to send you this.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u043E\u044D\u0442\u043E\u043C\u0443 \u044F \u0440\u0435\u0448\u0438\u043B\u0430
+        \u043E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0442\u0435\u0431\u0435
+        \u0432\u043E\u0442 \u044D\u0442\u043E"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: Insert picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: a21fa63660159b64daf7d8627afc6265, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: aee03beabdea80d44a02fbe6e083da15, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Hey, that's not fair, \nI didn't make a wish."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 9ef47f3f32e2a6242aac40551c345d96, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 9ef47f3f32e2a6242aac40551c345d96, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Hey, that's not fair, \nI didn't make a wish."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042D\u0439, \u0442\u0430\u043A \u043D\u0435 \u0447\u0435\u0441\u0442\u043D\u043E,
+        \u044F \u043D\u0435 \u0437\u0430\u0433\u0430\u0434\u0430\u043B \u0436\u0435\u043B\u0430\u043D\u0438\u0435."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: "It doesn't matter, it's \njust a gift from me..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: dd619b26b44010643bafc3965775ada3, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: dd619b26b44010643bafc3965775ada3, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "It doesn't matter, it's \njust a gift from me..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0435 \u0432\u0430\u0436\u043D\u043E, \u044D\u0442\u043E \u043F\u0440\u043E\u0441\u0442\u043E
+        \u043F\u043E\u0434\u0430\u0440\u043E\u043A \u043E\u0442 \u043C\u0435\u043D\u044F\u2026"
+      options:
+        font: {fileID: 0}

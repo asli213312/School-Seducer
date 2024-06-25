@@ -1,0 +1,110 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "What are you up to?"
+                },
+                {
+                    "key": "M-m-m, sorry... I'm busy right now, \nI'll write to you later."
+                },
+                {
+                    "key": "What could you be so busy with \nthat you can't write to me?"
+                },
+                {
+                    "key": "I'm on a date..."
+                },
+                {
+                    "key": "Wow, I'm even a bit jealous!"
+                },
+                {
+                    "key": "Stop it, it's just a bet between us."
+                },
+                {
+                    "key": "Okay, so what are \nyou doing right now?"
+                },
+                {
+                    "key": "You're better off not knowing..."
+                },
+                {
+                    "key": "Is it something intimate?"
+                },
+                {
+                    "key": "Sort of, yeah..."
+                },
+                {
+                    "key": "Then my next wish... send \na photo, as you fuck."
+                },
+                {
+                    "key": "We don't fuck..."
+                },
+                {
+                    "key": "Then what?"
+                },
+                {
+                    "key": "Alright, here, you won't \nlet it go anyway..."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "Hmm... this guy got lucky!"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Чем занимаешься?"
+                },
+                {
+                    "key": "М-м-м, извини… я сейчас занята, \nя тебе позже напишу."
+                },
+                {
+                    "key": "Чем таким ты занята, что не \nможешь написать мне?"
+                },
+                {
+                    "key": "Я на свидании…"
+                },
+                {
+                    "key": "Ого, я даже немного ревную!"
+                },
+                {
+                    "key": "Перестань, у нас с тобой просто спор."
+                },
+                {
+                    "key": "Окей, и что ты сейчас делаешь?"
+                },
+                {
+                    "key": "Тебе лучше не знать…"
+                },
+                {
+                    "key": "Это что-то интимное?"
+                },
+                {
+                    "key": "Вроде того, да…"
+                },
+                {
+                    "key": "Тогда мое следующее желание… \nпришли фото, как вы трахаетесь…"
+                },
+                {
+                    "key": "Мы не трахаемся…"
+                },
+                {
+                    "key": "А что тогда?"
+                },
+                {
+                    "key": "Ладно, вот, ты все равно не отстанешь…"
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "Хм… а этому парню повезло!"
+                }
+            ]
+        }
+    ]
+}

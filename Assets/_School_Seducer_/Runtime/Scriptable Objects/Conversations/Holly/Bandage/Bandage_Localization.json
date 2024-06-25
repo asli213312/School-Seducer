@@ -1,0 +1,82 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hi, this is Ben. We met at the bar."
+                },
+                {
+                    "key": "Hey! I was starting to \nworry you wouldn't call."
+                },
+                {
+                    "key": "So, how about we go somewhere together?"
+                },
+                {
+                    "key": "Alright, let's get this straight \nfrom the start. I'm not interested \nin romance, dates, and \nall that stuff."
+                },
+                {
+                    "key": "Hmm, then why did you \ngive me your number?"
+                },
+                {
+                    "key": "Come over and you'll find out. \nWrite down the address."
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Привет, это Бен. Мы познакомились в баре."
+                },
+                {
+                    "key": "Привет! Я уже боялась, что ты не позвонишь."
+                },
+                {
+                    "key": "Ну так что, может куда-нибудь сходим вместе?"
+                },
+                {
+                    "key": "Так, давай сразу договоримся. \nМеня не интересует романтика, \nсвидания и вот это все."
+                },
+                {
+                    "key": "М-м-м, зачем тогда ты \nдала мне свой номер?"
+                },
+                {
+                    "key": "Приезжай и узнаешь. Запиши адрес."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Hallo, hier ist Ben. Wir haben \nuns in der Bar kennengelernt."
+                },
+                {
+                    "key": "Hallo! Ich hatte schon Angst, \ndass du nicht anrufen würdest."
+                },
+                {
+                    "key": "Na, wie wäre es, gehen \nwir irgendwohin zusammen?"
+                },
+                {
+                    "key": "Okay, lassen wir das klarstellen. \nIch bin nicht an Romantik, \nDates und all das interessiert."
+                },
+                {
+                    "key": "M-m-m, warum hast du mir \ndann deine Nummer gegeben?"
+                },
+                {
+                    "key": "Komm vorbei und finde es heraus. \nSchreib dir die Adresse auf."
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
+}

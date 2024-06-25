@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae0d16e676bfe844afb822fe82005bf, type: 3}
+  m_Name: Crystals Screen
+  m_EditorClassIdentifier: 
+  isHorizontalScroll: 1
+  items:
+  - {fileID: 11400000, guid: a75b798806e8e544d9cef4e25e964770, type: 2}
+  - {fileID: 11400000, guid: 9f37d355dd79fea4b90c6bf5ddaa3d9e, type: 2}

@@ -26,11 +26,6 @@ namespace _School_Seducer_.Editor.Scripts.Utility
             	FadeAlpha();
         }
 
-        private void OnDisable()
-        {
-            //ResetAlpha();
-        }
-
         public void StartFadeAlpha()
         {
             StartCoroutine(ProcessAlpha(0, targetAlpha));
@@ -44,6 +39,44 @@ namespace _School_Seducer_.Editor.Scripts.Utility
         private void FadeAlpha()
         {
             StartCoroutine(ProcessAlpha(0, targetAlpha));
+        }
+        
+        public void InvokeEndChangeAlphaRecursively(GameObject parent)
+                {
+                    StartCoroutine(ChangeAlphaRecursive(parent.transform, duration, 0));
+                }
+        
+        public void InvokeStartChangeAlphaRecursively(GameObject parent)
+        {
+            StartCoroutine(ChangeAlphaRecursive(parent.transform, duration, targetAlpha));
+        }
+
+        private IEnumerator ChangeAlphaRecursive(Transform parentTransform, float fadeDuration, float endAlpha)
+        {
+            Graphic graphic = parentTransform.GetComponent<Graphic>();
+            if (graphic != null)
+            {
+                float startAlpha = graphic.color.a;
+                float rate = 1.0f / fadeDuration;
+                float progress = 0.0f;
+
+                while (progress < 1.0)
+                {
+                    Color color = graphic.color;
+                    color.a = Mathf.Lerp(startAlpha, endAlpha, progress);
+                    graphic.color = color;
+
+                    progress += rate * Time.deltaTime;
+                    yield return null;
+                }
+
+                graphic.color = new Color(graphic.color.r, graphic.color.g, graphic.color.b, endAlpha);
+            }
+            
+            foreach (Transform child in parentTransform)
+            {
+                StartCoroutine(ChangeAlphaRecursive(child, fadeDuration, endAlpha));
+            }
         }
 
         private IEnumerator ProcessAlpha(float start, float end)

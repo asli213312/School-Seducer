@@ -8,6 +8,7 @@ namespace PuzzleGame.Gameplay.Boosters
     {
         [SerializeField] private Image icon;
         [SerializeField] private Button button;
+        [SerializeField] public Button infoButton;
         [SerializeField] private GameObject counter;
         [SerializeField] private GameObject counterEmpty;
         [SerializeField] private Text countText;
@@ -24,8 +25,6 @@ namespace PuzzleGame.Gameplay.Boosters
     
         private void Awake()
         {
-            button.onClick.AddListener(OnClick);
-
             BoostersController.Instance.BoosterPurchased += OnButtonUpdate;
             BoostersController.Instance.BoosterProceeded += OnButtonUpdate;
             BoostersController.Instance.BoosterUpdated += OnButtonUpdate;
@@ -36,6 +35,8 @@ namespace PuzzleGame.Gameplay.Boosters
             BoostersController.Instance.BoosterPurchased -= OnButtonUpdate;
             BoostersController.Instance.BoosterProceeded -= OnButtonUpdate;
             BoostersController.Instance.BoosterUpdated -= OnButtonUpdate;
+            
+            infoButton.onClick.RemoveAllListeners();
         }
 
         public void Init(BoosterPreset preset, int highlightSortingOrder, bool canBuy)
@@ -72,17 +73,26 @@ namespace PuzzleGame.Gameplay.Boosters
             counter.gameObject.SetActive(IsPurchased || !canBuy);
             counterEmpty.gameObject.SetActive(!IsPurchased && canBuy);
 
-            if (!IsPurchased && canBuy) return;
+            if (!IsPurchased && canBuy)
+            {
+                Debug.Log("Booster not purchased: " + preset.name);
+                return;
+            }
         
             int count = BoostersController.Instance.GetBoosterPurchaseCount(preset);
             countText.text = count.ToString();
             SetRaycast(count > 0);
         }
 
-        void OnClick()
+        public void OnClick()
         {
-            if(IsPurchased)
+            if (IsPurchased)
+            {
                 Highlight();
+                Debug.Log("Booster invoked: " + preset.name);                
+            }
+            else
+                Debug.Log("Booster not purchased to invoke: " + preset.name);
             
             Select.Invoke(preset, IsPurchased);
         }

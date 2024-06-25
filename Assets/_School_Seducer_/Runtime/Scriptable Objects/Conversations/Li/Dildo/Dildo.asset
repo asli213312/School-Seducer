@@ -1,0 +1,461 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Dildo
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Dildo
+    localizedDataList:
+    - languageCode: en
+      key: Dildo
+    - languageCode: ru
+      key: "\u0414\u0438\u043B\u0434\u043E"
+    - languageCode: de
+      key: Dildo
+    - languageCode: fr
+      key: Gode
+    - languageCode: sp
+      key: Consolador
+    - languageCode: it
+      key: Dildo
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: 4c8ea492fec74404cb6e3c86a31c056f, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Tell me, do you have a boyfriend?
+        - key: "You're only just deciding \nto ask that now?"
+        - key: "I don't know why I didn't \nthink about it earlier."
+        - key: "No, I don't have a boyfriend \nright now... but I'm in a relationship..."
+        - key: Hmm, do you have a girlfriend?
+        - key: "Unfortunately, no, although I \nwouldn't mind giving it a try."
+        - key: Then I don't understand...
+        - key: I have Johnny...
+        - key: "And if Johnny isn't a boyfriend \nor a girlfriend... then who is
+            \nhe? I'm lost in guesses..."
+        - key: "Johnny is my dildo, with which \nwe regularly entertain ourselves."
+        - key: Wow!
+        - key: "And I have to admit that \nno real penis has been able \nto outshine
+            Johnny yet."
+        - key: Guess what my next wish is...
+        - key: I already know!
+        - key: Insert picture
+      - languageCode: ru
+        messages:
+        - key: "\u0421\u043A\u0430\u0436\u0438, \u0430 \u0443 \u0442\u0435\u0431\u044F
+            \u0435\u0441\u0442\u044C \u043F\u0430\u0440\u0435\u043D\u044C?"
+        - key: "\u0422\u044B \u0442\u043E\u043B\u044C\u043A\u043E \u0441\u0435\u0439\u0447\u0430\u0441
+            \u0440\u0435\u0448\u0438\u043B \u043E\u0431 \u044D\u0442\u043E\u043C
+            \u0441\u043F\u0440\u043E\u0441\u0438\u0442\u044C?"
+        - key: "\u041F\u043E\u0447\u0435\u043C\u0443-\u0442\u043E \u0440\u0430\u043D\u044C\u0448\u0435
+            \u043D\u0435 \u0434\u0443\u043C\u0430\u043B \u043E\u0431 \u044D\u0442\u043E\u043C."
+        - key: "\u041D\u0435\u0442, \u043F\u0430\u0440\u043D\u044F \u0443 \u043C\u0435\u043D\u044F
+            \u0441\u0435\u0439\u0447\u0430\u0441 \u043D\u0435\u0442... \n\u043D\u043E
+            \u0435\u0441\u0442\u044C \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u044F..."
+        - key: "\u0425\u043C, \u0443 \u0442\u0435\u0431\u044F \u0435\u0441\u0442\u044C
+            \u0434\u0435\u0432\u0443\u0448\u043A\u0430?"
+        - key: "\u0423\u0432\u044B, \u043D\u0435\u0442, \u0445\u043E\u0442\u044F
+            \u044F \u0431\u044B \n\u043D\u0435 \u043E\u0442\u043A\u0430\u0437\u0430\u043B\u0430\u0441\u044C
+            \u043F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C."
+        - key: "\u0422\u043E\u0433\u0434\u0430 \u044F \u043D\u0435 \u043F\u043E\u043D\u0438\u043C\u0430\u044E..."
+        - key: "\u0423 \u043C\u0435\u043D\u044F \u0435\u0441\u0442\u044C \u0414\u0436\u043E\u043D\u043D\u0438..."
+        - key: "\u0418 \u0435\u0441\u043B\u0438 \u0414\u0436\u043E\u043D\u043D\u0438
+            \u043D\u0435 \u043F\u0430\u0440\u0435\u043D\u044C \u0438 \u043D\u0435
+            \u0434\u0435\u0432\u0443\u0448\u043A\u0430... \n\u0422\u043E \u043A\u0442\u043E
+            \u044D\u0442\u043E? \u042F \u0442\u0435\u0440\u044F\u044E\u0441\u044C
+            \u0432 \u0434\u043E\u0433\u0430\u0434\u043A\u0430\u0445..."
+        - key: "\u0414\u0436\u043E\u043D\u043D\u0438 - \u044D\u0442\u043E \u043C\u043E\u0439
+            \u0434\u0438\u043B\u0434\u043E, \u0441 \u043A\u043E\u0442\u043E\u0440\u044B\u043C
+            \n\u043C\u044B \u0440\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u043E
+            \u0440\u0430\u0437\u0432\u043B\u0435\u043A\u0430\u0435\u043C\u0441\u044F."
+        - key: "\u041E\u0433\u043E!"
+        - key: "\u0418 \u0434\u043E\u043B\u0436\u043D\u0430 \u043F\u0440\u0438\u0437\u043D\u0430\u0442\u044C,
+            \u0447\u0442\u043E \u0435\u0449\u0451 \n\u043D\u0438 \u043E\u0434\u0438\u043D
+            \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 \u043F\u0435\u043D\u0438\u0441
+            \u043D\u0435 \n\u0441\u043C\u043E\u0433 \u043F\u0440\u0435\u0432\u0437\u043E\u0439\u0442\u0438
+            \u0414\u0436\u043E\u043D\u043D\u0438."
+        - key: "\u0423\u0433\u0430\u0434\u0430\u0439, \u043A\u0430\u043A\u043E\u0435
+            \u043C\u043E\u0451 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0435
+            \u0436\u0435\u043B\u0430\u043D\u0438\u0435..."
+        - key: "\u042F \u0443\u0436\u0435 \u043F\u043E\u043D\u044F\u043B\u0430!"
+        - key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+  <Language>k__BackingField: 0
+  isCompleted: 0
+  isUnlocked: 0
+  isSeen: 0
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Tell me, do you have a boyfriend?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 77f9aa15bc75a8d4ab40784b0d64c4f8, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 77f9aa15bc75a8d4ab40784b0d64c4f8, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Tell me, do you have a boyfriend?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0421\u043A\u0430\u0436\u0438, \u0430 \u0443 \u0442\u0435\u0431\u044F
+        \u0435\u0441\u0442\u044C \u043F\u0430\u0440\u0435\u043D\u044C?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: "You're only just deciding \nto ask that now?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f942f8d830dc6e64abc35014e0891b49, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f942f8d830dc6e64abc35014e0891b49, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "You're only just deciding \nto ask that now?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u044B \u0442\u043E\u043B\u044C\u043A\u043E \u0441\u0435\u0439\u0447\u0430\u0441
+        \u0440\u0435\u0448\u0438\u043B \u043E\u0431 \u044D\u0442\u043E\u043C \u0441\u043F\u0440\u043E\u0441\u0438\u0442\u044C?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "I don't know why I didn't \nthink about it earlier."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c1e17888028047c41aff6857425e46ec, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c1e17888028047c41aff6857425e46ec, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I don't know why I didn't \nthink about it earlier."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u043E\u0447\u0435\u043C\u0443-\u0442\u043E \u0440\u0430\u043D\u044C\u0448\u0435
+        \u043D\u0435 \u0434\u0443\u043C\u0430\u043B \u043E\u0431 \u044D\u0442\u043E\u043C."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: "No, I don't have a boyfriend \nright now... but I'm in a relationship..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 3e0ceb847c3097c42bb3e02cce92ff72, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 3e0ceb847c3097c42bb3e02cce92ff72, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "No, I don't have a boyfriend \nright now... but I'm in a relationship..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0435\u0442, \u043F\u0430\u0440\u043D\u044F \u0443 \u043C\u0435\u043D\u044F
+        \u0441\u0435\u0439\u0447\u0430\u0441 \u043D\u0435\u0442... \n\u043D\u043E
+        \u0435\u0441\u0442\u044C \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u044F..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Hmm, do you have a girlfriend?
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 695a874266c32be4f899678f1ae6a165, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 695a874266c32be4f899678f1ae6a165, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hmm, do you have a girlfriend?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0425\u043C, \u0443 \u0442\u0435\u0431\u044F \u0435\u0441\u0442\u044C
+        \u0434\u0435\u0432\u0443\u0448\u043A\u0430?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: "Unfortunately, no, although I \nwouldn't mind giving it a try."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f819e9e8fa2677145b738efa606c4d3f, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f819e9e8fa2677145b738efa606c4d3f, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Unfortunately, no, although I \nwouldn't mind giving it a try."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0423\u0432\u044B, \u043D\u0435\u0442, \u0445\u043E\u0442\u044F \u044F
+        \u0431\u044B \n\u043D\u0435 \u043E\u0442\u043A\u0430\u0437\u0430\u043B\u0430\u0441\u044C
+        \u043F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Then I don't understand...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e39bc4b1559edc84397634214911f4a0, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e39bc4b1559edc84397634214911f4a0, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Then I don't understand...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u043E\u0433\u0434\u0430 \u044F \u043D\u0435 \u043F\u043E\u043D\u0438\u043C\u0430\u044E..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: I have Johnny...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: b67b2964d398adf4abb46af7b1084cf2, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: b67b2964d398adf4abb46af7b1084cf2, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: I have Johnny...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0423 \u043C\u0435\u043D\u044F \u0435\u0441\u0442\u044C \u0414\u0436\u043E\u043D\u043D\u0438..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "And if Johnny isn't a boyfriend \nor a girlfriend... then who is \nhe?
+      I'm lost in guesses..."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: a76b5537a99965344b95c6989cff84b2, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: a76b5537a99965344b95c6989cff84b2, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "And if Johnny isn't a boyfriend \nor a girlfriend... then who is \nhe?
+        I'm lost in guesses..."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0418 \u0435\u0441\u043B\u0438 \u0414\u0436\u043E\u043D\u043D\u0438
+        \u043D\u0435 \u043F\u0430\u0440\u0435\u043D\u044C \u0438 \u043D\u0435 \u0434\u0435\u0432\u0443\u0448\u043A\u0430...
+        \n\u0422\u043E \u043A\u0442\u043E \u044D\u0442\u043E? \u042F \u0442\u0435\u0440\u044F\u044E\u0441\u044C
+        \u0432 \u0434\u043E\u0433\u0430\u0434\u043A\u0430\u0445..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: "Johnny is my dildo, with which \nwe regularly entertain ourselves."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f2750e1e2eaea88469e3d84e90dd66a8, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f2750e1e2eaea88469e3d84e90dd66a8, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Johnny is my dildo, with which \nwe regularly entertain ourselves."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0436\u043E\u043D\u043D\u0438 - \u044D\u0442\u043E \u043C\u043E\u0439
+        \u0434\u0438\u043B\u0434\u043E, \u0441 \u043A\u043E\u0442\u043E\u0440\u044B\u043C
+        \n\u043C\u044B \u0440\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u043E \u0440\u0430\u0437\u0432\u043B\u0435\u043A\u0430\u0435\u043C\u0441\u044F."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Wow!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 04d3ae3f9d8811e4c91ef1900b7030a0, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 04d3ae3f9d8811e4c91ef1900b7030a0, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Wow!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u0433\u043E!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: "And I have to admit that \nno real penis has been able \nto outshine Johnny
+      yet."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 941b0881c8c9e1443956be664ec0d4f6, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 941b0881c8c9e1443956be664ec0d4f6, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "And I have to admit that \nno real penis has been able \nto outshine
+        Johnny yet."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0418 \u0434\u043E\u043B\u0436\u043D\u0430 \u043F\u0440\u0438\u0437\u043D\u0430\u0442\u044C,
+        \u0447\u0442\u043E \u0435\u0449\u0451 \n\u043D\u0438 \u043E\u0434\u0438\u043D
+        \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 \u043F\u0435\u043D\u0438\u0441
+        \u043D\u0435 \n\u0441\u043C\u043E\u0433 \u043F\u0440\u0435\u0432\u0437\u043E\u0439\u0442\u0438
+        \u0414\u0436\u043E\u043D\u043D\u0438."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: Guess what my next wish is...
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e6981259fa4b04e4fb4b2067d72cd21c, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e6981259fa4b04e4fb4b2067d72cd21c, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Guess what my next wish is...
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0423\u0433\u0430\u0434\u0430\u0439, \u043A\u0430\u043A\u043E\u0435
+        \u043C\u043E\u0451 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0435
+        \u0436\u0435\u043B\u0430\u043D\u0438\u0435..."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: I already know!
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 73fd9974f2e0da94180988e56c1afe41, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 73fd9974f2e0da94180988e56c1afe41, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: I already know!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u0443\u0436\u0435 \u043F\u043E\u043D\u044F\u043B\u0430!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: a98156dc05f0bff46823bf13f62888b2, type: 3}
+    Msg: Insert picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: 81629bc4de53e5844952b5730dad4f6d, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 4b2d1f562008b3b42ae653330063c9cd, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443"
+      options:
+        font: {fileID: 0}

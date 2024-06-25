@@ -2,6 +2,6 @@
 {
     public enum ModeContentEnum
     {
-        FullScreen, Animation
+        FullScreen, Animation, Game
     }
 }

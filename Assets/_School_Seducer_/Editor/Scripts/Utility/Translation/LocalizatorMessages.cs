@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using NaughtyAttributes;
 using Newtonsoft.Json;
 using Sirenix.OdinInspector;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -23,6 +25,51 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
                 Debug.Log("Reset translations is successfully!");
             }
         }
+
+        public void RemoveRestrictedCharsRussian() 
+        {
+            if (translationJson == null) 
+            {
+                Debug.LogError("Translation JSON is not assigned for remove restricted chars!");
+            }
+
+            string json = translationJson.text;
+            Debug.Log("Original JSON content: " + json);
+
+            // Десериализация JSON
+            Translator translator = JsonUtility.FromJson<Translator>(json);
+
+            // Проверка, что данные десериализованы правильно
+            if (translator?.languages == null)
+            {
+                Debug.LogError("Failed to deserialize translation JSON.");
+                return;
+            }
+
+            // Поиск и замена символа 'ё' на 'е' в ключах русского языка
+            foreach (var language in translator.languages)
+            {
+                if (language.languageCode == "ru")
+                {
+                    foreach (var message in language.messages)
+                    {
+                        message.key = message.key.Replace('ё', 'е');
+                    }
+                }
+            }
+
+            // Сериализация обратно в JSON
+            string updatedJson = JsonUtility.ToJson(translator, true);
+            Debug.Log("Updated JSON content: " + updatedJson);
+
+            //string path = AssetDatabase.GetAssetPath(translationJson);
+            //File.WriteAllText(path, updatedJson);
+
+            // Обновление файла в редакторе
+            //AssetDatabase.Refresh();
+
+            Debug.Log("JSON file has been updated and saved.");    
+        }          
 
         public string GetTranslatedMessage(string languageCode, int indexMessage)
         {
@@ -44,7 +91,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
             }
         }
 
-        public List<Translator.Languages> GetLanguages(int indexMessage)
+        public List<Translator.LanguagesText> GetLanguages(int indexMessage)
         {
             if (_translator.languages == null)
             {
@@ -57,13 +104,13 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
                 InitializeTranslation();
             }
 
-            List<Translator.Languages> translatedMessages = new List<Translator.Languages>();
+            List<Translator.LanguagesText> translatedMessages = new List<Translator.LanguagesText>();
 
             foreach (var language in _translator.languages)
             {
                 if (indexMessage >= 0 && indexMessage < language.messages.Count)
                 {
-                    Translator.Languages translatedMessage = new Translator.Languages();
+                    Translator.LanguagesText translatedMessage = new Translator.LanguagesText();
                     translatedMessage.languageCode = language.languageCode;
                     translatedMessage.key = language.messages[indexMessage].key;
 

@@ -8,6 +8,7 @@ using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using Spine.Unity;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -16,6 +17,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 {
     public class SpinHandlerModule : MonoBehaviour, IModule<WheelFortuneSystem>
     {
+        [Inject] private GlobalSelectors _globalSelectors;
         [Inject] protected Bank Bank;
         [Inject] protected EventManager EventManager;
         [Inject] protected IChatStoryResolverModule ChatStoryResolver;
@@ -35,6 +37,13 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         [Header("PushUps")] 
         [SerializeField] public Push giftSpinPush;
         [SerializeField] public Push unlockNewStoryPush;
+
+        [Header("Options")]
+        [SerializeField] private Vector3 offsetPopup;
+
+        [Header("Events")]
+        [SerializeField] public UnityEvent spinStarted;
+        [SerializeField] public UnityEvent spinCompleted;
 
         public Previewer Previewer => _system.Previewer;
         public WheelFortuneData Data => _system.Data;
@@ -71,6 +80,10 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                     _system.Previewer.OnCharacterSelected(_system.Previewer.CurrentCharacter);
                 });
             }
+
+            _globalSelectors.SelectedObjectEvent += GiftSelected;
+
+            RegisterSelectedSlots();
         }
 
         private void OnDestroy()
@@ -85,6 +98,10 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                     _system.Previewer.OnCharacterSelected(_system.Previewer.CurrentCharacter);
                 });
             }
+
+            _globalSelectors.SelectedObjectEvent -= GiftSelected;
+
+            UnregisterSelectedSlots();
         }
 
         private void Start()
@@ -167,6 +184,31 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
                     CharacterSlots.Remove(slotCharacterToReset);
                     slotCharacterToReset.gameObject.Destroy();
                 }
+            }
+        }
+
+        private void GiftSelected(Transform gift) 
+        {
+            if (gift.gameObject.TryGetComponent(out WinSpinCharacterView slotView)) return;
+            
+            WheelSlot view = gift.gameObject.GetComponent<WheelSlot>();
+            _globalSelectors.GiftPopup.SetOffset(offsetPopup);
+            _globalSelectors.GiftPopup.Render(view.Data.score, view.Data.iconInfo);
+        }
+
+        private void RegisterSelectedSlots() 
+        {
+            foreach(var slot in slots) 
+            {
+                slot.gameObject.GetComponent<Button>().onClick.AddListener(() => _globalSelectors.SelectGift(slot.transform));
+            }
+        }
+
+        private void UnregisterSelectedSlots() 
+        {
+            foreach(var slot in slots) 
+            {
+                slot.gameObject.GetComponent<Button>().onClick.RemoveListener(() => _globalSelectors.SelectGift(slot.transform));
             }
         }
 

@@ -1,42 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-    package="com.ghezzigames.collegefuckfest" android:installLocation="preferExternal"
-    android:theme="@android:style/Theme.NoTitleBar" android:versionCode="1"
-    android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:glEsVersion="0x00020000" />
-    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-    <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
-    <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
-    <application tools:replace="android:icon"
-		android:name="com.nutaku.unity.NutakuApplication"
-		android:allowBackup="true"
-        android:icon="@drawable/app_icon"
-        android:label="@string/app_name">
-		<meta-data android:name="sdk_ai" android:value="79393"/>
-        <meta-data android:name="sdk_ck" android:value="H8YhSB9Xda5Q96UY"/>
-        <meta-data android:name="sdk_cs" android:value="yRnlf9_hHFr1ExN]wzgb5g68g1MgXu-c"/>
-        <meta-data android:name="sdk_en" android:value="sandbox"/>
-		<activity
-            android:name="com.nutaku.game.sdk.app.NutakuSplashActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@style/AppTheme"
-            android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:name="com.nutaku.unity.UnityPlayerActivity"
-            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen|screenSize"
-            android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:screenOrientation="landscape">
-				<meta-data android:name="unityplayer.UnityActivity" android:value="true" />
-			</activity>
-    </application>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.ghezzigames.collegefuckfest" android:installLocation="preferExternal" android:theme="@android:style/Theme.NoTitleBar" android:versionCode="1" android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-feature android:glEsVersion="0x00020000" />
+  <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
+  <application tools:replace="android:icon" android:name="com.nutaku.unity.NutakuApplication" android:allowBackup="true" android:icon="@drawable/app_icon" android:label="@string/app_name">
+    <meta-data android:name="sdk_ai" android:value="79393" />
+    <meta-data android:name="sdk_ck" android:value="H8YhSB9Xda5Q96UY" />
+    <meta-data android:name="sdk_cs" android:value="yRnlf9_hHFr1ExN]wzgb5g68g1MgXu-c" />
+    <meta-data android:name="sdk_en" android:value="sandbox" />
+    <activity android:name="com.nutaku.game.sdk.app.NutakuSplashActivity" android:configChanges="orientation|screenSize" android:theme="@style/AppTheme" android:label="@string/app_name" android:launchMode="singleTask" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name="com.nutaku.unity.UnityPlayerActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen|screenSize" android:label="@string/app_name" android:launchMode="singleTask" android:screenOrientation="landscape">
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+    </activity>
+    <!--This was added by the AnalyticsFixPropertyRemover. If you want to prevent the generation of this, have "AnalyticsFixPropertyRemover" included in a comment-->
+    <!--<property tools:node="removeAll" /> -->
+  </application>
 </manifest>

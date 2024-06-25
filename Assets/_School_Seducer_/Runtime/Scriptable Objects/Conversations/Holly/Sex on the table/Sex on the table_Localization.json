@@ -1,0 +1,109 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Tell me, about what you dream in sex?"
+                },
+                {
+                    "key": "Oh, it is a complex question."
+                },
+                {
+                    "key": "Stupidities, there is nothing simpler. \nJust share your thoughts."
+                },
+                {
+                    "key": "Alright, you asked yourself."
+                },
+                {
+                    "key": "I want to dissolve myself into my \npartner, fully depersonalize \nmyself, lose my <i>I</i>."
+                },
+                {
+                    "key": "It sounds a little unusual."
+                },
+                {
+                    "key": "You should have understood long \nago that I am not simple."
+                },
+                {
+                    "key": "Agreed. And how would you realize this?"
+                },
+                {
+                    "key": "Oh, since you asked me..."
+                },
+                {
+                    "key": "Insert video"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Расскажи, о чем ты мечтаешь в сексе?"
+                },
+                {
+                    "key": "О, это сложный вопрос."
+                },
+                {
+                    "key": "Глупости, нет ничего проще. \nПросто поделись своими мыслями."
+                },
+                {
+                    "key": "Ну ладно, ты сам спросил."
+                },
+                {
+                    "key": "Я хочу раствориться в своем партнере, \nполностью обезличить себя, \nпотерять свое «Я»."
+                },
+                {
+                    "key": "Звучит немного необычно."
+                },
+                {
+                    "key": "Ты давно должен был понять, \nчто я не простая."
+                },
+                {
+                    "key": "Согласен. И как ты бы это реализовала?"
+                },
+                {
+                    "key": "О, ну раз уж ты спросил. \nЕсть у меня идея одна."
+                },
+                {
+                    "key": "Вставить видео"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Sagen Sie mir, wovon \nträumen Sie sexuell?"
+                },
+                {
+                    "key": "Oh, das ist eine schwierige Frage."
+                },
+                {
+                    "key": "Unsinn, das ist nicht kompliziert. \nTeilen Sie einfach Ihre Gedanken mit."
+                },
+                {
+                    "key": "Okay, du hast gefragt."
+                },
+                {
+                    "key": "Ich möchte mich in meinem \nPartner auflösen, mich \nvöllig entpersönlichen, \nmein Selbst verlieren."
+                },
+                {
+                    "key": "Das klingt ein wenig ungewöhnlich."
+                },
+                {
+                    "key": "Du hättest schon lange merken müssen, \ndass ich nicht gewöhnlich bin."
+                },
+                {
+                    "key": "Das sehe ich auch so. Wie \nwürdest du das anstellen?"
+                },
+                {
+                    "key": "Oh, da du fragst. \nIch habe da eine Idee."
+                },
+                {
+                    "key": "Вставить видео"
+                }
+            ]
+        }
+    ]
+}

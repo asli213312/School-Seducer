@@ -13,18 +13,19 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [SerializeField] private FigmaImage image;
         [SerializeField] private FigmaImage frame;
 
-        public GallerySlotData Data { get; private set; }
+        public GallerySlotDataBase Data { get; private set; }
 
-        public void Render(GallerySlotData data, Sprite lockedSlot, Sprite emptySlot)
+        public void Render(GallerySlotDataBase data, Sprite lockedSlot, Sprite emptySlot)
         {
             Data = data;
 
-            if (Data.AddedInGallery)
+            if (data.AddedInGallery)
             {
                 image.sprite = data.Sprite;
                 frame.sprite = emptySlot;
-
-                if (data.animation != null) GetComponentInChildren<SkeletonAnimation>().skeletonDataAsset = data.animation;
+                
+                if (data is GallerySlotData defaultData)
+                    if (defaultData.animation != null) GetComponentInChildren<SkeletonAnimation>().skeletonDataAsset = defaultData.animation;
             }
             else
             {

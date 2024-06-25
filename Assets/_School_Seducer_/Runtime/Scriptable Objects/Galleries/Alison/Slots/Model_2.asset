@@ -15,6 +15,6 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 76dc19d0bcd46a64390daaa93d1250f5, type: 3}
   animation: {fileID: 0}
   Section: 0
-  NeedInGallery: 0
+  NeedInGallery: 1
   showDebugParameters: 0
   AddedInGallery: 0

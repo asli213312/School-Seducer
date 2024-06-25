@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Missis Green
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: 0e7a8928f3ea31d4898ea8629a6a90b1, type: 2}
-  currentConversation: {fileID: 11400000, guid: f5ef8038c00b21742b3f32cd2d8c6244, type: 2}
+  currentConversation: {fileID: 11400000, guid: 2e639ac0e99159142ace7988eb225569, type: 2}
   gifts: []
   allConversations:
   - {fileID: 11400000, guid: f5ef8038c00b21742b3f32cd2d8c6244, type: 2}
@@ -27,7 +27,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e639ac0e99159142ace7988eb225569, type: 2}
   gallery: {fileID: 11400000, guid: 3f787d9eea38ba844ab9ebc88f33fbcb, type: 2}
   requiredLevel: 3
-  loyalty: 2
-  maxLoyalty: 6
+  loyalty: 1
+  maxLoyalty: 1
   showDebugParameters: 0
-  experience: 35
+  experience: 14
+  isLocked: 0

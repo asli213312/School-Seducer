@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
+using _School_Seducer_.Editor.Scripts.Chat;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,10 +11,12 @@ namespace _School_Seducer_.Editor.Scripts.Utility.DevMenu
 {
     public class DevChat : MonoBehaviour
     {
+        [SerializeField] private ChatUtility chatUtility;
         [SerializeField] private Previewer previewer;
         [SerializeField] private Transform content;
         [SerializeField] private Toggle checkBoxPrefab;
         [SerializeField] private Button resetAllProgressButton;
+        [SerializeField] private Button addGiftsButton;
 
         private CharacterData _currentCharacterData;
         private List<Toggle> _checkBoxes = new();
@@ -21,6 +24,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility.DevMenu
         private void Awake()
         {
             resetAllProgressButton.AddListener(ResetAllProgress);
+            addGiftsButton.AddListener(AddGiftsCurrentCharacter);
         }
 
         private void Start() 
@@ -33,7 +37,10 @@ namespace _School_Seducer_.Editor.Scripts.Utility.DevMenu
             UnregisterContent();
             
             resetAllProgressButton.RemoveListener(ResetAllProgress);
+            addGiftsButton.RemoveListener(AddGiftsCurrentCharacter);
         }
+        
+        private void AddGiftsCurrentCharacter() => chatUtility.SetGifts(_currentCharacterData);
 
         private void UnregisterContent()
         {

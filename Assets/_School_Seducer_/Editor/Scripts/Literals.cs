@@ -14,7 +14,7 @@ namespace _School_Seducer_.Editor.Scripts
         [Inject] private EventManager _eventManager;
 
         [SerializeField] private TextMeshProUGUI gold;
-        [SerializeField] private LocalizedUIText localizedDiamonds;
+        [SerializeField] private TextMeshProUGUI localizedDiamonds;
         [SerializeField] private LocalizedUIText localizedExp;
 
         private void Awake()
@@ -37,7 +37,7 @@ namespace _School_Seducer_.Editor.Scripts
 
         private void UpdateDiamondsText()
         {
-            localizedDiamonds.Text.text = $"{localizedDiamonds.CurrentText} " + _bank.Diamonds;
+            localizedDiamonds.text = _bank.Diamonds.ToString();
         }
 
         private void UpdateMoneyText()

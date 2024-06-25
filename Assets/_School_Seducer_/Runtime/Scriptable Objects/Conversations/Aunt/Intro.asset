@@ -1,0 +1,569 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Intro
+    localizedDataList:
+    - languageCode: en
+      key: Intro
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0443\u043F\u043B\u0435\u043D\u0438\u0435"
+    - languageCode: it
+      key: Introduzione
+    - languageCode: de
+      key: "Einf\xFChrung"
+    - languageCode: fr
+      key: Intro
+    - languageCode: sp
+      key: "Introducci\xF3n"
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: 1a4689d9eb56d4c4482279fe70262f9c, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: "Congratulations on getting into \ncollege, Ben. You'll start a new
+            \nchapter in your life tomorrow."
+        - key: Picture
+        - key: "Ben, don't be so dull! College \nis about fun and new experiences!"
+        - key: "We need to think about the \nfuture, not just fun."
+        - key: picture
+        - key: "May college be an exciting \ntime for you, Ben!"
+        - key: "Thank you, Aunt Jane. But I'm \ngoing there to study."
+        - key: There will still be time for girls.
+        - key: "Alright, I'll get some wine. Will \nyou help your dear aunt, Ben?"
+        - key: '[In the cellar]'
+        - key: picture
+        - key: "I'm sorry, darling, I have to \ndo this. Otherwise, you'll turn \ninto
+            the same prude as your \nfather. And you could make \nso many girls happy."
+        - key: "Aunt... what?! What... no... \nwhat are you doing?"
+        - key: "Shush, or your parents \nwill hear us!"
+        - key: Insert picture
+      - languageCode: ru
+        messages:
+        - key: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C
+            \u0441 \u043F\u043E\u0441\u0442\u0443\u043F\u043B\u0435\u043D\u0438\u0435\u043C
+            \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436, \u0411\u044D\u043D.
+            \n\u0417\u0430\u0432\u0442\u0440\u0430 \u0442\u044B \u043D\u0430\u0447\u043D\u0435\u0448\u044C
+            \u043D\u043E\u0432\u044B\u0439 \u044D\u0442\u0430\u043F \u0432 \u0436\u0438\u0437\u043D\u0438."
+        - key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+        - key: "\u0411\u044D\u043D, \u043D\u0435 \u0431\u0443\u0434\u044C \u0441\u043A\u0443\u0447\u043D\u044B\u043C!
+            \u041A\u043E\u043B\u043B\u0435\u0434\u0436 - \u0432\u0440\u0435\u043C\u044F
+            \n\u0432\u0435\u0441\u0435\u043B\u044C\u044F \u0438 \u043D\u043E\u0432\u044B\u0445
+            \u0437\u043D\u0430\u043A\u043E\u043C\u0441\u0442\u0432!"
+        - key: "\u041D\u0430\u0434\u043E \u0434\u0443\u043C\u0430\u0442\u044C \u043E
+            \u0431\u0443\u0434\u0443\u0449\u0435\u043C, \u043D\u0435 \u043E \u0432\u0435\u0441\u0435\u043B\u044C\u0435."
+        - key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+        - key: "\u041F\u0443\u0441\u0442\u044C \u043A\u043E\u043B\u043B\u0435\u0434\u0436
+            \u0431\u0443\u0434\u0435\u0442 \u044F\u0440\u043A\u0438\u043C \u043E\u043F\u044B\u0442\u043E\u043C,
+            \u0411\u044D\u043D!"
+        - key: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0442\u0451\u0442\u044F.
+            \u041D\u043E \u044F \u0435\u0434\u0443 \u0442\u0443\u0434\u0430 \u0443\u0447\u0438\u0442\u044C\u0441\u044F."
+        - key: "\u0423 \u0442\u0435\u0431\u044F \u0435\u0449\u0451 \u0431\u0443\u0434\u0435\u0442
+            \u0432\u0440\u0435\u043C\u044F \u0434\u043B\u044F \u0434\u0435\u0432\u0443\u0448\u0435\u043A."
+        - key: "\u041B\u0430\u0434\u043D\u043E, \u044F \u043F\u0440\u0438\u043D\u0435\u0441\u0443
+            \u0432\u0438\u043D\u0430. \u041F\u043E\u043C\u043E\u0436\u0435\u0448\u044C,
+            \u0411\u044D\u043D?"
+        - key: "[\u0412 \u043A\u043B\u0430\u0434\u043E\u0432\u043A\u0435]"
+        - key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+        - key: "\u041F\u0440\u043E\u0441\u0442\u0438, \u0434\u043E\u0440\u043E\u0433\u043E\u0439,
+            \u044F \u043E\u0431\u044F\u0437\u0430\u043D\u0430 \u044D\u0442\u043E
+            \u0441\u0434\u0435\u043B\u0430\u0442\u044C. \n\u0418\u043D\u0430\u0447\u0435
+            \u0442\u044B \u043F\u0440\u0435\u0432\u0440\u0430\u0442\u0438\u0448\u044C\u0441\u044F
+            \u0432 \u0442\u0430\u043A\u043E\u0433\u043E \u0436\u0435 \n\u0445\u0430\u043D\u0436\u0443,
+            \u043A\u0430\u043A \u0438 \u0442\u0432\u043E\u0439 \u043E\u0442\u0435\u0446.
+            \u0410 \u0432\u0435\u0434\u044C \u0442\u044B \n\u043C\u043E\u0436\u0435\u0448\u044C
+            \u0441\u0442\u043E\u043B\u044C\u043A\u0438\u0445 \u0434\u0435\u0432\u0447\u043E\u043D\u043E\u043A
+            \n\u043E\u0441\u0447\u0430\u0441\u0442\u043B\u0438\u0432\u0438\u0442\u044C
+            \u0441\u043E\u0431\u043E\u0439."
+        - key: "\u0422\u0451\u0442\u044F\u2026 \u0447\u0442\u043E?! \u0427\u0442\u043E\u2026
+            \u043D\u0435\u0442\u2026 \u0447\u0442\u043E \u0442\u044B \u0434\u0435\u043B\u0430\u0435\u0448\u044C?"
+        - key: "\u0422\u0438\u0448\u0435 \u0442\u044B, \u0430 \u0442\u043E \u0442\u0432\u043E\u0438
+            \n\u0440\u043E\u0434\u0438\u0442\u0435\u043B\u0438 \u043D\u0430\u0441
+            \u0443\u0441\u043B\u044B\u0448\u0430\u0442!"
+        - key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+      - languageCode: de
+        messages:
+        - key: "Herzlichen Gl\xFCckwunsch zum \nCollege-Eintritt, Ben. Du \nwirst
+            morgen ein neues Kapitel \nin deinem Leben beginnen."
+        - key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+        - key: "Steve, sei nicht so langweilig! \nDas College soll Spa\xDF machen
+            \nund neue Erfahrungen bringen!"
+        - key: "Wir m\xFCssen an die Zukunft \ndenken, nicht nur an Spa\xDF."
+        - key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+        - key: "M\xF6ge das College eine aufregende \nZeit f\xFCr dich sein, Ben!"
+        - key: "Danke, Tante Jane. Aber ich \ngehe dorthin, um zu studieren."
+        - key: "Es wird immer noch Zeit \nf\xFCr M\xE4dchen geben."
+        - key: "In Ordnung, ich werde etwas \nWein holen. Wirst du deiner \nlieben
+            Tante helfen, Ben?"
+        - key: '[im Keller]'
+        - key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+        - key: "Es tut mir leid, Liebling, ich \nmuss das tun. Sonst wirst du \ngenauso
+            verklemmt wie dein Vater. \nUnd du k\xF6nntest so viele \nM\xE4dchen
+            gl\xFCcklich machen."
+        - key: "Tante... was?! Was... \nnein... was machst du?"
+        - key: "Psst, oder deine Eltern \nwerden uns h\xF6ren!"
+        - key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 1
+  isSeen: 1
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: 2dedec0e407385247b38fae288fd0a27, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fca02a53b1a44a84d929c48de5d9658f, type: 3}
+    Msg: "Congratulations on getting into \ncollege, Ben. You'll start a new \nchapter
+      in your life tomorrow."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 21300000, guid: fca02a53b1a44a84d929c48de5d9658f, type: 3}
+    AudioMsg: {fileID: 8300000, guid: b44130a8bc2d5f944adada70c720bede, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: b44130a8bc2d5f944adada70c720bede, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 3ff21bcfe990c214b8934a650f2f6de9, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Congratulations on getting into \ncollege, Ben. You'll start a new \nchapter
+        in your life tomorrow."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C \u0441
+        \u043F\u043E\u0441\u0442\u0443\u043F\u043B\u0435\u043D\u0438\u0435\u043C
+        \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436, \u0411\u044D\u043D. \n\u0417\u0430\u0432\u0442\u0440\u0430
+        \u0442\u044B \u043D\u0430\u0447\u043D\u0435\u0448\u044C \u043D\u043E\u0432\u044B\u0439
+        \u044D\u0442\u0430\u043F \u0432 \u0436\u0438\u0437\u043D\u0438."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Herzlichen Gl\xFCckwunsch zum \nCollege-Eintritt, Ben. Du \nwirst morgen
+        ein neues Kapitel \nin deinem Leben beginnen."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+    Msg: Picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: 00a93b80243afb047a0f63712ab075f4, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f74685ce7f7f4d04198f25303b0a148e, type: 3}
+    <Sender>k__BackingField: 2
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2dedec0e407385247b38fae288fd0a27, type: 3}
+    Msg: "Ben, don't be so dull! College \nis about fun and new experiences!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 9ad15e5779234324da54dae5b056db30, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 9ad15e5779234324da54dae5b056db30, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 4447e6c0e09501744b9ade4dc3e605c8, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Ben, don't be so dull! College \nis about fun and new experiences!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0411\u044D\u043D, \u043D\u0435 \u0431\u0443\u0434\u044C \u0441\u043A\u0443\u0447\u043D\u044B\u043C!
+        \u041A\u043E\u043B\u043B\u0435\u0434\u0436 - \u0432\u0440\u0435\u043C\u044F
+        \n\u0432\u0435\u0441\u0435\u043B\u044C\u044F \u0438 \u043D\u043E\u0432\u044B\u0445
+        \u0437\u043D\u0430\u043A\u043E\u043C\u0441\u0442\u0432!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Steve, sei nicht so langweilig! \nDas College soll Spa\xDF machen \nund
+        neue Erfahrungen bringen!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fca02a53b1a44a84d929c48de5d9658f, type: 3}
+    Msg: "We need to think about the \nfuture, not just fun."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 21300000, guid: fca02a53b1a44a84d929c48de5d9658f, type: 3}
+    AudioMsg: {fileID: 8300000, guid: 10ba025eb66445c40ac42b054eb1b1b9, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 10ba025eb66445c40ac42b054eb1b1b9, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 4abf0d82e79e282459a79cda6f14eed4, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "We need to think about the \nfuture, not just fun."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0430\u0434\u043E \u0434\u0443\u043C\u0430\u0442\u044C \u043E
+        \u0431\u0443\u0434\u0443\u0449\u0435\u043C, \u043D\u0435 \u043E \u0432\u0435\u0441\u0435\u043B\u044C\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Wir m\xFCssen an die Zukunft \ndenken, nicht nur an Spa\xDF."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2dedec0e407385247b38fae288fd0a27, type: 3}
+    Msg: picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: c1c74f20618cfbc43b6956dab041e90e, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e9ec2c1546206e94b9f03c26ebdc5d06, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2dedec0e407385247b38fae288fd0a27, type: 3}
+    Msg: "May college be an exciting \ntime for you, Ben!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 4fc647cc5575a3f4f9d2a626f402e228, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 4fc647cc5575a3f4f9d2a626f402e228, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: a21b6753c6ebffc4a9815f02a7e485fd, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "May college be an exciting \ntime for you, Ben!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0443\u0441\u0442\u044C \u043A\u043E\u043B\u043B\u0435\u0434\u0436
+        \u0431\u0443\u0434\u0435\u0442 \u044F\u0440\u043A\u0438\u043C \u043E\u043F\u044B\u0442\u043E\u043C,
+        \u0411\u044D\u043D!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "M\xF6ge das College eine aufregende \nZeit f\xFCr dich sein, Ben!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Thank you, Aunt Jane. But I'm \ngoing there to study."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: af12c5add4392c5449a4e2070005441d, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: af12c5add4392c5449a4e2070005441d, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: e923e24466020384980161300726214a, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Thank you, Aunt Jane. But I'm \ngoing there to study."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0442\u0451\u0442\u044F.
+        \u041D\u043E \u044F \u0435\u0434\u0443 \u0442\u0443\u0434\u0430 \u0443\u0447\u0438\u0442\u044C\u0441\u044F."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Danke, Tante Jane. Aber ich \ngehe dorthin, um zu studieren."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fca02a53b1a44a84d929c48de5d9658f, type: 3}
+    Msg: There will still be time for girls.
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 21300000, guid: fca02a53b1a44a84d929c48de5d9658f, type: 3}
+    AudioMsg: {fileID: 8300000, guid: c73815a9e89f90d4480ef90d1a2ab1d5, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c73815a9e89f90d4480ef90d1a2ab1d5, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 55a3baec1a145ec4197bbd67d5c10594, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: There will still be time for girls.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0423 \u0442\u0435\u0431\u044F \u0435\u0449\u0451 \u0431\u0443\u0434\u0435\u0442
+        \u0432\u0440\u0435\u043C\u044F \u0434\u043B\u044F \u0434\u0435\u0432\u0443\u0448\u0435\u043A."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Es wird immer noch Zeit \nf\xFCr M\xE4dchen geben."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2dedec0e407385247b38fae288fd0a27, type: 3}
+    Msg: "Alright, I'll get some wine. Will \nyou help your dear aunt, Ben?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f2c46aec1a46c7241ad1c1d3537b8d73, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f2c46aec1a46c7241ad1c1d3537b8d73, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: fea9da4980fb8094f82ea7b5435884df, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Alright, I'll get some wine. Will \nyou help your dear aunt, Ben?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041B\u0430\u0434\u043D\u043E, \u044F \u043F\u0440\u0438\u043D\u0435\u0441\u0443
+        \u0432\u0438\u043D\u0430. \u041F\u043E\u043C\u043E\u0436\u0435\u0448\u044C,
+        \u0411\u044D\u043D?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "In Ordnung, ich werde etwas \nWein holen. Wirst du deiner \nlieben Tante
+        helfen, Ben?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+    Msg: '[In the cellar]'
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 8069912ecb71d744ab435152352bdb99, type: 3}
+    <Sender>k__BackingField: 2
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: '[In the cellar]'
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "[\u0412 \u043A\u043B\u0430\u0434\u043E\u0432\u043A\u0435]"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: '[im Keller]'
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2dedec0e407385247b38fae288fd0a27, type: 3}
+    Msg: picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: bbc49f416f3d1c540961d5f9981ccab3, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 2f6e758f179498d4885daf59d60e7ab5, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2dedec0e407385247b38fae288fd0a27, type: 3}
+    Msg: "I'm sorry, darling, I have to \ndo this. Otherwise, you'll turn \ninto
+      the same prude as your \nfather. And you could make \nso many girls happy."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 39e2df6c842548149bc0964fb1fa7910, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 39e2df6c842548149bc0964fb1fa7910, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 02fcb4ad0ad8c3e4bb4c36848babd9f1, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I'm sorry, darling, I have to \ndo this. Otherwise, you'll turn \ninto
+        the same prude as your \nfather. And you could make \nso many girls happy."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u043E\u0441\u0442\u0438, \u0434\u043E\u0440\u043E\u0433\u043E\u0439,
+        \u044F \u043E\u0431\u044F\u0437\u0430\u043D\u0430 \u044D\u0442\u043E \u0441\u0434\u0435\u043B\u0430\u0442\u044C.
+        \n\u0418\u043D\u0430\u0447\u0435 \u0442\u044B \u043F\u0440\u0435\u0432\u0440\u0430\u0442\u0438\u0448\u044C\u0441\u044F
+        \u0432 \u0442\u0430\u043A\u043E\u0433\u043E \u0436\u0435 \n\u0445\u0430\u043D\u0436\u0443,
+        \u043A\u0430\u043A \u0438 \u0442\u0432\u043E\u0439 \u043E\u0442\u0435\u0446.
+        \u0410 \u0432\u0435\u0434\u044C \u0442\u044B \n\u043C\u043E\u0436\u0435\u0448\u044C
+        \u0441\u0442\u043E\u043B\u044C\u043A\u0438\u0445 \u0434\u0435\u0432\u0447\u043E\u043D\u043E\u043A
+        \n\u043E\u0441\u0447\u0430\u0441\u0442\u043B\u0438\u0432\u0438\u0442\u044C
+        \u0441\u043E\u0431\u043E\u0439."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Es tut mir leid, Liebling, ich \nmuss das tun. Sonst wirst du \ngenauso
+        verklemmt wie dein Vater. \nUnd du k\xF6nntest so viele \nM\xE4dchen gl\xFCcklich
+        machen."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "Aunt... what?! What... no... \nwhat are you doing?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 8a3ea2279b488c042af5face50a7d403, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 8a3ea2279b488c042af5face50a7d403, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 6325c434ef212574ba75f4651cbcf19d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Aunt... what?! What... no... \nwhat are you doing?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u0451\u0442\u044F\u2026 \u0447\u0442\u043E?! \u0427\u0442\u043E\u2026
+        \u043D\u0435\u0442\u2026 \u0447\u0442\u043E \u0442\u044B \u0434\u0435\u043B\u0430\u0435\u0448\u044C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Tante... was?! Was... \nnein... was machst du?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2dedec0e407385247b38fae288fd0a27, type: 3}
+    Msg: "Shush, or your parents \nwill hear us!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 8bff5753f741e3e438794bc8fd9c0915, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 8bff5753f741e3e438794bc8fd9c0915, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 7bfa26142bed6fa40b95e9e1ccd22a16, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Shush, or your parents \nwill hear us!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u0438\u0448\u0435 \u0442\u044B, \u0430 \u0442\u043E \u0442\u0432\u043E\u0438
+        \n\u0440\u043E\u0434\u0438\u0442\u0435\u043B\u0438 \u043D\u0430\u0441 \u0443\u0441\u043B\u044B\u0448\u0430\u0442!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Psst, oder deine Eltern \nwerden uns h\xF6ren!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: 2dedec0e407385247b38fae288fd0a27, type: 3}
+    Msg: Insert picture
+    optionalData:
+      GallerySlot: {fileID: 11400000, guid: 0a65df5fa289bf848892262f547c6d0e, type: 2}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c8ab99858b9dd7f48bab776fe863f6e5, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips: []
+    _localizedData:
+    - languageCode: en
+      key: Insert picture
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "\u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0430"
+      options:
+        font: {fileID: 0}

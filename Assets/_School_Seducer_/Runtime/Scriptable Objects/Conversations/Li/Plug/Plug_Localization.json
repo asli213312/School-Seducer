@@ -1,0 +1,116 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "I've come up with the next wish."
+                },
+                {
+                    "key": "And what's that wish?"
+                },
+                {
+                    "key": "Right now, a courier will \nknock on your door, there's \na gift from me..."
+                },
+                {
+                    "key": "And what's the gift?"
+                },
+                {
+                    "key": "It's a surprise, you'll see soon enough."
+                },
+                {
+                    "key": "Wait, someone's knocking on the door."
+                },
+                {
+                    "key": "Alright, it's a small box..."
+                },
+                {
+                    "key": "Open it."
+                },
+                {
+                    "key": "This... this is..."
+                },
+                {
+                    "key": "Do you like it?"
+                },
+                {
+                    "key": "I don't know, I've never tried it..."
+                },
+                {
+                    "key": "Here's my wish. Insert this into \nyourself and go the whole day \nwithout taking it out."
+                },
+                {
+                    "key": "But..."
+                },
+                {
+                    "key": "Are you trying to back out of the bet?"
+                },
+                {
+                    "key": "No, not at all!"
+                },
+                {
+                    "key": "Hmm... I have to admit, \nI kind of like it..."
+                },
+                {
+                    "key": "Insert picture"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Я придумал следующее желание."
+                },
+                {
+                    "key": "И что это за желание?"
+                },
+                {
+                    "key": "Сейчас к тебе в дверь постучит курьер, \nтам подарок от меня…"
+                },
+                {
+                    "key": "И что это за подарок?"
+                },
+                {
+                    "key": "Сюрприз, сама скоро увидишь."
+                },
+                {
+                    "key": "Подожди, в дверь стучат."
+                },
+                {
+                    "key": "Так, маленькая коробочка…"
+                },
+                {
+                    "key": "Открывай."
+                },
+                {
+                    "key": "Это… это же…"
+                },
+                {
+                    "key": "Тебе нравится?"
+                },
+                {
+                    "key": "Не знаю, я никогда не пробовала..."
+                },
+                {
+                    "key": "Вот мое желание. Вставь это в себя \nи ходи весь день не вынимая."
+                },
+                {
+                    "key": "Но…"
+                },
+                {
+                    "key": "Ты хочешь отказаться от пари?"
+                },
+                {
+                    "key": "Нет, ни за что!"
+                },
+                {
+                    "key": "Хм… надо признать, мне даже нравится…"
+                },
+                {
+                    "key": "Вставить картинку"
+                }
+            ]
+        }
+    ]
+}

@@ -1,58 +1,217 @@
 {
-  "languages": [
-    {
-      "languageCode": "en",
-      "messages": [
-  {"key": "Hey, what's up! You're Ben, huh?" },
-  {"key": "Yo, yeah, you remember me?"},
-  {"key": "Definitely! You were in the painting \nclass last week, and I was the model."},
-  {"key": "Oh, yeah, my bad... Didn't \nrecognize you at first..."},
-  {"key": "In my outfit? Or you blanked on my face?"},
-  {"key": "Umm, sorry... Nah... I just..."},
-  {"key": "Saw your sketches after class. Seems \nlike you were all about my boobs!"},
-  {"key": "I... It's just..."},
-  {"key": "Relax! I know my boobs are killer!"},
-  {"key": "For sure!"},
-  {"key": "So, listen, today I modeled again, \nand when class ended, I found \nout someone swiped my lingerie."},
-  {"key": "Whoa, seriously? Who'd do that?"},
-  {"key": "No clue, some creep."},
-  {"key": "And what's your move now?"},
-  {"key": "Nothing much. Got more classes \ntoday; can't go change."},
-  {"key": "And honestly, I kinda dig going \ncommando under my skirt; it's a turn-on."},
-  {"key": "Umm, are you commando right now?"},
-  {"key": "Yup, check it out."},
-  {"key": "Insert picture"},
-  {"key": "OMG!"},
-  {"key": "I like the attention..."},
-  {"key": "Alright, gotta jet. And you might \nwanna handle that boner sticking out \nof your pants; it's not cool to \nwalk around like that in public."}
-      ]
-    },
-    {
-      "languageCode": "ru",
-      "messages": [
-  {"key": "О, привет! Ты же Бен, кажется?"},
-  {"key": "Привет, да, ты меня знаешь?"},
-  {"key": "Конечно! Ты на прошлой неделе приходил \nна живопись, а я была натурщицей."},
-  {"key": "А, точно, прости… Я \nне сразу тебя узнал…"},
-  {"key": "В одежде? Или не запомнил моего лица?"},
-  {"key": "М-м-м, извини… нет… я просто…"},
-  {"key": "Я видела твои наброски после занятия. \nТы всё внимание уделил моей груди!"},
-  {"key": "Я… Просто ты…"},
-  {"key": "Расслабься! Я знаю, что у меня \nсногсшибательные сиськи!"},
-  {"key": "Это точно!"},
-  {"key": "Представляешь, сегодня я снова работала \nнатурщицей, а после урока обнаружила, \nчто кто-то украл моё бельё."},
-  {"key": "Ого, кто бы это мог сделать?"},
-  {"key": "Понятия не имею, какой-то извращенец."},
-  {"key": "И что ты теперь собираешься делать?"},
-  {"key": "Да ничего. У меня ещё сегодня занятия, \nя не могу пойти переодеться."},
-  {"key": "Ну и признаюсь, что ходить без \nтрусиков под юбкой мне даже \nнравится, это меня возбуждает."},
-  {"key": "М-м-м, ты и сейчас без трусиков?..."},
-  {"key": "Да, смотри."},
-  {"key": "Вставить картинку"},
-  {"key": "О боже!"},
-  {"key": "Мне нравится, когда на меня смотрят…"},
-  {"key": "Ладно, мне пора. А тебе надо что-то \nсделать с торчащим через штаны пенисом, а то \nнеприлично так ходить в общественных местах."}
-      ]
-    }
-  ]
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hey, what's up! You're Ben, huh?"
+                },
+                {
+                    "key": "Yo, yeah, you remember me?"
+                },
+                {
+                    "key": "Definitely! You were in the painting \nclass last week, and I was the model."
+                },
+                {
+                    "key": "Oh, yeah, my bad... Didn't \nrecognize you at first..."
+                },
+                {
+                    "key": "In my outfit? Or you blanked on my face?"
+                },
+                {
+                    "key": "Umm, sorry... Nah... I just..."
+                },
+                {
+                    "key": "Saw your sketches after class. Seems \nlike you were all about my boobs!"
+                },
+                {
+                    "key": "I... It's just..."
+                },
+                {
+                    "key": "Relax! I know my boobs are killer!"
+                },
+                {
+                    "key": "For sure!"
+                },
+                {
+                    "key": "So, listen, today I modeled again, \nand when class ended, I found \nout someone swiped my lingerie."
+                },
+                {
+                    "key": "Whoa, seriously? Who'd do that?"
+                },
+                {
+                    "key": "No clue, some creep."
+                },
+                {
+                    "key": "And what's your move now?"
+                },
+                {
+                    "key": "Nothing much. Got more classes \ntoday; can't go change."
+                },
+                {
+                    "key": "And honestly, I kinda dig going \ncommando under my skirt; it's a turn-on."
+                },
+                {
+                    "key": "Umm, are you commando right now?"
+                },
+                {
+                    "key": "Yup, check it out."
+                },
+                {
+                    "key": "Insert picture"
+                },
+                {
+                    "key": "OMG!"
+                },
+                {
+                    "key": "I like the attention..."
+                },
+                {
+                    "key": "Alright, gotta jet. And you might \nwanna handle that boner sticking out \nof your pants; it's not cool to \nwalk around like that in public."
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "О, привет! Ты же Бен, кажется?"
+                },
+                {
+                    "key": "Привет, да, ты меня знаешь?"
+                },
+                {
+                    "key": "Конечно! Ты на прошлой неделе приходил \nна живопись, а я была натурщицей."
+                },
+                {
+                    "key": "А, точно, прости… Я \nне сразу тебя узнал…"
+                },
+                {
+                    "key": "В одежде? Или не запомнил моего лица?"
+                },
+                {
+                    "key": "М-м-м, извини… нет… я просто…"
+                },
+                {
+                    "key": "Я видела твои наброски после занятия. \nТы все внимание уделил моей груди!"
+                },
+                {
+                    "key": "Я… Просто ты…"
+                },
+                {
+                    "key": "Расслабься! Я знаю, что у меня \nсногсшибательные сиськи!"
+                },
+                {
+                    "key": "Это точно!"
+                },
+                {
+                    "key": "Представляешь, сегодня я снова работала \nнатурщицей, а после урока обнаружила, \nчто кто-то украл мое белье."
+                },
+                {
+                    "key": "Ого, кто бы это мог сделать?"
+                },
+                {
+                    "key": "Понятия не имею, какой-то извращенец."
+                },
+                {
+                    "key": "И что ты теперь собираешься делать?"
+                },
+                {
+                    "key": "Да ничего. У меня еще сегодня занятия, \nя не могу пойти переодеться."
+                },
+                {
+                    "key": "Ну и признаюсь, что ходить без \nтрусиков под юбкой мне даже \nнравится, это меня возбуждает."
+                },
+                {
+                    "key": "М-м-м, ты и сейчас без трусиков?..."
+                },
+                {
+                    "key": "Да, смотри."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "О боже!"
+                },
+                {
+                    "key": "Мне нравится, когда на меня смотрят…"
+                },
+                {
+                    "key": "Ладно, мне пора. А тебе надо что-то \nсделать с торчащим через штаны пенисом, а то \nнеприлично так ходить в общественных местах."
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Hey, was geht ab! Du bist Ben, oder?"
+                },
+                {
+                    "key": "Yo, ja, erinnerst du dich an mich?"
+                },
+                {
+                    "key": "Auf jeden Fall! Du warst letzte \nWoche im Malunterricht, \nund ich war das Model."
+                },
+                {
+                    "key": "АOh, ja, mein Fehler... Habe \ndich zuerst nicht erkannt..."
+                },
+                {
+                    "key": "In meinem Outfit? Oder hast \ndu mein Gesicht vergessen?"
+                },
+                {
+                    "key": "Ähm, tut mir leid... Nee... \nIch habe einfach..."
+                },
+                {
+                    "key": "Habe deine Skizzen nach dem \nUnterricht gesehen. Sieht so aus, \nals wärst du ganz von meinen \nBrüsten fasziniert!"
+                },
+                {
+                    "key": "Ich... Es ist nur..."
+                },
+                {
+                    "key": "Entspann dich! Ich weiß, meine \nBrüste sind unschlagbar!"
+                },
+                {
+                    "key": "Auf jeden Fall!"
+                },
+                {
+                    "key": "Also hör zu, heute habe ich wieder \ngemodelt, und als der Unterricht \nvorbei war, habe ich herausgefunden, \ndass jemand meine \nUnterwäsche geklaut hat."
+                },
+                {
+                    "key": "Whoa, ernsthaft? Wer würde so etwas tun?"
+                },
+                {
+                    "key": "Keine Ahnung, irgendein Freak."
+                },
+                {
+                    "key": "Und was ist jetzt dein Plan?"
+                },
+                {
+                    "key": "Nicht viel. Habe heute \nnoch mehr Unterricht; kann \nmich nicht umziehen."
+                },
+                {
+                    "key": "Und ich sage dir, ich mag es, \nohne Höschen unter meinem Rock \nzu sein, das macht mich geil."
+                },
+                {
+                    "key": "Mmm, du trägst jetzt keinen Schlüpfer?"
+                },
+                {
+                    "key": "Ja, schau mal."
+                },
+                {
+                    "key": "Вставить картинку"
+                },
+                {
+                    "key": "OMG!"
+                },
+                {
+                    "key": "Ich mag die Aufmerksamkeit..."
+                },
+                {
+                    "key": "Alles klar, ich muss los. \nUnd du solltest dich um den \nStänder kümmern, der aus deiner \nHose ragt; es ist nicht cool, so \nin der Öffentlichkeit herumzulaufen."
+                }
+            ]
+        }
+    ]
 }
