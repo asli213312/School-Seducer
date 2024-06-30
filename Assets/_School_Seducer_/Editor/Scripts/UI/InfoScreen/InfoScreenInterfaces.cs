@@ -1,4 +1,5 @@
 ﻿using _School_Seducer_.Editor.Scripts.Chat;
+using UniRx;
 
 namespace _School_Seducer_.Editor.Scripts
 {
@@ -9,6 +10,7 @@ namespace _School_Seducer_.Editor.Scripts
 
     public interface IInfoScrollersModule : IModule<InfoScreenSystem>, ICharacterSelected
     {
+        ReactiveProperty<Character> CurrentCharacter { get; }
         void Initialize();
     }
 

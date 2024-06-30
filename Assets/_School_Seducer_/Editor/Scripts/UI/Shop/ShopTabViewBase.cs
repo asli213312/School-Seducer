@@ -16,6 +16,15 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
         [SerializeField] protected Button buttonTab;
         public abstract ShopTabDataBase Data { get; }
 
+        public readonly List<IShopItemView> CurrentItems = new();
+
+        public Action<ShopTabViewBase> TabSelectedAction;
+        public event Action ItemTryBuyInvokedAction;
+        public event Action<IShopItemDataBase> ItemTryBuyAction;
+        public event Action ItemBuySuccessAction;
+        public event Action ItemBuyFailedAction;
+        public event Action ContentRenderedEvent;
+
         private ColorBlock DisabledColorsTab => new ColorBlock() 
         {
             normalColor = Color.clear,
@@ -37,15 +46,6 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
             colorMultiplier = buttonTab.colors.colorMultiplier,
             fadeDuration = buttonTab.colors.fadeDuration
         };
-
-        protected List<IShopItemView> CurrentItems = new();
-
-        public Action<ShopTabViewBase> TabSelectedAction;
-        public event Action ItemTryBuyInvokedAction;
-        public event Action<IShopItemDataBase> ItemTryBuyAction;
-        public event Action ItemBuySuccessAction;
-        public event Action ItemBuyFailedAction;
-        public event Action ContentRenderedEvent;
 
         private void OnDestroy() 
         {

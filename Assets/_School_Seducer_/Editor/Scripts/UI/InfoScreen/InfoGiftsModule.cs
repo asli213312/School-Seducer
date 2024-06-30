@@ -9,6 +9,7 @@ using _School_Seducer_.Editor.Scripts.UI.Popups;
 using _School_Seducer_.Editor.Scripts.Services;
 using _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune;
 using _School_Seducer_.Editor.Scripts.Utility;
+using Cysharp.Threading.Tasks;
 using Spine.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef3d0166d0741d984f96ed7f3878a13, type: 3}
+  m_Name: Popup config
+  m_EditorClassIdentifier: 
+  mainPopupView: {fileID: 5664616656345600679, guid: 7710b8002d46d694c8b3240d20875059, type: 3}
+  data:
+  - rid: 239501726117789698
+  - rid: 239501742498643968
+  references:
+    version: 2
+    RefIds:
+    - rid: 239501726117789698
+      type: {class: ShopItemPopupData, ns: _School_Seducer_.Editor.Scripts.UI.Shop, asm: Project.Editor}
+      data:
+        popupView: {fileID: 8029961434351003303, guid: d8467b4466a02944fbb7f85e7ecf1cab, type: 3}
+        data: {fileID: 11400000, guid: 937697b13029d5342989f4d84c825cd9, type: 2}
+    - rid: 239501742498643968
+      type: {class: ShopItemPopupData, ns: _School_Seducer_.Editor.Scripts.UI.Shop, asm: Project.Editor}
+      data:
+        popupView: {fileID: 8029961434351003303, guid: d8467b4466a02944fbb7f85e7ecf1cab, type: 3}
+        data: {fileID: 11400000, guid: 94412fd212391084cb380a16846c6d91, type: 2}

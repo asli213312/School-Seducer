@@ -19,4 +19,5 @@ MonoBehaviour:
   id: comics_Emily_1
   gallerySlotsToUnlock:
   - {fileID: 11400000, guid: b92f570202476a84a95d4118c6b36b7d, type: 2}
-  characterInfo: {fileID: 11400000, guid: 2a82848f2e60fa141b687f3046d8c01c, type: 2}
+  description: 
+  characterInfo: {fileID: 11400000, guid: 3b8874d9c434e2645a6e1052bdfff254, type: 2}

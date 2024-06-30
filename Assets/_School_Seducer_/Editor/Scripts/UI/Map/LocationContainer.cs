@@ -29,6 +29,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
         public event Action<Character> CharacterSelected;
 
         public Transform HighLight => highlight;
+        
+        private const int MAX_CHARACTERS = 3;
 
         private RectTransform _charactersContainer;
         private CharacterOnLocationView _prefabView;
@@ -73,7 +75,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
             {
                 if (character.isLocked) continue;
                 
-                if (countCharacters == 3)
+                if (countCharacters == MAX_CHARACTERS)
                 {
                     RectTransform headerMoreSlots = Instantiate(panelHeaderMoreSlotsPrefab, panelHeaderContent);
                     int leftCharacters = data.characters.Length - countCharacters;
@@ -86,7 +88,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
                 Image headerSlot = Instantiate(panelHeaderSlotPrefab, panelHeaderContent).GetComponent<Image>();
                 headerSlot.sprite = character.info.onLocationSprite;
 
-                if (character.HasUnseenConversations() && data.characters.Length <= 3) 
+                if (character.HasUnseenConversations() && data.characters.Length <= MAX_CHARACTERS) 
                 {
                 	headerSlot.transform.GetChild(0).gameObject.SetActive(true);
             	}

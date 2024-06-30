@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08ec2af20ab446bae6c6916ace5c267, type: 3}
   m_Name: Comics Alison_2
   m_EditorClassIdentifier: 
-  isSold: 1
+  isSold: 0
   cost: 14.99
   view: {fileID: 1908985714697493228, guid: df29cadf93fe1534cb64330239530fd4, type: 3}
   showDebugParameters: 1
   id: comics_Alison_2
   gallerySlotsToUnlock:
   - {fileID: 11400000, guid: ef8b1cb9c0bfd154aaa9e2692dc7a329, type: 2}
-  characterInfo: {fileID: 11400000, guid: b2a1c16e443f1c244989288cb821a81e, type: 2}
+  description: 
+  characterInfo: {fileID: 11400000, guid: 8f7a19bf7b9c2a54ab3730400ad76eec, type: 2}

@@ -6,6 +6,7 @@ using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.Utility;
 using Sirenix.OdinInspector;
 using Spine.Unity;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,13 +30,19 @@ namespace _School_Seducer_.Editor.Scripts.UI
         [SerializeField] private float durationAnim;
 
         public bool showDebugParameters;
-        [ShowInInspector, ShowIf("showDebugParameters")] public static OpenContentBase CurrentData;
+        [ShowInInspector, ShowIf("showDebugParameters")] public static OpenContentBase CurrentData
+        {
+            get => CurrentContent.Value;
+            set => CurrentContent.Value = value;
+        }
         public GameObject Container => _container;
         
         private const int NEXT = 1;
         private const int PREVIOUS = -1;
 
         [ShowInInspector] private List<IContent> _currentSlots = new();
+
+        private static readonly ReactiveProperty<OpenContentBase> CurrentContent = new();
 
         private Button _contentWideButton;
         private Button _contentSquareButton;
@@ -48,7 +55,6 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private SkeletonAnimation _currentContentAnimation;
         
         private int _currentIndexContent;
-        private bool _isSelected;
 
         private void Awake()
         {
@@ -66,15 +72,6 @@ namespace _School_Seducer_.Editor.Scripts.UI
             UnregisterAnimateButton();
         }
 
-        private void Update()
-        {
-            if (CurrentData != null && _isSelected == false)
-            {
-                ShowContent();
-                _isSelected = true;
-            }
-        }
-
         public void ChangeChat(Chat.Chat newChat) => chat = newChat;
         public void ResetSlots() => _currentSlots.Clear();
 
@@ -86,6 +83,11 @@ namespace _School_Seducer_.Editor.Scripts.UI
             _contentAnimationButton = contentAnimation.GetComponent<Button>();
             _contentComicsButton = comicsContent.GetComponent<Button>();
             _animateButton = contentAnimation.transform.GetChild(0).GetComponent<Button>();
+
+            CurrentContent
+                .Where(x => x != null)
+                .Subscribe(x => ShowContent())
+                .AddTo(this);
         }
 
         private void InstallSlots()
@@ -113,7 +115,6 @@ namespace _School_Seducer_.Editor.Scripts.UI
 
         private void ShowContent()
         {
-            _isSelected = true;
             Debug.Log("Showing content...");
             
             if (CurrentData == null)
@@ -382,8 +383,7 @@ namespace _School_Seducer_.Editor.Scripts.UI
         private void ResetContent()
         {
             _container.gameObject.Deactivate();
-            _isSelected = false;
-            CurrentData = null;
+            CurrentContent.Value = null;
         } 
     }
 }

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Special_MsGreen
   m_EditorClassIdentifier: 
   isSold: 0
+  showDebugParameters: 0
+  id: 
   cost: 29.99
   view: {fileID: -7196031316481978591, guid: 5651836b966e94f4c928dfd6cccab81b, type: 3}
   characterData: {fileID: 11400000, guid: 0a0c2a4432119194481bc26b488d6f7e, type: 2}

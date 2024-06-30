@@ -9,6 +9,12 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
         public event Action SoldSuccessAction;
     }
 
+    public interface IShopItemCharacterData : IShopItemDataBase
+    {
+        public CharacterData CharacterData { get; }
+        public string Description { get; }
+    }
+
     public interface IShopItemSoldableSoftItem : IShopItemSoldable {}
     public interface IShopItemSoldableHardItem : IShopItemSoldable {}
 
@@ -28,6 +34,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
     public interface IShopItemCostable 
     {
         public float Cost { get; }
+        public bool NeedSubtract { get; set; }
     }
 
     public interface IShopItemPurchasable
@@ -48,6 +55,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
     public interface IShopItemView
     {
         public IShopItemDataBase MainData { get; }
+        public event Action<IShopItemView> OnClick;
+        public void Buy();
         public void BaseRender(IShopItemDataBase itemData);
     }
 }

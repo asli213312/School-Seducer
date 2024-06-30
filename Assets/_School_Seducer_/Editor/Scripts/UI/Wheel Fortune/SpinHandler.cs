@@ -18,7 +18,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
         
         [Header("UI elements")]
         [SerializeField] private TextMeshProUGUI textSpin;
-        [SerializeField] private TextMeshProUGUI _costSpinText;
+        [SerializeField] protected TextMeshProUGUI _costSpinText;
         [SerializeField] private TextMeshProUGUI characterName;
         [SerializeField] private Transform wheelTransform;
         [SerializeField] private Button closeButton;
@@ -62,11 +62,11 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             spinButton.RemoveListener(OnSpinButtonClicked);
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             InitParametersData();
             
-            _costSpinText.text = SpinHandler.Data.moneyForSpin + " COIN";
+            _costSpinText.text = SpinHandler.Data.moneyForSpin.ToString();
         }
         
         protected virtual void InitParametersData()

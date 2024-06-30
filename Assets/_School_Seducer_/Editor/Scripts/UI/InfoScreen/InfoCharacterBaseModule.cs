@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UniRx;
 
 namespace _School_Seducer_.Editor.Scripts
 {
@@ -19,25 +20,25 @@ namespace _School_Seducer_.Editor.Scripts
         
         public void Initialize() 
         {
-            _system.Previewer.CharacterSelectedEvent += OnCharacterSelected;
+            _system.ScrollersModule.CurrentCharacter
+                .Where(character => character != null)
+                .Subscribe(OnCharacterSelected)
+                .AddTo(this);
         }
 
-        private void OnDestroy()
-        {
-            _system.Previewer.CharacterSelectedEvent -= OnCharacterSelected;
-        }
-
-        public void OnCharacterSelected(Character character)
+        public void OnCharacterSelected(Character character) 
         {
             ResetCharacter();
-            
+
             age.text = "Age: " + character.Data.info.age;
             faculty.text = "Faculty: " + character.Data.info.faculty;
 
+            string hobbiesString = "";
             foreach (var hobby in character.Data.info.hobbies)
             {
-                hobbies.text += "Hobby: " + hobby + "\n";
+                hobbiesString += "Hobby: " + hobby + "\n";
             }
+            hobbies.text = hobbiesString;
         }
 
         private void ResetCharacter()

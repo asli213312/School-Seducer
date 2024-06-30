@@ -16,6 +16,7 @@ namespace _School_Seducer_.Editor.Scripts
     [Serializable]
     public class InfoMiniGameDataUndressLevel
     {
+    	public float timeToComplete;
         public InfoMiniGameDataUndressPoint[] pointsToTouch;
         public Sprite nextImage;
     }

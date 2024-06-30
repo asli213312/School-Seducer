@@ -70,8 +70,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
                     {
                         if (soldableSingleItem is IShopItemSoldableHardItem singleSoldableHardItem) 
                         {
-                            singleSoldableHardItem.SoldAction += soldableItem => InvokeItemTryBuyEvent(singleItemView.SingleData);
-                            singleSoldableHardItem.SoldAction += soldableItem => InvokeItemTryBuyInvokedEvent();
+                            //singleSoldableHardItem.SoldAction += soldableItem => InvokeItemTryBuyEvent(singleItemView.SingleData);
+                            //singleSoldableHardItem.SoldAction += soldableItem => InvokeItemTryBuyInvokedEvent();
                         }   
                     }
                 }
@@ -110,8 +110,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
                     {
                         if (singleItemView is IShopItemSoldableHardItem soldableSingleHardItem) 
                         {
-                            soldableSingleHardItem.SoldAction -= soldableItem => InvokeItemTryBuyEvent(singleItemView.SingleData);
-                            soldableSingleHardItem.SoldAction -= soldableItem => InvokeItemTryBuyInvokedEvent();
+                            //soldableSingleHardItem.SoldAction -= soldableItem => InvokeItemTryBuyEvent(singleItemView.SingleData);
+                            //soldableSingleHardItem.SoldAction -= soldableItem => InvokeItemTryBuyInvokedEvent();
                         }
                     }
                 }

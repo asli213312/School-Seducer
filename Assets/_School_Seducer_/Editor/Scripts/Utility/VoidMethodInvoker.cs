@@ -71,13 +71,10 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                 ParameterInfo[] parameters = _foundedVoidMethod.GetParameters();
                 object[] parameterValues = new object[parameters.Length];
                 
-                // Проход по каждому параметру и установка соответствующего значения
                 for (int i = 0; i < parameters.Length; i++)
                 {
-                    // Получаем тип параметра по его имени
                     object parameterType = GetParameterValue(i);
                     
-                    // Пытаемся скастовать значение параметра к нужному типу
                     if (parameterType != null)
                     {
                         Debug.Log("<color=red>VOID INVOKER: </color> found parameter type: " + parameterType);
@@ -86,7 +83,6 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                     }
                     else
                     {
-                        // Если не удалось определить тип параметра, устанавливаем значение в null
                         parameterValues[i] = null;
                         Debug.Log("<color=red>VOID INVOKER: </color> not found parameter type as: " + GetParameterTypeName(i));
                     }
@@ -104,7 +100,6 @@ namespace _School_Seducer_.Editor.Scripts.Utility
                 {
                     try
                     {
-                        // Пытаемся привести параметр к нужному типу
                         object castedValue = Convert.ChangeType(parameter, parameterType);
                         return castedValue;
                     }

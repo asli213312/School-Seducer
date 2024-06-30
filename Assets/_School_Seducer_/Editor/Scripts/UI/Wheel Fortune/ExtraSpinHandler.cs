@@ -48,6 +48,14 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
             _globalSelectors.SelectedObjectEvent -= GiftSelected;
         }
 
+        protected override void Start() 
+        {
+            base.Start();
+
+            var cost = SpinHandler.Data.moneyForSpin * multiplier;
+            _costSpinText.text = cost.ToString();
+        }
+
         protected override void InitParametersData()
         {
             RotationSpeed = rotationSpeed;

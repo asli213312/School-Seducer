@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 namespace _School_Seducer_.Editor.Scripts
 {
     public class InfoScrollersModule : MonoBehaviour, IInfoScrollersModule
     {
         [SerializeField] private InfoCharacterScroller characterScroller;
+
+        public ReactiveProperty<Character> CurrentCharacter { get; private set; } = new ReactiveProperty<Character>();
 
         public Previewer Previewer => _system.Previewer;
         
@@ -27,9 +30,13 @@ namespace _School_Seducer_.Editor.Scripts
         public void OnCharacterSelected(Character character)
         {
             characterScroller.InstallCurrentPortrait(character.Data.info.portrait);
+            CurrentCharacter.Value = character;
         }
 
-        public void SelectCharacter(Character character) => _system.Previewer.SelectCharacter(character);
+        public void SelectCharacter(Character character) 
+        {
+            _system.Previewer.SelectCharacter(character);
+        }
 
         private void OnDestroy()
         {

@@ -18,4 +18,5 @@ MonoBehaviour:
   showDebugParameters: 0
   id: 
   gallerySlotsToUnlock: []
-  characterInfo: {fileID: 11400000, guid: 99c0d3d00e6df1b40981715003130022, type: 2}
+  description: 
+  characterInfo: {fileID: 11400000, guid: 583bc18fa8e39fa40ab501320292d5e7, type: 2}

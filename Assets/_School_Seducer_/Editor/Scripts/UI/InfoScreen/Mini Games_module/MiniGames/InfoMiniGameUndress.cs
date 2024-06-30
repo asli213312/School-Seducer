@@ -38,6 +38,7 @@ namespace _School_Seducer_.Editor.Scripts
         [SerializeField] private RectTransform pointsContent;
         [SerializeField] private InfoMiniGameViewPointUndress pointPrefab;
         [SerializeField] private Slider progressBar;
+        [SerializeField] private Image timerBar;
 
         [Header("Options")] 
         [SerializeField] private float progressBarSpeed;
@@ -54,10 +55,12 @@ namespace _School_Seducer_.Editor.Scripts
         private InfoMiniGameDataUndressPoint _nextPointToTouch;
         private MiniGameUndressPointTargetContainer _currentPointsTarget;
 
+        private float _timer;
         private float _nextProgressBarMinValue;
         private int _currentLevelIndex;
         private int _currentPointIndex;
 
+        private bool _timerStarted;
         private bool _isInitialized;
 
         protected override void Awake() 
@@ -70,6 +73,11 @@ namespace _School_Seducer_.Editor.Scripts
         {
             base.OnDestroy();
             progressBar.onValueChanged.RemoveListener(OnProgressChanged);
+        }
+
+        private void Update() 
+        {
+
         }
 
         private void OnProgressChanged(float value)  
@@ -87,7 +95,7 @@ namespace _School_Seducer_.Editor.Scripts
 
         protected override void OnCloseGame()
         {
-            
+            ResetTimer();
         }
         
         protected override void OnComplete()
@@ -99,6 +107,9 @@ namespace _School_Seducer_.Editor.Scripts
             }));
 
             _points[0].transform.parent.parent.gameObject.SetActive(false);
+
+            progressBar.gameObject.SetActive(false);
+            timerBar.gameObject.SetActive(false);
         }
 
         protected override void OnInitialize()
@@ -108,6 +119,9 @@ namespace _School_Seducer_.Editor.Scripts
 
             if (_points.Count > 0)
                 _points[0].transform.parent.parent.gameObject.SetActive(true);
+
+            progressBar.gameObject.SetActive(true);
+            timerBar.gameObject.SetActive(true);
 
             if (_isInitialized) return;
             
@@ -145,6 +159,8 @@ namespace _School_Seducer_.Editor.Scripts
             _currentPointsTarget = PointTargets[_currentLevelIndex];
 
             characterImage.sprite = _currentLevel.nextImage;
+
+            _timer = _currentLevel.timeToComplete;
         }
 
         private InfoMiniGameViewPointUndress CreatePoint(Transform parent, InfoMiniGameDataUndressPoint pointData)
@@ -212,6 +228,12 @@ namespace _School_Seducer_.Editor.Scripts
             {
                 AnimateProgressBar(progressBar.maxValue);
             }
+
+            if (_timerStarted == false) 
+            {
+                _timerStarted = true;
+                StartCoroutine(AnimateTimerBarProcess());
+            }
         }
 
         private void OnFailedPoint()
@@ -243,6 +265,53 @@ namespace _School_Seducer_.Editor.Scripts
             _nextPointToTouch = _currentPointsToTouch[_currentPointIndex];
         }
 
+        private IEnumerator AnimateTimerBarProcess() 
+        {
+            float initialTimerValue = _currentLevel.timeToComplete;
+            _timer = initialTimerValue;
+
+            while (_timer > 0 && _timerStarted) 
+            {
+                if (IsLevelCompleted()) 
+                {
+                    yield break;
+                }
+
+                _timer -= Time.deltaTime;
+                timerBar.fillAmount = _timer / initialTimerValue;
+
+                yield return null;
+            }
+
+            OnFinishTimer();
+        }
+
+        private bool IsLevelCompleted() 
+        {
+            if (_currentLevelIndex == _currentLevelIndex + 1) 
+            {
+                _timerStarted = false;
+                return true;
+            }
+
+            return false;
+        }
+
+        private void OnFinishTimer() 
+        {
+            _timerStarted = false;
+            progressBar.value = _nextProgressBarMinValue;
+            timerBar.fillAmount = 1;
+
+            Debug.Log("Invoked finish timer");
+        }
+
+        private void ResetTimer() 
+        {
+            StopCoroutine("AnimateTimerBarProcess");
+            this.WaitForSeconds(0.09f, () => _timerStarted = false);
+        }
+
         private void AnimateProgressBar(float newValue)
         {
             StartCoroutine(progressBar.AnimateProgressionBySpeed(newValue, progressBarSpeed));
@@ -266,13 +335,18 @@ namespace _School_Seducer_.Editor.Scripts
 
             if (_currentLevelIndex <= data.levels.Length - 1) 
             {
+                ResetTimer();
+
                 InitializeLevel(_currentLevelIndex);
                 StartCoroutine(AnimateFlashImage()); 
-                Invoke(nameof(UpdateNextMinValue), 0.5f);
             }
 
-            if (_currentLevelIndex == data.levels.Length)
+            if (_currentLevelIndex == data.levels.Length) 
+            {
+                ResetTimer();
+
                 OnComplete();
+            }
         }
 
         private IEnumerator AnimateFlashImage(Action onComplete = null)
@@ -280,11 +354,6 @@ namespace _School_Seducer_.Editor.Scripts
             yield return flashImage.FadeIn(0.1f);
             yield return flashImage.FadeOut(0.1f);
             onComplete?.Invoke();
-        }
-
-        private void UpdateNextMinValue()
-        {
-            //_nextProgressBarMinValue = progressBar.value;
         }
     }
 }

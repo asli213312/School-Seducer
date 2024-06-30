@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSold: 0
   cost: 16.99
-  view: {fileID: 8778769310496717884, guid: 6a9df0bc89adf254396c2a32c662898e, type: 3}
+  view: {fileID: 8778769310496717884, guid: 9b05680ae6cd7a64684f857044ea4358, type: 3}
   showDebugParameters: 0
   id: 
   gameData: {fileID: 11400000, guid: e0e03937859571343817bbcd59aa4cf0, type: 2}
-  characterInfo: {fileID: 11400000, guid: 266af1cb6003d1c47af870d328910c91, type: 2}
+  characterInfo: {fileID: 11400000, guid: 3835b845eaa331945a03a28cc57e9c9c, type: 2}
+  description: 
