@@ -28,15 +28,16 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
         public event Action<LocationContainer> ShowContentEvent;
         public event Action<Character> CharacterSelected;
 
-        public Transform HighLight => highlight;
-        
-        private const int MAX_CHARACTERS = 3;
+        public LocationData Data => data;
+        public Transform HighLight => highlight;        
 
+        private List<Character> _characters = new();        
         private RectTransform _charactersContainer;
         private CharacterOnLocationView _prefabView;
-        private List<Character> _characters = new();
 
         private MapSelectorBase _mapSelectorModule;
+
+        private const int MAX_CHARACTERS = 3;
 
         public void InitializeCore(MapSelectorBase system)
         {
@@ -73,7 +74,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
                 
             foreach (var character in data.characters)
             {
-                if (character.isLocked) continue;
+                //if (character.isLocked) continue;
                 
                 if (countCharacters == MAX_CHARACTERS)
                 {
@@ -174,7 +175,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
         
             foreach (var characterData in data.characters)
             {
-                if (characterData.isLocked) continue;
+                //if (characterData.isLocked) continue;
                 
                 CharacterOnLocationView view = Instantiate(_prefabView, _charactersContainer);
                 view.Render(characterData);

@@ -234,9 +234,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6124523759543975760}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 71, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 71, y: -57}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3395068539408782288
@@ -353,6 +353,7 @@ MonoBehaviour:
   content: {fileID: 5712143689147151574}
   contentScaleableWrapper: {fileID: 6124523759543975760}
   offsetLayout: 33.9
+  Items: []
   bigItemEmptyPrefab: {fileID: 7779797805506764681, guid: b4f869b864575904098214b36284191c, type: 3}
   scaleOffset: 1.4
   positionOffsetX: 164.8

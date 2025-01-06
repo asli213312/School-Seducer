@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Chat;
 using _School_Seducer_.Editor.Scripts.Utility;
@@ -214,12 +215,18 @@ namespace _School_Seducer_.Editor.Scripts.UI.Wheel_Fortune
 
         private void InitializeSlots()
         {
-            int charactersCount = _system.Data.characters.Count;
+            var characters = Previewer.Characters;
+            var targetWheelCharacters = _system.Data.characters;
+
+            int charactersCount = _system.Data.characters                
+                .Count(x => Previewer.Characters.Any(c => c.name == x.name && c.Data.isLocked == false));
+
             int targetNumberOfSlots = 3 * 8;
 
             for (int i = 0; i < targetNumberOfSlots; i++)
             {
                 var character = _system.Data.characters[i % charactersCount];
+
                 WheelSlot characterSlot = Instantiate(characterSlotPrefab, scrollCharactersContent);
                 characterSlot.Initialize(character, _system.Data.iconMoney);
                 

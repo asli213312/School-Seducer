@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Player Config
   m_EditorClassIdentifier: 
   level: 5
-  diamonds: 2000
-  money: 118018
+  diamonds: 3749
+  money: 118288
   experience: 210
   showParameters: 0
   showDebugParameters: 0

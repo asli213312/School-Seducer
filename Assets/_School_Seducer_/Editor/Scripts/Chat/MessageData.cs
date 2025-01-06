@@ -18,8 +18,13 @@ namespace _School_Seducer_.Editor.Scripts.Chat
         [field: NaughtyAttributes.ReadOnly, SerializeField, HideInInspector] public MessageSender Sender { get; set; }
 
         [SerializeField] private List<Translator.LanguageAudioClip> localizedAudioClips = new();
+
+        public List<Translator.LanguageAudioClip> LocalizedAudioClips { get => localizedAudioClips; set => localizedAudioClips = value; }
+
         [SerializeField] private List<Translator.LanguagesText> _localizedData = new();
         public bool completed { get; set; } 
+
+        public void ClearLocalizedAudioClips() => localizedAudioClips.Clear();
 
         public List<Translator.LanguagesText> SetLocalizedData(List<Translator.LanguagesText> localizedDataList)
         {

@@ -14,12 +14,23 @@ namespace _School_Seducer_.Editor.Scripts.Utility
 
         [SerializeField] private bool showDebugParameters;
         [SerializeField] private bool tutorialCompleted;
-        [SerializeField] public bool soundEnabled;
+        [SerializeField] private bool _soundEnabled;
+        public bool soundEnabled 
+        {
+            get => _soundEnabled;
+            set
+            {
+                _soundEnabled = value;
+                SoundEnabled?.Invoke(value);
+            }
+        }
         [SerializeField, ShowIf(nameof(showDebugParameters))] private LocalizedGlobalMonoBehaviour localizatorRuntime;
         public static string GlobalCurrentLanguage { get; private set; }
         public bool TutorialCompleted { get => tutorialCompleted; set => tutorialCompleted = value; }
 
         public static event Action LanguageChanged;
+
+        public event Action<bool> SoundEnabled;        
 
         private void OnValidate()
         {

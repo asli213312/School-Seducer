@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Screens/info_screen/info_screen_styles.uss?fileID=7433441132597879392&amp;guid=f0858a3cb563a254ab0b71d12896b834&amp;type=3#info_screen_styles" />
+    <ui:VisualElement name="root" style="flex-grow: 1; background-image: resource(&apos;General/Utility/bg_info&apos;);">
+        <ui:VisualElement name="header-row" class="header-row" style="height: 20%;">
+            <ui:Button class="close-button" />
+            <ui:VisualElement name="tabs-container" class="tabs-container" style="justify-content: space-around; align-items: center; padding-top: 0; padding-bottom: 17px; flex-direction: row;">
+                <ui:Label tabindex="-1" text="ALL" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ALL" class="tab-label" />
+                <ui:Label tabindex="-1" text="STORY" parse-escape-sequences="true" display-tooltip-when-elided="true" name="STORY" class="tab-label" />
+                <ui:Label tabindex="-1" text="GALLERY" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GALLERY" class="tab-label" />
+            </ui:VisualElement>
+            <ui:VisualElement class="gold-counter" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

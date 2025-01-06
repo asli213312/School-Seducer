@@ -1,0 +1,536 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Doggy
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Doggy
+    localizedDataList:
+    - languageCode: en
+      key: Doggy
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: 586e4ff00ba48984d836735ce0922eec, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: "You again? How come we \nalways end up somewhere alone?"
+        - key: "Hmmm... I wouldn't say that! \nIt's pretty crowded in there."
+        - key: Are you implying something?
+        - key: "No, I'm sick of hints. \nGet undressed!"
+        - key: "Get on the bench and stop \nasking stupid questions!"
+        - key: Oh, yeah, Ben!
+        - key: "Does it turn you on that \nwe might get caught?"
+        - key: "I think so. I'm all hot and bothered. \nBut what if someone comes
+            in?"
+      - languageCode: ru
+        messages:
+        - key: "\u041E\u043F\u044F\u0442\u044C \u0442\u044B? \u041A\u0430\u043A \u0442\u0430\u043A
+            \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0441\u044F, \n\u0447\u0442\u043E
+            \u043C\u044B \u0432\u0441\u0435 \u0432\u0440\u0435\u043C\u044F \u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u043C\u0441\u044F
+            \n\u0433\u0434\u0435-\u0442\u043E \u043D\u0430\u0435\u0434\u0438\u043D\u0435?"
+        - key: "\u0425\u043C\u043C\u043C\u2026 \u042F \u0431\u044B \u0442\u0430\u043A
+            \u043D\u0435 \u0441\u043A\u0430\u0437\u0430\u043B! \n\u0422\u0430\u043C
+            \u0432 \u0437\u0430\u043B\u0435 \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E
+            \u043C\u043D\u043E\u0433\u043E \u043D\u0430\u0440\u043E\u0434\u0443."
+        - key: "\u0422\u044B \u043D\u0430 \u0447\u0442\u043E-\u0442\u043E \u043D\u0430\u043C\u0435\u043A\u0430\u0435\u0448\u044C?"
+        - key: "\u041D\u0435\u0442, \u043C\u043D\u0435 \u043D\u0430\u0434\u043E\u0435\u043B\u0438
+            \u043D\u0430\u043C\u0435\u043A\u0438. \n\u0420\u0430\u0437\u0434\u0435\u0432\u0430\u0439\u0441\u044F!"
+        - key: "\u0412\u0441\u0442\u0430\u043D\u044C \u043D\u0430 \u043B\u0430\u0432\u043A\u0443
+            \u0438 \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u0442\u044C \n\u0437\u0430\u0434\u0430\u0432\u0430\u0442\u044C
+            \u0434\u0443\u0440\u0430\u0446\u043A\u0438\u0435 \u0432\u043E\u043F\u0440\u043E\u0441\u044B!"
+        - key: "\u041E, \u0434\u0430 \u0411\u0435\u043D!"
+        - key: "\u0422\u0435\u0431\u044F \u0437\u0430\u0432\u043E\u0434\u0438\u0442,
+            \u0447\u0442\u043E \u043D\u0430\u0441 \u043C\u043E\u0433\u0443\u0442
+            \u0437\u0430\u0441\u0442\u0443\u043A\u0430\u0442\u044C?"
+        - key: "\u0414\u0443\u043C\u0430\u044E \u0434\u0430, \u044F \u0443\u0436\u0435
+            \u0432\u0441\u044F \u0442\u0435\u043A\u0443! \n\u041D\u043E \u0432\u0434\u0440\u0443\u0433
+            \u043A\u0442\u043E-\u0442\u043E \u0437\u0430\u0439\u0434\u0435\u0442?"
+      - languageCode: de
+        messages:
+        - key: "Du schon wieder? Wie kommt es, \ndass wir immer irgendwo alleine
+            landen?"
+        - key: "Hmmm... Das w\xFCrde ich so \nnicht sagen! Es sind eine \nMenge Leute
+            im Publikum."
+        - key: Willst du damit etwas andeuten?
+        - key: "Nein, ich habe die Nase \nvoll von Andeutungen. \nZiehen Sie sich
+            aus!"
+        - key: "Setz dich auf die Bank \nund h\xF6r auf, dumme \nFragen zu stellen!"
+        - key: Oh, ja, Ben!
+        - key: "Macht es dich an, dass \nman uns erwischen k\xF6nnte?"
+        - key: "Ich glaube ja, ich bin ganz nass. \nAber was ist, wenn jemand reinkommt?"
+      - languageCode: fr
+        messages:
+        - key: "Encore vous ? Comment se fait-il \nque nous nous retrouvions \ntoujours
+            seuls quelque part ?"
+        - key: "Hmmm... Je ne dirais pas \xE7a ! \nIl y a beaucoup de monde \ndans
+            le public."
+        - key: Qu'est-ce que tu insinues ?
+        - key: "Non, j'en ai marre des allusions. \nD\xE9shabillez-vous !"
+        - key: "Monte sur le banc et arr\xEAte \nde poser des questions stupides
+            !"
+        - key: Oh, oui, Ben !
+        - key: "\xC7a t'excite qu'on puisse \nse faire prendre ?"
+        - key: "Je pense que oui, je suis \ntout mouill\xE9. Et si quelqu'un entre
+            ?"
+      - languageCode: it
+        messages:
+        - key: "Ancora tu? Come mai finiamo \nsempre in un posto da soli?"
+        - key: "Hmmm... Non direi proprio! C'\xE8 un \nsacco di gente tra il pubblico."
+        - key: Stai insinuando qualcosa?
+        - key: "No, sono stufo di allusioni. \nSpogliati!"
+        - key: "Sali in panchina e smettila \ndi fare domande stupide!"
+        - key: "Oh, s\xEC, Ben!"
+        - key: "Ti eccita l'idea che potremmo \nessere scoperti?"
+        - key: "Penso di s\xEC, sono tutta bagnata. \nMa se entra qualcuno?"
+      - languageCode: sp
+        messages:
+        - key: "\xBFT\xFA otra vez? \xBFC\xF3mo es que \nsiempre acabamos solos en
+            alg\xFAn sitio?"
+        - key: "Hmmm... \xA1Yo no dir\xEDa eso! \nHay mucha gente entre el p\xFAblico."
+        - key: "\xBFEst\xE1s insinuando algo?"
+        - key: "No, estoy harto de insinuaciones. \n\xA1Desn\xFAdate!"
+        - key: "\xA1S\xFAbete al banco y deja de \nhacer preguntas est\xFApidas!"
+        - key: "\xA1Oh, s\xED, Ben!"
+        - key: "\xBFTe excita que nos puedan pillar?"
+        - key: "Creo que s\xED, estoy toda mojada. \n\xBFPero y si entra alguien?"
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 1
+  isSeen: 1
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041E\u043F\u044F\u0442\u044C \u0442\u044B? \u041A\u0430\u043A \u0442\u0430\u043A
+      \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0441\u044F, \n\u0447\u0442\u043E
+      \u043C\u044B \u0432\u0441\u0435 \u0432\u0440\u0435\u043C\u044F \u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u043C\u0441\u044F
+      \n\u0433\u0434\u0435-\u0442\u043E \u043D\u0430\u0435\u0434\u0438\u043D\u0435?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 0eb4b281661981e4bb67ada1b84f784a, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 076525a5592751e4297d0dfc190fe075, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 0eb4b281661981e4bb67ada1b84f784a, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 34dc14f0e9a989f48a037ab1f006f3be, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: ac4cf6b0a20b628449df87901d0b4fcb, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 5315f774471aee74e861657ffa0fcb08, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 1836aed3bfb7de64d889639d4d902b41, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "You again? How come we \nalways end up somewhere alone?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u043F\u044F\u0442\u044C \u0442\u044B? \u041A\u0430\u043A \u0442\u0430\u043A
+        \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0441\u044F, \n\u0447\u0442\u043E
+        \u043C\u044B \u0432\u0441\u0435 \u0432\u0440\u0435\u043C\u044F \u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u043C\u0441\u044F
+        \n\u0433\u0434\u0435-\u0442\u043E \u043D\u0430\u0435\u0434\u0438\u043D\u0435?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Du schon wieder? Wie kommt es, \ndass wir immer irgendwo alleine landen?"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Encore vous ? Comment se fait-il \nque nous nous retrouvions \ntoujours
+        seuls quelque part ?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Ancora tu? Come mai finiamo \nsempre in un posto da soli?"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xBFT\xFA otra vez? \xBFC\xF3mo es que \nsiempre acabamos solos en alg\xFAn
+        sitio?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0425\u043C\u043C\u043C\u2026 \u042F \u0431\u044B \u0442\u0430\u043A \u043D\u0435
+      \u0441\u043A\u0430\u0437\u0430\u043B! \n\u0422\u0430\u043C \u0432 \u0437\u0430\u043B\u0435
+      \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u043C\u043D\u043E\u0433\u043E
+      \u043D\u0430\u0440\u043E\u0434\u0443."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 02491e7ebfccd164f87f6edc7256d7e2, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 4ac9a175e1abc2443a0fbfdd668ff295, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 02491e7ebfccd164f87f6edc7256d7e2, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: beb6f3cf606864042a2a40e41d402048, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: e6ede4e64c2d95443ba44b8992ed470d, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 99866a7a2290d4f4ca62c1abcc8e3974, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 3245283eb9af43548ba55a2d147dc93b, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Hmmm... I wouldn't say that! \nIt's pretty crowded in there."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0425\u043C\u043C\u043C\u2026 \u042F \u0431\u044B \u0442\u0430\u043A
+        \u043D\u0435 \u0441\u043A\u0430\u0437\u0430\u043B! \n\u0422\u0430\u043C \u0432
+        \u0437\u0430\u043B\u0435 \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E
+        \u043C\u043D\u043E\u0433\u043E \u043D\u0430\u0440\u043E\u0434\u0443."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hmmm... Das w\xFCrde ich so \nnicht sagen! Es sind eine \nMenge Leute
+        im Publikum."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Hmmm... Je ne dirais pas \xE7a ! \nIl y a beaucoup de monde \ndans le
+        public."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Hmmm... Non direi proprio! C'\xE8 un \nsacco di gente tra il pubblico."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Hmmm... \xA1Yo no dir\xEDa eso! \nHay mucha gente entre el p\xFAblico."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u0422\u044B \u043D\u0430 \u0447\u0442\u043E-\u0442\u043E \u043D\u0430\u043C\u0435\u043A\u0430\u0435\u0448\u044C?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 5d46631cc614f8148a438bbb05eaa63f, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 647dff1290597404e843d17632201874, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 5d46631cc614f8148a438bbb05eaa63f, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 1ec0c26663045464b8881a1e394c43a7, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 326c3d9326dffb746a1f4bdee8a4a468, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: f5f7cf6ea1963b14aa62068b70f79815, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 45c6c61789e2351479d7c2ecb9e5200b, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Are you implying something?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u044B \u043D\u0430 \u0447\u0442\u043E-\u0442\u043E \u043D\u0430\u043C\u0435\u043A\u0430\u0435\u0448\u044C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Willst du damit etwas andeuten?
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: Qu'est-ce que tu insinues ?
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: Stai insinuando qualcosa?
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xBFEst\xE1s insinuando algo?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041D\u0435\u0442, \u043C\u043D\u0435 \u043D\u0430\u0434\u043E\u0435\u043B\u0438
+      \u043D\u0430\u043C\u0435\u043A\u0438. \n\u0420\u0430\u0437\u0434\u0435\u0432\u0430\u0439\u0441\u044F!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 94d5f43550da71a4696b398e92f13192, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 6be668f39ce1df84c9891a6daddfb657, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 94d5f43550da71a4696b398e92f13192, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 207c22b3669cd024bad571fbfdb8d506, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 0c6308ec7471cce4c90b3037d4e92c59, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 543503538d47742488864b4eba1cb8a8, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 3749b9cbea8acfa45bf3a5cca215df41, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "No, I'm sick of hints. \nGet undressed!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0435\u0442, \u043C\u043D\u0435 \u043D\u0430\u0434\u043E\u0435\u043B\u0438
+        \u043D\u0430\u043C\u0435\u043A\u0438. \n\u0420\u0430\u0437\u0434\u0435\u0432\u0430\u0439\u0441\u044F!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Nein, ich habe die Nase \nvoll von Andeutungen. \nZiehen Sie sich aus!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Non, j'en ai marre des allusions. \nD\xE9shabillez-vous !"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "No, sono stufo di allusioni. \nSpogliati!"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "No, estoy harto de insinuaciones. \n\xA1Desn\xFAdate!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0412\u0441\u0442\u0430\u043D\u044C \u043D\u0430 \u043B\u0430\u0432\u043A\u0443
+      \u0438 \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u0442\u044C \n\u0437\u0430\u0434\u0430\u0432\u0430\u0442\u044C
+      \u0434\u0443\u0440\u0430\u0446\u043A\u0438\u0435 \u0432\u043E\u043F\u0440\u043E\u0441\u044B!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: ce500a18758f4fa40aaf806335af90ba, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c747b116cddbd624ea58af48c96f3979, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: ce500a18758f4fa40aaf806335af90ba, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: f1b8e10436e76034e8186f007b47d686, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: e55d894129c3588448c92845458c4ac1, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 1ee349f9b8c785b4b9d0aa5cd6f48346, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: f9ea1f00b85236b49a3707346bb76272, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Get on the bench and stop \nasking stupid questions!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u0441\u0442\u0430\u043D\u044C \u043D\u0430 \u043B\u0430\u0432\u043A\u0443
+        \u0438 \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u0442\u044C \n\u0437\u0430\u0434\u0430\u0432\u0430\u0442\u044C
+        \u0434\u0443\u0440\u0430\u0446\u043A\u0438\u0435 \u0432\u043E\u043F\u0440\u043E\u0441\u044B!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Setz dich auf die Bank \nund h\xF6r auf, dumme \nFragen zu stellen!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Monte sur le banc et arr\xEAte \nde poser des questions stupides !"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Sali in panchina e smettila \ndi fare domande stupide!"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1S\xFAbete al banco y deja de \nhacer preguntas est\xFApidas!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041E, \u0434\u0430 \u0411\u0435\u043D!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 318eacb043f33ba4d921ba0e02af3882, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: b3c564f5444478b4ba59551e839e3d65, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 318eacb043f33ba4d921ba0e02af3882, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 633572f01a139104eaa817e00e607fee, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: d546ea0afe21f54409e2b8f222378403, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: b401ec09e5ee70c499d220bad938f685, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 1fe577da5fb1957478389a1674db4a80, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Oh, yeah, Ben!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E, \u0434\u0430 \u0411\u0435\u043D!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Oh, ja, Ben!
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: Oh, oui, Ben !
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Oh, s\xEC, Ben!"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1Oh, s\xED, Ben!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0422\u0435\u0431\u044F \u0437\u0430\u0432\u043E\u0434\u0438\u0442, \u0447\u0442\u043E
+      \u043D\u0430\u0441 \u043C\u043E\u0433\u0443\u0442 \u0437\u0430\u0441\u0442\u0443\u043A\u0430\u0442\u044C?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: bf7f50470a8abfe48aefac4e33544dc7, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 6f267c391f6453f448a9c8c26c456d2a, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: bf7f50470a8abfe48aefac4e33544dc7, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: f29cbe2b6db37984a8f28fa683dab61c, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: bb67f609e291d37409acc3818681d472, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 32887ad95f21e2e409957f500145d40b, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 431e7ed861e799f4c8ee1214a7833035, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Does it turn you on that \nwe might get caught?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u0435\u0431\u044F \u0437\u0430\u0432\u043E\u0434\u0438\u0442,
+        \u0447\u0442\u043E \u043D\u0430\u0441 \u043C\u043E\u0433\u0443\u0442 \u0437\u0430\u0441\u0442\u0443\u043A\u0430\u0442\u044C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Macht es dich an, dass \nman uns erwischen k\xF6nnte?"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "\xC7a t'excite qu'on puisse \nse faire prendre ?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Ti eccita l'idea che potremmo \nessere scoperti?"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xBFTe excita que nos puedan pillar?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u0414\u0443\u043C\u0430\u044E \u0434\u0430, \u044F \u0443\u0436\u0435
+      \u0432\u0441\u044F \u0442\u0435\u043A\u0443! \n\u041D\u043E \u0432\u0434\u0440\u0443\u0433
+      \u043A\u0442\u043E-\u0442\u043E \u0437\u0430\u0439\u0434\u0435\u0442?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c86de7523371e374fa2ecbb5a5c0e7e6, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f248cef2c28c0d04192e608a4f7ebc8b, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: c86de7523371e374fa2ecbb5a5c0e7e6, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 9466e8b234d18e149adc35cb12c2ff89, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: b88810e6b213d634ca679c529b7a10d4, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: b39451544dcb1484898f3a4b359d1603, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 3c2442ca366141943bf253179b26c0f1, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I think so. I'm all hot and bothered. \nBut what if someone comes in?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0443\u043C\u0430\u044E \u0434\u0430, \u044F \u0443\u0436\u0435
+        \u0432\u0441\u044F \u0442\u0435\u043A\u0443! \n\u041D\u043E \u0432\u0434\u0440\u0443\u0433
+        \u043A\u0442\u043E-\u0442\u043E \u0437\u0430\u0439\u0434\u0435\u0442?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ich glaube ja, ich bin ganz nass. \nAber was ist, wenn jemand reinkommt?"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Je pense que oui, je suis \ntout mouill\xE9. Et si quelqu'un entre ?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Penso di s\xEC, sono tutta bagnata. \nMa se entra qualcuno?"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Creo que s\xED, estoy toda mojada. \n\xBFPero y si entra alguien?"
+      options:
+        font: {fileID: 0}

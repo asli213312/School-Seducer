@@ -26,6 +26,94 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
             }
         }
 
+#if UNITY_EDITOR
+
+        public void LocalizeAudioMessages(Chat.СonversationData conversationData)
+        {
+            if (conversationData == null)
+            {
+                Debug.LogWarning("ConversationData is null!");
+                return;
+            }
+
+            string assetPath = UnityEditor.AssetDatabase.GetAssetPath(conversationData);
+            if (string.IsNullOrEmpty(assetPath))
+            {
+                Debug.LogError("Could not find asset path for ConversationData.");
+                return;
+            }
+
+            string directoryPath = System.IO.Path.GetDirectoryName(assetPath);
+            if (directoryPath == null)
+            {
+                Debug.LogError("Could not determine the directory of the ConversationData.");
+                return;
+            }
+
+            string[] audioDirectories = System.IO.Directory.GetDirectories(directoryPath, "Audio*");
+            if (audioDirectories.Length == 0)
+            {
+                Debug.LogWarning($"No folders starting with 'Audio' found in {directoryPath}.");
+                return;
+            }
+
+            string audioFolderPath = audioDirectories[0];
+            string[] languageFolders = { "EN", "RU", "DE", "SP", "IT", "FR" };
+
+            Dictionary<string, int> fileIndices = new Dictionary<string, int>();
+
+            foreach (var languageFolder in languageFolders)
+            {
+                string languagePath = System.IO.Path.Combine(audioFolderPath, languageFolder);
+                if (System.IO.Directory.Exists(languagePath))
+                {
+                    fileIndices[languageFolder] = 0;
+                }
+            }
+
+            for (int i = 0; i < conversationData.Messages.Length; i++)
+            {
+                var message = conversationData.Messages[i];
+                if (message.LocalizedAudioClips == null)
+                {
+                    message.LocalizedAudioClips = new List<Translator.LanguageAudioClip>();
+                }
+
+                foreach (var languageFolder in languageFolders)
+                {
+                    if (!fileIndices.ContainsKey(languageFolder)) continue;
+
+                    string languagePath = System.IO.Path.Combine(audioFolderPath, languageFolder);
+                    string[] audioFiles = System.IO.Directory.GetFiles(languagePath, "*.mp3");
+
+                    int fileIndex = fileIndices[languageFolder];
+                    if (fileIndex < audioFiles.Length)
+                    {
+                        string audioFilePath = audioFiles[fileIndex];
+                        AudioClip audioClip = UnityEditor.AssetDatabase.LoadAssetAtPath<AudioClip>(
+                            UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets(System.IO.Path.GetFileNameWithoutExtension(audioFilePath))[0])
+                        );
+
+                        if (audioClip != null)
+                        {
+                            message.LocalizedAudioClips.Add(new Translator.LanguageAudioClip
+                            {
+                                languageCode = languageFolder.ToLower(),
+                                key = audioClip
+                            });
+                        }
+
+                        fileIndices[languageFolder]++;
+                    }
+                }
+            }
+
+            Debug.Log("Localization of audio messages completed!");
+        }
+
+#endif
+
+
         public void RemoveRestrictedCharsRussian() 
         {
             if (translationJson == null) 
@@ -36,17 +124,14 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
             string json = translationJson.text;
             Debug.Log("Original JSON content: " + json);
 
-            // Десериализация JSON
             Translator translator = JsonUtility.FromJson<Translator>(json);
 
-            // Проверка, что данные десериализованы правильно
             if (translator?.languages == null)
             {
                 Debug.LogError("Failed to deserialize translation JSON.");
                 return;
             }
 
-            // Поиск и замена символа 'ё' на 'е' в ключах русского языка
             foreach (var language in translator.languages)
             {
                 if (language.languageCode == "ru")
@@ -58,15 +143,8 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
                 }
             }
 
-            // Сериализация обратно в JSON
             string updatedJson = JsonUtility.ToJson(translator, true);
             Debug.Log("Updated JSON content: " + updatedJson);
-
-            //string path = AssetDatabase.GetAssetPath(translationJson);
-            //File.WriteAllText(path, updatedJson);
-
-            // Обновление файла в редакторе
-            //AssetDatabase.Refresh();
 
             Debug.Log("JSON file has been updated and saved.");    
         }          

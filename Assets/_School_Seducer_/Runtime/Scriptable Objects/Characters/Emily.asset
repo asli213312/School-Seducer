@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Emily
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: 2a82848f2e60fa141b687f3046d8c01c, type: 2}
-  currentConversation: {fileID: 11400000, guid: a4e13e9d6ef6578419dad2b92440fa10, type: 2}
-  gifts: []
+  currentConversation: {fileID: 11400000, guid: 3439c0f2765e41745872053657579534, type: 2}
+  gifts:
+  - {fileID: 11400000, guid: 3b19abd93d649894287dec2ab8d9721d, type: 2}
   allConversations:
   - {fileID: 11400000, guid: 3439c0f2765e41745872053657579534, type: 2}
   - {fileID: 11400000, guid: a51fba942addd524a8eec864ab0163ba, type: 2}
@@ -27,5 +28,5 @@ MonoBehaviour:
   loyalty: 1
   maxLoyalty: 3
   showDebugParameters: 1
-  experience: 0
+  experience: 5
   isLocked: 0

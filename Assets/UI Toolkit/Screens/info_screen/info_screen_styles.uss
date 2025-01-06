@@ -1,0 +1,67 @@
+.header-row {
+    flex-grow: 0;
+    flex-direction: row;
+    height: 20%;
+    background-color: rgba(255, 4, 4, 0);
+    justify-content: flex-start;
+    margin-top: 2px;
+    align-items: center;
+    align-self: auto;
+    flex-wrap: nowrap;
+}
+
+.close-button {
+    background-image: resource('General/Utility/close_button_main');
+    height: 150px;
+    width: 145px;
+    -unity-slice-top: 0;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    margin-left: 0;
+}
+
+.close-button:hover {
+    background-image: resource('General/Utility/close_button_main');
+    height: 150px;
+    width: 145px;
+    -unity-slice-top: 0;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+}
+
+.tabs-container {
+    flex-grow: 1;
+    background-image: resource('General/Stuff/info_screen_tabs_bg');
+    width: 1046px;
+    height: 110px;
+    -unity-background-scale-mode: stretch-to-fill;
+    margin-left: 672px;
+}
+
+.gold-counter {
+    flex-grow: 1;
+    width: 1046px;
+    height: 110px;
+    background-image: resource('General/Stuff/gold_counter');
+    -unity-background-scale-mode: scale-to-fit;
+    margin-left: 0;
+    margin-right: -113px;
+}
+
+.tab-label {
+    font-size: 51px;
+    color: rgb(255, 255, 255);
+    -unity-font: resource('Fonts/LilitaOne-Russian');
+    -unity-font-style: bold;
+}
+
+.tab-focus {
+}

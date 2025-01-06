@@ -15,5 +15,5 @@ MonoBehaviour:
   currentLanguage: 0
   showDebugParameters: 0
   tutorialCompleted: 1
-  soundEnabled: 0
+  _soundEnabled: 1
   localizatorRuntime: {fileID: 8756662586977160428, guid: c4bebb56138338c449f3895dbf84a500, type: 3}

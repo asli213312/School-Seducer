@@ -38,6 +38,23 @@ namespace _School_Seducer_.Editor.Scripts.Chat
 
         #region Context Menu Commands
 
+        [ContextMenu("Localize Audio Messages")]
+        private void LocalizeAudioMessages()
+        {
+            if (localizator == null)
+            {
+                Debug.LogError("Localizator is not assigned!");
+                return;
+            }
+
+            foreach (var message in Messages)
+                message.ClearLocalizedAudioClips();
+
+#if UNITY_EDITOR
+            localizator.LocalizeAudioMessages(this);
+#endif
+        }
+
         [ContextMenu("Remove 'ё'")]
         private void RemoveSymbolRussian()
         {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ca1cd1e3654303aff5d941a90c197e, type: 3}
   m_Name: Alison
   m_EditorClassIdentifier: 
+  count: 0
   iconInfo: {fileID: 0}
   borderSpriteByColor: {fileID: 0}
   extraCharacterPortrait: {fileID: 21300000, guid: 5d907097a90a54649b563cf2d39738a5, type: 3}

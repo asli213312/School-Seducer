@@ -1,0 +1,671 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Massage
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Massage
+    localizedDataList:
+    - languageCode: en
+      key: Massage
+    - languageCode: ru
+      key: "\u041C\u0430\u0441\u0441\u0430\u0436"
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: 68395681354f1184b86edecdb84e363b, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Oh, hey! What are you doing here?
+        - key: "Hi! I work part-time on the \nweekends as a masseur sometimes. \nIt
+            pays pretty well."
+        - key: "I signed up for a relaxing \nfull-body massage. I hope you're \ngood
+            at it and you know \nhow to please a girl."
+        - key: "Actually, this is a classic \nmassage parlor. And I take my work
+            \nvery seriously, if you're \nimplying anything more."
+        - key: "Oh, really? But, uh, are you \nsure a towel won't get in your way?"
+        - key: Shut up and let me do my job!
+        - key: "Oh, no! Ben, please don't do this! \nI haven't had anal yet."
+        - key: "I told you to shut up \nand let me do my work!"
+        - key: "Oh, yeah, yeah, yeah..... \nMmmmm..... Just don't stop!"
+      - languageCode: ru
+        messages:
+        - key: "\u041E \u043F\u0440\u0438\u0432\u0435\u0442! \u0427\u0442\u043E \u0442\u044B
+            \u0442\u0443\u0442 \u0434\u0435\u043B\u0430\u0435\u0448\u044C?"
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442! \u042F \u0438\u043D\u043E\u0433\u0434\u0430
+            \u043F\u043E\u0434\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u044E
+            \n\u043F\u043E \u0432\u044B\u0445\u043E\u0434\u043D\u044B\u043C \u043C\u0430\u0441\u0441\u0430\u0436\u0438\u0441\u0442\u043E\u043C.
+            \n\u0417\u0430 \u044D\u0442\u043E \u043D\u0435\u043F\u043B\u043E\u0445\u043E
+            \u043F\u043B\u0430\u0442\u044F\u0442."
+        - key: "\u042F \u0437\u0430\u043F\u0438\u0441\u0430\u043B\u0430\u0441\u044C
+            \u043D\u0430 \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u043B\u044F\u044E\u0449\u0438\u0439
+            \n\u043C\u0430\u0441\u0441\u0430\u0436 \u0432\u0441\u0435\u0433\u043E
+            \u0442\u0435\u043B\u0430. \u041D\u0430\u0434\u0435\u044E\u0441\u044C
+            \n\u0442\u044B \u043C\u0430\u0441\u0442\u0435\u0440 \u0441\u0432\u043E\u0435\u0433\u043E
+            \u0434\u0435\u043B\u0430 \n\u0438 \u0443\u043C\u0435\u0435\u0448\u044C
+            \u0434\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C \n\u0443\u0434\u043E\u0432\u043E\u043B\u044C\u0441\u0442\u0432\u0438\u0435
+            \u0434\u0435\u0432\u0443\u0448\u043A\u0430\u043C?"
+        - key: "\u0412\u043E\u043E\u0431\u0449\u0435-\u0442\u043E \u044D\u0442\u043E
+            \u0441\u0430\u043B\u043E\u043D \u043A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+            \n\u043C\u0430\u0441\u0441\u0430\u0436\u0430. \u0418 \u044F \u043E\u0447\u0435\u043D\u044C
+            \u0441\u0435\u0440\u044C\u0435\u0437\u043D\u043E \n\u043E\u0442\u043D\u043E\u0448\u0443\u0441\u044C
+            \u043A \u0441\u0432\u043E\u0435\u0439 \u0440\u0430\u0431\u043E\u0442\u0435,
+            \u0435\u0441\u043B\u0438 \n\u0442\u044B \u043D\u0430\u043C\u0435\u043A\u0430\u0435\u0448\u044C
+            \u043D\u0430 \u0447\u0442\u043E-\u0442\u043E \u0431\u043E\u043B\u044C\u0448\u0435\u0435."
+        - key: "\u041D\u0435\u0442 \u0447\u0442\u043E \u0442\u044B? \u041D\u043E,
+            \u0442\u044B \u0443\u0432\u0435\u0440\u0435\u043D, \n\u0447\u0442\u043E
+            \u043F\u043E\u043B\u043E\u0442\u0435\u043D\u0446\u0435 \u043D\u0435 \u043F\u043E\u043C\u0435\u0448\u0430\u0435\u0442
+            \u0442\u0435\u0431\u0435?"
+        - key: "\u041F\u043E\u043C\u043E\u043B\u0447\u0438 \u0438 \u043D\u0435 \u043C\u0435\u0448\u0430\u0439
+            \u043C\u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C!"
+        - key: "\u041E\u043E\u043E\u043E, \u043D\u0435\u0442! \u0411\u0435\u043D,
+            \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430 \n\u0442\u043E\u043B\u044C\u043A\u043E
+            \u043D\u0435 \u044D\u0442\u043E! \u042F \u0435\u0449\u0435 \u043D\u0435
+            \u043F\u0440\u043E\u0431\u043E\u0432\u0430\u043B\u0430 \u0430\u043D\u0430\u043B."
+        - key: "\u042F \u0436\u0435 \u0441\u043A\u0430\u0437\u0430\u043B \u0442\u0435\u0431\u0435
+            \u043F\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C \n\u0438 \u043D\u0435
+            \u043C\u0435\u0448\u0430\u0442\u044C \u043C\u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C!"
+        - key: "\u041E \u0434\u0430\u0430\u0430\u0430\u2026. \u041C\u043C\u043C\u043C\u043C\u2026..
+            \n\u0422\u043E\u043B\u044C\u043A\u043E \u043D\u0435 \u043E\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0439\u0441\u044F!"
+      - languageCode: de
+        messages:
+        - key: Oh, hey! Was machst du denn hier?
+        - key: "Hi! Ich bin manchmal ein \nWochenend-Masseur. Es \nwird ziemlich
+            gut bezahlt."
+        - key: "Ich habe mich f\xFCr eine entspannende \nGanzk\xF6rpermassage angemeldet.
+            Ich hoffe, \ndu bist gut in dem, was du tust, \nund du wei\xDFt, wie
+            man Frauen befriedigt."
+        - key: "Eigentlich ist dies ein klassischer \nMassagesalon. Und ich nehme
+            meinen \nJob sehr ernst, falls du \netwas anderes andeuten willst."
+        - key: "Oh, wirklich? Aber bist du sicher, \ndass dir kein Handtuch in die
+            \nQuere kommen wird?"
+        - key: "Halt die Klappe und \nlass mich meine Arbeit machen!"
+        - key: "Oh, nein! Ben, bitte tu das nicht! \nIch hatte noch keinen Analverkehr."
+        - key: "Ich habe dir gesagt, du sollst \ndie Klappe halten und mich arbeiten
+            lassen!"
+        - key: "Oh, ja.... Mmmmm..... H\xF6r \neinfach nicht auf!"
+      - languageCode: fr
+        messages:
+        - key: "Oh, hey ! Qu'est-ce \nque tu fais ici ?"
+        - key: "Bonjour ! Je suis masseur \nle week-end parfois. \xC7a paye plut\xF4t
+            bien."
+        - key: "Je me suis inscrite pour un massage \nrelaxant de tout le corps.
+            J'esp\xE8re que vous \n\xEAtes bon dans ce que vous faites et que \nvous
+            savez comment plaire aux filles."
+        - key: "En fait, c'est un salon \nde massage classique. Et je prends \nmon
+            travail tr\xE8s au s\xE9rieux, \nsi vous insinuez quelque chose de plus."
+        - key: "Oh, vraiment ? Mais vous\n \xEAtes s\xFBr de ne pas laisser \nune
+            serviette vous g\xEAner ?"
+        - key: "Taisez-vous et laissez-moi \nfaire mon travail !"
+        - key: "Oh, non ! Ben, s'il te pla\xEEt, \nne fais pas \xE7a ! Je n'ai \npas
+            encore eu d'anal."
+        - key: "Je t'ai dit de te taire \net de me laisser travailler !"
+        - key: "Oh, yeah.... Mmmmm..... \nNe t'arr\xEAte pas !"
+      - languageCode: it
+        messages:
+        - key: Oh, ehi! Che ci fai qui?
+        - key: "Ciao! A volte faccio il massaggiatore \nnei weekend. Mi pagano abbastanza
+            bene."
+        - key: "Ho firmato per un massaggio rilassante \nsu tutto il corpo. Spero
+            che tu sia \nbravo in quello che fai e che tu \nsappia come soddisfare
+            le ragazze."
+        - key: "In realt\xE0, questo \xE8 un classico \ncentro massaggi. E prendo
+            il mio \nlavoro molto seriamente, se \nsta insinuando qualcosa di pi\xF9."
+        - key: "Oh, davvero? Ma \xE8 sicuro \nche non si lascer\xE0 intralciare \nda
+            un asciugamano?"
+        - key: Zitto e lasciami fare il mio lavoro!
+        - key: "Oh, no! Ben, ti prego, non farlo! \nNon ho ancora fatto sesso anale."
+        - key: "Ti ho detto di stare zitto \ne lasciarmi lavorare!"
+        - key: Oh, si'! Mmmmm..... Non fermarti!
+      - languageCode: sp
+        messages:
+        - key: "\xA1Hola! \xBFQu\xE9 haces aqu\xED?"
+        - key: "\xA1Hola! A veces soy masajista de \nfin de semana. Me pagan bastante
+            bien."
+        - key: "Me he apuntado a un masaje relajante \nde cuerpo entero. Espero que
+            seas \nbueno en lo que haces y que \nsepas complacer a las chicas."
+        - key: "En realidad, este es un sal\xF3n \nde masajes cl\xE1sico. Y me tomo
+            mi trabajo \nmuy en serio, si insin\xFAas algo m\xE1s."
+        - key: "\xBFAh, s\xED? \xBFPero est\xE1s seguro \nde que no vas a dejar que
+            \nuna toalla se interponga?"
+        - key: "\xA1C\xE1llate y d\xE9jame hacer mi trabajo!"
+        - key: "\xA1Oh, no! \xA1Ben, por favor \nno hagas esto! Todav\xEDa \nno he
+            tenido sexo anal."
+        - key: "\xA1Te dije que te callaras \ny me dejaras trabajar!"
+        - key: "Oh, s\xED.... Mmmmm..... \n\xA1No pares!"
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 1
+  isSeen: 1
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041E \u043F\u0440\u0438\u0432\u0435\u0442! \u0427\u0442\u043E \u0442\u044B
+      \u0442\u0443\u0442 \u0434\u0435\u043B\u0430\u0435\u0448\u044C?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 1354f4f017237f248981169c2c9b0776, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: b19e113d2ddc7454ab441fbd6e99dc3b, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 1354f4f017237f248981169c2c9b0776, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 4c349308790b04b498eac55d3b17c69c, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 3eedfe05010815f45ad9dafd8dee757e, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 0009a8e6b0abdf744a3edd3d2cb83514, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: df170354c5a56014b8d392e621ef2259, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Oh, hey! What are you doing here?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E \u043F\u0440\u0438\u0432\u0435\u0442! \u0427\u0442\u043E \u0442\u044B
+        \u0442\u0443\u0442 \u0434\u0435\u043B\u0430\u0435\u0448\u044C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Oh, hey! Was machst du denn hier?
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Oh, hey ! Qu'est-ce \nque tu fais ici ?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: Oh, ehi! Che ci fai qui?
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1Hola! \xBFQu\xE9 haces aqu\xED?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041F\u0440\u0438\u0432\u0435\u0442! \u042F \u0438\u043D\u043E\u0433\u0434\u0430
+      \u043F\u043E\u0434\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u044E \n\u043F\u043E
+      \u0432\u044B\u0445\u043E\u0434\u043D\u044B\u043C \u043C\u0430\u0441\u0441\u0430\u0436\u0438\u0441\u0442\u043E\u043C.
+      \n\u0417\u0430 \u044D\u0442\u043E \u043D\u0435\u043F\u043B\u043E\u0445\u043E
+      \u043F\u043B\u0430\u0442\u044F\u0442."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 12f7ba1dae5ec0a4db2214eee5e16869, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c49a1caa98eb7164e975e4a5a257e177, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 12f7ba1dae5ec0a4db2214eee5e16869, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: d1ebae14ec7afa347b472ba3e1046429, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: f2d32af0d7fcce443b05bfc1ea7823d5, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: a7eb3ffd28da75e4f91fad0229470a9b, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 8b384eaa6ecb5eb49b3abc505872e34d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Hi! I work part-time on the \nweekends as a masseur sometimes. \nIt pays
+        pretty well."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442! \u042F \u0438\u043D\u043E\u0433\u0434\u0430
+        \u043F\u043E\u0434\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u044E
+        \n\u043F\u043E \u0432\u044B\u0445\u043E\u0434\u043D\u044B\u043C \u043C\u0430\u0441\u0441\u0430\u0436\u0438\u0441\u0442\u043E\u043C.
+        \n\u0417\u0430 \u044D\u0442\u043E \u043D\u0435\u043F\u043B\u043E\u0445\u043E
+        \u043F\u043B\u0430\u0442\u044F\u0442."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hi! Ich bin manchmal ein \nWochenend-Masseur. Es \nwird ziemlich gut
+        bezahlt."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Bonjour ! Je suis masseur \nle week-end parfois. \xC7a paye plut\xF4t
+        bien."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Ciao! A volte faccio il massaggiatore \nnei weekend. Mi pagano abbastanza
+        bene."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1Hola! A veces soy masajista de \nfin de semana. Me pagan bastante
+        bien."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u042F \u0437\u0430\u043F\u0438\u0441\u0430\u043B\u0430\u0441\u044C \u043D\u0430
+      \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u043B\u044F\u044E\u0449\u0438\u0439
+      \n\u043C\u0430\u0441\u0441\u0430\u0436 \u0432\u0441\u0435\u0433\u043E \u0442\u0435\u043B\u0430.
+      \u041D\u0430\u0434\u0435\u044E\u0441\u044C \n\u0442\u044B \u043C\u0430\u0441\u0442\u0435\u0440
+      \u0441\u0432\u043E\u0435\u0433\u043E \u0434\u0435\u043B\u0430 \n\u0438 \u0443\u043C\u0435\u0435\u0448\u044C
+      \u0434\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C \n\u0443\u0434\u043E\u0432\u043E\u043B\u044C\u0441\u0442\u0432\u0438\u0435
+      \u0434\u0435\u0432\u0443\u0448\u043A\u0430\u043C?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e2d3bac6277690042b2d904f279456f3, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 7e787c081c947ca4e9a835f3b5671978, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: e2d3bac6277690042b2d904f279456f3, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 79772bc9389f4a4479d62547267e02aa, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 0b4b05329a4d71248949dbf1916ae464, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 40fe0d244fb7c0144822e3e05cb62610, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 94e2fbe6aa37df44ea6f9b5473325e28, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I signed up for a relaxing \nfull-body massage. I hope you're \ngood
+        at it and you know \nhow to please a girl."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u0437\u0430\u043F\u0438\u0441\u0430\u043B\u0430\u0441\u044C \u043D\u0430
+        \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u043B\u044F\u044E\u0449\u0438\u0439
+        \n\u043C\u0430\u0441\u0441\u0430\u0436 \u0432\u0441\u0435\u0433\u043E \u0442\u0435\u043B\u0430.
+        \u041D\u0430\u0434\u0435\u044E\u0441\u044C \n\u0442\u044B \u043C\u0430\u0441\u0442\u0435\u0440
+        \u0441\u0432\u043E\u0435\u0433\u043E \u0434\u0435\u043B\u0430 \n\u0438 \u0443\u043C\u0435\u0435\u0448\u044C
+        \u0434\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C \n\u0443\u0434\u043E\u0432\u043E\u043B\u044C\u0441\u0442\u0432\u0438\u0435
+        \u0434\u0435\u0432\u0443\u0448\u043A\u0430\u043C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ich habe mich f\xFCr eine entspannende \nGanzk\xF6rpermassage angemeldet.
+        Ich hoffe, \ndu bist gut in dem, was du tust, \nund du wei\xDFt, wie man
+        Frauen befriedigt."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Je me suis inscrite pour un massage \nrelaxant de tout le corps. J'esp\xE8re
+        que vous \n\xEAtes bon dans ce que vous faites et que \nvous savez comment
+        plaire aux filles."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Ho firmato per un massaggio rilassante \nsu tutto il corpo. Spero che
+        tu sia \nbravo in quello che fai e che tu \nsappia come soddisfare le ragazze."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Me he apuntado a un masaje relajante \nde cuerpo entero. Espero que seas
+        \nbueno en lo que haces y que \nsepas complacer a las chicas."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0412\u043E\u043E\u0431\u0449\u0435-\u0442\u043E \u044D\u0442\u043E \u0441\u0430\u043B\u043E\u043D
+      \u043A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \n\u043C\u0430\u0441\u0441\u0430\u0436\u0430. \u0418 \u044F \u043E\u0447\u0435\u043D\u044C
+      \u0441\u0435\u0440\u044C\u0435\u0437\u043D\u043E \n\u043E\u0442\u043D\u043E\u0448\u0443\u0441\u044C
+      \u043A \u0441\u0432\u043E\u0435\u0439 \u0440\u0430\u0431\u043E\u0442\u0435,
+      \u0435\u0441\u043B\u0438 \n\u0442\u044B \u043D\u0430\u043C\u0435\u043A\u0430\u0435\u0448\u044C
+      \u043D\u0430 \u0447\u0442\u043E-\u0442\u043E \u0431\u043E\u043B\u044C\u0448\u0435\u0435."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: c97da2a941b85de419af702b3a17677c, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 82ebd94e2846051448cd850ef20ebab9, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: c97da2a941b85de419af702b3a17677c, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: e291828bfa462fd418a881f912479d89, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 29eb042c4cf9afc42a4744f4199e51c0, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 15160f8de0ed66849926dd0a92c1236d, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 5fd6de084d336b641a36aadd4246830b, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Actually, this is a classic \nmassage parlor. And I take my work \nvery
+        seriously, if you're \nimplying anything more."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0412\u043E\u043E\u0431\u0449\u0435-\u0442\u043E \u044D\u0442\u043E
+        \u0441\u0430\u043B\u043E\u043D \u043A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+        \n\u043C\u0430\u0441\u0441\u0430\u0436\u0430. \u0418 \u044F \u043E\u0447\u0435\u043D\u044C
+        \u0441\u0435\u0440\u044C\u0435\u0437\u043D\u043E \n\u043E\u0442\u043D\u043E\u0448\u0443\u0441\u044C
+        \u043A \u0441\u0432\u043E\u0435\u0439 \u0440\u0430\u0431\u043E\u0442\u0435,
+        \u0435\u0441\u043B\u0438 \n\u0442\u044B \u043D\u0430\u043C\u0435\u043A\u0430\u0435\u0448\u044C
+        \u043D\u0430 \u0447\u0442\u043E-\u0442\u043E \u0431\u043E\u043B\u044C\u0448\u0435\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Eigentlich ist dies ein klassischer \nMassagesalon. Und ich nehme meinen
+        \nJob sehr ernst, falls du \netwas anderes andeuten willst."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "En fait, c'est un salon \nde massage classique. Et je prends \nmon travail
+        tr\xE8s au s\xE9rieux, \nsi vous insinuez quelque chose de plus."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "In realt\xE0, questo \xE8 un classico \ncentro massaggi. E prendo il
+        mio \nlavoro molto seriamente, se \nsta insinuando qualcosa di pi\xF9."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "En realidad, este es un sal\xF3n \nde masajes cl\xE1sico. Y me tomo mi
+        trabajo \nmuy en serio, si insin\xFAas algo m\xE1s."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041D\u0435\u0442 \u0447\u0442\u043E \u0442\u044B? \u041D\u043E, \u0442\u044B
+      \u0443\u0432\u0435\u0440\u0435\u043D, \n\u0447\u0442\u043E \u043F\u043E\u043B\u043E\u0442\u0435\u043D\u0446\u0435
+      \u043D\u0435 \u043F\u043E\u043C\u0435\u0448\u0430\u0435\u0442 \u0442\u0435\u0431\u0435?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 2c809322f140b6d41bfa156bdca8c12c, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2d0ef35e357663e48ada27f684dfe9ee, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 2c809322f140b6d41bfa156bdca8c12c, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: af51d98c17fe7224096c1b15ae3bcaa7, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 962b7852a1c396d4aacdafc236268a35, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: a0700853176d31643926dcf4817b8431, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: c2554696cac17b04b9f3a4769cdaf50b, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Oh, really? But, uh, are you \nsure a towel won't get in your way?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0435\u0442 \u0447\u0442\u043E \u0442\u044B? \u041D\u043E, \u0442\u044B
+        \u0443\u0432\u0435\u0440\u0435\u043D, \n\u0447\u0442\u043E \u043F\u043E\u043B\u043E\u0442\u0435\u043D\u0446\u0435
+        \u043D\u0435 \u043F\u043E\u043C\u0435\u0448\u0430\u0435\u0442 \u0442\u0435\u0431\u0435?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Oh, wirklich? Aber bist du sicher, \ndass dir kein Handtuch in die \nQuere
+        kommen wird?"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Oh, vraiment ? Mais vous\n \xEAtes s\xFBr de ne pas laisser \nune serviette
+        vous g\xEAner ?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Oh, davvero? Ma \xE8 sicuro \nche non si lascer\xE0 intralciare \nda
+        un asciugamano?"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xBFAh, s\xED? \xBFPero est\xE1s seguro \nde que no vas a dejar que \nuna
+        toalla se interponga?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041F\u043E\u043C\u043E\u043B\u0447\u0438 \u0438 \u043D\u0435 \u043C\u0435\u0448\u0430\u0439
+      \u043C\u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 47088879e6620b841852ccefbbbd0192, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 232506f6b23bbd54aaf413273d3ef590, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 47088879e6620b841852ccefbbbd0192, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 7a707e5816be9d04fa363384930fbf0f, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: a32ba1c2c4a5c3f4c863ea537ebd3cda, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: e5f34220a58a900428dc931f0bbcb413, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 8c6d7645dab9df547ab0c42d0895dd24, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Shut up and let me do my job!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u043E\u043C\u043E\u043B\u0447\u0438 \u0438 \u043D\u0435 \u043C\u0435\u0448\u0430\u0439
+        \u043C\u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Halt die Klappe und \nlass mich meine Arbeit machen!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Taisez-vous et laissez-moi \nfaire mon travail !"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: Zitto e lasciami fare il mio lavoro!
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1C\xE1llate y d\xE9jame hacer mi trabajo!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041E\u043E\u043E\u043E, \u043D\u0435\u0442! \u0411\u0435\u043D, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430
+      \n\u0442\u043E\u043B\u044C\u043A\u043E \u043D\u0435 \u044D\u0442\u043E! \u042F
+      \u0435\u0449\u0435 \u043D\u0435 \u043F\u0440\u043E\u0431\u043E\u0432\u0430\u043B\u0430
+      \u0430\u043D\u0430\u043B."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: ddee2dbe3829bb249a7a5838f8f438f4, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: d75a762b5a041d842a97631024fb0544, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: ddee2dbe3829bb249a7a5838f8f438f4, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: abe25c55c5631e546bf97c2707c06a9a, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 96e97e7d038c6e645842fa044cbdfc91, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 793ca9e7ceb5d4c4a8a5cf6ed0ffd921, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 59029d2520f088a4782a253a4a011e37, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Oh, no! Ben, please don't do this! \nI haven't had anal yet."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E\u043E\u043E\u043E, \u043D\u0435\u0442! \u0411\u0435\u043D, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430
+        \n\u0442\u043E\u043B\u044C\u043A\u043E \u043D\u0435 \u044D\u0442\u043E! \u042F
+        \u0435\u0449\u0435 \u043D\u0435 \u043F\u0440\u043E\u0431\u043E\u0432\u0430\u043B\u0430
+        \u0430\u043D\u0430\u043B."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Oh, nein! Ben, bitte tu das nicht! \nIch hatte noch keinen Analverkehr."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Oh, non ! Ben, s'il te pla\xEEt, \nne fais pas \xE7a ! Je n'ai \npas
+        encore eu d'anal."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Oh, no! Ben, ti prego, non farlo! \nNon ho ancora fatto sesso anale."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1Oh, no! \xA1Ben, por favor \nno hagas esto! Todav\xEDa \nno he tenido
+        sexo anal."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u042F \u0436\u0435 \u0441\u043A\u0430\u0437\u0430\u043B \u0442\u0435\u0431\u0435
+      \u043F\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C \n\u0438 \u043D\u0435
+      \u043C\u0435\u0448\u0430\u0442\u044C \u043C\u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 3dc20ad4abab8fe44acebae9137ed40e, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: c49e62548d2c42b4f88c4ba6e71c92af, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 3dc20ad4abab8fe44acebae9137ed40e, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: dd8efcaf3f18ddd4c9ac80f700022e60, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 1d6de3afa48921e4bacb9c6bdae916e3, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: dcc7aeb4ed3cbc7469d9685fa468dd2f, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 0eb3faf8ae485f645994637b274da0ff, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I told you to shut up \nand let me do my work!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u042F \u0436\u0435 \u0441\u043A\u0430\u0437\u0430\u043B \u0442\u0435\u0431\u0435
+        \u043F\u043E\u043C\u043E\u043B\u0447\u0430\u0442\u044C \n\u0438 \u043D\u0435
+        \u043C\u0435\u0448\u0430\u0442\u044C \u043C\u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ich habe dir gesagt, du sollst \ndie Klappe halten und mich arbeiten
+        lassen!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Je t'ai dit de te taire \net de me laisser travailler !"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Ti ho detto di stare zitto \ne lasciarmi lavorare!"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1Te dije que te callaras \ny me dejaras trabajar!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041E \u0434\u0430\u0430\u0430\u0430\u2026. \u041C\u043C\u043C\u043C\u043C\u2026..
+      \n\u0422\u043E\u043B\u044C\u043A\u043E \u043D\u0435 \u043E\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0439\u0441\u044F!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: cf1aaf4bbe8d26c4c96d50f02682c22f, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 578fe82851ab70a4d9b7b1f36569b760, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: cf1aaf4bbe8d26c4c96d50f02682c22f, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: f0dd75db226822d468be0dc4b4b0153f, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 8f80e0325da526140adc3063b3d43cd0, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 000613bf02bf539499c4cd025e0ed05a, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 3eb798ea473bef74ab18c66fdb5ab984, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Oh, yeah, yeah, yeah..... \nMmmmm..... Just don't stop!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E \u0434\u0430\u0430\u0430\u0430\u2026. \u041C\u043C\u043C\u043C\u043C\u2026..
+        \n\u0422\u043E\u043B\u044C\u043A\u043E \u043D\u0435 \u043E\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0439\u0441\u044F!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Oh, ja.... Mmmmm..... H\xF6r \neinfach nicht auf!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Oh, yeah.... Mmmmm..... \nNe t'arr\xEAte pas !"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: Oh, si'! Mmmmm..... Non fermarti!
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Oh, s\xED.... Mmmmm..... \n\xA1No pares!"
+      options:
+        font: {fileID: 0}

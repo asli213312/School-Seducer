@@ -1,0 +1,214 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hey, Jessy! You're early today."
+                },
+                {
+                    "key": "Hi! Yeah, I thought I'd come in early before \nanyone else showed up. There's gonna \nbe too many people later."
+                },
+                {
+                    "key": "I agree. There's usually \nno one here at this time."
+                },
+                {
+                    "key": "How are you doing?"
+                },
+                {
+                    "key": "I'm good, but I don't have a lot of free \ntime at the gym. I'd like to work out more \noften, but how can I make myself do it?"
+                },
+                {
+                    "key": "The last workout was impressive!"
+                },
+                {
+                    "key": "If every workout ended like that, \nI'd work out more regularly."
+                },
+                {
+                    "key": "Do you want me to help you with motivation? \nI know a great method."
+                },
+                {
+                    "key": "Yeah, sure."
+                },
+                {
+                    "key": "Shh... Just be quiet and \nmake sure no one comes."
+                }  
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Привет, Джесси! Ты сегодня рано."
+                },
+                {
+                    "key": "Привет! Да, решила прийти пораньше, \nпока никого нет. А то потом \nнабегут и не протолкнуться."
+                },
+                {
+                    "key": "Согласен. В это время \nздесь обычно никого нет."
+                },
+                {
+                    "key": "Как твои дела?"
+                },
+                {
+                    "key": "Хорошо, только мало свободного \nвремени на зал. Хотелось бы заниматься \nчаще, но как себя заставить?"
+                },
+                {
+                    "key": "Прошлая тренировка \nбыла впечатляющей!"
+                },
+                {
+                    "key": "Если бы каждая тренировка \nзаканчивалась так, я \nбы занимался регулярнее."
+                },
+                {
+                    "key": "Хочешь я помогу тебе с мотивацией? \nЯ знаю отличный метод."
+                },
+                {
+                    "key": "Ну да… конечно…"
+                },
+                {
+                    "key": "Тссс… Только тихо и смотри, \nчтобы никто не пришел."
+                }  
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Hey, Jessy! Du bist heute früh dran."
+                },
+                {
+                    "key": "Hi! Ja, ich dachte, ich komme früher,\n wenn noch niemand da ist. Später \nwerden es zu viele Leute sein."
+                },
+                {
+                    "key": "Finde ich auch. Normalerweise \nist um diese Zeit niemand hier."
+                },
+                {
+                    "key": "Wie geht's dir denn so?"
+                },
+                {
+                    "key": "Mir geht es gut, aber ich habe nicht \nviel Zeit im Fitnessstudio. Ich würde \ngern öfter trainieren, aber wie \nkann ich mich dazu zwingen?"
+                },
+                {
+                    "key": "Das Training von gestern \nAbend war beeindruckend!"
+                },
+                {
+                    "key": "Wenn jede Trainingseinheit so enden \nwürde, würde ich regelmäßiger trainieren."
+                },
+                {
+                    "key": "Soll ich dir helfen, dich zu motivieren? \nIch kenne eine tolle Methode."
+                },
+                {
+                    "key": "Ja, klar."
+                },
+                {
+                    "key": "Sei einfach leise und lass niemanden rein."
+                }
+            ]
+        },
+        {
+            "languageCode": "fr",
+            "messages": [
+                {
+                    "key": "Hé, Jessy ! Tu es en avance aujourd'hui."
+                },
+                {
+                    "key": "Bonjour ! Oui, j'ai pensé venir \nplus tôt pendant qu'il n'y a personne. \nIl y aura trop de monde plus tard."
+                },
+                {
+                    "key": "Je suis d'accord. D'habitude, \nil n'y a personne ici à cette heure-ci."
+                },
+                {
+                    "key": "Comment allez-vous ?"
+                },
+                {
+                    "key": "Bien, mais je n'ai pas beaucoup de \ntemps libre à la salle de sport. \nJ'aimerais faire de l'exercice \nplus souvent, mais comment m'y prendre ?"
+                },
+                {
+                    "key": "La séance d'entraînement d'hier \nsoir était impressionnante !"
+                },
+                {
+                    "key": "Si toutes les séances d'entraînement \nse terminaient ainsi, je m'entraînerais \nplus régulièrement."
+                },
+                {
+                    "key": "Tu veux que je t'aide à te motiver ? \nJe connais une bonne méthode."
+                },
+                {
+                    "key": "Oui, bien sûr."
+                },
+                {
+                    "key": "Chut... Ne fais pas de bruit \net ne laisse personne entrer."
+                }
+            ]
+        },
+        {
+            "languageCode": "it",
+            "messages": [
+                {
+                    "key": "Ehi, Jessy! Sei in anticipo oggi."
+                },
+                {
+                    "key": "Ciao! Sì, ho pensato di venire prima \nquando non c'è nessuno. Più \ntardi ci sarà troppa gente."
+                },
+                {
+                    "key": "Sono d'accordo. Di solito \nnon c'è nessuno a quest'ora."
+                },
+                {
+                    "key": "Come sta?"
+                },
+                {
+                    "key": "Sto bene, ma non ho molto tempo \nlibero in palestra. Vorrei allenarmi \npiù spesso, ma come posso \ncostringermi a farlo?"
+                },
+                {
+                    "key": "L'allenamento di ieri sera \nè stato impressionante!"
+                },
+                {
+                    "key": "Se ogni allenamento finisse così, \nmi allenerei più regolarmente."
+                },
+                {
+                    "key": "Vuoi che ti aiuti a motivarti? \nConosco un ottimo metodo."
+                },
+                {
+                    "key": "Sì, certo."
+                },
+                {
+                    "key": "Fai silenzio e non far entrare nessuno."
+                }
+            ]
+        },
+        {
+            "languageCode": "sp",
+            "messages": [
+                {
+                    "key": "¡Hola, Jessy! Llegas temprano hoy."
+                },
+                {
+                    "key": "¡Hola! Sí, pensé en venir \ntemprano mientras no hay nadie. \nHabrá demasiada gente más tarde."
+                },
+                {
+                    "key": "Estoy de acuerdo. Normalmente \nno hay nadie aquí a esta hora."
+                },
+                {
+                    "key": "¿Qué tal estás?"
+                },
+                {
+                    "key": "Bien, pero no tengo mucho tiempo libre \nen el gimnasio. Me gustaría hacer \nejercicio más a menudo, pero \n¿cómo puedo obligarme a hacerlo?"
+                },
+                {
+                    "key": "El entrenamiento de \nanoche fue impresionante."
+                },
+                {
+                    "key": "Si todos los entrenamientos acabaran así, lo haría más a menudo."
+                },
+                {
+                    "key": "¿Quieres que te ayude a motivarte? \nConozco un método genial."
+                },
+                {
+                    "key": "Sí, claro."
+                },
+                {
+                    "key": "Shh... Sólo quédate callado \ny no dejes que nadie entre."
+                }
+            ]
+        }
+    ]
+}

@@ -1,27 +1,75 @@
 ﻿using System;
 using System.Collections;
+using _Kittens__Kitchen.Editor.Scripts.Utility.Extensions;
 using _School_Seducer_.Editor.Scripts.Utility;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
     public class SoundHandler : MonoBehaviour
     {
+        [Header("Data")]
         [SerializeField] public GlobalSettings globalSettings;
         [SerializeField, Range(0, 1f)] private float volume = 1f;
+
+        [Header("UI")]
+        [SerializeField] private Button offSoundButton;
+        [SerializeField] private Button onSoundButton;
 
         public Action ClipEndedAction;
 
         private AudioSource _audioSource;
         private AudioClip _clipInQueue;
 
+        private void OnDestroy() 
+        {
+            globalSettings.SoundEnabled -= OnSoundEnabled;
+        }
+
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
+            globalSettings.SoundEnabled += OnSoundEnabled;
         }
 
-        public void EnableSound() => globalSettings.soundEnabled = true;
-        public void DisableSound() => globalSettings.soundEnabled = false;
+        private void OnSoundEnabled(bool isEnabled) 
+        {
+            if (isEnabled) 
+            {
+                EnableSoundButton();
+            }
+            else 
+            {
+                DisableSoundButton();
+            }
+        }
+
+        private void EnableSoundButton() 
+        {
+            offSoundButton.gameObject.Deactivate();
+            onSoundButton.interactable = true;
+        }
+
+        private void DisableSoundButton() 
+        {
+            offSoundButton.gameObject.Activate();
+            onSoundButton.interactable = false;
+        }
+
+        public void CheckSound() 
+        {
+            OnSoundEnabled(globalSettings.soundEnabled);
+        }
+
+        public void EnableSound() 
+        {   
+            globalSettings.soundEnabled = true;            
+        }
+        public void DisableSound() 
+        {
+            globalSettings.soundEnabled = false;
+        }
 
         public void Mute()
         {

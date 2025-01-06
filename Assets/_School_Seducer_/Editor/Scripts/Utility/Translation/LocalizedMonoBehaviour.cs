@@ -67,7 +67,7 @@ namespace _School_Seducer_.Editor.Scripts.Utility.Translation
 
         	if (currentLanguageData == null) 
         	{
-        		Debug.LogError($"<color=yellow>LOCALIZED MONO:</color> {name} can't update data, data not found for current language: {_localizer.GlobalLanguageCodeRuntime}!");
+        		Debug.LogError($"<color=yellow>LOCALIZED MONO:</color> {name} can't update data, data not found for current language: {_localizer.GlobalLanguageCodeRuntime}!", gameObject);
         		return "";
         	}
 

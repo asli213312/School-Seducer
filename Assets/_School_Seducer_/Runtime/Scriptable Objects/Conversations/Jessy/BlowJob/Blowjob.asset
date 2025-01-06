@@ -1,0 +1,690 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Blowjob
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Blowjob
+    localizedDataList:
+    - languageCode: en
+      key: Blowjob
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: e27ef46982ce67a469b822aae92cd114, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Hey, Jessy! You're early today.
+        - key: "Hi! Yeah, I thought I'd come in early before \nanyone else showed
+            up. There's gonna \nbe too many people later."
+        - key: "I agree. There's usually \nno one here at this time."
+        - key: How are you doing?
+        - key: "I'm good, but I don't have a lot of free \ntime at the gym. I'd like
+            to work out more \noften, but how can I make myself do it?"
+        - key: The last workout was impressive!
+        - key: "If every workout ended like that, \nI'd work out more regularly."
+        - key: "Do you want me to help you with motivation? \nI know a great method."
+        - key: Yeah, sure.
+        - key: "Shh... Just be quiet and \nmake sure no one comes."
+      - languageCode: ru
+        messages:
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0414\u0436\u0435\u0441\u0441\u0438!
+            \u0422\u044B \u0441\u0435\u0433\u043E\u0434\u043D\u044F \u0440\u0430\u043D\u043E."
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442! \u0414\u0430, \u0440\u0435\u0448\u0438\u043B\u0430
+            \u043F\u0440\u0438\u0439\u0442\u0438 \u043F\u043E\u0440\u0430\u043D\u044C\u0448\u0435,
+            \n\u043F\u043E\u043A\u0430 \u043D\u0438\u043A\u043E\u0433\u043E \u043D\u0435\u0442.
+            \u0410 \u0442\u043E \u043F\u043E\u0442\u043E\u043C \n\u043D\u0430\u0431\u0435\u0433\u0443\u0442
+            \u0438 \u043D\u0435 \u043F\u0440\u043E\u0442\u043E\u043B\u043A\u043D\u0443\u0442\u044C\u0441\u044F."
+        - key: "\u0421\u043E\u0433\u043B\u0430\u0441\u0435\u043D. \u0412 \u044D\u0442\u043E
+            \u0432\u0440\u0435\u043C\u044F \n\u0437\u0434\u0435\u0441\u044C \u043E\u0431\u044B\u0447\u043D\u043E
+            \u043D\u0438\u043A\u043E\u0433\u043E \u043D\u0435\u0442."
+        - key: "\u041A\u0430\u043A \u0442\u0432\u043E\u0438 \u0434\u0435\u043B\u0430?"
+        - key: "\u0425\u043E\u0440\u043E\u0448\u043E, \u0442\u043E\u043B\u044C\u043A\u043E
+            \u043C\u0430\u043B\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u043E\u0433\u043E
+            \n\u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u043D\u0430 \u0437\u0430\u043B.
+            \u0425\u043E\u0442\u0435\u043B\u043E\u0441\u044C \u0431\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u0442\u044C\u0441\u044F
+            \n\u0447\u0430\u0449\u0435, \u043D\u043E \u043A\u0430\u043A \u0441\u0435\u0431\u044F
+            \u0437\u0430\u0441\u0442\u0430\u0432\u0438\u0442\u044C?"
+        - key: "\u041F\u0440\u043E\u0448\u043B\u0430\u044F \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430
+            \n\u0431\u044B\u043B\u0430 \u0432\u043F\u0435\u0447\u0430\u0442\u043B\u044F\u044E\u0449\u0435\u0439!"
+        - key: "\u0415\u0441\u043B\u0438 \u0431\u044B \u043A\u0430\u0436\u0434\u0430\u044F
+            \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430 \n\u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u043B\u0430\u0441\u044C
+            \u0442\u0430\u043A, \u044F \n\u0431\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u043B\u0441\u044F
+            \u0440\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0435\u0435."
+        - key: "\u0425\u043E\u0447\u0435\u0448\u044C \u044F \u043F\u043E\u043C\u043E\u0433\u0443
+            \u0442\u0435\u0431\u0435 \u0441 \u043C\u043E\u0442\u0438\u0432\u0430\u0446\u0438\u0435\u0439?
+            \n\u042F \u0437\u043D\u0430\u044E \u043E\u0442\u043B\u0438\u0447\u043D\u044B\u0439
+            \u043C\u0435\u0442\u043E\u0434."
+        - key: "\u041D\u0443 \u0434\u0430\u2026 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u2026"
+        - key: "\u0422\u0441\u0441\u0441\u2026 \u0422\u043E\u043B\u044C\u043A\u043E
+            \u0442\u0438\u0445\u043E \u0438 \u0441\u043C\u043E\u0442\u0440\u0438,
+            \n\u0447\u0442\u043E\u0431\u044B \u043D\u0438\u043A\u0442\u043E \u043D\u0435
+            \u043F\u0440\u0438\u0448\u0435\u043B."
+      - languageCode: de
+        messages:
+        - key: "Hey, Jessy! Du bist heute fr\xFCh dran."
+        - key: "Hi! Ja, ich dachte, ich komme fr\xFCher,\n wenn noch niemand da ist.
+            Sp\xE4ter \nwerden es zu viele Leute sein."
+        - key: "Finde ich auch. Normalerweise \nist um diese Zeit niemand hier."
+        - key: Wie geht's dir denn so?
+        - key: "Mir geht es gut, aber ich habe nicht \nviel Zeit im Fitnessstudio.
+            Ich w\xFCrde \ngern \xF6fter trainieren, aber wie \nkann ich mich dazu
+            zwingen?"
+        - key: "Das Training von gestern \nAbend war beeindruckend!"
+        - key: "Wenn jede Trainingseinheit so enden \nw\xFCrde, w\xFCrde ich regelm\xE4\xDFiger
+            trainieren."
+        - key: "Soll ich dir helfen, dich zu motivieren? \nIch kenne eine tolle Methode."
+        - key: Ja, klar.
+        - key: Sei einfach leise und lass niemanden rein.
+      - languageCode: fr
+        messages:
+        - key: "H\xE9, Jessy ! Tu es en avance aujourd'hui."
+        - key: "Bonjour ! Oui, j'ai pens\xE9 venir \nplus t\xF4t pendant qu'il n'y
+            a personne. \nIl y aura trop de monde plus tard."
+        - key: "Je suis d'accord. D'habitude, \nil n'y a personne ici \xE0 cette
+            heure-ci."
+        - key: Comment allez-vous ?
+        - key: "Bien, mais je n'ai pas beaucoup de \ntemps libre \xE0 la salle de
+            sport. \nJ'aimerais faire de l'exercice \nplus souvent, mais comment
+            m'y prendre ?"
+        - key: "La s\xE9ance d'entra\xEEnement d'hier \nsoir \xE9tait impressionnante
+            !"
+        - key: "Si toutes les s\xE9ances d'entra\xEEnement \nse terminaient ainsi,
+            je m'entra\xEEnerais \nplus r\xE9guli\xE8rement."
+        - key: "Tu veux que je t'aide \xE0 te motiver ? \nJe connais une bonne m\xE9thode."
+        - key: "Oui, bien s\xFBr."
+        - key: "Chut... Ne fais pas de bruit \net ne laisse personne entrer."
+      - languageCode: it
+        messages:
+        - key: Ehi, Jessy! Sei in anticipo oggi.
+        - key: "Ciao! S\xEC, ho pensato di venire prima \nquando non c'\xE8 nessuno.
+            Pi\xF9 \ntardi ci sar\xE0 troppa gente."
+        - key: "Sono d'accordo. Di solito \nnon c'\xE8 nessuno a quest'ora."
+        - key: Come sta?
+        - key: "Sto bene, ma non ho molto tempo \nlibero in palestra. Vorrei allenarmi
+            \npi\xF9 spesso, ma come posso \ncostringermi a farlo?"
+        - key: "L'allenamento di ieri sera \n\xE8 stato impressionante!"
+        - key: "Se ogni allenamento finisse cos\xEC, \nmi allenerei pi\xF9 regolarmente."
+        - key: "Vuoi che ti aiuti a motivarti? \nConosco un ottimo metodo."
+        - key: "S\xEC, certo."
+        - key: Fai silenzio e non far entrare nessuno.
+      - languageCode: sp
+        messages:
+        - key: "\xA1Hola, Jessy! Llegas temprano hoy."
+        - key: "\xA1Hola! S\xED, pens\xE9 en venir \ntemprano mientras no hay nadie.
+            \nHabr\xE1 demasiada gente m\xE1s tarde."
+        - key: "Estoy de acuerdo. Normalmente \nno hay nadie aqu\xED a esta hora."
+        - key: "\xBFQu\xE9 tal est\xE1s?"
+        - key: "Bien, pero no tengo mucho tiempo libre \nen el gimnasio. Me gustar\xEDa
+            hacer \nejercicio m\xE1s a menudo, pero \n\xBFc\xF3mo puedo obligarme
+            a hacerlo?"
+        - key: "El entrenamiento de \nanoche fue impresionante."
+        - key: "Si todos los entrenamientos acabaran as\xED, lo har\xEDa m\xE1s a
+            menudo."
+        - key: "\xBFQuieres que te ayude a motivarte? \nConozco un m\xE9todo genial."
+        - key: "S\xED, claro."
+        - key: "Shh... S\xF3lo qu\xE9date callado \ny no dejes que nadie entre."
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 1
+  isSeen: 1
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0414\u0436\u0435\u0441\u0441\u0438!
+      \u0422\u044B \u0441\u0435\u0433\u043E\u0434\u043D\u044F \u0440\u0430\u043D\u043E."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: b3050411d6c84a844afbabe31db89fad, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: efcbe6ac47f60824ebef2bffde0e933d, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: b3050411d6c84a844afbabe31db89fad, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 3dbde3b4fe80a2f45b663f0e6bb709fc, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 39e13b9b5561dfc4589d11141682b3c8, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: c4037db9fce475d4985d861f49b8f968, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 53bd635abc479404a8fe1de7104a1a99, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hey, Jessy! You're early today.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0414\u0436\u0435\u0441\u0441\u0438!
+        \u0422\u044B \u0441\u0435\u0433\u043E\u0434\u043D\u044F \u0440\u0430\u043D\u043E."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hey, Jessy! Du bist heute fr\xFCh dran."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "H\xE9, Jessy ! Tu es en avance aujourd'hui."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: Ehi, Jessy! Sei in anticipo oggi.
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1Hola, Jessy! Llegas temprano hoy."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041F\u0440\u0438\u0432\u0435\u0442! \u0414\u0430, \u0440\u0435\u0448\u0438\u043B\u0430
+      \u043F\u0440\u0438\u0439\u0442\u0438 \u043F\u043E\u0440\u0430\u043D\u044C\u0448\u0435,
+      \n\u043F\u043E\u043A\u0430 \u043D\u0438\u043A\u043E\u0433\u043E \u043D\u0435\u0442.
+      \u0410 \u0442\u043E \u043F\u043E\u0442\u043E\u043C \n\u043D\u0430\u0431\u0435\u0433\u0443\u0442
+      \u0438 \u043D\u0435 \u043F\u0440\u043E\u0442\u043E\u043B\u043A\u043D\u0443\u0442\u044C\u0441\u044F."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 7d9e8d4c52ba4684784108e8b97d4a16, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 3d2cd4d69ac47dc42b806627c88d06f3, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 7d9e8d4c52ba4684784108e8b97d4a16, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 6cceb983005599f4b92213b3d61244f4, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 33b29c8da62b8e1419577b19760f821c, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 983d60dfeb143a445a1a7051d44b0061, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 227b15155023f6642843dc63fa488c4f, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Hi! Yeah, I thought I'd come in early before \nanyone else showed up.
+        There's gonna \nbe too many people later."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442! \u0414\u0430, \u0440\u0435\u0448\u0438\u043B\u0430
+        \u043F\u0440\u0438\u0439\u0442\u0438 \u043F\u043E\u0440\u0430\u043D\u044C\u0448\u0435,
+        \n\u043F\u043E\u043A\u0430 \u043D\u0438\u043A\u043E\u0433\u043E \u043D\u0435\u0442.
+        \u0410 \u0442\u043E \u043F\u043E\u0442\u043E\u043C \n\u043D\u0430\u0431\u0435\u0433\u0443\u0442
+        \u0438 \u043D\u0435 \u043F\u0440\u043E\u0442\u043E\u043B\u043A\u043D\u0443\u0442\u044C\u0441\u044F."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hi! Ja, ich dachte, ich komme fr\xFCher,\n wenn noch niemand da ist.
+        Sp\xE4ter \nwerden es zu viele Leute sein."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Bonjour ! Oui, j'ai pens\xE9 venir \nplus t\xF4t pendant qu'il n'y a
+        personne. \nIl y aura trop de monde plus tard."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Ciao! S\xEC, ho pensato di venire prima \nquando non c'\xE8 nessuno.
+        Pi\xF9 \ntardi ci sar\xE0 troppa gente."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1Hola! S\xED, pens\xE9 en venir \ntemprano mientras no hay nadie.
+        \nHabr\xE1 demasiada gente m\xE1s tarde."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0421\u043E\u0433\u043B\u0430\u0441\u0435\u043D. \u0412 \u044D\u0442\u043E
+      \u0432\u0440\u0435\u043C\u044F \n\u0437\u0434\u0435\u0441\u044C \u043E\u0431\u044B\u0447\u043D\u043E
+      \u043D\u0438\u043A\u043E\u0433\u043E \u043D\u0435\u0442."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 5491a8c30d185304cb4667f291d7de49, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: edf02a48274877c4f872ef3faf19778f, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 5491a8c30d185304cb4667f291d7de49, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 108ec41ff48fe8b499a88754d026110b, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 1aec8e827ee3f4f4186e7ac0054e24bd, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 0986c4102c24d9849a1fa8886fcece62, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 28751c1b03a5f694d86d539e0d3af9e3, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I agree. There's usually \nno one here at this time."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0421\u043E\u0433\u043B\u0430\u0441\u0435\u043D. \u0412 \u044D\u0442\u043E
+        \u0432\u0440\u0435\u043C\u044F \n\u0437\u0434\u0435\u0441\u044C \u043E\u0431\u044B\u0447\u043D\u043E
+        \u043D\u0438\u043A\u043E\u0433\u043E \u043D\u0435\u0442."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Finde ich auch. Normalerweise \nist um diese Zeit niemand hier."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Je suis d'accord. D'habitude, \nil n'y a personne ici \xE0 cette heure-ci."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Sono d'accordo. Di solito \nnon c'\xE8 nessuno a quest'ora."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Estoy de acuerdo. Normalmente \nno hay nadie aqu\xED a esta hora."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041A\u0430\u043A \u0442\u0432\u043E\u0438 \u0434\u0435\u043B\u0430?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 8572335d2c0d23142bc4f4f1688aa85e, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f76ba66ea4f2ae944aa93b907d7692d2, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 8572335d2c0d23142bc4f4f1688aa85e, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 8b982cc4fe4842f4cbc15caf716fc0f9, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: a9baed54545095547bd5b1337628f63e, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: fc814e25d185ab84aa0757848d095bd8, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 3d48764365fddce4a85ddde93253a443, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: How are you doing?
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041A\u0430\u043A \u0442\u0432\u043E\u0438 \u0434\u0435\u043B\u0430?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Wie geht's dir denn so?
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: Comment allez-vous ?
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: Come sta?
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xBFQu\xE9 tal est\xE1s?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0425\u043E\u0440\u043E\u0448\u043E, \u0442\u043E\u043B\u044C\u043A\u043E
+      \u043C\u0430\u043B\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u043E\u0433\u043E
+      \n\u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u043D\u0430 \u0437\u0430\u043B.
+      \u0425\u043E\u0442\u0435\u043B\u043E\u0441\u044C \u0431\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u0442\u044C\u0441\u044F
+      \n\u0447\u0430\u0449\u0435, \u043D\u043E \u043A\u0430\u043A \u0441\u0435\u0431\u044F
+      \u0437\u0430\u0441\u0442\u0430\u0432\u0438\u0442\u044C?"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 739748430cf348048989027196ba8df3, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 5c00c421163168444be23c1825332659, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 739748430cf348048989027196ba8df3, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: fd4f4fefc6c2fc14ab9c52f4b28bf653, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 0095e3a08e08b054c8472b69f36f9705, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 5cfe682ae862c5843a4cdd2d89fdee43, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: c64adf8214668d54987a14e1d382d35c, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "I'm good, but I don't have a lot of free \ntime at the gym. I'd like
+        to work out more \noften, but how can I make myself do it?"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0425\u043E\u0440\u043E\u0448\u043E, \u0442\u043E\u043B\u044C\u043A\u043E
+        \u043C\u0430\u043B\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u043E\u0433\u043E
+        \n\u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u043D\u0430 \u0437\u0430\u043B.
+        \u0425\u043E\u0442\u0435\u043B\u043E\u0441\u044C \u0431\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u0442\u044C\u0441\u044F
+        \n\u0447\u0430\u0449\u0435, \u043D\u043E \u043A\u0430\u043A \u0441\u0435\u0431\u044F
+        \u0437\u0430\u0441\u0442\u0430\u0432\u0438\u0442\u044C?"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Mir geht es gut, aber ich habe nicht \nviel Zeit im Fitnessstudio. Ich
+        w\xFCrde \ngern \xF6fter trainieren, aber wie \nkann ich mich dazu zwingen?"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Bien, mais je n'ai pas beaucoup de \ntemps libre \xE0 la salle de sport.
+        \nJ'aimerais faire de l'exercice \nplus souvent, mais comment m'y prendre
+        ?"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Sto bene, ma non ho molto tempo \nlibero in palestra. Vorrei allenarmi
+        \npi\xF9 spesso, ma come posso \ncostringermi a farlo?"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Bien, pero no tengo mucho tiempo libre \nen el gimnasio. Me gustar\xEDa
+        hacer \nejercicio m\xE1s a menudo, pero \n\xBFc\xF3mo puedo obligarme a hacerlo?"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041F\u0440\u043E\u0448\u043B\u0430\u044F \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430
+      \n\u0431\u044B\u043B\u0430 \u0432\u043F\u0435\u0447\u0430\u0442\u043B\u044F\u044E\u0449\u0435\u0439!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 114810c4a096ad74099b9ebaaee0cb02, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 3a56ddaeccb950c4197daf093cd1e797, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 114810c4a096ad74099b9ebaaee0cb02, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 38eb8389fc88a164485548a3d3a0cad3, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: cc51db5d655b14547898b1824c0614ec, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: b9765c6d27a246e4bba67e261d274f2d, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 27a065bd6f0384e4dbbbd6e4bf619bda, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: The last workout was impressive!
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u043E\u0448\u043B\u0430\u044F \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430
+        \n\u0431\u044B\u043B\u0430 \u0432\u043F\u0435\u0447\u0430\u0442\u043B\u044F\u044E\u0449\u0435\u0439!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Das Training von gestern \nAbend war beeindruckend!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "La s\xE9ance d'entra\xEEnement d'hier \nsoir \xE9tait impressionnante
+        !"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "L'allenamento di ieri sera \n\xE8 stato impressionante!"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "El entrenamiento de \nanoche fue impresionante."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0415\u0441\u043B\u0438 \u0431\u044B \u043A\u0430\u0436\u0434\u0430\u044F
+      \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430 \n\u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u043B\u0430\u0441\u044C
+      \u0442\u0430\u043A, \u044F \n\u0431\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u043B\u0441\u044F
+      \u0440\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0435\u0435."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 8274ecce090ad0244b687b29e84d0598, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 3621f1075ac75174ab997259afbe9d87, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 8274ecce090ad0244b687b29e84d0598, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 71948fa8910d93e4cb77371adefd4ceb, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: ca6fcd9c19ab3294394793e7ea08e972, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 783dccf67331f244a938533b3502812b, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 5d79821a8a4b6194bba77465e06382e3, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "If every workout ended like that, \nI'd work out more regularly."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0415\u0441\u043B\u0438 \u0431\u044B \u043A\u0430\u0436\u0434\u0430\u044F
+        \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430 \n\u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u043B\u0430\u0441\u044C
+        \u0442\u0430\u043A, \u044F \n\u0431\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u043B\u0441\u044F
+        \u0440\u0435\u0433\u0443\u043B\u044F\u0440\u043D\u0435\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Wenn jede Trainingseinheit so enden \nw\xFCrde, w\xFCrde ich regelm\xE4\xDFiger
+        trainieren."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Si toutes les s\xE9ances d'entra\xEEnement \nse terminaient ainsi, je
+        m'entra\xEEnerais \nplus r\xE9guli\xE8rement."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Se ogni allenamento finisse cos\xEC, \nmi allenerei pi\xF9 regolarmente."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Si todos los entrenamientos acabaran as\xED, lo har\xEDa m\xE1s a menudo."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u0425\u043E\u0447\u0435\u0448\u044C \u044F \u043F\u043E\u043C\u043E\u0433\u0443
+      \u0442\u0435\u0431\u0435 \u0441 \u043C\u043E\u0442\u0438\u0432\u0430\u0446\u0438\u0435\u0439?
+      \n\u042F \u0437\u043D\u0430\u044E \u043E\u0442\u043B\u0438\u0447\u043D\u044B\u0439
+      \u043C\u0435\u0442\u043E\u0434."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f3819e9195bf21d4f9da70ccf6830d6e, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 2e02e418a8ce2fa409682ce9d178740b, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: f3819e9195bf21d4f9da70ccf6830d6e, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: a686587e32cd21f46996afe905632d1f, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 6c7293922dc9b6c468945855ccebfb8d, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 4b07b2ef5ab57e747bb7ff46cea475fe, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 0cc309edbef2055439ce8558963d05ed, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Do you want me to help you with motivation? \nI know a great method."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0425\u043E\u0447\u0435\u0448\u044C \u044F \u043F\u043E\u043C\u043E\u0433\u0443
+        \u0442\u0435\u0431\u0435 \u0441 \u043C\u043E\u0442\u0438\u0432\u0430\u0446\u0438\u0435\u0439?
+        \n\u042F \u0437\u043D\u0430\u044E \u043E\u0442\u043B\u0438\u0447\u043D\u044B\u0439
+        \u043C\u0435\u0442\u043E\u0434."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Soll ich dir helfen, dich zu motivieren? \nIch kenne eine tolle Methode."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Tu veux que je t'aide \xE0 te motiver ? \nJe connais une bonne m\xE9thode."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Vuoi che ti aiuti a motivarti? \nConosco un ottimo metodo."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xBFQuieres que te ayude a motivarte? \nConozco un m\xE9todo genial."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041D\u0443 \u0434\u0430\u2026 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u2026"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 4a991280549c4ee45bd3645837aa4b5c, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 3b5a9e89b40bd894e879522938da0b67, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 4a991280549c4ee45bd3645837aa4b5c, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 6ab359b288afde741982f4facee09bc0, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 5fea59cd3f9d30e46bb6592b10834dd2, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: de17a1e3fec6f5c48a1fbb151d8f53fb, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: d3510360edfbe0148b32e84b75735d21, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Yeah, sure.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0443 \u0434\u0430\u2026 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u2026"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Ja, klar.
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Oui, bien s\xFBr."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "S\xEC, certo."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "S\xED, claro."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u0422\u0441\u0441\u0441\u2026 \u0422\u043E\u043B\u044C\u043A\u043E \u0442\u0438\u0445\u043E
+      \u0438 \u0441\u043C\u043E\u0442\u0440\u0438, \n\u0447\u0442\u043E\u0431\u044B
+      \u043D\u0438\u043A\u0442\u043E \u043D\u0435 \u043F\u0440\u0438\u0448\u0435\u043B."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 53a67b57e3e81ff4c9a7f4b9bc3935e7, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 87ffdbbe7f3ce8f4fb5880d61f720428, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 53a67b57e3e81ff4c9a7f4b9bc3935e7, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 8c2fe9e4c53b0fa45a8beeb414287130, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 76f64fdf0fbb08a47815a181cdffa2b9, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 384f93c81aa6a254fb3a57e5d16390be, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: a6bea6d5e5952b944b213e2d5911d7e7, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Shh... Just be quiet and \nmake sure no one comes."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u0441\u0441\u0441\u2026 \u0422\u043E\u043B\u044C\u043A\u043E \u0442\u0438\u0445\u043E
+        \u0438 \u0441\u043C\u043E\u0442\u0440\u0438, \n\u0447\u0442\u043E\u0431\u044B
+        \u043D\u0438\u043A\u0442\u043E \u043D\u0435 \u043F\u0440\u0438\u0448\u0435\u043B."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: Sei einfach leise und lass niemanden rein.
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Chut... Ne fais pas de bruit \net ne laisse personne entrer."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: Fai silenzio e non far entrare nessuno.
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Shh... S\xF3lo qu\xE9date callado \ny no dejes que nadie entre."
+      options:
+        font: {fileID: 0}

@@ -14,12 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: 84d37d91c7581e34cb7c021ad2ea358a, type: 2}
   currentConversation: {fileID: 11400000, guid: e3a134f5ca5b152469759b981a14c3ca, type: 2}
-  gifts:
-  - {fileID: 11400000, guid: 305dc3e3cec847c4a9522832ecbb4e09, type: 2}
-  - {fileID: 11400000, guid: 305dc3e3cec847c4a9522832ecbb4e09, type: 2}
-  - {fileID: 11400000, guid: 0083d6e4361df514090a7683ef72f0eb, type: 2}
-  - {fileID: 11400000, guid: 5bfe369184d9bbc4cac841ddedfd6671, type: 2}
-  - {fileID: 11400000, guid: 7959429b15eaa9940a5db8e30909c592, type: 2}
+  gifts: []
   allConversations:
   - {fileID: 11400000, guid: 885bed785d27cf34cab5b3001f326dc0, type: 2}
   - {fileID: 11400000, guid: 715fb0ca24fa2aa4eacafa7dacea4832, type: 2}

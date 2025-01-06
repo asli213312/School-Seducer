@@ -1,0 +1,602 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a57f9fcad471a9c6ddd88cf10d64e, type: 3}
+  m_Name: Volleyball
+  m_EditorClassIdentifier: 
+  localizedFields:
+  - fieldLabel: actorLeftName
+    localizedDataList: []
+  - fieldLabel: actorRightName
+    localizedDataList: []
+  - fieldLabel: _currentLanguage
+    localizedDataList: []
+  - fieldLabel: Volleyball
+    localizedDataList:
+    - languageCode: en
+      key: Volleyball
+    - languageCode: ru
+      key: "\u0412\u043E\u043B\u0435\u0439\u0431\u043E\u043B"
+  costExp: 30
+  iconStory: {fileID: 21300000, guid: 737d5bb600763df439ec9c2f2d6d1f80, type: 3}
+  localizator:
+    translationJson: {fileID: 4900000, guid: f017cca4ecf27e24e90a648f364a6f6f, type: 3}
+    _translator:
+      languages:
+      - languageCode: en
+        messages:
+        - key: Hi, I'm glad you called me to the match.
+        - key: "Yeah, you sure did! I've been wanting to see \na women's volleyball
+            game for a long time. \nLook at the view from our seats!"
+        - key: "Oh, yeah! I had no idea it would be so \nexciting! I'm not much of
+            a volleyball fan, \nbut this match is really impressive."
+        - key: Look at that girl. She's in the blue uniform.
+        - key: "You're right, she's really good. \nI wouldn't mind meeting her."
+        - key: "Don't even dream about it! \nShe won't even look at you. \nAlthough
+            I know she goes to the gym a lot."
+        - key: "Well, we'll see. \nMaybe I have a chance."
+        - key: I don't think so. But good luck.
+      - languageCode: ru
+        messages:
+        - key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u044F \u0440\u0430\u0434,
+            \u0447\u0442\u043E \u0442\u044B \n\u0432\u044B\u0442\u0430\u0449\u0438\u043B
+            \u043C\u0435\u043D\u044F \u043D\u0430 \u043C\u0430\u0442\u0447!"
+        - key: "\u0414\u0430, \u044D\u0442\u043E \u0442\u043E\u0447\u043D\u043E!
+            \u0414\u0430\u0432\u043D\u043E \u043C\u0435\u0447\u0442\u0430\u043B \n\u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
+            \u043D\u0430 \u0436\u0435\u043D\u0441\u043A\u0438\u0439 \u0432\u043E\u043B\u0435\u0439\u0431\u043E\u043B.
+            \n\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438 \u043A\u0430\u043A\u043E\u0439
+            \u0432\u0438\u0434 \n\u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442\u0441\u044F
+            \u0441 \u043D\u0430\u0448\u0438\u0445 \u043C\u0435\u0441\u0442!"
+        - key: "\u041E, \u0434\u0430! \u0414\u0430\u0436\u0435 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B,
+            \u0447\u0442\u043E \u0431\u0443\u0434\u0435\u0442 \n\u0442\u0430\u043A
+            \u0443\u0432\u043B\u0435\u043A\u0430\u0442\u0435\u043B\u044C\u043D\u043E!
+            \u042F \u0432\u043E\u043E\u0431\u0449\u0435 \u043D\u0435 \u043E\u0447\u0435\u043D\u044C
+            \n\u043B\u044E\u0431\u043B\u044E \u0432\u043E\u043B\u0435\u0439\u0431\u043E\u043B,
+            \u043D\u043E \u044D\u0442\u043E\u0442 \u043C\u0430\u0442\u0447 \n\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+            \u0432\u043F\u0435\u0447\u0430\u0442\u043B\u044F\u0435\u0442."
+        - key: "\u0422\u043E\u043B\u044C\u043A\u043E \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438
+            \u043D\u0430 \u0442\u0443 \u0434\u0435\u0432\u0443\u0448\u043A\u0443.
+            \n\u041E\u043D\u0430 \u0432 \u0441\u0438\u043D\u0435\u0439 \u0444\u043E\u0440\u043C\u0435."
+        - key: "\u0422\u044B \u043F\u0440\u0430\u0432, \u043E\u043D\u0430 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+            \u0445\u043E\u0440\u043E\u0448\u0430. \n\u042F \u0431\u044B\u043B \u0431\u044B
+            \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432 \u0441 \u043D\u0435\u0439
+            \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F."
+        - key: "\u0414\u0430\u0436\u0435 \u043D\u0435 \u043C\u0435\u0447\u0442\u0430\u0439!
+            \u041E\u043D\u0430 \u043D\u0430 \u0442\u0435\u0431\u044F \n\u0434\u0430\u0436\u0435
+            \u043D\u0435 \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u0442.
+            \u0425\u043E\u0442\u044F \u044F \u0437\u043D\u0430\u044E, \n\u0447\u0442\u043E
+            \u043E\u043D\u0430 \u0447\u0430\u0441\u0442\u043E \u0445\u043E\u0434\u0438\u0442
+            \u0432 \u0442\u0440\u0435\u043D\u0430\u0436\u0451\u0440\u043D\u044B\u0439
+            \u0437\u0430\u043B."
+        - key: "\u041D\u0443, \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u043C.
+            \n\u041C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C, \u0443 \u043C\u0435\u043D\u044F
+            \u0435\u0441\u0442\u044C \u0448\u0430\u043D\u0441."
+        - key: "\u041D\u0435 \u0434\u0443\u043C\u0430\u044E. \u041D\u043E \u0443\u0434\u0430\u0447\u0438
+            \u0442\u0435\u0431\u0435."
+      - languageCode: de
+        messages:
+        - key: "Hallo, ich bin froh, dass du \nmich zu dem Spiel gerufen hast."
+        - key: "Ja, da bin ich mir sicher! \nIch wollte schon lange mal \nFrauenvolleyball
+            sehen. Schau \ndir die Aussicht von unseren Pl\xE4tzen an!"
+        - key: "Oh, ja! Ich hatte keine Ahnung, \ndass es so aufregend sein w\xFCrde!
+            \nIch bin kein gro\xDFer Volleyballfan, \naber dieses Spiel ist \nwirklich
+            beeindruckend."
+        - key: "Seht euch das M\xE4dchen an. \nSie hat das blaue Trikot an."
+        - key: "Du hast Recht, sie ist wirklich gut. \nIch w\xFCrde sie gerne kennenlernen."
+        - key: "Denk nicht mal im Traum daran! \nSie wird dich nicht einmal ansehen.
+            Obwohl \nich wei\xDF, dass sie oft ins Fitnessstudio geht."
+        - key: "Nun, wir werden sehen. \nVielleicht habe ich eine Chance."
+        - key: "Nein, das glaube ich nicht. \nAber viel Gl\xFCck."
+      - languageCode: fr
+        messages:
+        - key: "Bonjour, je suis content que vous \nm'ayez appel\xE9 pour le match."
+        - key: "Oui, j'en suis s\xFBr ! Cela fait longtemps que \nje veux regarder
+            le volley-ball f\xE9minin. \nRegardez la vue depuis nos si\xE8ges !"
+        - key: "Oh, oui ! Je n'avais aucune id\xE9e que \nce serait si excitant !
+            Je ne suis pas une \ngrande fan de volley-ball, mais ce \nmatch est vraiment
+            impressionnant."
+        - key: "Regarde cette fille. \nElle porte l'uniforme bleu."
+        - key: "Tu as raison, elle est vraiment bonne. \nJ'aimerais bien la rencontrer."
+        - key: "N'y pense m\xEAme pas ! Elle ne te \nregardera m\xEAme pas. Mais
+            je sais \nqu'elle va souvent \xE0 la gym."
+        - key: "Eh bien, nous verrons. \nJ'ai peut-\xEAtre une chance."
+        - key: Je ne crois pas. Mais bonne chance.
+      - languageCode: it
+        messages:
+        - key: "Ciao, sono felice che tu mi \nabbia chiamato per l'incontro."
+        - key: "S\xEC, ne sono certo! Era da molto \ntempo che volevo vedere la pallavolo
+            \nfemminile. Guarda la vista dai nostri posti!"
+        - key: "Oh, s\xEC! Non avevo idea che \nsarebbe stato cos\xEC emozionante!
+            \nNon sono un grande appassionato \ndi pallavolo, ma questa partita \n\xE8
+            davvero impressionante."
+        - key: "Guardate quella ragazza. \nIndossa l'uniforme blu."
+        - key: "Hai ragione, \xE8 davvero brava. \nNon mi dispiacerebbe incontrarla."
+        - key: "Non sognarlo nemmeno! Non ti \nguarder\xE0 nemmeno. Anche se \nso
+            che va spesso in palestra."
+        - key: "Beh, vedremo. Forse ho una possibilit\xE0."
+        - key: Non credo. Ma buona fortuna.
+      - languageCode: sp
+        messages:
+        - key: "Hola, me alegro de que me \nhayas llamado para el partido."
+        - key: "\xA1S\xED, seguro que s\xED! Llevo mucho \ntiempo queriendo ver voleibol
+            femenino. \n\xA1Mira la vista desde nuestros asientos!"
+        - key: "\xA1Oh, s\xED! \xA1No ten\xEDa ni idea de \nque ser\xEDa tan emocionante!
+            No \nsoy muy aficionado al voleibol, \npero este partido es \nrealmente
+            impresionante."
+        - key: "Miren a esa chica. \nLleva el uniforme azul."
+        - key: "Tienes raz\xF3n, es muy buena. \nNo me importar\xEDa conocerla."
+        - key: "\xA1Ni lo sue\xF1es! Ni siquiera te mirar\xE1. \nAunque s\xE9 que
+            va mucho al gimnasio."
+        - key: "Bueno, ya veremos. Tal vez \ntenga una oportunidad."
+        - key: No lo creo. Pero buena suerte.
+  <Language>k__BackingField: 0
+  isCompleted: 1
+  isUnlocked: 1
+  isSeen: 1
+  Config: {fileID: 11400000, guid: 63734544aa138d048a82dcfe660ebf38, type: 2}
+  StoryTellerSprite: {fileID: 21300000, guid: 48f4a836ceee2c147b3e312468d8d72b, type: 3}
+  actorLeftName: 
+  <ActorLeftSprite>k__BackingField: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+  actorRightName: 
+  <ActorRightSprite>k__BackingField: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+  Messages:
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041F\u0440\u0438\u0432\u0435\u0442, \u044F \u0440\u0430\u0434, \u0447\u0442\u043E
+      \u0442\u044B \n\u0432\u044B\u0442\u0430\u0449\u0438\u043B \u043C\u0435\u043D\u044F
+      \u043D\u0430 \u043C\u0430\u0442\u0447!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: d4487fac56bb24345a6e02b714e91a10, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e245e5cc93ea7284f8ef2c93548bd162, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: d4487fac56bb24345a6e02b714e91a10, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: d109cf37d113b8f499c727468c83005b, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 4fba36eef7bfdeb4b96092fe1f7aa402, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: a670589e1600ae64a88fcaffb4b704b1, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 36919d69a4d46b948b2174d14dd9088d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Hi, I'm glad you called me to the match.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041F\u0440\u0438\u0432\u0435\u0442, \u044F \u0440\u0430\u0434, \u0447\u0442\u043E
+        \u0442\u044B \n\u0432\u044B\u0442\u0430\u0449\u0438\u043B \u043C\u0435\u043D\u044F
+        \u043D\u0430 \u043C\u0430\u0442\u0447!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Hallo, ich bin froh, dass du \nmich zu dem Spiel gerufen hast."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Bonjour, je suis content que vous \nm'ayez appel\xE9 pour le match."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Ciao, sono felice che tu mi \nabbia chiamato per l'incontro."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Hola, me alegro de que me \nhayas llamado para el partido."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u0414\u0430, \u044D\u0442\u043E \u0442\u043E\u0447\u043D\u043E! \u0414\u0430\u0432\u043D\u043E
+      \u043C\u0435\u0447\u0442\u0430\u043B \n\u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
+      \u043D\u0430 \u0436\u0435\u043D\u0441\u043A\u0438\u0439 \u0432\u043E\u043B\u0435\u0439\u0431\u043E\u043B.
+      \n\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438 \u043A\u0430\u043A\u043E\u0439
+      \u0432\u0438\u0434 \n\u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442\u0441\u044F
+      \u0441 \u043D\u0430\u0448\u0438\u0445 \u043C\u0435\u0441\u0442!"
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 78f74fd7a1f7b3a4c8ba7cca8099a4f6, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: e5208dd2fcc045f4ca2c77c9f23e74e0, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 78f74fd7a1f7b3a4c8ba7cca8099a4f6, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: c8a3850bf79e2954896d9d44b356c53a, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: f42f5aed4a14d204ab4116941ac21030, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 2a54ccfa009e8214990507201497335c, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 9595c554684220e4e92290650673ed8d, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Yeah, you sure did! I've been wanting to see \na women's volleyball game
+        for a long time. \nLook at the view from our seats!"
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0430, \u044D\u0442\u043E \u0442\u043E\u0447\u043D\u043E! \u0414\u0430\u0432\u043D\u043E
+        \u043C\u0435\u0447\u0442\u0430\u043B \n\u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
+        \u043D\u0430 \u0436\u0435\u043D\u0441\u043A\u0438\u0439 \u0432\u043E\u043B\u0435\u0439\u0431\u043E\u043B.
+        \n\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438 \u043A\u0430\u043A\u043E\u0439
+        \u0432\u0438\u0434 \n\u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442\u0441\u044F
+        \u0441 \u043D\u0430\u0448\u0438\u0445 \u043C\u0435\u0441\u0442!"
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Ja, da bin ich mir sicher! \nIch wollte schon lange mal \nFrauenvolleyball
+        sehen. Schau \ndir die Aussicht von unseren Pl\xE4tzen an!"
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Oui, j'en suis s\xFBr ! Cela fait longtemps que \nje veux regarder le
+        volley-ball f\xE9minin. \nRegardez la vue depuis nos si\xE8ges !"
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "S\xEC, ne sono certo! Era da molto \ntempo che volevo vedere la pallavolo
+        \nfemminile. Guarda la vista dai nostri posti!"
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1S\xED, seguro que s\xED! Llevo mucho \ntiempo queriendo ver voleibol
+        femenino. \n\xA1Mira la vista desde nuestros asientos!"
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041E, \u0434\u0430! \u0414\u0430\u0436\u0435 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B,
+      \u0447\u0442\u043E \u0431\u0443\u0434\u0435\u0442 \n\u0442\u0430\u043A \u0443\u0432\u043B\u0435\u043A\u0430\u0442\u0435\u043B\u044C\u043D\u043E!
+      \u042F \u0432\u043E\u043E\u0431\u0449\u0435 \u043D\u0435 \u043E\u0447\u0435\u043D\u044C
+      \n\u043B\u044E\u0431\u043B\u044E \u0432\u043E\u043B\u0435\u0439\u0431\u043E\u043B,
+      \u043D\u043E \u044D\u0442\u043E\u0442 \u043C\u0430\u0442\u0447 \n\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+      \u0432\u043F\u0435\u0447\u0430\u0442\u043B\u044F\u0435\u0442."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: e3a9a4c0368a7974c953408844fdd48c, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: ce489c8044741804da6704c78db13cfb, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: e3a9a4c0368a7974c953408844fdd48c, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 30effea17ed1c2041bac1389780c71e0, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 6870b6c09c3e751499437a61600210fe, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: b30a6440ee598f848bc14c59c15c33cb, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 24c3414cd77dd3f40b93c3ef795f4673, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Oh, yeah! I had no idea it would be so \nexciting! I'm not much of a
+        volleyball fan, \nbut this match is really impressive."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041E, \u0434\u0430! \u0414\u0430\u0436\u0435 \u043D\u0435 \u0434\u0443\u043C\u0430\u043B,
+        \u0447\u0442\u043E \u0431\u0443\u0434\u0435\u0442 \n\u0442\u0430\u043A \u0443\u0432\u043B\u0435\u043A\u0430\u0442\u0435\u043B\u044C\u043D\u043E!
+        \u042F \u0432\u043E\u043E\u0431\u0449\u0435 \u043D\u0435 \u043E\u0447\u0435\u043D\u044C
+        \n\u043B\u044E\u0431\u043B\u044E \u0432\u043E\u043B\u0435\u0439\u0431\u043E\u043B,
+        \u043D\u043E \u044D\u0442\u043E\u0442 \u043C\u0430\u0442\u0447 \n\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+        \u0432\u043F\u0435\u0447\u0430\u0442\u043B\u044F\u0435\u0442."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Oh, ja! Ich hatte keine Ahnung, \ndass es so aufregend sein w\xFCrde!
+        \nIch bin kein gro\xDFer Volleyballfan, \naber dieses Spiel ist \nwirklich
+        beeindruckend."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Oh, oui ! Je n'avais aucune id\xE9e que \nce serait si excitant ! Je
+        ne suis pas une \ngrande fan de volley-ball, mais ce \nmatch est vraiment
+        impressionnant."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Oh, s\xEC! Non avevo idea che \nsarebbe stato cos\xEC emozionante! \nNon
+        sono un grande appassionato \ndi pallavolo, ma questa partita \n\xE8 davvero
+        impressionante."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1Oh, s\xED! \xA1No ten\xEDa ni idea de \nque ser\xEDa tan emocionante!
+        No \nsoy muy aficionado al voleibol, \npero este partido es \nrealmente impresionante."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u0422\u043E\u043B\u044C\u043A\u043E \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438
+      \u043D\u0430 \u0442\u0443 \u0434\u0435\u0432\u0443\u0448\u043A\u0443. \n\u041E\u043D\u0430
+      \u0432 \u0441\u0438\u043D\u0435\u0439 \u0444\u043E\u0440\u043C\u0435."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 3db970e0c2856cf448e9a7d5676e4331, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 97b2f8d3797ce4d42a69de6ddedc1840, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 3db970e0c2856cf448e9a7d5676e4331, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 79d39ab76c0aa3c4ba08bec23ef814aa, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 5edc67db1fd9f8942a12e63d292fddca, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: e6b1c6a93dba86b43869bfa1bc8bdb6d, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: c20b97814b88c5b4f9c70e268fd479aa, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: Look at that girl. She's in the blue uniform.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u043E\u043B\u044C\u043A\u043E \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438
+        \u043D\u0430 \u0442\u0443 \u0434\u0435\u0432\u0443\u0448\u043A\u0443. \n\u041E\u043D\u0430
+        \u0432 \u0441\u0438\u043D\u0435\u0439 \u0444\u043E\u0440\u043C\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Seht euch das M\xE4dchen an. \nSie hat das blaue Trikot an."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Regarde cette fille. \nElle porte l'uniforme bleu."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Guardate quella ragazza. \nIndossa l'uniforme blu."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Miren a esa chica. \nLleva el uniforme azul."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u0422\u044B \u043F\u0440\u0430\u0432, \u043E\u043D\u0430 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+      \u0445\u043E\u0440\u043E\u0448\u0430. \n\u042F \u0431\u044B\u043B \u0431\u044B
+      \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432 \u0441 \u043D\u0435\u0439
+      \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: dd3d362fcc37de14c9bb8197349a9839, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 9c2138d77a1dac44f8b2a8e343da9f70, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: dd3d362fcc37de14c9bb8197349a9839, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 73e7dbca0d2c61a4caf9dda083dc37b2, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: be19141c452fb2a42a25d465313b5cbb, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: a41624342eb9233488e7f8ec717c1d2f, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: e9df78ba716621a459427d0dce9f19c4, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "You're right, she's really good. \nI wouldn't mind meeting her."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0422\u044B \u043F\u0440\u0430\u0432, \u043E\u043D\u0430 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+        \u0445\u043E\u0440\u043E\u0448\u0430. \n\u042F \u0431\u044B\u043B \u0431\u044B
+        \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432 \u0441 \u043D\u0435\u0439
+        \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Du hast Recht, sie ist wirklich gut. \nIch w\xFCrde sie gerne kennenlernen."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Tu as raison, elle est vraiment bonne. \nJ'aimerais bien la rencontrer."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Hai ragione, \xE8 davvero brava. \nNon mi dispiacerebbe incontrarla."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Tienes raz\xF3n, es muy buena. \nNo me importar\xEDa conocerla."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u0414\u0430\u0436\u0435 \u043D\u0435 \u043C\u0435\u0447\u0442\u0430\u0439!
+      \u041E\u043D\u0430 \u043D\u0430 \u0442\u0435\u0431\u044F \n\u0434\u0430\u0436\u0435
+      \u043D\u0435 \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u0442. \u0425\u043E\u0442\u044F
+      \u044F \u0437\u043D\u0430\u044E, \n\u0447\u0442\u043E \u043E\u043D\u0430 \u0447\u0430\u0441\u0442\u043E
+      \u0445\u043E\u0434\u0438\u0442 \u0432 \u0442\u0440\u0435\u043D\u0430\u0436\u0451\u0440\u043D\u044B\u0439
+      \u0437\u0430\u043B."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: a99d5675beaed0b40a9d779555c4b538, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: f9a256be407d29a4f93d02d4c74ec960, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: a99d5675beaed0b40a9d779555c4b538, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 7c31755571d83c74ebded89c3875fda5, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 70b6c3ade757ff94d90211c241e6d4cf, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 8b0f17d259dcf9d489898c7f93c0d794, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 8281c82fc688237408a0996b242bf48f, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Don't even dream about it! \nShe won't even look at you. \nAlthough I
+        know she goes to the gym a lot."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u0414\u0430\u0436\u0435 \u043D\u0435 \u043C\u0435\u0447\u0442\u0430\u0439!
+        \u041E\u043D\u0430 \u043D\u0430 \u0442\u0435\u0431\u044F \n\u0434\u0430\u0436\u0435
+        \u043D\u0435 \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u0442. \u0425\u043E\u0442\u044F
+        \u044F \u0437\u043D\u0430\u044E, \n\u0447\u0442\u043E \u043E\u043D\u0430
+        \u0447\u0430\u0441\u0442\u043E \u0445\u043E\u0434\u0438\u0442 \u0432 \u0442\u0440\u0435\u043D\u0430\u0436\u0451\u0440\u043D\u044B\u0439
+        \u0437\u0430\u043B."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Denk nicht mal im Traum daran! \nSie wird dich nicht einmal ansehen.
+        Obwohl \nich wei\xDF, dass sie oft ins Fitnessstudio geht."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "N'y pense m\xEAme pas ! Elle ne te \nregardera m\xEAme pas. Mais je sais
+        \nqu'elle va souvent \xE0 la gym."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Non sognarlo nemmeno! Non ti \nguarder\xE0 nemmeno. Anche se \nso che
+        va spesso in palestra."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "\xA1Ni lo sue\xF1es! Ni siquiera te mirar\xE1. \nAunque s\xE9 que va
+        mucho al gimnasio."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: fb1c9b1c77bb5074a897a113a148c4c7, type: 3}
+    Msg: "\u041D\u0443, \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u043C. \n\u041C\u043E\u0436\u0435\u0442
+      \u0431\u044B\u0442\u044C, \u0443 \u043C\u0435\u043D\u044F \u0435\u0441\u0442\u044C
+      \u0448\u0430\u043D\u0441."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: 6f250deafc6e1034b9b84909a23a9bc0, type: 3}
+    <Sender>k__BackingField: 1
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 02eccbe96af656a40874409e518d4156, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: 6f250deafc6e1034b9b84909a23a9bc0, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: 3bf038691ac3b3a41917d5c2270f1b09, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: b4b5152ae099d9949b1001c99a5d19fa, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: b423b26d896ca7f4197c2c15f9eec466, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 5b1bf5946cb0b97478d8c175c5080169, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: "Well, we'll see. \nMaybe I have a chance."
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0443, \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u043C.
+        \n\u041C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C, \u0443 \u043C\u0435\u043D\u044F
+        \u0435\u0441\u0442\u044C \u0448\u0430\u043D\u0441."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Nun, wir werden sehen. \nVielleicht habe ich eine Chance."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: "Eh bien, nous verrons. \nJ'ai peut-\xEAtre une chance."
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: "Beh, vedremo. Forse ho una possibilit\xE0."
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: "Bueno, ya veremos. Tal vez \ntenga una oportunidad."
+      options:
+        font: {fileID: 0}
+  - ActorIcon: {fileID: 21300000, guid: d5aff797b862976479822e00dc12b5d4, type: 3}
+    Msg: "\u041D\u0435 \u0434\u0443\u043C\u0430\u044E. \u041D\u043E \u0443\u0434\u0430\u0447\u0438
+      \u0442\u0435\u0431\u0435."
+    optionalData:
+      GallerySlot: {fileID: 0}
+      Branches: []
+      otherActorIcon:
+        sender: 0
+        icon: {fileID: 0}
+    AudioMsg: {fileID: 8300000, guid: f312460f5310c8d4e8aa043bba7367ef, type: 3}
+    <Sender>k__BackingField: 0
+    localizedAudioClips:
+    - languageCode: en
+      key: {fileID: 8300000, guid: 9488dfc88dafc7f4a8a12934f2d42984, type: 3}
+    - languageCode: ru
+      key: {fileID: 8300000, guid: f312460f5310c8d4e8aa043bba7367ef, type: 3}
+    - languageCode: de
+      key: {fileID: 8300000, guid: bfb19ca7b4070044f992853a8aa91234, type: 3}
+    - languageCode: sp
+      key: {fileID: 8300000, guid: 6bd44ed628765f349b8c332927b5ca67, type: 3}
+    - languageCode: it
+      key: {fileID: 8300000, guid: 1f507f956158df74b8cda0521110685e, type: 3}
+    - languageCode: fr
+      key: {fileID: 8300000, guid: 66996dad59e9d204cbccf0efcfafcbce, type: 3}
+    _localizedData:
+    - languageCode: en
+      key: I don't think so. But good luck.
+      options:
+        font: {fileID: 0}
+    - languageCode: ru
+      key: "\u041D\u0435 \u0434\u0443\u043C\u0430\u044E. \u041D\u043E \u0443\u0434\u0430\u0447\u0438
+        \u0442\u0435\u0431\u0435."
+      options:
+        font: {fileID: 0}
+    - languageCode: de
+      key: "Nein, das glaube ich nicht. \nAber viel Gl\xFCck."
+      options:
+        font: {fileID: 0}
+    - languageCode: fr
+      key: Je ne crois pas. Mais bonne chance.
+      options:
+        font: {fileID: 0}
+    - languageCode: it
+      key: Non credo. Ma buona fortuna.
+      options:
+        font: {fileID: 0}
+    - languageCode: sp
+      key: No lo creo. Pero buena suerte.
+      options:
+        font: {fileID: 0}

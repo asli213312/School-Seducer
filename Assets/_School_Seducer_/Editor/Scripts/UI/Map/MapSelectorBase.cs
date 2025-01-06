@@ -5,6 +5,7 @@ using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Linq;
 
 namespace _School_Seducer_.Editor.Scripts.UI.Map
 {
@@ -17,6 +18,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
         [Header("UI")]
         [SerializeField] private RectTransform content;
         [SerializeField] private Transform contentParent;
+        [SerializeField] private Transform comingSoonParent;
         [SerializeField] private RectTransform bgLocker;
         [SerializeField] private Button closeContentButton;
         [SerializeField] private TextMeshProUGUI locationName;
@@ -28,6 +30,9 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
 
         public LocationContainer CurrentLocation { get; private set; }
 
+        private Button _comingSoonCloseButton;
+        private Transform _currentContentParent;
+
         public void InitializeCore(MapSystem system)
         {
             System = system;
@@ -35,6 +40,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
 
         public void Initialize()
         {
+            _comingSoonCloseButton = comingSoonParent.transform.GetChild(0).GetComponent<Button>();
+
             foreach (var location in locations)
             {
                 location.InitializeCore(this);
@@ -43,8 +50,9 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
                 location.CharacterSelected += OnCloseContent;
                 location.CharacterSelected += (character) => characterSelectedEvent?.Invoke();
             }
-            
+                        
             closeContentButton.AddListener(OnCloseContent);
+            _comingSoonCloseButton.AddListener(OnCloseContent);
         }
 
         public void UpdateLocationsHeaderPanel() => locations.ForEach(x => x.RenderHeaderPanel());
@@ -76,7 +84,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
             Debug.Log("main_" + CurrentLocation.name + "_close");
         }
         
-        private void DeactivateContentParent() => contentParent.gameObject.Deactivate();
+        private void DeactivateContentParent() => _currentContentParent.gameObject.Deactivate();
 
         private void DeactivateHighlight()
         {
@@ -99,14 +107,23 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
                 System.Previewer.SetLockedConversation(characterInPreviewer);
             }
 
+            if (location.Data.characters.Length > 0)
+            {
+                _currentContentParent = contentParent;
+            }
+            else
+            {
+                _currentContentParent = comingSoonParent;
+            }
+
             ActivateContentParent();
             SetContentAtLocation();
             ActivateLockerScreen();
             ActivateHighlight();
         }
 
-        private void SetContentAtLocation() => CurrentLocation.SetPositionContent(contentParent);
-        private void ActivateContentParent() => contentParent.gameObject.Activate();
+        private void SetContentAtLocation() => CurrentLocation.SetPositionContent(_currentContentParent);
+        private void ActivateContentParent() => _currentContentParent.gameObject.Activate();
         private void ActivateHighlight() => CurrentLocation.HighLight.gameObject.Activate();
         private void ActivateLockerScreen() => bgLocker.gameObject.Activate();
 
@@ -120,6 +137,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Map
             }
             
             closeContentButton.RemoveListener(OnCloseContent);
+            _comingSoonCloseButton.RemoveListener(OnCloseContent);
         }
     }
 }

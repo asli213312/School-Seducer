@@ -1,0 +1,178 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Hi, I'm glad you called me to the match."
+                },
+                {
+                    "key": "Yeah, you sure did! I've been wanting to see \na women's volleyball game for a long time. \nLook at the view from our seats!"
+                },
+                {
+                    "key": "Oh, yeah! I had no idea it would be so \nexciting! I'm not much of a volleyball fan, \nbut this match is really impressive."
+                },
+                {
+                    "key": "Look at that girl. She's in the blue uniform."
+                },
+                {
+                    "key": "You're right, she's really good. \nI wouldn't mind meeting her."
+                },
+                {
+                    "key": "Don't even dream about it! \nShe won't even look at you. \nAlthough I know she goes to the gym a lot."
+                },
+                {
+                    "key": "Well, we'll see. \nMaybe I have a chance."
+                },
+                {
+                    "key": "I don't think so. But good luck."
+                }                
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Привет, я рад, что ты \nвытащил меня на матч!"
+                },
+                {
+                    "key": "Да, это точно! Давно мечтал \nпосмотреть на женский волейбол. \nПосмотри какой вид \nоткрывается с наших мест!"
+                },
+                {
+                    "key": "О, да! Даже не думал, что будет \nтак увлекательно! Я вообще не очень \nлюблю волейбол, но этот матч \nдействительно впечатляет."
+                },
+                {
+                    "key": "Только посмотри на ту девушку. \nОна в синей форме."
+                },
+                {
+                    "key": "Ты прав, она действительно хороша. \nЯ был бы не против с ней познакомиться."
+                },
+                {
+                    "key": "Даже не мечтай! Она на тебя \nдаже не посмотрит. Хотя я знаю, \nчто она часто ходит в тренажёрный зал."
+                },
+                {
+                    "key": "Ну, посмотрим. \nМожет быть, у меня есть шанс."
+                },
+                {
+                    "key": "Не думаю. Но удачи тебе."
+                } 
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Hallo, ich bin froh, dass du \nmich zu dem Spiel gerufen hast."
+                },
+                {
+                    "key": "Ja, da bin ich mir sicher! \nIch wollte schon lange mal \nFrauenvolleyball sehen. Schau \ndir die Aussicht von unseren Plätzen an!"
+                },
+                {
+                    "key": "Oh, ja! Ich hatte keine Ahnung, \ndass es so aufregend sein würde! \nIch bin kein großer Volleyballfan, \naber dieses Spiel ist \nwirklich beeindruckend."
+                },
+                {
+                    "key": "Seht euch das Mädchen an. \nSie hat das blaue Trikot an."
+                },
+                {
+                    "key": "Du hast Recht, sie ist wirklich gut. \nIch würde sie gerne kennenlernen."
+                },
+                {
+                    "key": "Denk nicht mal im Traum daran! \nSie wird dich nicht einmal ansehen. Obwohl \nich weiß, dass sie oft ins Fitnessstudio geht."
+                },
+                {
+                    "key": "Nun, wir werden sehen. \nVielleicht habe ich eine Chance."
+                },
+                {
+                    "key": "Nein, das glaube ich nicht. \nAber viel Glück."
+                }
+            ]
+        },
+        {
+            "languageCode": "fr",
+            "messages": [
+                {
+                    "key": "Bonjour, je suis content que vous \nm'ayez appelé pour le match."
+                },
+                {
+                    "key": "Oui, j'en suis sûr ! Cela fait longtemps que \nje veux regarder le volley-ball féminin. \nRegardez la vue depuis nos sièges !"
+                },
+                {
+                    "key": "Oh, oui ! Je n'avais aucune idée que \nce serait si excitant ! Je ne suis pas une \ngrande fan de volley-ball, mais ce \nmatch est vraiment impressionnant."
+                },
+                {
+                    "key": "Regarde cette fille. \nElle porte l'uniforme bleu."
+                },
+                {
+                    "key": "Tu as raison, elle est vraiment bonne. \nJ'aimerais bien la rencontrer."
+                },
+                {
+                    "key": "N'y pense même pas ! Elle ne te \nregardera même pas. Mais je sais \nqu'elle va souvent à la gym."
+                },
+                {
+                    "key": "Eh bien, nous verrons. \nJ'ai peut-être une chance."
+                },
+                {
+                    "key": "Je ne crois pas. Mais bonne chance."
+                }
+            ]
+        },
+        {
+            "languageCode": "it",
+            "messages": [
+                {
+                    "key": "Ciao, sono felice che tu mi \nabbia chiamato per l'incontro."
+                },
+                {
+                    "key": "Sì, ne sono certo! Era da molto \ntempo che volevo vedere la pallavolo \nfemminile. Guarda la vista dai nostri posti!"
+                },
+                {
+                    "key": "Oh, sì! Non avevo idea che \nsarebbe stato così emozionante! \nNon sono un grande appassionato \ndi pallavolo, ma questa partita \nè davvero impressionante."
+                },
+                {
+                    "key": "Guardate quella ragazza. \nIndossa l'uniforme blu."
+                },
+                {
+                    "key": "Hai ragione, è davvero brava. \nNon mi dispiacerebbe incontrarla."
+                },
+                {
+                    "key": "Non sognarlo nemmeno! Non ti \nguarderà nemmeno. Anche se \nso che va spesso in palestra."
+                },
+                {
+                    "key": "Beh, vedremo. Forse ho una possibilità."
+                },
+                {
+                    "key": "Non credo. Ma buona fortuna."
+                }
+            ]
+        },
+        {
+            "languageCode": "sp",
+            "messages": [
+                {
+                    "key": "Hola, me alegro de que me \nhayas llamado para el partido."
+                },
+                {
+                    "key": "¡Sí, seguro que sí! Llevo mucho \ntiempo queriendo ver voleibol femenino. \n¡Mira la vista desde nuestros asientos!"
+                },
+                {
+                    "key": "¡Oh, sí! ¡No tenía ni idea de \nque sería tan emocionante! No \nsoy muy aficionado al voleibol, \npero este partido es \nrealmente impresionante."
+                },
+                {
+                    "key": "Miren a esa chica. \nLleva el uniforme azul."
+                },
+                {
+                    "key": "Tienes razón, es muy buena. \nNo me importaría conocerla."
+                },
+                {
+                    "key": "¡Ni lo sueñes! Ni siquiera te mirará. \nAunque sé que va mucho al gimnasio."
+                },
+                {
+                    "key": "Bueno, ya veremos. Tal vez \ntenga una oportunidad."
+                },
+                {
+                    "key": "No lo creo. Pero buena suerte."
+                }
+            ]
+        }
+    ]
+}

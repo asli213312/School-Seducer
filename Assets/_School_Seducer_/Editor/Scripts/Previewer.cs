@@ -181,30 +181,7 @@ namespace _School_Seducer_.Editor.Scripts
                 Debug.LogWarning("Character is null, cannot unregister options");
                 return;
             }
-        }
-
-        public void ReduceMoneyPlayer()
-        {
-            if (_bank.Money >= _chat.Config.CoinsForMessage)
-            {
-                _bank.ChangeValueGold(-_chat.Config.CoinsForMessage);
-            }  
-            else
-            {
-                _eventManager.ConversationEnded();
-                Debug.Log("Money doesn't enough to continue...");
-            }
-        }       
-
-        public void AddDiamondOnConversationEnd()
-        {
-            _bank.ChangeValueDiamonds(1);
-        }
-
-        public void AddLoyalty(int n)
-        {
-            CurrentCharacter.Data.ChangeLoyalty(n);
-        }
+        }   
 
         private void ResetCharacter()
         {
@@ -238,15 +215,11 @@ namespace _School_Seducer_.Editor.Scripts
             List<СonversationData> conversations = data.allConversations;
 
             foreach (var conversation in conversations)
-            { 
-                //if (conversation.IsUnlocked(playerConfig.Experience)) _lockedConversation = null;
-                
+            {                 
                 if (conversation.isUnlocked == false)
                 {
                     data.LockedConversation = conversation;
-                    _lockedConversation = conversation;
-                    
-                    //_eventManager.SelectCharacter(character);
+                    _lockedConversation = conversation;                
                     break;
                 }
             }

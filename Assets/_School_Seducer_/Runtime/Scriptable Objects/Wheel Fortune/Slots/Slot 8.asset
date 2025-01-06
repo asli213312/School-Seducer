@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ca1cd1e3654303aff5d941a90c197e, type: 3}
   m_Name: Slot 8
   m_EditorClassIdentifier: 
+  count: 0
   iconInfo: {fileID: 21300000, guid: ea682ee8fc355f9409b91a098260645e, type: 3}
   borderSpriteByColor: {fileID: 21300000, guid: a7f500a0a2cd23f44a19c54f591b50c5, type: 3}
   extraCharacterPortrait: {fileID: 0}
@@ -23,6 +24,6 @@ MonoBehaviour:
   useTest: 0
   iconTest: {fileID: 21300000, guid: 8538e4418c13a8843844fbdcee5088d5, type: 3}
   slotTypeTest: 0
-  costExpTest: 0
-  levelTest: 2
-  chanceToGainTest: {x: 0, y: 1}
+  costExpTest: 15
+  levelTest: 1
+  chanceToGainTest: {x: 1, y: 1}

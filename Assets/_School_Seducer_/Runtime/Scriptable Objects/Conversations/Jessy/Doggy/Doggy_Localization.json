@@ -1,0 +1,178 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "You again? How come we \nalways end up somewhere alone?"
+                },
+                {
+                    "key": "Hmmm... I wouldn't say that! \nIt's pretty crowded in there."
+                },
+                {
+                    "key": "Are you implying something?"
+                },
+                {
+                    "key": "No, I'm sick of hints. \nGet undressed!"
+                },
+                {
+                    "key": "Get on the bench and stop \nasking stupid questions!"
+                },
+                {
+                    "key": "Oh, yeah, Ben!"
+                },
+                {
+                    "key": "Does it turn you on that \nwe might get caught?"
+                },
+                {
+                    "key": "I think so. I'm all hot and bothered. \nBut what if someone comes in?"
+                }
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Опять ты? Как так получается, \nчто мы все время оказываемся \nгде-то наедине?"
+                },
+                {
+                    "key": "Хммм… Я бы так не сказал! \nТам в зале достаточно много народу."
+                },
+                {
+                    "key": "Ты на что-то намекаешь?"
+                },
+                {
+                    "key": "Нет, мне надоели намеки. \nРаздевайся!"
+                },
+                {
+                    "key": "Встань на лавку и перестать \nзадавать дурацкие вопросы!"
+                },
+                {
+                    "key": "О, да Бен!"
+                },
+                {
+                    "key": "Тебя заводит, что нас могут застукать?"
+                },
+                {
+                    "key": "Думаю да, я уже вся теку! \nНо вдруг кто-то зайдет?"
+                }
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Du schon wieder? Wie kommt es, \ndass wir immer irgendwo alleine landen?"
+                },
+                {
+                    "key": "Hmmm... Das würde ich so \nnicht sagen! Es sind eine \nMenge Leute im Publikum."
+                },
+                {
+                    "key": "Willst du damit etwas andeuten?"
+                },
+                {
+                    "key": "Nein, ich habe die Nase \nvoll von Andeutungen. \nZiehen Sie sich aus!"
+                },
+                {
+                    "key": "Setz dich auf die Bank \nund hör auf, dumme \nFragen zu stellen!"
+                },
+                {
+                    "key": "Oh, ja, Ben!"
+                },
+                {
+                    "key": "Macht es dich an, dass \nman uns erwischen könnte?"
+                },
+                {
+                    "key": "Ich glaube ja, ich bin ganz nass. \nAber was ist, wenn jemand reinkommt?"
+                }
+            ]
+        },
+        {
+            "languageCode": "fr",
+            "messages": [
+                {
+                    "key": "Encore vous ? Comment se fait-il \nque nous nous retrouvions \ntoujours seuls quelque part ?"
+                },
+                {
+                    "key": "Hmmm... Je ne dirais pas ça ! \nIl y a beaucoup de monde \ndans le public."
+                },
+                {
+                    "key": "Qu'est-ce que tu insinues ?"
+                },
+                {
+                    "key": "Non, j'en ai marre des allusions. \nDéshabillez-vous !"
+                },
+                {
+                    "key": "Monte sur le banc et arrête \nde poser des questions stupides !"
+                },
+                {
+                    "key": "Oh, oui, Ben !"
+                },
+                {
+                    "key": "Ça t'excite qu'on puisse \nse faire prendre ?"
+                },
+                {
+                    "key": "Je pense que oui, je suis \ntout mouillé. Et si quelqu'un entre ?"
+                }
+            ]
+        },
+        {
+            "languageCode": "it",
+            "messages": [
+                {
+                    "key": "Ancora tu? Come mai finiamo \nsempre in un posto da soli?"
+                },
+                {
+                    "key": "Hmmm... Non direi proprio! C'è un \nsacco di gente tra il pubblico."
+                },
+                {
+                    "key": "Stai insinuando qualcosa?"
+                },
+                {
+                    "key": "No, sono stufo di allusioni. \nSpogliati!"
+                },
+                {
+                    "key": "Sali in panchina e smettila \ndi fare domande stupide!"
+                },
+                {
+                    "key": "Oh, sì, Ben!"
+                },
+                {
+                    "key": "Ti eccita l'idea che potremmo \nessere scoperti?"
+                },
+                {
+                    "key": "Penso di sì, sono tutta bagnata. \nMa se entra qualcuno?"
+                }
+            ]
+        },
+        {
+            "languageCode": "sp",
+            "messages": [
+                {
+                    "key": "¿Tú otra vez? ¿Cómo es que \nsiempre acabamos solos en algún sitio?"
+                },
+                {
+                    "key": "Hmmm... ¡Yo no diría eso! \nHay mucha gente entre el público."
+                },
+                {
+                    "key": "¿Estás insinuando algo?"
+                },
+                {
+                    "key": "No, estoy harto de insinuaciones. \n¡Desnúdate!"
+                },
+                {
+                    "key": "¡Súbete al banco y deja de \nhacer preguntas estúpidas!"
+                },
+                {
+                    "key": "¡Oh, sí, Ben!"
+                },
+                {
+                    "key": "¿Te excita que nos puedan pillar?"
+                },
+                {
+                    "key": "Creo que sí, estoy toda mojada. \n¿Pero y si entra alguien?"
+                }
+            ]
+        }
+    ]
+}

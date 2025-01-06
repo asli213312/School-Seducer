@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fffd8850dc496286c3d063058d6ae5, type: 3}
+  m_Name: Jessy
+  m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: 47c485344f56de74a86ea21bd30b41dd, type: 2}
+  currentConversation: {fileID: 11400000, guid: 25a57899d4b1a3c43ba656f1df6c4d54, type: 2}
+  gifts: []
+  allConversations:
+  - {fileID: 11400000, guid: 0618b41cb5439c4499289c908d5668be, type: 2}
+  - {fileID: 11400000, guid: 0d84de5752b966b4e8018a9ad055a805, type: 2}
+  - {fileID: 11400000, guid: 32f125643e9fd24489b76981b554ba34, type: 2}
+  - {fileID: 11400000, guid: cdcacce33ba6b164eba4323f1ff5d2e0, type: 2}
+  - {fileID: 11400000, guid: 25a57899d4b1a3c43ba656f1df6c4d54, type: 2}
+  gallery: {fileID: 11400000, guid: fde4f8cab10a2704897dd903f1188038, type: 2}
+  requiredLevel: 5
+  loyalty: 1
+  maxLoyalty: 1
+  showDebugParameters: 0
+  experience: 0
+  isLocked: 0

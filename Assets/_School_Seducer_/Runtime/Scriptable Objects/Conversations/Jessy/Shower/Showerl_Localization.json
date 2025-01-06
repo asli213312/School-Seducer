@@ -1,0 +1,178 @@
+{
+    "languages": [
+        {
+            "languageCode": "en",
+            "messages": [
+                {
+                    "key": "Maybe we could work out together. \nI could help you with some exercises \nor show you a couple of my favorites."
+                },
+                {
+                    "key": "Sounds great!"
+                },
+                {
+                    "key": "1 hour later"
+                },
+                {
+                    "key": "I should get going. \nDo you know where the shower is? \nFollow me. I'll show you where everything is."
+                },
+                {
+                    "key": "Mm-hmm. Uh, yeah."
+                },
+                {
+                    "key": "This is where we have the showers. \nBut there's only one available."
+                },
+                {
+                    "key": "Come on in, I'll wait."
+                },
+                {
+                    "key": "You're so cute when you're shy. \nIf you want, we can take a shower together?"
+                }                
+            ]
+        },
+        {
+            "languageCode": "ru",
+            "messages": [
+                {
+                    "key": "Может быть, мы могли бы \nпозаниматься вместе? Я мог \nбы помочь тебе с упражнениями \nили показать пару своих любимых."
+                },
+                {
+                    "key": "Звучит отлично!"
+                },
+                {
+                    "key": "1 час спустя"
+                },
+                {
+                    "key": "Мне уже пора идти. \nМожет быть, вместе пойдём в душ? \nЯ покажу тебе, где тут что находится."
+                },
+                {
+                    "key": "Мммм… Ну да…"
+                },
+                {
+                    "key": "Вот здесь у нас душевые. \nНо свободна только одна."
+                },
+                {
+                    "key": "Проходи, я подожду."
+                },
+                {
+                    "key": "Ты такой милый, когда \nстесняешься. Если хочешь, можем \nпринять душ вместе?"
+                } 
+            ]
+        },
+        {
+            "languageCode": "de",
+            "messages": [
+                {
+                    "key": "Vielleicht können wir zusammen trainieren. \nIch könnte dir bei ein paar Übungen helfen \noder dir meine Lieblingsübungen zeigen."
+                },
+                {
+                    "key": "Das klingt toll."
+                },
+                {
+                    "key": "1 Stunde später"
+                },
+                {
+                    "key": "Ich sollte jetzt gehen. \nWeißt du, wo die Dusche ist? Komm mit mir. \nIch werde dir zeigen, wo alles ist."
+                },
+                {
+                    "key": "Mm-hmm. Ja."
+                },
+                {
+                    "key": "Hier haben wir die Duschen. \nAber es ist nur eine frei."
+                },
+                {
+                    "key": "Kommen Sie rein, ich warte."
+                },
+                {
+                    "key": "Du bist so süß, wenn \ndu schüchtern bist. Wenn du \nwillst, können wir zusammen duschen."
+                }
+            ]
+        },
+        {
+            "languageCode": "fr",
+            "messages": [
+                {
+                    "key": "On pourrait peut-être s'entraîner ensemble. \nJe pourrais t'aider avec quelques exercices \nou te montrer quelques-uns de mes préférés."
+                },
+                {
+                    "key": "Ça m'a l'air super!"
+                },
+                {
+                    "key": "1 heure plus tard"
+                },
+                {
+                    "key": "Il faut que j'y aille. \nTu sais où se trouve la douche ?Suis-moi. \nJe vais te montrer où tout se trouve."
+                },
+                {
+                    "key": "Mm-hmm. Oui."
+                },
+                {
+                    "key": "C'est ici que nous avons les douches. \nMais il n'y en a qu'une de disponible."
+                },
+                {
+                    "key": "Entrez, j'attendrai."
+                },
+                {
+                    "key": "Tu es si mignon quand tu es timide. Si tu veux, \non peut prendre une douche ensemble ?"
+                }
+            ]
+        },
+        {
+            "languageCode": "it",
+            "messages": [
+                {
+                    "key": "Forse potremmo allenarci insieme. \nPotrei aiutarti con qualche esercizio o \nmostrarti un paio dei miei preferiti."
+                },
+                {
+                    "key": "Mi sembra un'ottima idea!"
+                },
+                {
+                    "key": "1 ora dopo"
+                },
+                {
+                    "key": "Dovrei andare. Sai dov'è la doccia? Mi segua. \nTi faccio vedere dov'è tutto."
+                },
+                {
+                    "key": "Sì."
+                },
+                {
+                    "key": "Qui è dove ci sono le docce. \nMa ce n'è solo una disponibile."
+                },
+                {
+                    "key": "Entra, ti aspetto."
+                },
+                {
+                    "key": "Sei così carino quando sei timido. \nSe vuoi, possiamo fare la doccia insieme?"
+                }
+            ]
+        },
+        {
+            "languageCode": "sp",
+            "messages": [
+                {
+                    "key": "Tal vez podríamos hacer ejercicio juntos. \nPodría ayudarte con algunos ejercicios o \nenseñarte un par de mis favoritos."
+                },
+                {
+                    "key": "Eso suena genial."
+                },
+                {
+                    "key": "1 hora después"
+                },
+                {
+                    "key": "Debería irme. ¿Sabes dónde está la ducha? \nSígueme. Te mostraré dónde está todo."
+                },
+                {
+                    "key": "Sí."
+                },
+                {
+                    "key": "Aquí es donde tenemos las duchas. \nPero sólo hay una disponible."
+                },
+                {
+                    "key": "Entra, esperaré."
+                },
+                {
+                    "key": "Eres tan lindo cuando eres tímido. \nSi quieres, ¿podemos ducharnos juntos?"
+                }
+            ]
+        }
+    ]
+}

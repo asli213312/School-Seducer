@@ -934,7 +934,7 @@ namespace _School_Seducer_.Editor.Scripts.Chat
             if (globalSettings.soundEnabled)
                 _soundHandler.Unmute();
             else
-                _soundHandler.Mute();
+                _soundHandler.Mute();                    
 
             if (Messages[index] != Messages[0])
             {

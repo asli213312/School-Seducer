@@ -92,7 +92,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
                         if (itemView.MainData == popupConfig.Data)
                         {
                             itemView.OnClick += _ => CreateItemPopupByConfig(popupConfig, itemView);
-                            Debug.Log($"Item: {itemView.MainData} will be invoked by CUSTOM popup {popupConfig.popupView}");
+                            //Debug.Log($"Item: {itemView.MainData} will be invoked by CUSTOM popup {popupConfig.popupView}");
 
                              if (itemView is ShopGroupItemViewBase groupItemView)
 	                         {
@@ -100,7 +100,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
 	                            {
 	                                if (singleGroupItem.MainData != popupConfig.Data && singleGroupItem.MainData is not IShopItemCharacterData) continue;
 	                                singleGroupItem.OnClick += _ => CreateItemPopupByConfig(popupConfig, singleGroupItem);
-	                                Debug.Log($"Item: {singleGroupItem.MainData} will be invoked by CUSTOM popup {popupConfig.popupView}");
+	                                //Debug.Log($"Item: {singleGroupItem.MainData} will be invoked by CUSTOM popup {popupConfig.popupView}");
 	                            }
 	                         }
                         }
@@ -111,7 +111,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
                     if (itemView.MainData is IShopItemCharacterData) 
                     {
                        itemView.OnClick += CreateItemDefaultPopup;
-                       Debug.Log($"Item: {itemView.MainData} will be invoked by DEFAULT popup");
+                       //Debug.Log($"Item: {itemView.MainData} will be invoked by DEFAULT popup");
                     }
                     else if (itemView is ShopGroupItemViewBase groupView) 
                     {
@@ -120,7 +120,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
                            if (singleItem.MainData is IShopItemCharacterData) 
                            {
                                singleItem.OnClick += CreateItemDefaultPopup;
-                               Debug.Log($"Item: {singleItem.MainData} will be invoked by DEFAULT popup");
+                               //Debug.Log($"Item: {singleItem.MainData} will be invoked by DEFAULT popup");
                            }
                         }
                     }
@@ -132,7 +132,7 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
 
         private void CreateItemPopupByConfig(ShopItemPopupDataBase popupItem, IShopItemView defaultItemView)
         {
-        	Debug.Log("SELECTED CUSTOM POPUP in shop");
+        	//Debug.Log("SELECTED CUSTOM POPUP in shop");
 
             ShopPremiumItemPopupView selectedPopupView = popupItem.popupView as ShopPremiumItemPopupView;
             IShopItemDataBase selectedData = defaultItemView.MainData;
@@ -163,16 +163,9 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
                 }
             }
 
-            Debug.Log("Selected data to render premium popup: " + selectedData);
+            //Debug.Log("Selected data to render premium popup: " + selectedData);
 
-            ShopPremiumItemPopupView popupView = Instantiate(selectedPopupView, popupContainer.transform);
-            popupView.Initialize(_bank);
-            popupView.Render(selectedData, selectedViews);
-            popupView.OnClose += () => closePopupEvent?.Invoke();
-            popupView.OnClose += OnClosePopup;
-            popupView.OnAfterBuy += OnBuy;
-            
-             _currentPopup = popupView;
+            ShopItemPopupViewBase popupView = RenderPopup(selectedPopupView, selectedData, selectedViews);
              
              StartCoroutine(popupView.transform.DoLocalScale(Vector2.one));
              openPopupEvent?.Invoke();
@@ -180,13 +173,21 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
 
         private void CreateItemDefaultPopup(IShopItemView defaultItemView)
         {
-			Debug.Log("SELECTED DEFAULT POPUP in shop");
+			//Debug.Log("SELECTED DEFAULT POPUP in shop");
 
             ShopItemPopupViewBase selectedPopupView = data.mainPopupView;
             IShopItemDataBase selectedData = defaultItemView.MainData;
             List<IShopItemView> selectedViews = new List<IShopItemView> { defaultItemView };
 
-            ShopItemPopupViewBase popupView = Instantiate(selectedPopupView, popupContainer.transform);
+            ShopItemPopupViewBase popupView = RenderPopup(selectedPopupView, selectedData, selectedViews);
+            
+            StartCoroutine(popupView.transform.DoLocalScale(Vector2.one));
+            openPopupEvent?.Invoke();
+        }
+
+        private ShopItemPopupViewBase RenderPopup(ShopItemPopupViewBase selectedPopupView, IShopItemDataBase selectedData, List<IShopItemView> selectedViews) 
+        {
+        	ShopItemPopupViewBase popupView = Instantiate(selectedPopupView, popupContainer.transform);
             popupView.Initialize(_bank);
             popupView.Render(selectedData, selectedViews);
             popupView.OnClose += () => closePopupEvent?.Invoke();
@@ -194,9 +195,8 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
             popupView.OnAfterBuy += OnBuy;
 
             _currentPopup = popupView;
-            
-            StartCoroutine(popupView.transform.DoLocalScale(Vector2.one));
-            openPopupEvent?.Invoke();
+
+            return popupView;
         }
 
         private void UnregisterPopups()
@@ -207,46 +207,42 @@ namespace _School_Seducer_.Editor.Scripts.UI.Shop
                 {
                     if (itemView.MainData is ShopSingleItemAbstractLiteralData) continue;
 
-                if (data.data.Any(x => x.Data == itemView.MainData))
-                {
-                    foreach (var popupConfig in data.data)
-                    {
-                        if (itemView.MainData == popupConfig.Data)
-                        {
-                            itemView.OnClick -= _ => CreateItemPopupByConfig(popupConfig, itemView);
-                            Debug.Log($"Item: {itemView.MainData} will be invoked by CUSTOM popup {popupConfig.popupView}");
+	                if (data.data.Any(x => x.Data == itemView.MainData))
+	                {
+	                    foreach (var popupConfig in data.data)
+	                    {
+	                        if (itemView.MainData == popupConfig.Data)
+	                        {
+	                            itemView.OnClick -= _ => CreateItemPopupByConfig(popupConfig, itemView);
 
-                             if (itemView is ShopGroupItemViewBase groupItemView)
-	                         {
-	                            foreach (var singleGroupItem in groupItemView.Items)
-	                            {
-	                                if (singleGroupItem.MainData != popupConfig.Data && singleGroupItem.MainData is not IShopItemCharacterData) continue;
-	                                singleGroupItem.OnClick -= _ => CreateItemPopupByConfig(popupConfig, singleGroupItem);
-	                                Debug.Log($"Item: {singleGroupItem.MainData} will be invoked by CUSTOM popup {popupConfig.popupView}");
-	                            }
-	                         }
-                        }
-                    }   
-                }
-                else
-                {
-                    if (itemView.MainData is IShopItemCharacterData) 
-                    {
-                       itemView.OnClick -= CreateItemDefaultPopup;
-                       Debug.Log($"Item: {itemView.MainData} will be invoked by DEFAULT popup");
-                    }
-                    else if (itemView is ShopGroupItemViewBase groupView) 
-                    {
-                        foreach (var singleItem in groupView.Items) 
-                        {
-                           if (singleItem.MainData is IShopItemCharacterData) 
-                           {
-                               singleItem.OnClick -= CreateItemDefaultPopup;
-                               Debug.Log($"Item: {singleItem.MainData} will be invoked by DEFAULT popup");
-                           }
-                        }
-                    }
-                }
+	                             if (itemView is ShopGroupItemViewBase groupItemView)
+		                         {
+		                            foreach (var singleGroupItem in groupItemView.Items)
+		                            {
+		                                if (singleGroupItem.MainData != popupConfig.Data && singleGroupItem.MainData is not IShopItemCharacterData) continue;
+		                                singleGroupItem.OnClick -= _ => CreateItemPopupByConfig(popupConfig, singleGroupItem);
+		                            }
+		                         }
+	                        }
+	                    }   
+	                }
+	                else
+	                {
+	                    if (itemView.MainData is IShopItemCharacterData) 
+	                    {
+	                       itemView.OnClick -= CreateItemDefaultPopup;
+	                    }
+	                    else if (itemView is ShopGroupItemViewBase groupView) 
+	                    {
+	                        foreach (var singleItem in groupView.Items) 
+	                        {
+	                           if (singleItem.MainData is IShopItemCharacterData) 
+	                           {
+	                               singleItem.OnClick -= CreateItemDefaultPopup;
+	                           }
+	                        }
+	                    }
+	                }
                 }
             }
         }

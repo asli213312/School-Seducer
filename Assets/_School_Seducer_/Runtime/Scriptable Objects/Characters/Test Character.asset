@@ -23,3 +23,4 @@ MonoBehaviour:
   maxLoyalty: 6
   showDebugParameters: 0
   experience: 0
+  isLocked: 0
